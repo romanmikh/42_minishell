@@ -49,16 +49,15 @@ void	print_stack(t_token **stack)
 	current_node = *stack;
 	while (current_node != NULL)
 	{
-		printf("argv[%d] ->  %s \n", i, current_node->data);
+		printf("input[%d] ->  %s \n", i, current_node->data);
 		current_node = current_node->next;
     i++;
 	}
-	printf("\n");
 }
 
 void handle_args(t_token **tokens, char **argv)
 {
-  int i = 1;
+  int i = 0;
   
   while (argv[i])
   {
@@ -67,19 +66,34 @@ void handle_args(t_token **tokens, char **argv)
   }
 }
 
-
-int	main(int argc, char **argv)
+void	free_stack(t_token **stack)
 {
+	t_token	*current;
+	t_token	*next;
+
+	current = *stack;
+	while (current != NULL)
+	{
+		next = current->next;
+		free(current);
+		current = next;
+	}
+}
+
+int	main()
+{
+  // Initialisation & load configs
   char *line;
-  const char *history_file = ".maxishell_history";
+  const char *history_file = "./utils/.maxishell_history";
+  t_token *tokens = NULL;
 
   read_history(history_file);
-
+  // Run command loop
   while (1)
   {
     // getpwuid(geteuid())->pw_name // username, but using disallowed functions
     printf("\033[48;5;236m");
-    line = readline("user@maxishell$ ");
+    line = readline("🌴 dimrom@maxishell$ ");
 
     if (!line)
       break;
@@ -87,13 +101,17 @@ int	main(int argc, char **argv)
       add_history(line);
     write_history(history_file);
     printf("@maxishell: command not found: %s\n", ft_split(line, ' ')[0]);
+
+    // Handle arguments
+    handle_args(&tokens, ft_split(line, ' '));
+    print_stack(&tokens);
+
+    // Free linked list & line for next input
+    free_stack(&tokens);
+    free(line);
   }
   
-  t_token *tokens = NULL;
-  printf("argc -> %d\n", argc);
-  free(line);
-  handle_args(&tokens, argv);
-  print_stack(&tokens);  
+  // Perform shutdown/cleanup
   return (0);
 }
 
