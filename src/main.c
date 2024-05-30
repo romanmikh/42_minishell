@@ -14,8 +14,10 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <stdio.h>
+#include <unistd.h>
 #include <readline/readline.h>
 #include <readline/history.h>
+#include <pwd.h>
 
 void	add_node(t_token **head, char *str);
 
@@ -26,7 +28,6 @@ void	print_stack(t_token **stack)
   int   i;
 
   i = 0;
-  //printf("first data in linked list is %s", stack->data);
 	current_node = *stack;
 	while (current_node != NULL)
 	{
@@ -43,14 +44,6 @@ void handle_args(t_token **tokens, char **argv)
   
   while (argv[i])
   {
-    //if (*argv[i][0] == '"')
-    //  handle_double_quote_arg();
-//    else if (*argv[i][0] == 39) // single quote 
-//      handle_single_quote();
-//    else if (*argv[i][0] == '\') // single quote 
-//      handle_backslash();
-//    else if (*argv[i][0] == '$') // single quote 
-//      handle_dollar();
     add_node(tokens, argv[i]);
     i++;
   }
@@ -79,20 +72,23 @@ void	add_node(t_token **head, char *str)
 
 int	main(int argc, char **argv)
 {
-
   char *line;
+
   while (1)
   {
-    line = readline("Enter a line: ");
+    // getpwuid(geteuid())->pw_name // username, but using disallowed functions
+    printf("\033[48;5;236m");
+    line = readline("user@maxishell$ ");
 
     if (!line)
       break;
-    printf("entered line: %s", line);
+    printf("@maxishell: command not found: %s\n", ft_split(line, ' ')[0]);
   }
   
   t_token *tokens = NULL;
 
   printf("argc -> %d\n, %s", argc, line);
+  
 
   handle_args(&tokens, argv);
   printf("pass handle args\n");
