@@ -13,25 +13,13 @@
 #include "tokens.h"
 #include <stdlib.h>
 #include <stdio.h>
+#include <stdio.h>
+#include <readline/readline.h>
+#include <readline/history.h>
 
 void	add_node(t_token **head, char *str);
-/*
-char* handle_single_quote_arg(char *str) // all characters itnerpreted as text
-{
-  return (str);
-}
-void handle_double_quote_arg(char *str) // $, \ and ' interpreted as sepcial symbols
-{
-  while (*str)
-  {
-    if (*str == '$')
-      
-    else if (*str == '\')
 
-    else if (*str == 39) // single quote 
-  }
-}
-*/
+
 void	print_stack(t_token **stack)
 {
   t_token *current_node;
@@ -42,14 +30,14 @@ void	print_stack(t_token **stack)
 	current_node = *stack;
 	while (current_node != NULL)
 	{
-		printf("argv[%d] ->  %s ", i, current_node->data);
+		printf("argv[%d] ->  %s \n", i, current_node->data);
 		current_node = current_node->next;
     i++;
 	}
 	printf("\n");
 }
 
-void handle_args(t_token *tokens, char **argv)
+void handle_args(t_token **tokens, char **argv)
 {
   int i = 1;
   
@@ -63,7 +51,7 @@ void handle_args(t_token *tokens, char **argv)
 //      handle_backslash();
 //    else if (*argv[i][0] == '$') // single quote 
 //      handle_dollar();
-    add_node(&tokens, argv[i]);
+    add_node(tokens, argv[i]);
     i++;
   }
 }
@@ -91,12 +79,25 @@ void	add_node(t_token **head, char *str)
 
 int	main(int argc, char **argv)
 {
+
+  char *line;
+  while (1)
+  {
+    line = readline("Enter a line: ");
+
+    if (!line)
+      break;
+    printf("entered line: %s", line);
+  }
+  
   t_token *tokens = NULL;
 
-  printf("argc -> %d\n", argc);
+  printf("argc -> %d\n, %s", argc, line);
 
-  handle_args(tokens, argv);
+  handle_args(&tokens, argv);
   printf("pass handle args\n");
   print_stack(&tokens);  
+  free(line);
   return (0);
 }
+

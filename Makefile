@@ -34,6 +34,7 @@ RM				=	rm -rf
 # Structure
 LIB_DIR					=	./lib
 LIBFT					=	$(LIB_DIR)/libft/libft.a
+READLINE 			= -lreadline
 
 SRC_DIR					=	./src
 APP_DIR					=	$(SRC_DIR)/app
@@ -63,7 +64,7 @@ OBJECTS					=	$(MAIN_OBJECT) \
 all: $(NAME)
 
 $(NAME): $(LIBFT) $(OBJECTS)
-	@$(COMPILER) $(CFLAGS) $(OBJECTS) $(INCLUDES) $(LIBFT) -o $@
+	@$(COMPILER) $(CFLAGS) $(OBJECTS) $(INCLUDES) $(LIBFT) -o $@ $(READLINE)
 	@echo "$(GREEN)minishell compiled$(DEF_COLOR)"
 	
 $(BUILD_DIR)/src/%.o: $(SRC_DIR)/%.c
