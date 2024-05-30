@@ -19,8 +19,26 @@
 #include <readline/history.h>
 #include <pwd.h>
 
-void	add_node(t_token **head, char *str);
+void	add_node(t_token **head, char *str)
+{
+	t_token	*new_node;	
+	t_token	*curr_node;
 
+	new_node = (t_token *)malloc(sizeof(t_token));
+	if (!new_node)
+		return ;
+	new_node->data = str;
+	new_node->next = NULL;
+	if (*head == NULL)
+	{
+		*head = new_node;
+		return ;
+	}
+	curr_node = *head;
+	while (curr_node->next != NULL)
+		curr_node = curr_node->next;
+	curr_node->next = new_node;
+}
 
 void	print_stack(t_token **stack)
 {
@@ -49,30 +67,13 @@ void handle_args(t_token **tokens, char **argv)
   }
 }
 
-void	add_node(t_token **head, char *str)
-{
-	t_token	*new_node;	
-	t_token	*curr_node;
-
-	new_node = (t_token *)malloc(sizeof(t_token));
-	if (!new_node)
-		return ;
-	new_node->data = str;
-	new_node->next = NULL;
-	if (*head == NULL)
-	{
-		*head = new_node;
-		return ;
-	}
-	curr_node = *head;
-	while (curr_node->next != NULL)
-		curr_node = curr_node->next;
-	curr_node->next = new_node;
-}
 
 int	main(int argc, char **argv)
 {
   char *line;
+  const char *history_file = ".maxishell_history";
+
+  read_history(history_file);
 
   while (1)
   {
@@ -82,18 +83,17 @@ int	main(int argc, char **argv)
 
     if (!line)
       break;
+    if (*line)
+      add_history(line);
+    write_history(history_file);
     printf("@maxishell: command not found: %s\n", ft_split(line, ' ')[0]);
   }
   
   t_token *tokens = NULL;
-
-  printf("argc -> %d\n, %s", argc, line);
-  
-
-  handle_args(&tokens, argv);
-  printf("pass handle args\n");
-  print_stack(&tokens);  
+  printf("argc -> %d\n", argc);
   free(line);
+  handle_args(&tokens, argv);
+  print_stack(&tokens);  
   return (0);
 }
 
