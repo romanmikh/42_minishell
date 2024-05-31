@@ -11,13 +11,6 @@
 /* ************************************************************************** */
 
 #include "tokens.h"
-#include <stdlib.h>
-#include <stdio.h>
-#include <stdio.h>
-#include <unistd.h>
-#include <readline/readline.h>
-#include <readline/history.h>
-#include <pwd.h>
 
 void handle_args(t_token **tokens, char **argv)
 {
@@ -35,29 +28,31 @@ int	main()
   // Initialisation & load configs
   char *line;
   const char *history_file = "./utils/.maxishell_history";
-  t_token *tokens = NULL;
+  t_token *tokens;
 
   read_history(history_file);
   // Run command loop
   int repeat = 1;
   while (repeat)
   {
-    // getpwuid(geteuid())->pw_name // username, but using disallowed functions
-    printf("\033[48;5;236m");
-    line = readline("🌴 dimrom@maxishell> ");
+    tokens = NULL;
+    // getpwuid(geteuid())->pw_name // username, but uses disallowed functions
+    line = readline("🌴\e[1m dimrom@maxishell> \e[m");
 
-    if (!line)
+    if (!line || ft_strcmp(line, "exit") == 0)
       break;
     if (*line)
       add_history(line);
     write_history(history_file);
-    printf("@maxishell: command not found: %s\n", ft_split(line, ' ')[0]);
+
+    char **parsed_text = ft_split(line, ' ');
+    printf("\033[31m@maxishell: command not found: %s\033[0m\n", parsed_text[0]);
 
     // Handle arguments
-    handle_args(&tokens, ft_split(line, ' '));
-    print_stack(&tokens);
+    handle_args(&tokens, parsed_text);
 
     // Free linked list & line for next input
+    print_stack(&tokens);
     free_stack(&tokens);
     free(line);
   }
