@@ -1,3 +1,5 @@
+name: Norminette
+
 on: [push, pull_request]
 
 jobs:
