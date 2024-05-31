@@ -43,7 +43,7 @@ COMMON_DIR				=	$(SRC_DIR)/common
 INCLUDES				=	-I./inc \
 							-I $(LIB_DIR)/libft/inc \
 
-MAIN_SOURCE				=	$(SRC_DIR)/main.c
+MAIN_SOURCE				=	$(wildcard $(SRC_DIR)/*.c)
 APP_SOURCES				=	$(wildcard $(APP_DIR)/*.c)
 COMMON_SOURCES			=	$(wildcard $(COMMON_DIR)/*.c)
 

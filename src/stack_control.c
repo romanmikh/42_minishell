@@ -30,7 +30,7 @@ void	print_stack(t_token **stack)
 	current_node = *stack;
 	while (current_node != NULL)
 	{
-		printf("input[%d] ->  %s \n", i, current_node->data);
+		ft_printf("input[%d] ->  %s \n", i, current_node->data);
 		current_node = current_node->next;
     i++;
 	}
