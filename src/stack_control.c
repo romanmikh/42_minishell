@@ -1,4 +1,16 @@
-# include "tokens.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   stack_control.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rmikhayl <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/05/31 20:39:16 by rmikhayl          #+#    #+#             */
+/*   Updated: 2024/05/31 20:48:48 by rmikhayl         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "tokens.h"
 
 void	add_node(t_token **head, char *str)
 {
@@ -11,7 +23,7 @@ void	add_node(t_token **head, char *str)
 	new_node->data = str;
 	new_node->next = NULL;
 	if (*head == NULL)
- 	{
+	{
 		*head = new_node;
 		return ;
 	}
@@ -23,16 +35,16 @@ void	add_node(t_token **head, char *str)
 
 void	print_stack(t_token **stack)
 {
-  t_token *current_node;
-  int   i;
+	t_token	*current_node;
+	int		i;
 
-  i = 0;
+	i = 0;
 	current_node = *stack;
 	while (current_node != NULL)
 	{
 		ft_printf("input[%d] ->  %s \n", i, current_node->data);
 		current_node = current_node->next;
-    i++;
+		i++;
 	}
 }
 
@@ -50,3 +62,41 @@ void	free_stack(t_token **stack)
 	}
 }
 
+int	calc_stack_size(t_token *stack)
+{
+	int			size;
+	t_token		*current;
+
+	size = 0;
+	current = stack;
+	while (current != NULL)
+	{
+		size++;
+		current = current->next;
+	}
+	return (size);
+}
+
+char	**list_to_array(t_token *head)
+{
+	int			count;
+	int			i;
+	char		**arr;
+	t_token		*current;
+
+	current = head;
+	count = calc_stack_size(current);
+	arr = (char **)malloc((count + 1) * sizeof(char *));
+	if (!arr)
+		return (NULL);
+	current = head;
+	i = 0;
+	while (i < count)
+	{
+		arr[i] = ft_strdup(current->data);
+		current = current->next;
+		i++;
+	}
+	arr[count] = NULL;
+	return (arr);
+}
