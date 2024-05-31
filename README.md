@@ -1,1 +1,1 @@
-![norminette](https://github.com/dimadem/minishell/workflows/norminette/badge.svg)
+![Norminette workflow](https://github.com/OWNER/REPOSITORY/actions/workflows/WORKFLOW-FILE/badge.svg)
