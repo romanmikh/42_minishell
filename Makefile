@@ -34,6 +34,7 @@ RM				=	rm -rf
 # Structure
 LIB_DIR					=	./lib
 LIBFT					=	$(LIB_DIR)/libft/libft.a
+READLINE 			= -lreadline
 
 SRC_DIR					=	./src
 APP_DIR					=	$(SRC_DIR)/app
@@ -42,7 +43,7 @@ COMMON_DIR				=	$(SRC_DIR)/common
 INCLUDES				=	-I./inc \
 							-I $(LIB_DIR)/libft/inc \
 
-MAIN_SOURCE				=	$(SRC_DIR)/main.c
+MAIN_SOURCE				=	$(wildcard $(SRC_DIR)/*.c)
 APP_SOURCES				=	$(wildcard $(APP_DIR)/*.c)
 COMMON_SOURCES			=	$(wildcard $(COMMON_DIR)/*.c)
 
@@ -63,7 +64,7 @@ OBJECTS					=	$(MAIN_OBJECT) \
 all: $(NAME)
 
 $(NAME): $(LIBFT) $(OBJECTS)
-	@$(COMPILER) $(CFLAGS) $(OBJECTS) $(INCLUDES) $(LIBFT) -o $@
+	@$(COMPILER) $(CFLAGS) $(OBJECTS) $(INCLUDES) $(LIBFT) -o $@ $(READLINE)
 	@echo "$(GREEN)minishell compiled$(DEF_COLOR)"
 	
 $(BUILD_DIR)/src/%.o: $(SRC_DIR)/%.c
