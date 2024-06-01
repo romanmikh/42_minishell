@@ -16,11 +16,9 @@ jobs:
       uses: actions/download-artifact@v4
       with:
         name: minishell
-        path: ./minishell
-    - name: List files in directory
-      run: ls -l ./minishell
+        path: ./project
     - name: Unzip artifact
-      run: unzip ./minishell/minishell.zip -d ./minishell
+      run: unzip ./project/minishell.zip -d ./minishell
     - name: Install Valgrind
       run: sudo apt-get update && sudo apt-get install -y valgrind
     - name: Run Valgrind
