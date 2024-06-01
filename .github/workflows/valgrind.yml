@@ -16,7 +16,6 @@ jobs:
       uses: actions/download-artifact@v4
       with:
         name: minishell
-        path: ./project
     - name: Unzip artifact
       run: unzip ./project/minishell.zip -d ./minishell
     - name: Install Valgrind
