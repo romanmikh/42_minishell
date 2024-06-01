@@ -19,5 +19,5 @@ jobs:
     - name: Build project
       run: make
     - name: Run Valgrind
-      run: valgrind --leak-check=full --show-leak-kinds=all ./minishell/minishell
+      run: valgrind --leak-check=full --show-leak-kinds=all ./minishell
 
