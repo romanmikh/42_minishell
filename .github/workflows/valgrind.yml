@@ -17,7 +17,11 @@ jobs:
       with:
         name: minishell
         path: ./minishell
+    - name: List files in directory
+      run: ls -l ./minishell
+    - name: Unzip artifact
+      run: unzip ./minishell/minishell.zip -d ./minishell
     - name: Install Valgrind
       run: sudo apt-get update && sudo apt-get install -y valgrind
     - name: Run Valgrind
-      run: valgrind --leak-check=full --show-leak-kinds=all ./minishell
+      run: valgrind --leak-check=full --show-leak-kinds=all ./minishell/minishell
