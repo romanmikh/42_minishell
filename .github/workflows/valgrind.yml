@@ -1,0 +1,23 @@
+name: Valgrind Check
+
+on:
+  workflow_run:
+    workflows: ["Build Project"]
+    types:
+      - completed
+
+jobs:
+  valgrind:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: Download build artifacts
+      uses: actions/download-artifact@v3
+      with:
+        name: minishell
+        path: ./minishell
+    - name: Install Valgrind
+      run: sudo apt-get update && sudo apt-get install -y valgrind
+    - name: Run Valgrind
+      run: valgrind --leak-check=full --show-leak-kinds=all ./minishell
