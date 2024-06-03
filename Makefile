@@ -39,6 +39,7 @@ READLINE 			= -lreadline
 SRC_DIR					=	./src
 APP_DIR					=	$(SRC_DIR)/app
 COMMON_DIR				=	$(SRC_DIR)/common
+BUILTIN_DIR				=	$(COMMON_DIR)/builtins
 
 INCLUDES				=	-I./inc \
 							-I $(LIB_DIR)/libft/inc \
@@ -46,10 +47,12 @@ INCLUDES				=	-I./inc \
 MAIN_SOURCE				=	$(wildcard $(SRC_DIR)/*.c)
 APP_SOURCES				=	$(wildcard $(APP_DIR)/*.c)
 COMMON_SOURCES			=	$(wildcard $(COMMON_DIR)/*.c)
+BUILTIN_SOURCES			=	$(wildcard $(BUILTIN_DIR)/*.c)
 
 SOURCES					=	$(MAIN_SOURCE) \
 							$(APP_SOURCES) \
-							$(COMMON_SOURCES)
+							$(COMMON_SOURCES) \
+							$(BUILTIN_SOURCES)
 # Building
 BUILD_DIR				=	./build
 MAIN_OBJECT				=	$(patsubst $(SRC_DIR)/%.c, $(BUILD_DIR)/src/%.o, $(MAIN_SOURCE))
