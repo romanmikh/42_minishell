@@ -1,8 +1,0 @@
-{
-   ignore_readline_leaks
-   Memcheck:Leak
-   fun:malloc
-   fun:xmalloc
-   fun:readline
-   obj:/usr/lib/x86_64-linux-gnu/libreadline.so.*
-}
