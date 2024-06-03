@@ -34,31 +34,31 @@ RM				=	rm -rf
 # Structure
 LIB_DIR					=	./lib
 LIBFT					=	$(LIB_DIR)/libft/libft.a
-READLINE 			= -lreadline
+READLINE 				= -lreadline
 
 SRC_DIR					=	./src
-APP_DIR					=	$(SRC_DIR)/app
-COMMON_DIR				=	$(SRC_DIR)/common
+BUILTINS_DIR			=	$(SRC_DIR)/builtins
+EXECUTE_DIR				=	$(SRC_DIR)/execute
 
 INCLUDES				=	-I./inc \
-							-I $(LIB_DIR)/libft/inc \
+							-I $(LIB_DIR)/libft \
 
 MAIN_SOURCE				=	$(wildcard $(SRC_DIR)/*.c)
-APP_SOURCES				=	$(wildcard $(APP_DIR)/*.c)
-COMMON_SOURCES			=	$(wildcard $(COMMON_DIR)/*.c)
+BUILTINS_SOURCES		=	$(wildcard $(BUILTINS_DIR)/*.c)
+EXECUTE_SOURCES			=	$(wildcard $(EXECUTE_DIR)/*.c)
 
 SOURCES					=	$(MAIN_SOURCE) \
-							$(APP_SOURCES) \
-							$(COMMON_SOURCES)
+							$(BUILTINS_SOURCES) \
+							$(EXECUTE_SOURCES)	
 # Building
 BUILD_DIR				=	./build
 MAIN_OBJECT				=	$(patsubst $(SRC_DIR)/%.c, $(BUILD_DIR)/src/%.o, $(MAIN_SOURCE))
-APP_OBJECTS				=	$(patsubst $(APP_DIR)/%.c, $(BUILD_DIR)/src/app/%.o, $(APP_SOURCES))
-COMMON_OBJECTS			=	$(patsubst $(COMMON_DIR)/%.c, $(BUILD_DIR)/common/app/%.o, $(COMMON_SOURCES))
+BUILTINS_OBJECTS		=	$(patsubst $(BUILTINS_DIR)/%.c, $(BUILD_DIR)/src/builtins/%.o, $(BUILTINS_SOURCES))
+EXECUTE_OBJECTS			=	$(patsubst $(EXECUTE_DIR)/%.c, $(BUILD_DIR)/src/execute/%.o, $(EXECUTE_SOURCES))
 
 OBJECTS					=	$(MAIN_OBJECT) \
-							$(APP_OBJECTS) \
-							$(COMMON_OBJECTS)
+							$(BUILTINS_OBJECTS) \
+							$(EXECUTE_OBJECTS)
 
 # Processing
 all: $(NAME)
@@ -71,11 +71,11 @@ $(BUILD_DIR)/src/%.o: $(SRC_DIR)/%.c
 	@mkdir -p $(@D)
 	@$(COMPILER) $(CFLAGS) $(INCLUDES) -c $< -o $@
 
-$(BUILD_DIR)/src/app/%.o: $(APP_DIR)/%.c
+$(BUILD_DIR)/src/builtins/%.o: $(BUILTINS_DIR)/%.c
 	@mkdir -p $(@D)
 	@$(COMPILER) $(CFLAGS) $(INCLUDES) -c $< -o $@
 
-$(BUILD_DIR)/src/common/%.o: $(COMMON_DIR)/%.c
+$(BUILD_DIR)/src/execute/%.o: $(EXECUTE_DIR)/%.c
 	@mkdir -p $(@D)
 	@$(COMPILER) $(CFLAGS) $(INCLUDES) -c $< -o $@
 
