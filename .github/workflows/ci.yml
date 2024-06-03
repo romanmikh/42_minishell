@@ -19,4 +19,4 @@ jobs:
     - name: Build project
       run: make
     - name: Run Valgrind
-      run: valgrind --leak-check=full --show-leak-kinds=all --suppressions=.github/workflows/valgrind.supp ./minishell
+      run: valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes --suppressions=valgrind.supp -s ./minishell
