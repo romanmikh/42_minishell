@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "tokens.h"
+#include "execute.h"
 
 void	handle_args(t_token **tokens, char **argv)
 {
@@ -47,9 +48,10 @@ int	main(void)
 			add_history(line);
 		write_history(history_file);
 		parsed_text = ft_split(line, ' ');
-		printf("\033[31m@maxishell: command not found: %s\033[0m\n", parsed_text[0]);
+		// printf("\033[31m@maxishell: command not found: %s\033[0m\n", parsed_text[0]);
 		handle_args(&tokens, parsed_text);
 		arr = list_to_array(tokens);
+		execute(arr);
 		print_stack(&tokens);
 		free_stack(&tokens);
 		free(line);
