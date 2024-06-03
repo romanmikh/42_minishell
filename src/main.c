@@ -23,76 +23,100 @@ void	handle_args(t_token **tokens, char **argv)
 		i++;
 	}
 }
-
-// to replace ft_split(' ') in main()
-char **parse_input(char *input)
+void handle_quotes(char **tokens, int *pos, char **input)
 {
-  int pos;
-  char *token;
-  char **tokens;
-  char *delim;
-  int bufsize;
+    char quote = *(*input)++;
+    char *start = *input;
 
-  pos = 0;
-  bufsize = 64;
-  delim = " ";
-  tokens = malloc(bufsize * sizeof(char *));
-  if (!tokens)
-  {
-    ft_printf("@maxishell: allocation error\n");
-    exit(EXIT_FAILURE);
-  }
-  while (*input)
-  {
-    while (*input && ft_strchr(delim, *input))
-      input++;
-    if (*input == '\0')
-      break;
-    if (*input == '\'' || *input == '\"')
+    while (**input && **input != quote)
+        (*input)++;
+
+    if (**input == '\0')
     {
-      char quote;
-      char *start;
-
-      quote = *input++;
-      start = input;
-      while (*input && *input != quote)
-        input++;
-      if (*input == '\0')
-      {
-        ft_printf("@maxishell: syntax error: unmatched %c\n", quote);
+        printf("@maxishell: syntax error: unmatched %c\n", quote);
         free(tokens);
-        return (NULL);
-      }
-      *input = '\0'; 
-      token = ft_strndup(start, input - start);
-      input++;
-      if (ft_strlen(token) > 0)
-        tokens[pos++] = token;
+        tokens = NULL;
+        return;
     }
 
-    else if (*input == '|' || *input == '<' || *input == '>')
+    **input = '\0';
+    tokens[*pos] = strndup(start, *input - start);
+    (*input)++;
+
+    if (strlen(tokens[*pos]) > 0)
+        (*pos)++;
+}
+
+void handle_special_chars(char **tokens, int *pos, char **input)
+{
+    if ((**input == '<' && *(*input + 1) == '<') || (**input == '>' && *(*input + 1) == '>'))
     {
-      tokens[pos++] = ft_strndup(input, 1);
-      if ((*input == '<' && *(input + 1) == '<') || (*input == '>' && *(input + 1) == '>'))
-      {
-        tokens[pos - 1] = ft_strndup(input, 2);
-        input++;
-      }
-      input++;
+        tokens[*pos] = strndup(*input, 2);
+        (*input) += 2;
     }
     else
     {
-      char *start;
-
-      start = input; 
-      while (*input && !ft_strchr(delim, *input) && *input != '|' && *input != '<' && *input != '>' && *input != '\"' && *input != '\'')
-        input++;
-      token = ft_strndup(start, input - start);
-      tokens[pos++] = token;
+        tokens[*pos] = strndup(*input, 1);
+        (*input)++;
     }
-  }
-  tokens[pos] = NULL;
-  return (tokens);
+    (*pos)++;
+}
+
+void handle_regular_chars(char **tokens, int *pos, char **input, char *delim)
+{
+    char *start = *input;
+
+    while (**input && !strchr(delim, **input) && **input != '|' && **input != '<' && **input != '>' && **input != '\"' && **input != '\'')
+        (*input)++;
+
+    tokens[*pos] = strndup(start, *input - start);
+    (*pos)++;
+}
+
+char **parse_input(char *input)
+{
+    int pos = 0;
+    int bufsize = 64;
+    char *delim = " ";
+    char **tokens = malloc(bufsize * sizeof(char *));
+    if (!tokens)
+    {
+        printf("@maxishell: allocation error\n");
+        exit(EXIT_FAILURE);
+    }
+
+    while (*input)
+    {
+        while (*input && strchr(delim, *input))
+            input++;
+
+        if (*input == '\0')
+            break;
+
+        if (*input == '\'' || *input == '\"')
+            handle_quotes(tokens, &pos, &input);
+        else if (*input == '|' || *input == '<' || *input == '>')
+            handle_special_chars(tokens, &pos, &input);
+        else
+            handle_regular_chars(tokens, &pos, &input, delim);
+
+        if (tokens == NULL)
+            return NULL; // Return if there's a syntax error
+
+        if (pos >= bufsize)
+        {
+            bufsize += 64;
+            tokens = realloc(tokens, bufsize * sizeof(char *));
+            if (!tokens)
+            {
+                printf("@maxishell: allocation error\n");
+                exit(EXIT_FAILURE);
+            }
+        }
+    }
+
+    tokens[pos] = NULL;
+    return tokens;
 }
 char *generate_prompt()
 {
@@ -114,7 +138,6 @@ char *generate_prompt()
     if (!prompt)
         exit(EXIT_FAILURE);
     ft_strcpy(prompt, s1);
-    printf("%s\n", prompt);
     ft_strcat(prompt, user);
     ft_strcat(prompt, s2);
     ft_strcat(prompt, pwd);
@@ -148,7 +171,6 @@ int	main(void)
 		if (parsed_text != NULL)
     {
       printf("\033[31m@maxishell: command not found: %s\033[0m\n", parsed_text[0]);
-      fflush(stdout);
   		handle_args(&tokens, parsed_text);
   		arr = list_to_array(tokens);
   		print_stack(&tokens);
