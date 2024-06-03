@@ -94,24 +94,32 @@ char **parse_input(char *input)
   tokens[pos] = NULL;
   return (tokens);
 }
-
-void display_prompt()
+char *generate_prompt()
 {
-  char *user;
+    char *user;
+    char *pwd;
+    char *prompt;
+    char *s1;
+    char *s2;
+    char *s3;
+    size_t prompt_len;
 
-  user = getenv("LOGNAME");
-  ft_printf("🌴\e[1m %s@maxishell> \e[m", user);
-}
-
-void history_manager(char *line)
-{
-  const char	*history_file;
-	
-  history_file = "./utils/.maxishell_history";
-	read_history(history_file);
-  if (*line)
-	  add_history(line);
-	write_history(history_file);
+    user = getenv("LOGNAME");
+    pwd = getenv("PWD");
+    s1 = "🌴\e[1m ";
+    s2 = "@maxishell:~";
+    s3 = "> \e[m";
+    prompt_len = strlen(s1) + strlen(user) + strlen(s2) + strlen(pwd) + strlen(s3) + 1;
+    prompt = (char *)malloc(prompt_len);
+    if (!prompt)
+        exit(EXIT_FAILURE);
+    ft_strcpy(prompt, s1);
+    printf("%s\n", prompt);
+    ft_strcat(prompt, user);
+    ft_strcat(prompt, s2);
+    ft_strcat(prompt, pwd);
+    ft_strcat(prompt, s3);
+    return (prompt);
 }
 
 int	main(void)
@@ -121,17 +129,21 @@ int	main(void)
 	char		**arr;
 	char		**parsed_text;
 	t_token		*tokens;
+  const char	*history_file;
 
+  history_file = "./utils/.maxishell_history";
+	read_history(history_file);
 	repeat = 1;
 	while (repeat)
 	{
 
 	  tokens = NULL;
-    display_prompt();
-  	line = readline("");
+  	line = readline(generate_prompt());
 		if (!line || ft_strcmp(line, "exit") == 0)
 			break ;
-    history_manager(line);
+    if (*line)
+	    add_history(line);
+  	write_history(history_file);
 		parsed_text = parse_input(line);
 		if (parsed_text != NULL)
     {
