@@ -41,7 +41,7 @@ int	main(void)
 	while (repeat)
 	{
 		tokens = NULL;
-		line = readline("🌴\e[1m dimrom@maxishell> \e[m");
+		line = readline("🌴\e[1m dimrom@maxishell-> \e[m");
 		if (!line || ft_strcmp(line, "exit") == 0)
 			break ;
 		if (*line)
@@ -52,7 +52,7 @@ int	main(void)
 		handle_args(&tokens, parsed_text);
 		arr = list_to_array(tokens);
 		execute(arr);
-		print_stack(&tokens);
+		// print_stack(&tokens);
 		free_stack(&tokens);
 		free(line);
 		free(arr);
