@@ -64,8 +64,10 @@ char **parse_input(char *input)
         return (NULL);
       }
       *input = '\0'; 
-      token = ft_strdup(start);
+      token = ft_strndup(start, input - start);
       input++;
+      if (ft_strlen(token) > 0)
+        tokens[pos++] = token;
     }
 
     else if (*input == '|' || *input == '<' || *input == '>')
@@ -83,7 +85,7 @@ char **parse_input(char *input)
       char *start;
 
       start = input; 
-      while (*input && !ft_strchr(delim, *input) && *input != '|' && *input != '<' && *input != '>')
+      while (*input && !ft_strchr(delim, *input) && *input != '|' && *input != '<' && *input != '>' && *input != '\"' && *input != '\'')
         input++;
       token = ft_strndup(start, input - start);
       tokens[pos++] = token;
@@ -93,28 +95,43 @@ char **parse_input(char *input)
   return (tokens);
 }
 
-// getpwuid(geteuid())->pw_name // username, but uses disallowed functions
+void display_prompt()
+{
+  char *user;
+
+  user = getenv("LOGNAME");
+  ft_printf("🌴\e[1m %s@maxishell> \e[m", user);
+}
+
+void history_manager(char *line)
+{
+  const char	*history_file;
+	
+  history_file = "./utils/.maxishell_history";
+	read_history(history_file);
+  if (*line)
+	  add_history(line);
+	write_history(history_file);
+}
+
 int	main(void)
 {
 	char		*line;
 	int			repeat;
 	char		**arr;
 	char		**parsed_text;
-	const char	*history_file;
 	t_token		*tokens;
 
-	history_file = "./utils/.maxishell_history";
-	read_history(history_file);
 	repeat = 1;
 	while (repeat)
 	{
-		tokens = NULL;
-		line = readline("🌴\e[1m dimrom@maxishell> \e[m");
+
+	  tokens = NULL;
+    display_prompt();
+  	line = readline("");
 		if (!line || ft_strcmp(line, "exit") == 0)
 			break ;
-		if (*line)
-			add_history(line);
-		write_history(history_file);
+    history_manager(line);
 		parsed_text = parse_input(line);
 		if (parsed_text != NULL)
     {
