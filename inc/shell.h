@@ -1,24 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   env.c                                              :+:      :+:    :+:   */
+/*   shell.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dmdemirk <dmdemirk@student.42london.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/03 16:32:34 by dmdemirk          #+#    #+#             */
-/*   Updated: 2024/06/04 12:21:02 by dmdemirk         ###   ########.fr       */
+/*   Created: 2024/06/04 11:19:58 by dmdemirk          #+#    #+#             */
+/*   Updated: 2024/06/04 18:06:38 by dmdemirk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include "shell.h"
+#ifndef SHELL_H
+# define SHELL_H
 
-int	builtin_env(t_minishell_data *data)
+typedef struct s_minishell_data
 {
-	int	i;
+	char	**args;
+	char	**envp;
+	char	*current_dir;
+	int		exit_status;
+}				t_minishell_data;
 
-	i = -1;
-	while (data->envp[++i])
-		printf("%s\n", data->envp[i]);
-	return (0);
-}
+#endif
