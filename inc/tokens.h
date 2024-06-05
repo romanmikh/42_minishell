@@ -29,18 +29,21 @@ typedef struct s_token
 	struct s_token	*prev;
 }	t_token;
 
-typedef struct s_AST_node
-{
-	struct s_AST_node	*left;
-	struct s_AST_node	*right;
-	char				*value;
-	char				*type; // + - * / % // | || & && 
-}	t_AST_node;
-
 void		add_node(t_token **head, char *str);
 void		print_stack(t_token **stack);
 void		free_stack(t_token **stack);
 int			calc_stack_size(t_token *stack);
 char		**list_to_array(t_token *head);
+void	build_linked_list(t_token **tokens, char **argv);
+void	handle_quotes(char **tokens, int *pos, char **input);
+void	handle_special_chars(char **tokens, int *pos, char **input);
+void	handle_regular_chars(char **tokens, int *pos, char **input, char *delim);
+void	skip_delimiters(char **input, char *delim);
+void	reallocate_tokens(char ***tokens, int *bufsize);
+void	parse_loop(char **input, char **tokens, int *pos, int *bufsize);
+char	**parse_input(char *input);
+char	*generate_prompt(void);
+
+char    *generate_prompt(void);
 
 #endif
