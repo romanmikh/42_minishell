@@ -6,7 +6,7 @@
 #    By: dmdemirk <dmdemirk@student.42london.c      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/30 12:57:25 by dmdemirk          #+#    #+#              #
-#    Updated: 2024/06/05 15:16:25 by rmikhayl         ###   ########.fr        #
+#    Updated: 2024/06/05 18:20:02 by rmikhayl         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -45,7 +45,7 @@ BUILTINS_DIR			=	$(SRC_DIR)/builtins
 EXECUTE_DIR				=	$(SRC_DIR)/execute
 
 INCLUDES				=	-I./inc \
-							-I $(LIB_DIR)/libft \
+							-I $(LIB_DIR)/libft/inc \
 
 MAIN_SOURCE				=	$(wildcard $(SRC_DIR)/*.c)
 APP_SOURCES				=	$(wildcard $(APP_DIR)/*.c)

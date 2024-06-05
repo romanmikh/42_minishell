@@ -1,35 +1,88 @@
+# **************************************************************************** #
+#                                                                              #
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
 #    By: rmikhayl <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/12/17 11:17:41 by rmikhayl          #+#    #+#              #
-#    Updated: 2023/12/17 11:17:43 by rmikhayl         ###   ########.fr        #
+#    Created: 2024/06/05 18:15:56 by rmikhayl          #+#    #+#              #
+#    Updated: 2024/06/05 18:16:01 by rmikhayl         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS =  $(wildcard *.c)    
+NAME =	libft.a
+CC = 	clang
+AR =	ar rcs
+RM = 	rm -rf
 
-NAME =      libft.a
-OBJS =      $(SRCS:.c=.o)
-CC =        cc
-CFLAGS =    -Wall -Wextra -Werror -I.
-RM =        rm -f
+CFLAGS =	-Wall -Werror -Wextra
+MAKEFLAGS += --silent
+SHELL := bash
 
-all: $(NAME)
+# *************************************************************************** #
 
-$(NAME): $(OBJS)
-	ar rcs $(NAME) $(OBJS)
+B =		$(shell tput bold)
+BLA =	$(shell tput setaf 0)
+RED =	$(shell tput setaf 1)
+GRE =	$(shell tput setaf 2)
+YEL =	$(shell tput setaf 3)
+BLU =	$(shell tput setaf 4)
+MAG =	$(shell tput setaf 5)
+CYA =	$(shell tput setaf 6)
+WHI =	$(shell tput setaf 7)
+D =		$(shell tput sgr0)
+BEL =	$(shell tput bel)
+CLR =	$(shell tput el 1)
 
-%.o: %.c
-	$(CC) $(CFLAGS) -c $< -o $@
 
+# *************************************************************************** #
+
+SRCSPATH =	./src/
+OBJSPATH =	./obj/
+INC 		 =	./inc/
+
+SRCS =		$(wildcard $(SRCSPATH)*.c) $(wildcard $(SRCSPATH)**/*.c)
+SRCSNAME =	$(subst $(SRCSPATH), , $(SRCS))
+
+OBJSNAME =	$(SRCSNAME:.c=.o)
+OBJS =		$(addprefix $(OBJSPATH), $(OBJSNAME))
+
+# *************************************************************************** #
+
+define	progress_bar
+	i=0
+	while [[ $$i -le $(words $(SRCS)) ]] ; do \
+		printf " " ; \
+		((i = i + 1)) ; \
+	done
+	printf "$(B)]\r[$(GRE)"
+endef
+
+# *************************************************************************** #
+
+all:		launch $(NAME)
+	@printf "\n$(B)$(CYA)$(NAME) binaries compiled$(D)\n"
+
+launch:
+	$(call progress_bar)
+
+$(NAME):	$(OBJS)
+	$(AR) $(NAME) $(OBJS)
+
+$(OBJSPATH)%.o: $(SRCSPATH)%.c
+	@mkdir -p $(dir $@)
+	$(CC) $(CFLAGS) -I$(INC) -c $< -o $@
+	@printf "█"
+	
 clean:
-	$(RM) $(OBJS)
+	@$(RM) $(OBJSPATH)
 
-fclean: clean
-	$(RM) $(NAME)
+fclean:		clean
+	@$(RM) $(OBJSPATH)
+	@$(RM) $(NAME)
 
-re: fclean all
+re:			fclean all
 
-.PHONY: clean fclean re all
+.PHONY: all clean fclean re
+
+# *************************************************************************** #

@@ -6,14 +6,14 @@
 /*   By: rmikhayl <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/31 20:53:51 by rmikhayl          #+#    #+#             */
-/*   Updated: 2024/06/05 17:27:18 by rmikhayl         ###   ########.fr       */
+/*   Updated: 2024/06/05 18:17:09 by rmikhayl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef TOKENS_H
 # define TOKENS_H
 
-# include "../lib/libft/libft.h"
+# include "../lib/libft/inc/libft.h"
 # include <stdlib.h>
 # include <stdio.h>
 # include <stdio.h>
