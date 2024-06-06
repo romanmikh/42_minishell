@@ -6,7 +6,7 @@
 /*   By: rmikhayl <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 13:23:26 by rmikhayl          #+#    #+#             */
-/*   Updated: 2024/06/05 17:18:03 by rmikhayl         ###   ########.fr       */
+/*   Updated: 2024/06/06 18:15:09 by rmikhayl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,33 +14,18 @@
 #include "execute.h"
 #include "shell.h"
 
-void	init_minishell_data(t_minishell_data *data, char **envp)
+void	exit_status_var(void)
 {
-	data->args = NULL;
-	data->envp = envp;
-	data->current_dir = getcwd(NULL, 0);
-	data->exit_status = 0;
+	ft_printf("\033[0;93mTODO: add logic for '$?'\n");
 }
 
-void	execute_command(char **parsed_text, t_token **tokens)
+void	is_exit_status_var(char *line)
 {
-	if (parsed_text != NULL)
-	{
-		printf("\033[31m@maxishell: command not found: \
-				%s\033[0m\n", parsed_text[0]);
-		build_linked_list(tokens, parsed_text);
-		print_stack(tokens);
-	}
-}
+	char	*var_pos;
 
-void	initialise(int argc, char **argv)
-{
-	if (argc > 1)
-	{
-		printf("Usage: %s\n", argv[0]);
-		exit(EXIT_FAILURE);
-	}
-	read_history(HISTORY_PATH);
+	var_pos = ft_strstr(line, "$?");
+	if (var_pos != 0)
+		exit_status_var();
 }
 
 int	main(int argc, char **argv, char **envp)
@@ -56,6 +41,8 @@ int	main(int argc, char **argv, char **envp)
 	{
 		tokens = NULL;
 		line = readline(generate_prompt());
+		is_exit_status_var(line);
+		line = check_heredoc(line);
 		if (!line || ft_strcmp(line, "exit") == 0)
 			break ;
 		make_history(line);
