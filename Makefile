@@ -6,7 +6,7 @@
 #    By: dmdemirk <dmdemirk@student.42london.c      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/30 12:57:25 by dmdemirk          #+#    #+#              #
-#    Updated: 2024/06/05 18:20:02 by rmikhayl         ###   ########.fr        #
+#    Updated: 2024/06/07 18:58:21 by rmikhayl         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,7 +37,7 @@ LIBFT					=	$(LIB_DIR)/libft/libft.a
 READLINE 				= -lreadline
 
 SRC_DIR					=	./src
-UTILS_DIR				= ./utils
+UTILS_DIR				= $(SRC_DIR)/utils
 APP_DIR					=	$(SRC_DIR)/app
 COMMON_DIR			=	$(SRC_DIR)/common
 PARSER_DIR			= $(SRC_DIR)/parser
