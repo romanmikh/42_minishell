@@ -11,32 +11,37 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+#include "env.h"
+#include <stdio.h>
 
-char	*ft_find_path(char *cmd, char **envp);
+char	*ft_find_path(char *cmd, t_env *envp);
 void	ft_free_2d_arr(char **arr);
 
-char	*ft_find_path(char *cmd, char **envp)
+char	*ft_find_path(char *cmd, t_env *envp)
 {
-	char	**directories;
-	char	*temp_path;
-	char	*path;
+	char	**path;
+	char	*tmp;
+	char	*tmp2;
 	int		i;
 
-	i = 0;
-	while (ft_strnstr(envp[i], "PATH", 4) == 0)
-		++i;
-	directories = ft_split(envp[i] + 5, ':');
+	path = ft_split(get_env_value(envp, "PATH"), ':');
+	int j = -1;
+	while (path[++j] != NULL)
+		printf("path[%d]: %s\n", j, path[j]);
 	i = -1;
-	while (directories[++i] != NULL)
+	while (path[++i] != NULL)
 	{
-		temp_path = ft_strjoin(directories[i], "/");
-		path = ft_strjoin(temp_path, cmd);
-		free(temp_path);
-		if (access(path, F_OK | X_OK) == 0)
-			return (path);
-		free(path);
+		tmp = ft_strjoin(path[i], "/");
+		tmp2 = ft_strjoin(tmp, cmd);
+		free(tmp);
+		if (access(tmp2, F_OK) == 0)
+		{
+			ft_free_2d_arr(path);
+			return (tmp2);
+		}
+		free(tmp2);
 	}
-	ft_free_2d_arr(directories);
+	ft_free_2d_arr(path);
 	return (NULL);
 }
 

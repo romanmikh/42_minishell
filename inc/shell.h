@@ -13,10 +13,13 @@
 #ifndef SHELL_H
 # define SHELL_H
 
+#include "env.h"
+
 typedef struct s_minishell_data
 {
 	char	**args;
-	char	**envp;
+	t_env	*envp;
+	t_env	*local_env;
 	char	*current_dir;
 	int		exit_status;
 }				t_minishell_data;

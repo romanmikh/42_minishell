@@ -10,7 +10,16 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int	builtin_exit(void)
+#include "shell.h"
+#include <unistd.h>
+#include "libft.h"
+#include <stdlib.h>
+
+int	builtin_exit(t_minishell_data *data)
 {
-	return (0);
+	const char	*message;
+
+	message = "exit\n";
+	write(STDOUT_FILENO, message, ft_strlen(message));
+	exit(data->exit_status);
 }

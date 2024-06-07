@@ -49,6 +49,9 @@ int	main(int argc, char **argv, char **envp)
 		parsed_text = parse_input(line);
 		execute_command(parsed_text, &tokens);
 		data.args = list_to_array(tokens);
+		// int i = -1;
+		// while (data/.args[++i])
+			// printf("args[%d]: %s\n", i, data.args[i]);
 		execute(&data);
 		cleanup(line, parsed_text, tokens);
 	}

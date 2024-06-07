@@ -38,6 +38,7 @@ READLINE 				= -lreadline
 
 SRC_DIR					=	./src
 UTILS_DIR				= ./utils
+ENV_DIR					=	$(SRC_DIR)/env
 APP_DIR					=	$(SRC_DIR)/app
 COMMON_DIR			=	$(SRC_DIR)/common
 PARSER_DIR			= $(SRC_DIR)/parser
@@ -49,6 +50,7 @@ INCLUDES				=	-I./inc \
 
 MAIN_SOURCE				=	$(wildcard $(SRC_DIR)/*.c)
 APP_SOURCES				=	$(wildcard $(APP_DIR)/*.c)
+ENV_SOURCES				=	$(wildcard $(ENV_DIR)/*.c)
 COMMON_SOURCES				=	$(wildcard $(COMMON_DIR)/*.c)
 UTILS_SOURCES				= 	$(wildcard $(UTILS_DIR)/*.c)
 PARSER_SOURCES 				= 	$(wildcard $(PARSER_DIR)/*.c)
@@ -57,6 +59,7 @@ EXECUTE_SOURCES				=	$(wildcard $(EXECUTE_DIR)/*.c)
 
 SOURCES					=	$(MAIN_SOURCE) \
 							$(APP_SOURCES) \
+							$(ENV_SOURCES) \
 							$(COMMON_SOURCES) \
 							$(UTILS_SOURCES) \
 							$(PARSER_DIR) \
@@ -66,6 +69,7 @@ SOURCES					=	$(MAIN_SOURCE) \
 BUILD_DIR				=	./build
 MAIN_OBJECT				=	$(patsubst $(SRC_DIR)/%.c, $(BUILD_DIR)/src/%.o, $(MAIN_SOURCE))
 APP_OBJECTS				=	$(patsubst $(APP_DIR)/%.c, $(BUILD_DIR)/src/app/%.o, $(APP_SOURCES))
+ENV_OBJECTS				=	$(patsubst $(ENV_DIR)/env/%.c, $(BUILD_DIR)/src/app/env/%.o, $(ENV_SOURCES))
 COMMON_OBJECTS				=	$(patsubst $(COMMON_DIR)/%.c, $(BUILD_DIR)/common/app/%.o, $(COMMON_SOURCES))
 UTILS_OBJECTS				=	$(patsubst $(UTILS_DIR)/%.c, $(BUILD_DIR)/utils/%.o, $(UTILS_SOURCES))
 PARSER_OBJECTS				=	 $(patsubst $(PARSER_DIR)/%.c, $(BUILD_DIR)/src/parser/%.o, $(PARSER_SOURCES))
@@ -74,6 +78,7 @@ EXECUTE_OBJECTS				=	$(patsubst $(EXECUTE_DIR)/%.c, $(BUILD_DIR)/src/execute/%.o
 
 OBJECTS					=	$(MAIN_OBJECT) \
 							$(APP_OBJECTS) \
+							$(ENV_OBJECTS) \
 							$(EXECUTE_OBJECTS) \
 							$(COMMON_OBJECTS) \
 							$(BUILTINS_OBJECTS) \
@@ -88,6 +93,11 @@ $(NAME): $(LIBFT) $(OBJECTS)
 	@echo "$(GREEN)minishell compiled$(DEF_COLOR)"
 	
 $(BUILD_DIR)/src/%.o: $(SRC_DIR)/%.c
+	@mkdir -p $(@D)
+	@$(COMPILER) $(CFLAGS) $(INCLUDES) -c $< -o $@
+
+
+$(BUILD_DIR)/src/env/%.o: $(ENV_DIR)/%.c
 	@mkdir -p $(@D)
 	@$(COMPILER) $(CFLAGS) $(INCLUDES) -c $< -o $@
 

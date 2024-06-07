@@ -11,11 +11,14 @@
 /* ************************************************************************** */
 
 #include "tokens.h"
+#include "env.h"
 
 void	init_minishell_data(t_minishell_data *data, char **envp)
 {
 	data->args = NULL;
-	data->envp = envp;
+	data->envp = NULL;
+	init_env(&data->envp, envp);
+	data->local_env = NULL;
 	data->current_dir = getcwd(NULL, 0);
 	data->exit_status = 0;
 }
