@@ -24,6 +24,7 @@ char	**env_to_array(t_env *envp)
 	t_env	*curr_node;
 	char	**env_array;
 	int		i;
+	char	*temp;
 
 	i = 0;
 	curr_node = envp;
@@ -39,8 +40,9 @@ char	**env_to_array(t_env *envp)
 	curr_node = envp;
 	while (curr_node)
 	{
-		env_array[i] = ft_strjoin(curr_node->key, "=");
-		env_array[i] = ft_strjoin(env_array[i], curr_node->value);
+		temp = ft_strjoin(curr_node->key, "=");
+		env_array[i] = ft_strjoin(temp, curr_node->value);
+		free(temp);
 		i++;
 		curr_node = curr_node->next;
 	}

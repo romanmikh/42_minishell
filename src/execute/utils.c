@@ -20,8 +20,8 @@ void	ft_free_2d_arr(char **arr);
 char	*ft_find_path(char *cmd, t_env *envp)
 {
 	char	**path;
-	char	*tmp;
-	char	*tmp2;
+	char	*tmp_slash;
+	char	*tmp_full_path;
 	int		i;
 	int		j;
 
@@ -32,15 +32,15 @@ char	*ft_find_path(char *cmd, t_env *envp)
 	i = -1;
 	while (path[++i] != NULL)
 	{
-		tmp = ft_strjoin(path[i], "/");
-		tmp2 = ft_strjoin(tmp, cmd);
-		free(tmp);
-		if (access(tmp2, F_OK) == 0)
+		tmp_slash = ft_strjoin(path[i], "/");
+		tmp_full_path = ft_strjoin(tmp_slash, cmd);
+		free(tmp_slash);
+		if (access(tmp_full_path, F_OK) == 0)
 		{
 			ft_free_2d_arr(path);
-			return (tmp2);
+			return (tmp_full_path);
 		}
-		free(tmp2);
+		free(tmp_full_path);
 	}
 	ft_free_2d_arr(path);
 	return (NULL);
