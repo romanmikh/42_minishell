@@ -14,6 +14,7 @@ inc/: Header files for the project, defining interfaces for different modules.
 - pipe.h: Declarations for piping functions.
 - redirection.h: Declarations for redirection functions.
 - shell.h: General declarations for the shell.
+- tokens.h: Declarations for parsing functions.
 
 lib/: Directory for third-party libraries, such as libft.
 
@@ -24,4 +25,5 @@ src/: Source files for the project, organized into subdirectories by functionali
 - pipe/: Implementation of piping between commands.
 - test/: Tests
 - redirection/: Implementation of input/output redirection.
+- utils/: Implementation of auxiliary functions.
 - main.c: Entry point of the shell application.

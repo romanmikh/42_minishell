@@ -6,7 +6,7 @@
 /*   By: rmikhayl <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 13:23:26 by rmikhayl          #+#    #+#             */
-/*   Updated: 2024/06/06 18:15:09 by rmikhayl         ###   ########.fr       */
+/*   Updated: 2024/06/07 19:01:19 by rmikhayl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ int	main(int argc, char **argv, char **envp)
 	t_token				*tokens;
 	char				**parsed_text;
 
+	print_maxishell();
 	init_minishell_data(&data, envp);
 	initialise(argc, argv);
 	while (1)
