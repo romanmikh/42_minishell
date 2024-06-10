@@ -6,7 +6,7 @@
 /*   By: dmdemirk <dmdemirk@student.42london.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/07 17:38:25 by dmdemirk          #+#    #+#             */
-/*   Updated: 2024/06/10 17:23:25 by dmdemirk         ###   ########.fr       */
+/*   Updated: 2024/06/10 19:03:12 by dmdemirk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,6 @@ char	**env_to_array(t_env *envp)
 		curr_node = curr_node->next;
 	}
 	env_array = (char **)malloc(sizeof(char *) * (i + 1));
-	if (!env_array)
-		return (NULL);
 	i = 0;
 	curr_node = envp;
 	while (curr_node)
