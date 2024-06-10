@@ -40,7 +40,7 @@ int	main(int argc, char **argv, char **envp)
 	while (1)
 	{
 		tokens = NULL;
-		line = readline(generate_prompt());
+		line = readline(generate_prompt(&data));
 		is_exit_status_var(line);
 		line = check_heredoc(line);
 		if (!line || ft_strcmp(line, "exit") == 0)

@@ -6,57 +6,114 @@
 /*   By: dmdemirk <dmdemirk@student.42london.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/07 17:20:11 by dmdemirk          #+#    #+#             */
-/*   Updated: 2024/06/07 17:20:13 by dmdemirk         ###   ########.fr       */
+/*   Updated: 2024/06/10 17:16:32 by dmdemirk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "shell.h"
 #include "env.h"
 #include "libft.h"
 #include <stdlib.h>
+#include <stdio.h>
 
-char *get_env_value(t_env *envp, char *key);
-char **env_to_array(t_env *envp);
+void	init_env(t_env **data_envp, char **envp);
+void	add_env_node(t_env **data_envp, char *line);
+char	*get_env(t_env *envp, const char *key);
+void	set_env(t_env **env, const char *key, const char *value);
+void	unset_env(t_env **env, const char *name);
 
-char *get_env_value(t_env *envp, char *key)
+void	init_env(t_env **data_envp, char **envp)
 {
-    t_env *curr_node;
+	int	i;
 
-    curr_node = envp;
-    while (curr_node)
-    {
-        if (ft_strcmp(curr_node->key, key) == 0)
-            return (curr_node->value);
-        curr_node = curr_node->next;
-    }
-    return (NULL);
+	i = -1;
+	while (envp[++i])
+		add_env_node(data_envp, envp[i]);
 }
 
-char **env_to_array(t_env *envp)
+void	add_env_node(t_env **data_envp, char *line)
 {
-    t_env *curr_node;
-    char **env_array;
-    int i;
+	t_env	*new_node;
+	t_env	*curr_node;
+	char	*key;
+	char	*value;
 
-    i = 0;
-    curr_node = envp;
-    while (curr_node)
-    {
-        i++;
-        curr_node = curr_node->next;
-    }
-    env_array = (char **)malloc(sizeof(char *) * (i + 1));
-    if (!env_array)
-        return (NULL);
-    i = 0;
-    curr_node = envp;
-    while (curr_node)
-    {
-        env_array[i] = ft_strjoin(curr_node->key, "=");
-        env_array[i] = ft_strjoin(env_array[i], curr_node->value);
-        i++;
-        curr_node = curr_node->next;
-    }
-    env_array[i] = NULL;
-    return (env_array);
+	new_node = (t_env *)malloc(sizeof(t_env));
+	if (!new_node)
+		return ;
+	key = ft_strcdup(line, '=');
+	value = ft_strchr(line, '=') + 1;
+	new_node->key = ft_strdup(key);
+	new_node->value = ft_strdup(value);
+	new_node->next = NULL;
+	if (*data_envp == NULL)
+	{
+		*data_envp = new_node;
+		return ;
+	}
+	curr_node = *data_envp;
+	while (curr_node->next != NULL)
+		curr_node = curr_node->next;
+	curr_node->next = new_node;
+}
+
+char	*get_env(t_env *envp, const char *key)
+{
+	t_env	*curr_node;
+
+	curr_node = envp;
+	while (curr_node)
+	{
+		if (ft_strcmp(curr_node->key, key) == 0)
+			return (curr_node->value);
+		curr_node = curr_node->next;
+	}
+	return (NULL);
+}
+
+void	set_env(t_env **env, const char *key, const char *value)
+{
+	t_env	*current;
+	t_env	*new_env;
+
+	current = *env;
+	while (current)
+	{
+		if (ft_strcmp(current->key, key) == 0)
+		{
+			free(current->value);
+			current->value = ft_strdup(value);
+			return ;
+		}
+		current = current->next;
+	}
+	new_env = malloc(sizeof(t_env));
+	new_env->key = ft_strdup(key);
+	new_env->value = ft_strdup(value);
+	new_env->next = *env;
+	*env = new_env;
+}
+
+void	unset_env(t_env **env, const char *key)
+{
+	t_env	*current;
+	t_env	*prev;
+
+	current = *env;
+	prev = NULL;
+	while (current)
+	{
+		if (ft_strcmp(current->key, key) == 0)
+		{
+			if (prev)
+				prev->next = current->next;
+			else
+				*env = current->next;
+			free(current->key);
+			free(current->value);
+			free(current);
+			return ;
+		}
+		prev = current;
+		current = current->next;
+	}
 }

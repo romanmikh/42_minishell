@@ -6,7 +6,7 @@
 /*   By: dmdemirk <dmdemirk@student.42london.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/03 16:32:34 by dmdemirk          #+#    #+#             */
-/*   Updated: 2024/06/04 12:21:02 by dmdemirk         ###   ########.fr       */
+/*   Updated: 2024/06/10 17:20:42 by dmdemirk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,10 @@
 #include "shell.h"
 #include "env.h"
 
-void print_env_stack(t_env *envp)
+void	print_env_stack(t_env *envp);
+int		builtin_env(t_minishell_data *data);
+
+void	print_env_stack(t_env *envp)
 {
 	t_env	*curr_node;
 
@@ -26,14 +29,18 @@ void print_env_stack(t_env *envp)
 	}
 }
 
-
 int	builtin_env(t_minishell_data *data)
 {
-	int	i;
+	int		i;
+	char	*value;
 
 	i = -1;
 	printf("\nbuiltin_env\n");
 	printf("Print envp:\n");
-	print_env_stack(data->envp);
+	if (data->args[1])
+	{
+		value = get_env(data->envp, data->args[1]);
+		printf("%s\n", value);
+	}
 	return (0);
 }

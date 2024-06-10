@@ -22,5 +22,6 @@ src/: Source files for the project, organized into subdirectories by functionali
 - execute/: Implementation of command execution logic.
 - parser/: Implementation of command-line parsing.
 - pipe/: Implementation of piping between commands.
+- test/: Tests
 - redirection/: Implementation of input/output redirection.
 - main.c: Entry point of the shell application.

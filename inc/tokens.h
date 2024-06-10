@@ -23,6 +23,7 @@
 # include <pwd.h>
 # include "execute.h"
 # include "shell.h"
+# include "env.h"
 
 # define HISTORY_PATH "./utils/.maxishell_history"
 
@@ -47,7 +48,7 @@ void		skip_delimiters(char **input, char *delim);
 void		reallocate_tokens(char ***tokens, int *bufsize);
 void		parse_loop(char **input, char **tokens, int *pos, int *bufsize);
 char		**parse_input(char *input);
-char		*generate_prompt(void);
+char		*generate_prompt(t_minishell_data *data);
 void		make_history(char *line);
 void		cleanup(char *line, char **parsed_text, t_token *tokens);
 char		*check_heredoc(char *line);

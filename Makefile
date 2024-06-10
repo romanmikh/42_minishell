@@ -13,7 +13,7 @@
 # Colors
 DEF_COLOR	=	\033[0;39m
 GRAY		=	\033[0;90m
-RED		=	\033[0;91m
+RED			=	\033[0;91m
 GREEN		=	\033[0;92m
 YELLOW		=	\033[0;93m
 BLUE		=	\033[0;94m
@@ -44,9 +44,14 @@ COMMON_DIR			=	$(SRC_DIR)/common
 PARSER_DIR			= $(SRC_DIR)/parser
 BUILTINS_DIR			=	$(SRC_DIR)/builtins
 EXECUTE_DIR				=	$(SRC_DIR)/execute
+TEST_DIR				=	$(SRC_DIR)/test
 
 INCLUDES				=	-I./inc \
 							-I $(LIB_DIR)/libft/inc \
+
+TEST_INCLUDES			=	-I./inc \
+							-I $(LIB_DIR)/libft/inc \
+							-I $(TEST_DIR)
 
 MAIN_SOURCE				=	$(wildcard $(SRC_DIR)/*.c)
 APP_SOURCES				=	$(wildcard $(APP_DIR)/*.c)
@@ -56,15 +61,19 @@ UTILS_SOURCES				= 	$(wildcard $(UTILS_DIR)/*.c)
 PARSER_SOURCES 				= 	$(wildcard $(PARSER_DIR)/*.c)
 BUILTINS_SOURCES			=	$(wildcard $(BUILTINS_DIR)/*.c)
 EXECUTE_SOURCES				=	$(wildcard $(EXECUTE_DIR)/*.c)
+MAIN_TEST_SOURCE			=	$(wildcard $(TEST_DIR)/*.c)
+ENV_TEST_SOURCES				=	$(wildcard $(TEST_DIR)/env/*.c)
 
 SOURCES					=	$(MAIN_SOURCE) \
 							$(APP_SOURCES) \
 							$(ENV_SOURCES) \
 							$(COMMON_SOURCES) \
 							$(UTILS_SOURCES) \
-							$(PARSER_DIR) \
+							$(PARSER_SOURCES) \
 							$(BUILTINS_SOURCES) \
-							$(EXECUTE_SOURCES)	
+							$(EXECUTE_SOURCES)	\
+							$(MAIN_TEST_SOURCE) \
+							$(ENV_TEST_SOURCES)
 # Building
 BUILD_DIR				=	./build
 MAIN_OBJECT				=	$(patsubst $(SRC_DIR)/%.c, $(BUILD_DIR)/src/%.o, $(MAIN_SOURCE))
@@ -75,6 +84,8 @@ UTILS_OBJECTS				=	$(patsubst $(UTILS_DIR)/%.c, $(BUILD_DIR)/utils/%.o, $(UTILS_
 PARSER_OBJECTS				=	 $(patsubst $(PARSER_DIR)/%.c, $(BUILD_DIR)/src/parser/%.o, $(PARSER_SOURCES))
 BUILTINS_OBJECTS			=	$(patsubst $(BUILTINS_DIR)/%.c, $(BUILD_DIR)/src/builtins/%.o, $(BUILTINS_SOURCES))
 EXECUTE_OBJECTS				=	$(patsubst $(EXECUTE_DIR)/%.c, $(BUILD_DIR)/src/execute/%.o, $(EXECUTE_SOURCES))
+MAIN_TEST_OBJECT			=	$(patsubst $(TEST_DIR)/%.c, $(BUILD_DIR)/src/test/%.o, $(MAIN_TEST_SOURCE))
+ENV_TEST_OBJECTS			=	$(patsubst $(TEST_DIR)/env/%.c, $(BUILD_DIR)/src/test/env/%.o, $(ENV_TEST_SOURCES))
 
 OBJECTS					=	$(MAIN_OBJECT) \
 							$(APP_OBJECTS) \
@@ -83,7 +94,17 @@ OBJECTS					=	$(MAIN_OBJECT) \
 							$(COMMON_OBJECTS) \
 							$(BUILTINS_OBJECTS) \
 							$(UTILS_OBJECTS) \
-							$(PARSER_OBJECTS)
+							$(PARSER_OBJECTS) \
+						
+TEST_OBJECTS			=	$(APP_OBJECTS) \
+							$(ENV_OBJECTS) \
+							$(EXECUTE_OBJECTS) \
+							$(COMMON_OBJECTS) \
+							$(BUILTINS_OBJECTS) \
+							$(UTILS_OBJECTS) \
+							$(PARSER_OBJECTS) \
+							$(MAIN_TEST_OBJECT) \
+							$(ENV_TEST_OBJECTS)	
 
 # Processing
 all: $(NAME)
@@ -95,7 +116,6 @@ $(NAME): $(LIBFT) $(OBJECTS)
 $(BUILD_DIR)/src/%.o: $(SRC_DIR)/%.c
 	@mkdir -p $(@D)
 	@$(COMPILER) $(CFLAGS) $(INCLUDES) -c $< -o $@
-
 
 $(BUILD_DIR)/src/env/%.o: $(ENV_DIR)/%.c
 	@mkdir -p $(@D)
@@ -136,4 +156,20 @@ fclean: clean
 re: fclean
 	@make
 
-.PHONY: all bonus clean fclean re
+#	TESTS
+$(BUILD_DIR)/test/%.o: $(TEST_DIR)/%.c
+	@mkdir -p $(@D)
+	@$(COMPILER) $(CFLAGS) $(TEST_INCLUDES) -c $< -o $@
+
+$(BUILD_DIR)/test/env/%.o: $(TEST_DIR)/env/%.c
+	@mkdir -p $(@D)
+	@$(COMPILER) $(CFLAGS) $(TEST_INCLUDES) -c $< -o $@
+
+test: $(TEST_OBJECTS) $(LIBFT)
+	@$(COMPILER) $(CFLAGS) $(TEST_OBJECTS) $(TEST_INCLUDES) $(LIBFT) -o $@ $(READLINE)
+	@echo "$(YELLOW)tests compiled$(DEF_COLOR)"
+	@echo "$(YELLOW)--------------$(DEF_COLOR)"
+	@echo "$(GRAY)running tests$(DEF_COLOR)"
+	@./test
+
+.PHONY: all bonus clean fclean re test

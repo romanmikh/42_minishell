@@ -6,7 +6,7 @@
 /*   By: dmdemirk <dmdemirk@student.42london.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/31 11:02:00 by dmdemirk          #+#    #+#             */
-/*   Updated: 2024/06/05 18:20:29 by rmikhayl         ###   ########.fr       */
+/*   Updated: 2024/06/10 17:17:39 by dmdemirk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 #include "shell.h"
 #include "execute.h"
 
+int	execute(t_minishell_data *data);
 int	new_process(t_minishell_data *data);
 
 int	execute(t_minishell_data *data)
@@ -37,15 +38,9 @@ int	execute(t_minishell_data *data)
 		return (1);
 	i = -1;
 	while (++i < sizeof(builtin_commands) / sizeof(char *))
-	{
 		if (ft_strcmp(data->args[0], builtin_commands[i]) == 0)
-		{
-			printf("builtin[%zu]: %s\n", i, data->args[0]);
 			return ((*builtin_functions[i])(data));
-		}
-	}
 	return (new_process(data));
-
 }
 
 int	new_process(t_minishell_data *data)
