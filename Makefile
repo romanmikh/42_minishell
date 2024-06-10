@@ -37,11 +37,11 @@ LIBFT					=	$(LIB_DIR)/libft/libft.a
 READLINE 				= -lreadline
 
 SRC_DIR					=	./src
-UTILS_DIR				= ./utils
+UTILS_DIR				 = $(SRC_DIR)/utils
 ENV_DIR					=	$(SRC_DIR)/env
 APP_DIR					=	$(SRC_DIR)/app
-COMMON_DIR			=	$(SRC_DIR)/common
-PARSER_DIR			= $(SRC_DIR)/parser
+COMMON_DIR				=	$(SRC_DIR)/common
+PARSER_DIR				= $(SRC_DIR)/parser
 BUILTINS_DIR			=	$(SRC_DIR)/builtins
 EXECUTE_DIR				=	$(SRC_DIR)/execute
 TEST_DIR				=	$(SRC_DIR)/test
@@ -150,6 +150,7 @@ clean:
 	
 fclean: clean
 	@$(RM) $(NAME)
+	@rm -f test
 	@cd $(LIB_DIR)/libft && make fclean
 	@echo "$(RED)minishell removed$(DEF_COLOR)"
 

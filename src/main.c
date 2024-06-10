@@ -6,7 +6,7 @@
 /*   By: rmikhayl <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 13:23:26 by rmikhayl          #+#    #+#             */
-/*   Updated: 2024/06/07 19:01:19 by rmikhayl         ###   ########.fr       */
+/*   Updated: 2024/06/10 17:45:18 by dmdemirk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,9 +50,6 @@ int	main(int argc, char **argv, char **envp)
 		parsed_text = parse_input(line);
 		execute_command(parsed_text, &tokens);
 		data.args = list_to_array(tokens);
-		// int i = -1;
-		// while (data/.args[++i])
-			// printf("args[%d]: %s\n", i, data.args[i]);
 		execute(&data);
 		cleanup(line, parsed_text, tokens);
 	}
