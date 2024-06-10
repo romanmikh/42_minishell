@@ -34,12 +34,12 @@ int	builtin_env(t_minishell_data *data)
 	int		i;
 	char	*value;
 
-	i = -1;
+	i = 1;
 	printf("\nbuiltin_env\n");
 	printf("Print envp:\n");
-	if (data->args[1])
+	if (data->args[i])
 	{
-		value = get_env(data->envp, data->args[1]);
+		value = get_env(data->envp, data->args[i]);
 		printf("%s\n", value);
 	}
 	return (0);
