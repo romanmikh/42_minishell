@@ -74,6 +74,7 @@ void	execute_command(char **parsed_text, t_token **tokens)
 {
 	if (parsed_text != NULL)
 	{
+		
 		printf("\033[31m@maxishell: command not found: \
 				%s\033[0m\n", parsed_text[0]);
 		build_linked_list(tokens, parsed_text);

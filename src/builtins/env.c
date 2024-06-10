@@ -6,19 +6,41 @@
 /*   By: dmdemirk <dmdemirk@student.42london.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/03 16:32:34 by dmdemirk          #+#    #+#             */
-/*   Updated: 2024/06/04 12:21:02 by dmdemirk         ###   ########.fr       */
+/*   Updated: 2024/06/10 17:20:42 by dmdemirk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include "shell.h"
+#include "env.h"
+
+void	print_env_stack(t_env *envp);
+int		builtin_env(t_minishell_data *data);
+
+void	print_env_stack(t_env *envp)
+{
+	t_env	*curr_node;
+
+	curr_node = envp;
+	while (curr_node)
+	{
+		printf("%s=%s\n", curr_node->key, curr_node->value);
+		curr_node = curr_node->next;
+	}
+}
 
 int	builtin_env(t_minishell_data *data)
 {
-	int	i;
+	int		i;
+	char	*value;
 
 	i = -1;
-	while (data->envp[++i])
-		printf("%s\n", data->envp[i]);
+	printf("\nbuiltin_env\n");
+	printf("Print envp:\n");
+	if (data->args[1])
+	{
+		value = get_env(data->envp, data->args[1]);
+		printf("%s\n", value);
+	}
 	return (0);
 }
