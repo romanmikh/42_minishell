@@ -6,14 +6,14 @@
 #    By: dmdemirk <dmdemirk@student.42london.c      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/30 12:57:25 by dmdemirk          #+#    #+#              #
-#    Updated: 2024/06/11 11:17:13 by dmdemirk         ###   ########.fr        #
+#    Updated: 2024/06/11 15:31:58 by rocky            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # Colors
 DEF_COLOR	=	\033[0;39m
 GRAY		=	\033[0;90m
-RED			=	\033[0;91m
+RED		=	\033[0;91m
 GREEN		=	\033[0;92m
 YELLOW		=	\033[0;93m
 BLUE		=	\033[0;94m
@@ -28,8 +28,9 @@ NAME			=	minishell
 COMPILER		=	cc
 DFLAGS			=	-g3 -gdwarf-2
 CFLAGS			=	-Wall -Wextra -Werror $(DFLAGS)
-AR				=	ar rcs
-RM				=	rm -rf
+AR			=	ar rcs
+RM			=	rm -rf
+MAKEFLAGS 		+= --silent
 
 # Structure
 LIB_DIR					=	./lib

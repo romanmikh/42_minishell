@@ -6,7 +6,7 @@
 /*   By: rmikhayl <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 14:19:49 by rmikhayl          #+#    #+#             */
-/*   Updated: 2024/06/10 17:48:07 by dmdemirk         ###   ########.fr       */
+/*   Updated: 2024/06/11 15:30:44 by rocky            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,9 +74,8 @@ void	execute_command(char **parsed_text, t_token **tokens)
 {
 	if (parsed_text != NULL)
 	{
-		printf("\033[31m@maxishell: command not found: \
-				%s\033[0m\n", parsed_text[0]);
 		build_linked_list(tokens, parsed_text);
 		print_stack(tokens);
+		ft_printf("---\n");
 	}
 }
