@@ -6,7 +6,7 @@
 /*   By: rmikhayl <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 13:23:26 by rmikhayl          #+#    #+#             */
-/*   Updated: 2024/06/10 17:45:18 by dmdemirk         ###   ########.fr       */
+/*   Updated: 2024/06/11 15:22:12 by rocky            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,34 +28,38 @@ void	is_exit_status_var(char *line)
 		exit_status_var();
 }
 
-int	main(int argc, char **argv, char **envp)
+void	main_loop(t_minishell_data data)
 {
-	t_minishell_data	data;
+	char				*prompt;
 	char				*line;
 	t_token				*tokens;
 	char				**parsed_text;
-	char				*prompt;
+
+	prompt = generate_prompt(&data);
+	tokens = NULL;
+	line = readline(prompt);
+	is_exit_status_var(line);
+	line = check_heredoc(line);
+	if (!line || ft_strcmp(line, "exit") == 0)
+		exit(EXIT_FAILURE);
+	make_history(line);
+	parsed_text = parse_input(line);
+	execute_command(parsed_text, &tokens);
+	data.args = list_to_array(tokens);
+	execute(&data);
+	cleanup(line, parsed_text, tokens, prompt);
+}
+
+int	main(int argc, char **argv, char **envp)
+{
+	t_minishell_data	data;
 
 	print_maxishell();
 	init_minishell_data(&data, envp);
 	initialise(argc, argv);
 	while (1)
-	{
-		prompt = generate_prompt(&data);
-		tokens = NULL;
-		line = readline(prompt);
-		is_exit_status_var(line);
-		line = check_heredoc(line);
-		if (!line || ft_strcmp(line, "exit") == 0)
-			break ;
-		make_history(line);
-		parsed_text = parse_input(line);
-		execute_command(parsed_text, &tokens);
-		data.args = list_to_array(tokens);
-		execute(&data);
-		cleanup(line, parsed_text, tokens, prompt);
-	}
+		main_loop(data);
 	free_minishell_data(&data);
-	free_env();
+	free_env(data.envp);
 	return (0);
 }
