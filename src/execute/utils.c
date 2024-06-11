@@ -6,37 +6,43 @@
 /*   By: dmdemirk <dmdemirk@student.42london.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 17:32:22 by dmdemirk          #+#    #+#             */
-/*   Updated: 2024/06/04 17:48:09 by dmdemirk         ###   ########.fr       */
+/*   Updated: 2024/06/10 17:18:00 by dmdemirk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include "env.h"
+#include <stdio.h>
 
-char	*ft_find_path(char *cmd, char **envp);
+char	*ft_find_path(char *cmd, t_env *envp);
 void	ft_free_2d_arr(char **arr);
 
-char	*ft_find_path(char *cmd, char **envp)
+char	*ft_find_path(char *cmd, t_env *envp)
 {
-	char	**directories;
-	char	*temp_path;
-	char	*path;
+	char	**path;
+	char	*tmp_slash;
+	char	*tmp_full_path;
 	int		i;
+	int		j;
 
-	i = 0;
-	while (ft_strnstr(envp[i], "PATH", 4) == 0)
-		++i;
-	directories = ft_split(envp[i] + 5, ':');
+	path = ft_split(get_env(envp, "PATH"), ':');
+	j = -1;
+	while (path[++j] != NULL)
+		printf("path[%d]: %s\n", j, path[j]);
 	i = -1;
-	while (directories[++i] != NULL)
+	while (path[++i] != NULL)
 	{
-		temp_path = ft_strjoin(directories[i], "/");
-		path = ft_strjoin(temp_path, cmd);
-		free(temp_path);
-		if (access(path, F_OK | X_OK) == 0)
-			return (path);
-		free(path);
+		tmp_slash = ft_strjoin(path[i], "/");
+		tmp_full_path = ft_strjoin(tmp_slash, cmd);
+		free(tmp_slash);
+		if (access(tmp_full_path, F_OK) == 0)
+		{
+			ft_free_2d_arr(path);
+			return (tmp_full_path);
+		}
+		free(tmp_full_path);
 	}
-	ft_free_2d_arr(directories);
+	ft_free_2d_arr(path);
 	return (NULL);
 }
 

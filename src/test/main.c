@@ -1,24 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   execute.h                                          :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dmdemirk <dmdemirk@student.42london.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/03 16:34:42 by dmdemirk          #+#    #+#             */
-/*   Updated: 2024/06/04 18:06:52 by dmdemirk         ###   ########.fr       */
+/*   Created: 2024/06/10 16:48:02 by dmdemirk          #+#    #+#             */
+/*   Updated: 2024/06/10 16:48:28 by dmdemirk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef EXECUTE_H
-# define EXECUTE_H
+#include "test.h"
+#include "shell.h"
+#include <stdio.h>
 
-# include "shell.h"
+int	main(int argc, char **argv, char **envp)
+{
+	t_minishell_data	data;
 
-/*	execute	*/
-int		execute(t_minishell_data *data);
-
-/*	utils	*/
-char	*ft_find_path(char *cmd, t_env *envp);
-
-#endif
+	argc = 0;
+	argv = (void *)0;
+	env_tests(&data, envp);
+	return (0);
+}
