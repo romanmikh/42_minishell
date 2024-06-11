@@ -23,8 +23,8 @@ int	new_process(t_minishell_data *data);
 int	execute(t_minishell_data *data)
 {
 	size_t	i;
-	char	*builtin_commands[5];
-	int		(*builtin_functions[5])(t_minishell_data *);
+	char	*builtin_commands[4];
+	int		(*builtin_functions[4])(t_minishell_data *);
 
 	builtin_commands[0] = "cd";
 	builtin_commands[1] = "echo";
