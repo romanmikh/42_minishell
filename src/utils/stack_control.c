@@ -6,7 +6,7 @@
 /*   By: rmikhayl <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/31 20:39:16 by rmikhayl          #+#    #+#             */
-/*   Updated: 2024/06/05 16:09:01 by rmikhayl         ###   ########.fr       */
+/*   Updated: 2024/06/11 15:38:29 by dmdemirk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,13 +94,6 @@ char	**list_to_array(t_token *head)
 	while (i < count)
 	{
 		arr[i] = ft_strdup(current->data);
-		if (!arr[i])
-		{
-			while(i-- > 0)
-				free(arr[i]);
-			free(arr);
-			return (NULL);
-		}
 		current = current->next;
 		i++;
 	}
