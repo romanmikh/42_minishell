@@ -34,14 +34,16 @@ int	main(int argc, char **argv, char **envp)
 	char				*line;
 	t_token				*tokens;
 	char				**parsed_text;
+	char				*prompt;
 
 	print_maxishell();
 	init_minishell_data(&data, envp);
 	initialise(argc, argv);
 	while (1)
 	{
+		prompt = generate_prompt(&data);
 		tokens = NULL;
-		line = readline(generate_prompt(&data));
+		line = readline(prompt);
 		is_exit_status_var(line);
 		line = check_heredoc(line);
 		if (!line || ft_strcmp(line, "exit") == 0)
@@ -51,7 +53,9 @@ int	main(int argc, char **argv, char **envp)
 		execute_command(parsed_text, &tokens);
 		data.args = list_to_array(tokens);
 		execute(&data);
-		cleanup(line, parsed_text, tokens);
+		cleanup(line, parsed_text, tokens, prompt);
 	}
+	free_minishell_data(&data);
+	free_env();
 	return (0);
 }
