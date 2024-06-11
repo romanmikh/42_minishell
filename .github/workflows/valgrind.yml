@@ -1,0 +1,29 @@
+name: Valgrind
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: Install dependencies
+      run: sudo apt-get update && sudo apt-get install -y build-essential
+    - name: Install Valgrind
+      run: sudo apt-get update && sudo apt-get install -y valgrind
+    - name: Build project
+      run: make
+    - name: Run Valgrind
+      run: |
+            valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes --suppressions=.github/workflows/utils/readline.supp -s ./minishell 2>&1 | tee valgrind-output.txt
+            if grep -q "definitely lost: 0 bytes in 0 blocks" valgrind-output.txt; then
+              echo "No memory leaks detected."
+            else
+              echo "Memory leaks detected."
+              exit 1
+            fi
