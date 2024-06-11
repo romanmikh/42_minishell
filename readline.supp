@@ -1,0 +1,126 @@
+{
+   ignore_readline_malloc
+   Memcheck:Leak
+   fun:malloc
+   obj:/usr/lib/x86_64-linux-gnu/libreadline.so.*
+}
+{
+   ignore_readline_realloc
+   Memcheck:Leak
+   fun:realloc
+   obj:/usr/lib/x86_64-linux-gnu/libreadline.so.*
+}
+{
+   ignore_readline_calloc
+   Memcheck:Leak
+   fun:calloc
+   obj:/usr/lib/x86_64-linux-gnu/libreadline.so.*
+}
+{
+   ignore_readline_xmalloc
+   Memcheck:Leak
+   fun:xmalloc
+   obj:/usr/lib/x86_64-linux-gnu/libreadline.so.*
+}
+{
+   ignore_readline_xrealloc
+   Memcheck:Leak
+   fun:xrealloc
+   obj:/usr/lib/x86_64-linux-gnu/libreadline.so.*
+}
+{
+   ignore_readline_rl_initialize
+   Memcheck:Leak
+   fun:rl_initialize
+   obj:/usr/lib/x86_64-linux-gnu/libreadline.so.*
+}
+{
+   ignore_readline_rl_set_prompt
+   Memcheck:Leak
+   fun:rl_set_prompt
+   obj:/usr/lib/x86_64-linux-gnu/libreadline.so.*
+}
+{
+   ignore_readline_readline
+   Memcheck:Leak
+   fun:readline
+   obj:/usr/lib/x86_64-linux-gnu/libreadline.so.*
+}
+{
+   ignore_readline_add_history
+   Memcheck:Leak
+   fun:add_history
+   obj:/usr/lib/x86_64-linux-gnu/libreadline.so.*
+}
+{
+   ignore_readline_rl_getc
+   Memcheck:Leak
+   fun:rl_getc
+   obj:/usr/lib/x86_64-linux-gnu/libreadline.so.*
+}
+{
+   ignore_readline_rl_read_key
+   Memcheck:Leak
+   fun:rl_read_key
+   obj:/usr/lib/x86_64-linux-gnu/libreadline.so.*
+}
+{
+   ignore_readline_rl_signal_handler
+   Memcheck:Leak
+   fun:_rl_signal_handler
+   obj:/usr/lib/x86_64-linux-gnu/libreadline.so.*
+}
+{
+   ignore_readline_rl_expand_prompt
+   Memcheck:Leak
+   fun:rl_expand_prompt
+   obj:/usr/lib/x86_64-linux-gnu/libreadline.so.*
+}
+{
+   ignore_readline_rl_redisplay
+   Memcheck:Leak
+   fun:rl_redisplay
+   obj:/usr/lib/x86_64-linux-gnu/libreadline.so.*
+}
+{
+   ignore_readline_rl_prep_terminal
+   Memcheck:Leak
+   fun:rl_prep_terminal
+   obj:/usr/lib/x86_64-linux-gnu/libreadline.so.*
+}
+{
+   ignore_readline_rl_initialize_locale
+   Memcheck:Leak
+   fun:_rl_init_locale
+   obj:/usr/lib/x86_64-linux-gnu/libreadline.so.*
+}
+{
+   ignore_readline_rl_init_terminal_io
+   Memcheck:Leak
+   fun:_rl_init_terminal_io
+   obj:/usr/lib/x86_64-linux-gnu/libreadline.so.*
+}
+{
+   ignore_readline_rl_init_eightbit
+   Memcheck:Leak
+   fun:_rl_init_eightbit
+   obj:/usr/lib/x86_64-linux-gnu/libreadline.so.*
+}
+{
+   ignore_readline_rl_parse_and_bind
+   Memcheck:Leak
+   fun:rl_parse_and_bind
+   obj:/usr/lib/x86_64-linux-gnu/libreadline.so.*
+}
+{
+   ignore_readline_rl_set_screen_size
+   Memcheck:Leak
+   fun:_rl_get_screen_size
+   obj:/usr/lib/x86_64-linux-gnu/libreadline.so.*
+}
+{
+   ignore_readline_rl_set_screen_size
+   Memcheck:Leak
+   fun:_rl_get_screen_size
+   obj:/usr/lib/x86_64-linux-gnu/libreadline.so.*
+}

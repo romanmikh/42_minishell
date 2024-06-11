@@ -94,6 +94,13 @@ char	**list_to_array(t_token *head)
 	while (i < count)
 	{
 		arr[i] = ft_strdup(current->data);
+		if (!arr[i])
+		{
+			while(i-- > 0)
+				free(arr[i]);
+			free(arr);
+			return (NULL);
+		}
 		current = current->next;
 		i++;
 	}
