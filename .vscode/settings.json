@@ -2,5 +2,10 @@
     "cSpell.words": [
         "dmdemirk",
         "minishell"
-    ]
+    ],
+    "files.associations": {
+        "*.css": "tailwindcss",
+        "*.tsx": "typescriptreact",
+        "tokens.h": "c"
+    }
 }

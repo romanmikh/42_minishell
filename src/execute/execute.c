@@ -6,7 +6,7 @@
 /*   By: dmdemirk <dmdemirk@student.42london.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/31 11:02:00 by dmdemirk          #+#    #+#             */
-/*   Updated: 2024/06/10 17:17:39 by dmdemirk         ###   ########.fr       */
+/*   Updated: 2024/06/11 17:12:28 by dmdemirk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,9 +37,10 @@ int	execute(t_minishell_data *data)
 	if (data->args[0] == NULL)
 		return (1);
 	i = -1;
-	while (++i < sizeof(builtin_commands) / sizeof(char *))
+	while (++i < sizeof(builtin_commands) / sizeof(char *)) 
 		if (ft_strcmp(data->args[0], builtin_commands[i]) == 0)
 			return ((*builtin_functions[i])(data));
+	printf("\nexternal_func\n");
 	return (new_process(data));
 }
 
@@ -49,6 +50,13 @@ int	new_process(t_minishell_data *data)
 	int		status;
 	char	*path;
 	char	**envp;
+
+	/*
+	todo
+	add absolute - /  path handling
+	add relative -    path handling
+	add home     - ~  path handling
+	*/
 
 	envp = env_to_array(data->envp);
 	path = ft_find_path(data->args[0], data->envp);

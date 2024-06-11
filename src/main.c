@@ -40,8 +40,6 @@ void	main_loop(t_minishell_data data)
 	line = readline(prompt);
 	is_exit_status_var(line);
 	line = check_heredoc(line);
-	if (!line || ft_strcmp(line, "exit") == 0)
-		exit(EXIT_FAILURE);
 	make_history(line);
 	parsed_text = parse_input(line);
 	execute_command(parsed_text, &tokens);
