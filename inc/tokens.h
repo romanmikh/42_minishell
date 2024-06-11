@@ -6,7 +6,7 @@
 /*   By: rmikhayl <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/31 20:53:51 by rmikhayl          #+#    #+#             */
-/*   Updated: 2024/06/07 19:00:49 by rmikhayl         ###   ########.fr       */
+/*   Updated: 2024/06/11 14:59:54 by rocky            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,9 @@ void		parse_loop(char **input, char **tokens, int *pos, int *bufsize);
 char		**parse_input(char *input);
 char		*generate_prompt(t_minishell_data *data);
 void		make_history(char *line);
-void		cleanup(char *line, char **parsed_text, t_token *tokens);
+void		cleanup(char *line, char **parsed_text, t_token *tokens, \
+		char *prompt);
+void		free_minishell_data(t_minishell_data *data);
 char		*check_heredoc(char *line);
 char		*heredoc(char *eof);
 void		init_minishell_data(t_minishell_data *data, char **envp);
