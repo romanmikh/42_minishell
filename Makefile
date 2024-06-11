@@ -6,7 +6,7 @@
 #    By: dmdemirk <dmdemirk@student.42london.c      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/30 12:57:25 by dmdemirk          #+#    #+#              #
-#    Updated: 2024/06/05 18:20:02 by rmikhayl         ###   ########.fr        #
+#    Updated: 2024/06/11 11:17:13 by dmdemirk         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -61,6 +61,7 @@ UTILS_SOURCES				= 	$(wildcard $(UTILS_DIR)/*.c)
 PARSER_SOURCES 				= 	$(wildcard $(PARSER_DIR)/*.c)
 BUILTINS_SOURCES			=	$(wildcard $(BUILTINS_DIR)/*.c)
 EXECUTE_SOURCES				=	$(wildcard $(EXECUTE_DIR)/*.c)
+
 MAIN_TEST_SOURCE			=	$(wildcard $(TEST_DIR)/*.c)
 ENV_TEST_SOURCES				=	$(wildcard $(TEST_DIR)/env/*.c)
 
@@ -145,6 +146,7 @@ bonus: $(NAME)
 
 clean:
 	@$(RM) $(BUILD_DIR)
+	@$(RM) valgrind-out.txt
 	@cd $(LIB_DIR)/libft && make clean
 	@echo "$(GRAY)files.o removed$(DEF_COLOR)"
 	
@@ -172,5 +174,8 @@ test: $(TEST_OBJECTS) $(LIBFT)
 	@echo "$(YELLOW)--------------$(DEF_COLOR)"
 	@echo "$(GRAY)running tests$(DEF_COLOR)"
 	@./test
+
+valgrind: $(NAME)
+	@valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes --verbose --log-file=valgrind-out.txt ./minishell
 
 .PHONY: all bonus clean fclean re test
