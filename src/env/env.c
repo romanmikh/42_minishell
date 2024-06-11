@@ -37,27 +37,14 @@ void	add_env_node(t_env **data_envp, char *line)
 	char	*key;
 	char	*value;
 
-	new_node = (t_env *)malloc(sizeof(t_env));
+	new_node = (t_env *)malloc(sizeof(t_env) + 1);
 	if (!new_node)
 		return ;
 	key = ft_strcdup(line, '=');
 	value = ft_strchr(line, '=') + 1;
-	if (!key || !value)
-	{
-		free(key);
-		free(value);
-		free(new_node);
-		return ;
-	}
 	new_node->key = ft_strdup(key);
 	new_node->value = ft_strdup(value);
-	if(!new_node->key || !new_node->value)
-	{
-		free(new_node->key);
-		free(new_node->value);
-		free(new_node);
-		return ;
-	}
+	free(key);
 	new_node->next = NULL;
 	if (*data_envp == NULL)
 	{
