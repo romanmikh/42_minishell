@@ -28,28 +28,46 @@ void	is_exit_status_var(char *line)
 		exit_status_var();
 }
 
+char *trim_input(char *str)
+{
+	char	*trimmed_str;
+
+	trimmed_str = ft_strtrim(str, " \t\n\r\v\f");
+	if (!trimmed_str)
+	{
+		free(trimmed_str);
+		return (0);
+	}
+	return (trimmed_str);
+}
+
 void	main_loop(t_minishell_data data)
 {
 	char				*prompt;
 	char				*line;
 	t_token				*tokens;
-	char				**parsed_text;
+	char				*trimmed_input;
 
 	prompt = generate_prompt(&data);
-	tokens = NULL;
+	//tokens = NULL;
 	line = readline(prompt);
-
 	is_exit_status_var(line);
 	//line = check_heredoc(line);
 	if (!line)
 		exit(EXIT_FAILURE);
 	make_history(line);
-	input_error_checks(line);
-	parsed_text = ft_split(line, ' ');
-	execute_command(parsed_text, &tokens);
-	data.args = list_to_array(tokens);
-	execute(&data);
-	cleanup(line, parsed_text, tokens, prompt);
+	ft_printf("%s <-- line from readline\n", line);
+	trimmed_input = trim_input(line);
+	ft_printf("%s <-- trimmed_input\n", trimmed_input);
+	input_error_checks(trimmed_input);
+	ft_printf("%s <-- trimmed_input after checks\n", trimmed_input);
+	tokens = tokenise(trimmed_input);
+	print_tokens(tokens);
+
+	//execute_command(parsed_text, &tokens);
+	//data.args = list_to_array(tokens);
+	//execute(&data);
+	//cleanup(trimmed_input, parsed_text, tokens, prompt);
 }
 
 int	main(int argc, char **argv, char **envp)

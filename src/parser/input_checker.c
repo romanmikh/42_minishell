@@ -13,7 +13,7 @@
 
 #include "tokens.h"
 
-int	check_operators(char *str)
+int	check_operators(const char *str)
 {
 	int	single_quotes;
 	int	double_quotes;
@@ -46,18 +46,19 @@ int	check_operators(char *str)
 	return (0);
 }
 
-char *exclude_delimiters(char *str)
+const char *exclude_delimiters(const char *str)
 {
 	while (*str && (ft_strchr(" \t\n\r\v\f", *str) != NULL))
 		str++;
 	return (str);
 }
 
-int	valid_operator(char **str)
+int	valid_operator(const char **str)
 {
-	char *start;
+	const char *start;
+	ft_printf("%s <- valid operator str\n", *str);
 
-	start = *str++;
+	start = (*str)++;
 	if (*start == **str)
 		(*str)++;
 	*str = exclude_delimiters(*str);
@@ -66,25 +67,25 @@ int	valid_operator(char **str)
 	return (1);
 }
 
-int	check_redirections(char *str)
+int	check_redirections(const char *str)
 {
 	int	single_quotes;
 	int	double_quotes;
 
 	single_quotes = 0;
 	double_quotes = 0;
+	ft_printf("%s <-- check redirections beginning\n", str);
 	while (*str)
 	{
 		if (*str == '\'')
 			single_quotes++;
 		if (*str == '\"')
 			double_quotes++;
-		if ((!(single_quotes % 2) && !(double_quotes %2)) 
+		if ((!(single_quotes % 2) && !(double_quotes % 2)) 
 			&& (*str == '>' || *str == '<'))
 		{
 			if (!valid_operator(&str))
 				return (1);
-			str++;
 		}
 		else
 			str++;
@@ -112,27 +113,19 @@ int	check_open_quotes(const char *str)
 	return (single_quote_open || double_quote_open);
 }
 
-int	input_error_checks(char *str)
+int	input_error_checks(const char *str)
 {
-	char	*trimmed_str;
-
-	trimmed_str = ft_strtrim(str, " \t\n\r\v\f");
-	if (!trimmed_str)
-	{
-		free(trimmed_str);
-		return (0);
-	}
-	if (check_redirections(trimmed_str))
+	if (check_redirections(str))
 		ft_printf("Input error: invalid redirection.\n");
-	else if (check_operators(trimmed_str))
+	else if (check_operators(str))
 		ft_printf("Input error: invalid operator.\n");
-	else if (check_open_quotes(trimmed_str))
+	else if (check_open_quotes(str))
 		ft_printf("Input error: open quote.\n");
 	else
 	{
-		free(trimmed_str);
+		//free(str);
 		return (0);
 	}
-	free(trimmed_str);
+	//free(str);
 	return (1);
 }
