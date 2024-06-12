@@ -59,5 +59,6 @@ void		init_minishell_data(t_minishell_data *data, char **envp);
 void		initialise(int argc, char **argv);
 void		execute_command(char **parsed_text, t_token **tokens);
 void		print_maxishell(void);
+int	input_error_checks(char *str);
 
 #endif

@@ -39,11 +39,13 @@ void	main_loop(t_minishell_data data)
 	tokens = NULL;
 	line = readline(prompt);
 	is_exit_status_var(line);
-	line = check_heredoc(line);
+	//line = check_heredoc(line);
+	printf("@@@@\n");
 	if (!line || ft_strcmp(line, "exit") == 0)
 		exit(EXIT_FAILURE);
 	make_history(line);
-	parsed_text = parse_input(line);
+	input_error_checks(line);
+	parsed_text = ft_split(line, ' ');
 	execute_command(parsed_text, &tokens);
 	data.args = list_to_array(tokens);
 	execute(&data);
