@@ -38,10 +38,10 @@ void	main_loop(t_minishell_data data)
 	prompt = generate_prompt(&data);
 	tokens = NULL;
 	line = readline(prompt);
+
 	is_exit_status_var(line);
 	//line = check_heredoc(line);
-	printf("@@@@\n");
-	if (!line || ft_strcmp(line, "exit") == 0)
+	if (!line)
 		exit(EXIT_FAILURE);
 	make_history(line);
 	input_error_checks(line);

@@ -84,6 +84,7 @@ int	check_redirections(char *str)
 		{
 			if (!valid_operator(&str))
 				return (1);
+			str++;
 		}
 		else
 			str++;
