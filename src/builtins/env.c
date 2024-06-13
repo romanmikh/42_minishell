@@ -15,6 +15,11 @@
 #include "env.h"
 #include "libft.h"
 
+/*
+	Functionality:
+		- Print the environment
+*/
+
 void	print_env_stack(t_env *envp);
 int		builtin_env(t_minishell_data *data);
 

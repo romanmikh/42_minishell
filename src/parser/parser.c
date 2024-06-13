@@ -31,7 +31,7 @@ void	handle_quotes(char **tokens, int *pos, char **input)
 	**input = '\0';
 	tokens[*pos] = ft_strdup(start);
 	(*input)++;
-	if (strlen(tokens[*pos]) > 0)
+	if (ft_strlen(tokens[*pos]) > 0)
 		(*pos)++;
 }
 
@@ -40,12 +40,12 @@ void	handle_special_chars(char **tokens, int *pos, char **input)
 	if ((**input == '<' && *(*input + 1) == '<') || (**input == '>' && \
 				*(*input + 1) == '>'))
 	{
-		tokens[*pos] = strndup(*input, 2);
+		tokens[*pos] = ft_strndup(*input, 2);
 		(*input) += 2;
 	}
 	else
 	{
-		tokens[*pos] = strndup(*input, 1);
+		tokens[*pos] = ft_strndup(*input, 1);
 		(*input)++;
 	}
 	(*pos)++;
@@ -56,16 +56,16 @@ void	handle_regular_chars(char **tokens, int *pos, char **input, char *delim)
 	char	*start;
 
 	start = *input;
-	while (**input && !strchr(delim, **input) && **input != '|' && \
+	while (**input && !ft_strchr(delim, **input) && **input != '|' && \
 			**input != '<' && **input != '>' && \
 			**input != '\"' && **input != '\'')
 		(*input)++;
-	tokens[*pos] = strndup(start, *input - start);
+	tokens[*pos] = ft_strndup(start, *input - start);
 	(*pos)++;
 }
 
 void	skip_delimiters(char **input, char *delim)
 {
-	while (**input && strchr(delim, **input))
+	while (**input && ft_strchr(delim, **input))
 		(*input)++;
 }

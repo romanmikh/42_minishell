@@ -17,7 +17,7 @@ char	*check_heredoc(char *line)
 	char	**parsed;
 
 	parsed = ft_split(line, ' ');
-	if (!strcmp(parsed[0], "cat") && !strcmp(parsed[1], "<<"))
+	if (!ft_strcmp(parsed[0], "cat") && !ft_strcmp(parsed[1], "<<"))
 		return (heredoc("EOF"));
 	else
 		return (line);
@@ -32,7 +32,7 @@ char	*heredoc(char *eof)
 	while (1)
 	{
 		line = readline("heredoc>");
-		if (!strcmp(line, eof))
+		if (!ft_strcmp(line, eof))
 			return (comb);
 		comb = ft_strjoin(ft_strjoin(comb, line), "\n");
 		free(line);

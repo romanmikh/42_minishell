@@ -14,6 +14,14 @@
 #include "libft.h"
 #include <stdlib.h>
 #include <stdio.h>
+#include "env.h"
+
+/*
+	Functionality:
+		- Exit the shell
+		- Free the environment
+		- Exit with the exit status
+*/
 
 /*
 todo
@@ -28,6 +36,6 @@ int	builtin_exit(t_minishell_data *data)
 	printf("\nbuiltin_exit\n");
 	message = "exit\n";
 	write(STDOUT_FILENO, message, ft_strlen(message));
-
+	free_env(data->envp);
 	exit(data->exit_status);
 }

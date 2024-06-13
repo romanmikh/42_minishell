@@ -18,8 +18,8 @@ int	main(int argc, char **argv, char **envp)
 {
 	t_minishell_data	data;
 
+	argv = NULL;
 	argc = 0;
-	argv = (void *)0;
 	env_tests(&data, envp);
 	return (0);
 }

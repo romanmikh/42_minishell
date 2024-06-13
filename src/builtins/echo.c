@@ -13,6 +13,11 @@
 #include "libft.h"
 #include "shell.h"
 
+/*
+	Functionality:
+		- Print the argument
+*/
+
 int	builtin_echo(t_minishell_data *data)
 {
 	int	newline;

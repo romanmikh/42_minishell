@@ -1,11 +1,16 @@
 {
     "cSpell.words": [
         "dmdemirk",
-        "minishell"
+        "maxishell",
+        "minishell",
+        "OLDPWD",
+        "putstr",
+        "strcdup"
     ],
     "files.associations": {
         "*.css": "tailwindcss",
         "*.tsx": "typescriptreact",
-        "tokens.h": "c"
+        "tokens.h": "c",
+        "test.h": "c"
     }
 }

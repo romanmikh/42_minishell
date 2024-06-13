@@ -15,6 +15,14 @@
 #include "shell.h"
 #include "env.h"
 
+/*
+	Functionality:
+		- Change the current directory
+		- Update the PWD and OLDPWD environment variables
+		- navigate to the home directory if no arguments are provided
+		- navigate to the previous directory if ".." is provided
+*/
+
 int	builtin_cd(t_minishell_data *data)
 {
 	char	*target_dir;
