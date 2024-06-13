@@ -18,4 +18,7 @@
 /*  env     */
 void	env_tests(t_minishell_data *data, char **envp);
 
+/*  pipe    */
+void pipe_tests(t_minishell_data *data);
+
 #endif

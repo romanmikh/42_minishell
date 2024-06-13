@@ -43,6 +43,7 @@ ENV_DIR					=	$(SRC_DIR)/env
 APP_DIR					=	$(SRC_DIR)/app
 COMMON_DIR				=	$(SRC_DIR)/common
 PARSER_DIR				= $(SRC_DIR)/parser
+PIPE_DIR				= $(SRC_DIR)/pipe
 BUILTINS_DIR			=	$(SRC_DIR)/builtins
 EXECUTE_DIR				=	$(SRC_DIR)/execute
 TEST_DIR				=	$(SRC_DIR)/test
@@ -60,11 +61,13 @@ ENV_SOURCES				=	$(wildcard $(ENV_DIR)/*.c)
 COMMON_SOURCES				=	$(wildcard $(COMMON_DIR)/*.c)
 UTILS_SOURCES				= 	$(wildcard $(UTILS_DIR)/*.c)
 PARSER_SOURCES 				= 	$(wildcard $(PARSER_DIR)/*.c)
+PIPE_SOURCES				=	$(wildcard $(PIPE_DIR)/*.c)
 BUILTINS_SOURCES			=	$(wildcard $(BUILTINS_DIR)/*.c)
 EXECUTE_SOURCES				=	$(wildcard $(EXECUTE_DIR)/*.c)
 
 MAIN_TEST_SOURCE			=	$(wildcard $(TEST_DIR)/*.c)
-ENV_TEST_SOURCES				=	$(wildcard $(TEST_DIR)/env/*.c)
+ENV_TEST_SOURCES			=	$(wildcard $(TEST_DIR)/env/*.c)
+PIPE_TEST_SOURCES			=	$(wildcard $(TEST_DIR)/pipe/*.c)
 
 SOURCES					=	$(MAIN_SOURCE) \
 							$(APP_SOURCES) \
@@ -72,10 +75,12 @@ SOURCES					=	$(MAIN_SOURCE) \
 							$(COMMON_SOURCES) \
 							$(UTILS_SOURCES) \
 							$(PARSER_SOURCES) \
+							$(PIPE_SOURCES) \
 							$(BUILTINS_SOURCES) \
 							$(EXECUTE_SOURCES)	\
 							$(MAIN_TEST_SOURCE) \
-							$(ENV_TEST_SOURCES)
+							$(ENV_TEST_SOURCES) \
+							$(PIPE_TEST_SOURCES)
 # Building
 BUILD_DIR				=	./build
 MAIN_OBJECT				=	$(patsubst $(SRC_DIR)/%.c, $(BUILD_DIR)/src/%.o, $(MAIN_SOURCE))
@@ -84,10 +89,12 @@ ENV_OBJECTS				=	$(patsubst $(ENV_DIR)/env/%.c, $(BUILD_DIR)/src/app/env/%.o, $(
 COMMON_OBJECTS				=	$(patsubst $(COMMON_DIR)/%.c, $(BUILD_DIR)/common/app/%.o, $(COMMON_SOURCES))
 UTILS_OBJECTS				=	$(patsubst $(UTILS_DIR)/%.c, $(BUILD_DIR)/utils/%.o, $(UTILS_SOURCES))
 PARSER_OBJECTS				=	 $(patsubst $(PARSER_DIR)/%.c, $(BUILD_DIR)/src/parser/%.o, $(PARSER_SOURCES))
+PIPE_OBJECTS				=	$(patsubst $(PIPE_DIR)/%.c, $(BUILD_DIR)/src/pipe/%.o, $(PIPE_SOURCES))
 BUILTINS_OBJECTS			=	$(patsubst $(BUILTINS_DIR)/%.c, $(BUILD_DIR)/src/builtins/%.o, $(BUILTINS_SOURCES))
 EXECUTE_OBJECTS				=	$(patsubst $(EXECUTE_DIR)/%.c, $(BUILD_DIR)/src/execute/%.o, $(EXECUTE_SOURCES))
 MAIN_TEST_OBJECT			=	$(patsubst $(TEST_DIR)/%.c, $(BUILD_DIR)/src/test/%.o, $(MAIN_TEST_SOURCE))
 ENV_TEST_OBJECTS			=	$(patsubst $(TEST_DIR)/env/%.c, $(BUILD_DIR)/src/test/env/%.o, $(ENV_TEST_SOURCES))
+PIPE_TEST_OBJECTS			=	$(patsubst $(TEST_DIR)/pipe/%.c, $(BUILD_DIR)/src/test/pipe/%.o, $(PIPE_TEST_SOURCES))
 
 OBJECTS					=	$(MAIN_OBJECT) \
 							$(APP_OBJECTS) \
@@ -97,6 +104,7 @@ OBJECTS					=	$(MAIN_OBJECT) \
 							$(BUILTINS_OBJECTS) \
 							$(UTILS_OBJECTS) \
 							$(PARSER_OBJECTS) \
+							$(PIPE_OBJECTS)
 						
 TEST_OBJECTS			=	$(APP_OBJECTS) \
 							$(ENV_OBJECTS) \
@@ -105,8 +113,10 @@ TEST_OBJECTS			=	$(APP_OBJECTS) \
 							$(BUILTINS_OBJECTS) \
 							$(UTILS_OBJECTS) \
 							$(PARSER_OBJECTS) \
+							$(PIPE_OBJECTS) \
 							$(MAIN_TEST_OBJECT) \
-							$(ENV_TEST_OBJECTS)	
+							$(ENV_TEST_OBJECTS)	\
+							$(PIPE_TEST_OBJECTS)
 
 # Processing
 all: $(NAME)
@@ -139,6 +149,10 @@ $(BUILD_DIR)/src/parser/%.o: $(PARSER_DIR)/%.c
 	@mkdir -p $(@D)
 	@$(COMPILER) $(CFLAGS) $(INCLUDES) -c $< -o $@
 
+$(BUILD_DIR)/src/pipe/%.o: $(PIPE_DIR)/%.c
+	@mkdir -p $(@D)
+	@$(COMPILER) $(CFLAGS) $(INCLUDES) -c $< -o $@
+
 $(LIBFT):
 	@cd $(LIB_DIR)/libft -s && make -s
 
@@ -166,6 +180,10 @@ $(BUILD_DIR)/test/%.o: $(TEST_DIR)/%.c
 	@$(COMPILER) $(CFLAGS) $(TEST_INCLUDES) -c $< -o $@
 
 $(BUILD_DIR)/test/env/%.o: $(TEST_DIR)/env/%.c
+	@mkdir -p $(@D)
+	@$(COMPILER) $(CFLAGS) $(TEST_INCLUDES) -c $< -o $@
+
+$(BUILD_DIR)/test/pipe/%.o: $(TEST_DIR)/%.c
 	@mkdir -p $(@D)
 	@$(COMPILER) $(CFLAGS) $(TEST_INCLUDES) -c $< -o $@
 

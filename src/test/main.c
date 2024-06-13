@@ -13,13 +13,18 @@
 #include "test.h"
 #include "shell.h"
 #include <stdio.h>
+#include <stdlib.h>
 
 int	main(int argc, char **argv, char **envp)
 {
 	t_minishell_data	data;
 
-	argv = NULL;
-	argc = 0;
+	if (argc > 1)
+	{
+		printf("Usage: %s\n", argv[0]);
+		exit(EXIT_FAILURE);
+	}	
+	pipe_tests(&data);
 	env_tests(&data, envp);
 	return (0);
 }

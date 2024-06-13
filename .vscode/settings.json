@@ -13,6 +13,11 @@
         "*.tsx": "typescriptreact",
         "tokens.h": "c",
         "test.h": "c",
-        "env.h": "c"
+        "env.h": "c",
+        "stdio.h": "c",
+        "pipe.h": "c",
+        "shell.h": "c",
+        "libft.h": "c",
+        "assert.h": "c"
     }
 }
