@@ -23,19 +23,23 @@ int	new_process(t_minishell_data *data);
 int	execute(t_minishell_data *data)
 {
 	size_t	i;
-	char	*builtin_commands[5];
-	int		(*builtin_functions[5])(t_minishell_data *);
+	char	*builtin_commands[7];
+	int		(*builtin_functions[7])(t_minishell_data *);
 
 	builtin_commands[0] = "cd";
 	builtin_commands[1] = "echo";
 	builtin_commands[2] = "env";
 	builtin_commands[3] = "exit";
 	builtin_commands[4] = "export";
+	builtin_commands[5] = "pwd";
+	builtin_commands[6] = "unset";
 	builtin_functions[0] = &builtin_cd;
 	builtin_functions[1] = &builtin_echo;
 	builtin_functions[2] = &builtin_env;
 	builtin_functions[3] = &builtin_exit;
 	builtin_functions[4] = &builtin_export;
+	builtin_functions[5] = &builtin_pwd;
+	builtin_functions[6] = &builtin_unset;
 	if (data->args[0] == NULL)
 		return (1);
 	i = -1;

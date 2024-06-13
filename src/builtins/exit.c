@@ -23,12 +23,6 @@
 		- Exit with the exit status
 */
 
-/*
-todo
-Add cleanup functions
-Add functionality to handle exit status
-*/
-
 int	builtin_exit(t_minishell_data *data)
 {
 	const char	*message;

@@ -21,7 +21,7 @@ int	builtin_echo(t_minishell_data *data);
 int	builtin_env(t_minishell_data *data);
 int	builtin_exit(t_minishell_data *data);
 int builtin_export(t_minishell_data *data);
-// int	pwd(char **argv);
-// int	unset(char **argv);
+int	builtin_pwd(t_minishell_data *data);
+int	builtin_unset(t_minishell_data *data);
 
 #endif

@@ -4,6 +4,7 @@
         "maxishell",
         "minishell",
         "OLDPWD",
+        "putendl",
         "putstr",
         "strcdup"
     ],
@@ -11,6 +12,7 @@
         "*.css": "tailwindcss",
         "*.tsx": "typescriptreact",
         "tokens.h": "c",
-        "test.h": "c"
+        "test.h": "c",
+        "env.h": "c"
     }
 }
