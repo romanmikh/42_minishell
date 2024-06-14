@@ -12,14 +12,13 @@
 
 #include "tokens.h"
 
-char *trim_input(char *str)
+char	*trim_input(char *str)
 {
 	char	*trimmed_str;
 
 	trimmed_str = ft_strtrim(str, " \t\n\r\v\f");
 	if (!trimmed_str)
 	{
-		//free(trimmed_str);
 		return (0);
 	}
 	return (trimmed_str);

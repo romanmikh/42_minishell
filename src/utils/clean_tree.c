@@ -12,6 +12,7 @@
 
 #include "tokens.h"
 
+// unused since tree freed on the fly
 void	free_all_tokens(t_token *tokens)
 {
 	t_token	*temp;
@@ -20,9 +21,16 @@ void	free_all_tokens(t_token *tokens)
 	{
 		temp = tokens;
 		tokens = tokens->next;
-		if (temp->data)
-			free(temp->data);
+		if (temp)
+		{
+			if (temp->data)
+			{
+				free(temp->data);
+				temp->data = NULL;
+			}
+		}
 		free(temp);
+		temp = NULL;
 	}
 }
 

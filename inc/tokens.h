@@ -71,7 +71,8 @@ void		parse_loop(char **input, char **tokens, int *pos, int *bufsize);
 char		**parse_input(char *input);
 char		*generate_prompt(t_minishell_data *data);
 void		make_history(char *line);
-void		cleanup(char *line, t_token *tokens, char *prompt);
+void		loop_cleanup(char *line, t_token *tokens, \
+		char *prompt, t_ast *tree);
 void		free_minishell_data(t_minishell_data *data);
 char		*check_heredoc(char *line);
 char		*heredoc(char *eof);

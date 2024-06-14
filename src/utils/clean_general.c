@@ -52,11 +52,10 @@ void	free_minishell_data(t_minishell_data *data)
 	}
 }
 
-void	cleanup(char *line, t_token *tokens, char *prompt)
+void	loop_cleanup(char *line, t_token *tokens, char *prompt, t_ast *tree)
 {
 	free(line);
+	free(prompt);
 	(void)tokens;
-	(void)prompt;
-	//free_all_tokens(tokens);
-	//free(prompt);
+	free_ast(tree);
 }
