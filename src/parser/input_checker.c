@@ -1,4 +1,3 @@
-
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
@@ -26,7 +25,6 @@ int	check_operators(const char *str)
 		return (1);
 	while (*str)
 	{
-
 		if (*str == '\'')
 			single_quotes++;
 		if (*str == '\"')
@@ -46,7 +44,7 @@ int	check_operators(const char *str)
 	return (0);
 }
 
-const char *exclude_delimiters(const char *str)
+const char	*exclude_delimiters(const char *str)
 {
 	while (*str && (ft_strchr(" \t\n\r\v\f", *str) != NULL))
 		str++;
@@ -55,8 +53,7 @@ const char *exclude_delimiters(const char *str)
 
 int	valid_operator(const char **str)
 {
-	const char *start;
-	ft_printf("%s <- valid operator str\n", *str);
+	const char	*start;
 
 	start = (*str)++;
 	if (*start == **str)
@@ -74,14 +71,13 @@ int	check_redirections(const char *str)
 
 	single_quotes = 0;
 	double_quotes = 0;
-	ft_printf("%s <-- check redirections beginning\n", str);
 	while (*str)
 	{
 		if (*str == '\'')
 			single_quotes++;
 		if (*str == '\"')
 			double_quotes++;
-		if ((!(single_quotes % 2) && !(double_quotes % 2)) 
+		if ((!(single_quotes % 2) && !(double_quotes % 2))
 			&& (*str == '>' || *str == '<'))
 		{
 			if (!valid_operator(&str))

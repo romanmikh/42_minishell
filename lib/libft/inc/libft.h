@@ -95,14 +95,24 @@ int		ft_abs(int n);
 # define STDOUT 1
 # define STDERR 2
 
-# define BWHI	"\033[1;37m"
-# define MAG	"\033[0;35m"
-# define BMAG	"\033[1;35m"
-# define IMAG	"\033[3;35m"
-# define BIMAG	"\033[1;3;35m"
-# define RED	"\033[1;31m"
-# define GRN	"\033[1;32m"
-# define SBLU	"\033[5;3;34m"
-# define DEF	"\033[0m"
+# define RESET "\033[0m"
+
+# define BLK "\033[0;30m"
+# define RED "\033[0;31m"
+# define GRN "\033[0;32m"
+# define YEL "\033[0;33m"
+# define BLU "\033[0;34m"
+# define MAG "\033[0;35m"
+# define CYA "\033[0;36m"
+# define WHI "\033[0;37m"
+
+# define B_BLK "\033[1;30m"
+# define B_RED "\033[1;31m"
+# define B_GRN "\033[1;32m"
+# define B_YEL "\033[1;33m"
+# define B_BLU "\033[1;34m"
+# define B_MAG "\033[1;35m"
+# define B_CYA "\033[1;36m"
+# define B_WHI "\033[1;37m"
 
 #endif /* LIBFT_H */

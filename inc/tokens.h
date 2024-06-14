@@ -40,11 +40,20 @@ typedef enum e_token_type
 
 typedef struct s_token
 {
-	char			*data;
-	t_token_type		type;
-	struct s_token	*next;
-	struct s_token	*prev;
+	t_token_type			type;
+	char					*data;
+	struct s_token			*next;
+	struct s_token			*prev;
 }	t_token;
+
+typedef struct s_ast
+{
+	t_token_type		type;
+	int					file;
+	char				**args;
+	struct s_ast		*left;
+	struct s_ast		*right;
+}	t_ast;
 
 void		add_node(t_token **head, char *str);
 void		print_stack(t_token **stack);
@@ -71,8 +80,11 @@ void		init_minishell_data(t_minishell_data *data, char **envp);
 void		initialise(int argc, char **argv);
 void		execute_command(char **parsed_text, t_token **tokens);
 void		print_maxishell(void);
-int		input_error_checks(const char *str);
+int			input_error_checks(const char *str);
 t_token		*tokenise(char *str);
 void		print_tokens(t_token *tokens);
+t_ast		*parse_tokens(t_token **tokens);
+void		print_tokens(t_token *tokens);
+void		visualize_ast(t_ast *root);
 
 #endif

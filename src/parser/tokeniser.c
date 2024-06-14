@@ -12,9 +12,9 @@
 
 #include "tokens.h"
 
-t_token *new_token(char *value, t_token_type type)
+t_token	*new_token(char *value, t_token_type type)
 {
-	t_token *token;
+	t_token	*token;
 
 	token = malloc(sizeof(t_token));
 	if (!token)
@@ -32,7 +32,7 @@ t_token *new_token(char *value, t_token_type type)
 
 void	append_token(t_token **tokens, t_token *new_token)
 {
-	t_token *prev;
+	t_token	*prev;
 
 	if (!*tokens)
 		*tokens = new_token;
@@ -54,17 +54,14 @@ void	free_all_tokens(t_token *tokens)
 		temp = tokens;
 		tokens = tokens->next;
 		free(temp->data);
-		//free(temp->type);
 		free(temp);
 	}
 }
 
 void	handle_special_chars(char **str, t_token **tokens)
 {
-	ft_printf("%s <-- phrase st start of handle_special_chars\n", str);
 	if (**str == '<')
 	{
-	printf("%s fu\n", *str);
 		if (*(*str + 1) == '<')
 		{
 			append_token(tokens, new_token("<<", REDIR_HEREDOC));
@@ -91,14 +88,12 @@ void	handle_special_chars(char **str, t_token **tokens)
 void	append_phrase_if_valid(char **start, char **str, t_token **tokens)
 {
 	char	*phrase;
-	ft_printf("%s <-- append_phrase starting var\n", *str);
 
 	if (*str > *start)
 	{
 		phrase = ft_strndup(*start, *str - *start);
 		if (phrase)
 		{
-			ft_printf("%s <-- phrase appended\n", phrase);
 			append_token(tokens, new_token(phrase, PHRASE));
 			free(phrase);
 		}
@@ -116,7 +111,6 @@ void	handle_phrase(char **str, t_token **tokens)
 	start = *str;
 	quote_flag = 0;
 	quote_type = 0;
-	ft_printf("%s <-- phrase in handle_phrase\n", *str);
 	while (**str)
 	{
 		if (!quote_flag && (**str == '\'' || **str == '\"'))
@@ -148,11 +142,10 @@ void	print_tokens(t_token *tokens)
 	}
 }
 
-t_token *tokenise(char *str)
+t_token	*tokenise(char *str)
 {
-	t_token *tokens;
-	ft_printf("%s <-- in tokenise()\n", str);
-	
+	t_token	*tokens;
+
 	tokens = NULL;
 	while (*str)
 	{

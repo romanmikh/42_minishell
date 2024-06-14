@@ -14,20 +14,6 @@
 #include "execute.h"
 #include "shell.h"
 
-void	exit_status_var(void)
-{
-	ft_printf("\033[0;93mTODO: add logic for '$?'\n");
-}
-
-void	is_exit_status_var(char *line)
-{
-	char	*var_pos;
-
-	var_pos = ft_strstr(line, "$?");
-	if (var_pos != 0)
-		exit_status_var();
-}
-
 char *trim_input(char *str)
 {
 	char	*trimmed_str;
@@ -47,24 +33,27 @@ void	main_loop(t_minishell_data data)
 	char				*line;
 	t_token				*tokens;
 	char				*trimmed_input;
+	t_ast				*tree;
 
 	prompt = generate_prompt(&data);
-	//tokens = NULL;
 	line = readline(prompt);
-	is_exit_status_var(line);
-	//line = check_heredoc(line);
 	if (!line)
 		exit(EXIT_FAILURE);
 	make_history(line);
-	ft_printf("%s <-- line from readline\n", line);
 	trimmed_input = trim_input(line);
-	ft_printf("%s <-- trimmed_input\n", trimmed_input);
 	input_error_checks(trimmed_input);
-	ft_printf("%s <-- trimmed_input after checks\n", trimmed_input);
 	tokens = tokenise(trimmed_input);
+	if (!tokens)
+	{
+		ft_printf("Error: tokens could not be allocated");
+		exit(EXIT_FAILURE);
+	}
 	print_tokens(tokens);
-
-	//execute_command(parsed_text, &tokens);
+	ft_printf("^tokens before tree\n");
+	tree = parse_tokens(&tokens);
+	(void)tree;
+	//visualize_ast(tree);
+	//free_ast(tree);
 	//data.args = list_to_array(tokens);
 	//execute(&data);
 	//cleanup(trimmed_input, parsed_text, tokens, prompt);
