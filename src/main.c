@@ -14,33 +14,33 @@
 #include "execute.h"
 #include "shell.h"
 
-void	main_loop(t_minishell_data data)
+int	main_loop(t_minishell_data data)
 {
-	char				*prompt;
-	char				*line;
-	t_token				*tokens;
-	char				*trimmed_input;
 	t_ast				*tree;
+	char				*input;
+	t_token				*tokens;
+	char				*prompt;
+	char				*trimmed_input;
 
 	prompt = generate_prompt(&data);
-	line = readline(prompt);
-	if (!line)
-		exit(EXIT_FAILURE);
-	make_history(line);
-	trimmed_input = trim_input(line);
+	input = readline(prompt);
+	if (!input)
+		return (1);
+	make_history(input);
+	trimmed_input = trim_input(input);
 	input_error_checks(trimmed_input);
 	tokens = tokenise(trimmed_input);
-	if (!tokens)
+	if (tokens)
 	{
-		ft_printf("Error: tokens could not be allocated");
-		exit(EXIT_FAILURE);
+		print_tokens(tokens);
+		ft_printf("^tokens before entering the tree\n");
+		tree = parse_tokens(&tokens);
+		//data.args = list_to_array(tokens);
+		//execute(&data);
+		loop_cleanup(trimmed_input, tokens, prompt, tree);
+		return (0);
 	}
-	print_tokens(tokens);
-	ft_printf("^tokens before entering the tree\n");
-	tree = parse_tokens(&tokens);
-	//data.args = list_to_array(tokens);
-	//execute(&data);
-	loop_cleanup(trimmed_input, tokens, prompt, tree);
+	return (1);
 }
 
 int	main(int argc, char **argv, char **envp)
