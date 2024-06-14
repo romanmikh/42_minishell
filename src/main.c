@@ -14,19 +14,6 @@
 #include "execute.h"
 #include "shell.h"
 
-char *trim_input(char *str)
-{
-	char	*trimmed_str;
-
-	trimmed_str = ft_strtrim(str, " \t\n\r\v\f");
-	if (!trimmed_str)
-	{
-		free(trimmed_str);
-		return (0);
-	}
-	return (trimmed_str);
-}
-
 void	main_loop(t_minishell_data data)
 {
 	char				*prompt;
@@ -49,14 +36,13 @@ void	main_loop(t_minishell_data data)
 		exit(EXIT_FAILURE);
 	}
 	print_tokens(tokens);
-	ft_printf("^tokens before tree\n");
+	ft_printf("^tokens before entering the tree\n");
 	tree = parse_tokens(&tokens);
 	(void)tree;
-	//visualize_ast(tree);
 	//free_ast(tree);
 	//data.args = list_to_array(tokens);
 	//execute(&data);
-	//cleanup(trimmed_input, parsed_text, tokens, prompt);
+	//cleanup(trimmed_input, tokens, prompt);
 }
 
 int	main(int argc, char **argv, char **envp)

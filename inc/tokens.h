@@ -71,8 +71,7 @@ void		parse_loop(char **input, char **tokens, int *pos, int *bufsize);
 char		**parse_input(char *input);
 char		*generate_prompt(t_minishell_data *data);
 void		make_history(char *line);
-void		cleanup(char *line, char **parsed_text, t_token *tokens, \
-		char *prompt);
+void		cleanup(char *line, t_token *tokens, char *prompt);
 void		free_minishell_data(t_minishell_data *data);
 char		*check_heredoc(char *line);
 char		*heredoc(char *eof);
@@ -86,5 +85,21 @@ void		print_tokens(t_token *tokens);
 t_ast		*parse_tokens(t_token **tokens);
 void		print_tokens(t_token *tokens);
 void		visualize_ast(t_ast *root);
+void		free_ast(t_ast *node);
+void		free_all_tokens(t_token *tokens);
+t_token		*new_token(char *value, t_token_type type);
+void		append_token(t_token **tokens, t_token *new_token);
+int			valid_operator(const char **str);
+t_ast		*new_ast_node(t_token_type type);
+t_ast		*create_and_link_redirection(t_token **tokens, t_token *tmp);
+int			arg_len(t_token *current);
+void		fill_command_arguments(t_ast *command_node, t_token **tokens, \
+			int arg_count);
+t_ast		*manage_commands(t_token **tokens);
+t_ast		*create_redir_node(t_token *token);
+int			is_redir_node(t_token *tokens);
+t_ast		*manage_redirections(t_token **tokens);
+t_ast		*manage_pipe(t_token **tokens);
+char		*trim_input(char *str);
 
 #endif

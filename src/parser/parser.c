@@ -15,117 +15,11 @@
 t_ast	*manage_redirections(t_token **tokens);
 t_ast	*create_redir_node(t_token *token);
 
-
-t_ast	*new_ast_node(t_token_type type)
-{
-	t_ast		*node;
-
-	ft_printf("new_ast_node\n");
-	node = malloc(sizeof(t_ast));
-	if (!node)
-		return (NULL);
-	node->type = type;
-	node->args = NULL;
-	node->left = NULL;
-	node->right = NULL;
-	return (node);
-}
-
-void	free_ast(t_ast *node)
-{
-	int				i;
-
-	i = 0;
-	if (!node)
-		return ;
-	if (node->type == PHRASE && node->args)
-	{
-		while (node->args && node->args[i])
-		{
-			free(node->args[i]);
-			i++;
-		}
-		free(node->args);
-	}
-	free_ast(node->left);
-	free_ast(node->right);
-	free(node);
-}
-
-t_ast	*create_and_link_redirection(t_token **tokens, t_token *tmp)
-{
-	t_ast	*redirect_node;
-
-	ft_printf(BLU "tokens inside create_and_link_redirection\n");
-	print_tokens(*tokens);
-	ft_printf("" RESET);
-	redirect_node = new_ast_node((*tokens)->type);
-	*tokens = (*tokens)->next->next;
-	redirect_node->left = manage_redirections(tokens);
-	redirect_node->right = create_redir_node(tmp->next);
-	free(tmp->data);
-	free(tmp);
-	return (redirect_node);
-}
-
-int	arg_len(t_token *current)
-{
-	int	arg_count;
-
-	arg_count = 0;
-	while (current && current->type == PHRASE)
-	{
-		arg_count++;
-		current = current->next;
-	}
-	ft_printf("counted %d args\n", arg_count);
-	return (arg_count);
-}
-
-void	fill_command_arguments(t_ast *command_node, t_token **tokens, \
-			int arg_count)
-{
-	int		i;
-	t_token	*tmp;
-
-	ft_printf(MAG "tokens inside fill_command_arguments\n");
-	print_tokens(*tokens);
-	ft_printf("" RESET);
-	i = 0;
-	while (i < arg_count)
-	{
-		command_node->args[i] = ft_strdup((*tokens)->data);
-		tmp = *tokens;
-		*tokens = (*tokens)->next;
-		free(tmp->data);
-		free(tmp);
-		i++;
-	}
-	command_node->args[arg_count] = NULL;
-}
-
-t_ast	*manage_commands(t_token **tokens)
-{
-	t_ast		*command_node;
-	int			arg_count;
-
-	ft_printf(YEL "tokens inside fill_command_arguments\n");
-	print_tokens(*tokens);
-	ft_printf("" RESET);
-	command_node = new_ast_node(PHRASE);
-	arg_count = arg_len(*tokens);
-	command_node->args = malloc(sizeof(char *) * (arg_count + 1));
-	if (!command_node->args)
-		return (NULL);
-	fill_command_arguments(command_node, tokens, arg_count);
-	return (command_node);
-}
-
 t_ast	*create_redir_node(t_token *token)
 {
 	t_ast			*node;
 
-	ft_printf("create_redir_node\n");
+	ft_printf(GRN "create_redir_node\n" RESET);
 	node = malloc(sizeof(t_ast));
 	if (!node)
 		return (NULL);
@@ -144,26 +38,33 @@ t_ast	*create_redir_node(t_token *token)
 	return (node);
 }
 
+int	is_redir_node(t_token *tokens)
+{
+	if (tokens->type == REDIR_IN
+		|| tokens->type == REDIR_OUT
+		|| tokens->type == REDIR_APPEND
+		|| tokens->type == REDIR_HEREDOC)
+		return (1);
+	return (0);
+}
+
 t_ast	*manage_redirections(t_token **tokens)
 {
 	t_token		*tmp;
 	t_ast		*redirect_node;
 	t_token		*next_token;
 
-	ft_printf(GRN"tokens inside manage_redirections\n");
+	ft_printf(BLU "tokens inside manage_redirections\n");
 	print_tokens(*tokens);
-	ft_printf("" RESET);
 	if (!*tokens)
 		return (NULL);
 	tmp = *tokens;
-	if ((*tokens)->type >= REDIR_IN
-		&& (*tokens)->type <= REDIR_HEREDOC)
+	if (is_redir_node(*tokens))
 		return (create_and_link_redirection(tokens, tmp));
 	while (*tokens && (*tokens)->next)
 	{
 		next_token = (*tokens)->next;
-		if ((*tokens)->next->type >= REDIR_IN
-			&& (*tokens)->next->type <= REDIR_HEREDOC)
+		if (is_redir_node((*tokens)->next))
 		{
 			redirect_node = new_ast_node((*tokens)->next->type);
 			(*tokens)->next = next_token->next->next;

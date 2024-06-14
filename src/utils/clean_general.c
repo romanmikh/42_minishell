@@ -52,10 +52,11 @@ void	free_minishell_data(t_minishell_data *data)
 	}
 }
 
-void	cleanup(char *line, char **parsed_text, t_token *tokens, char *prompt)
+void	cleanup(char *line, t_token *tokens, char *prompt)
 {
 	free(line);
-	free(parsed_text);
-	free_stack(&tokens);
-	free(prompt);
+	(void)tokens;
+	(void)prompt;
+	//free_all_tokens(tokens);
+	//free(prompt);
 }

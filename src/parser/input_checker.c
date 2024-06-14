@@ -12,6 +12,25 @@
 
 #include "tokens.h"
 
+int	check_operators_loop(const char **str, int *single_quotes, \
+			int *double_quotes, int *cmd_flag)
+{
+	if (**str == '\'')
+		(*single_quotes)++;
+	if (**str == '\"')
+		(*double_quotes)++;
+	if (**str == '|' && !(*single_quotes % 2) && !(*double_quotes % 2))
+	{
+		if (*cmd_flag)
+			return (1);
+		*cmd_flag = 1;
+	}
+	else if (ft_strchr(" \t\n\r\v\f", **str) != NULL)
+		*cmd_flag = 0;
+	(*str)++;
+	return (0);
+}
+
 int	check_operators(const char *str)
 {
 	int	single_quotes;
@@ -24,44 +43,12 @@ int	check_operators(const char *str)
 	if (*str == '&' || *str == '|')
 		return (1);
 	while (*str)
-	{
-		if (*str == '\'')
-			single_quotes++;
-		if (*str == '\"')
-			double_quotes++;
-		if (*str == '|' && !(single_quotes % 2) && !(double_quotes % 2))
-		{
-			if (cmd_flag)
-				return (1);
-			cmd_flag = 1;
-		}
-		else if (ft_strchr(" \t\n\r\v\f", *str) != NULL)
-			cmd_flag = 0;
-		str++;
-	}
+		if (check_operators_loop(&str, &single_quotes, \
+			&double_quotes, &cmd_flag) == 1)
+			return (1);
 	if (cmd_flag)
 		return (1);
 	return (0);
-}
-
-const char	*exclude_delimiters(const char *str)
-{
-	while (*str && (ft_strchr(" \t\n\r\v\f", *str) != NULL))
-		str++;
-	return (str);
-}
-
-int	valid_operator(const char **str)
-{
-	const char	*start;
-
-	start = (*str)++;
-	if (*start == **str)
-		(*str)++;
-	*str = exclude_delimiters(*str);
-	if (**str == '<' || **str == '>' || **str == '|' || **str == '\0')
-		return (0);
-	return (1);
 }
 
 int	check_redirections(const char *str)
@@ -118,10 +105,6 @@ int	input_error_checks(const char *str)
 	else if (check_open_quotes(str))
 		ft_printf("Input error: open quote.\n");
 	else
-	{
-		//free(str);
 		return (0);
-	}
-	//free(str);
 	return (1);
 }
