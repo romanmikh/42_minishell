@@ -6,13 +6,19 @@
 /*   By: dmdemirk <dmdemirk@student.42london.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/03 16:32:34 by dmdemirk          #+#    #+#             */
-/*   Updated: 2024/06/10 17:20:42 by dmdemirk         ###   ########.fr       */
+/*   Updated: 2024/06/11 16:44:41 by dmdemirk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include "shell.h"
 #include "env.h"
+#include "libft.h"
+
+/*
+	Functionality:
+		- Print the environment
+*/
 
 void	print_env_stack(t_env *envp);
 int		builtin_env(t_minishell_data *data);
@@ -31,16 +37,8 @@ void	print_env_stack(t_env *envp)
 
 int	builtin_env(t_minishell_data *data)
 {
-	int		i;
-	char	*value;
-
-	i = 1;
 	printf("\nbuiltin_env\n");
-	printf("Print envp:\n");
-	if (data->args[i])
-	{
-		value = get_env(data->envp, data->args[i]);
-		printf("%s\n", value);
-	}
+	if (ft_strcmp(data->args[0], "env") == 0 && data->args[1] == NULL)
+		print_env_stack(data->envp);
 	return (0);
 }

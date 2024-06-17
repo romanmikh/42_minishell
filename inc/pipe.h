@@ -1,35 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   exit.c                                             :+:      :+:    :+:   */
+/*   pipe.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dmdemirk <dmdemirk@student.42london.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/03 16:32:42 by dmdemirk          #+#    #+#             */
-/*   Updated: 2024/06/17 11:13:42 by dmdemirk         ###   ########.fr       */
+/*   Created: 2024/06/17 11:02:59 by dmdemirk          #+#    #+#             */
+/*   Updated: 2024/06/17 11:03:00 by dmdemirk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "shell.h"
-#include "libft.h"
-#include <stdlib.h>
-#include <stdio.h>
-#include "env.h"
+#ifndef PIPE_H
+# define PIPE_H
 
-/*
-	Functionality:
-		- Exit the shell
-		- Free the environment
-		- Exit with the exit status
-*/
+# include "shell.h"
 
-int	builtin_exit(t_minishell_data *data)
-{
-	const char	*message;
+/*  pipe    */
+void	builtin_pipe(t_minishell_data *data);
 
-	printf("\nbuiltin_exit\n");
-	message = "exit\n";
-	write(STDOUT_FILENO, message, ft_strlen(message));
-	free_env(data->envp);
-	exit(data->exit_status);
-}
+#endif

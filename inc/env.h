@@ -25,7 +25,7 @@ void	init_env(t_env **data_envp, char **envp);
 void	add_env_node(t_env **data_envp, char *line);
 char	*get_env(t_env *envp, const char *key);
 void	set_env(t_env **env, const char *key, const char *value);
-void	unset_env(t_env **env, const char *name);
+int		unset_env(t_env **env, const char *name);
 
 /*	utils	*/
 char	**env_to_array(t_env *envp);

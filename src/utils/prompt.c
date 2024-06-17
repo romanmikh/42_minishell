@@ -29,8 +29,8 @@ char	*generate_prompt(t_minishell_data *data)
 	char	*prompt;
 	size_t	prompt_len;
 
-	prompt_len = strlen("🌴\e[1m @maxishell:~> \e[m") + \
-					strlen(get_env(data->envp, "LOGNAME")) + \
+	prompt_len = ft_strlen("🌴\e[1m @maxishell:~> \e[m") + \
+					ft_strlen(get_env(data->envp, "LOGNAME")) + \
 					ft_strlen(get_env(data->envp, "PWD")) + \
 					1;
 	prompt = (char *)malloc(prompt_len);
