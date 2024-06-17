@@ -6,7 +6,7 @@
 /*   By: dmdemirk <dmdemirk@student.42london.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/10 16:48:39 by dmdemirk          #+#    #+#             */
-/*   Updated: 2024/06/10 16:48:47 by dmdemirk         ###   ########.fr       */
+/*   Updated: 2024/06/17 11:04:00 by dmdemirk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,6 @@
 void	env_tests(t_minishell_data *data, char **envp);
 
 /*  pipe    */
-void pipe_tests(t_minishell_data *data);
+void	pipe_tests(t_minishell_data *data);
 
 #endif

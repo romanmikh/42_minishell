@@ -6,7 +6,7 @@
 /*   By: dmdemirk <dmdemirk@student.42london.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/07 17:20:11 by dmdemirk          #+#    #+#             */
-/*   Updated: 2024/06/10 17:16:32 by dmdemirk         ###   ########.fr       */
+/*   Updated: 2024/06/17 11:08:05 by dmdemirk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	init_env(t_env **data_envp, char **envp);
 void	add_env_node(t_env **data_envp, char *line);
 char	*get_env(t_env *envp, const char *key);
 void	set_env(t_env **env, const char *key, const char *value);
-int	unset_env(t_env **env, const char *name);
+int		unset_env(t_env **env, const char *name);
 
 void	init_env(t_env **data_envp, char **envp)
 {

@@ -6,7 +6,7 @@
 /*   By: dmdemirk <dmdemirk@student.42london.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/03 16:32:42 by dmdemirk          #+#    #+#             */
-/*   Updated: 2024/06/11 16:47:39 by dmdemirk         ###   ########.fr       */
+/*   Updated: 2024/06/17 11:13:42 by dmdemirk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@
 int	builtin_exit(t_minishell_data *data)
 {
 	const char	*message;
-	
+
 	printf("\nbuiltin_exit\n");
 	message = "exit\n";
 	write(STDOUT_FILENO, message, ft_strlen(message));

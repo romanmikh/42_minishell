@@ -6,7 +6,7 @@
 /*   By: dmdemirk <dmdemirk@student.42london.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/03 16:31:07 by dmdemirk          #+#    #+#             */
-/*   Updated: 2024/06/10 17:18:38 by dmdemirk         ###   ########.fr       */
+/*   Updated: 2024/06/17 11:13:55 by dmdemirk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ int	builtin_cd(t_minishell_data *data)
 		return (1);
 	}
 	set_env(&data->envp, "OLDPWD", get_env(data->envp, "PWD"));
-	if(getcwd(cwd, sizeof(cwd)) != NULL)
+	if (getcwd(cwd, sizeof(cwd)) != NULL)
 		set_env(&data->envp, "PWD", cwd);
 	return (0);
 }

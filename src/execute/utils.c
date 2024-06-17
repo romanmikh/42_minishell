@@ -6,7 +6,7 @@
 /*   By: dmdemirk <dmdemirk@student.42london.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 17:32:22 by dmdemirk          #+#    #+#             */
-/*   Updated: 2024/06/10 17:18:00 by dmdemirk         ###   ########.fr       */
+/*   Updated: 2024/06/17 11:08:49 by dmdemirk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,8 @@ char	*ft_find_path(char *cmd, t_env *envp)
 	char	*tmp_slash;
 	char	*tmp_full_path;
 	int		i;
-	// int		j;
 
 	path = ft_split(get_env(envp, "PATH"), ':');
-	// j = -1;
-	// while (path[++j] != NULL)
-	// 	printf("path[%d]: %s\n", j, path[j]);
 	i = -1;
 	while (path[++i] != NULL)
 	{
