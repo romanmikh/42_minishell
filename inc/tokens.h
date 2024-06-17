@@ -92,14 +92,14 @@ t_token		*new_token(char *value, t_token_type type);
 void		append_token(t_token **tokens, t_token *new_token);
 int			valid_operator(const char **str);
 t_ast		*new_ast_node(t_token_type type);
-t_ast		*create_and_link_redirection(t_token **tokens, t_token *tmp);
+t_ast		*create_redir(t_token **tokens, t_token *tmp);
 int			arg_len(t_token *current);
-void		fill_command_arguments(t_ast *command_node, t_token **tokens, \
+void		set_command_args(t_ast *command_node, t_token **tokens, \
 			int arg_count);
 t_ast		*manage_commands(t_token **tokens);
 t_ast		*create_redir_node(t_token *token);
 int			is_redir_node(t_token *tokens);
-t_ast		*manage_redirections(t_token **tokens);
+t_ast		*manage_redirs(t_token **tokens);
 t_ast		*manage_pipe(t_token **tokens);
 char		*trim_input(char *str);
 

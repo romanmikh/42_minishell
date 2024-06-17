@@ -6,7 +6,7 @@
 /*   By: rocky <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/14 10:45:48 by rocky             #+#    #+#             */
-/*   Updated: 2024/06/14 10:45:52 by rocky            ###   ########.fr       */
+/*   Updated: 2024/06/17 11:06:25 by rocky            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,16 +27,16 @@ t_ast	*new_ast_node(t_token_type type)
 	return (node);
 }
 
-t_ast	*create_and_link_redirection(t_token **tokens, t_token *tmp)
+t_ast	*create_redir(t_token **tokens, t_token *tmp)
 {
 	t_ast	*redirect_node;
 
-	ft_printf(BLU "tokens inside create_and_link_redirection\n");
+	ft_printf(BLU "tokens inside create_redir\n");
 	print_tokens(*tokens);
 	ft_printf("" RESET);
 	redirect_node = new_ast_node((*tokens)->type);
 	*tokens = (*tokens)->next->next;
-	redirect_node->left = manage_redirections(tokens);
+	redirect_node->left = manage_redirs(tokens);
 	redirect_node->right = create_redir_node(tmp->next);
 	free(tmp->data);
 	free(tmp);
@@ -57,13 +57,13 @@ int	arg_len(t_token *current)
 	return (arg_count);
 }
 
-void	fill_command_arguments(t_ast *command_node, t_token **tokens, \
+void	set_command_args(t_ast *command_node, t_token **tokens, \
 			int arg_count)
 {
 	int		i;
 	t_token	*tmp;
 
-	ft_printf(MAG "tokens inside fill_command_arguments\n");
+	ft_printf(MAG "tokens inside set_command_args\n");
 	print_tokens(*tokens);
 	ft_printf("" RESET);
 	i = 0;
@@ -84,7 +84,7 @@ t_ast	*manage_commands(t_token **tokens)
 	t_ast		*command_node;
 	int			arg_count;
 
-	ft_printf(YEL "tokens inside fill_command_arguments\n");
+	ft_printf(YEL "tokens inside manage_commands\n");
 	print_tokens(*tokens);
 	ft_printf("" RESET);
 	command_node = new_ast_node(PHRASE);
@@ -92,6 +92,6 @@ t_ast	*manage_commands(t_token **tokens)
 	command_node->args = malloc(sizeof(char *) * (arg_count + 1));
 	if (!command_node->args)
 		return (NULL);
-	fill_command_arguments(command_node, tokens, arg_count);
+	set_command_args(command_node, tokens, arg_count);
 	return (command_node);
 }

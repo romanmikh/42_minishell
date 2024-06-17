@@ -12,7 +12,7 @@
 
 #include "tokens.h"
 
-t_ast	*manage_redirections(t_token **tokens);
+t_ast	*manage_redirs(t_token **tokens);
 t_ast	*create_redir_node(t_token *token);
 
 t_ast	*create_redir_node(t_token *token)
@@ -48,19 +48,19 @@ int	is_redir_node(t_token *tokens)
 	return (0);
 }
 
-t_ast	*manage_redirections(t_token **tokens)
+t_ast	*manage_redirs(t_token **tokens)
 {
 	t_token		*tmp;
 	t_ast		*redirect_node;
 	t_token		*next_token;
 
-	ft_printf(BLU "tokens inside manage_redirections\n");
+	ft_printf(BLU "tokens inside manage_redirs\n");
 	print_tokens(*tokens);
 	if (!*tokens)
 		return (NULL);
 	tmp = *tokens;
 	if (is_redir_node(*tokens))
-		return (create_and_link_redirection(tokens, tmp));
+		return (create_redir(tokens, tmp));
 	while (*tokens && (*tokens)->next)
 	{
 		next_token = (*tokens)->next;
@@ -68,7 +68,7 @@ t_ast	*manage_redirections(t_token **tokens)
 		{
 			redirect_node = new_ast_node((*tokens)->next->type);
 			(*tokens)->next = next_token->next->next;
-			redirect_node->left = manage_redirections(&tmp);
+			redirect_node->left = manage_redirs(&tmp);
 			redirect_node->right = create_redir_node((next_token->next));
 			return (free(next_token->data), free(next_token), redirect_node);
 		}
@@ -94,7 +94,7 @@ t_ast	*manage_pipe(t_token **tokens)
 		{
 			pipe_node = new_ast_node((*tokens)->next->type);
 			(*tokens)->next = NULL;
-			pipe_node->left = manage_redirections(&tmp);
+			pipe_node->left = manage_redirs(&tmp);
 			pipe_node->right = manage_pipe(&(next_token->next));
 			free(next_token->data);
 			free(next_token);
@@ -102,7 +102,7 @@ t_ast	*manage_pipe(t_token **tokens)
 		}
 		*tokens = next_token;
 	}
-	return (manage_redirections(&tmp));
+	return (manage_redirs(&tmp));
 }
 
 t_ast	*parse_tokens(t_token **tokens)
