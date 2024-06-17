@@ -18,6 +18,7 @@
         "pipe.h": "c",
         "shell.h": "c",
         "libft.h": "c",
-        "assert.h": "c"
+        "assert.h": "c",
+        "unistd.h": "c"
     }
 }

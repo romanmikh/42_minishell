@@ -32,18 +32,18 @@ void	builtin_pipe(t_minishell_data *data)
 	if (pid == 0)
 	{
 		close(fd[0]);
-		if (dup2(fd[1], STDOUT_FILENO) == -1)
-			ft_perror();
+		dup2(fd[1], STDOUT_FILENO);
 		close(fd[1]);
 		execute(data);
+		ft_perror();
 	}
 	else
 	{
 		close(fd[1]);
-		if (dup2(fd[0], STDIN_FILENO) == -1)
-			ft_perror();
+		dup2(fd[0], STDIN_FILENO);
 		close(fd[0]);
 		waitpid(pid, NULL, 0);
+		execute(data);
 	}
 }
 
