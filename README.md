@@ -1,6 +1,9 @@
-![Norminette workflow](https://github.com/dimadem/minishell/actions/workflows/norminette.yml/badge.svg)
-![Compilation workflow](https://github.com/dimadem/minishell/actions/workflows/ci.yml/badge.svg)
+![image](https://github.com/dimadem/minishell/assets/50800563/01e0c354-b0f2-49de-a4ef-8194baca2a33)
 
+
+![Norminette workflow](https://github.com/dimadem/minishell/actions/workflows/norminette.yml/badge.svg)
+![Compilation workflow](https://github.com/dimadem/minishell/actions/workflows/compile.yml/badge.svg)
+![Valgrind workflow](https://github.com/dimadem/minishell/actions/workflows/valgrind.yml/badge.svg)
 
 
 build/: Directory for object files and other intermediate build artifacts.

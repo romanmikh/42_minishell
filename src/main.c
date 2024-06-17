@@ -14,38 +14,33 @@
 #include "execute.h"
 #include "shell.h"
 
-void	exit_status_var(void)
+int	main_loop(t_minishell_data data)
 {
-	ft_printf("\033[0;93mTODO: add logic for '$?'\n");
-}
-
-void	is_exit_status_var(char *line)
-{
-	char	*var_pos;
-
-	var_pos = ft_strstr(line, "$?");
-	if (var_pos != 0)
-		exit_status_var();
-}
-
-void	main_loop(t_minishell_data data)
-{
-	char				*prompt;
-	char				*line;
+	t_ast				*tree;
+	char				*input;
 	t_token				*tokens;
-	char				**parsed_text;
+	char				*prompt;
+	char				*trimmed_input;
 
 	prompt = generate_prompt(&data);
-	tokens = NULL;
-	line = readline(prompt);
-	is_exit_status_var(line);
-	line = check_heredoc(line);
-	make_history(line);
-	parsed_text = parse_input(line);
-	execute_command(parsed_text, &tokens);
-	data.args = list_to_array(tokens);
-	execute(&data);
-	cleanup(line, parsed_text, tokens, prompt);
+	input = readline(prompt);
+	if (!input)
+		return (1);
+	make_history(input);
+	trimmed_input = trim_input(input);
+	input_error_checks(trimmed_input);
+	tokens = tokenise(trimmed_input);
+	if (tokens)
+	{
+		print_tokens(tokens);
+		ft_printf("^tokens before entering the tree\n");
+		tree = parse_tokens(&tokens);
+		//data.args = list_to_array(tokens);
+		//execute(&data);
+		loop_cleanup(trimmed_input, tokens, prompt, tree);
+		return (0);
+	}
+	return (1);
 }
 
 int	main(int argc, char **argv, char **envp)

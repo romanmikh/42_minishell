@@ -3,69 +3,160 @@
 /*                                                        :::      ::::::::   */
 /*   parser.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rmikhayl <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: rocky <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/05 14:16:03 by rmikhayl          #+#    #+#             */
-/*   Updated: 2024/06/05 14:18:08 by rmikhayl         ###   ########.fr       */
+/*   Created: 2024/06/12 19:35:45 by rocky             #+#    #+#             */
+/*   Updated: 2024/06/12 19:35:48 by rocky            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "tokens.h"
 
-void	handle_quotes(char **tokens, int *pos, char **input)
-{
-	char	quote;
-	char	*start;
+t_ast	*manage_redirs(t_token **tokens);
+t_ast	*create_redir_node(t_token *token);
 
-	quote = *(*input)++;
-	start = *input;
-	while (**input && **input != quote)
-		(*input)++;
-	if (**input == '\0')
+t_ast	*create_redir_node(t_token *token)
+{
+	t_ast			*node;
+
+	ft_printf(GRN "create_redir_node\n" RESET);
+	node = malloc(sizeof(t_ast));
+	if (!node)
+		return (NULL);
+	node->type = token->type;
+	node->args = malloc(sizeof(char *) * 2);
+	if (!node->args)
 	{
-		printf("@maxishell: syntax error: unmatched %c\n", quote);
-		free(tokens);
-		tokens = NULL;
-		return ;
+		free(node);
+		return (NULL);
 	}
-	**input = '\0';
-	tokens[*pos] = ft_strdup(start);
-	(*input)++;
-	if (ft_strlen(tokens[*pos]) > 0)
-		(*pos)++;
+	node->args[0] = token->data;
+	node->args[1] = NULL;
+	node->left = NULL;
+	node->right = NULL;
+	free(token);
+	return (node);
 }
 
-void	handle_special_chars(char **tokens, int *pos, char **input)
+int	is_redir_node(t_token *tokens)
 {
-	if ((**input == '<' && *(*input + 1) == '<') || (**input == '>' && \
-				*(*input + 1) == '>'))
+	if (tokens->type == REDIR_IN
+		|| tokens->type == REDIR_OUT
+		|| tokens->type == REDIR_APPEND
+		|| tokens->type == REDIR_HEREDOC)
+		return (1);
+	return (0);
+}
+
+t_ast	*manage_redirs(t_token **tokens)
+{
+	t_token		*tmp;
+	t_ast		*redirect_node;
+	t_token		*next_token;
+
+	ft_printf(BLU "tokens inside manage_redirs\n");
+	print_tokens(*tokens);
+	if (!*tokens)
+		return (NULL);
+	tmp = *tokens;
+	if (is_redir_node(*tokens))
+		return (create_redir(tokens, tmp));
+	while (*tokens && (*tokens)->next)
 	{
-		tokens[*pos] = ft_strndup(*input, 2);
-		(*input) += 2;
+		next_token = (*tokens)->next;
+		if (is_redir_node((*tokens)->next))
+		{
+			redirect_node = new_ast_node((*tokens)->next->type);
+			(*tokens)->next = next_token->next->next;
+			redirect_node->left = manage_redirs(&tmp);
+			redirect_node->right = create_redir_node((next_token->next));
+			return (free(next_token->data), free(next_token), redirect_node);
+		}
+		*tokens = next_token;
 	}
-	else
+	return (manage_commands(&tmp));
+}
+
+t_ast	*manage_pipe(t_token **tokens)
+{
+	t_token		*tmp;
+	t_token		*next_token;
+	t_ast		*pipe_node;
+
+	ft_printf(RED "tokens inside manage_pipe\n");
+	print_tokens(*tokens);
+	ft_printf("" RESET);
+	tmp = *tokens;
+	while (*tokens && (*tokens)->next)
 	{
-		tokens[*pos] = ft_strndup(*input, 1);
-		(*input)++;
+		next_token = (*tokens)->next;
+		if ((*tokens)->next->type == PIPE)
+		{
+			pipe_node = new_ast_node((*tokens)->next->type);
+			(*tokens)->next = NULL;
+			pipe_node->left = manage_redirs(&tmp);
+			pipe_node->right = manage_pipe(&(next_token->next));
+			free(next_token->data);
+			free(next_token);
+			return (pipe_node);
+		}
+		*tokens = next_token;
 	}
-	(*pos)++;
+	return (manage_redirs(&tmp));
 }
 
-void	handle_regular_chars(char **tokens, int *pos, char **input, char *delim)
+t_ast	*parse_tokens(t_token **tokens)
 {
-	char	*start;
-
-	start = *input;
-	while (**input && !ft_strchr(delim, **input) && **input != '|' && \
-			**input != '<' && **input != '>' && \
-			**input != '\"' && **input != '\'')
-		(*input)++;
-	tokens[*pos] = ft_strndup(start, *input - start);
-	(*pos)++;
+	if (!tokens || !*tokens)
+		return (NULL);
+	return (manage_pipe(tokens));
 }
 
-void	skip_delimiters(char **input, char *delim)
-{
-	while (**input && ft_strchr(delim, **input))
-		(*input)++;
-}
+//void print_spaces(int count) {
+//    for (int i = 0; i < count; i++) {
+//        printf("  ");
+//    }
+//}
+//
+//void print_ast_node(t_ast *node, int depth) {
+//    if (node == NULL) {
+//        return;
+//    }
+//    print_spaces(depth);
+//    switch (node->type) {
+//        case PHRASE:
+//            printf("COMMAND: ");
+//            for (int i = 0; node->args && node->args[i]; i++) {
+//                printf("%s ", node->args[i]);
+//            }
+//            printf("\n");
+//            break;
+//        case REDIR_IN:
+//            printf("REDIRECTION IN: %s\n", node->args[0]);
+//            break;
+//        case REDIR_OUT:
+//            printf("REDIRECTION OUT: %s\n", node->args[0]);
+//            break;
+//        case REDIR_APPEND:
+//            printf("REDIRECTION APPEND: %s\n", node->args[0]);
+//            break;
+//        case REDIR_HEREDOC:
+//            printf("REDIRECTION HEREDOC: %s\n", node->args[0]);
+//            break;
+//        case PIPE:
+//            printf("PIPE\n");
+//            break;
+//        default:
+//            printf("UNKNOWN NODE TYPE\n");
+//            break;
+//    }
+//    if (node->left) {
+//        print_ast_node(node->left, depth + 1);
+//    }
+//    if (node->right) {
+//        print_ast_node(node->right, depth + 1);
+//    }
+//}
+//void visualize_ast(t_ast *root) {
+//   print_ast_node(root, 0);
+//}
