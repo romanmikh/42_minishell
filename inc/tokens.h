@@ -21,7 +21,6 @@
 # include <readline/readline.h>
 # include <readline/history.h>
 # include <pwd.h>
-# include "execute.h"
 # include "shell.h"
 # include "env.h"
 
@@ -49,7 +48,7 @@ typedef struct s_token
 typedef struct s_ast
 {
 	t_token_type		type;
-	int					file;
+	int					fd[2];
 	char				**args;
 	struct s_ast		*left;
 	struct s_ast		*right;

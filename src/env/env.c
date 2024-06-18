@@ -70,6 +70,10 @@ char	*get_env(t_env *envp, const char *key)
 	}
 	return (NULL);
 }
+/*
+	todo:
+	minishell`set_env(env=0x000000016fdfed50, key="PWD", value="/Users/dimadem/Documents/GitHub/minishell/inc") at env.c:84:4
+*/
 
 void	set_env(t_env **env, const char *key, const char *value)
 {

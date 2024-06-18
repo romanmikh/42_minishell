@@ -11,6 +11,12 @@
 /* ************************************************************************** */
 
 #include "tokens.h"
+#include <string.h>
+
+/*
+	TODO:
+	fix ft_printf in print_tokens(t_token *tokens)
+*/
 
 void	handle_special_chars(char **str, t_token **tokens)
 {
@@ -90,7 +96,7 @@ void	print_tokens(t_token *tokens)
 	token = tokens;
 	while (token != NULL)
 	{
-		ft_printf("input[%d] ->  %s \n", i, token->data);
+		printf("input[%d] ->  %s \n", i, token->data);
 		token = token->next;
 		i++;
 	}

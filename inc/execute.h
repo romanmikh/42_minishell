@@ -14,9 +14,11 @@
 # define EXECUTE_H
 
 # include "shell.h"
+# include "tokens.h"
 
 /*	execute	*/
 int		execute(t_minishell_data *data);
+int execute_ast(t_ast *tree, t_minishell_data *data);
 
 /*	utils	*/
 char	*ft_find_path(char *cmd, t_env *envp);
