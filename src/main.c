@@ -35,8 +35,8 @@ int	main_loop(t_minishell_data data)
 		print_tokens(tokens);
 		ft_printf("^tokens before entering the tree\n");
 		tree = parse_tokens(&tokens);
-		//data.args = list_to_array(tokens);
-		//execute(&data);
+		printf(GRN "Hell yeah we're out of the tree\n" RESET);
+		execute_ast(tree, &data);
 		loop_cleanup(trimmed_input, tokens, prompt, tree);
 		return (0);
 	}

@@ -14,8 +14,9 @@
 # define PIPE_H
 
 # include "shell.h"
+# include "tokens.h"
 
 /*  pipe    */
-void	builtin_pipe(t_minishell_data *data);
+void	builtin_pipe(t_ast *tree, t_minishell_data *data);
 
 #endif

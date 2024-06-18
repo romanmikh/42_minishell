@@ -18,30 +18,30 @@
 #include <sys/wait.h>
 
 void	ft_perror(void);
-void	builtin_pipe(t_minishell_data *data);
+void	builtin_pipe(t_ast *tree, t_minishell_data *data);
 
-void	builtin_pipe(t_minishell_data *data)
+void	builtin_pipe(t_ast *tree, t_minishell_data *data)
 {
 	pid_t	pid;
-	int		fd[2];
+	// int		fd[2];
 
-	pipe(fd);
+	pipe(tree->fd);
 	pid = fork();
 	if (pid == -1)
 		ft_perror();
 	if (pid == 0)
 	{
-		close(fd[0]);
-		dup2(fd[1], STDOUT_FILENO);
-		close(fd[1]);
+		close(tree->fd[0]);
+		dup2(tree->fd[1], STDOUT_FILENO);
+		close(tree->fd[1]);
 		execute(data);
 		ft_perror();
 	}
 	else
 	{
-		close(fd[1]);
-		dup2(fd[0], STDIN_FILENO);
-		close(fd[0]);
+		close(tree->fd[1]);
+		dup2(tree->fd[0], STDIN_FILENO);
+		close(tree->fd[0]);
 		waitpid(pid, NULL, 0);
 		execute(data);
 	}

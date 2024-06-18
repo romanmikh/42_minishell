@@ -16,9 +16,53 @@
 #include <sys/wait.h>
 #include "shell.h"
 #include "execute.h"
+#include "tokens.h"
+#include "pipe.h"
 
+int execute_ast(t_ast *tree, t_minishell_data *data);
 int	execute(t_minishell_data *data);
 int	new_process(t_minishell_data *data);
+
+int	execute_ast(t_ast *tree, t_minishell_data *data)
+{
+	if (tree->type == PIPE)
+	{
+		printf("PIPE\n");
+		// builtin_pipe(tree, data);
+	}
+	else if (tree->type == PHRASE)
+	{
+		printf("PHRASE\n");
+		data->args = tree->args;
+		execute(data);
+	}
+	else if (tree->type == ENV_VAR)
+	{
+		printf("ENV_VAR\n");
+		//execute_redirect(tree, data);
+	}
+	else if (tree->type == REDIR_IN)
+	{
+		printf("REDIR_IN\n");
+		//execute_sequence(tree, data);
+	}
+	else if (tree->type == REDIR_OUT)
+	{
+		printf("REDIR_OUT\n");
+		//execute_sequence(tree, data);
+	}
+	else if (tree->type == REDIR_APPEND)
+	{
+		printf("REDIR_APPEND\n");
+		//execute_sequence(tree, data);
+	}
+	else if (tree->type == REDIR_HEREDOC)
+	{	
+		printf("REDIR_HEREDOC\n");
+		//execute_sequence(tree, data);
+	}
+	return (1);
+}
 
 int	execute(t_minishell_data *data)
 {
