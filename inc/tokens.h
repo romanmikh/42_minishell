@@ -101,5 +101,6 @@ int			is_redir_node(t_token *tokens);
 t_ast		*manage_redirs(t_token **tokens);
 t_ast		*manage_pipe(t_token **tokens);
 char		*trim_input(char *str);
+void print_ast_root(t_ast *root);
 
 #endif
