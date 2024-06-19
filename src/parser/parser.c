@@ -19,7 +19,6 @@ t_ast	*create_redir_node(t_token *token)
 {
 	t_ast			*node;
 
-	ft_printf(GRN "create_redir_node\n" RESET);
 	node = malloc(sizeof(t_ast));
 	if (!node)
 		return (NULL);
@@ -54,8 +53,6 @@ t_ast	*manage_redirs(t_token **tokens)
 	t_ast		*redirect_node;
 	t_token		*next_token;
 
-	ft_printf(BLU "tokens inside manage_redirs\n");
-	print_tokens(*tokens);
 	if (!*tokens)
 		return (NULL);
 	tmp = *tokens;
@@ -83,9 +80,6 @@ t_ast	*manage_pipe(t_token **tokens)
 	t_token		*next_token;
 	t_ast		*pipe_node;
 
-	ft_printf(RED "tokens inside manage_pipe\n");
-	print_tokens(*tokens);
-	ft_printf("" RESET);
 	tmp = *tokens;
 	while (*tokens && (*tokens)->next)
 	{

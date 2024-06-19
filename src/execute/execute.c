@@ -23,6 +23,40 @@ int execute_ast(t_ast *tree, t_minishell_data *data);
 int	execute(t_minishell_data *data);
 int	new_process(t_minishell_data *data);
 
+void	execution_manager(t_ast *node)
+{
+	int	i;
+
+	ft_printf(B_MAG "Executing node with type: %d\n" RESET, node->type);
+	if (node->args)
+	{
+		i = 0;
+		while (node->args[i])
+			ft_printf("  Arg: %s\n", node->args[i++]);
+	}
+}
+
+void	execute_tree(t_ast *node)
+{
+	int	i;
+
+	if (!node)
+		return ;
+	if (node->left)
+		execute_tree(node->left);
+	if (node->right)
+		execute_tree(node->right);
+	ft_printf(B_RED "Calling execution_manager for node type: %d\n" \
+		RESET, node->type);
+	if (node->args)
+	{
+		i = 0;
+		while (node->args[i])
+			ft_printf("  Arg: %s\n", node->args[i++]);
+	}
+	execution_manager(node);
+}
+
 int	execute_ast(t_ast *tree, t_minishell_data *data)
 {
 	if (tree->type == PIPE)

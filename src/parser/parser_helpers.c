@@ -16,7 +16,6 @@ t_ast	*new_ast_node(t_token_type type)
 {
 	t_ast		*node;
 
-	ft_printf(GRN "new_ast_node\n" RESET);
 	node = malloc(sizeof(t_ast));
 	if (!node)
 		return (NULL);
@@ -31,9 +30,6 @@ t_ast	*create_redir(t_token **tokens, t_token *tmp)
 {
 	t_ast	*redirect_node;
 
-	ft_printf(BLU "tokens inside create_redir\n");
-	print_tokens(*tokens);
-	ft_printf("" RESET);
 	redirect_node = new_ast_node((*tokens)->type);
 	*tokens = (*tokens)->next->next;
 	redirect_node->left = manage_redirs(tokens);
@@ -53,7 +49,6 @@ int	arg_len(t_token *current)
 		arg_count++;
 		current = current->next;
 	}
-	ft_printf(GRN "counted %d args\n" RESET, arg_count);
 	return (arg_count);
 }
 
@@ -63,9 +58,6 @@ void	set_command_args(t_ast *command_node, t_token **tokens, \
 	int		i;
 	t_token	*tmp;
 
-	ft_printf(MAG "tokens inside set_command_args\n");
-	print_tokens(*tokens);
-	ft_printf("" RESET);
 	i = 0;
 	while (i < arg_count)
 	{
@@ -84,9 +76,6 @@ t_ast	*manage_commands(t_token **tokens)
 	t_ast		*command_node;
 	int			arg_count;
 
-	ft_printf(YEL "tokens inside manage_commands\n");
-	print_tokens(*tokens);
-	ft_printf("" RESET);
 	command_node = new_ast_node(PHRASE);
 	arg_count = arg_len(*tokens);
 	command_node->args = malloc(sizeof(char *) * (arg_count + 1));
