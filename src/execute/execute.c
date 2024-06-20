@@ -19,33 +19,37 @@
 #include "tokens.h"
 #include "pipe.h"
 
-int execute_ast(t_ast *tree, t_minishell_data *data);
+int execution_manager(t_ast *node, t_minishell_data *data);
+void execute_tree(t_ast *node, t_minishell_data *data);
+int execute_ast(t_ast *node, t_minishell_data *data);
 int	execute(t_minishell_data *data);
 int	new_process(t_minishell_data *data);
 
-void	execution_manager(t_ast *node)
+int	execution_manager(t_ast *node, t_minishell_data *data)
 {
-	int	i;
+	// int	i;
 
-	ft_printf(B_MAG "Executing node with type: %d\n" RESET, node->type);
-	if (node->args)
-	{
-		i = 0;
-		while (node->args[i])
-			ft_printf("  Arg: %s\n", node->args[i++]);
-	}
+	// ft_printf(B_MAG "Executing node with type: %d\n" RESET, node->type);
+	// if (node->args)
+	// {
+	// 	i = 0;
+	// 	while (node->args[i])
+	// 		ft_printf("  Arg: %s\n", node->args[i++]);
+	// }
+	execute_ast(node, data);
+	return (1);
 }
 
-void	execute_tree(t_ast *node)
+void	execute_tree(t_ast *node, t_minishell_data *data)
 {
 	int	i;
 
 	if (!node)
 		return ;
 	if (node->left)
-		execute_tree(node->left);
+		execute_tree(node->left, data);
 	if (node->right)
-		execute_tree(node->right);
+		execute_tree(node->right, data);
 	ft_printf(B_RED "Calling execution_manager for node type: %d\n" \
 		RESET, node->type);
 	if (node->args)
@@ -54,46 +58,46 @@ void	execute_tree(t_ast *node)
 		while (node->args[i])
 			ft_printf("  Arg: %s\n", node->args[i++]);
 	}
-	execution_manager(node);
+	execution_manager(node, data);
 }
 
-int	execute_ast(t_ast *tree, t_minishell_data *data)
+int	execute_ast(t_ast *node, t_minishell_data *data)
 {
-	if (tree->type == PIPE)
+	if (node->type == PIPE)
 	{
 		printf("PIPE\n");
-		// builtin_pipe(tree, data);
+		builtin_pipe(node, data);
 	}
-	else if (tree->type == PHRASE)
+	else if (node->type == PHRASE)
 	{
 		printf("PHRASE\n");
-		data->args = tree->args;
+		data->args = node->args;
 		execute(data);
 	}
-	else if (tree->type == ENV_VAR)
+	else if (node->type == ENV_VAR)
 	{
 		printf("ENV_VAR\n");
-		//execute_redirect(tree, data);
+		//execute_redirect(node, data);
 	}
-	else if (tree->type == REDIR_IN)
+	else if (node->type == REDIR_IN)
 	{
 		printf("REDIR_IN\n");
-		//execute_sequence(tree, data);
+		//execute_sequence(node, data);
 	}
-	else if (tree->type == REDIR_OUT)
+	else if (node->type == REDIR_OUT)
 	{
 		printf("REDIR_OUT\n");
-		//execute_sequence(tree, data);
+		//execute_sequence(node, data);
 	}
-	else if (tree->type == REDIR_APPEND)
+	else if (node->type == REDIR_APPEND)
 	{
 		printf("REDIR_APPEND\n");
-		//execute_sequence(tree, data);
+		//execute_sequence(node, data);
 	}
-	else if (tree->type == REDIR_HEREDOC)
+	else if (node->type == REDIR_HEREDOC)
 	{	
 		printf("REDIR_HEREDOC\n");
-		//execute_sequence(tree, data);
+		//execute_sequence(node, data);
 	}
 	return (1);
 }
@@ -129,22 +133,24 @@ int	execute(t_minishell_data *data)
 
 int	new_process(t_minishell_data *data)
 {
-	pid_t	pid;
-	int		status;
-	char	*path;
-	char	**envp;
+    char	*path;
+    char	**envp;
+    pid_t pid;
 
-	envp = env_to_array(data->envp);
-	path = ft_find_path(data->args[0], data->envp);
-	pid = fork();
-	if (pid == 0)
-	{
-		if (execve(path, data->args, envp) == -1)
-			perror("minishell");
-	}
-	else if (pid < 0)
-		perror("minishell");
-	else
-		waitpid(pid, &status, 0);
-	return (1);
+    envp = env_to_array(data->envp);
+    path = ft_find_path(data->args[0], data->envp);
+
+    pid = fork();
+    if (pid == -1)
+    {
+        perror("fork");
+        return (1);
+    }
+    if (pid == 0)
+    {
+        if(execve(path, data->args, envp) == -1)
+            perror("minishell");
+        exit(0);
+    }
+    return (1);
 }

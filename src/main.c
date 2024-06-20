@@ -34,8 +34,7 @@ int	main_loop(t_minishell_data data)
 	{
 		tree = parse_tokens(&tokens);
 		print_ast_root(tree);
-		execute_tree(tree);
-		///execute_ast(tree, &data);
+		execute_tree(tree, &data);
 		loop_cleanup(trimmed_input, tokens, prompt, tree);
 		return (0);
 	}

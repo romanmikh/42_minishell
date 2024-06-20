@@ -48,7 +48,7 @@ typedef struct s_token
 typedef struct s_ast
 {
 	t_token_type		type;
-	int					fd[2];
+	// int					fd[2];
 	char				**args;
 	struct s_ast		*left;
 	struct s_ast		*right;
@@ -102,7 +102,6 @@ t_ast		*manage_redirs(t_token **tokens);
 t_ast		*manage_pipe(t_token **tokens);
 char		*trim_input(char *str);
 void		print_ast_root(t_ast *root);
-void		execution_manager(t_ast *node);
-void		execute_tree(t_ast *node);
+void		execute_tree(t_ast *node, t_minishell_data *data);
 
 #endif
