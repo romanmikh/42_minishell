@@ -68,7 +68,8 @@ void		skip_delimiters(char **input, char *delim);
 void		reallocate_tokens(char ***tokens, int *bufsize);
 void		parse_loop(char **input, char **tokens, int *pos, int *bufsize);
 char		**parse_input(char *input);
-char		*generate_prompt(t_minishell_data *data);
+char *generate_prompt(void);
+// char		*generate_prompt(t_minishell_data *data);
 void		make_history(char *line);
 void		loop_cleanup(char *line, t_token *tokens, \
 		char *prompt, t_ast *tree);

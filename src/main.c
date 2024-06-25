@@ -22,7 +22,8 @@ int	main_loop(t_minishell_data data)
 	char				*prompt;
 	char				*trimmed_input;
 
-	prompt = generate_prompt(&data);
+	// prompt = generate_prompt(&data);
+	prompt = generate_prompt();
 	input = readline(prompt);
 	if (!input)
 		return (1);

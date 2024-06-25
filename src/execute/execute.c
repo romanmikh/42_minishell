@@ -42,22 +42,22 @@ int	execution_manager(t_ast *node, t_minishell_data *data)
 
 void	execute_tree(t_ast *node, t_minishell_data *data)
 {
-	int	i;
+	// int	i;
 
 	if (!node)
 		return ;
-	if (node->left)
-		execute_tree(node->left, data);
-	if (node->right)
-		execute_tree(node->right, data);
-	ft_printf(B_RED "Calling execution_manager for node type: %d\n" \
-		RESET, node->type);
-	if (node->args)
-	{
-		i = 0;
-		while (node->args[i])
-			ft_printf("  Arg: %s\n", node->args[i++]);
-	}
+	// if (node->left)
+	// 	execute_tree(node->left, data);
+	// if (node->right)
+	// 	execute_tree(node->right, data);
+	// ft_printf(B_RED "Calling execution_manager for node type: %d\n" \
+	// 	RESET, node->type);
+	// if (node->args)
+	// {
+	// 	i = 0;
+	// 	while (node->args[i])
+	// 		ft_printf("  Arg: %s\n", node->args[i++]);
+	// }
 	execution_manager(node, data);
 }
 
@@ -110,7 +110,7 @@ int	execute(t_minishell_data *data)
 
 	builtin_commands[0] = "cd";
 	builtin_commands[1] = "echo";
-	builtin_commands[2] = "env";
+	builtin_commands[2] = "env"; 
 	builtin_commands[3] = "exit";
 	builtin_commands[4] = "export";
 	builtin_commands[5] = "pwd";
@@ -136,21 +136,24 @@ int	new_process(t_minishell_data *data)
     char	*path;
     char	**envp;
     pid_t pid;
+	int fd[2];
 
     envp = env_to_array(data->envp);
     path = ft_find_path(data->args[0], data->envp);
 
+	pipe(fd);
     pid = fork();
     if (pid == -1)
-    {
-        perror("fork");
-        return (1);
-    }
+		ft_perror("fork");
     if (pid == 0)
     {
+		dup2(fd[0], STDIN_FILENO);
+		close_fds(fd);
         if(execve(path, data->args, envp) == -1)
             perror("minishell");
-        exit(0);
+        exit(EXIT_FAILURE);
     }
+	close_fds(fd);
+	waitpid(pid, NULL, 0);
     return (1);
 }

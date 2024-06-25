@@ -85,7 +85,7 @@ void	set_env(t_env **env, const char *key, const char *value)
 	{
 		if (ft_strcmp(current->key, key) == 0)
 		{
-			free(current->value);
+			// free(current->value);
 			current->value = ft_strdup(value);
 			return ;
 		}

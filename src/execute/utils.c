@@ -16,6 +16,9 @@
 
 char	*ft_find_path(char *cmd, t_env *envp);
 void	ft_free_2d_arr(char **arr);
+int	ft_perror(char *str);
+void close_fds(int fds[2]);
+
 
 char	*ft_find_path(char *cmd, t_env *envp)
 {
@@ -50,4 +53,16 @@ void	ft_free_2d_arr(char **arr)
 	while (arr[++i] != NULL)
 		free(arr[i]);
 	free(arr);
+}
+
+int	ft_perror(char *str)
+{
+	perror (str);
+	return (-1);
+}
+
+void close_fds(int fds[2])
+{
+    close(fds[0]);
+    close(fds[1]);
 }
