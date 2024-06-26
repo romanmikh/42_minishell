@@ -6,7 +6,7 @@
 /*   By: dmdemirk <dmdemirk@student.42london.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 11:02:59 by dmdemirk          #+#    #+#             */
-/*   Updated: 2024/06/17 11:03:00 by dmdemirk         ###   ########.fr       */
+/*   Updated: 2024/06/26 14:39:51 by dmdemirk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,9 @@
 # include "shell.h"
 # include "tokens.h"
 
+# define WAIT_NEXT_COMMAND 1
+
 /*  pipe    */
-void	builtin_pipe(t_ast *tree, t_minishell_data *data);
+int	builtin_pipe(t_ast *node, t_minishell_data *data);
 
 #endif

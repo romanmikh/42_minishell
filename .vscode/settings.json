@@ -19,6 +19,10 @@
         "shell.h": "c",
         "libft.h": "c",
         "assert.h": "c",
-        "unistd.h": "c"
+        "unistd.h": "c",
+        "execute.h": "c",
+        "history.h": "c",
+        "readline.h": "c",
+        "pwd.h": "c"
     }
 }

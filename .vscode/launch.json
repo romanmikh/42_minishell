@@ -5,7 +5,7 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "(gdb) Запустить",
+            "name": "(gdb) Launch",
             "type": "cppdbg",
             "request": "launch",
             "program": "${workspaceFolder}/minishell",
@@ -27,7 +27,25 @@
                     "ignoreFailures": true
                 }
             ]
-        }
+        },
+        {
+                "name": "(lldb) Launch",
+                "type": "lldb",
+                "request": "launch",
+                "program": "${workspaceFolder}/minishell",
+                "args": [],
+                "cwd": "${fileDirname}",
+                "processCreateCommands": [],
+        },
+        {
+            "name": "(lldb) Attach",
+            "type": "lldb", 
+            "request": "attach",
+            "program": "${workspaceFolder}/minishell",
+            "pid": "${command:pickMyProcess}",
+            "stopOnEntry": false,
+            "waitFor": true,
 
+        }
     ]
 }

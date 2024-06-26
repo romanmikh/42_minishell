@@ -6,7 +6,7 @@
 /*   By: rmikhayl <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/31 20:53:51 by rmikhayl          #+#    #+#             */
-/*   Updated: 2024/06/11 14:59:54 by rocky            ###   ########.fr       */
+/*   Updated: 2024/06/26 14:39:34 by dmdemirk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,11 +48,20 @@ typedef struct s_token
 typedef struct s_ast
 {
 	t_token_type		type;
-	int					fd[2];
+	bool				incomplete;
 	char				**args;
 	struct s_ast		*left;
 	struct s_ast		*right;
 }	t_ast;
+
+typedef struct s_loop_data
+{
+	char	*prompt;
+	char	*input;
+	char	*trimmed_input;
+	t_token	*tokens;
+	t_ast	*tree;
+}	t_loop_data;
 
 void		add_node(t_token **head, char *str);
 void		print_stack(t_token **stack);
@@ -68,6 +77,7 @@ void		skip_delimiters(char **input, char *delim);
 void		reallocate_tokens(char ***tokens, int *bufsize);
 void		parse_loop(char **input, char **tokens, int *pos, int *bufsize);
 char		**parse_input(char *input);
+// char *generate_prompt(void);
 char		*generate_prompt(t_minishell_data *data);
 void		make_history(char *line);
 void		loop_cleanup(char *line, t_token *tokens, \
@@ -102,7 +112,6 @@ t_ast		*manage_redirs(t_token **tokens);
 t_ast		*manage_pipe(t_token **tokens);
 char		*trim_input(char *str);
 void		print_ast_root(t_ast *root);
-void		execution_manager(t_ast *node);
-void		execute_tree(t_ast *node);
+void		execute_tree(t_ast *node, t_minishell_data *data);
 
 #endif

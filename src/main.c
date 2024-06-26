@@ -6,51 +6,50 @@
 /*   By: rmikhayl <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 13:23:26 by rmikhayl          #+#    #+#             */
-/*   Updated: 2024/06/11 15:22:12 by rocky            ###   ########.fr       */
+/*   Updated: 2024/06/26 15:33:21 by dmdemirk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "tokens.h"
 #include "execute.h"
 #include "shell.h"
+#include "pipe.h"
 
-int	main_loop(t_minishell_data data)
+void	main_loop(t_minishell_data *data, t_loop_data *loop_data)
 {
-	t_ast				*tree;
-	char				*input;
-	t_token				*tokens;
-	char				*prompt;
-	char				*trimmed_input;
+	int	status;
 
-	prompt = generate_prompt(&data);
-	input = readline(prompt);
-	if (!input)
-		return (1);
-	make_history(input);
-	trimmed_input = trim_input(input);
-	input_error_checks(trimmed_input);
-	tokens = tokenise(trimmed_input);
-	if (tokens)
+	while (1)
 	{
-		tree = parse_tokens(&tokens);
-		print_ast_root(tree);
-		execute_tree(tree);
-		///execute_ast(tree, &data);
-		loop_cleanup(trimmed_input, tokens, prompt, tree);
-		return (0);
+		loop_data->prompt = generate_prompt(data);
+		loop_data->input = readline(loop_data->prompt);
+		make_history(loop_data->input);
+		loop_data->trimmed_input = trim_input(loop_data->input);
+		// input_error_checks(loop_data->trimmed_input);
+		loop_data->tokens = tokenise(loop_data->trimmed_input);
+		loop_data->tree = parse_tokens(&loop_data->tokens);
+		status = execute_ast(loop_data->tree, data);
+		if (status == WAIT_NEXT_COMMAND)
+		{
+			loop_cleanup(loop_data->trimmed_input, loop_data->tokens, \
+					loop_data->prompt, loop_data->tree);
+			continue ;
+		}
+		handle_temp_fd(data);
+		loop_cleanup(loop_data->trimmed_input, loop_data->tokens, \
+				loop_data->prompt, loop_data->tree);
 	}
-	return (1);
 }
 
 int	main(int argc, char **argv, char **envp)
 {
 	t_minishell_data	data;
+	t_loop_data			loop_data;
 
 	print_maxishell();
 	init_minishell_data(&data, envp);
 	initialise(argc, argv);
-	while (1)
-		main_loop(data);
+	main_loop(&data, &loop_data);
 	free_minishell_data(&data);
 	free_env(data.envp);
 	return (0);

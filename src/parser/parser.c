@@ -6,12 +6,17 @@
 /*   By: rocky <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/12 19:35:45 by rocky             #+#    #+#             */
-/*   Updated: 2024/06/12 19:35:48 by rocky            ###   ########.fr       */
+/*   Updated: 2024/06/26 15:00:24 by dmdemirk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "tokens.h"
 
+/*
+	REFACTORING
+*/
+
+t_ast	*clr_node(t_token **tokens, t_token *next_token, t_ast *redirect_node);
 t_ast	*manage_redirs(t_token **tokens);
 t_ast	*create_redir_node(t_token *token);
 
@@ -47,6 +52,16 @@ int	is_redir_node(t_token *tokens)
 	return (0);
 }
 
+t_ast	*clr_node(t_token **tokens, t_token *next_token, t_ast *redirect_node)
+{
+	(*tokens)->next = next_token->next->next;
+	redirect_node->left = manage_redirs(tokens);
+	redirect_node->right = create_redir_node((next_token->next));
+	free(next_token->data);
+	free(next_token);
+	return (redirect_node);
+}
+
 t_ast	*manage_redirs(t_token **tokens)
 {
 	t_token		*tmp;
@@ -64,10 +79,7 @@ t_ast	*manage_redirs(t_token **tokens)
 		if (is_redir_node((*tokens)->next))
 		{
 			redirect_node = new_ast_node((*tokens)->next->type);
-			(*tokens)->next = next_token->next->next;
-			redirect_node->left = manage_redirs(&tmp);
-			redirect_node->right = create_redir_node((next_token->next));
-			return (free(next_token->data), free(next_token), redirect_node);
+			return (clr_node(tokens, next_token, redirect_node));
 		}
 		*tokens = next_token;
 	}
@@ -89,7 +101,16 @@ t_ast	*manage_pipe(t_token **tokens)
 			pipe_node = new_ast_node((*tokens)->next->type);
 			(*tokens)->next = NULL;
 			pipe_node->left = manage_redirs(&tmp);
-			pipe_node->right = manage_pipe(&(next_token->next));
+			if (next_token->next == NULL)
+			{
+				pipe_node->right = NULL;
+				pipe_node->incomplete = true;
+			}
+			else
+			{
+				pipe_node->right = manage_pipe(&(next_token->next));
+				pipe_node->incomplete = false;
+			}
 			free(next_token->data);
 			free(next_token);
 			return (pipe_node);
