@@ -16,7 +16,9 @@
 # include "shell.h"
 # include "tokens.h"
 
+# define WAIT_NEXT_COMMAND 1
+
 /*  pipe    */
-void	builtin_pipe(t_ast *tree, t_minishell_data *data);
+int     builtin_pipe(t_ast *node, t_minishell_data *data);
 
 #endif

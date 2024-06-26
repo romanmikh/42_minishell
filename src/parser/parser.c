@@ -89,7 +89,16 @@ t_ast	*manage_pipe(t_token **tokens)
 			pipe_node = new_ast_node((*tokens)->next->type);
 			(*tokens)->next = NULL;
 			pipe_node->left = manage_redirs(&tmp);
-			pipe_node->right = manage_pipe(&(next_token->next));
+			if(next_token->next == NULL)
+			{
+				pipe_node->right = NULL;
+				pipe_node->incomplete = true;
+			}
+			else
+			{
+				pipe_node->right = manage_pipe(&(next_token->next));
+				pipe_node->incomplete = false;
+			}
 			free(next_token->data);
 			free(next_token);
 			return (pipe_node);

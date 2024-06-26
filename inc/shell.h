@@ -17,10 +17,10 @@
 
 typedef struct s_minishell_data
 {
-	// int		fd[2];
 	char	**args;
 	t_env	*envp;
 	t_env	*local_env;
+	int		temp_fd;
 	char	*current_dir;
 	int		exit_status;
 }				t_minishell_data;
