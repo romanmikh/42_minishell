@@ -6,7 +6,7 @@
 /*   By: dmdemirk <dmdemirk@student.42london.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/31 11:02:00 by dmdemirk          #+#    #+#             */
-/*   Updated: 2024/06/17 15:37:05 by dmdemirk         ###   ########.fr       */
+/*   Updated: 2024/06/26 15:27:32 by dmdemirk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,50 +19,54 @@
 #include "tokens.h"
 #include "pipe.h"
 
-int execute_ast(t_ast *node, t_minishell_data *data);
+/*
+	REFACTORING HERE
+*/
+
+int	execute_ast(t_ast *node, t_minishell_data *data);
 int	execute(t_minishell_data *data);
 int	new_process(t_minishell_data *data);
 
 int	execute_ast(t_ast *node, t_minishell_data *data)
 {
 	if (!node)
-		return(1);
+		return (1);
 	if (node->type == PIPE)
-		{
-			printf(RED"PIPE\n"RESET);
-			return (builtin_pipe(node, data));
-		}
-		else if (node->type == PHRASE)
-		{
-			printf(YEL"PHRASE\n"RESET);
-			data->args = node->args;
-			return (execute(data));
-		}
-		else if (node->type == ENV_VAR)
-		{
-			printf(BLU"ENV_VAR\n"RESET);
-			//execute_redirect(node, data);
-		}
-		else if (node->type == REDIR_IN)
-		{
-			printf(CYA"REDIR_IN\n"RESET);
-			//execute_sequence(node, data);
-		}
-		else if (node->type == REDIR_OUT)
-		{
-			printf(CYA"REDIR_OUT\n"RESET);
-			//execute_sequence(node, data);
-		}
-		else if (node->type == REDIR_APPEND)
-		{
-			printf(CYA"REDIR_APPEND\n"RESET);
-			//execute_sequence(node, data);
-		}
-		else if (node->type == REDIR_HEREDOC)
-		{	
-			printf(MAG"REDIR_HEREDOC\n"RESET);
-			//execute_sequence(node, data);
-		}
+	{
+		printf(RED"PIPE\n"RESET);
+		return (builtin_pipe(node, data));
+	}
+	else if (node->type == PHRASE)
+	{
+		printf(YEL"PHRASE\n"RESET);
+		data->args = node->args;
+		return (execute(data));
+	}
+	else if (node->type == ENV_VAR)
+	{
+		printf(BLU"ENV_VAR\n"RESET);
+		//execute_redirect(node, data);
+	}
+	else if (node->type == REDIR_IN)
+	{
+		printf(CYA"REDIR_IN\n"RESET);
+		//execute_sequence(node, data);
+	}
+	else if (node->type == REDIR_OUT)
+	{
+		printf(CYA"REDIR_OUT\n"RESET);
+		//execute_sequence(node, data);
+	}
+	else if (node->type == REDIR_APPEND)
+	{
+		printf(CYA"REDIR_APPEND\n"RESET);
+		//execute_sequence(node, data);
+	}
+	else if (node->type == REDIR_HEREDOC)
+	{
+		printf(MAG"REDIR_HEREDOC\n"RESET);
+		//execute_sequence(node, data);
+	}
 	return (0);
 }
 
@@ -74,7 +78,7 @@ int	execute(t_minishell_data *data)
 
 	builtin_commands[0] = "cd";
 	builtin_commands[1] = "echo";
-	builtin_commands[2] = "env"; 
+	builtin_commands[2] = "env";
 	builtin_commands[3] = "exit";
 	builtin_commands[4] = "export";
 	builtin_commands[5] = "pwd";
@@ -97,28 +101,28 @@ int	execute(t_minishell_data *data)
 
 int	new_process(t_minishell_data *data)
 {
-    char	*path;
-    char	**envp;
-    pid_t pid;
+	char	*path;
+	char	**envp;
+	pid_t	pid;
 
-    envp = env_to_array(data->envp);
-    path = ft_find_path(data->args[0], data->envp);
-    pid = fork();
-    if (pid == -1)
+	envp = env_to_array(data->envp);
+	path = ft_find_path(data->args[0], data->envp);
+	pid = fork();
+	if (pid == -1)
 		ft_perror("fork");
-    if (pid == 0)
-    {
-		if(data->temp_fd != -1)
+	if (pid == 0)
+	{
+		if (data->temp_fd != -1)
 		{
-				dup2(data->temp_fd, STDIN_FILENO);
-				close(data->temp_fd);
+			dup2(data->temp_fd, STDIN_FILENO);
+			close(data->temp_fd);
 		}
-        if(execve(path, data->args, envp) == -1)
-            perror("minishell");
-        exit(EXIT_FAILURE);
-    }
+		if (execve(path, data->args, envp) == -1)
+			perror("minishell");
+		exit(EXIT_FAILURE);
+	}
 	waitpid(pid, NULL, 0);
 	free(path);
 	ft_free_2d_arr(envp);
-    return (0);
+	return (0);
 }

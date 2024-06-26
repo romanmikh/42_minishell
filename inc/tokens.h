@@ -6,7 +6,7 @@
 /*   By: rmikhayl <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/31 20:53:51 by rmikhayl          #+#    #+#             */
-/*   Updated: 2024/06/11 14:59:54 by rocky            ###   ########.fr       */
+/*   Updated: 2024/06/26 14:39:34 by dmdemirk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,11 +48,20 @@ typedef struct s_token
 typedef struct s_ast
 {
 	t_token_type		type;
-	bool 				incomplete;
+	bool				incomplete;
 	char				**args;
 	struct s_ast		*left;
 	struct s_ast		*right;
 }	t_ast;
+
+typedef struct s_loop_data
+{
+	char	*prompt;
+	char	*input;
+	char	*trimmed_input;
+	t_token	*tokens;
+	t_ast	*tree;
+}	t_loop_data;
 
 void		add_node(t_token **head, char *str);
 void		print_stack(t_token **stack);
