@@ -18,9 +18,7 @@
 #include <sys/wait.h>
 #include "pipe.h"
 
-int		ft_perror(char *str);
 int		builtin_pipe(t_ast *node, t_minishell_data *data);
-void	close_fds(int fds[2]);
 pid_t	execute_child(t_ast *node, t_minishell_data *data, \
 			int fd[2], int direction);
 
