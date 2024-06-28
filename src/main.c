@@ -15,6 +15,17 @@
 #include "shell.h"
 #include "pipe.h"
 
+int	status_handler(int status, t_loop_data *loop_data)
+{
+	if (status == WAIT_NEXT_COMMAND)
+		{
+			loop_cleanup(loop_data->trimmed_input, loop_data->tokens, \
+					loop_data->prompt, loop_data->tree);
+			return (0);
+		}
+		return (1);
+}
+
 void	main_loop(t_minishell_data *data, t_loop_data *loop_data)
 {
 	int	status;
@@ -28,16 +39,16 @@ void	main_loop(t_minishell_data *data, t_loop_data *loop_data)
 		// input_error_checks(loop_data->trimmed_input);
 		loop_data->tokens = tokenise(loop_data->trimmed_input);
 		loop_data->tree = parse_tokens(&loop_data->tokens);
+        print_ast_root(loop_data->tree);
 		status = execute_ast(loop_data->tree, data);
-		if (status == WAIT_NEXT_COMMAND)
+        if (status_handler(status, loop_data))
 		{
+			handle_temp_fd(data);
 			loop_cleanup(loop_data->trimmed_input, loop_data->tokens, \
-					loop_data->prompt, loop_data->tree);
-			continue ;
-		}
-		handle_temp_fd(data);
-		loop_cleanup(loop_data->trimmed_input, loop_data->tokens, \
 				loop_data->prompt, loop_data->tree);
+		}
+
+		
 	}
 }
 

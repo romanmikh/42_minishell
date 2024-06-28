@@ -42,27 +42,27 @@ int	execute_ast(t_ast *node, t_minishell_data *data)
 		data->args = node->args;
 		return (execute(data));
 	}
-	else if (node->type == ENV_VAR)
+	else if (node->type == ENV_VAR) 	// "$()"
 	{
 		printf(BLU"ENV_VAR\n"RESET);
 		//execute_redirect(node, data);
 	}
 	else if (node->type == REDIR_IN)
 	{
-		printf(CYA"REDIR_IN\n"RESET);
+		printf(CYA"REDIR_IN\n"RESET);	// "<"
 		//execute_sequence(node, data);
 	}
-	else if (node->type == REDIR_OUT)
+	else if (node->type == REDIR_OUT)	// ">"
 	{
 		printf(CYA"REDIR_OUT\n"RESET);
 		//execute_sequence(node, data);
 	}
-	else if (node->type == REDIR_APPEND)
+	else if (node->type == REDIR_APPEND) // ">>"
 	{
 		printf(CYA"REDIR_APPEND\n"RESET);
 		//execute_sequence(node, data);
 	}
-	else if (node->type == REDIR_HEREDOC)
+	else if (node->type == REDIR_HEREDOC) // "<<"
 	{
 		printf(MAG"REDIR_HEREDOC\n"RESET);
 		//execute_sequence(node, data);

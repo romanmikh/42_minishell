@@ -12,10 +12,6 @@
 
 #include "tokens.h"
 
-/*
-	REFACTORING
-*/
-
 t_ast	*clr_node(t_token **tokens, t_token *next_token, t_ast *redirect_node);
 t_ast	*manage_redirs(t_token **tokens);
 t_ast	*create_redir_node(t_token *token);
@@ -102,15 +98,9 @@ t_ast	*manage_pipe(t_token **tokens)
 			(*tokens)->next = NULL;
 			pipe_node->left = manage_redirs(&tmp);
 			if (next_token->next == NULL)
-			{
 				pipe_node->right = NULL;
-				pipe_node->incomplete = true;
-			}
 			else
-			{
 				pipe_node->right = manage_pipe(&(next_token->next));
-				pipe_node->incomplete = false;
-			}
 			free(next_token->data);
 			free(next_token);
 			return (pipe_node);

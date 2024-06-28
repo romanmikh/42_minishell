@@ -18,9 +18,7 @@
 #include <sys/wait.h>
 #include "pipe.h"
 
-int		ft_perror(char *str);
 int		builtin_pipe(t_ast *node, t_minishell_data *data);
-void	close_fds(int fds[2]);
 pid_t	execute_child(t_ast *node, t_minishell_data *data, \
 			int fd[2], int direction);
 
@@ -35,7 +33,7 @@ int	builtin_pipe(t_ast *node, t_minishell_data *data)
 	if (pipe(fd) == -1)
 		ft_perror("pipe");
 	pid_1 = execute_child(node->left, data, fd, 0);
-	if (!node->incomplete)
+	if (node->right != NULL)
 		pid_2 = execute_child(node->right, data, fd, 1);
 	else
 	{
@@ -46,7 +44,7 @@ int	builtin_pipe(t_ast *node, t_minishell_data *data)
 	close_fds(fd);
 	if (pid_1 > 0)
 		waitpid(pid_1, &status, 0);
-	if (!node->incomplete && pid_2 > 0)
+	if (node->right != NULL && pid_2 > 0)
 		waitpid(pid_2, &status, 0);
 	return (WEXITSTATUS(status));
 }
