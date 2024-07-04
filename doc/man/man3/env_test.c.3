@@ -1,0 +1,173 @@
+.TH "/Users/dimadem/Documents/GitHub/minishell/src/test/env/env_test.c" 3 "Version 1" "maxishell" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/Users/dimadem/Documents/GitHub/minishell/src/test/env/env_test.c
+.SH SYNOPSIS
+.br
+.PP
+\fR#include <assert\&.h>\fP
+.br
+\fR#include 'libft\&.h'\fP
+.br
+\fR#include 'env\&.h'\fP
+.br
+\fR#include 'shell\&.h'\fP
+.br
+\fR#include <stdio\&.h>\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBenv_tests\fP (t_minishell_data *data, char **envp)"
+.br
+.ti -1c
+.RI "void \fBtest_init_env\fP (t_minishell_data *data, char **envp)"
+.br
+.ti -1c
+.RI "void \fBtest_get_env\fP (t_minishell_data *data, char **envp)"
+.br
+.ti -1c
+.RI "void \fBtest_set_env\fP (t_minishell_data *data, char **envp)"
+.br
+.ti -1c
+.RI "void \fBtest_unset_env\fP (t_minishell_data *data)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "void env_tests (t_minishell_data * data, char ** envp)"
+
+.PP
+Definition at line \fB25\fP of file \fBenv_test\&.c\fP\&.
+.nf
+26 {
+27     printf("\\nENV TESTS\\n");
+28     test_init_env(data, envp);
+29     test_get_env(data, envp);
+30     test_set_env(data, envp);
+31     test_unset_env(data);
+32     free_env(data\->envp);
+33 }
+.PP
+.fi
+
+.PP
+References \fBfree_env()\fP, \fBtest_get_env()\fP, \fBtest_init_env()\fP, \fBtest_set_env()\fP, and \fBtest_unset_env()\fP\&.
+.PP
+Referenced by \fBmain()\fP\&.
+.SS "void test_get_env (t_minishell_data * data, char ** envp)"
+
+.PP
+Definition at line \fB57\fP of file \fBenv_test\&.c\fP\&.
+.nf
+58 {
+59     char    *value;
+60 
+61     data\->envp = NULL;
+62     init_env(&data\->envp, envp);
+63     value = get_env(data\->envp, "LOGNAME");
+64     assert(value != NULL);
+65     assert(ft_strcmp(value, getenv("LOGNAME")) == 0);
+66     printf("\\033[0m");
+67     printf("\\033[0;32m");
+68     printf("get_env     \-> OK\\n");
+69     printf("\\033[0m");
+70 }
+.PP
+.fi
+
+.PP
+References \fBget_env()\fP, and \fBinit_env()\fP\&.
+.PP
+Referenced by \fBenv_tests()\fP\&.
+.SS "void test_init_env (t_minishell_data * data, char ** envp)"
+
+.PP
+Definition at line \fB35\fP of file \fBenv_test\&.c\fP\&.
+.nf
+36 {
+37     char    **test_envp;
+38     int     envp_count;
+39     int     test_envp_count;
+40 
+41     data\->envp = NULL;
+42     init_env(&data\->envp, envp);
+43     test_envp = env_to_array(data\->envp);
+44     envp_count = 0;
+45     while (envp[envp_count])
+46         envp_count++;
+47     test_envp_count = 0;
+48     while (test_envp[test_envp_count])
+49         test_envp_count++;
+50     assert(envp_count == test_envp_count);
+51     printf("\\033[0m");
+52     printf("\\033[0;32m");
+53     printf("init_env    \-> OK\\n");
+54     printf("\\033[0m");
+55 }
+.PP
+.fi
+
+.PP
+References \fBenv_to_array()\fP, and \fBinit_env()\fP\&.
+.PP
+Referenced by \fBenv_tests()\fP\&.
+.SS "void test_set_env (t_minishell_data * data, char ** envp)"
+
+.PP
+Definition at line \fB72\fP of file \fBenv_test\&.c\fP\&.
+.nf
+73 {
+74     char    *value;
+75 
+76     data\->envp = NULL;
+77     init_env(&data\->envp, envp);
+78     set_env(&data\->envp, "TEST", "test");
+79     value = get_env(data\->envp, "TEST");
+80     assert(value != NULL);
+81     assert(ft_strcmp(value, "test") == 0);
+82     printf("\\033[0m");
+83     printf("\\033[0;32m");
+84     printf("set_env     \-> OK\\n");
+85     printf("\\033[0m");
+86 }
+.PP
+.fi
+
+.PP
+References \fBget_env()\fP, \fBinit_env()\fP, and \fBset_env()\fP\&.
+.PP
+Referenced by \fBenv_tests()\fP\&.
+.SS "void test_unset_env (t_minishell_data * data)"
+
+.PP
+Definition at line \fB88\fP of file \fBenv_test\&.c\fP\&.
+.nf
+89 {
+90     char    *value;
+91 
+92     set_env(&data\->envp, "TEST", "test");
+93     value = get_env(data\->envp, "TEST");
+94     assert(value != NULL);
+95     assert(ft_strcmp(value, "test") == 0);
+96     unset_env(&data\->envp, "TEST");
+97     value = get_env(data\->envp, "TEST");
+98     assert(value == NULL);
+99     printf("\\033[0m");
+100     printf("\\033[0;32m");
+101     printf("unset_env   \-> OK\\n");
+102     printf("\\033[0m");
+103 }
+.PP
+.fi
+
+.PP
+References \fBget_env()\fP, \fBset_env()\fP, and \fBunset_env()\fP\&.
+.PP
+Referenced by \fBenv_tests()\fP\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for maxishell from the source code\&.

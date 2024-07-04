@@ -1,0 +1,62 @@
+.TH "/Users/dimadem/Documents/GitHub/minishell/src/builtins/cd.c" 3 "Version 1" "maxishell" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/Users/dimadem/Documents/GitHub/minishell/src/builtins/cd.c
+.SH SYNOPSIS
+.br
+.PP
+\fR#include <stdio\&.h>\fP
+.br
+\fR#include 'libft\&.h'\fP
+.br
+\fR#include 'shell\&.h'\fP
+.br
+\fR#include 'env\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "int \fBbuiltin_cd\fP (t_minishell_data *data)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "int builtin_cd (t_minishell_data * data)"
+
+.PP
+Definition at line \fB26\fP of file \fBcd\&.c\fP\&.
+.nf
+27 {
+28     char    *target_dir;
+29     char    *home_dir;
+30     char    cwd[4096];
+31 
+32     printf("builtin_cd\\n");
+33     home_dir = get_env(data\->envp, "HOME");
+34     target_dir = (char *)data\->args[1];
+35     if (!target_dir)
+36         target_dir = home_dir;
+37     if (chdir(target_dir) != 0)
+38     {
+39         ft_putstr_fd("bash: cd: ", 2);
+40         perror(target_dir);
+41         return (1);
+42     }
+43     set_env(&data\->envp, "OLDPWD", get_env(data\->envp, "PWD"));
+44     if (getcwd(cwd, sizeof(cwd)) != NULL)
+45         set_env(&data\->envp, "PWD", cwd);
+46     return (0);
+47 }
+.PP
+.fi
+
+.PP
+References \fBget_env()\fP, and \fBset_env()\fP\&.
+.PP
+Referenced by \fBexecute()\fP\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for maxishell from the source code\&.

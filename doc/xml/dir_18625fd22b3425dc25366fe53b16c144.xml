@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.11.0" xml:lang="en-US">
+  <compounddef id="dir_18625fd22b3425dc25366fe53b16c144" kind="dir">
+    <compoundname>/Users/dimadem/Documents/GitHub/minishell/src/execute</compoundname>
+    <innerfile refid="execute_8c">execute.c</innerfile>
+    <innerfile refid="execute_2utils_8c">utils.c</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/dimadem/Documents/GitHub/minishell/src/execute/"/>
+  </compounddef>
+</doxygen>

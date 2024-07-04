@@ -1,0 +1,97 @@
+.TH "/Users/dimadem/Documents/GitHub/minishell/src/redirection/redirect_out.c" 3 "Version 1" "maxishell" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/Users/dimadem/Documents/GitHub/minishell/src/redirection/redirect_out.c
+.SH SYNOPSIS
+.br
+.PP
+\fR#include 'tokens\&.h'\fP
+.br
+\fR#include 'shell\&.h'\fP
+.br
+\fR#include 'redirection\&.h'\fP
+.br
+\fR#include 'execute\&.h'\fP
+.br
+\fR#include 'pipe\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "pid_t \fBexecute_redirect\fP (t_ast *node, t_minishell_data *data, int fd[2], int direction)"
+.br
+.ti -1c
+.RI "int \fBredirect_out\fP (t_ast *node, t_minishell_data *data)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "pid_t execute_redirect (t_ast * node, t_minishell_data * data, int fd[2], int direction)"
+
+.PP
+Definition at line \fB27\fP of file \fBredirect_out\&.c\fP\&.
+.nf
+28 {
+29     pid_t pid;
+30 
+31     pid = fork();
+32     if (pid == \-1)
+33         ft_perror("fork");  
+34     if (pid == 0)
+35     {
+36         if (direction == 0)
+37         {
+38             dup2(fd[1], STDIN_FILENO);
+39             close_fds(fd);
+40             execute_ast(node, data);
+41             exit(EXIT_SUCCESS);
+42         }
+43         else if (direction == 1)
+44         {
+45             fd[0] = open_file(node, ">");
+46             dup2(fd[0], STDOUT_FILENO);
+47             close_fds(fd);
+48         }
+49     }
+50     return (pid);
+51 }
+.PP
+.fi
+
+.PP
+References \fBclose_fds()\fP, \fBexecute_ast()\fP, \fBft_perror()\fP, and \fBopen_file()\fP\&.
+.PP
+Referenced by \fBredirect_out()\fP\&.
+.SS "int redirect_out (t_ast * node, t_minishell_data * data)"
+
+.PP
+Definition at line \fB10\fP of file \fBredirect_out\&.c\fP\&.
+.nf
+11 {
+12         int fd[2];
+13     pid_t   pid_1;
+14     pid_t   pid_2;
+15     int status;
+16 
+17     if (pipe(fd) == \-1)
+18         ft_perror("pipe");
+19     pid_1 = execute_redirect(node\->left, data, fd, 0);
+20     pid_2 = execute_redirect(node\->right, data, fd, 1);
+21     close_fds(fd);
+22     waitpid(pid_1, &status, 0);
+23         waitpid(pid_2, &status, 0);
+24     return (WEXITSTATUS(status));
+25 }
+.PP
+.fi
+
+.PP
+References \fBclose_fds()\fP, \fBexecute_redirect()\fP, and \fBft_perror()\fP\&.
+.PP
+Referenced by \fBexecute_ast()\fP\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for maxishell from the source code\&.

@@ -1,0 +1,67 @@
+.TH "/Users/dimadem/Documents/GitHub/minishell/src/utils/initialise.c" 3 "Version 1" "maxishell" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/Users/dimadem/Documents/GitHub/minishell/src/utils/initialise.c
+.SH SYNOPSIS
+.br
+.PP
+\fR#include 'tokens\&.h'\fP
+.br
+\fR#include 'env\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBinit_minishell_data\fP (t_minishell_data *data, char **envp)"
+.br
+.ti -1c
+.RI "void \fBinitialise\fP (int argc, char **argv)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "void init_minishell_data (t_minishell_data * data, char ** envp)"
+
+.PP
+Definition at line \fB16\fP of file \fBinitialise\&.c\fP\&.
+.nf
+17 {
+18     data\->args = NULL;
+19     data\->envp = NULL;
+20     init_env(&data\->envp, envp);
+21     data\->local_env = NULL;
+22     data\->current_dir = getcwd(NULL, 0);
+23     data\->exit_status = 0;
+24     data\->temp_fd = \-1;
+25 }
+.PP
+.fi
+
+.PP
+References \fBinit_env()\fP\&.
+.PP
+Referenced by \fBmain()\fP\&.
+.SS "void initialise (int argc, char ** argv)"
+
+.PP
+Definition at line \fB27\fP of file \fBinitialise\&.c\fP\&.
+.nf
+28 {
+29     if (argc > 1)
+30     {
+31         printf("Usage: %s\\n", argv[0]);
+32         exit(EXIT_FAILURE);
+33     }
+34     read_history(HISTORY_PATH);
+35 }
+.PP
+.fi
+
+.PP
+Referenced by \fBmain()\fP\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for maxishell from the source code\&.

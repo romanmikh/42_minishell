@@ -44,6 +44,7 @@ APP_DIR					=	$(SRC_DIR)/app
 COMMON_DIR				=	$(SRC_DIR)/common
 PARSER_DIR				= $(SRC_DIR)/parser
 PIPE_DIR				= $(SRC_DIR)/pipe
+REDIRECTION_DIR			=	$(SRC_DIR)/redirection
 BUILTINS_DIR			=	$(SRC_DIR)/builtins
 EXECUTE_DIR				=	$(SRC_DIR)/execute
 TEST_DIR				=	$(SRC_DIR)/test
@@ -62,6 +63,7 @@ COMMON_SOURCES				=	$(wildcard $(COMMON_DIR)/*.c)
 UTILS_SOURCES				= 	$(wildcard $(UTILS_DIR)/*.c)
 PARSER_SOURCES 				= 	$(wildcard $(PARSER_DIR)/*.c)
 PIPE_SOURCES				=	$(wildcard $(PIPE_DIR)/*.c)
+REDIRECTION_SOURCES			=	$(wildcard $(REDIRECTION_DIR)/*.c)
 BUILTINS_SOURCES			=	$(wildcard $(BUILTINS_DIR)/*.c)
 EXECUTE_SOURCES				=	$(wildcard $(EXECUTE_DIR)/*.c)
 
@@ -80,7 +82,8 @@ SOURCES					=	$(MAIN_SOURCE) \
 							$(EXECUTE_SOURCES)	\
 							$(MAIN_TEST_SOURCE) \
 							$(ENV_TEST_SOURCES) \
-							$(PIPE_TEST_SOURCES)
+							$(PIPE_TEST_SOURCES) \
+							$(REDIRECTION_SOURCES)
 # Building
 BUILD_DIR				=	./build
 MAIN_OBJECT				=	$(patsubst $(SRC_DIR)/%.c, $(BUILD_DIR)/src/%.o, $(MAIN_SOURCE))
@@ -90,6 +93,7 @@ COMMON_OBJECTS				=	$(patsubst $(COMMON_DIR)/%.c, $(BUILD_DIR)/common/app/%.o, $
 UTILS_OBJECTS				=	$(patsubst $(UTILS_DIR)/%.c, $(BUILD_DIR)/utils/%.o, $(UTILS_SOURCES))
 PARSER_OBJECTS				=	 $(patsubst $(PARSER_DIR)/%.c, $(BUILD_DIR)/src/parser/%.o, $(PARSER_SOURCES))
 PIPE_OBJECTS				=	$(patsubst $(PIPE_DIR)/%.c, $(BUILD_DIR)/src/pipe/%.o, $(PIPE_SOURCES))
+REDIRECTION_OBJECTS			=	$(patsubst $(REDIRECTION_DIR)/%.c, $(BUILD_DIR)/src/redirection/%.o, $(REDIRECTION_SOURCES))
 BUILTINS_OBJECTS			=	$(patsubst $(BUILTINS_DIR)/%.c, $(BUILD_DIR)/src/builtins/%.o, $(BUILTINS_SOURCES))
 EXECUTE_OBJECTS				=	$(patsubst $(EXECUTE_DIR)/%.c, $(BUILD_DIR)/src/execute/%.o, $(EXECUTE_SOURCES))
 MAIN_TEST_OBJECT			=	$(patsubst $(TEST_DIR)/%.c, $(BUILD_DIR)/src/test/%.o, $(MAIN_TEST_SOURCE))
@@ -104,7 +108,8 @@ OBJECTS					=	$(MAIN_OBJECT) \
 							$(BUILTINS_OBJECTS) \
 							$(UTILS_OBJECTS) \
 							$(PARSER_OBJECTS) \
-							$(PIPE_OBJECTS)
+							$(PIPE_OBJECTS)	\
+							$(REDIRECTION_OBJECTS)
 						
 TEST_OBJECTS			=	$(APP_OBJECTS) \
 							$(ENV_OBJECTS) \
@@ -153,6 +158,10 @@ $(BUILD_DIR)/src/pipe/%.o: $(PIPE_DIR)/%.c
 	@mkdir -p $(@D)
 	@$(COMPILER) $(CFLAGS) $(INCLUDES) -c $< -o $@
 
+$(BUILD_DIR)/src/redirection/%.o: $(REDIRECTION_DIR)/%.c
+	@mkdir -p $(@D)
+	@$(COMPILER) $(CFLAGS) $(INCLUDES) -c $< -o $@
+
 $(LIBFT):
 	@cd $(LIB_DIR)/libft -s && make -s
 
@@ -166,7 +175,7 @@ clean:
 	@echo "$(GRAY)files.o removed$(DEF_COLOR)"
 	
 fclean: clean
-	@$(RM) $(NAME)
+	@$(RM) $(NAME)*
 	@rm -f test
 	@cd $(LIB_DIR)/libft && make fclean
 	@echo "$(RED)minishell removed$(DEF_COLOR)"

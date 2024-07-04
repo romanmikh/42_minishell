@@ -18,6 +18,7 @@
 #include "execute.h"
 #include "tokens.h"
 #include "pipe.h"
+#include "redirection.h"
 
 /*
 	REFACTORING HERE
@@ -36,12 +37,6 @@ int	execute_ast(t_ast *node, t_minishell_data *data)
 		printf(RED"PIPE\n"RESET);
 		return (builtin_pipe(node, data));
 	}
-	else if (node->type == PHRASE)
-	{
-		printf(YEL"PHRASE\n"RESET);
-		data->args = node->args;
-		return (execute(data));
-	}
 	else if (node->type == ENV_VAR) 	// "$()"
 	{
 		printf(BLU"ENV_VAR\n"RESET);
@@ -49,13 +44,13 @@ int	execute_ast(t_ast *node, t_minishell_data *data)
 	}
 	else if (node->type == REDIR_IN)
 	{
-		printf(CYA"REDIR_IN\n"RESET);	// "<"
-		//execute_sequence(node, data);
+		printf(GRN"REDIR_IN\n"RESET);
+		return (redirect_in(node, data));
 	}
 	else if (node->type == REDIR_OUT)	// ">"
 	{
 		printf(CYA"REDIR_OUT\n"RESET);
-		//execute_sequence(node, data);
+		return (redirect_out(node, data));
 	}
 	else if (node->type == REDIR_APPEND) // ">>"
 	{
@@ -66,6 +61,12 @@ int	execute_ast(t_ast *node, t_minishell_data *data)
 	{
 		printf(MAG"REDIR_HEREDOC\n"RESET);
 		//execute_sequence(node, data);
+	}
+	else if (node->type == PHRASE)
+	{
+		printf(YEL"PHRASE\n"RESET);
+		data->args = node->args;
+		return (execute(data));
 	}
 	return (0);
 }
@@ -117,9 +118,13 @@ int	new_process(t_minishell_data *data)
 			dup2(data->temp_fd, STDIN_FILENO);
 			close(data->temp_fd);
 		}
+		if (data->temp_fd == 1)
+		{
+			dup2(data->temp_fd, STDOUT_FILENO);
+			close(data->temp_fd);
+		}
 		if (execve(path, data->args, envp) == -1)
-			perror("minishell");
-		exit(EXIT_FAILURE);
+			ft_perror("minishell");
 	}
 	waitpid(pid, NULL, 0);
 	free(path);

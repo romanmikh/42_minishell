@@ -1,0 +1,50 @@
+.TH "/Users/dimadem/Documents/GitHub/minishell/src/builtins/exit.c" 3 "Version 1" "maxishell" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/Users/dimadem/Documents/GitHub/minishell/src/builtins/exit.c
+.SH SYNOPSIS
+.br
+.PP
+\fR#include 'shell\&.h'\fP
+.br
+\fR#include 'libft\&.h'\fP
+.br
+\fR#include <stdlib\&.h>\fP
+.br
+\fR#include <stdio\&.h>\fP
+.br
+\fR#include 'env\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "int \fBbuiltin_exit\fP (t_minishell_data *data)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "int builtin_exit (t_minishell_data * data)"
+
+.PP
+Definition at line \fB26\fP of file \fBexit\&.c\fP\&.
+.nf
+27 {
+28     const char  *message;
+29 
+30     printf("\\nbuiltin_exit\\n");
+31     message = "exit\\n";
+32     write(STDOUT_FILENO, message, ft_strlen(message));
+33     // free_env(data\->envp);
+34     exit(data\->exit_status);
+35 }
+.PP
+.fi
+
+.PP
+Referenced by \fBexecute()\fP\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for maxishell from the source code\&.

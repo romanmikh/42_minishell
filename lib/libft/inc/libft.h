@@ -22,6 +22,8 @@
 # include <stdbool.h>
 # include <math.h>
 
+# define BUFFER_SIZE 32
+char	*ft_get_next_line(int fd);
 int			ft_isalpha(int c);
 int			ft_isdigit(int c);
 int			ft_is_num(const char *n);

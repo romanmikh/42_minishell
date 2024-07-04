@@ -1,0 +1,37 @@
+.TH "/Users/dimadem/Documents/GitHub/minishell/src/utils/aux.c" 3 "Version 1" "maxishell" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/Users/dimadem/Documents/GitHub/minishell/src/utils/aux.c
+.SH SYNOPSIS
+.br
+.PP
+\fR#include 'tokens\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBmake_history\fP (char *line)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "void make_history (char * line)"
+
+.PP
+Definition at line \fB15\fP of file \fBaux\&.c\fP\&.
+.nf
+16 {
+17     printf("line: %s\\n", line);
+18     if (*line)
+19         add_history(line);
+20     write_history(HISTORY_PATH);
+21 }
+.PP
+.fi
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for maxishell from the source code\&.

@@ -1,0 +1,195 @@
+.TH "/Users/dimadem/Documents/GitHub/minishell/src/parser/parser.c" 3 "Version 1" "maxishell" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/Users/dimadem/Documents/GitHub/minishell/src/parser/parser.c
+.SH SYNOPSIS
+.br
+.PP
+\fR#include 'tokens\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "t_ast * \fBclr_node\fP (t_token **tokens, t_token *next_token, t_ast *redirect_node)"
+.br
+.ti -1c
+.RI "t_ast * \fBmanage_redirs\fP (t_token **tokens)"
+.br
+.ti -1c
+.RI "t_ast * \fBcreate_redir_node\fP (t_token *token)"
+.br
+.ti -1c
+.RI "int \fBis_redir_node\fP (t_token *tokens)"
+.br
+.ti -1c
+.RI "t_ast * \fBmanage_pipe\fP (t_token **tokens)"
+.br
+.ti -1c
+.RI "t_ast * \fBparse_tokens\fP (t_token **tokens)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "t_ast * clr_node (t_token ** tokens, t_token * next_token, t_ast * redirect_node)"
+
+.PP
+Definition at line \fB51\fP of file \fBparser\&.c\fP\&.
+.nf
+52 {
+53     (*tokens)\->next = next_token\->next\->next;
+54     redirect_node\->left = manage_redirs(tokens);
+55     redirect_node\->right = create_redir_node((next_token\->next));
+56     free(next_token\->data);
+57     free(next_token);
+58     return (redirect_node);
+59 }
+.PP
+.fi
+
+.PP
+References \fBcreate_redir_node()\fP, and \fBmanage_redirs()\fP\&.
+.PP
+Referenced by \fBmanage_redirs()\fP\&.
+.SS "t_ast * create_redir_node (t_token * token)"
+
+.PP
+Definition at line \fB19\fP of file \fBparser\&.c\fP\&.
+.nf
+20 {
+21     t_ast           *node;
+22 
+23     node = malloc(sizeof(t_ast));
+24     if (!node)
+25         return (NULL);
+26     node\->type = token\->type;
+27     node\->args = malloc(sizeof(char *) * 2);
+28     if (!node\->args)
+29     {
+30         free(node);
+31         return (NULL);
+32     }
+33     node\->args[0] = token\->data;
+34     node\->args[1] = NULL;
+35     node\->left = NULL;
+36     node\->right = NULL;
+37     free(token);
+38     return (node);
+39 }
+.PP
+.fi
+
+.PP
+Referenced by \fBclr_node()\fP, and \fBcreate_redir()\fP\&.
+.SS "int is_redir_node (t_token * tokens)"
+
+.PP
+Definition at line \fB41\fP of file \fBparser\&.c\fP\&.
+.nf
+42 {
+43     if (tokens\->type == REDIR_IN
+44         || tokens\->type == REDIR_OUT
+45         || tokens\->type == REDIR_APPEND
+46         || tokens\->type == REDIR_HEREDOC)
+47         return (1);
+48     return (0);
+49 }
+.PP
+.fi
+
+.PP
+Referenced by \fBmanage_redirs()\fP\&.
+.SS "t_ast * manage_pipe (t_token ** tokens)"
+
+.PP
+Definition at line \fB85\fP of file \fBparser\&.c\fP\&.
+.nf
+86 {
+87     t_token     *tmp;
+88     t_token     *next_token;
+89     t_ast       *pipe_node;
+90 
+91     tmp = *tokens;
+92     while (*tokens && (*tokens)\->next)
+93     {
+94         next_token = (*tokens)\->next;
+95         if ((*tokens)\->next\->type == PIPE)
+96         {
+97             pipe_node = new_ast_node((*tokens)\->next\->type);
+98             (*tokens)\->next = NULL;
+99             pipe_node\->left = manage_redirs(&tmp);
+100             if (next_token\->next == NULL)
+101                 pipe_node\->right = NULL;
+102             else
+103                 pipe_node\->right = manage_pipe(&(next_token\->next));
+104             free(next_token\->data);
+105             free(next_token);
+106             return (pipe_node);
+107         }
+108         *tokens = next_token;
+109     }
+110     return (manage_redirs(&tmp));
+111 }
+.PP
+.fi
+
+.PP
+References \fBmanage_pipe()\fP, \fBmanage_redirs()\fP, and \fBnew_ast_node()\fP\&.
+.PP
+Referenced by \fBmanage_pipe()\fP, and \fBparse_tokens()\fP\&.
+.SS "t_ast * manage_redirs (t_token ** tokens)"
+
+.PP
+Definition at line \fB61\fP of file \fBparser\&.c\fP\&.
+.nf
+62 {
+63     t_token     *tmp;
+64     t_ast       *redirect_node;
+65     t_token     *next_token;
+66 
+67     if (!*tokens)
+68         return (NULL);
+69     tmp = *tokens;
+70     if (is_redir_node(*tokens))
+71         return (create_redir(tokens, tmp));
+72     while (*tokens && (*tokens)\->next)
+73     {
+74         next_token = (*tokens)\->next;
+75         if (is_redir_node((*tokens)\->next))
+76         {
+77             redirect_node = new_ast_node((*tokens)\->next\->type);
+78             return (clr_node(tokens, next_token, redirect_node));
+79         }
+80         *tokens = next_token;
+81     }
+82     return (manage_commands(&tmp));
+83 }
+.PP
+.fi
+
+.PP
+References \fBclr_node()\fP, \fBcreate_redir()\fP, \fBis_redir_node()\fP, \fBmanage_commands()\fP, and \fBnew_ast_node()\fP\&.
+.PP
+Referenced by \fBclr_node()\fP, \fBcreate_redir()\fP, and \fBmanage_pipe()\fP\&.
+.SS "t_ast * parse_tokens (t_token ** tokens)"
+
+.PP
+Definition at line \fB113\fP of file \fBparser\&.c\fP\&.
+.nf
+114 {
+115     if (!tokens || !*tokens)
+116         return (NULL);
+117     return (manage_pipe(tokens));
+118 }
+.PP
+.fi
+
+.PP
+References \fBmanage_pipe()\fP\&.
+.PP
+Referenced by \fBmain_loop()\fP\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for maxishell from the source code\&.

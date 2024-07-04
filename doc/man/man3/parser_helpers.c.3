@@ -1,0 +1,151 @@
+.TH "/Users/dimadem/Documents/GitHub/minishell/src/parser/parser_helpers.c" 3 "Version 1" "maxishell" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/Users/dimadem/Documents/GitHub/minishell/src/parser/parser_helpers.c
+.SH SYNOPSIS
+.br
+.PP
+\fR#include 'tokens\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "t_ast * \fBnew_ast_node\fP (t_token_type type)"
+.br
+.ti -1c
+.RI "t_ast * \fBcreate_redir\fP (t_token **tokens, t_token *tmp)"
+.br
+.ti -1c
+.RI "int \fBarg_len\fP (t_token *current)"
+.br
+.ti -1c
+.RI "void \fBset_command_args\fP (t_ast *command_node, t_token **tokens, int arg_count)"
+.br
+.ti -1c
+.RI "t_ast * \fBmanage_commands\fP (t_token **tokens)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "int arg_len (t_token * current)"
+
+.PP
+Definition at line \fB42\fP of file \fBparser_helpers\&.c\fP\&.
+.nf
+43 {
+44     int arg_count;
+45 
+46     arg_count = 0;
+47     while (current && current\->type == PHRASE)
+48     {
+49         arg_count++;
+50         current = current\->next;
+51     }
+52     return (arg_count);
+53 }
+.PP
+.fi
+
+.PP
+Referenced by \fBmanage_commands()\fP\&.
+.SS "t_ast * create_redir (t_token ** tokens, t_token * tmp)"
+
+.PP
+Definition at line \fB29\fP of file \fBparser_helpers\&.c\fP\&.
+.nf
+30 {
+31     t_ast   *redirect_node;
+32 
+33     redirect_node = new_ast_node((*tokens)\->type);
+34     *tokens = (*tokens)\->next\->next;
+35     redirect_node\->left = manage_redirs(tokens);
+36     redirect_node\->right = create_redir_node(tmp\->next);
+37     free(tmp\->data);
+38     free(tmp);
+39     return (redirect_node);
+40 }
+.PP
+.fi
+
+.PP
+References \fBcreate_redir_node()\fP, \fBmanage_redirs()\fP, and \fBnew_ast_node()\fP\&.
+.PP
+Referenced by \fBmanage_redirs()\fP\&.
+.SS "t_ast * manage_commands (t_token ** tokens)"
+
+.PP
+Definition at line \fB74\fP of file \fBparser_helpers\&.c\fP\&.
+.nf
+75 {
+76     t_ast       *command_node;
+77     int         arg_count;
+78 
+79     command_node = new_ast_node(PHRASE);
+80     arg_count = arg_len(*tokens);
+81     command_node\->args = malloc(sizeof(char *) * (arg_count + 1));
+82     if (!command_node\->args)
+83         return (NULL);
+84     set_command_args(command_node, tokens, arg_count);
+85     return (command_node);
+86 }
+.PP
+.fi
+
+.PP
+References \fBarg_len()\fP, \fBnew_ast_node()\fP, and \fBset_command_args()\fP\&.
+.PP
+Referenced by \fBmanage_redirs()\fP\&.
+.SS "t_ast * new_ast_node (t_token_type type)"
+
+.PP
+Definition at line \fB15\fP of file \fBparser_helpers\&.c\fP\&.
+.nf
+16 {
+17     t_ast       *node;
+18 
+19     node = malloc(sizeof(t_ast));
+20     if (!node)
+21         return (NULL);
+22     node\->type = type;
+23     node\->args = NULL;
+24     node\->left = NULL;
+25     node\->right = NULL;
+26     return (node);
+27 }
+.PP
+.fi
+
+.PP
+Referenced by \fBcreate_redir()\fP, \fBmanage_commands()\fP, \fBmanage_pipe()\fP, and \fBmanage_redirs()\fP\&.
+.SS "void set_command_args (t_ast * command_node, t_token ** tokens, int arg_count)"
+
+.PP
+Definition at line \fB55\fP of file \fBparser_helpers\&.c\fP\&.
+.nf
+57 {
+58     int     i;
+59     t_token *tmp;
+60 
+61     i = 0;
+62     while (i < arg_count)
+63     {
+64         command_node\->args[i] = ft_strdup((*tokens)\->data);
+65         tmp = *tokens;
+66         *tokens = (*tokens)\->next;
+67         free(tmp\->data);
+68         free(tmp);
+69         i++;
+70     }
+71     command_node\->args[arg_count] = NULL;
+72 }
+.PP
+.fi
+
+.PP
+Referenced by \fBmanage_commands()\fP\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for maxishell from the source code\&.

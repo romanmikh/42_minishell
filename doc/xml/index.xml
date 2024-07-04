@@ -1,0 +1,197 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.11.0" xml:lang="en-US">
+  <compound refid="cd_8c" kind="file"><name>cd.c</name>
+    <member refid="cd_8c_1a90c33b349e024075c96efdc320f7138f" kind="function"><name>builtin_cd</name></member>
+  </compound>
+  <compound refid="echo_8c" kind="file"><name>echo.c</name>
+    <member refid="echo_8c_1a9c4bf413cef22ef46427c4026734a97d" kind="function"><name>builtin_echo</name></member>
+  </compound>
+  <compound refid="builtins_2env_8c" kind="file"><name>env.c</name>
+    <member refid="builtins_2env_8c_1a5b5d29d406a0fad6272b33c03b7793b4" kind="function"><name>print_env_stack</name></member>
+    <member refid="builtins_2env_8c_1adfc1db1f94cf16d71aea54b09370c032" kind="function"><name>builtin_env</name></member>
+  </compound>
+  <compound refid="env_2env_8c" kind="file"><name>env.c</name>
+    <member refid="env_2env_8c_1a2344221e4d3b1327b956157b837a727b" kind="function"><name>init_env</name></member>
+    <member refid="env_2env_8c_1aa2e361e75c8c044d588ec5c07b560659" kind="function"><name>add_env_node</name></member>
+    <member refid="env_2env_8c_1a41133e0ba7230727a51eedce713a225c" kind="function"><name>get_env</name></member>
+    <member refid="env_2env_8c_1a194b2552273340441e8b481b4ce5202c" kind="function"><name>set_env</name></member>
+    <member refid="env_2env_8c_1a0854396366b7055e0df29e25f8e520d3" kind="function"><name>unset_env</name></member>
+  </compound>
+  <compound refid="exit_8c" kind="file"><name>exit.c</name>
+    <member refid="exit_8c_1a6a7d93447961b415c9c16ebdfcd3d5fa" kind="function"><name>builtin_exit</name></member>
+  </compound>
+  <compound refid="export_8c" kind="file"><name>export.c</name>
+    <member refid="export_8c_1a9e6f1e14f0125cd68c70e8e31ef606aa" kind="function"><name>builtin_export</name></member>
+    <member refid="export_8c_1a9572a06bde314d79d284738ffef37d8d" kind="function"><name>add_env</name></member>
+  </compound>
+  <compound refid="pwd_8c" kind="file"><name>pwd.c</name>
+    <member refid="pwd_8c_1aa9f1acae4ed9a914564af529571db30a" kind="function"><name>builtin_pwd</name></member>
+  </compound>
+  <compound refid="unset_8c" kind="file"><name>unset.c</name>
+    <member refid="unset_8c_1aa04be64406f96e5ae8f361421bf72cec" kind="function"><name>builtin_unset</name></member>
+  </compound>
+  <compound refid="execute_8c" kind="file"><name>execute.c</name>
+    <member refid="execute_8c_1ace4c3a2246919797e40140123d79596a" kind="function"><name>execute_ast</name></member>
+    <member refid="execute_8c_1a825187f25304f9bd1a3e7a5e97327801" kind="function"><name>execute</name></member>
+    <member refid="execute_8c_1a82e1e73d725f74b5fdad62dd3a99bab5" kind="function"><name>new_process</name></member>
+  </compound>
+  <compound refid="input__checker_8c" kind="file"><name>input_checker.c</name>
+    <member refid="input__checker_8c_1a8bd1dd00648c512046de42538bd97b8e" kind="function"><name>check_operators_loop</name></member>
+    <member refid="input__checker_8c_1a1e938e2d09f6e98fe3304b21f5367369" kind="function"><name>check_operators</name></member>
+    <member refid="input__checker_8c_1a14192775dab0da87a5d66b050331bf14" kind="function"><name>check_redirections</name></member>
+    <member refid="input__checker_8c_1ac967d9ffeb6f20952c9cac5c206bf717" kind="function"><name>check_open_quotes</name></member>
+    <member refid="input__checker_8c_1a8ba7929cbd2a023ebba26c83879e553c" kind="function"><name>input_error_checks</name></member>
+  </compound>
+  <compound refid="input__checker__helpers_8c" kind="file"><name>input_checker_helpers.c</name>
+    <member refid="input__checker__helpers_8c_1ad85feb33dfe75120540e2bc4dc28209a" kind="function"><name>trim_input</name></member>
+    <member refid="input__checker__helpers_8c_1a04ef790ab9a9ed430a25b0a6d6cc95b5" kind="function"><name>valid_operator</name></member>
+  </compound>
+  <compound refid="parser_8c" kind="file"><name>parser.c</name>
+    <member refid="parser_8c_1a2a00e61e381f3754b1bb8cc4d9906b9f" kind="function"><name>clr_node</name></member>
+    <member refid="parser_8c_1ac5e108e945caf03bd60f26514c270963" kind="function"><name>manage_redirs</name></member>
+    <member refid="parser_8c_1a665af377c02015d59f668e4b2b2434bf" kind="function"><name>create_redir_node</name></member>
+    <member refid="parser_8c_1a963f3ae14f7e2f5334b13c7a67deabbd" kind="function"><name>is_redir_node</name></member>
+    <member refid="parser_8c_1a42a514028763c0c9c9f12226556407fe" kind="function"><name>manage_pipe</name></member>
+    <member refid="parser_8c_1a171ed3b5a6467eddcde6183a461caf02" kind="function"><name>parse_tokens</name></member>
+  </compound>
+  <compound refid="parser__helpers_8c" kind="file"><name>parser_helpers.c</name>
+    <member refid="parser__helpers_8c_1a57973a9791a885be52c3b8b13cdf327e" kind="function"><name>new_ast_node</name></member>
+    <member refid="parser__helpers_8c_1a66cf17aa7377cfb20adcaccdc1f38b1c" kind="function"><name>create_redir</name></member>
+    <member refid="parser__helpers_8c_1a4f595528e4e305887fda33e53258d602" kind="function"><name>arg_len</name></member>
+    <member refid="parser__helpers_8c_1ab5f23ff7ab59a241fa7476e6fca458cf" kind="function"><name>set_command_args</name></member>
+    <member refid="parser__helpers_8c_1a89cb417ed5bc7db489f0249b3d3e3ec6" kind="function"><name>manage_commands</name></member>
+  </compound>
+  <compound refid="tokeniser_8c" kind="file"><name>tokeniser.c</name>
+    <member refid="tokeniser_8c_1a0e22b8f037ef12eb28986615da9b79a6" kind="function"><name>handle_special_chars</name></member>
+    <member refid="tokeniser_8c_1a596263e54e7fc7ea1bde318a1da5cdc6" kind="function"><name>append_phrase_if_valid</name></member>
+    <member refid="tokeniser_8c_1a35855ff1421748c284cbaa495e26ef92" kind="function"><name>handle_phrase</name></member>
+    <member refid="tokeniser_8c_1ac0f556c5b74afdbd7ce730e294df7b76" kind="function"><name>print_tokens</name></member>
+    <member refid="tokeniser_8c_1a5482db056a3edf1a61079f863ba7dc99" kind="function"><name>tokenise</name></member>
+  </compound>
+  <compound refid="tokeniser__helpers_8c" kind="file"><name>tokeniser_helpers.c</name>
+    <member refid="tokeniser__helpers_8c_1a07793427f42bd19d0f4ea6771441be99" kind="function"><name>new_token</name></member>
+    <member refid="tokeniser__helpers_8c_1a6c482f0c73f7263b3253aaa8e1bd4fb6" kind="function"><name>append_token</name></member>
+  </compound>
+  <compound refid="pipe_8c" kind="file"><name>pipe.c</name>
+    <member refid="pipe_8c_1a7947b63271b47934f419fe6d217bf8df" kind="function"><name>builtin_pipe</name></member>
+    <member refid="pipe_8c_1a3a1c19716357baba879b799300b3c077" kind="function"><name>execute_child</name></member>
+  </compound>
+  <compound refid="ft__get__next__line_8c" kind="file"><name>ft_get_next_line.c</name>
+    <member refid="ft__get__next__line_8c_1a5feb28b63e00d9f45e4887ee15da4ab8" kind="function"><name>ft_get_next_line</name></member>
+    <member refid="ft__get__next__line_8c_1a33d78aafe6a0e75e4fdfe3606cbd9348" kind="function"><name>extract_line</name></member>
+    <member refid="ft__get__next__line_8c_1aa5a7db94bcb5970b93bff4df02b52108" kind="function"><name>read_from_fd</name></member>
+    <member refid="ft__get__next__line_8c_1accf11845776c5585dc691f37a0f60b8f" kind="function"><name>ft_strjoin_gnl</name></member>
+  </compound>
+  <compound refid="parser_2heredoc_8c" kind="file"><name>heredoc.c</name>
+    <member refid="parser_2heredoc_8c_1a4e1b3e73a18dd66697cd7eac990b0363" kind="function"><name>check_heredoc</name></member>
+    <member refid="parser_2heredoc_8c_1a132ce43db3d4fba988a166e932845375" kind="function"><name>heredoc</name></member>
+  </compound>
+  <compound refid="redirection_2heredoc_8c" kind="file"><name>heredoc.c</name>
+  </compound>
+  <compound refid="redirect__in_8c" kind="file"><name>redirect_in.c</name>
+    <member refid="redirect__in_8c_1a2635bab3d0023f67288d2832903bdbd9" kind="function"><name>redirect_in</name></member>
+  </compound>
+  <compound refid="redirect__out_8c" kind="file"><name>redirect_out.c</name>
+    <member refid="redirect__out_8c_1a15c40d3dc28662aeb1f6b4fb03f74537" kind="function"><name>execute_redirect</name></member>
+    <member refid="redirect__out_8c_1a13afb8e911eca2b32bd9e843eda752a5" kind="function"><name>redirect_out</name></member>
+  </compound>
+  <compound refid="env_2utils_8c" kind="file"><name>utils.c</name>
+    <member refid="env_2utils_8c_1a19f3a9e73371c1cfb3db076f94d33830" kind="function"><name>env_to_array</name></member>
+    <member refid="env_2utils_8c_1a67c3dca975ac3373851ded9534701bf5" kind="function"><name>ft_strcdup</name></member>
+    <member refid="env_2utils_8c_1a2c192ab32512a4454973d916c1bff54e" kind="function"><name>free_env</name></member>
+  </compound>
+  <compound refid="execute_2utils_8c" kind="file"><name>utils.c</name>
+    <member refid="execute_2utils_8c_1a3de2eb0e796441d7b827cf213bd8d789" kind="function"><name>ft_find_path</name></member>
+    <member refid="execute_2utils_8c_1a5d9d8b46bb6c3dbbc91e99b69bb63e9d" kind="function"><name>ft_free_2d_arr</name></member>
+    <member refid="execute_2utils_8c_1aedc550f2251badad69cf4b6dfda183ef" kind="function"><name>ft_perror</name></member>
+    <member refid="execute_2utils_8c_1a3efc1daab192679556df183345e1c83d" kind="function"><name>close_fds</name></member>
+    <member refid="execute_2utils_8c_1a8f9d65fb9405c61cf1e58b429f4f5728" kind="function"><name>handle_temp_fd</name></member>
+  </compound>
+  <compound refid="redirection_2utils_8c" kind="file"><name>utils.c</name>
+    <member refid="redirection_2utils_8c_1a2fe566529f8c7046fe274f2b3a35b39b" kind="function"><name>open_file</name></member>
+  </compound>
+  <compound refid="env__test_8c" kind="file"><name>env_test.c</name>
+    <member refid="env__test_8c_1ac2c82e11f71bdaefecc5df644f06d7c9" kind="function"><name>env_tests</name></member>
+    <member refid="env__test_8c_1acac11373a53e4554ff03dd0e197c767b" kind="function"><name>test_init_env</name></member>
+    <member refid="env__test_8c_1a4adfeb719435c39cc19b4c8f4e7e67a0" kind="function"><name>test_get_env</name></member>
+    <member refid="env__test_8c_1a791d22f0a8695ef368626b927cb18caf" kind="function"><name>test_set_env</name></member>
+    <member refid="env__test_8c_1a42689ea8be8292c12da563c4d8cfbc5f" kind="function"><name>test_unset_env</name></member>
+  </compound>
+  <compound refid="main_8c" kind="file"><name>main.c</name>
+    <member refid="main_8c_1aa58ce868c4a816bbe301da3bd43f1157" kind="function"><name>status_handler</name></member>
+    <member refid="main_8c_1abaf800210325f066cb9289aaae9e2c86" kind="function"><name>main_loop</name></member>
+    <member refid="main_8c_1a647f21a28344e1d9c643f4115516d7c9" kind="function"><name>main</name></member>
+  </compound>
+  <compound refid="test_2main_8c" kind="file"><name>main.c</name>
+    <member refid="test_2main_8c_1a647f21a28344e1d9c643f4115516d7c9" kind="function"><name>main</name></member>
+  </compound>
+  <compound refid="pipe__test_8c" kind="file"><name>pipe_test.c</name>
+    <member refid="pipe__test_8c_1a4e02daca82e791c68ff9bf7c0ad25030" kind="function"><name>builtin_pipe_test</name></member>
+    <member refid="pipe__test_8c_1a86787b58c336d2fef7bad648f36a0d81" kind="function"><name>pipe_tests</name></member>
+  </compound>
+  <compound refid="test_8h" kind="file"><name>test.h</name>
+    <member refid="test_8h_1ac2c82e11f71bdaefecc5df644f06d7c9" kind="function"><name>env_tests</name></member>
+    <member refid="test_8h_1a86787b58c336d2fef7bad648f36a0d81" kind="function"><name>pipe_tests</name></member>
+  </compound>
+  <compound refid="aux_8c" kind="file"><name>aux.c</name>
+    <member refid="aux_8c_1a94ee21f550bbf6448142ec3102526dde" kind="function"><name>make_history</name></member>
+  </compound>
+  <compound refid="clean__general_8c" kind="file"><name>clean_general.c</name>
+    <member refid="clean__general_8c_1ae6e1002c1a56f5bfa4ea13de63d3deae" kind="function"><name>free_args</name></member>
+    <member refid="clean__general_8c_1a9062b9b7e34cb35cb4b78c5251b020b0" kind="function"><name>free_env_list</name></member>
+    <member refid="clean__general_8c_1a16d324fdb41b45b7e59af5eaab2e56bd" kind="function"><name>free_minishell_data</name></member>
+    <member refid="clean__general_8c_1a3f6fbbc61bc797c26b4ece51216fbb67" kind="function"><name>loop_cleanup</name></member>
+  </compound>
+  <compound refid="clean__tree_8c" kind="file"><name>clean_tree.c</name>
+    <member refid="clean__tree_8c_1a643bfec4ad8bf3d845c5fbed35caf95c" kind="function"><name>free_all_tokens</name></member>
+    <member refid="clean__tree_8c_1a0a4196019426e41a9f5ec36835396e81" kind="function"><name>free_ast</name></member>
+  </compound>
+  <compound refid="initialise_8c" kind="file"><name>initialise.c</name>
+    <member refid="initialise_8c_1ab7986766cca35553aa796f6a732d856a" kind="function"><name>init_minishell_data</name></member>
+    <member refid="initialise_8c_1a41e7a8e4355566996a5984b4a31fb8fe" kind="function"><name>initialise</name></member>
+  </compound>
+  <compound refid="prompt_8c" kind="file"><name>prompt.c</name>
+    <member refid="prompt_8c_1a4c523064ece03ba20eb609b52253b88e" kind="function"><name>generate_prompt</name></member>
+    <member refid="prompt_8c_1a5663e22274d85c42c9c7f51e22afc301" kind="function"><name>generate_prompt_string</name></member>
+    <member refid="prompt_8c_1a4e673b7c7d3f45e10377ab9f537b8bf9" kind="function"><name>print_maxishell</name></member>
+  </compound>
+  <compound refid="stack__control_8c" kind="file"><name>stack_control.c</name>
+    <member refid="stack__control_8c_1ad3cb8fb50ea5bbd7019b2480704d8e4e" kind="function"><name>add_node</name></member>
+    <member refid="stack__control_8c_1af90eff9f4a4a22eec7f50142c9e1b591" kind="function"><name>print_stack</name></member>
+    <member refid="stack__control_8c_1aea956fb83b5f5930d3ac2d3f9f8f3c36" kind="function"><name>free_stack</name></member>
+    <member refid="stack__control_8c_1a962defbcd8ea61b01724b658199944ec" kind="function"><name>calc_stack_size</name></member>
+    <member refid="stack__control_8c_1a950dc11d8cce4e58af12882a1781128c" kind="function"><name>list_to_array</name></member>
+  </compound>
+  <compound refid="stack__control__2_8c" kind="file"><name>stack_control_2.c</name>
+    <member refid="stack__control__2_8c_1abe6ee9afbff4acb27c42380ff770c52a" kind="function"><name>build_linked_list</name></member>
+  </compound>
+  <compound refid="visualiser_8c" kind="file"><name>visualiser.c</name>
+    <member refid="visualiser_8c_1afdc55a243d68518be551b9ea0af3317c" kind="function"><name>get_token_type_name</name></member>
+    <member refid="visualiser_8c_1a13ff81f002e065c8be81f93b1e3bfecf" kind="function"><name>print_ast_node</name></member>
+    <member refid="visualiser_8c_1af0b35d9d3e66d95fbd123e60ccfe74b4" kind="function"><name>build_new_prefix</name></member>
+    <member refid="visualiser_8c_1ac38cad433d858a530a7d7479f134f81c" kind="function"><name>print_ast_graphical</name></member>
+    <member refid="visualiser_8c_1a16c146658d86ab8fa44a3af94804c5a9" kind="function"><name>print_ast_root</name></member>
+  </compound>
+  <compound refid="dir_1909b13b6d0cbcc1d36d622424b54e1c" kind="dir"><name>/Users/dimadem/Documents/GitHub/minishell/src/builtins</name>
+  </compound>
+  <compound refid="dir_51e5b56c5a94789e05e3a3352a90e377" kind="dir"><name>/Users/dimadem/Documents/GitHub/minishell/src/env</name>
+  </compound>
+  <compound refid="dir_f6da5f5719eb43cbb7972ff2485d31e6" kind="dir"><name>/Users/dimadem/Documents/GitHub/minishell/src/test/env</name>
+  </compound>
+  <compound refid="dir_18625fd22b3425dc25366fe53b16c144" kind="dir"><name>/Users/dimadem/Documents/GitHub/minishell/src/execute</name>
+  </compound>
+  <compound refid="dir_6cd8491d143eb218b70983dbdb3c58bc" kind="dir"><name>/Users/dimadem/Documents/GitHub/minishell/src/parser</name>
+  </compound>
+  <compound refid="dir_095d6ba4fa4590a1673d2e0629f51a48" kind="dir"><name>/Users/dimadem/Documents/GitHub/minishell/src/pipe</name>
+  </compound>
+  <compound refid="dir_4476e68e112f68760843e2a525defc83" kind="dir"><name>/Users/dimadem/Documents/GitHub/minishell/src/test/pipe</name>
+  </compound>
+  <compound refid="dir_f569f7a4beb673290eee842bcd9cff47" kind="dir"><name>/Users/dimadem/Documents/GitHub/minishell/src/redirection</name>
+  </compound>
+  <compound refid="dir_68267d1309a1af8e8297ef4c3efbcdba" kind="dir"><name>/Users/dimadem/Documents/GitHub/minishell/src</name>
+  </compound>
+  <compound refid="dir_120ed4da3e3217b1e7fc0b4f48568e79" kind="dir"><name>/Users/dimadem/Documents/GitHub/minishell/src/test</name>
+  </compound>
+  <compound refid="dir_313caf1132e152dd9b58bea13a4052ca" kind="dir"><name>/Users/dimadem/Documents/GitHub/minishell/src/utils</name>
+  </compound>
+</doxygenindex>

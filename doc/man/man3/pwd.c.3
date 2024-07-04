@@ -1,0 +1,53 @@
+.TH "/Users/dimadem/Documents/GitHub/minishell/src/builtins/pwd.c" 3 "Version 1" "maxishell" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/Users/dimadem/Documents/GitHub/minishell/src/builtins/pwd.c
+.SH SYNOPSIS
+.br
+.PP
+\fR#include 'shell\&.h'\fP
+.br
+\fR#include <unistd\&.h>\fP
+.br
+\fR#include 'libft\&.h'\fP
+.br
+\fR#include <stdio\&.h>\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "int \fBbuiltin_pwd\fP (t_minishell_data *data)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "int builtin_pwd (t_minishell_data * data)"
+
+.PP
+Definition at line \fB23\fP of file \fBpwd\&.c\fP\&.
+.nf
+24 {
+25     char    cwd[4096];
+26 
+27     (void)data;
+28     if (getcwd(cwd, sizeof(cwd)) != NULL)
+29         ft_putendl_fd(cwd, STDOUT_FILENO);
+30     else
+31     {
+32         ft_putstr_fd("bash: cd: ", 2);
+33         perror("cwd");
+34         return (1);
+35     }
+36     return (0);
+37 }
+.PP
+.fi
+
+.PP
+Referenced by \fBexecute()\fP\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for maxishell from the source code\&.

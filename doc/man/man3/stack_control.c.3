@@ -1,0 +1,160 @@
+.TH "/Users/dimadem/Documents/GitHub/minishell/src/utils/stack_control.c" 3 "Version 1" "maxishell" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/Users/dimadem/Documents/GitHub/minishell/src/utils/stack_control.c
+.SH SYNOPSIS
+.br
+.PP
+\fR#include 'tokens\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBadd_node\fP (t_token **head, char *str)"
+.br
+.ti -1c
+.RI "void \fBprint_stack\fP (t_token **stack)"
+.br
+.ti -1c
+.RI "void \fBfree_stack\fP (t_token **stack)"
+.br
+.ti -1c
+.RI "int \fBcalc_stack_size\fP (t_token *stack)"
+.br
+.ti -1c
+.RI "char ** \fBlist_to_array\fP (t_token *head)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "void add_node (t_token ** head, char * str)"
+
+.PP
+Definition at line \fB15\fP of file \fBstack_control\&.c\fP\&.
+.nf
+16 {
+17     t_token *new_node;  
+18     t_token *curr_node;
+19 
+20     new_node = (t_token *)malloc(sizeof(t_token));
+21     if (!new_node)
+22         return ;
+23     new_node\->data = str;
+24     new_node\->next = NULL;
+25     if (*head == NULL)
+26     {
+27         *head = new_node;
+28         return ;
+29     }
+30     curr_node = *head;
+31     while (curr_node\->next != NULL)
+32         curr_node = curr_node\->next;
+33     curr_node\->next = new_node;
+34 }
+.PP
+.fi
+
+.PP
+Referenced by \fBbuild_linked_list()\fP\&.
+.SS "int calc_stack_size (t_token * stack)"
+
+.PP
+Definition at line \fB65\fP of file \fBstack_control\&.c\fP\&.
+.nf
+66 {
+67     int         size;
+68     t_token     *current;
+69 
+70     size = 0;
+71     current = stack;
+72     while (current != NULL)
+73     {
+74         size++;
+75         current = current\->next;
+76     }
+77     return (size);
+78 }
+.PP
+.fi
+
+.PP
+Referenced by \fBlist_to_array()\fP\&.
+.SS "void free_stack (t_token ** stack)"
+
+.PP
+Definition at line \fB51\fP of file \fBstack_control\&.c\fP\&.
+.nf
+52 {
+53     t_token *current;
+54     t_token *next;
+55 
+56     current = *stack;
+57     while (current != NULL)
+58     {
+59         next = current\->next;
+60         free(current);
+61         current = next;
+62     }
+63 }
+.PP
+.fi
+
+.SS "char ** list_to_array (t_token * head)"
+
+.PP
+Definition at line \fB80\fP of file \fBstack_control\&.c\fP\&.
+.nf
+81 {
+82     int         count;
+83     int         i;
+84     char        **arr;
+85     t_token     *current;
+86 
+87     current = head;
+88     count = calc_stack_size(current);
+89     arr = (char **)malloc((count + 1) * sizeof(char *));
+90     if (!arr)
+91         return (NULL);
+92     current = head;
+93     i = 0;
+94     while (i < count)
+95     {
+96         arr[i] = ft_strdup(current\->data);
+97         current = current\->next;
+98         i++;
+99     }
+100     arr[count] = NULL;
+101     return (arr);
+102 }
+.PP
+.fi
+
+.PP
+References \fBcalc_stack_size()\fP\&.
+.SS "void print_stack (t_token ** stack)"
+
+.PP
+Definition at line \fB36\fP of file \fBstack_control\&.c\fP\&.
+.nf
+37 {
+38     t_token *current_node;
+39     int     i;
+40 
+41     i = 0;
+42     current_node = *stack;
+43     while (current_node != NULL)
+44     {
+45         ft_printf("input[%d] \->  %s \\n", i, current_node\->data);
+46         current_node = current_node\->next;
+47         i++;
+48     }
+49 }
+.PP
+.fi
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for maxishell from the source code\&.

@@ -1,0 +1,51 @@
+.TH "/Users/dimadem/Documents/GitHub/minishell/src/test/main.c" 3 "Version 1" "maxishell" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/Users/dimadem/Documents/GitHub/minishell/src/test/main.c
+.SH SYNOPSIS
+.br
+.PP
+\fR#include 'test\&.h'\fP
+.br
+\fR#include 'shell\&.h'\fP
+.br
+\fR#include <stdio\&.h>\fP
+.br
+\fR#include <stdlib\&.h>\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "int \fBmain\fP (int argc, char **argv, char **envp)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "int main (int argc, char ** argv, char ** envp)"
+
+.PP
+Definition at line \fB18\fP of file \fBmain\&.c\fP\&.
+.nf
+19 {
+20     t_minishell_data    data;
+21 
+22     if (argc > 1)
+23     {
+24         printf("Usage: %s\\n", argv[0]);
+25         exit(EXIT_FAILURE);
+26     }
+27     pipe_tests(&data);
+28     env_tests(&data, envp);
+29     return (0);
+30 }
+.PP
+.fi
+
+.PP
+References \fBenv_tests()\fP, and \fBpipe_tests()\fP\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for maxishell from the source code\&.

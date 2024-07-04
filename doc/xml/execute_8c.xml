@@ -1,0 +1,285 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.11.0" xml:lang="en-US">
+  <compounddef id="execute_8c" kind="file" language="C++">
+    <compoundname>execute.c</compoundname>
+    <includes local="yes">builtins.h</includes>
+    <includes local="yes">libft.h</includes>
+    <includes local="no">stdio.h</includes>
+    <includes local="no">sys/wait.h</includes>
+    <includes local="yes">shell.h</includes>
+    <includes local="yes">execute.h</includes>
+    <includes local="yes">tokens.h</includes>
+    <includes local="yes">pipe.h</includes>
+    <includes local="yes">redirection.h</includes>
+    <incdepgraph>
+      <node id="1">
+        <label>/Users/dimadem/Documents/GitHub/minishell/src/execute/execute.c</label>
+        <link refid="execute_8c"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>builtins.h</label>
+      </node>
+      <node id="7">
+        <label>execute.h</label>
+      </node>
+      <node id="3">
+        <label>libft.h</label>
+      </node>
+      <node id="9">
+        <label>pipe.h</label>
+      </node>
+      <node id="10">
+        <label>redirection.h</label>
+      </node>
+      <node id="6">
+        <label>shell.h</label>
+      </node>
+      <node id="4">
+        <label>stdio.h</label>
+      </node>
+      <node id="5">
+        <label>sys/wait.h</label>
+      </node>
+      <node id="8">
+        <label>tokens.h</label>
+      </node>
+    </incdepgraph>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="execute_8c_1ace4c3a2246919797e40140123d79596a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int execute_ast</definition>
+        <argsstring>(t_ast *node, t_minishell_data *data)</argsstring>
+        <name>execute_ast</name>
+        <param>
+          <type>t_ast *</type>
+          <declname>node</declname>
+        </param>
+        <param>
+          <type>t_minishell_data *</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/dimadem/Documents/GitHub/minishell/src/execute/execute.c" line="31" column="4" bodyfile="/Users/dimadem/Documents/GitHub/minishell/src/execute/execute.c" bodystart="31" bodyend="72" declfile="/Users/dimadem/Documents/GitHub/minishell/src/execute/execute.c" declline="27" declcolumn="4"/>
+        <references refid="pipe_8c_1a7947b63271b47934f419fe6d217bf8df" compoundref="pipe_8c" startline="25" endline="50">builtin_pipe</references>
+        <references refid="execute_8c_1a825187f25304f9bd1a3e7a5e97327801" compoundref="execute_8c" startline="74" endline="101">execute</references>
+        <references refid="redirect__in_8c_1a2635bab3d0023f67288d2832903bdbd9" compoundref="redirect__in_8c" startline="13" endline="30">redirect_in</references>
+        <references refid="redirect__out_8c_1a13afb8e911eca2b32bd9e843eda752a5" compoundref="redirect__out_8c" startline="10" endline="25">redirect_out</references>
+        <referencedby refid="pipe_8c_1a3a1c19716357baba879b799300b3c077" compoundref="pipe_8c" startline="52" endline="71">execute_child</referencedby>
+        <referencedby refid="redirect__out_8c_1a15c40d3dc28662aeb1f6b4fb03f74537" compoundref="redirect__out_8c" startline="27" endline="51">execute_redirect</referencedby>
+        <referencedby refid="main_8c_1abaf800210325f066cb9289aaae9e2c86" compoundref="main_8c" startline="29" endline="51">main_loop</referencedby>
+        <referencedby refid="redirect__in_8c_1a2635bab3d0023f67288d2832903bdbd9" compoundref="redirect__in_8c" startline="13" endline="30">redirect_in</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="execute_8c_1a825187f25304f9bd1a3e7a5e97327801" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int execute</definition>
+        <argsstring>(t_minishell_data *data)</argsstring>
+        <name>execute</name>
+        <param>
+          <type>t_minishell_data *</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/dimadem/Documents/GitHub/minishell/src/execute/execute.c" line="74" column="4" bodyfile="/Users/dimadem/Documents/GitHub/minishell/src/execute/execute.c" bodystart="74" bodyend="101" declfile="/Users/dimadem/Documents/GitHub/minishell/src/execute/execute.c" declline="28" declcolumn="4"/>
+        <references refid="cd_8c_1a90c33b349e024075c96efdc320f7138f" compoundref="cd_8c" startline="26" endline="47">builtin_cd</references>
+        <references refid="echo_8c_1a9c4bf413cef22ef46427c4026734a97d" compoundref="echo_8c" startline="21" endline="42">builtin_echo</references>
+        <references refid="builtins_2env_8c_1adfc1db1f94cf16d71aea54b09370c032" compoundref="builtins_2env_8c" startline="38" endline="44">builtin_env</references>
+        <references refid="exit_8c_1a6a7d93447961b415c9c16ebdfcd3d5fa" compoundref="exit_8c" startline="26" endline="35">builtin_exit</references>
+        <references refid="export_8c_1a9e6f1e14f0125cd68c70e8e31ef606aa" compoundref="export_8c" startline="28" endline="44">builtin_export</references>
+        <references refid="pwd_8c_1aa9f1acae4ed9a914564af529571db30a" compoundref="pwd_8c" startline="23" endline="37">builtin_pwd</references>
+        <references refid="unset_8c_1aa04be64406f96e5ae8f361421bf72cec" compoundref="unset_8c" startline="26" endline="45">builtin_unset</references>
+        <references refid="execute_8c_1a82e1e73d725f74b5fdad62dd3a99bab5" compoundref="execute_8c" startline="103" endline="133">new_process</references>
+        <referencedby refid="execute_8c_1ace4c3a2246919797e40140123d79596a" compoundref="execute_8c" startline="31" endline="72">execute_ast</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="execute_8c_1a82e1e73d725f74b5fdad62dd3a99bab5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int new_process</definition>
+        <argsstring>(t_minishell_data *data)</argsstring>
+        <name>new_process</name>
+        <param>
+          <type>t_minishell_data *</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/dimadem/Documents/GitHub/minishell/src/execute/execute.c" line="103" column="4" bodyfile="/Users/dimadem/Documents/GitHub/minishell/src/execute/execute.c" bodystart="103" bodyend="133" declfile="/Users/dimadem/Documents/GitHub/minishell/src/execute/execute.c" declline="29" declcolumn="4"/>
+        <references refid="env_2utils_8c_1a19f3a9e73371c1cfb3db076f94d33830" compoundref="env_2utils_8c" startline="22" endline="49">env_to_array</references>
+        <references refid="execute_2utils_8c_1a3de2eb0e796441d7b827cf213bd8d789" compoundref="execute_2utils_8c" startline="24" endline="47">ft_find_path</references>
+        <references refid="execute_2utils_8c_1a5d9d8b46bb6c3dbbc91e99b69bb63e9d" compoundref="execute_2utils_8c" startline="49" endline="57">ft_free_2d_arr</references>
+        <references refid="execute_2utils_8c_1aedc550f2251badad69cf4b6dfda183ef" compoundref="execute_2utils_8c" startline="59" endline="63">ft_perror</references>
+        <referencedby refid="execute_8c_1a825187f25304f9bd1a3e7a5e97327801" compoundref="execute_8c" startline="74" endline="101">execute</referencedby>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*<sp/>**************************************************************************<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:::<sp/><sp/><sp/><sp/><sp/><sp/>::::::::<sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/>execute.c<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:+:<sp/><sp/><sp/><sp/><sp/><sp/>:+:<sp/><sp/><sp/><sp/>:+:<sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>+:+<sp/>+:+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>+:+<sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/>By:<sp/>dmdemirk<sp/>&lt;dmdemirk@student.42london.c<sp/><sp/><sp/><sp/><sp/><sp/>+#+<sp/><sp/>+:+<sp/><sp/><sp/><sp/><sp/><sp/><sp/>+#+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>+#+#+#+#+#+<sp/><sp/><sp/>+#+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/>Created:<sp/>2024/05/31<sp/>11:02:00<sp/>by<sp/>dmdemirk<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>#+#<sp/><sp/><sp/><sp/>#+#<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/>Updated:<sp/>2024/06/26<sp/>15:27:32<sp/>by<sp/>dmdemirk<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>###<sp/><sp/><sp/>########.fr<sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>**************************************************************************<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;builtins.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;libft.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdio.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;sys/wait.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;shell.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;execute.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;tokens.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;pipe.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;redirection.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="24"><highlight class="comment"><sp/><sp/><sp/><sp/>REFACTORING<sp/>HERE</highlight></codeline>
+<codeline lineno="25"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="execute_8c_1ace4c3a2246919797e40140123d79596a" kindref="member">execute_ast</ref>(t_ast<sp/>*node,<sp/>t_minishell_data<sp/>*data);</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="execute_8c_1a825187f25304f9bd1a3e7a5e97327801" kindref="member">execute</ref>(t_minishell_data<sp/>*data);</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="execute_8c_1a82e1e73d725f74b5fdad62dd3a99bab5" kindref="member">new_process</ref>(t_minishell_data<sp/>*data);</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31" refid="execute_8c_1ace4c3a2246919797e40140123d79596a" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="execute_8c_1ace4c3a2246919797e40140123d79596a" kindref="member">execute_ast</ref>(t_ast<sp/>*node,<sp/>t_minishell_data<sp/>*data)</highlight></codeline>
+<codeline lineno="32"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!node)</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(1);</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(node-&gt;type<sp/>==<sp/>PIPE)</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(RED</highlight><highlight class="stringliteral">&quot;PIPE\n&quot;</highlight><highlight class="normal">RESET);</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(<ref refid="pipe_8c_1a7947b63271b47934f419fe6d217bf8df" kindref="member">builtin_pipe</ref>(node,<sp/>data));</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(node-&gt;type<sp/>==<sp/>ENV_VAR)<sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>&quot;$()&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(BLU</highlight><highlight class="stringliteral">&quot;ENV_VAR\n&quot;</highlight><highlight class="normal">RESET);</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//execute_redirect(node,<sp/>data);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(node-&gt;type<sp/>==<sp/>REDIR_IN)</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(GRN</highlight><highlight class="stringliteral">&quot;REDIR_IN\n&quot;</highlight><highlight class="normal">RESET);</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(<ref refid="redirect__in_8c_1a2635bab3d0023f67288d2832903bdbd9" kindref="member">redirect_in</ref>(node,<sp/>data));</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(node-&gt;type<sp/>==<sp/>REDIR_OUT)<sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>&quot;&gt;&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(CYA</highlight><highlight class="stringliteral">&quot;REDIR_OUT\n&quot;</highlight><highlight class="normal">RESET);</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(<ref refid="redirect__out_8c_1a13afb8e911eca2b32bd9e843eda752a5" kindref="member">redirect_out</ref>(node,<sp/>data));</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(node-&gt;type<sp/>==<sp/>REDIR_APPEND)<sp/></highlight><highlight class="comment">//<sp/>&quot;&gt;&gt;&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(CYA</highlight><highlight class="stringliteral">&quot;REDIR_APPEND\n&quot;</highlight><highlight class="normal">RESET);</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//execute_sequence(node,<sp/>data);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(node-&gt;type<sp/>==<sp/>REDIR_HEREDOC)<sp/></highlight><highlight class="comment">//<sp/>&quot;&lt;&lt;&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(MAG</highlight><highlight class="stringliteral">&quot;REDIR_HEREDOC\n&quot;</highlight><highlight class="normal">RESET);</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//execute_sequence(node,<sp/>data);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(node-&gt;type<sp/>==<sp/>PHRASE)</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(YEL</highlight><highlight class="stringliteral">&quot;PHRASE\n&quot;</highlight><highlight class="normal">RESET);</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>data-&gt;args<sp/>=<sp/>node-&gt;args;</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(<ref refid="execute_8c_1a825187f25304f9bd1a3e7a5e97327801" kindref="member">execute</ref>(data));</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(0);</highlight></codeline>
+<codeline lineno="72"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight></codeline>
+<codeline lineno="74" refid="execute_8c_1a825187f25304f9bd1a3e7a5e97327801" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="execute_8c_1a825187f25304f9bd1a3e7a5e97327801" kindref="member">execute</ref>(t_minishell_data<sp/>*data)</highlight></codeline>
+<codeline lineno="75"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><sp/>i;</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/><sp/><sp/>*builtin_commands[7];</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/>int<sp/><sp/><sp/><sp/><sp/>(*builtin_functions[7])(t_minishell_data<sp/>*);</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/>builtin_commands[0]<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;cd&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/>builtin_commands[1]<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;echo&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/>builtin_commands[2]<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;env&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/>builtin_commands[3]<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;exit&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/>builtin_commands[4]<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;export&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/>builtin_commands[5]<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;pwd&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/>builtin_commands[6]<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;unset&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/>builtin_functions[0]<sp/>=<sp/>&amp;<ref refid="cd_8c_1a90c33b349e024075c96efdc320f7138f" kindref="member">builtin_cd</ref>;</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/>builtin_functions[1]<sp/>=<sp/>&amp;<ref refid="echo_8c_1a9c4bf413cef22ef46427c4026734a97d" kindref="member">builtin_echo</ref>;</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/>builtin_functions[2]<sp/>=<sp/>&amp;<ref refid="builtins_2env_8c_1adfc1db1f94cf16d71aea54b09370c032" kindref="member">builtin_env</ref>;</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/>builtin_functions[3]<sp/>=<sp/>&amp;<ref refid="exit_8c_1a6a7d93447961b415c9c16ebdfcd3d5fa" kindref="member">builtin_exit</ref>;</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/>builtin_functions[4]<sp/>=<sp/>&amp;<ref refid="export_8c_1a9e6f1e14f0125cd68c70e8e31ef606aa" kindref="member">builtin_export</ref>;</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/>builtin_functions[5]<sp/>=<sp/>&amp;<ref refid="pwd_8c_1aa9f1acae4ed9a914564af529571db30a" kindref="member">builtin_pwd</ref>;</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/>builtin_functions[6]<sp/>=<sp/>&amp;<ref refid="unset_8c_1aa04be64406f96e5ae8f361421bf72cec" kindref="member">builtin_unset</ref>;</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(data-&gt;args[0]<sp/>==<sp/>NULL)</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(2);</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/>i<sp/>=<sp/>-1;</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(++i<sp/>&lt;<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(builtin_commands)<sp/>/<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*))</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(ft_strcmp(data-&gt;args[0],<sp/>builtin_commands[i])<sp/>==<sp/>0)</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>((*builtin_functions[i])(data));</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(<ref refid="execute_8c_1a82e1e73d725f74b5fdad62dd3a99bab5" kindref="member">new_process</ref>(data));</highlight></codeline>
+<codeline lineno="101"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"></highlight></codeline>
+<codeline lineno="103" refid="execute_8c_1a82e1e73d725f74b5fdad62dd3a99bab5" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="execute_8c_1a82e1e73d725f74b5fdad62dd3a99bab5" kindref="member">new_process</ref>(t_minishell_data<sp/>*data)</highlight></codeline>
+<codeline lineno="104"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/><sp/><sp/>*path;</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/><sp/><sp/>**envp;</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/>pid_t<sp/><sp/><sp/>pid;</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/>envp<sp/>=<sp/><ref refid="env_2utils_8c_1a19f3a9e73371c1cfb3db076f94d33830" kindref="member">env_to_array</ref>(data-&gt;envp);</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/>path<sp/>=<sp/><ref refid="execute_2utils_8c_1a3de2eb0e796441d7b827cf213bd8d789" kindref="member">ft_find_path</ref>(data-&gt;args[0],<sp/>data-&gt;envp);</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/>pid<sp/>=<sp/>fork();</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(pid<sp/>==<sp/>-1)</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="execute_2utils_8c_1aedc550f2251badad69cf4b6dfda183ef" kindref="member">ft_perror</ref>(</highlight><highlight class="stringliteral">&quot;fork&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(pid<sp/>==<sp/>0)</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(data-&gt;temp_fd<sp/>!=<sp/>-1)</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>dup2(data-&gt;temp_fd,<sp/>STDIN_FILENO);</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>close(data-&gt;temp_fd);</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(data-&gt;temp_fd<sp/>==<sp/>1)</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>dup2(data-&gt;temp_fd,<sp/>STDOUT_FILENO);</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>close(data-&gt;temp_fd);</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(execve(path,<sp/>data-&gt;args,<sp/>envp)<sp/>==<sp/>-1)</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="execute_2utils_8c_1aedc550f2251badad69cf4b6dfda183ef" kindref="member">ft_perror</ref>(</highlight><highlight class="stringliteral">&quot;minishell&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/>waitpid(pid,<sp/>NULL,<sp/>0);</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/>free(path);</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="execute_2utils_8c_1a5d9d8b46bb6c3dbbc91e99b69bb63e9d" kindref="member">ft_free_2d_arr</ref>(envp);</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(0);</highlight></codeline>
+<codeline lineno="133"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="/Users/dimadem/Documents/GitHub/minishell/src/execute/execute.c"/>
+  </compounddef>
+</doxygen>

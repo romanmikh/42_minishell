@@ -19,7 +19,7 @@ void	build_linked_list(t_token **tokens, char **argv)
 	i = 0;
 	while (argv[i])
 	{
-		add_node(tokens, argv[i]);
+		add_node(tokens, argv[i]);   
 		i++;
 	}
 }

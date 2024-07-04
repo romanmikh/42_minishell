@@ -1,0 +1,184 @@
+.TH "/Users/dimadem/Documents/GitHub/minishell/src/parser/tokeniser.c" 3 "Version 1" "maxishell" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/Users/dimadem/Documents/GitHub/minishell/src/parser/tokeniser.c
+.SH SYNOPSIS
+.br
+.PP
+\fR#include 'tokens\&.h'\fP
+.br
+\fR#include <string\&.h>\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBhandle_special_chars\fP (char **str, t_token **tokens)"
+.br
+.ti -1c
+.RI "void \fBappend_phrase_if_valid\fP (char **start, char **str, t_token **tokens)"
+.br
+.ti -1c
+.RI "void \fBhandle_phrase\fP (char **str, t_token **tokens)"
+.br
+.ti -1c
+.RI "void \fBprint_tokens\fP (t_token *tokens)"
+.br
+.ti -1c
+.RI "t_token * \fBtokenise\fP (char *str)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "void append_phrase_if_valid (char ** start, char ** str, t_token ** tokens)"
+
+.PP
+Definition at line \fB48\fP of file \fBtokeniser\&.c\fP\&.
+.nf
+49 {
+50     char    *phrase;
+51 
+52     if (*str > *start)
+53     {
+54         phrase = ft_strndup(*start, *str \- *start);
+55         if (phrase)
+56         {
+57             append_token(tokens, new_token(phrase, PHRASE));
+58             free(phrase);
+59         }
+60         else
+61             ft_printf("Error: unable to allocate memory for token\\n");
+62     }
+63 }
+.PP
+.fi
+
+.PP
+References \fBappend_token()\fP, and \fBnew_token()\fP\&.
+.PP
+Referenced by \fBhandle_phrase()\fP\&.
+.SS "void handle_phrase (char ** str, t_token ** tokens)"
+
+.PP
+Definition at line \fB65\fP of file \fBtokeniser\&.c\fP\&.
+.nf
+66 {
+67     char    *start;
+68     char    quote_flag;
+69     char    quote_type;
+70 
+71     start = *str;
+72     quote_flag = 0;
+73     quote_type = 0;
+74     while (**str)
+75     {
+76         if (!quote_flag && (**str == '\\'' || **str == '\\"'))
+77         {
+78             quote_flag = 1;
+79             quote_type = **str;
+80         }
+81         else if (quote_flag && **str == quote_type)
+82             quote_flag = 0;
+83         if (!quote_flag && ft_strchr(" \\t\\n\\r\\v\\f<|>", **str) != NULL)
+84             break ;
+85         (*str)++;
+86     }
+87     append_phrase_if_valid(&start, str, tokens);
+88 }
+.PP
+.fi
+
+.PP
+References \fBappend_phrase_if_valid()\fP\&.
+.PP
+Referenced by \fBtokenise()\fP\&.
+.SS "void handle_special_chars (char ** str, t_token ** tokens)"
+
+.PP
+Definition at line \fB21\fP of file \fBtokeniser\&.c\fP\&.
+.nf
+22 {
+23     if (**str == '<')
+24     {
+25         if (*(*str + 1) == '<')
+26         {
+27             append_token(tokens, new_token("<<", REDIR_HEREDOC));
+28             (*str)++;
+29         }
+30         else
+31             append_token(tokens, new_token("<", REDIR_IN));
+32     }
+33     else if (**str == '>')
+34     {
+35         if (*(*str + 1) == '>')
+36         {
+37             append_token(tokens, new_token(">>", REDIR_APPEND));
+38             (*str)++;
+39         }
+40         else
+41             append_token(tokens, new_token(">", REDIR_OUT));
+42     }
+43     else if (**str == '|')
+44         append_token(tokens, new_token("|", PIPE));
+45     (*str)++;
+46 }
+.PP
+.fi
+
+.PP
+References \fBappend_token()\fP, and \fBnew_token()\fP\&.
+.PP
+Referenced by \fBtokenise()\fP\&.
+.SS "void print_tokens (t_token * tokens)"
+
+.PP
+Definition at line \fB90\fP of file \fBtokeniser\&.c\fP\&.
+.nf
+91 {
+92     t_token *token;
+93     int     i;              
+94 
+95     i = 0;
+96     token = tokens;
+97     while (token != NULL)
+98     {
+99         printf("input[%d] \->  %s \\n", i, token\->data);
+100         token = token\->next;
+101         i++;
+102     }
+103 }
+.PP
+.fi
+
+.SS "t_token * tokenise (char * str)"
+
+.PP
+Definition at line \fB105\fP of file \fBtokeniser\&.c\fP\&.
+.nf
+106 {
+107     t_token *tokens;
+108 
+109     tokens = NULL;
+110     while (*str)
+111     {
+112         while (*str && ft_strchr(" \\t\\n\\r\\v\\f", *str) != NULL)
+113             str++;
+114         if (ft_strchr("<|>", *str) != NULL)
+115             handle_special_chars(&str, &tokens);
+116         else
+117             handle_phrase(&str, &tokens);
+118     }
+119     return (tokens);
+120 }
+.PP
+.fi
+
+.PP
+References \fBhandle_phrase()\fP, and \fBhandle_special_chars()\fP\&.
+.PP
+Referenced by \fBmain_loop()\fP\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for maxishell from the source code\&.

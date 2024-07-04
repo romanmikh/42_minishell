@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.11.0" xml:lang="en-US">
+  <compounddef id="dir_6cd8491d143eb218b70983dbdb3c58bc" kind="dir">
+    <compoundname>/Users/dimadem/Documents/GitHub/minishell/src/parser</compoundname>
+    <innerfile refid="parser_2heredoc_8c">heredoc.c</innerfile>
+    <innerfile refid="input__checker_8c">input_checker.c</innerfile>
+    <innerfile refid="input__checker__helpers_8c">input_checker_helpers.c</innerfile>
+    <innerfile refid="parser_8c">parser.c</innerfile>
+    <innerfile refid="parser__helpers_8c">parser_helpers.c</innerfile>
+    <innerfile refid="tokeniser_8c">tokeniser.c</innerfile>
+    <innerfile refid="tokeniser__helpers_8c">tokeniser_helpers.c</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/dimadem/Documents/GitHub/minishell/src/parser/"/>
+  </compounddef>
+</doxygen>

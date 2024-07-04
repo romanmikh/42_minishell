@@ -1,0 +1,60 @@
+.TH "/Users/dimadem/Documents/GitHub/minishell/src/redirection/redirect_in.c" 3 "Version 1" "maxishell" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/Users/dimadem/Documents/GitHub/minishell/src/redirection/redirect_in.c
+.SH SYNOPSIS
+.br
+.PP
+\fR#include 'tokens\&.h'\fP
+.br
+\fR#include 'shell\&.h'\fP
+.br
+\fR#include 'redirection\&.h'\fP
+.br
+\fR#include 'execute\&.h'\fP
+.br
+\fR#include <string\&.h>\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "int \fBredirect_in\fP (t_ast *node, t_minishell_data *data)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "int redirect_in (t_ast * node, t_minishell_data * data)"
+
+.PP
+Definition at line \fB13\fP of file \fBredirect_in\&.c\fP\&.
+.nf
+14 {
+15     pid_t   pid;
+16 
+17     pid = fork();
+18     if (pid == \-1)
+19         return (1);
+20     if (pid == 0)
+21     {
+22         data\->temp_fd = open_file(node\->right, "<");
+23         if (data\->temp_fd == \-1)
+24             return (1);
+25         execute_ast(node\->left, data);
+26         exit(0);
+27     }
+28     waitpid(pid, &data\->exit_status, 0);
+29     return (0);
+30 }
+.PP
+.fi
+
+.PP
+References \fBexecute_ast()\fP, and \fBopen_file()\fP\&.
+.PP
+Referenced by \fBexecute_ast()\fP\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for maxishell from the source code\&.

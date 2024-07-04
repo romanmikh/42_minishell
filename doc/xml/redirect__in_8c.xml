@@ -1,0 +1,105 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.11.0" xml:lang="en-US">
+  <compounddef id="redirect__in_8c" kind="file" language="C++">
+    <compoundname>redirect_in.c</compoundname>
+    <includes local="yes">tokens.h</includes>
+    <includes local="yes">shell.h</includes>
+    <includes local="yes">redirection.h</includes>
+    <includes local="yes">execute.h</includes>
+    <includes local="no">string.h</includes>
+    <incdepgraph>
+      <node id="1">
+        <label>/Users/dimadem/Documents/GitHub/minishell/src/redirection/redirect_in.c</label>
+        <link refid="redirect__in_8c"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>execute.h</label>
+      </node>
+      <node id="4">
+        <label>redirection.h</label>
+      </node>
+      <node id="3">
+        <label>shell.h</label>
+      </node>
+      <node id="6">
+        <label>string.h</label>
+      </node>
+      <node id="2">
+        <label>tokens.h</label>
+      </node>
+    </incdepgraph>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="redirect__in_8c_1a2635bab3d0023f67288d2832903bdbd9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int redirect_in</definition>
+        <argsstring>(t_ast *node, t_minishell_data *data)</argsstring>
+        <name>redirect_in</name>
+        <param>
+          <type>t_ast *</type>
+          <declname>node</declname>
+        </param>
+        <param>
+          <type>t_minishell_data *</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/dimadem/Documents/GitHub/minishell/src/redirection/redirect_in.c" line="13" column="5" bodyfile="/Users/dimadem/Documents/GitHub/minishell/src/redirection/redirect_in.c" bodystart="13" bodyend="30"/>
+        <references refid="execute_8c_1ace4c3a2246919797e40140123d79596a" compoundref="execute_8c" startline="31" endline="72">execute_ast</references>
+        <references refid="redirection_2utils_8c_1a2fe566529f8c7046fe274f2b3a35b39b" compoundref="redirection_2utils_8c" startline="10" endline="25">open_file</references>
+        <referencedby refid="execute_8c_1ace4c3a2246919797e40140123d79596a" compoundref="execute_8c" startline="31" endline="72">execute_ast</referencedby>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;tokens.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;shell.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;redirection.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;execute.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/><sp/><sp/><sp/>!<sp/>FIX</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/><sp/><sp/><sp/>wc<sp/>&lt;<sp/>input.txt<sp/>-<sp/>work<sp/>fine</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/><sp/><sp/><sp/>wc<sp/>-l<sp/>&lt;<sp/>input.txt<sp/>-<sp/>not<sp/>work<sp/>(:bad<sp/>address<sp/>error)</highlight></codeline>
+<codeline lineno="11"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13" refid="redirect__in_8c_1a2635bab3d0023f67288d2832903bdbd9" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><ref refid="redirect__in_8c_1a2635bab3d0023f67288d2832903bdbd9" kindref="member">redirect_in</ref>(t_ast<sp/>*node,<sp/>t_minishell_data<sp/>*data)</highlight></codeline>
+<codeline lineno="14"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/>pid_t<sp/><sp/><sp/>pid;</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/>pid<sp/>=<sp/>fork();</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(pid<sp/>==<sp/>-1)</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(1);</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(pid<sp/>==<sp/>0)</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>data-&gt;temp_fd<sp/>=<sp/><ref refid="redirection_2utils_8c_1a2fe566529f8c7046fe274f2b3a35b39b" kindref="member">open_file</ref>(node-&gt;right,<sp/></highlight><highlight class="stringliteral">&quot;&lt;&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(data-&gt;temp_fd<sp/>==<sp/>-1)</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(1);</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="execute_8c_1ace4c3a2246919797e40140123d79596a" kindref="member">execute_ast</ref>(node-&gt;left,<sp/>data);</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>exit(0);</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/>waitpid(pid,<sp/>&amp;data-&gt;exit_status,<sp/>0);</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(0);</highlight></codeline>
+<codeline lineno="30"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="/Users/dimadem/Documents/GitHub/minishell/src/redirection/redirect_in.c"/>
+  </compounddef>
+</doxygen>

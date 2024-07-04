@@ -1,0 +1,105 @@
+.TH "/Users/dimadem/Documents/GitHub/minishell/src/pipe/pipe.c" 3 "Version 1" "maxishell" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/Users/dimadem/Documents/GitHub/minishell/src/pipe/pipe.c
+.SH SYNOPSIS
+.br
+.PP
+\fR#include 'shell\&.h'\fP
+.br
+\fR#include <unistd\&.h>\fP
+.br
+\fR#include 'libft\&.h'\fP
+.br
+\fR#include 'execute\&.h'\fP
+.br
+\fR#include <stdio\&.h>\fP
+.br
+\fR#include <sys/wait\&.h>\fP
+.br
+\fR#include 'pipe\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "int \fBbuiltin_pipe\fP (t_ast *node, t_minishell_data *data)"
+.br
+.ti -1c
+.RI "pid_t \fBexecute_child\fP (t_ast *node, t_minishell_data *data, int fd[2], int direction)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "int builtin_pipe (t_ast * node, t_minishell_data * data)"
+
+.PP
+Definition at line \fB25\fP of file \fBpipe\&.c\fP\&.
+.nf
+26 {
+27     int     fd[2];
+28     pid_t   pid_1;
+29     pid_t   pid_2;
+30     int     status;
+31 
+32     pid_2 = \-1;
+33     if (pipe(fd) == \-1)
+34         ft_perror("pipe");
+35     pid_1 = execute_child(node\->left, data, fd, 0);
+36     if (node\->right != NULL)
+37         pid_2 = execute_child(node\->right, data, fd, 1);
+38     else
+39     {
+40         close(fd[1]);
+41         data\->temp_fd = fd[0];
+42         return (WAIT_NEXT_COMMAND);
+43     }
+44     close_fds(fd);
+45     if (pid_1 > 0)
+46         waitpid(pid_1, &status, 0);
+47     if (node\->right != NULL && pid_2 > 0)
+48         waitpid(pid_2, &status, 0);
+49     return (WEXITSTATUS(status));
+50 }
+.PP
+.fi
+
+.PP
+References \fBclose_fds()\fP, \fBexecute_child()\fP, and \fBft_perror()\fP\&.
+.PP
+Referenced by \fBexecute_ast()\fP\&.
+.SS "pid_t execute_child (t_ast * node, t_minishell_data * data, int fd[2], int direction)"
+
+.PP
+Definition at line \fB52\fP of file \fBpipe\&.c\fP\&.
+.nf
+54 {
+55     pid_t   pid;
+56 
+57     pid = fork();
+58     if (pid == \-1)
+59         ft_perror("fork");
+60     if (pid == 0)
+61     {
+62         if (direction == 0)
+63             dup2(fd[1], STDOUT_FILENO);
+64         else
+65             dup2(fd[0], STDIN_FILENO);
+66         close_fds(fd);
+67         execute_ast(node, data);
+68         exit(EXIT_SUCCESS);
+69     }
+70     return (pid);
+71 }
+.PP
+.fi
+
+.PP
+References \fBclose_fds()\fP, \fBexecute_ast()\fP, and \fBft_perror()\fP\&.
+.PP
+Referenced by \fBbuiltin_pipe()\fP\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for maxishell from the source code\&.

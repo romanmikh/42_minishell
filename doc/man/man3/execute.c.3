@@ -1,0 +1,179 @@
+.TH "/Users/dimadem/Documents/GitHub/minishell/src/execute/execute.c" 3 "Version 1" "maxishell" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/Users/dimadem/Documents/GitHub/minishell/src/execute/execute.c
+.SH SYNOPSIS
+.br
+.PP
+\fR#include 'builtins\&.h'\fP
+.br
+\fR#include 'libft\&.h'\fP
+.br
+\fR#include <stdio\&.h>\fP
+.br
+\fR#include <sys/wait\&.h>\fP
+.br
+\fR#include 'shell\&.h'\fP
+.br
+\fR#include 'execute\&.h'\fP
+.br
+\fR#include 'tokens\&.h'\fP
+.br
+\fR#include 'pipe\&.h'\fP
+.br
+\fR#include 'redirection\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "int \fBexecute_ast\fP (t_ast *node, t_minishell_data *data)"
+.br
+.ti -1c
+.RI "int \fBexecute\fP (t_minishell_data *data)"
+.br
+.ti -1c
+.RI "int \fBnew_process\fP (t_minishell_data *data)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "int execute (t_minishell_data * data)"
+
+.PP
+Definition at line \fB74\fP of file \fBexecute\&.c\fP\&.
+.nf
+75 {
+76     size_t  i;
+77     char    *builtin_commands[7];
+78     int     (*builtin_functions[7])(t_minishell_data *);
+79 
+80     builtin_commands[0] = "cd";
+81     builtin_commands[1] = "echo";
+82     builtin_commands[2] = "env";
+83     builtin_commands[3] = "exit";
+84     builtin_commands[4] = "export";
+85     builtin_commands[5] = "pwd";
+86     builtin_commands[6] = "unset";
+87     builtin_functions[0] = &builtin_cd;
+88     builtin_functions[1] = &builtin_echo;
+89     builtin_functions[2] = &builtin_env;
+90     builtin_functions[3] = &builtin_exit;
+91     builtin_functions[4] = &builtin_export;
+92     builtin_functions[5] = &builtin_pwd;
+93     builtin_functions[6] = &builtin_unset;
+94     if (data\->args[0] == NULL)
+95         return (2);
+96     i = \-1;
+97     while (++i < sizeof(builtin_commands) / sizeof(char *))
+98         if (ft_strcmp(data\->args[0], builtin_commands[i]) == 0)
+99             return ((*builtin_functions[i])(data));
+100     return (new_process(data));
+101 }
+.PP
+.fi
+
+.PP
+References \fBbuiltin_cd()\fP, \fBbuiltin_echo()\fP, \fBbuiltin_env()\fP, \fBbuiltin_exit()\fP, \fBbuiltin_export()\fP, \fBbuiltin_pwd()\fP, \fBbuiltin_unset()\fP, and \fBnew_process()\fP\&.
+.PP
+Referenced by \fBexecute_ast()\fP\&.
+.SS "int execute_ast (t_ast * node, t_minishell_data * data)"
+
+.PP
+Definition at line \fB31\fP of file \fBexecute\&.c\fP\&.
+.nf
+32 {
+33     if (!node)
+34         return (1);
+35     if (node\->type == PIPE)
+36     {
+37         printf(RED"PIPE\\n"RESET);
+38         return (builtin_pipe(node, data));
+39     }
+40     else if (node\->type == ENV_VAR)  // "$()"
+41     {
+42         printf(BLU"ENV_VAR\\n"RESET);
+43         //execute_redirect(node, data);
+44     }
+45     else if (node\->type == REDIR_IN)
+46     {
+47         printf(GRN"REDIR_IN\\n"RESET);
+48         return (redirect_in(node, data));
+49     }
+50     else if (node\->type == REDIR_OUT)    // ">"
+51     {
+52         printf(CYA"REDIR_OUT\\n"RESET);
+53         return (redirect_out(node, data));
+54     }
+55     else if (node\->type == REDIR_APPEND) // ">>"
+56     {
+57         printf(CYA"REDIR_APPEND\\n"RESET);
+58         //execute_sequence(node, data);
+59     }
+60     else if (node\->type == REDIR_HEREDOC) // "<<"
+61     {
+62         printf(MAG"REDIR_HEREDOC\\n"RESET);
+63         //execute_sequence(node, data);
+64     }
+65     else if (node\->type == PHRASE)
+66     {
+67         printf(YEL"PHRASE\\n"RESET);
+68         data\->args = node\->args;
+69         return (execute(data));
+70     }
+71     return (0);
+72 }
+.PP
+.fi
+
+.PP
+References \fBbuiltin_pipe()\fP, \fBexecute()\fP, \fBredirect_in()\fP, and \fBredirect_out()\fP\&.
+.PP
+Referenced by \fBexecute_child()\fP, \fBexecute_redirect()\fP, \fBmain_loop()\fP, and \fBredirect_in()\fP\&.
+.SS "int new_process (t_minishell_data * data)"
+
+.PP
+Definition at line \fB103\fP of file \fBexecute\&.c\fP\&.
+.nf
+104 {
+105     char    *path;
+106     char    **envp;
+107     pid_t   pid;
+108 
+109     envp = env_to_array(data\->envp);
+110     path = ft_find_path(data\->args[0], data\->envp);
+111     pid = fork();
+112     if (pid == \-1)
+113         ft_perror("fork");
+114     if (pid == 0)
+115     {
+116         if (data\->temp_fd != \-1)
+117         {
+118             dup2(data\->temp_fd, STDIN_FILENO);
+119             close(data\->temp_fd);
+120         }
+121         if (data\->temp_fd == 1)
+122         {
+123             dup2(data\->temp_fd, STDOUT_FILENO);
+124             close(data\->temp_fd);
+125         }
+126         if (execve(path, data\->args, envp) == \-1)
+127             ft_perror("minishell");
+128     }
+129     waitpid(pid, NULL, 0);
+130     free(path);
+131     ft_free_2d_arr(envp);
+132     return (0);
+133 }
+.PP
+.fi
+
+.PP
+References \fBenv_to_array()\fP, \fBft_find_path()\fP, \fBft_free_2d_arr()\fP, and \fBft_perror()\fP\&.
+.PP
+Referenced by \fBexecute()\fP\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for maxishell from the source code\&.

@@ -1,0 +1,69 @@
+.TH "/Users/dimadem/Documents/GitHub/minishell/src/test/pipe/pipe_test.c" 3 "Version 1" "maxishell" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/Users/dimadem/Documents/GitHub/minishell/src/test/pipe/pipe_test.c
+.SH SYNOPSIS
+.br
+.PP
+\fR#include <assert\&.h>\fP
+.br
+\fR#include <stdio\&.h>\fP
+.br
+\fR#include 'shell\&.h'\fP
+.br
+\fR#include 'pipe\&.h'\fP
+.br
+\fR#include 'libft\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBbuiltin_pipe_test\fP (t_minishell_data *data)"
+.br
+.ti -1c
+.RI "void \fBpipe_tests\fP (t_minishell_data *data)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "void builtin_pipe_test (t_minishell_data * data)"
+
+.PP
+Definition at line \fB32\fP of file \fBpipe_test\&.c\fP\&.
+.nf
+33 {
+34     data\->args = ft_split("ls \-l | wc \-l", ' ');
+35     // builtin_pipe(node, data);
+36     assert(data\->args != NULL);
+37 }
+.PP
+.fi
+
+.PP
+Referenced by \fBpipe_tests()\fP\&.
+.SS "void pipe_tests (t_minishell_data * data)"
+
+.PP
+Definition at line \fB22\fP of file \fBpipe_test\&.c\fP\&.
+.nf
+23 {
+24     printf("\\nPIPE TESTS\\n");
+25     builtin_pipe_test(data);
+26     printf("\\033[0m");
+27     printf("\\033[0;32m");
+28     printf("pipe_test    \-> OK\\n");
+29     printf("\\033[0m");
+30 }
+.PP
+.fi
+
+.PP
+References \fBbuiltin_pipe_test()\fP\&.
+.PP
+Referenced by \fBmain()\fP\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for maxishell from the source code\&.

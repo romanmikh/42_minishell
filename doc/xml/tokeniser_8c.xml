@@ -1,0 +1,265 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.11.0" xml:lang="en-US">
+  <compounddef id="tokeniser_8c" kind="file" language="C++">
+    <compoundname>tokeniser.c</compoundname>
+    <includes local="yes">tokens.h</includes>
+    <includes local="no">string.h</includes>
+    <incdepgraph>
+      <node id="1">
+        <label>/Users/dimadem/Documents/GitHub/minishell/src/parser/tokeniser.c</label>
+        <link refid="tokeniser_8c"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>string.h</label>
+      </node>
+      <node id="2">
+        <label>tokens.h</label>
+      </node>
+    </incdepgraph>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="tokeniser_8c_1a0e22b8f037ef12eb28986615da9b79a6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void handle_special_chars</definition>
+        <argsstring>(char **str, t_token **tokens)</argsstring>
+        <name>handle_special_chars</name>
+        <param>
+          <type>char **</type>
+          <declname>str</declname>
+        </param>
+        <param>
+          <type>t_token **</type>
+          <declname>tokens</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/dimadem/Documents/GitHub/minishell/src/parser/tokeniser.c" line="21" column="5" bodyfile="/Users/dimadem/Documents/GitHub/minishell/src/parser/tokeniser.c" bodystart="21" bodyend="46"/>
+        <references refid="tokeniser__helpers_8c_1a6c482f0c73f7263b3253aaa8e1bd4fb6" compoundref="tokeniser__helpers_8c" startline="33" endline="46">append_token</references>
+        <references refid="tokeniser__helpers_8c_1a07793427f42bd19d0f4ea6771441be99" compoundref="tokeniser__helpers_8c" startline="15" endline="31">new_token</references>
+        <referencedby refid="tokeniser_8c_1a5482db056a3edf1a61079f863ba7dc99" compoundref="tokeniser_8c" startline="105" endline="120">tokenise</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="tokeniser_8c_1a596263e54e7fc7ea1bde318a1da5cdc6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void append_phrase_if_valid</definition>
+        <argsstring>(char **start, char **str, t_token **tokens)</argsstring>
+        <name>append_phrase_if_valid</name>
+        <param>
+          <type>char **</type>
+          <declname>start</declname>
+        </param>
+        <param>
+          <type>char **</type>
+          <declname>str</declname>
+        </param>
+        <param>
+          <type>t_token **</type>
+          <declname>tokens</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/dimadem/Documents/GitHub/minishell/src/parser/tokeniser.c" line="48" column="5" bodyfile="/Users/dimadem/Documents/GitHub/minishell/src/parser/tokeniser.c" bodystart="48" bodyend="63"/>
+        <references refid="tokeniser__helpers_8c_1a6c482f0c73f7263b3253aaa8e1bd4fb6" compoundref="tokeniser__helpers_8c" startline="33" endline="46">append_token</references>
+        <references refid="tokeniser__helpers_8c_1a07793427f42bd19d0f4ea6771441be99" compoundref="tokeniser__helpers_8c" startline="15" endline="31">new_token</references>
+        <referencedby refid="tokeniser_8c_1a35855ff1421748c284cbaa495e26ef92" compoundref="tokeniser_8c" startline="65" endline="88">handle_phrase</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="tokeniser_8c_1a35855ff1421748c284cbaa495e26ef92" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void handle_phrase</definition>
+        <argsstring>(char **str, t_token **tokens)</argsstring>
+        <name>handle_phrase</name>
+        <param>
+          <type>char **</type>
+          <declname>str</declname>
+        </param>
+        <param>
+          <type>t_token **</type>
+          <declname>tokens</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/dimadem/Documents/GitHub/minishell/src/parser/tokeniser.c" line="65" column="5" bodyfile="/Users/dimadem/Documents/GitHub/minishell/src/parser/tokeniser.c" bodystart="65" bodyend="88"/>
+        <references refid="tokeniser_8c_1a596263e54e7fc7ea1bde318a1da5cdc6" compoundref="tokeniser_8c" startline="48" endline="63">append_phrase_if_valid</references>
+        <referencedby refid="tokeniser_8c_1a5482db056a3edf1a61079f863ba7dc99" compoundref="tokeniser_8c" startline="105" endline="120">tokenise</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="tokeniser_8c_1ac0f556c5b74afdbd7ce730e294df7b76" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void print_tokens</definition>
+        <argsstring>(t_token *tokens)</argsstring>
+        <name>print_tokens</name>
+        <param>
+          <type>t_token *</type>
+          <declname>tokens</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/dimadem/Documents/GitHub/minishell/src/parser/tokeniser.c" line="90" column="5" bodyfile="/Users/dimadem/Documents/GitHub/minishell/src/parser/tokeniser.c" bodystart="90" bodyend="103"/>
+      </memberdef>
+      <memberdef kind="function" id="tokeniser_8c_1a5482db056a3edf1a61079f863ba7dc99" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>t_token *</type>
+        <definition>t_token * tokenise</definition>
+        <argsstring>(char *str)</argsstring>
+        <name>tokenise</name>
+        <param>
+          <type>char *</type>
+          <declname>str</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/dimadem/Documents/GitHub/minishell/src/parser/tokeniser.c" line="105" column="8" bodyfile="/Users/dimadem/Documents/GitHub/minishell/src/parser/tokeniser.c" bodystart="105" bodyend="120"/>
+        <references refid="tokeniser_8c_1a35855ff1421748c284cbaa495e26ef92" compoundref="tokeniser_8c" startline="65" endline="88">handle_phrase</references>
+        <references refid="tokeniser_8c_1a0e22b8f037ef12eb28986615da9b79a6" compoundref="tokeniser_8c" startline="21" endline="46">handle_special_chars</references>
+        <referencedby refid="main_8c_1abaf800210325f066cb9289aaae9e2c86" compoundref="main_8c" startline="29" endline="51">main_loop</referencedby>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*<sp/>**************************************************************************<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:::<sp/><sp/><sp/><sp/><sp/><sp/>::::::::<sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/>tokeniser.c<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:+:<sp/><sp/><sp/><sp/><sp/><sp/>:+:<sp/><sp/><sp/><sp/>:+:<sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>+:+<sp/>+:+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>+:+<sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/>By:<sp/>rocky<sp/>&lt;marvin@42.fr&gt;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>+#+<sp/><sp/>+:+<sp/><sp/><sp/><sp/><sp/><sp/><sp/>+#+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>+#+#+#+#+#+<sp/><sp/><sp/>+#+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/>Created:<sp/>2024/06/12<sp/>15:00:23<sp/>by<sp/>rocky<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>#+#<sp/><sp/><sp/><sp/>#+#<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/>Updated:<sp/>2024/06/12<sp/>15:00:25<sp/>by<sp/>rocky<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>###<sp/><sp/><sp/>########.fr<sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>**************************************************************************<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;tokens.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/><sp/><sp/><sp/>TODO:</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/><sp/><sp/><sp/>fix<sp/>ft_printf<sp/>in<sp/>print_tokens(t_token<sp/>*tokens)</highlight></codeline>
+<codeline lineno="19"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21" refid="tokeniser_8c_1a0e22b8f037ef12eb28986615da9b79a6" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="tokeniser_8c_1a0e22b8f037ef12eb28986615da9b79a6" kindref="member">handle_special_chars</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>**str,<sp/>t_token<sp/>**tokens)</highlight></codeline>
+<codeline lineno="22"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(**str<sp/>==<sp/></highlight><highlight class="charliteral">&apos;&lt;&apos;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(*(*str<sp/>+<sp/>1)<sp/>==<sp/></highlight><highlight class="charliteral">&apos;&lt;&apos;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="tokeniser__helpers_8c_1a6c482f0c73f7263b3253aaa8e1bd4fb6" kindref="member">append_token</ref>(tokens,<sp/><ref refid="tokeniser__helpers_8c_1a07793427f42bd19d0f4ea6771441be99" kindref="member">new_token</ref>(</highlight><highlight class="stringliteral">&quot;&lt;&lt;&quot;</highlight><highlight class="normal">,<sp/>REDIR_HEREDOC));</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(*str)++;</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="tokeniser__helpers_8c_1a6c482f0c73f7263b3253aaa8e1bd4fb6" kindref="member">append_token</ref>(tokens,<sp/><ref refid="tokeniser__helpers_8c_1a07793427f42bd19d0f4ea6771441be99" kindref="member">new_token</ref>(</highlight><highlight class="stringliteral">&quot;&lt;&quot;</highlight><highlight class="normal">,<sp/>REDIR_IN));</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(**str<sp/>==<sp/></highlight><highlight class="charliteral">&apos;&gt;&apos;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(*(*str<sp/>+<sp/>1)<sp/>==<sp/></highlight><highlight class="charliteral">&apos;&gt;&apos;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="tokeniser__helpers_8c_1a6c482f0c73f7263b3253aaa8e1bd4fb6" kindref="member">append_token</ref>(tokens,<sp/><ref refid="tokeniser__helpers_8c_1a07793427f42bd19d0f4ea6771441be99" kindref="member">new_token</ref>(</highlight><highlight class="stringliteral">&quot;&gt;&gt;&quot;</highlight><highlight class="normal">,<sp/>REDIR_APPEND));</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(*str)++;</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="tokeniser__helpers_8c_1a6c482f0c73f7263b3253aaa8e1bd4fb6" kindref="member">append_token</ref>(tokens,<sp/><ref refid="tokeniser__helpers_8c_1a07793427f42bd19d0f4ea6771441be99" kindref="member">new_token</ref>(</highlight><highlight class="stringliteral">&quot;&gt;&quot;</highlight><highlight class="normal">,<sp/>REDIR_OUT));</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(**str<sp/>==<sp/></highlight><highlight class="charliteral">&apos;|&apos;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="tokeniser__helpers_8c_1a6c482f0c73f7263b3253aaa8e1bd4fb6" kindref="member">append_token</ref>(tokens,<sp/><ref refid="tokeniser__helpers_8c_1a07793427f42bd19d0f4ea6771441be99" kindref="member">new_token</ref>(</highlight><highlight class="stringliteral">&quot;|&quot;</highlight><highlight class="normal">,<sp/>PIPE));</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/>(*str)++;</highlight></codeline>
+<codeline lineno="46"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48" refid="tokeniser_8c_1a596263e54e7fc7ea1bde318a1da5cdc6" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="tokeniser_8c_1a596263e54e7fc7ea1bde318a1da5cdc6" kindref="member">append_phrase_if_valid</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>**start,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>**str,<sp/>t_token<sp/>**tokens)</highlight></codeline>
+<codeline lineno="49"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/><sp/><sp/>*phrase;</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(*str<sp/>&gt;<sp/>*start)</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>phrase<sp/>=<sp/>ft_strndup(*start,<sp/>*str<sp/>-<sp/>*start);</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(phrase)</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="tokeniser__helpers_8c_1a6c482f0c73f7263b3253aaa8e1bd4fb6" kindref="member">append_token</ref>(tokens,<sp/><ref refid="tokeniser__helpers_8c_1a07793427f42bd19d0f4ea6771441be99" kindref="member">new_token</ref>(phrase,<sp/>PHRASE));</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>free(phrase);</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ft_printf(</highlight><highlight class="stringliteral">&quot;Error:<sp/>unable<sp/>to<sp/>allocate<sp/>memory<sp/>for<sp/>token\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="63"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight></codeline>
+<codeline lineno="65" refid="tokeniser_8c_1a35855ff1421748c284cbaa495e26ef92" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="tokeniser_8c_1a35855ff1421748c284cbaa495e26ef92" kindref="member">handle_phrase</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>**str,<sp/>t_token<sp/>**tokens)</highlight></codeline>
+<codeline lineno="66"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/><sp/><sp/>*start;</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/><sp/><sp/>quote_flag;</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/><sp/><sp/>quote_type;</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/>start<sp/>=<sp/>*str;</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/>quote_flag<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/>quote_type<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(**str)</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!quote_flag<sp/>&amp;&amp;<sp/>(**str<sp/>==<sp/></highlight><highlight class="charliteral">&apos;\&apos;&apos;</highlight><highlight class="normal"><sp/>||<sp/>**str<sp/>==<sp/></highlight><highlight class="charliteral">&apos;\&quot;&apos;</highlight><highlight class="normal">))</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>quote_flag<sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>quote_type<sp/>=<sp/>**str;</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(quote_flag<sp/>&amp;&amp;<sp/>**str<sp/>==<sp/>quote_type)</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>quote_flag<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!quote_flag<sp/>&amp;&amp;<sp/>ft_strchr(</highlight><highlight class="stringliteral">&quot;<sp/>\t\n\r\v\f&lt;|&gt;&quot;</highlight><highlight class="normal">,<sp/>**str)<sp/>!=<sp/>NULL)</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>break<sp/>;</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(*str)++;</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="tokeniser_8c_1a596263e54e7fc7ea1bde318a1da5cdc6" kindref="member">append_phrase_if_valid</ref>(&amp;start,<sp/>str,<sp/>tokens);</highlight></codeline>
+<codeline lineno="88"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight></codeline>
+<codeline lineno="90" refid="tokeniser_8c_1ac0f556c5b74afdbd7ce730e294df7b76" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="tokeniser_8c_1ac0f556c5b74afdbd7ce730e294df7b76" kindref="member">print_tokens</ref>(t_token<sp/>*tokens)</highlight></codeline>
+<codeline lineno="91"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/>t_token<sp/>*token;</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>i;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/>i<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/>token<sp/>=<sp/>tokens;</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(token<sp/>!=<sp/>NULL)</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;input[%d]<sp/>-&gt;<sp/><sp/>%s<sp/>\n&quot;</highlight><highlight class="normal">,<sp/>i,<sp/>token-&gt;data);</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>token<sp/>=<sp/>token-&gt;next;</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>i++;</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="103"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight></codeline>
+<codeline lineno="105" refid="tokeniser_8c_1a5482db056a3edf1a61079f863ba7dc99" refkind="member"><highlight class="normal">t_token<sp/>*<ref refid="tokeniser_8c_1a5482db056a3edf1a61079f863ba7dc99" kindref="member">tokenise</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*str)</highlight></codeline>
+<codeline lineno="106"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/>t_token<sp/>*tokens;</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/>tokens<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(*str)</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(*str<sp/>&amp;&amp;<sp/>ft_strchr(</highlight><highlight class="stringliteral">&quot;<sp/>\t\n\r\v\f&quot;</highlight><highlight class="normal">,<sp/>*str)<sp/>!=<sp/>NULL)</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>str++;</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(ft_strchr(</highlight><highlight class="stringliteral">&quot;&lt;|&gt;&quot;</highlight><highlight class="normal">,<sp/>*str)<sp/>!=<sp/>NULL)</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="tokeniser_8c_1a0e22b8f037ef12eb28986615da9b79a6" kindref="member">handle_special_chars</ref>(&amp;str,<sp/>&amp;tokens);</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="tokeniser_8c_1a35855ff1421748c284cbaa495e26ef92" kindref="member">handle_phrase</ref>(&amp;str,<sp/>&amp;tokens);</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(tokens);</highlight></codeline>
+<codeline lineno="120"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="/Users/dimadem/Documents/GitHub/minishell/src/parser/tokeniser.c"/>
+  </compounddef>
+</doxygen>

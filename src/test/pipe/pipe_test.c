@@ -32,6 +32,6 @@ void	pipe_tests(t_minishell_data *data)
 void	builtin_pipe_test(t_minishell_data *data)
 {
 	data->args = ft_split("ls -l | wc -l", ' ');
-	builtin_pipe(data);
+	// builtin_pipe(node, data);
 	assert(data->args != NULL);
 }

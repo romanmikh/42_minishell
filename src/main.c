@@ -34,9 +34,9 @@ void	main_loop(t_minishell_data *data, t_loop_data *loop_data)
 	{
 		loop_data->prompt = generate_prompt(data);
 		loop_data->input = readline(loop_data->prompt);
-		make_history(loop_data->input);
+		// make_history(loop_data->input);
 		loop_data->trimmed_input = trim_input(loop_data->input);
-		// input_error_checks(loop_data->trimmed_input);
+		input_error_checks(loop_data->trimmed_input);
 		loop_data->tokens = tokenise(loop_data->trimmed_input);
 		loop_data->tree = parse_tokens(&loop_data->tokens);
         print_ast_root(loop_data->tree);
@@ -47,8 +47,6 @@ void	main_loop(t_minishell_data *data, t_loop_data *loop_data)
 			loop_cleanup(loop_data->trimmed_input, loop_data->tokens, \
 				loop_data->prompt, loop_data->tree);
 		}
-
-		
 	}
 }
 

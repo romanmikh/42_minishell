@@ -59,7 +59,7 @@ void	ft_free_2d_arr(char **arr)
 int	ft_perror(char *str)
 {
 	perror (str);
-	return (-1);
+	exit(EXIT_FAILURE);
 }
 
 void	close_fds(int fds[2])
