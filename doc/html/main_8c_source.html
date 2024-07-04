@@ -155,27 +155,28 @@ $(function(){initNavTree('main_8c_source.html',''); initResizable(true); });
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    }</div>
 <div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>}</div>
 </div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
-<div class="foldopen" id="foldopen00053" data-start="{" data-end="}">
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="main_8c.html#a647f21a28344e1d9c643f4115516d7c9">   53</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="main_8c.html#a647f21a28344e1d9c643f4115516d7c9">main</a>(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> **argv, <span class="keywordtype">char</span> **envp)</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>{</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    <a class="code hl_struct" href="structs__minishell__data.html">t_minishell_data</a>    data;</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    <a class="code hl_struct" href="structs__loop__data.html">t_loop_data</a>         loop_data;</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    <a class="code hl_function" href="tokens_8h.html#a4e673b7c7d3f45e10377ab9f537b8bf9">print_maxishell</a>();</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    <a class="code hl_function" href="tokens_8h.html#ab7986766cca35553aa796f6a732d856a">init_minishell_data</a>(&amp;data, envp);</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    <a class="code hl_function" href="tokens_8h.html#a41e7a8e4355566996a5984b4a31fb8fe">initialise</a>(argc, argv);</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    <a class="code hl_function" href="main_8c.html#abaf800210325f066cb9289aaae9e2c86">main_loop</a>(&amp;data, &amp;loop_data);</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    <a class="code hl_function" href="tokens_8h.html#a16d324fdb41b45b7e59af5eaab2e56bd">free_minishell_data</a>(&amp;data);</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    <a class="code hl_function" href="env_8h.html#a2c192ab32512a4454973d916c1bff54e">free_env</a>(data.<a class="code hl_variable" href="structs__minishell__data.html#a8a0b3f50c8893e061062e93115f3d723">envp</a>);</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    <span class="keywordflow">return</span> (0);</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>}</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="comment">/* test some thing */</span></div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
+<div class="foldopen" id="foldopen00054" data-start="{" data-end="}">
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="main_8c.html#a647f21a28344e1d9c643f4115516d7c9">   54</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="main_8c.html#a647f21a28344e1d9c643f4115516d7c9">main</a>(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> **argv, <span class="keywordtype">char</span> **envp)</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>{</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    <a class="code hl_struct" href="structs__minishell__data.html">t_minishell_data</a>    data;</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    <a class="code hl_struct" href="structs__loop__data.html">t_loop_data</a>         loop_data;</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    <a class="code hl_function" href="tokens_8h.html#a4e673b7c7d3f45e10377ab9f537b8bf9">print_maxishell</a>();</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    <a class="code hl_function" href="tokens_8h.html#ab7986766cca35553aa796f6a732d856a">init_minishell_data</a>(&amp;data, envp);</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    <a class="code hl_function" href="tokens_8h.html#a41e7a8e4355566996a5984b4a31fb8fe">initialise</a>(argc, argv);</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    <a class="code hl_function" href="main_8c.html#abaf800210325f066cb9289aaae9e2c86">main_loop</a>(&amp;data, &amp;loop_data);</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    <a class="code hl_function" href="tokens_8h.html#a16d324fdb41b45b7e59af5eaab2e56bd">free_minishell_data</a>(&amp;data);</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    <a class="code hl_function" href="env_8h.html#a2c192ab32512a4454973d916c1bff54e">free_env</a>(data.<a class="code hl_variable" href="structs__minishell__data.html#a8a0b3f50c8893e061062e93115f3d723">envp</a>);</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    <span class="keywordflow">return</span> (0);</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>}</div>
 </div>
 <div class="ttc" id="aenv_8h_html_a2c192ab32512a4454973d916c1bff54e"><div class="ttname"><a href="env_8h.html#a2c192ab32512a4454973d916c1bff54e">free_env</a></div><div class="ttdeci">void free_env(t_env *envp)</div><div class="ttdef"><b>Definition</b> <a href="env_2utils_8c_source.html#l00072">utils.c:72</a></div></div>
 <div class="ttc" id="aexecute_8h_html"><div class="ttname"><a href="execute_8h.html">execute.h</a></div></div>
 <div class="ttc" id="aexecute_8h_html_a8f9d65fb9405c61cf1e58b429f4f5728"><div class="ttname"><a href="execute_8h.html#a8f9d65fb9405c61cf1e58b429f4f5728">handle_temp_fd</a></div><div class="ttdeci">void handle_temp_fd(t_minishell_data *data)</div><div class="ttdef"><b>Definition</b> <a href="execute_2utils_8c_source.html#l00071">utils.c:71</a></div></div>
 <div class="ttc" id="aexecute_8h_html_ace4c3a2246919797e40140123d79596a"><div class="ttname"><a href="execute_8h.html#ace4c3a2246919797e40140123d79596a">execute_ast</a></div><div class="ttdeci">int execute_ast(t_ast *node, t_minishell_data *data)</div><div class="ttdef"><b>Definition</b> <a href="execute_8c_source.html#l00031">execute.c:31</a></div></div>
-<div class="ttc" id="amain_8c_html_a647f21a28344e1d9c643f4115516d7c9"><div class="ttname"><a href="main_8c.html#a647f21a28344e1d9c643f4115516d7c9">main</a></div><div class="ttdeci">int main(int argc, char **argv, char **envp)</div><div class="ttdef"><b>Definition</b> <a href="#l00053">main.c:53</a></div></div>
+<div class="ttc" id="amain_8c_html_a647f21a28344e1d9c643f4115516d7c9"><div class="ttname"><a href="main_8c.html#a647f21a28344e1d9c643f4115516d7c9">main</a></div><div class="ttdeci">int main(int argc, char **argv, char **envp)</div><div class="ttdef"><b>Definition</b> <a href="#l00054">main.c:54</a></div></div>
 <div class="ttc" id="amain_8c_html_aa58ce868c4a816bbe301da3bd43f1157"><div class="ttname"><a href="main_8c.html#aa58ce868c4a816bbe301da3bd43f1157">status_handler</a></div><div class="ttdeci">int status_handler(int status, t_loop_data *loop_data)</div><div class="ttdef"><b>Definition</b> <a href="#l00018">main.c:18</a></div></div>
 <div class="ttc" id="amain_8c_html_abaf800210325f066cb9289aaae9e2c86"><div class="ttname"><a href="main_8c.html#abaf800210325f066cb9289aaae9e2c86">main_loop</a></div><div class="ttdeci">void main_loop(t_minishell_data *data, t_loop_data *loop_data)</div><div class="ttdef"><b>Definition</b> <a href="#l00029">main.c:29</a></div></div>
 <div class="ttc" id="apipe_8h_html"><div class="ttname"><a href="pipe_8h.html">pipe.h</a></div></div>

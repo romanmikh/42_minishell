@@ -175,7 +175,7 @@
         </inbodydescription>
         <location file="/Users/dimadem/Documents/GitHub/minishell/src/utils/prompt.c" line="90" column="5" bodyfile="/Users/dimadem/Documents/GitHub/minishell/src/utils/prompt.c" bodystart="90" bodyend="111"/>
         <references refid="libft_8h_1a1ee8ae8a80a7d9141ea5339af8565f2e" compoundref="ft__printf_8c" startline="37" endline="59">ft_printf</references>
-        <referencedby refid="main_8c_1a647f21a28344e1d9c643f4115516d7c9" compoundref="main_8c" startline="53" endline="65">main</referencedby>
+        <referencedby refid="main_8c_1a647f21a28344e1d9c643f4115516d7c9" compoundref="main_8c" startline="54" endline="66">main</referencedby>
       </memberdef>
     </sectiondef>
     <briefdescription>
