@@ -49,6 +49,7 @@ void	main_loop(t_minishell_data *data, t_loop_data *loop_data)
 		}
 	}
 }
+/* test some thing */
 
 int	main(int argc, char **argv, char **envp)
 {
