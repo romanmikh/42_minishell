@@ -84,10 +84,10 @@
         <referencedby refid="builtins_8h_1a9c4bf413cef22ef46427c4026734a97d" compoundref="echo_8c" startline="21" endline="42">builtin_echo</referencedby>
         <referencedby refid="builtins_8h_1adfc1db1f94cf16d71aea54b09370c032" compoundref="builtins_2env_8c" startline="38" endline="44">builtin_env</referencedby>
         <referencedby refid="tokens_8h_1a4e1b3e73a18dd66697cd7eac990b0363" compoundref="parser_2heredoc_8c" startline="15" endline="24">check_heredoc</referencedby>
-        <referencedby refid="execute_8h_1a825187f25304f9bd1a3e7a5e97327801" compoundref="execute_8c" startline="74" endline="101">execute</referencedby>
+        <referencedby refid="execute_8h_1a825187f25304f9bd1a3e7a5e97327801" compoundref="execute_8c" startline="93" endline="120">execute</referencedby>
         <referencedby refid="env_8h_1a41133e0ba7230727a51eedce713a225c" compoundref="env_2env_8c" startline="60" endline="72">get_env</referencedby>
         <referencedby refid="tokens_8h_1a132ce43db3d4fba988a166e932845375" compoundref="parser_2heredoc_8c" startline="26" endline="40">heredoc</referencedby>
-        <referencedby refid="redirection_8h_1a2fe566529f8c7046fe274f2b3a35b39b" compoundref="redirection_2utils_8c" startline="10" endline="25">open_file</referencedby>
+        <referencedby refid="redirection_8h_1a2fe566529f8c7046fe274f2b3a35b39b" compoundref="redirection_2utils_8c" startline="23" endline="38">open_file</referencedby>
         <referencedby refid="env_8h_1a194b2552273340441e8b481b4ce5202c" compoundref="env_2env_8c" startline="79" endline="99">set_env</referencedby>
         <referencedby refid="env__test_8c_1a4adfeb719435c39cc19b4c8f4e7e67a0" compoundref="env__test_8c" startline="57" endline="70">test_get_env</referencedby>
         <referencedby refid="env__test_8c_1a791d22f0a8695ef368626b927cb18caf" compoundref="env__test_8c" startline="72" endline="86">test_set_env</referencedby>

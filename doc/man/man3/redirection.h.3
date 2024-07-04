@@ -17,35 +17,73 @@
 .ti -1c
 .RI "int \fBredirect_in\fP (\fBt_ast\fP *node, \fBt_minishell_data\fP *data)"
 .br
+.RI "redirection input in context of executing AST "
 .ti -1c
 .RI "int \fBredirect_out\fP (\fBt_ast\fP *node, \fBt_minishell_data\fP *data)"
 .br
+.RI "redirect out in the context of executing AST "
 .ti -1c
 .RI "int \fBopen_file\fP (\fBt_ast\fP *node, char *direction)"
 .br
+.RI "open file in the context of redirection "
 .in -1c
 .SH "Function Documentation"
 .PP 
 .SS "int open_file (\fBt_ast\fP * node, char * direction)"
 
 .PP
-Definition at line \fB10\fP of file \fButils\&.c\fP\&.
+open file in the context of redirection -- '<' - read
+.IP "\(bu" 2
+'>' - write
+.IP "\(bu" 2
+'>>' - append
+.IP "\(bu" 2
+'tty' - open /dev/tty
+.IP "\(bu" 2
+'<<' - here document
+.IP "\(bu" 2
+
+.IP "\(bu" 2
+\fBParameters\fP
+.RS 4
+\fInode\fP current node in the AST
+.RE
+.PP
+
+.IP "\(bu" 2
+\fBParameters\fP
+.RS 4
+\fIdirection\fP type of redirection
+.RE
+.PP
+
+.IP "\(bu" 2
+\fBReturns\fP
+.RS 4
+int file descriptor 
+.RE
+.PP
+
+.PP
+
+.PP
+Definition at line \fB23\fP of file \fButils\&.c\fP\&.
 .nf
-11 {
-12     int fd;
-13     
-14     if (ft_strcmp(direction, ">") == 0)
-15         fd = open(node\->args[0], O_WRONLY | O_CREAT | O_TRUNC, 0644);
-16     else if (ft_strcmp(direction, ">>") == 0)
-17         fd = open(node\->args[0], O_WRONLY | O_CREAT | O_APPEND, 0644);
-18     else if (ft_strcmp(direction, "<") == 0)
-19         fd = open(node\->args[0], O_RDONLY);
-20     else if (ft_strcmp(direction, "tty") == 0)
-21         fd = open("/dev/tty", O_RDWR);
-22     else
-23         fd = \-1;
-24     return (fd);
-25 }
+24 {
+25     int fd;
+26     
+27     if (ft_strcmp(direction, ">") == 0)
+28         fd = open(node\->args[0], O_WRONLY | O_CREAT | O_TRUNC, 0644);
+29     else if (ft_strcmp(direction, ">>") == 0)
+30         fd = open(node\->args[0], O_WRONLY | O_CREAT | O_APPEND, 0644);
+31     else if (ft_strcmp(direction, "<") == 0)
+32         fd = open(node\->args[0], O_RDONLY);
+33     else if (ft_strcmp(direction, "tty") == 0)
+34         fd = open("/dev/tty", O_RDWR);
+35     else
+36         fd = \-1;
+37     return (fd);
+38 }
 .PP
 .fi
 
@@ -56,25 +94,54 @@ Referenced by \fBexecute_redirect()\fP, and \fBredirect_in()\fP\&.
 .SS "int redirect_in (\fBt_ast\fP * node, \fBt_minishell_data\fP * data)"
 
 .PP
-Definition at line \fB13\fP of file \fBredirect_in\&.c\fP\&.
+redirection input in context of executing AST --
+.IP "\(bu" 2
+\fBParameters\fP
+.RS 4
+\fInode\fP current node in the AST
+.RE
+.PP
+
+.IP "\(bu" 2
+\fBParameters\fP
+.RS 4
+\fIdata\fP minishell structure data
+.RE
+.PP
+
+.IP "\(bu" 2
+\fBReturns\fP
+.RS 4
+int return status:
+.RE
+.PP
+
+.IP "\(bu" 2
+- 0: success
+.IP "\(bu" 2
+- 1: error 
+.PP
+
+.PP
+Definition at line \fB23\fP of file \fBredirect_in\&.c\fP\&.
 .nf
-14 {
-15     pid_t   pid;
-16 
-17     pid = fork();
-18     if (pid == \-1)
-19         return (1);
-20     if (pid == 0)
-21     {
-22         data\->temp_fd = open_file(node\->right, "<");
-23         if (data\->temp_fd == \-1)
-24             return (1);
-25         execute_ast(node\->left, data);
-26         exit(0);
-27     }
-28     waitpid(pid, &data\->exit_status, 0);
-29     return (0);
-30 }
+24 {
+25     pid_t   pid;
+26 
+27     pid = fork();
+28     if (pid == \-1)
+29         return (1);
+30     if (pid == 0)
+31     {
+32         data\->temp_fd = open_file(node\->right, "<");
+33         if (data\->temp_fd == \-1)
+34             return (1);
+35         execute_ast(node\->left, data);
+36         exit(0);
+37     }
+38     waitpid(pid, &data\->exit_status, 0);
+39     return (0);
+40 }
 .PP
 .fi
 
@@ -85,23 +152,54 @@ Referenced by \fBexecute_ast()\fP\&.
 .SS "int redirect_out (\fBt_ast\fP * node, \fBt_minishell_data\fP * data)"
 
 .PP
-Definition at line \fB10\fP of file \fBredirect_out\&.c\fP\&.
+redirect out in the context of executing AST -- looking similar to the pipe function
+.IP "\(bu" 2
+
+.IP "\(bu" 2
+\fBParameters\fP
+.RS 4
+\fInode\fP current node in the AST
+.RE
+.PP
+
+.IP "\(bu" 2
+\fBParameters\fP
+.RS 4
+\fIdata\fP minishell data structure
+.RE
+.PP
+
+.IP "\(bu" 2
+\fBReturns\fP
+.RS 4
+int status:
+.RE
+.PP
+
+.IP "\(bu" 2
+- 0: success
+.IP "\(bu" 2
+- 1: error 
+.PP
+
+.PP
+Definition at line \fB21\fP of file \fBredirect_out\&.c\fP\&.
 .nf
-11 {
-12         int fd[2];
-13     pid_t   pid_1;
-14     pid_t   pid_2;
-15     int status;
-16 
-17     if (pipe(fd) == \-1)
-18         ft_perror("pipe");
-19     pid_1 = execute_redirect(node\->left, data, fd, 0);
-20     pid_2 = execute_redirect(node\->right, data, fd, 1);
-21     close_fds(fd);
-22     waitpid(pid_1, &status, 0);
-23         waitpid(pid_2, &status, 0);
-24     return (WEXITSTATUS(status));
-25 }
+22 {
+23         int fd[2];
+24     pid_t   pid_1;
+25     pid_t   pid_2;
+26     int status;
+27 
+28     if (pipe(fd) == \-1)
+29         ft_perror("pipe");
+30     pid_1 = execute_redirect(node\->left, data, fd, 0);
+31     pid_2 = execute_redirect(node\->right, data, fd, 1);
+32     close_fds(fd);
+33     waitpid(pid_1, &status, 0);
+34         waitpid(pid_2, &status, 0);
+35     return (WEXITSTATUS(status));
+36 }
 .PP
 .fi
 

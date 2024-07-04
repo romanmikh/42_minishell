@@ -56,7 +56,7 @@
         <references refid="libft_8h_1acefce9ac519f8f8b7d3fde33dbafe469" compoundref="ft__putstr__fd_8c" startline="20" endline="24">ft_putstr_fd</references>
         <references refid="env_8h_1a41133e0ba7230727a51eedce713a225c" compoundref="env_2env_8c" startline="60" endline="72">get_env</references>
         <references refid="env_8h_1a194b2552273340441e8b481b4ce5202c" compoundref="env_2env_8c" startline="79" endline="99">set_env</references>
-        <referencedby refid="execute_8h_1a825187f25304f9bd1a3e7a5e97327801" compoundref="execute_8c" startline="74" endline="101">execute</referencedby>
+        <referencedby refid="execute_8h_1a825187f25304f9bd1a3e7a5e97327801" compoundref="execute_8c" startline="93" endline="120">execute</referencedby>
       </memberdef>
       <memberdef kind="function" id="builtins_8h_1a9c4bf413cef22ef46427c4026734a97d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
@@ -77,7 +77,7 @@
         <references refid="structs__minishell__data_1aeb4af268850af7d0f6d0c64f2bfefdea" compoundref="shell_8h" startline="20">s_minishell_data::args</references>
         <references refid="libft_8h_1a1f2ff2312e5994560c9537cd9173be94" compoundref="ft__strcmp_8c" startline="24" endline="34">ft_strcmp</references>
         <references refid="libft_8h_1abbb8c6c4ed85d892e7f1509f65f5768a" compoundref="ft__strlen_8c" startline="15" endline="23">ft_strlen</references>
-        <referencedby refid="execute_8h_1a825187f25304f9bd1a3e7a5e97327801" compoundref="execute_8c" startline="74" endline="101">execute</referencedby>
+        <referencedby refid="execute_8h_1a825187f25304f9bd1a3e7a5e97327801" compoundref="execute_8c" startline="93" endline="120">execute</referencedby>
       </memberdef>
       <memberdef kind="function" id="builtins_8h_1adfc1db1f94cf16d71aea54b09370c032" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
@@ -99,7 +99,7 @@
         <references refid="structs__minishell__data_1a8a0b3f50c8893e061062e93115f3d723" compoundref="shell_8h" startline="21">s_minishell_data::envp</references>
         <references refid="libft_8h_1a1f2ff2312e5994560c9537cd9173be94" compoundref="ft__strcmp_8c" startline="24" endline="34">ft_strcmp</references>
         <references refid="builtins_2env_8c_1a5b5d29d406a0fad6272b33c03b7793b4" compoundref="builtins_2env_8c" startline="26" endline="36">print_env_stack</references>
-        <referencedby refid="execute_8h_1a825187f25304f9bd1a3e7a5e97327801" compoundref="execute_8c" startline="74" endline="101">execute</referencedby>
+        <referencedby refid="execute_8h_1a825187f25304f9bd1a3e7a5e97327801" compoundref="execute_8c" startline="93" endline="120">execute</referencedby>
       </memberdef>
       <memberdef kind="function" id="builtins_8h_1a6a7d93447961b415c9c16ebdfcd3d5fa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
@@ -119,7 +119,7 @@
         <location file="/Users/dimadem/Documents/GitHub/minishell/inc/builtins.h" line="22" column="4" bodyfile="/Users/dimadem/Documents/GitHub/minishell/src/builtins/exit.c" bodystart="26" bodyend="35" declfile="/Users/dimadem/Documents/GitHub/minishell/inc/builtins.h" declline="22" declcolumn="4"/>
         <references refid="structs__minishell__data_1a978016fddb1d9faa4fbda6859a9a199e" compoundref="shell_8h" startline="25">s_minishell_data::exit_status</references>
         <references refid="libft_8h_1abbb8c6c4ed85d892e7f1509f65f5768a" compoundref="ft__strlen_8c" startline="15" endline="23">ft_strlen</references>
-        <referencedby refid="execute_8h_1a825187f25304f9bd1a3e7a5e97327801" compoundref="execute_8c" startline="74" endline="101">execute</referencedby>
+        <referencedby refid="execute_8h_1a825187f25304f9bd1a3e7a5e97327801" compoundref="execute_8c" startline="93" endline="120">execute</referencedby>
       </memberdef>
       <memberdef kind="function" id="builtins_8h_1a9e6f1e14f0125cd68c70e8e31ef606aa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
@@ -142,7 +142,7 @@
         <references refid="structs__minishell__data_1a8a0b3f50c8893e061062e93115f3d723" compoundref="shell_8h" startline="21">s_minishell_data::envp</references>
         <references refid="libft_8h_1a9d2fe792187aa4ed08e5864fb2c4d6dc" compoundref="ft__strncmp_8c" startline="24" endline="35">ft_strncmp</references>
         <references refid="structs__env_1a3caf3df6eb72714ffcd4e22f9c94ecf2" compoundref="env_8h" startline="20">s_env::next</references>
-        <referencedby refid="execute_8h_1a825187f25304f9bd1a3e7a5e97327801" compoundref="execute_8c" startline="74" endline="101">execute</referencedby>
+        <referencedby refid="execute_8h_1a825187f25304f9bd1a3e7a5e97327801" compoundref="execute_8c" startline="93" endline="120">execute</referencedby>
       </memberdef>
       <memberdef kind="function" id="builtins_8h_1aa9f1acae4ed9a914564af529571db30a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
@@ -162,7 +162,7 @@
         <location file="/Users/dimadem/Documents/GitHub/minishell/inc/builtins.h" line="24" column="4" bodyfile="/Users/dimadem/Documents/GitHub/minishell/src/builtins/pwd.c" bodystart="23" bodyend="37" declfile="/Users/dimadem/Documents/GitHub/minishell/inc/builtins.h" declline="24" declcolumn="4"/>
         <references refid="libft_8h_1aeb112152acfc553d58d61a5df38afcde" compoundref="ft__putendl__fd_8c" startline="21" endline="28">ft_putendl_fd</references>
         <references refid="libft_8h_1acefce9ac519f8f8b7d3fde33dbafe469" compoundref="ft__putstr__fd_8c" startline="20" endline="24">ft_putstr_fd</references>
-        <referencedby refid="execute_8h_1a825187f25304f9bd1a3e7a5e97327801" compoundref="execute_8c" startline="74" endline="101">execute</referencedby>
+        <referencedby refid="execute_8h_1a825187f25304f9bd1a3e7a5e97327801" compoundref="execute_8c" startline="93" endline="120">execute</referencedby>
       </memberdef>
       <memberdef kind="function" id="builtins_8h_1aa04be64406f96e5ae8f361421bf72cec" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
@@ -186,7 +186,7 @@
         <references refid="libft_8h_1aeb112152acfc553d58d61a5df38afcde" compoundref="ft__putendl__fd_8c" startline="21" endline="28">ft_putendl_fd</references>
         <references refid="libft_8h_1acefce9ac519f8f8b7d3fde33dbafe469" compoundref="ft__putstr__fd_8c" startline="20" endline="24">ft_putstr_fd</references>
         <references refid="env_8h_1a0854396366b7055e0df29e25f8e520d3" compoundref="env_2env_8c" startline="101" endline="125">unset_env</references>
-        <referencedby refid="execute_8h_1a825187f25304f9bd1a3e7a5e97327801" compoundref="execute_8c" startline="74" endline="101">execute</referencedby>
+        <referencedby refid="execute_8h_1a825187f25304f9bd1a3e7a5e97327801" compoundref="execute_8c" startline="93" endline="120">execute</referencedby>
       </memberdef>
     </sectiondef>
     <briefdescription>

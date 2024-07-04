@@ -7,6 +7,19 @@ int open_file(t_ast *node, char *direction);
 // void redirect(t_minishell_data *data, int fd, char *direction);
 // int execute_redirection(t_ast *node, t_minishell_data *data);
 
+/**
+- @brief open file in the context of redirection
+-       "<" - read
+-       ">" - write
+-       ">>" - append
+-       "tty" - open /dev/tty
+-       "<<" - here document
+- 
+- @param node current node in the AST
+- @param direction type of redirection 
+- @return int file descriptor
+ */
+
 int open_file(t_ast *node, char *direction)
 {
     int fd;

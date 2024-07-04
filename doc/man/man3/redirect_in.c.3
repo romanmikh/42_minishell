@@ -23,31 +23,61 @@
 .ti -1c
 .RI "int \fBredirect_in\fP (\fBt_ast\fP *node, \fBt_minishell_data\fP *data)"
 .br
+.RI "redirection input in context of executing AST "
 .in -1c
 .SH "Function Documentation"
 .PP 
 .SS "int redirect_in (\fBt_ast\fP * node, \fBt_minishell_data\fP * data)"
 
 .PP
-Definition at line \fB13\fP of file \fBredirect_in\&.c\fP\&.
+redirection input in context of executing AST --
+.IP "\(bu" 2
+\fBParameters\fP
+.RS 4
+\fInode\fP current node in the AST
+.RE
+.PP
+
+.IP "\(bu" 2
+\fBParameters\fP
+.RS 4
+\fIdata\fP minishell structure data
+.RE
+.PP
+
+.IP "\(bu" 2
+\fBReturns\fP
+.RS 4
+int return status:
+.RE
+.PP
+
+.IP "\(bu" 2
+- 0: success
+.IP "\(bu" 2
+- 1: error 
+.PP
+
+.PP
+Definition at line \fB23\fP of file \fBredirect_in\&.c\fP\&.
 .nf
-14 {
-15     pid_t   pid;
-16 
-17     pid = fork();
-18     if (pid == \-1)
-19         return (1);
-20     if (pid == 0)
-21     {
-22         data\->temp_fd = open_file(node\->right, "<");
-23         if (data\->temp_fd == \-1)
-24             return (1);
-25         execute_ast(node\->left, data);
-26         exit(0);
-27     }
-28     waitpid(pid, &data\->exit_status, 0);
-29     return (0);
-30 }
+24 {
+25     pid_t   pid;
+26 
+27     pid = fork();
+28     if (pid == \-1)
+29         return (1);
+30     if (pid == 0)
+31     {
+32         data\->temp_fd = open_file(node\->right, "<");
+33         if (data\->temp_fd == \-1)
+34             return (1);
+35         execute_ast(node\->left, data);
+36         exit(0);
+37     }
+38     waitpid(pid, &data\->exit_status, 0);
+39     return (0);
+40 }
 .PP
 .fi
 

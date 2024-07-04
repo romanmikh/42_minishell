@@ -104,7 +104,7 @@
         <location file="/Users/dimadem/Documents/GitHub/minishell/src/builtins/exit.c" line="26" column="4" bodyfile="/Users/dimadem/Documents/GitHub/minishell/src/builtins/exit.c" bodystart="26" bodyend="35"/>
         <references refid="structs__minishell__data_1a978016fddb1d9faa4fbda6859a9a199e" compoundref="shell_8h" startline="25">s_minishell_data::exit_status</references>
         <references refid="libft_8h_1abbb8c6c4ed85d892e7f1509f65f5768a" compoundref="ft__strlen_8c" startline="15" endline="23">ft_strlen</references>
-        <referencedby refid="execute_8h_1a825187f25304f9bd1a3e7a5e97327801" compoundref="execute_8c" startline="74" endline="101">execute</referencedby>
+        <referencedby refid="execute_8h_1a825187f25304f9bd1a3e7a5e97327801" compoundref="execute_8c" startline="93" endline="120">execute</referencedby>
       </memberdef>
     </sectiondef>
     <briefdescription>

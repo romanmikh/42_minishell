@@ -31,47 +31,74 @@
 .ti -1c
 .RI "int \fBexecute_ast\fP (\fBt_ast\fP *node, \fBt_minishell_data\fP *data)"
 .br
+.RI "execute Abstract Syntax Tree "
 .ti -1c
 .RI "int \fBexecute\fP (\fBt_minishell_data\fP *data)"
 .br
+.RI "execute distribution function checks if the command is a builtin or a new process "
 .ti -1c
 .RI "int \fBnew_process\fP (\fBt_minishell_data\fP *data)"
 .br
+.RI "executes a new process "
 .in -1c
 .SH "Function Documentation"
 .PP 
 .SS "int execute (\fBt_minishell_data\fP * data)"
 
 .PP
-Definition at line \fB74\fP of file \fBexecute\&.c\fP\&.
+execute distribution function checks if the command is a builtin or a new process --
+.IP "\(bu" 2
+\fBParameters\fP
+.RS 4
+\fIdata\fP minishell data struct
+.RE
+.PP
+
+.IP "\(bu" 2
+\fBReturns\fP
+.RS 4
+int return status:
+.RE
+.PP
+
+.IP "\(bu" 2
+- 0: success 
+.br
+
+.IP "\(bu" 2
+- 1: error 
+.PP
+
+.PP
+Definition at line \fB93\fP of file \fBexecute\&.c\fP\&.
 .nf
-75 {
-76     size_t  i;
-77     char    *builtin_commands[7];
-78     int     (*builtin_functions[7])(t_minishell_data *);
-79 
-80     builtin_commands[0] = "cd";
-81     builtin_commands[1] = "echo";
-82     builtin_commands[2] = "env";
-83     builtin_commands[3] = "exit";
-84     builtin_commands[4] = "export";
-85     builtin_commands[5] = "pwd";
-86     builtin_commands[6] = "unset";
-87     builtin_functions[0] = &builtin_cd;
-88     builtin_functions[1] = &builtin_echo;
-89     builtin_functions[2] = &builtin_env;
-90     builtin_functions[3] = &builtin_exit;
-91     builtin_functions[4] = &builtin_export;
-92     builtin_functions[5] = &builtin_pwd;
-93     builtin_functions[6] = &builtin_unset;
-94     if (data\->args[0] == NULL)
-95         return (2);
-96     i = \-1;
-97     while (++i < sizeof(builtin_commands) / sizeof(char *))
-98         if (ft_strcmp(data\->args[0], builtin_commands[i]) == 0)
-99             return ((*builtin_functions[i])(data));
-100     return (new_process(data));
-101 }
+94 {
+95     size_t  i;
+96     char    *builtin_commands[7];
+97     int     (*builtin_functions[7])(t_minishell_data *);
+98 
+99     builtin_commands[0] = "cd";
+100     builtin_commands[1] = "echo";
+101     builtin_commands[2] = "env";
+102     builtin_commands[3] = "exit";
+103     builtin_commands[4] = "export";
+104     builtin_commands[5] = "pwd";
+105     builtin_commands[6] = "unset";
+106     builtin_functions[0] = &builtin_cd;
+107     builtin_functions[1] = &builtin_echo;
+108     builtin_functions[2] = &builtin_env;
+109     builtin_functions[3] = &builtin_exit;
+110     builtin_functions[4] = &builtin_export;
+111     builtin_functions[5] = &builtin_pwd;
+112     builtin_functions[6] = &builtin_unset;
+113     if (data\->args[0] == NULL)
+114         return (2);
+115     i = \-1;
+116     while (++i < sizeof(builtin_commands) / sizeof(char *))
+117         if (ft_strcmp(data\->args[0], builtin_commands[i]) == 0)
+118             return ((*builtin_functions[i])(data));
+119     return (new_process(data));
+120 }
 .PP
 .fi
 
@@ -82,49 +109,80 @@ Referenced by \fBexecute_ast()\fP\&.
 .SS "int execute_ast (\fBt_ast\fP * node, \fBt_minishell_data\fP * data)"
 
 .PP
-Definition at line \fB31\fP of file \fBexecute\&.c\fP\&.
+execute Abstract Syntax Tree --
+.IP "\(bu" 2
+\fBParameters\fP
+.RS 4
+\fInode\fP Abstract Syntax Tree Node
+.RE
+.PP
+
+.IP "\(bu" 2
+\fBParameters\fP
+.RS 4
+\fIdata\fP minishell data struct
+.RE
+.PP
+
+.IP "\(bu" 2
+\fBReturns\fP
+.RS 4
+int return status:
+.RE
+.PP
+
+.IP "\(bu" 2
+- 0: success 
+.br
+
+.IP "\(bu" 2
+- 1: error 
+.PP
+
+.PP
+Definition at line \fB41\fP of file \fBexecute\&.c\fP\&.
 .nf
-32 {
-33     if (!node)
-34         return (1);
-35     if (node\->type == PIPE)
-36     {
-37         printf(RED"PIPE\\n"RESET);
-38         return (builtin_pipe(node, data));
-39     }
-40     else if (node\->type == ENV_VAR)  // "$()"
-41     {
-42         printf(BLU"ENV_VAR\\n"RESET);
-43         //execute_redirect(node, data);
-44     }
-45     else if (node\->type == REDIR_IN)
+42 {
+43     if (!node)
+44         return (1);
+45     if (node\->type == PIPE)
 46     {
-47         printf(GRN"REDIR_IN\\n"RESET);
-48         return (redirect_in(node, data));
+47         printf(RED"PIPE\\n"RESET);
+48         return (builtin_pipe(node, data));
 49     }
-50     else if (node\->type == REDIR_OUT)    // ">"
+50     else if (node\->type == ENV_VAR)  // "$()"
 51     {
-52         printf(CYA"REDIR_OUT\\n"RESET);
-53         return (redirect_out(node, data));
+52         printf(BLU"ENV_VAR\\n"RESET);
+53         //execute_redirect(node, data);
 54     }
-55     else if (node\->type == REDIR_APPEND) // ">>"
+55     else if (node\->type == REDIR_IN)
 56     {
-57         printf(CYA"REDIR_APPEND\\n"RESET);
-58         //execute_sequence(node, data);
+57         printf(GRN"REDIR_IN\\n"RESET);
+58         return (redirect_in(node, data));
 59     }
-60     else if (node\->type == REDIR_HEREDOC) // "<<"
+60     else if (node\->type == REDIR_OUT)    // ">"
 61     {
-62         printf(MAG"REDIR_HEREDOC\\n"RESET);
-63         //execute_sequence(node, data);
+62         printf(CYA"REDIR_OUT\\n"RESET);
+63         return (redirect_out(node, data));
 64     }
-65     else if (node\->type == PHRASE)
+65     else if (node\->type == REDIR_APPEND) // ">>"
 66     {
-67         printf(YEL"PHRASE\\n"RESET);
-68         data\->args = node\->args;
-69         return (execute(data));
-70     }
-71     return (0);
-72 }
+67         printf(CYA"REDIR_APPEND\\n"RESET);
+68         //execute_sequence(node, data);
+69     }
+70     else if (node\->type == REDIR_HEREDOC) // "<<"
+71     {
+72         printf(MAG"REDIR_HEREDOC\\n"RESET);
+73         //execute_sequence(node, data);
+74     }
+75     else if (node\->type == PHRASE)
+76     {
+77         printf(YEL"PHRASE\\n"RESET);
+78         data\->args = node\->args;
+79         return (execute(data));
+80     }
+81     return (0);
+82 }
 .PP
 .fi
 
@@ -135,38 +193,62 @@ Referenced by \fBexecute_child()\fP, \fBexecute_redirect()\fP, \fBmain_loop()\fP
 .SS "int new_process (\fBt_minishell_data\fP * data)"
 
 .PP
-Definition at line \fB103\fP of file \fBexecute\&.c\fP\&.
+executes a new process --
+.IP "\(bu" 2
+\fBParameters\fP
+.RS 4
+\fIdata\fP minishell data structure
+.RE
+.PP
+
+.IP "\(bu" 2
+\fBReturns\fP
+.RS 4
+int return status:
+.RE
+.PP
+
+.IP "\(bu" 2
+- 0: success 
+.br
+
+.IP "\(bu" 2
+- 1: error 
+.PP
+
+.PP
+Definition at line \fB131\fP of file \fBexecute\&.c\fP\&.
 .nf
-104 {
-105     char    *path;
-106     char    **envp;
-107     pid_t   pid;
-108 
-109     envp = env_to_array(data\->envp);
-110     path = ft_find_path(data\->args[0], data\->envp);
-111     pid = fork();
-112     if (pid == \-1)
-113         ft_perror("fork");
-114     if (pid == 0)
-115     {
-116         if (data\->temp_fd != \-1)
-117         {
-118             dup2(data\->temp_fd, STDIN_FILENO);
-119             close(data\->temp_fd);
-120         }
-121         if (data\->temp_fd == 1)
-122         {
-123             dup2(data\->temp_fd, STDOUT_FILENO);
-124             close(data\->temp_fd);
-125         }
-126         if (execve(path, data\->args, envp) == \-1)
-127             ft_perror("minishell");
-128     }
-129     waitpid(pid, NULL, 0);
-130     free(path);
-131     ft_free_2d_arr(envp);
-132     return (0);
-133 }
+132 {
+133     char    *path;
+134     char    **envp;
+135     pid_t   pid;
+136 
+137     envp = env_to_array(data\->envp);
+138     path = ft_find_path(data\->args[0], data\->envp);
+139     pid = fork();
+140     if (pid == \-1)
+141         ft_perror("fork");
+142     if (pid == 0)
+143     {
+144         if (data\->temp_fd != \-1)
+145         {
+146             dup2(data\->temp_fd, STDIN_FILENO);
+147             close(data\->temp_fd);
+148         }
+149         if (data\->temp_fd == 1)
+150         {
+151             dup2(data\->temp_fd, STDOUT_FILENO);
+152             close(data\->temp_fd);
+153         }
+154         if (execve(path, data\->args, envp) == \-1)
+155             ft_perror("minishell");
+156     }
+157     waitpid(pid, NULL, 0);
+158     free(path);
+159     ft_free_2d_arr(envp);
+160     return (0);
+161 }
 .PP
 .fi
 

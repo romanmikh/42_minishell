@@ -790,7 +790,7 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" line="102" column="10" bodyfile="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" bodystart="102" bodyend="-1"/>
-        <referencedby refid="execute_8h_1ace4c3a2246919797e40140123d79596a" compoundref="execute_8c" startline="31" endline="72">execute_ast</referencedby>
+        <referencedby refid="execute_8h_1ace4c3a2246919797e40140123d79596a" compoundref="execute_8c" startline="41" endline="82">execute_ast</referencedby>
       </memberdef>
       <memberdef kind="define" id="libft_8h_1a6283768c836fd4a0f382514973bc3ff4" prot="public" static="no">
         <name>BLK</name>
@@ -813,7 +813,7 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" line="105" column="10" bodyfile="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" bodystart="105" bodyend="-1"/>
-        <referencedby refid="execute_8h_1ace4c3a2246919797e40140123d79596a" compoundref="execute_8c" startline="31" endline="72">execute_ast</referencedby>
+        <referencedby refid="execute_8h_1ace4c3a2246919797e40140123d79596a" compoundref="execute_8c" startline="41" endline="82">execute_ast</referencedby>
       </memberdef>
       <memberdef kind="define" id="libft_8h_1aea69ffbacdcdf16c21b8c9961df84448" prot="public" static="no">
         <name>GRN</name>
@@ -825,7 +825,7 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" line="106" column="10" bodyfile="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" bodystart="106" bodyend="-1"/>
-        <referencedby refid="execute_8h_1ace4c3a2246919797e40140123d79596a" compoundref="execute_8c" startline="31" endline="72">execute_ast</referencedby>
+        <referencedby refid="execute_8h_1ace4c3a2246919797e40140123d79596a" compoundref="execute_8c" startline="41" endline="82">execute_ast</referencedby>
       </memberdef>
       <memberdef kind="define" id="libft_8h_1a96fac03c4ab3363f06a0328e0e53a40c" prot="public" static="no">
         <name>YEL</name>
@@ -837,7 +837,7 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" line="107" column="10" bodyfile="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" bodystart="107" bodyend="-1"/>
-        <referencedby refid="execute_8h_1ace4c3a2246919797e40140123d79596a" compoundref="execute_8c" startline="31" endline="72">execute_ast</referencedby>
+        <referencedby refid="execute_8h_1ace4c3a2246919797e40140123d79596a" compoundref="execute_8c" startline="41" endline="82">execute_ast</referencedby>
       </memberdef>
       <memberdef kind="define" id="libft_8h_1add9307de87f38e77d336751e305886f6" prot="public" static="no">
         <name>BLU</name>
@@ -849,7 +849,7 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" line="108" column="10" bodyfile="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" bodystart="108" bodyend="-1"/>
-        <referencedby refid="execute_8h_1ace4c3a2246919797e40140123d79596a" compoundref="execute_8c" startline="31" endline="72">execute_ast</referencedby>
+        <referencedby refid="execute_8h_1ace4c3a2246919797e40140123d79596a" compoundref="execute_8c" startline="41" endline="82">execute_ast</referencedby>
       </memberdef>
       <memberdef kind="define" id="libft_8h_1af54a5a977c0c499323d656315f008ee0" prot="public" static="no">
         <name>MAG</name>
@@ -861,7 +861,7 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" line="109" column="10" bodyfile="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" bodystart="109" bodyend="-1"/>
-        <referencedby refid="execute_8h_1ace4c3a2246919797e40140123d79596a" compoundref="execute_8c" startline="31" endline="72">execute_ast</referencedby>
+        <referencedby refid="execute_8h_1ace4c3a2246919797e40140123d79596a" compoundref="execute_8c" startline="41" endline="82">execute_ast</referencedby>
       </memberdef>
       <memberdef kind="define" id="libft_8h_1a25f4cb00b763d4c7c8e627e4c0350383" prot="public" static="no">
         <name>CYA</name>
@@ -873,7 +873,7 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" line="110" column="10" bodyfile="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" bodystart="110" bodyend="-1"/>
-        <referencedby refid="execute_8h_1ace4c3a2246919797e40140123d79596a" compoundref="execute_8c" startline="31" endline="72">execute_ast</referencedby>
+        <referencedby refid="execute_8h_1ace4c3a2246919797e40140123d79596a" compoundref="execute_8c" startline="41" endline="82">execute_ast</referencedby>
       </memberdef>
       <memberdef kind="define" id="libft_8h_1ad9686e0f37fe7ff78cef4840f8dcc8b4" prot="public" static="no">
         <name>WHI</name>
@@ -1299,10 +1299,10 @@
         <referencedby refid="builtins_8h_1a9c4bf413cef22ef46427c4026734a97d" compoundref="echo_8c" startline="21" endline="42">builtin_echo</referencedby>
         <referencedby refid="builtins_8h_1adfc1db1f94cf16d71aea54b09370c032" compoundref="builtins_2env_8c" startline="38" endline="44">builtin_env</referencedby>
         <referencedby refid="tokens_8h_1a4e1b3e73a18dd66697cd7eac990b0363" compoundref="parser_2heredoc_8c" startline="15" endline="24">check_heredoc</referencedby>
-        <referencedby refid="execute_8h_1a825187f25304f9bd1a3e7a5e97327801" compoundref="execute_8c" startline="74" endline="101">execute</referencedby>
+        <referencedby refid="execute_8h_1a825187f25304f9bd1a3e7a5e97327801" compoundref="execute_8c" startline="93" endline="120">execute</referencedby>
         <referencedby refid="env_8h_1a41133e0ba7230727a51eedce713a225c" compoundref="env_2env_8c" startline="60" endline="72">get_env</referencedby>
         <referencedby refid="tokens_8h_1a132ce43db3d4fba988a166e932845375" compoundref="parser_2heredoc_8c" startline="26" endline="40">heredoc</referencedby>
-        <referencedby refid="redirection_8h_1a2fe566529f8c7046fe274f2b3a35b39b" compoundref="redirection_2utils_8c" startline="10" endline="25">open_file</referencedby>
+        <referencedby refid="redirection_8h_1a2fe566529f8c7046fe274f2b3a35b39b" compoundref="redirection_2utils_8c" startline="23" endline="38">open_file</referencedby>
         <referencedby refid="env_8h_1a194b2552273340441e8b481b4ce5202c" compoundref="env_2env_8c" startline="79" endline="99">set_env</referencedby>
         <referencedby refid="env__test_8c_1a4adfeb719435c39cc19b4c8f4e7e67a0" compoundref="env__test_8c" startline="57" endline="70">test_get_env</referencedby>
         <referencedby refid="env__test_8c_1a791d22f0a8695ef368626b927cb18caf" compoundref="env__test_8c" startline="72" endline="86">test_set_env</referencedby>
@@ -1544,7 +1544,7 @@
         <references refid="ft__split_8c_1a862cc35631d136bfab5e3a968040ef84" compoundref="ft__split_8c" startline="68" endline="93">split_into_words</references>
         <referencedby refid="pipe__test_8c_1a4e02daca82e791c68ff9bf7c0ad25030" compoundref="pipe__test_8c" startline="32" endline="37">builtin_pipe_test</referencedby>
         <referencedby refid="tokens_8h_1a4e1b3e73a18dd66697cd7eac990b0363" compoundref="parser_2heredoc_8c" startline="15" endline="24">check_heredoc</referencedby>
-        <referencedby refid="execute_8h_1a3de2eb0e796441d7b827cf213bd8d789" compoundref="execute_2utils_8c" startline="24" endline="47">ft_find_path</referencedby>
+        <referencedby refid="execute_8h_1a3de2eb0e796441d7b827cf213bd8d789" compoundref="execute_2utils_8c" startline="32" endline="55">ft_find_path</referencedby>
       </memberdef>
       <memberdef kind="function" id="libft_8h_1a916ac44ff3e67ef20834dd45e3837ac4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>char *</type>
@@ -1614,7 +1614,7 @@
         <location file="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" line="56" column="5" bodyfile="/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_strjoin.c" bodystart="23" bodyend="44" declfile="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" declline="56" declcolumn="5"/>
         <references refid="libft_8h_1abbb8c6c4ed85d892e7f1509f65f5768a" compoundref="ft__strlen_8c" startline="15" endline="23">ft_strlen</references>
         <referencedby refid="env_8h_1a19f3a9e73371c1cfb3db076f94d33830" compoundref="env_2utils_8c" startline="22" endline="49">env_to_array</referencedby>
-        <referencedby refid="execute_8h_1a3de2eb0e796441d7b827cf213bd8d789" compoundref="execute_2utils_8c" startline="24" endline="47">ft_find_path</referencedby>
+        <referencedby refid="execute_8h_1a3de2eb0e796441d7b827cf213bd8d789" compoundref="execute_2utils_8c" startline="32" endline="55">ft_find_path</referencedby>
         <referencedby refid="prompt_8c_1a5663e22274d85c42c9c7f51e22afc301" compoundref="prompt_8c" startline="71" endline="88">generate_prompt_string</referencedby>
         <referencedby refid="tokens_8h_1a132ce43db3d4fba988a166e932845375" compoundref="parser_2heredoc_8c" startline="26" endline="40">heredoc</referencedby>
       </memberdef>

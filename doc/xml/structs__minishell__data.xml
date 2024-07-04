@@ -24,11 +24,11 @@
         <referencedby refid="builtins_8h_1a9e6f1e14f0125cd68c70e8e31ef606aa" compoundref="export_8c" startline="28" endline="44">builtin_export</referencedby>
         <referencedby refid="pipe__test_8c_1a4e02daca82e791c68ff9bf7c0ad25030" compoundref="pipe__test_8c" startline="32" endline="37">builtin_pipe_test</referencedby>
         <referencedby refid="builtins_8h_1aa04be64406f96e5ae8f361421bf72cec" compoundref="unset_8c" startline="26" endline="45">builtin_unset</referencedby>
-        <referencedby refid="execute_8h_1a825187f25304f9bd1a3e7a5e97327801" compoundref="execute_8c" startline="74" endline="101">execute</referencedby>
-        <referencedby refid="execute_8h_1ace4c3a2246919797e40140123d79596a" compoundref="execute_8c" startline="31" endline="72">execute_ast</referencedby>
+        <referencedby refid="execute_8h_1a825187f25304f9bd1a3e7a5e97327801" compoundref="execute_8c" startline="93" endline="120">execute</referencedby>
+        <referencedby refid="execute_8h_1ace4c3a2246919797e40140123d79596a" compoundref="execute_8c" startline="41" endline="82">execute_ast</referencedby>
         <referencedby refid="tokens_8h_1a16d324fdb41b45b7e59af5eaab2e56bd" compoundref="clean__general_8c" startline="43" endline="53">free_minishell_data</referencedby>
         <referencedby refid="tokens_8h_1ab7986766cca35553aa796f6a732d856a" compoundref="initialise_8c" startline="16" endline="25">init_minishell_data</referencedby>
-        <referencedby refid="execute_8h_1a82e1e73d725f74b5fdad62dd3a99bab5" compoundref="execute_8c" startline="103" endline="133">new_process</referencedby>
+        <referencedby refid="execute_8h_1a82e1e73d725f74b5fdad62dd3a99bab5" compoundref="execute_8c" startline="131" endline="161">new_process</referencedby>
       </memberdef>
       <memberdef kind="variable" id="structs__minishell__data_1a8a0b3f50c8893e061062e93115f3d723" prot="public" static="no" mutable="no">
         <type><ref refid="env_8h_1aa3d21e1567b21e23ec928b1eb405fe4b" kindref="member">t_env</ref> *</type>
@@ -53,7 +53,7 @@
         <referencedby refid="prompt_8c_1a5663e22274d85c42c9c7f51e22afc301" compoundref="prompt_8c" startline="71" endline="88">generate_prompt_string</referencedby>
         <referencedby refid="tokens_8h_1ab7986766cca35553aa796f6a732d856a" compoundref="initialise_8c" startline="16" endline="25">init_minishell_data</referencedby>
         <referencedby refid="main_8c_1a647f21a28344e1d9c643f4115516d7c9" compoundref="main_8c" startline="54" endline="66">main</referencedby>
-        <referencedby refid="execute_8h_1a82e1e73d725f74b5fdad62dd3a99bab5" compoundref="execute_8c" startline="103" endline="133">new_process</referencedby>
+        <referencedby refid="execute_8h_1a82e1e73d725f74b5fdad62dd3a99bab5" compoundref="execute_8c" startline="131" endline="161">new_process</referencedby>
         <referencedby refid="env__test_8c_1a4adfeb719435c39cc19b4c8f4e7e67a0" compoundref="env__test_8c" startline="57" endline="70">test_get_env</referencedby>
         <referencedby refid="env__test_8c_1acac11373a53e4554ff03dd0e197c767b" compoundref="env__test_8c" startline="35" endline="55">test_init_env</referencedby>
         <referencedby refid="env__test_8c_1a791d22f0a8695ef368626b927cb18caf" compoundref="env__test_8c" startline="72" endline="86">test_set_env</referencedby>
@@ -88,12 +88,12 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/dimadem/Documents/GitHub/minishell/inc/shell.h" line="23" column="4" bodyfile="/Users/dimadem/Documents/GitHub/minishell/inc/shell.h" bodystart="23" bodyend="-1"/>
-        <referencedby refid="pipe_8h_1a7947b63271b47934f419fe6d217bf8df" compoundref="pipe_8c" startline="25" endline="50">builtin_pipe</referencedby>
+        <referencedby refid="pipe_8h_1a7947b63271b47934f419fe6d217bf8df" compoundref="pipe_8c" startline="35" endline="60">builtin_pipe</referencedby>
         <referencedby refid="tokens_8h_1a4c523064ece03ba20eb609b52253b88e" compoundref="prompt_8c" startline="31" endline="69">generate_prompt</referencedby>
-        <referencedby refid="execute_8h_1a8f9d65fb9405c61cf1e58b429f4f5728" compoundref="execute_2utils_8c" startline="71" endline="78">handle_temp_fd</referencedby>
+        <referencedby refid="execute_8h_1a8f9d65fb9405c61cf1e58b429f4f5728" compoundref="execute_2utils_8c" startline="105" endline="112">handle_temp_fd</referencedby>
         <referencedby refid="tokens_8h_1ab7986766cca35553aa796f6a732d856a" compoundref="initialise_8c" startline="16" endline="25">init_minishell_data</referencedby>
-        <referencedby refid="execute_8h_1a82e1e73d725f74b5fdad62dd3a99bab5" compoundref="execute_8c" startline="103" endline="133">new_process</referencedby>
-        <referencedby refid="redirection_8h_1a2635bab3d0023f67288d2832903bdbd9" compoundref="redirect__in_8c" startline="13" endline="30">redirect_in</referencedby>
+        <referencedby refid="execute_8h_1a82e1e73d725f74b5fdad62dd3a99bab5" compoundref="execute_8c" startline="131" endline="161">new_process</referencedby>
+        <referencedby refid="redirection_8h_1a2635bab3d0023f67288d2832903bdbd9" compoundref="redirect__in_8c" startline="23" endline="40">redirect_in</referencedby>
       </memberdef>
       <memberdef kind="variable" id="structs__minishell__data_1a147731c1cf1a04c1fc1b85e6343cc7cc" prot="public" static="no" mutable="no">
         <type>char *</type>
@@ -127,7 +127,7 @@
         <referencedby refid="builtins_8h_1a6a7d93447961b415c9c16ebdfcd3d5fa" compoundref="exit_8c" startline="26" endline="35">builtin_exit</referencedby>
         <referencedby refid="builtins_8h_1aa04be64406f96e5ae8f361421bf72cec" compoundref="unset_8c" startline="26" endline="45">builtin_unset</referencedby>
         <referencedby refid="tokens_8h_1ab7986766cca35553aa796f6a732d856a" compoundref="initialise_8c" startline="16" endline="25">init_minishell_data</referencedby>
-        <referencedby refid="redirection_8h_1a2635bab3d0023f67288d2832903bdbd9" compoundref="redirect__in_8c" startline="13" endline="30">redirect_in</referencedby>
+        <referencedby refid="redirection_8h_1a2635bab3d0023f67288d2832903bdbd9" compoundref="redirect__in_8c" startline="23" endline="40">redirect_in</referencedby>
       </memberdef>
     </sectiondef>
     <briefdescription>

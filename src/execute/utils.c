@@ -21,6 +21,14 @@ int		ft_perror(char *str);
 void	close_fds(int fds[2]);
 void	handle_temp_fd(t_minishell_data *data);
 
+/**
+- @brief function find the full path of the executed command
+- 
+- @param cmd string from the first argument
+- @param envp structure with environment variables
+- @return char* returns the full path of the command
+ */
+
 char	*ft_find_path(char *cmd, t_env *envp)
 {
 	char	**path;
@@ -46,6 +54,12 @@ char	*ft_find_path(char *cmd, t_env *envp)
 	return (NULL);
 }
 
+/**
+- @brief clean up 2d array
+- 
+- @param arr simple two dimensional array
+ */
+
 void	ft_free_2d_arr(char **arr)
 {
 	int	i;
@@ -56,17 +70,37 @@ void	ft_free_2d_arr(char **arr)
 	free(arr);
 }
 
+/**
+- @brief return error message and exit
+- 
+- @param str paste the error message
+- @return int return status:
+- 				- 1: EXIT_FAILURE
+ */
+
 int	ft_perror(char *str)
 {
 	perror (str);
 	exit(EXIT_FAILURE);
 }
 
+/**
+- @brief close two file descriptors
+- 
+- @param fds file descriptors
+ */
+
 void	close_fds(int fds[2])
 {
 	close(fds[0]);
 	close(fds[1]);
 }
+
+/**
+- @brief close temporary file descriptor if it is open
+- 
+- @param data minishell structure
+ */
 
 void	handle_temp_fd(t_minishell_data *data)
 {

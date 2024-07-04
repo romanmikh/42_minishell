@@ -97,17 +97,44 @@
           <declname>envp</declname>
         </param>
         <briefdescription>
+<para>function find the full path of the executed command </para>
         </briefdescription>
         <detaileddescription>
+<para>--<itemizedlist>
+<listitem><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>cmd</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>string from the first argument</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+</listitem><listitem><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>envp</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>structure with environment variables</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+</listitem><listitem><para><simplesect kind="return"><para>char* returns the full path of the command </para>
+</simplesect>
+</para>
+</listitem></itemizedlist>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/dimadem/Documents/GitHub/minishell/src/execute/utils.c" line="24" column="5" bodyfile="/Users/dimadem/Documents/GitHub/minishell/src/execute/utils.c" bodystart="24" bodyend="47" declfile="/Users/dimadem/Documents/GitHub/minishell/src/execute/utils.c" declline="18" declcolumn="5"/>
-        <references refid="execute_2utils_8c_1a5d9d8b46bb6c3dbbc91e99b69bb63e9d" compoundref="execute_2utils_8c" startline="49" endline="57">ft_free_2d_arr</references>
+        <location file="/Users/dimadem/Documents/GitHub/minishell/src/execute/utils.c" line="32" column="5" bodyfile="/Users/dimadem/Documents/GitHub/minishell/src/execute/utils.c" bodystart="32" bodyend="55" declfile="/Users/dimadem/Documents/GitHub/minishell/src/execute/utils.c" declline="18" declcolumn="5"/>
+        <references refid="execute_2utils_8c_1a5d9d8b46bb6c3dbbc91e99b69bb63e9d" compoundref="execute_2utils_8c" startline="63" endline="71">ft_free_2d_arr</references>
         <references refid="libft_8h_1aa65c9de65051c8c589286cf133c4a1f4" compoundref="ft__split_8c" startline="95" endline="108">ft_split</references>
         <references refid="libft_8h_1a91e6e3e428bcc9f2291b700e1829b82b" compoundref="ft__strjoin_8c" startline="23" endline="44">ft_strjoin</references>
         <references refid="env_8h_1a41133e0ba7230727a51eedce713a225c" compoundref="env_2env_8c" startline="60" endline="72">get_env</references>
-        <referencedby refid="execute_8h_1a82e1e73d725f74b5fdad62dd3a99bab5" compoundref="execute_8c" startline="103" endline="133">new_process</referencedby>
+        <referencedby refid="execute_8h_1a82e1e73d725f74b5fdad62dd3a99bab5" compoundref="execute_8c" startline="131" endline="161">new_process</referencedby>
       </memberdef>
       <memberdef kind="function" id="execute_2utils_8c_1a5d9d8b46bb6c3dbbc91e99b69bb63e9d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -119,14 +146,28 @@
           <declname>arr</declname>
         </param>
         <briefdescription>
+<para>clean up 2d array </para>
         </briefdescription>
         <detaileddescription>
+<para>--<itemizedlist>
+<listitem><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>arr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>simple two dimensional array </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+</listitem></itemizedlist>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/dimadem/Documents/GitHub/minishell/src/execute/utils.c" line="49" column="5" bodyfile="/Users/dimadem/Documents/GitHub/minishell/src/execute/utils.c" bodystart="49" bodyend="57" declfile="/Users/dimadem/Documents/GitHub/minishell/src/execute/utils.c" declline="19" declcolumn="5"/>
-        <referencedby refid="execute_8h_1a3de2eb0e796441d7b827cf213bd8d789" compoundref="execute_2utils_8c" startline="24" endline="47">ft_find_path</referencedby>
-        <referencedby refid="execute_8h_1a82e1e73d725f74b5fdad62dd3a99bab5" compoundref="execute_8c" startline="103" endline="133">new_process</referencedby>
+        <location file="/Users/dimadem/Documents/GitHub/minishell/src/execute/utils.c" line="63" column="5" bodyfile="/Users/dimadem/Documents/GitHub/minishell/src/execute/utils.c" bodystart="63" bodyend="71" declfile="/Users/dimadem/Documents/GitHub/minishell/src/execute/utils.c" declline="19" declcolumn="5"/>
+        <referencedby refid="execute_8h_1a3de2eb0e796441d7b827cf213bd8d789" compoundref="execute_2utils_8c" startline="32" endline="55">ft_find_path</referencedby>
+        <referencedby refid="execute_8h_1a82e1e73d725f74b5fdad62dd3a99bab5" compoundref="execute_8c" startline="131" endline="161">new_process</referencedby>
       </memberdef>
       <memberdef kind="function" id="execute_2utils_8c_1aedc550f2251badad69cf4b6dfda183ef" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
@@ -138,17 +179,35 @@
           <declname>str</declname>
         </param>
         <briefdescription>
+<para>return error message and exit </para>
         </briefdescription>
         <detaileddescription>
+<para>--<itemizedlist>
+<listitem><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>str</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>paste the error message</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+</listitem><listitem><para><simplesect kind="return"><para>int return status:</para>
+</simplesect>
+</para>
+</listitem><listitem><para>- 1: EXIT_FAILURE </para>
+</listitem></itemizedlist>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/dimadem/Documents/GitHub/minishell/src/execute/utils.c" line="59" column="4" bodyfile="/Users/dimadem/Documents/GitHub/minishell/src/execute/utils.c" bodystart="59" bodyend="63" declfile="/Users/dimadem/Documents/GitHub/minishell/src/execute/utils.c" declline="20" declcolumn="4"/>
-        <referencedby refid="pipe_8h_1a7947b63271b47934f419fe6d217bf8df" compoundref="pipe_8c" startline="25" endline="50">builtin_pipe</referencedby>
-        <referencedby refid="pipe_8c_1a3a1c19716357baba879b799300b3c077" compoundref="pipe_8c" startline="52" endline="71">execute_child</referencedby>
-        <referencedby refid="redirect__out_8c_1a15c40d3dc28662aeb1f6b4fb03f74537" compoundref="redirect__out_8c" startline="27" endline="51">execute_redirect</referencedby>
-        <referencedby refid="execute_8h_1a82e1e73d725f74b5fdad62dd3a99bab5" compoundref="execute_8c" startline="103" endline="133">new_process</referencedby>
-        <referencedby refid="redirection_8h_1a13afb8e911eca2b32bd9e843eda752a5" compoundref="redirect__out_8c" startline="10" endline="25">redirect_out</referencedby>
+        <location file="/Users/dimadem/Documents/GitHub/minishell/src/execute/utils.c" line="81" column="4" bodyfile="/Users/dimadem/Documents/GitHub/minishell/src/execute/utils.c" bodystart="81" bodyend="85" declfile="/Users/dimadem/Documents/GitHub/minishell/src/execute/utils.c" declline="20" declcolumn="4"/>
+        <referencedby refid="pipe_8h_1a7947b63271b47934f419fe6d217bf8df" compoundref="pipe_8c" startline="35" endline="60">builtin_pipe</referencedby>
+        <referencedby refid="pipe_8c_1a3a1c19716357baba879b799300b3c077" compoundref="pipe_8c" startline="71" endline="90">execute_child</referencedby>
+        <referencedby refid="redirect__out_8c_1a15c40d3dc28662aeb1f6b4fb03f74537" compoundref="redirect__out_8c" startline="48" endline="72">execute_redirect</referencedby>
+        <referencedby refid="execute_8h_1a82e1e73d725f74b5fdad62dd3a99bab5" compoundref="execute_8c" startline="131" endline="161">new_process</referencedby>
+        <referencedby refid="redirection_8h_1a13afb8e911eca2b32bd9e843eda752a5" compoundref="redirect__out_8c" startline="21" endline="36">redirect_out</referencedby>
       </memberdef>
       <memberdef kind="function" id="execute_2utils_8c_1a3efc1daab192679556df183345e1c83d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -161,16 +220,30 @@
           <array>[2]</array>
         </param>
         <briefdescription>
+<para>close two file descriptors </para>
         </briefdescription>
         <detaileddescription>
+<para>--<itemizedlist>
+<listitem><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>fds</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>file descriptors </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+</listitem></itemizedlist>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/dimadem/Documents/GitHub/minishell/src/execute/utils.c" line="65" column="5" bodyfile="/Users/dimadem/Documents/GitHub/minishell/src/execute/utils.c" bodystart="65" bodyend="69" declfile="/Users/dimadem/Documents/GitHub/minishell/src/execute/utils.c" declline="21" declcolumn="5"/>
-        <referencedby refid="pipe_8h_1a7947b63271b47934f419fe6d217bf8df" compoundref="pipe_8c" startline="25" endline="50">builtin_pipe</referencedby>
-        <referencedby refid="pipe_8c_1a3a1c19716357baba879b799300b3c077" compoundref="pipe_8c" startline="52" endline="71">execute_child</referencedby>
-        <referencedby refid="redirect__out_8c_1a15c40d3dc28662aeb1f6b4fb03f74537" compoundref="redirect__out_8c" startline="27" endline="51">execute_redirect</referencedby>
-        <referencedby refid="redirection_8h_1a13afb8e911eca2b32bd9e843eda752a5" compoundref="redirect__out_8c" startline="10" endline="25">redirect_out</referencedby>
+        <location file="/Users/dimadem/Documents/GitHub/minishell/src/execute/utils.c" line="93" column="5" bodyfile="/Users/dimadem/Documents/GitHub/minishell/src/execute/utils.c" bodystart="93" bodyend="97" declfile="/Users/dimadem/Documents/GitHub/minishell/src/execute/utils.c" declline="21" declcolumn="5"/>
+        <referencedby refid="pipe_8h_1a7947b63271b47934f419fe6d217bf8df" compoundref="pipe_8c" startline="35" endline="60">builtin_pipe</referencedby>
+        <referencedby refid="pipe_8c_1a3a1c19716357baba879b799300b3c077" compoundref="pipe_8c" startline="71" endline="90">execute_child</referencedby>
+        <referencedby refid="redirect__out_8c_1a15c40d3dc28662aeb1f6b4fb03f74537" compoundref="redirect__out_8c" startline="48" endline="72">execute_redirect</referencedby>
+        <referencedby refid="redirection_8h_1a13afb8e911eca2b32bd9e843eda752a5" compoundref="redirect__out_8c" startline="21" endline="36">redirect_out</referencedby>
       </memberdef>
       <memberdef kind="function" id="execute_2utils_8c_1a8f9d65fb9405c61cf1e58b429f4f5728" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -182,12 +255,26 @@
           <declname>data</declname>
         </param>
         <briefdescription>
+<para>close temporary file descriptor if it is open </para>
         </briefdescription>
         <detaileddescription>
+<para>--<itemizedlist>
+<listitem><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>minishell structure </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+</listitem></itemizedlist>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/dimadem/Documents/GitHub/minishell/src/execute/utils.c" line="71" column="5" bodyfile="/Users/dimadem/Documents/GitHub/minishell/src/execute/utils.c" bodystart="71" bodyend="78" declfile="/Users/dimadem/Documents/GitHub/minishell/src/execute/utils.c" declline="22" declcolumn="5"/>
+        <location file="/Users/dimadem/Documents/GitHub/minishell/src/execute/utils.c" line="105" column="5" bodyfile="/Users/dimadem/Documents/GitHub/minishell/src/execute/utils.c" bodystart="105" bodyend="112" declfile="/Users/dimadem/Documents/GitHub/minishell/src/execute/utils.c" declline="22" declcolumn="5"/>
         <references refid="structs__minishell__data_1a880c653419f6a3adb22024e5bb05c69b" compoundref="shell_8h" startline="23">s_minishell_data::temp_fd</references>
         <referencedby refid="main_8c_1abaf800210325f066cb9289aaae9e2c86" compoundref="main_8c" startline="29" endline="51">main_loop</referencedby>
       </memberdef>
@@ -220,61 +307,61 @@
 <codeline lineno="21"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="execute_2utils_8c_1a3efc1daab192679556df183345e1c83d" kindref="member">close_fds</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>fds[2]);</highlight></codeline>
 <codeline lineno="22"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="execute_2utils_8c_1a8f9d65fb9405c61cf1e58b429f4f5728" kindref="member">handle_temp_fd</ref>(<ref refid="structs__minishell__data" kindref="compound">t_minishell_data</ref><sp/>*data);</highlight></codeline>
 <codeline lineno="23"><highlight class="normal"></highlight></codeline>
-<codeline lineno="24" refid="execute_8h_1a3de2eb0e796441d7b827cf213bd8d789" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/><sp/><sp/>*<ref refid="execute_2utils_8c_1a3de2eb0e796441d7b827cf213bd8d789" kindref="member">ft_find_path</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*cmd,<sp/><ref refid="structs__env" kindref="compound">t_env</ref><sp/>*envp)</highlight></codeline>
-<codeline lineno="25"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/><sp/><sp/>**path;</highlight></codeline>
-<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/><sp/><sp/>*tmp_slash;</highlight></codeline>
-<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/><sp/><sp/>*tmp_full_path;</highlight></codeline>
-<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>i;</highlight></codeline>
-<codeline lineno="30"><highlight class="normal"></highlight></codeline>
-<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/>path<sp/>=<sp/><ref refid="libft_8h_1aa65c9de65051c8c589286cf133c4a1f4" kindref="member">ft_split</ref>(<ref refid="env_8h_1a41133e0ba7230727a51eedce713a225c" kindref="member">get_env</ref>(envp,<sp/></highlight><highlight class="stringliteral">&quot;PATH&quot;</highlight><highlight class="normal">),<sp/></highlight><highlight class="charliteral">&apos;:&apos;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/>i<sp/>=<sp/>-1;</highlight></codeline>
-<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(path[++i]<sp/>!=<sp/>NULL)</highlight></codeline>
-<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tmp_slash<sp/>=<sp/><ref refid="libft_8h_1a91e6e3e428bcc9f2291b700e1829b82b" kindref="member">ft_strjoin</ref>(path[i],<sp/></highlight><highlight class="stringliteral">&quot;/&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tmp_full_path<sp/>=<sp/><ref refid="libft_8h_1a91e6e3e428bcc9f2291b700e1829b82b" kindref="member">ft_strjoin</ref>(tmp_slash,<sp/>cmd);</highlight></codeline>
-<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>free(tmp_slash);</highlight></codeline>
-<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(access(tmp_full_path,<sp/>F_OK)<sp/>==<sp/>0)</highlight></codeline>
-<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="execute_2utils_8c_1a5d9d8b46bb6c3dbbc91e99b69bb63e9d" kindref="member">ft_free_2d_arr</ref>(path);</highlight></codeline>
-<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(tmp_full_path);</highlight></codeline>
-<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>free(tmp_full_path);</highlight></codeline>
-<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="execute_2utils_8c_1a5d9d8b46bb6c3dbbc91e99b69bb63e9d" kindref="member">ft_free_2d_arr</ref>(path);</highlight></codeline>
-<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(NULL);</highlight></codeline>
-<codeline lineno="47"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="48"><highlight class="normal"></highlight></codeline>
-<codeline lineno="49" refid="execute_8h_1a5d9d8b46bb6c3dbbc91e99b69bb63e9d" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="execute_2utils_8c_1a5d9d8b46bb6c3dbbc91e99b69bb63e9d" kindref="member">ft_free_2d_arr</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>**arr)</highlight></codeline>
-<codeline lineno="50"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i;</highlight></codeline>
-<codeline lineno="52"><highlight class="normal"></highlight></codeline>
-<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/>i<sp/>=<sp/>-1;</highlight></codeline>
-<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(arr[++i]<sp/>!=<sp/>NULL)</highlight></codeline>
-<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>free(arr[i]);</highlight></codeline>
-<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/>free(arr);</highlight></codeline>
-<codeline lineno="57"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="58"><highlight class="normal"></highlight></codeline>
-<codeline lineno="59" refid="execute_8h_1aedc550f2251badad69cf4b6dfda183ef" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="execute_2utils_8c_1aedc550f2251badad69cf4b6dfda183ef" kindref="member">ft_perror</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*str)</highlight></codeline>
-<codeline lineno="60"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/>perror<sp/>(str);</highlight></codeline>
-<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/>exit(EXIT_FAILURE);</highlight></codeline>
-<codeline lineno="63"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="64"><highlight class="normal"></highlight></codeline>
-<codeline lineno="65" refid="execute_8h_1a3efc1daab192679556df183345e1c83d" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="execute_2utils_8c_1a3efc1daab192679556df183345e1c83d" kindref="member">close_fds</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>fds[2])</highlight></codeline>
-<codeline lineno="66"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/>close(fds[0]);</highlight></codeline>
-<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/>close(fds[1]);</highlight></codeline>
-<codeline lineno="69"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="70"><highlight class="normal"></highlight></codeline>
-<codeline lineno="71" refid="execute_8h_1a8f9d65fb9405c61cf1e58b429f4f5728" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="execute_2utils_8c_1a8f9d65fb9405c61cf1e58b429f4f5728" kindref="member">handle_temp_fd</ref>(<ref refid="structs__minishell__data" kindref="compound">t_minishell_data</ref><sp/>*data)</highlight></codeline>
-<codeline lineno="72"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(data-&gt;<ref refid="structs__minishell__data_1a880c653419f6a3adb22024e5bb05c69b" kindref="member">temp_fd</ref><sp/>!=<sp/>-1)</highlight></codeline>
-<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>close(data-&gt;<ref refid="structs__minishell__data_1a880c653419f6a3adb22024e5bb05c69b" kindref="member">temp_fd</ref>);</highlight></codeline>
-<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>data-&gt;<ref refid="structs__minishell__data_1a880c653419f6a3adb22024e5bb05c69b" kindref="member">temp_fd</ref><sp/>=<sp/>-1;</highlight></codeline>
-<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="78"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="32" refid="execute_8h_1a3de2eb0e796441d7b827cf213bd8d789" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/><sp/><sp/>*<ref refid="execute_2utils_8c_1a3de2eb0e796441d7b827cf213bd8d789" kindref="member">ft_find_path</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*cmd,<sp/><ref refid="structs__env" kindref="compound">t_env</ref><sp/>*envp)</highlight></codeline>
+<codeline lineno="33"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/><sp/><sp/>**path;</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/><sp/><sp/>*tmp_slash;</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/><sp/><sp/>*tmp_full_path;</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>i;</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/>path<sp/>=<sp/><ref refid="libft_8h_1aa65c9de65051c8c589286cf133c4a1f4" kindref="member">ft_split</ref>(<ref refid="env_8h_1a41133e0ba7230727a51eedce713a225c" kindref="member">get_env</ref>(envp,<sp/></highlight><highlight class="stringliteral">&quot;PATH&quot;</highlight><highlight class="normal">),<sp/></highlight><highlight class="charliteral">&apos;:&apos;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/>i<sp/>=<sp/>-1;</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(path[++i]<sp/>!=<sp/>NULL)</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tmp_slash<sp/>=<sp/><ref refid="libft_8h_1a91e6e3e428bcc9f2291b700e1829b82b" kindref="member">ft_strjoin</ref>(path[i],<sp/></highlight><highlight class="stringliteral">&quot;/&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tmp_full_path<sp/>=<sp/><ref refid="libft_8h_1a91e6e3e428bcc9f2291b700e1829b82b" kindref="member">ft_strjoin</ref>(tmp_slash,<sp/>cmd);</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>free(tmp_slash);</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(access(tmp_full_path,<sp/>F_OK)<sp/>==<sp/>0)</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="execute_2utils_8c_1a5d9d8b46bb6c3dbbc91e99b69bb63e9d" kindref="member">ft_free_2d_arr</ref>(path);</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(tmp_full_path);</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>free(tmp_full_path);</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="execute_2utils_8c_1a5d9d8b46bb6c3dbbc91e99b69bb63e9d" kindref="member">ft_free_2d_arr</ref>(path);</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(NULL);</highlight></codeline>
+<codeline lineno="55"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight></codeline>
+<codeline lineno="63" refid="execute_8h_1a5d9d8b46bb6c3dbbc91e99b69bb63e9d" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="execute_2utils_8c_1a5d9d8b46bb6c3dbbc91e99b69bb63e9d" kindref="member">ft_free_2d_arr</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>**arr)</highlight></codeline>
+<codeline lineno="64"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i;</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/>i<sp/>=<sp/>-1;</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(arr[++i]<sp/>!=<sp/>NULL)</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>free(arr[i]);</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/>free(arr);</highlight></codeline>
+<codeline lineno="71"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight></codeline>
+<codeline lineno="81" refid="execute_8h_1aedc550f2251badad69cf4b6dfda183ef" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="execute_2utils_8c_1aedc550f2251badad69cf4b6dfda183ef" kindref="member">ft_perror</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*str)</highlight></codeline>
+<codeline lineno="82"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/>perror<sp/>(str);</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/>exit(EXIT_FAILURE);</highlight></codeline>
+<codeline lineno="85"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight></codeline>
+<codeline lineno="93" refid="execute_8h_1a3efc1daab192679556df183345e1c83d" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="execute_2utils_8c_1a3efc1daab192679556df183345e1c83d" kindref="member">close_fds</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>fds[2])</highlight></codeline>
+<codeline lineno="94"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/>close(fds[0]);</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/>close(fds[1]);</highlight></codeline>
+<codeline lineno="97"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight></codeline>
+<codeline lineno="105" refid="execute_8h_1a8f9d65fb9405c61cf1e58b429f4f5728" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="execute_2utils_8c_1a8f9d65fb9405c61cf1e58b429f4f5728" kindref="member">handle_temp_fd</ref>(<ref refid="structs__minishell__data" kindref="compound">t_minishell_data</ref><sp/>*data)</highlight></codeline>
+<codeline lineno="106"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(data-&gt;<ref refid="structs__minishell__data_1a880c653419f6a3adb22024e5bb05c69b" kindref="member">temp_fd</ref><sp/>!=<sp/>-1)</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>close(data-&gt;<ref refid="structs__minishell__data_1a880c653419f6a3adb22024e5bb05c69b" kindref="member">temp_fd</ref>);</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>data-&gt;<ref refid="structs__minishell__data_1a880c653419f6a3adb22024e5bb05c69b" kindref="member">temp_fd</ref><sp/>=<sp/>-1;</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="112"><highlight class="normal">}</highlight></codeline>
     </programlisting>
     <location file="/Users/dimadem/Documents/GitHub/minishell/src/execute/utils.c"/>
   </compounddef>

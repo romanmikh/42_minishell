@@ -7,6 +7,17 @@
 pid_t	execute_redirect(t_ast *node, t_minishell_data *data, \
 			int fd[2], int direction);
 
+/**
+- @brief redirect out in the context of executing AST
+-        looking similar to the pipe function
+- 
+- @param node current node in the AST
+- @param data minishell data structure
+- @return int status:
+- 				- 0: success
+- 				- 1: error
+ */
+
 int redirect_out(t_ast *node, t_minishell_data *data)
 {
     	int	fd[2];
@@ -23,6 +34,16 @@ int redirect_out(t_ast *node, t_minishell_data *data)
     	waitpid(pid_2, &status, 0);
 	return (WEXITSTATUS(status));
 }
+
+/**
+- @brief execute child process in the redirection context
+- 
+- @param node current node in the AST
+- @param data minishell data structure
+- @param fd file descriptors
+- @param direction redirection if 0 - node_left, if 1 - node_right
+- @return pid_t the process id
+ */
 
 pid_t execute_redirect(t_ast *node, t_minishell_data *data, int fd[2], int direction)
 {

@@ -28,6 +28,16 @@ int	execute_ast(t_ast *node, t_minishell_data *data);
 int	execute(t_minishell_data *data);
 int	new_process(t_minishell_data *data);
 
+/**
+- @brief execute Abstract Syntax Tree
+- 
+- @param node Abstract Syntax Tree Node
+- @param data minishell data struct
+- @return int return status:
+- 				- 0: success	
+- 				- 1: error
+ */
+
 int	execute_ast(t_ast *node, t_minishell_data *data)
 {
 	if (!node)
@@ -71,6 +81,15 @@ int	execute_ast(t_ast *node, t_minishell_data *data)
 	return (0);
 }
 
+/**
+- @brief execute distribution function checks if the command is a builtin or a new process
+- 
+- @param data minishell data struct
+- @return int return status:
+- 				- 0: success	
+- 				- 1: error
+ */
+
 int	execute(t_minishell_data *data)
 {
 	size_t	i;
@@ -99,6 +118,15 @@ int	execute(t_minishell_data *data)
 			return ((*builtin_functions[i])(data));
 	return (new_process(data));
 }
+
+/**
+- @brief executes a new process
+- 
+- @param data minishell data structure
+- @return int return status:
+- 				- 0: success	
+- 				- 1: error
+ */
 
 int	new_process(t_minishell_data *data)
 {

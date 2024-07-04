@@ -24,6 +24,7 @@
 .ti -1c
 .RI "int \fBbuiltin_pipe\fP (\fBt_ast\fP *node, \fBt_minishell_data\fP *data)"
 .br
+.RI "execute pipe when | is found in the command "
 .in -1c
 .SH "Macro Definition Documentation"
 .PP 
@@ -38,33 +39,62 @@ Referenced by \fBbuiltin_pipe()\fP, and \fBstatus_handler()\fP\&.
 .SS "int builtin_pipe (\fBt_ast\fP * node, \fBt_minishell_data\fP * data)"
 
 .PP
-Definition at line \fB25\fP of file \fBpipe\&.c\fP\&.
+execute pipe when | is found in the command --
+.IP "\(bu" 2
+\fBParameters\fP
+.RS 4
+\fInode\fP current node in the AST
+.RE
+.PP
+
+.IP "\(bu" 2
+\fBParameters\fP
+.RS 4
+\fIdata\fP minishell structure data
+.RE
+.PP
+
+.IP "\(bu" 2
+\fBReturns\fP
+.RS 4
+int return status:
+.RE
+.PP
+
+.IP "\(bu" 2
+- 0: success
+.IP "\(bu" 2
+- 1: error 
+.PP
+
+.PP
+Definition at line \fB35\fP of file \fBpipe\&.c\fP\&.
 .nf
-26 {
-27     int     fd[2];
-28     pid_t   pid_1;
-29     pid_t   pid_2;
-30     int     status;
-31 
-32     pid_2 = \-1;
-33     if (pipe(fd) == \-1)
-34         ft_perror("pipe");
-35     pid_1 = execute_child(node\->left, data, fd, 0);
-36     if (node\->right != NULL)
-37         pid_2 = execute_child(node\->right, data, fd, 1);
-38     else
-39     {
-40         close(fd[1]);
-41         data\->temp_fd = fd[0];
-42         return (WAIT_NEXT_COMMAND);
-43     }
-44     close_fds(fd);
-45     if (pid_1 > 0)
-46         waitpid(pid_1, &status, 0);
-47     if (node\->right != NULL && pid_2 > 0)
-48         waitpid(pid_2, &status, 0);
-49     return (WEXITSTATUS(status));
-50 }
+36 {
+37     int     fd[2];
+38     pid_t   pid_1;
+39     pid_t   pid_2;
+40     int     status;
+41 
+42     pid_2 = \-1;
+43     if (pipe(fd) == \-1)
+44         ft_perror("pipe");
+45     pid_1 = execute_child(node\->left, data, fd, 0);
+46     if (node\->right != NULL)
+47         pid_2 = execute_child(node\->right, data, fd, 1);
+48     else
+49     {
+50         close(fd[1]);
+51         data\->temp_fd = fd[0];
+52         return (WAIT_NEXT_COMMAND);
+53     }
+54     close_fds(fd);
+55     if (pid_1 > 0)
+56         waitpid(pid_1, &status, 0);
+57     if (node\->right != NULL && pid_2 > 0)
+58         waitpid(pid_2, &status, 0);
+59     return (WEXITSTATUS(status));
+60 }
 .PP
 .fi
 

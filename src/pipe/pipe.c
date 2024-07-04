@@ -22,6 +22,16 @@ int		builtin_pipe(t_ast *node, t_minishell_data *data);
 pid_t	execute_child(t_ast *node, t_minishell_data *data, \
 			int fd[2], int direction);
 
+/**
+- @brief execute pipe when | is found in the command
+- 
+- @param node current node in the AST
+- @param data minishell structure data
+- @return int return status:
+- 				- 0: success
+- 				- 1: error
+ */
+
 int	builtin_pipe(t_ast *node, t_minishell_data *data)
 {
 	int		fd[2];
@@ -48,6 +58,15 @@ int	builtin_pipe(t_ast *node, t_minishell_data *data)
 		waitpid(pid_2, &status, 0);
 	return (WEXITSTATUS(status));
 }
+
+/**
+- @brief execute child process in the pipe context
+- @param node current node in the AST
+- @param data minishell structure data
+- @param fd file descriptors
+- @param direction direction of the pipe if 0 - node_left, if 1 - node_right
+- @return pid_t return the process id
+ */
 
 pid_t	execute_child(t_ast *node, t_minishell_data *data, \
 			int fd[2], int direction)

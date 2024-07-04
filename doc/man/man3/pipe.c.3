@@ -27,42 +27,73 @@
 .ti -1c
 .RI "int \fBbuiltin_pipe\fP (\fBt_ast\fP *node, \fBt_minishell_data\fP *data)"
 .br
+.RI "execute pipe when | is found in the command "
 .ti -1c
 .RI "pid_t \fBexecute_child\fP (\fBt_ast\fP *node, \fBt_minishell_data\fP *data, int fd[2], int direction)"
 .br
+.RI "execute child process in the pipe context "
 .in -1c
 .SH "Function Documentation"
 .PP 
 .SS "int builtin_pipe (\fBt_ast\fP * node, \fBt_minishell_data\fP * data)"
 
 .PP
-Definition at line \fB25\fP of file \fBpipe\&.c\fP\&.
+execute pipe when | is found in the command --
+.IP "\(bu" 2
+\fBParameters\fP
+.RS 4
+\fInode\fP current node in the AST
+.RE
+.PP
+
+.IP "\(bu" 2
+\fBParameters\fP
+.RS 4
+\fIdata\fP minishell structure data
+.RE
+.PP
+
+.IP "\(bu" 2
+\fBReturns\fP
+.RS 4
+int return status:
+.RE
+.PP
+
+.IP "\(bu" 2
+- 0: success
+.IP "\(bu" 2
+- 1: error 
+.PP
+
+.PP
+Definition at line \fB35\fP of file \fBpipe\&.c\fP\&.
 .nf
-26 {
-27     int     fd[2];
-28     pid_t   pid_1;
-29     pid_t   pid_2;
-30     int     status;
-31 
-32     pid_2 = \-1;
-33     if (pipe(fd) == \-1)
-34         ft_perror("pipe");
-35     pid_1 = execute_child(node\->left, data, fd, 0);
-36     if (node\->right != NULL)
-37         pid_2 = execute_child(node\->right, data, fd, 1);
-38     else
-39     {
-40         close(fd[1]);
-41         data\->temp_fd = fd[0];
-42         return (WAIT_NEXT_COMMAND);
-43     }
-44     close_fds(fd);
-45     if (pid_1 > 0)
-46         waitpid(pid_1, &status, 0);
-47     if (node\->right != NULL && pid_2 > 0)
-48         waitpid(pid_2, &status, 0);
-49     return (WEXITSTATUS(status));
-50 }
+36 {
+37     int     fd[2];
+38     pid_t   pid_1;
+39     pid_t   pid_2;
+40     int     status;
+41 
+42     pid_2 = \-1;
+43     if (pipe(fd) == \-1)
+44         ft_perror("pipe");
+45     pid_1 = execute_child(node\->left, data, fd, 0);
+46     if (node\->right != NULL)
+47         pid_2 = execute_child(node\->right, data, fd, 1);
+48     else
+49     {
+50         close(fd[1]);
+51         data\->temp_fd = fd[0];
+52         return (WAIT_NEXT_COMMAND);
+53     }
+54     close_fds(fd);
+55     if (pid_1 > 0)
+56         waitpid(pid_1, &status, 0);
+57     if (node\->right != NULL && pid_2 > 0)
+58         waitpid(pid_2, &status, 0);
+59     return (WEXITSTATUS(status));
+60 }
 .PP
 .fi
 
@@ -73,26 +104,58 @@ Referenced by \fBexecute_ast()\fP\&.
 .SS "pid_t execute_child (\fBt_ast\fP * node, \fBt_minishell_data\fP * data, int fd[2], int direction)"
 
 .PP
-Definition at line \fB52\fP of file \fBpipe\&.c\fP\&.
+execute child process in the pipe context -- 
+.PP
+\fBParameters\fP
+.RS 4
+\fInode\fP current node in the AST
+.IP "\(bu" 2
+
+.PP
+.br
+\fIdata\fP minishell structure data
+.IP "\(bu" 2
+
+.PP
+.br
+\fIfd\fP file descriptors
+.IP "\(bu" 2
+
+.PP
+.br
+\fIdirection\fP direction of the pipe if 0 - node_left, if 1 - node_right
+.IP "\(bu" 2
+
+.PP
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+pid_t return the process id 
+.RE
+.PP
+
+.PP
+Definition at line \fB71\fP of file \fBpipe\&.c\fP\&.
 .nf
-54 {
-55     pid_t   pid;
-56 
-57     pid = fork();
-58     if (pid == \-1)
-59         ft_perror("fork");
-60     if (pid == 0)
-61     {
-62         if (direction == 0)
-63             dup2(fd[1], STDOUT_FILENO);
-64         else
-65             dup2(fd[0], STDIN_FILENO);
-66         close_fds(fd);
-67         execute_ast(node, data);
-68         exit(EXIT_SUCCESS);
-69     }
-70     return (pid);
-71 }
+73 {
+74     pid_t   pid;
+75 
+76     pid = fork();
+77     if (pid == \-1)
+78         ft_perror("fork");
+79     if (pid == 0)
+80     {
+81         if (direction == 0)
+82             dup2(fd[1], STDOUT_FILENO);
+83         else
+84             dup2(fd[0], STDIN_FILENO);
+85         close_fds(fd);
+86         execute_ast(node, data);
+87         exit(EXIT_SUCCESS);
+88     }
+89     return (pid);
+90 }
 .PP
 .fi
 

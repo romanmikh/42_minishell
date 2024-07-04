@@ -159,7 +159,7 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/dimadem/Documents/GitHub/minishell/inc/pipe.h" line="19" column="10" bodyfile="/Users/dimadem/Documents/GitHub/minishell/inc/pipe.h" bodystart="19" bodyend="-1"/>
-        <referencedby refid="pipe_8h_1a7947b63271b47934f419fe6d217bf8df" compoundref="pipe_8c" startline="25" endline="50">builtin_pipe</referencedby>
+        <referencedby refid="pipe_8h_1a7947b63271b47934f419fe6d217bf8df" compoundref="pipe_8c" startline="35" endline="60">builtin_pipe</referencedby>
         <referencedby refid="main_8c_1aa58ce868c4a816bbe301da3bd43f1157" compoundref="main_8c" startline="18" endline="27">status_handler</referencedby>
       </memberdef>
     </sectiondef>
@@ -178,20 +178,49 @@
           <declname>data</declname>
         </param>
         <briefdescription>
+<para>execute pipe when | is found in the command </para>
         </briefdescription>
         <detaileddescription>
+<para>--<itemizedlist>
+<listitem><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>node</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>current node in the AST</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+</listitem><listitem><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>minishell structure data</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+</listitem><listitem><para><simplesect kind="return"><para>int return status:</para>
+</simplesect>
+</para>
+</listitem><listitem><para>- 0: success</para>
+</listitem><listitem><para>- 1: error </para>
+</listitem></itemizedlist>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/dimadem/Documents/GitHub/minishell/inc/pipe.h" line="22" column="4" bodyfile="/Users/dimadem/Documents/GitHub/minishell/src/pipe/pipe.c" bodystart="25" bodyend="50" declfile="/Users/dimadem/Documents/GitHub/minishell/inc/pipe.h" declline="22" declcolumn="4"/>
-        <references refid="execute_8h_1a3efc1daab192679556df183345e1c83d" compoundref="execute_2utils_8c" startline="65" endline="69">close_fds</references>
-        <references refid="pipe_8c_1a3a1c19716357baba879b799300b3c077" compoundref="pipe_8c" startline="52" endline="71">execute_child</references>
-        <references refid="execute_8h_1aedc550f2251badad69cf4b6dfda183ef" compoundref="execute_2utils_8c" startline="59" endline="63">ft_perror</references>
+        <location file="/Users/dimadem/Documents/GitHub/minishell/inc/pipe.h" line="22" column="4" bodyfile="/Users/dimadem/Documents/GitHub/minishell/src/pipe/pipe.c" bodystart="35" bodyend="60" declfile="/Users/dimadem/Documents/GitHub/minishell/inc/pipe.h" declline="22" declcolumn="4"/>
+        <references refid="execute_8h_1a3efc1daab192679556df183345e1c83d" compoundref="execute_2utils_8c" startline="93" endline="97">close_fds</references>
+        <references refid="pipe_8c_1a3a1c19716357baba879b799300b3c077" compoundref="pipe_8c" startline="71" endline="90">execute_child</references>
+        <references refid="execute_8h_1aedc550f2251badad69cf4b6dfda183ef" compoundref="execute_2utils_8c" startline="81" endline="85">ft_perror</references>
         <references refid="structs__ast_1ac3be51aa6a7ae13bd16b6ad0c7ac843c" compoundref="tokens_8h" startline="52">s_ast::left</references>
         <references refid="structs__ast_1ac2c9513b20e9351e45d9bc6361095f7b" compoundref="tokens_8h" startline="53">s_ast::right</references>
         <references refid="structs__minishell__data_1a880c653419f6a3adb22024e5bb05c69b" compoundref="shell_8h" startline="23">s_minishell_data::temp_fd</references>
         <references refid="pipe_8h_1a816f42487cd607fbdb7df660a0d913fc" compoundref="pipe_8h" startline="19">WAIT_NEXT_COMMAND</references>
-        <referencedby refid="execute_8h_1ace4c3a2246919797e40140123d79596a" compoundref="execute_8c" startline="31" endline="72">execute_ast</referencedby>
+        <referencedby refid="execute_8h_1ace4c3a2246919797e40140123d79596a" compoundref="execute_8c" startline="41" endline="82">execute_ast</referencedby>
       </memberdef>
     </sectiondef>
     <briefdescription>

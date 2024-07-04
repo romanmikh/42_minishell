@@ -10,6 +10,16 @@
 	wc -l < input.txt - not work (:bad address error)
 */
 
+/**
+- @brief redirection input in context of executing AST
+- 
+- @param node current node in the AST
+- @param data minishell structure data
+- @return int return status:
+- 				- 0: success
+- 				- 1: error
+ */
+
 int	 redirect_in(t_ast *node, t_minishell_data *data)
 {
 	pid_t	pid;
