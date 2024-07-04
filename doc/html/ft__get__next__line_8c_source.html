@@ -100,7 +100,7 @@ $(function(){initNavTree('ft__get__next__line_8c_source.html',''); initResizable
   <div class="headertitle"><div class="title">ft_get_next_line.c</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="ft__get__next__line_8c.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &quot;libft.h&quot;</span></div>
+<a href="ft__get__next__line_8c.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &quot;<a class="code" href="libft_8h.html">libft.h</a>&quot;</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="keywordtype">char</span>        *<a class="code hl_function" href="ft__get__next__line_8c.html#a5feb28b63e00d9f45e4887ee15da4ab8">ft_get_next_line</a>(<span class="keywordtype">int</span> fd);</div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="keyword">static</span> <span class="keywordtype">char</span> *<a class="code hl_function" href="ft__get__next__line_8c.html#a33d78aafe6a0e75e4fdfe3606cbd9348">extract_line</a>(<span class="keywordtype">char</span> **saved);</div>
@@ -108,15 +108,15 @@ $(function(){initNavTree('ft__get__next__line_8c_source.html',''); initResizable
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="keywordtype">char</span>        *<a class="code hl_function" href="ft__get__next__line_8c.html#accf11845776c5585dc691f37a0f60b8f">ft_strjoin_gnl</a>(<span class="keywordtype">char</span> *s1, <span class="keywordtype">char</span> <span class="keyword">const</span> *s2);</div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
 <div class="foldopen" id="foldopen00008" data-start="{" data-end="}">
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="ft__get__next__line_8c.html#a5feb28b63e00d9f45e4887ee15da4ab8">    8</a></span><span class="keywordtype">char</span>    *<a class="code hl_function" href="ft__get__next__line_8c.html#a5feb28b63e00d9f45e4887ee15da4ab8">ft_get_next_line</a>(<span class="keywordtype">int</span> fd)</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="libft_8h.html#a5feb28b63e00d9f45e4887ee15da4ab8">    8</a></span><span class="keywordtype">char</span>    *<a class="code hl_function" href="ft__get__next__line_8c.html#a5feb28b63e00d9f45e4887ee15da4ab8">ft_get_next_line</a>(<span class="keywordtype">int</span> fd)</div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>{</div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    <span class="keyword">static</span> <span class="keywordtype">char</span> *saved = NULL;</div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    <span class="keywordtype">char</span>        *line;</div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    <span class="keywordtype">char</span>        *buf;</div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    <span class="keywordflow">if</span> (fd &lt; 0 || BUFFER_SIZE &lt; 1 || fd &gt; 4095)</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    <span class="keywordflow">if</span> (fd &lt; 0 || <a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">BUFFER_SIZE &lt; 1 || fd &gt;</a> 4095)</div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>        <span class="keywordflow">return</span> (NULL);</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    buf = malloc(BUFFER_SIZE + 1);</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    buf = malloc(<a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">BUFFER_SIZE</a> + 1);</div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <span class="keywordflow">if</span> (!buf)</div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>        <span class="keywordflow">return</span> (NULL);</div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    saved = <a class="code hl_function" href="ft__get__next__line_8c.html#aa5a7db94bcb5970b93bff4df02b52108">read_from_fd</a>(fd, saved, buf);</div>
@@ -146,18 +146,18 @@ $(function(){initNavTree('ft__get__next__line_8c_source.html',''); initResizable
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <span class="keywordflow">if</span> (!s2)</div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>        <span class="keywordflow">return</span> (NULL);</div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <span class="keywordflow">if</span> (s1)</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        s1_len = ft_strlen(s1);</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        s1_len = <a class="code hl_function" href="libft_8h.html#abbb8c6c4ed85d892e7f1509f65f5768a">ft_strlen</a>(s1);</div>
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <span class="keywordflow">else</span></div>
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        s1_len = 0;</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    s2_len = ft_strlen(s2);</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    s2_len = <a class="code hl_function" href="libft_8h.html#abbb8c6c4ed85d892e7f1509f65f5768a">ft_strlen</a>(s2);</div>
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    str = (<span class="keywordtype">char</span> *)malloc(s1_len + s2_len + 1);</div>
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    <span class="keywordflow">if</span> (!str)</div>
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        <span class="keywordflow">return</span> (NULL);</div>
 <div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    <span class="keywordflow">if</span> (s1)</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        ft_strlcpy(str, s1, s1_len + 1);</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        <a class="code hl_function" href="libft_8h.html#a95de924e4140ae426bf2e05acfb5fe4f">ft_strlcpy</a>(str, s1, s1_len + 1);</div>
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    <span class="keywordflow">else</span></div>
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>        str[0] = <span class="charliteral">&#39;\0&#39;</span>;</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    ft_memcpy(str + s1_len, s2, s2_len + 1);</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    <a class="code hl_function" href="libft_8h.html#a41a6f05af30cf85ff63a08e383826322">ft_memcpy</a>(str + s1_len, s2, s2_len + 1);</div>
 <div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    <span class="keywordflow">return</span> (str);</div>
 <div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>}</div>
 </div>
@@ -168,16 +168,16 @@ $(function(){initNavTree('ft__get__next__line_8c_source.html',''); initResizable
 <div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    <span class="keywordtype">int</span>     chars_read;</div>
 <div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    <span class="keywordtype">char</span>    *temp;</div>
 <div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    chars_read = read(fd, buf, BUFFER_SIZE);</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    chars_read = read(fd, buf, <a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">BUFFER_SIZE</a>);</div>
 <div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    <span class="keywordflow">while</span> (chars_read &gt; 0)</div>
 <div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    {</div>
 <div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>        buf[chars_read] = <span class="charliteral">&#39;\0&#39;</span>;</div>
 <div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>        temp = saved;</div>
 <div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>        saved = <a class="code hl_function" href="ft__get__next__line_8c.html#accf11845776c5585dc691f37a0f60b8f">ft_strjoin_gnl</a>(saved, buf);</div>
 <div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>        free(temp);</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>        <span class="keywordflow">if</span> (ft_strchr(saved, <span class="charliteral">&#39;\n&#39;</span>))</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>        <span class="keywordflow">if</span> (<a class="code hl_function" href="libft_8h.html#aa6d0c2d180f32ee585485e1a1ce3d55d">ft_strchr</a>(saved, <span class="charliteral">&#39;\n&#39;</span>))</div>
 <div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>            break ;</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>        chars_read = read(fd, buf, BUFFER_SIZE);</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>        chars_read = read(fd, buf, <a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">BUFFER_SIZE</a>);</div>
 <div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    }</div>
 <div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    free(buf);</div>
 <div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    <span class="keywordflow">if</span> (chars_read &lt; 0)</div>
@@ -197,18 +197,18 @@ $(function(){initNavTree('ft__get__next__line_8c_source.html',''); initResizable
 <div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    <span class="keywordtype">char</span>    *line;</div>
 <div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    <span class="keywordtype">char</span>    *temp;</div>
 <div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span> </div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    new_line_ptr = ft_strchr(*saved, <span class="charliteral">&#39;\n&#39;</span>);</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    new_line_ptr = <a class="code hl_function" href="libft_8h.html#aa6d0c2d180f32ee585485e1a1ce3d55d">ft_strchr</a>(*saved, <span class="charliteral">&#39;\n&#39;</span>);</div>
 <div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    <span class="keywordflow">if</span> (new_line_ptr)</div>
 <div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    {</div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>        line = ft_substr(*saved, 0, new_line_ptr - *saved + 1);</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>        line = <a class="code hl_function" href="libft_8h.html#a78c402cbf3d55b1374693c3b7d34f71d">ft_substr</a>(*saved, 0, new_line_ptr - *saved + 1);</div>
 <div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>        temp = *saved;</div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>        *saved = ft_strdup(new_line_ptr + 1);</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>        *saved = <a class="code hl_function" href="libft_8h.html#aebe73f27c70c56ac5053f860ef5436c9">ft_strdup</a>(new_line_ptr + 1);</div>
 <div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>        free(temp);</div>
 <div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>        <span class="keywordflow">return</span> (line);</div>
 <div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    }</div>
 <div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    <span class="keywordflow">if</span> (**saved)</div>
 <div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    {</div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>        line = ft_strdup(*saved);</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>        line = <a class="code hl_function" href="libft_8h.html#aebe73f27c70c56ac5053f860ef5436c9">ft_strdup</a>(*saved);</div>
 <div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>        free(*saved);</div>
 <div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>        *saved = NULL;</div>
 <div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>        <span class="keywordflow">return</span> (line);</div>
@@ -220,6 +220,14 @@ $(function(){initNavTree('ft__get__next__line_8c_source.html',''); initResizable
 <div class="ttc" id="aft__get__next__line_8c_html_a5feb28b63e00d9f45e4887ee15da4ab8"><div class="ttname"><a href="ft__get__next__line_8c.html#a5feb28b63e00d9f45e4887ee15da4ab8">ft_get_next_line</a></div><div class="ttdeci">char * ft_get_next_line(int fd)</div><div class="ttdef"><b>Definition</b> <a href="#l00008">ft_get_next_line.c:8</a></div></div>
 <div class="ttc" id="aft__get__next__line_8c_html_aa5a7db94bcb5970b93bff4df02b52108"><div class="ttname"><a href="ft__get__next__line_8c.html#aa5a7db94bcb5970b93bff4df02b52108">read_from_fd</a></div><div class="ttdeci">static char * read_from_fd(int fd, char *saved, char *buf)</div><div class="ttdef"><b>Definition</b> <a href="#l00059">ft_get_next_line.c:59</a></div></div>
 <div class="ttc" id="aft__get__next__line_8c_html_accf11845776c5585dc691f37a0f60b8f"><div class="ttname"><a href="ft__get__next__line_8c.html#accf11845776c5585dc691f37a0f60b8f">ft_strjoin_gnl</a></div><div class="ttdeci">char * ft_strjoin_gnl(char *s1, char const *s2)</div><div class="ttdef"><b>Definition</b> <a href="#l00035">ft_get_next_line.c:35</a></div></div>
+<div class="ttc" id="alibft_8h_html"><div class="ttname"><a href="libft_8h.html">libft.h</a></div></div>
+<div class="ttc" id="alibft_8h_html_a41a6f05af30cf85ff63a08e383826322"><div class="ttname"><a href="libft_8h.html#a41a6f05af30cf85ff63a08e383826322">ft_memcpy</a></div><div class="ttdeci">void * ft_memcpy(void *dest, const void *src, size_t n)</div><div class="ttdef"><b>Definition</b> <a href="ft__memcpy_8c_source.html#l00022">ft_memcpy.c:22</a></div></div>
+<div class="ttc" id="alibft_8h_html_a6b20d41d6252e9871430c242cb1a56e7"><div class="ttname"><a href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">BUFFER_SIZE</a></div><div class="ttdeci">#define BUFFER_SIZE</div><div class="ttdef"><b>Definition</b> <a href="libft_8h_source.html#l00025">libft.h:25</a></div></div>
+<div class="ttc" id="alibft_8h_html_a78c402cbf3d55b1374693c3b7d34f71d"><div class="ttname"><a href="libft_8h.html#a78c402cbf3d55b1374693c3b7d34f71d">ft_substr</a></div><div class="ttdeci">char * ft_substr(char const *s, unsigned int start, size_t len)</div><div class="ttdef"><b>Definition</b> <a href="ft__substr_8c_source.html#l00027">ft_substr.c:27</a></div></div>
+<div class="ttc" id="alibft_8h_html_a95de924e4140ae426bf2e05acfb5fe4f"><div class="ttname"><a href="libft_8h.html#a95de924e4140ae426bf2e05acfb5fe4f">ft_strlcpy</a></div><div class="ttdeci">size_t ft_strlcpy(char *dest, const char *src, size_t size)</div><div class="ttdef"><b>Definition</b> <a href="ft__strlcpy_8c_source.html#l00025">ft_strlcpy.c:25</a></div></div>
+<div class="ttc" id="alibft_8h_html_aa6d0c2d180f32ee585485e1a1ce3d55d"><div class="ttname"><a href="libft_8h.html#aa6d0c2d180f32ee585485e1a1ce3d55d">ft_strchr</a></div><div class="ttdeci">char * ft_strchr(const char *s, int c)</div><div class="ttdef"><b>Definition</b> <a href="ft__strchr_8c_source.html#l00025">ft_strchr.c:25</a></div></div>
+<div class="ttc" id="alibft_8h_html_abbb8c6c4ed85d892e7f1509f65f5768a"><div class="ttname"><a href="libft_8h.html#abbb8c6c4ed85d892e7f1509f65f5768a">ft_strlen</a></div><div class="ttdeci">size_t ft_strlen(const char *s)</div><div class="ttdef"><b>Definition</b> <a href="ft__strlen_8c_source.html#l00015">ft_strlen.c:15</a></div></div>
+<div class="ttc" id="alibft_8h_html_aebe73f27c70c56ac5053f860ef5436c9"><div class="ttname"><a href="libft_8h.html#aebe73f27c70c56ac5053f860ef5436c9">ft_strdup</a></div><div class="ttdeci">char * ft_strdup(const char *s)</div><div class="ttdef"><b>Definition</b> <a href="ft__strdup_8c_source.html#l00023">ft_strdup.c:23</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

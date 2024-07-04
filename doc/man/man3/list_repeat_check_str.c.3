@@ -1,0 +1,51 @@
+.TH "/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/list_repeat_check_str.c" 3 "Version 1" "maxishell" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/list_repeat_check_str.c
+.SH SYNOPSIS
+.br
+.PP
+\fR#include 'libft\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "int \fBlist_repeat_check_str\fP (char *a[], int size)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "int list_repeat_check_str (char * a[], int size)"
+
+.PP
+Definition at line \fB15\fP of file \fBlist_repeat_check_str\&.c\fP\&.
+.nf
+16 {
+17     int i;
+18     int j;
+19 
+20     i = 0;
+21     while (i < size \- 1)
+22     {
+23         j = i + 1;
+24         while (j < size)
+25         {
+26             if (ft_strncmp(a[i], a[j], size) == 0)
+27                 return (1);
+28             j++;
+29         }
+30         i++;
+31     }
+32     return (0);
+33 }
+.PP
+.fi
+
+.PP
+References \fBft_strncmp()\fP\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for maxishell from the source code\&.

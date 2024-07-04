@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.11.0" xml:lang="en-US">
+  <compounddef id="_r_e_a_d_m_e_8md" kind="file" language="Markdown">
+    <compoundname>README.md</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline><highlight class="normal">![image](https://github.com/dimadem/minishell/assets/50800563/01e0c354-b0f2-49de-a4ef-8194baca2a33)</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">![Norminette<sp/>workflow](https://github.com/dimadem/minishell/actions/workflows/norminette.yml/badge.svg)</highlight></codeline>
+<codeline><highlight class="normal">![Compilation<sp/>workflow](https://github.com/dimadem/minishell/actions/workflows/compile.yml/badge.svg)</highlight></codeline>
+<codeline><highlight class="normal">![Valgrind<sp/>workflow](https://github.com/dimadem/minishell/actions/workflows/valgrind.yml/badge.svg)</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">build/:<sp/>Directory<sp/>for<sp/>object<sp/>files<sp/>and<sp/>other<sp/>intermediate<sp/>build<sp/>artifacts.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">docs/:<sp/>Documentation<sp/>for<sp/>the<sp/>project.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">inc/:<sp/>Header<sp/>files<sp/>for<sp/>the<sp/>project,<sp/>defining<sp/>interfaces<sp/>for<sp/>different<sp/>modules.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>builtins.h:<sp/>Declarations<sp/>for<sp/>built-in<sp/>shell<sp/>commands.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>execute.h:<sp/>Declarations<sp/>for<sp/>command<sp/>execution<sp/>functions.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>parser.h:<sp/>Declarations<sp/>for<sp/>command-line<sp/>parsing<sp/>functions.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>pipe.h:<sp/>Declarations<sp/>for<sp/>piping<sp/>functions.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>redirection.h:<sp/>Declarations<sp/>for<sp/>redirection<sp/>functions.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>shell.h:<sp/>General<sp/>declarations<sp/>for<sp/>the<sp/>shell.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>tokens.h:<sp/>Declarations<sp/>for<sp/>parsing<sp/>functions.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">lib/:<sp/>Directory<sp/>for<sp/>third-party<sp/>libraries,<sp/>such<sp/>as<sp/>libft.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">src/:<sp/>Source<sp/>files<sp/>for<sp/>the<sp/>project,<sp/>organized<sp/>into<sp/>subdirectories<sp/>by<sp/>functionality.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>builtins/:<sp/>Implementation<sp/>of<sp/>built-in<sp/>shell<sp/>commands.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>execute/:<sp/>Implementation<sp/>of<sp/>command<sp/>execution<sp/>logic.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>parser/:<sp/>Implementation<sp/>of<sp/>command-line<sp/>parsing.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>pipe/:<sp/>Implementation<sp/>of<sp/>piping<sp/>between<sp/>commands.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>test/:<sp/>Tests</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>redirection/:<sp/>Implementation<sp/>of<sp/>input/output<sp/>redirection.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>utils/:<sp/>Implementation<sp/>of<sp/>auxiliary<sp/>functions.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>main.c:<sp/>Entry<sp/>point<sp/>of<sp/>the<sp/>shell<sp/>application.</highlight></codeline>
+    </programlisting>
+    <location file="/Users/dimadem/Documents/GitHub/minishell/README.md"/>
+  </compounddef>
+</doxygen>

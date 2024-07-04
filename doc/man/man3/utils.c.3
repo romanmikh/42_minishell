@@ -19,12 +19,12 @@
 
 .in +1c
 .ti -1c
-.RI "int \fBopen_file\fP (t_ast *node, char *direction)"
+.RI "int \fBopen_file\fP (\fBt_ast\fP *node, char *direction)"
 .br
 .in -1c
 .SH "Function Documentation"
 .PP 
-.SS "int open_file (t_ast * node, char * direction)"
+.SS "int open_file (\fBt_ast\fP * node, char * direction)"
 
 .PP
 Definition at line \fB10\fP of file \fButils\&.c\fP\&.
@@ -47,6 +47,8 @@ Definition at line \fB10\fP of file \fButils\&.c\fP\&.
 .PP
 .fi
 
+.PP
+References \fBs_ast::args\fP, and \fBft_strcmp()\fP\&.
 .PP
 Referenced by \fBexecute_redirect()\fP, and \fBredirect_in()\fP\&.
 .SH "Author"

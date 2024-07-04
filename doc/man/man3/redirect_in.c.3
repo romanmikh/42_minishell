@@ -21,12 +21,12 @@
 
 .in +1c
 .ti -1c
-.RI "int \fBredirect_in\fP (t_ast *node, t_minishell_data *data)"
+.RI "int \fBredirect_in\fP (\fBt_ast\fP *node, \fBt_minishell_data\fP *data)"
 .br
 .in -1c
 .SH "Function Documentation"
 .PP 
-.SS "int redirect_in (t_ast * node, t_minishell_data * data)"
+.SS "int redirect_in (\fBt_ast\fP * node, \fBt_minishell_data\fP * data)"
 
 .PP
 Definition at line \fB13\fP of file \fBredirect_in\&.c\fP\&.
@@ -52,7 +52,7 @@ Definition at line \fB13\fP of file \fBredirect_in\&.c\fP\&.
 .fi
 
 .PP
-References \fBexecute_ast()\fP, and \fBopen_file()\fP\&.
+References \fBexecute_ast()\fP, \fBs_minishell_data::exit_status\fP, \fBs_ast::left\fP, \fBopen_file()\fP, \fBs_ast::right\fP, and \fBs_minishell_data::temp_fd\fP\&.
 .PP
 Referenced by \fBexecute_ast()\fP\&.
 .SH "Author"

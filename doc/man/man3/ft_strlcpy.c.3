@@ -1,0 +1,51 @@
+.TH "/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_strlcpy.c" 3 "Version 1" "maxishell" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_strlcpy.c
+.SH SYNOPSIS
+.br
+.PP
+\fR#include 'libft\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "size_t \fBft_strlcpy\fP (char *dst, const char *src, size_t size)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "size_t ft_strlcpy (char * dst, const char * src, size_t size)"
+
+.PP
+Definition at line \fB25\fP of file \fBft_strlcpy\&.c\fP\&.
+.nf
+26 {
+27     char        *d;
+28     const char  *s;
+29     size_t      n;
+30 
+31     d = dst;
+32     s = src;
+33     n = size;
+34     if (n > 0)
+35     {
+36         while (\-\-n > 0 && *s != '\\0')
+37             *d++ = *s++;
+38         *d = '\\0';
+39     }
+40     while (*s != '\\0')
+41         s++;
+42     return (s \- src);
+43 }
+.PP
+.fi
+
+.PP
+Referenced by \fBft_strdup()\fP, \fBft_strjoin_gnl()\fP, and \fBft_strndup()\fP\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for maxishell from the source code\&.

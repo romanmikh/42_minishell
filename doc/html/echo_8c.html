@@ -102,18 +102,38 @@ $(function(){initNavTree('echo_8c.html',''); initResizable(true); });
   <div class="headertitle"><div class="title">echo.c File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;libft.h&quot;</code><br />
-<code>#include &quot;shell.h&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="libft_8h_source.html">libft.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="shell_8h_source.html">shell.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for echo.c:</div>
 <div class="dyncontent">
 <div class="center"><img src="echo_8c__incl.png" border="0" usemap="#a_2_users_2dimadem_2_documents_2_git_hub_2minishell_2src_2builtins_2echo_8c" alt=""/></div>
 <map name="a_2_users_2dimadem_2_documents_2_git_hub_2minishell_2src_2builtins_2echo_8c" id="a_2_users_2dimadem_2_documents_2_git_hub_2minishell_2src_2builtins_2echo_8c">
-<area shape="rect" title=" " alt="" coords="5,5,237,46"/>
-<area shape="rect" title=" " alt="" coords="54,94,108,120"/>
-<area shape="poly" title=" " alt="" coords="113,48,96,81,92,79,109,45"/>
-<area shape="rect" title=" " alt="" coords="131,94,191,120"/>
-<area shape="poly" title=" " alt="" coords="133,45,150,79,146,81,129,48"/>
+<area shape="rect" title=" " alt="" coords="364,5,595,46"/>
+<area shape="rect" href="libft_8h.html" title=" " alt="" coords="413,94,466,120"/>
+<area shape="poly" title=" " alt="" coords="472,48,455,81,450,79,467,45"/>
+<area shape="rect" href="shell_8h.html" title=" " alt="" coords="653,94,712,120"/>
+<area shape="poly" title=" " alt="" coords="531,44,639,86,637,91,529,49"/>
+<area shape="rect" title=" " alt="" coords="5,168,74,193"/>
+<area shape="poly" title=" " alt="" coords="413,115,277,135,89,170,88,164,277,130,412,109"/>
+<area shape="rect" title=" " alt="" coords="97,168,161,193"/>
+<area shape="poly" title=" " alt="" coords="413,117,176,170,175,165,412,111"/>
+<area shape="rect" title=" " alt="" coords="185,168,249,193"/>
+<area shape="poly" title=" " alt="" coords="413,119,265,167,263,162,411,114"/>
+<area shape="rect" title=" " alt="" coords="273,168,337,193"/>
+<area shape="poly" title=" " alt="" coords="418,123,342,162,340,158,415,118"/>
+<area shape="rect" title=" " alt="" coords="361,168,428,193"/>
+<area shape="poly" title=" " alt="" coords="434,121,412,156,408,153,430,118"/>
+<area shape="rect" title=" " alt="" coords="452,168,520,193"/>
+<area shape="poly" title=" " alt="" coords="449,118,472,153,468,156,445,121"/>
+<area shape="rect" title=" " alt="" coords="545,168,611,193"/>
+<area shape="poly" title=" " alt="" coords="464,118,542,158,540,162,462,123"/>
+<area shape="rect" title=" " alt="" coords="636,168,710,193"/>
+<area shape="poly" title=" " alt="" coords="467,114,621,161,620,166,466,119"/>
+<area shape="rect" title=" " alt="" coords="734,168,796,193"/>
+<area shape="poly" title=" " alt="" coords="467,111,719,164,718,170,466,116"/>
+<area shape="rect" href="env_8h.html" title=" " alt="" coords="819,168,871,193"/>
+<area shape="poly" title=" " alt="" coords="711,118,806,159,804,164,709,123"/>
 </map>
 </div>
 </div>
@@ -121,7 +141,7 @@ Include dependency graph for echo.c:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a9c4bf413cef22ef46427c4026734a97d" id="r_a9c4bf413cef22ef46427c4026734a97d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9c4bf413cef22ef46427c4026734a97d">builtin_echo</a> (t_minishell_data *data)</td></tr>
+<tr class="memitem:a9c4bf413cef22ef46427c4026734a97d" id="r_a9c4bf413cef22ef46427c4026734a97d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9c4bf413cef22ef46427c4026734a97d">builtin_echo</a> (<a class="el" href="shell_8h.html#a163dfbd200eaf940e5a56fd45345ff72">t_minishell_data</a> *data)</td></tr>
 <tr class="separator:a9c4bf413cef22ef46427c4026734a97d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
@@ -134,7 +154,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">int builtin_echo </td>
           <td>(</td>
-          <td class="paramtype">t_minishell_data *</td>          <td class="paramname"><span class="paramname"><em>data</em></span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="shell_8h.html#a163dfbd200eaf940e5a56fd45345ff72">t_minishell_data</a> *</td>          <td class="paramname"><span class="paramname"><em>data</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -146,24 +166,41 @@ Functions</h2></td></tr>
 <div class="line"><span class="lineno">   24</span>    <span class="keywordtype">int</span> i;</div>
 <div class="line"><span class="lineno">   25</span> </div>
 <div class="line"><span class="lineno">   26</span>    newline = 1;</div>
-<div class="line"><span class="lineno">   27</span>    <span class="keywordflow">if</span> (ft_strcmp(data-&gt;args[1], <span class="stringliteral">&quot;-n&quot;</span>) == 0)</div>
+<div class="line"><span class="lineno">   27</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="libft_8h.html#a1f2ff2312e5994560c9537cd9173be94">ft_strcmp</a>(data-&gt;<a class="code hl_variable" href="structs__minishell__data.html#aeb4af268850af7d0f6d0c64f2bfefdea">args</a>[1], <span class="stringliteral">&quot;-n&quot;</span>) == 0)</div>
 <div class="line"><span class="lineno">   28</span>    {</div>
 <div class="line"><span class="lineno">   29</span>        newline = 0;</div>
-<div class="line"><span class="lineno">   30</span>        data-&gt;args++;</div>
+<div class="line"><span class="lineno">   30</span>        data-&gt;<a class="code hl_variable" href="structs__minishell__data.html#aeb4af268850af7d0f6d0c64f2bfefdea">args</a>++;</div>
 <div class="line"><span class="lineno">   31</span>    }</div>
 <div class="line"><span class="lineno">   32</span>    i = 0;</div>
-<div class="line"><span class="lineno">   33</span>    <span class="keywordflow">while</span> (data-&gt;args[++i])</div>
+<div class="line"><span class="lineno">   33</span>    <span class="keywordflow">while</span> (data-&gt;<a class="code hl_variable" href="structs__minishell__data.html#aeb4af268850af7d0f6d0c64f2bfefdea">args</a>[++i])</div>
 <div class="line"><span class="lineno">   34</span>    {</div>
-<div class="line"><span class="lineno">   35</span>        write(1, data-&gt;args[i], ft_strlen(data-&gt;args[i]));</div>
-<div class="line"><span class="lineno">   36</span>        <span class="keywordflow">if</span> (data-&gt;args[i + 1])</div>
+<div class="line"><span class="lineno">   35</span>        write(1, data-&gt;<a class="code hl_variable" href="structs__minishell__data.html#aeb4af268850af7d0f6d0c64f2bfefdea">args</a>[i], <a class="code hl_function" href="libft_8h.html#abbb8c6c4ed85d892e7f1509f65f5768a">ft_strlen</a>(data-&gt;<a class="code hl_variable" href="structs__minishell__data.html#aeb4af268850af7d0f6d0c64f2bfefdea">args</a>[i]));</div>
+<div class="line"><span class="lineno">   36</span>        <span class="keywordflow">if</span> (data-&gt;<a class="code hl_variable" href="structs__minishell__data.html#aeb4af268850af7d0f6d0c64f2bfefdea">args</a>[i + 1])</div>
 <div class="line"><span class="lineno">   37</span>            write(1, <span class="stringliteral">&quot; &quot;</span>, 1);</div>
 <div class="line"><span class="lineno">   38</span>    }</div>
 <div class="line"><span class="lineno">   39</span>    <span class="keywordflow">if</span> (newline)</div>
 <div class="line"><span class="lineno">   40</span>        write(1, <span class="stringliteral">&quot;\n&quot;</span>, 1);</div>
 <div class="line"><span class="lineno">   41</span>    <span class="keywordflow">return</span> (0);</div>
 <div class="line"><span class="lineno">   42</span>}</div>
+<div class="ttc" id="alibft_8h_html_a1f2ff2312e5994560c9537cd9173be94"><div class="ttname"><a href="libft_8h.html#a1f2ff2312e5994560c9537cd9173be94">ft_strcmp</a></div><div class="ttdeci">int ft_strcmp(const char *s1, const char *s2)</div><div class="ttdef"><b>Definition</b> <a href="ft__strcmp_8c_source.html#l00024">ft_strcmp.c:24</a></div></div>
+<div class="ttc" id="alibft_8h_html_abbb8c6c4ed85d892e7f1509f65f5768a"><div class="ttname"><a href="libft_8h.html#abbb8c6c4ed85d892e7f1509f65f5768a">ft_strlen</a></div><div class="ttdeci">size_t ft_strlen(const char *s)</div><div class="ttdef"><b>Definition</b> <a href="ft__strlen_8c_source.html#l00015">ft_strlen.c:15</a></div></div>
+<div class="ttc" id="astructs__minishell__data_html_aeb4af268850af7d0f6d0c64f2bfefdea"><div class="ttname"><a href="structs__minishell__data.html#aeb4af268850af7d0f6d0c64f2bfefdea">s_minishell_data::args</a></div><div class="ttdeci">char ** args</div><div class="ttdef"><b>Definition</b> <a href="shell_8h_source.html#l00020">shell.h:20</a></div></div>
 </div><!-- fragment -->
+<p class="reference">References <a class="el" href="shell_8h_source.html#l00020">s_minishell_data::args</a>, <a class="el" href="ft__strcmp_8c_source.html#l00024">ft_strcmp()</a>, and <a class="el" href="ft__strlen_8c_source.html#l00015">ft_strlen()</a>.</p>
+
 <p class="reference">Referenced by <a class="el" href="execute_8c_source.html#l00074">execute()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="echo_8c_a9c4bf413cef22ef46427c4026734a97d_cgraph.png" border="0" usemap="#aecho_8c_a9c4bf413cef22ef46427c4026734a97d_cgraph" alt=""/></div>
+<map name="aecho_8c_a9c4bf413cef22ef46427c4026734a97d_cgraph" id="aecho_8c_a9c4bf413cef22ef46427c4026734a97d_cgraph">
+<area shape="rect" title=" " alt="" coords="5,31,96,56"/>
+<area shape="rect" href="ft__strcmp_8c.html#a1f2ff2312e5994560c9537cd9173be94" title=" " alt="" coords="144,5,220,31"/>
+<area shape="poly" title=" " alt="" coords="96,32,128,26,129,31,97,37"/>
+<area shape="rect" href="ft__strlen_8c.html#abbb8c6c4ed85d892e7f1509f65f5768a" title=" " alt="" coords="148,55,216,80"/>
+<area shape="poly" title=" " alt="" coords="97,49,133,56,132,61,96,54"/>
+</map>
+</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">

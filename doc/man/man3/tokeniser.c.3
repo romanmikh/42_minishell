@@ -15,24 +15,24 @@
 
 .in +1c
 .ti -1c
-.RI "void \fBhandle_special_chars\fP (char **str, t_token **tokens)"
+.RI "void \fBhandle_special_chars\fP (char **str, \fBt_token\fP **tokens)"
 .br
 .ti -1c
-.RI "void \fBappend_phrase_if_valid\fP (char **start, char **str, t_token **tokens)"
+.RI "void \fBappend_phrase_if_valid\fP (char **start, char **str, \fBt_token\fP **tokens)"
 .br
 .ti -1c
-.RI "void \fBhandle_phrase\fP (char **str, t_token **tokens)"
+.RI "void \fBhandle_phrase\fP (char **str, \fBt_token\fP **tokens)"
 .br
 .ti -1c
-.RI "void \fBprint_tokens\fP (t_token *tokens)"
+.RI "void \fBprint_tokens\fP (\fBt_token\fP *tokens)"
 .br
 .ti -1c
-.RI "t_token * \fBtokenise\fP (char *str)"
+.RI "\fBt_token\fP * \fBtokenise\fP (char *str)"
 .br
 .in -1c
 .SH "Function Documentation"
 .PP 
-.SS "void append_phrase_if_valid (char ** start, char ** str, t_token ** tokens)"
+.SS "void append_phrase_if_valid (char ** start, char ** str, \fBt_token\fP ** tokens)"
 
 .PP
 Definition at line \fB48\fP of file \fBtokeniser\&.c\fP\&.
@@ -56,10 +56,10 @@ Definition at line \fB48\fP of file \fBtokeniser\&.c\fP\&.
 .fi
 
 .PP
-References \fBappend_token()\fP, and \fBnew_token()\fP\&.
+References \fBappend_token()\fP, \fBft_printf()\fP, \fBft_strndup()\fP, \fBnew_token()\fP, and \fBPHRASE\fP\&.
 .PP
 Referenced by \fBhandle_phrase()\fP\&.
-.SS "void handle_phrase (char ** str, t_token ** tokens)"
+.SS "void handle_phrase (char ** str, \fBt_token\fP ** tokens)"
 
 .PP
 Definition at line \fB65\fP of file \fBtokeniser\&.c\fP\&.
@@ -91,10 +91,10 @@ Definition at line \fB65\fP of file \fBtokeniser\&.c\fP\&.
 .fi
 
 .PP
-References \fBappend_phrase_if_valid()\fP\&.
+References \fBappend_phrase_if_valid()\fP, and \fBft_strchr()\fP\&.
 .PP
 Referenced by \fBtokenise()\fP\&.
-.SS "void handle_special_chars (char ** str, t_token ** tokens)"
+.SS "void handle_special_chars (char ** str, \fBt_token\fP ** tokens)"
 
 .PP
 Definition at line \fB21\fP of file \fBtokeniser\&.c\fP\&.
@@ -128,10 +128,10 @@ Definition at line \fB21\fP of file \fBtokeniser\&.c\fP\&.
 .fi
 
 .PP
-References \fBappend_token()\fP, and \fBnew_token()\fP\&.
+References \fBappend_token()\fP, \fBnew_token()\fP, \fBPIPE\fP, \fBREDIR_APPEND\fP, \fBREDIR_HEREDOC\fP, \fBREDIR_IN\fP, and \fBREDIR_OUT\fP\&.
 .PP
 Referenced by \fBtokenise()\fP\&.
-.SS "void print_tokens (t_token * tokens)"
+.SS "void print_tokens (\fBt_token\fP * tokens)"
 
 .PP
 Definition at line \fB90\fP of file \fBtokeniser\&.c\fP\&.
@@ -152,7 +152,9 @@ Definition at line \fB90\fP of file \fBtokeniser\&.c\fP\&.
 .PP
 .fi
 
-.SS "t_token * tokenise (char * str)"
+.PP
+References \fBs_token::data\fP, and \fBs_token::next\fP\&.
+.SS "\fBt_token\fP * tokenise (char * str)"
 
 .PP
 Definition at line \fB105\fP of file \fBtokeniser\&.c\fP\&.
@@ -176,7 +178,7 @@ Definition at line \fB105\fP of file \fBtokeniser\&.c\fP\&.
 .fi
 
 .PP
-References \fBhandle_phrase()\fP, and \fBhandle_special_chars()\fP\&.
+References \fBft_strchr()\fP, \fBhandle_phrase()\fP, and \fBhandle_special_chars()\fP\&.
 .PP
 Referenced by \fBmain_loop()\fP\&.
 .SH "Author"

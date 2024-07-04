@@ -2,16 +2,106 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.11.0" xml:lang="en-US">
   <compounddef id="input__checker_8c" kind="file" language="C++">
     <compoundname>input_checker.c</compoundname>
-    <includes local="yes">tokens.h</includes>
+    <includes refid="tokens_8h" local="yes">tokens.h</includes>
     <incdepgraph>
+      <node id="18">
+        <label>env.h</label>
+        <link refid="env_8h"/>
+      </node>
+      <node id="17">
+        <label>shell.h</label>
+        <link refid="shell_8h"/>
+        <childnode refid="18" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>tokens.h</label>
+        <link refid="tokens_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>../lib/libft/inc/libft.h</label>
+        <link refid="libft_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
       <node id="1">
         <label>/Users/dimadem/Documents/GitHub/minishell/src/parser/input_checker.c</label>
         <link refid="input__checker_8c"/>
         <childnode refid="2" relation="include">
         </childnode>
       </node>
-      <node id="2">
-        <label>tokens.h</label>
+      <node id="7">
+        <label>limits.h</label>
+      </node>
+      <node id="12">
+        <label>math.h</label>
+      </node>
+      <node id="16">
+        <label>pwd.h</label>
+      </node>
+      <node id="15">
+        <label>readline/history.h</label>
+      </node>
+      <node id="14">
+        <label>readline/readline.h</label>
+      </node>
+      <node id="10">
+        <label>signal.h</label>
+      </node>
+      <node id="9">
+        <label>stdarg.h</label>
+      </node>
+      <node id="11">
+        <label>stdbool.h</label>
+      </node>
+      <node id="4">
+        <label>stddef.h</label>
+      </node>
+      <node id="6">
+        <label>stdint.h</label>
+      </node>
+      <node id="13">
+        <label>stdio.h</label>
+      </node>
+      <node id="5">
+        <label>stdlib.h</label>
+      </node>
+      <node id="8">
+        <label>unistd.h</label>
       </node>
     </incdepgraph>
     <sectiondef kind="func">
@@ -43,6 +133,7 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/dimadem/Documents/GitHub/minishell/src/parser/input_checker.c" line="15" column="4" bodyfile="/Users/dimadem/Documents/GitHub/minishell/src/parser/input_checker.c" bodystart="15" bodyend="32"/>
+        <references refid="libft_8h_1aa6d0c2d180f32ee585485e1a1ce3d55d" compoundref="ft__strchr_8c" startline="25" endline="35">ft_strchr</references>
         <referencedby refid="input__checker_8c_1a1e938e2d09f6e98fe3304b21f5367369" compoundref="input__checker_8c" startline="34" endline="52">check_operators</referencedby>
       </memberdef>
       <memberdef kind="function" id="input__checker_8c_1a1e938e2d09f6e98fe3304b21f5367369" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
@@ -62,7 +153,7 @@
         </inbodydescription>
         <location file="/Users/dimadem/Documents/GitHub/minishell/src/parser/input_checker.c" line="34" column="4" bodyfile="/Users/dimadem/Documents/GitHub/minishell/src/parser/input_checker.c" bodystart="34" bodyend="52"/>
         <references refid="input__checker_8c_1a8bd1dd00648c512046de42538bd97b8e" compoundref="input__checker_8c" startline="15" endline="32">check_operators_loop</references>
-        <referencedby refid="input__checker_8c_1a8ba7929cbd2a023ebba26c83879e553c" compoundref="input__checker_8c" startline="99" endline="110">input_error_checks</referencedby>
+        <referencedby refid="tokens_8h_1a8ba7929cbd2a023ebba26c83879e553c" compoundref="input__checker_8c" startline="99" endline="110">input_error_checks</referencedby>
       </memberdef>
       <memberdef kind="function" id="input__checker_8c_1a14192775dab0da87a5d66b050331bf14" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
@@ -80,8 +171,8 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/dimadem/Documents/GitHub/minishell/src/parser/input_checker.c" line="54" column="4" bodyfile="/Users/dimadem/Documents/GitHub/minishell/src/parser/input_checker.c" bodystart="54" bodyend="77"/>
-        <references refid="input__checker__helpers_8c_1a04ef790ab9a9ed430a25b0a6d6cc95b5" compoundref="input__checker__helpers_8c" startline="25" endline="36">valid_operator</references>
-        <referencedby refid="input__checker_8c_1a8ba7929cbd2a023ebba26c83879e553c" compoundref="input__checker_8c" startline="99" endline="110">input_error_checks</referencedby>
+        <references refid="tokens_8h_1a04ef790ab9a9ed430a25b0a6d6cc95b5" compoundref="input__checker__helpers_8c" startline="25" endline="36">valid_operator</references>
+        <referencedby refid="tokens_8h_1a8ba7929cbd2a023ebba26c83879e553c" compoundref="input__checker_8c" startline="99" endline="110">input_error_checks</referencedby>
       </memberdef>
       <memberdef kind="function" id="input__checker_8c_1ac967d9ffeb6f20952c9cac5c206bf717" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
@@ -99,7 +190,7 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/dimadem/Documents/GitHub/minishell/src/parser/input_checker.c" line="79" column="4" bodyfile="/Users/dimadem/Documents/GitHub/minishell/src/parser/input_checker.c" bodystart="79" bodyend="97"/>
-        <referencedby refid="input__checker_8c_1a8ba7929cbd2a023ebba26c83879e553c" compoundref="input__checker_8c" startline="99" endline="110">input_error_checks</referencedby>
+        <referencedby refid="tokens_8h_1a8ba7929cbd2a023ebba26c83879e553c" compoundref="input__checker_8c" startline="99" endline="110">input_error_checks</referencedby>
       </memberdef>
       <memberdef kind="function" id="input__checker_8c_1a8ba7929cbd2a023ebba26c83879e553c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
@@ -120,6 +211,7 @@
         <references refid="input__checker_8c_1ac967d9ffeb6f20952c9cac5c206bf717" compoundref="input__checker_8c" startline="79" endline="97">check_open_quotes</references>
         <references refid="input__checker_8c_1a1e938e2d09f6e98fe3304b21f5367369" compoundref="input__checker_8c" startline="34" endline="52">check_operators</references>
         <references refid="input__checker_8c_1a14192775dab0da87a5d66b050331bf14" compoundref="input__checker_8c" startline="54" endline="77">check_redirections</references>
+        <references refid="libft_8h_1a1ee8ae8a80a7d9141ea5339af8565f2e" compoundref="ft__printf_8c" startline="37" endline="59">ft_printf</references>
         <referencedby refid="main_8c_1abaf800210325f066cb9289aaae9e2c86" compoundref="main_8c" startline="29" endline="51">main_loop</referencedby>
       </memberdef>
     </sectiondef>
@@ -140,7 +232,7 @@
 <codeline lineno="10"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="11"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>**************************************************************************<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="12"><highlight class="normal"></highlight></codeline>
-<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;tokens.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="tokens_8h" kindref="compound">tokens.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="14"><highlight class="normal"></highlight></codeline>
 <codeline lineno="15" refid="input__checker_8c_1a8bd1dd00648c512046de42538bd97b8e" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="input__checker_8c_1a8bd1dd00648c512046de42538bd97b8e" kindref="member">check_operators_loop</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>**str,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>*single_quotes,<sp/>\</highlight></codeline>
 <codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>*double_quotes,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>*cmd_flag)</highlight></codeline>
@@ -155,7 +247,7 @@
 <codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(1);</highlight></codeline>
 <codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*cmd_flag<sp/>=<sp/>1;</highlight></codeline>
 <codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(ft_strchr(</highlight><highlight class="stringliteral">&quot;<sp/>\t\n\r\v\f&quot;</highlight><highlight class="normal">,<sp/>**str)<sp/>!=<sp/>NULL)</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="libft_8h_1aa6d0c2d180f32ee585485e1a1ce3d55d" kindref="member">ft_strchr</ref>(</highlight><highlight class="stringliteral">&quot;<sp/>\t\n\r\v\f&quot;</highlight><highlight class="normal">,<sp/>**str)<sp/>!=<sp/>NULL)</highlight></codeline>
 <codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*cmd_flag<sp/>=<sp/>0;</highlight></codeline>
 <codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/>(*str)++;</highlight></codeline>
 <codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(0);</highlight></codeline>
@@ -197,7 +289,7 @@
 <codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((!(single_quotes<sp/>%<sp/>2)<sp/>&amp;&amp;<sp/>!(double_quotes<sp/>%<sp/>2))</highlight></codeline>
 <codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;&amp;<sp/>(*str<sp/>==<sp/></highlight><highlight class="charliteral">&apos;&gt;&apos;</highlight><highlight class="normal"><sp/>||<sp/>*str<sp/>==<sp/></highlight><highlight class="charliteral">&apos;&lt;&apos;</highlight><highlight class="normal">))</highlight></codeline>
 <codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!<ref refid="input__checker__helpers_8c_1a04ef790ab9a9ed430a25b0a6d6cc95b5" kindref="member">valid_operator</ref>(&amp;str))</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!<ref refid="tokens_8h_1a04ef790ab9a9ed430a25b0a6d6cc95b5" kindref="member">valid_operator</ref>(&amp;str))</highlight></codeline>
 <codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(1);</highlight></codeline>
 <codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
@@ -226,14 +318,14 @@
 <codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(single_quote_open<sp/>||<sp/>double_quote_open);</highlight></codeline>
 <codeline lineno="97"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="98"><highlight class="normal"></highlight></codeline>
-<codeline lineno="99" refid="input__checker_8c_1a8ba7929cbd2a023ebba26c83879e553c" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="input__checker_8c_1a8ba7929cbd2a023ebba26c83879e553c" kindref="member">input_error_checks</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*str)</highlight></codeline>
+<codeline lineno="99" refid="tokens_8h_1a8ba7929cbd2a023ebba26c83879e553c" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="input__checker_8c_1a8ba7929cbd2a023ebba26c83879e553c" kindref="member">input_error_checks</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*str)</highlight></codeline>
 <codeline lineno="100"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="input__checker_8c_1a14192775dab0da87a5d66b050331bf14" kindref="member">check_redirections</ref>(str))</highlight></codeline>
-<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ft_printf(</highlight><highlight class="stringliteral">&quot;Input<sp/>error:<sp/>invalid<sp/>redirection.\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="libft_8h_1a1ee8ae8a80a7d9141ea5339af8565f2e" kindref="member">ft_printf</ref>(</highlight><highlight class="stringliteral">&quot;Input<sp/>error:<sp/>invalid<sp/>redirection.\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="input__checker_8c_1a1e938e2d09f6e98fe3304b21f5367369" kindref="member">check_operators</ref>(str))</highlight></codeline>
-<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ft_printf(</highlight><highlight class="stringliteral">&quot;Input<sp/>error:<sp/>invalid<sp/>operator.\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="libft_8h_1a1ee8ae8a80a7d9141ea5339af8565f2e" kindref="member">ft_printf</ref>(</highlight><highlight class="stringliteral">&quot;Input<sp/>error:<sp/>invalid<sp/>operator.\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="input__checker_8c_1ac967d9ffeb6f20952c9cac5c206bf717" kindref="member">check_open_quotes</ref>(str))</highlight></codeline>
-<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ft_printf(</highlight><highlight class="stringliteral">&quot;Input<sp/>error:<sp/>open<sp/>quote.\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="libft_8h_1a1ee8ae8a80a7d9141ea5339af8565f2e" kindref="member">ft_printf</ref>(</highlight><highlight class="stringliteral">&quot;Input<sp/>error:<sp/>open<sp/>quote.\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(0);</highlight></codeline>
 <codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(1);</highlight></codeline>

@@ -2,17 +2,24 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.11.0" xml:lang="en-US">
   <compounddef id="test_8h" kind="file" language="C++">
     <compoundname>test.h</compoundname>
-    <includes local="yes">shell.h</includes>
+    <includes refid="shell_8h" local="yes">shell.h</includes>
     <includedby refid="test_2main_8c" local="yes">/Users/dimadem/Documents/GitHub/minishell/src/test/main.c</includedby>
     <incdepgraph>
+      <node id="3">
+        <label>env.h</label>
+        <link refid="env_8h"/>
+      </node>
+      <node id="2">
+        <label>shell.h</label>
+        <link refid="shell_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
       <node id="1">
         <label>/Users/dimadem/Documents/GitHub/minishell/src/test/test.h</label>
         <link refid="test_8h"/>
         <childnode refid="2" relation="include">
         </childnode>
-      </node>
-      <node id="2">
-        <label>shell.h</label>
       </node>
     </incdepgraph>
     <invincdepgraph>
@@ -34,7 +41,7 @@
         <argsstring>(t_minishell_data *data, char **envp)</argsstring>
         <name>env_tests</name>
         <param>
-          <type>t_minishell_data *</type>
+          <type><ref refid="shell_8h_1a163dfbd200eaf940e5a56fd45345ff72" kindref="member">t_minishell_data</ref> *</type>
           <declname>data</declname>
         </param>
         <param>
@@ -48,7 +55,8 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/dimadem/Documents/GitHub/minishell/src/test/test.h" line="19" column="5" bodyfile="/Users/dimadem/Documents/GitHub/minishell/src/test/env/env_test.c" bodystart="25" bodyend="33" declfile="/Users/dimadem/Documents/GitHub/minishell/src/test/test.h" declline="19" declcolumn="5"/>
-        <references refid="env_2utils_8c_1a2c192ab32512a4454973d916c1bff54e" compoundref="env_2utils_8c" startline="72" endline="86">free_env</references>
+        <references refid="structs__minishell__data_1a8a0b3f50c8893e061062e93115f3d723" compoundref="shell_8h" startline="21">s_minishell_data::envp</references>
+        <references refid="env_8h_1a2c192ab32512a4454973d916c1bff54e" compoundref="env_2utils_8c" startline="72" endline="86">free_env</references>
         <references refid="env__test_8c_1a4adfeb719435c39cc19b4c8f4e7e67a0" compoundref="env__test_8c" startline="57" endline="70">test_get_env</references>
         <references refid="env__test_8c_1acac11373a53e4554ff03dd0e197c767b" compoundref="env__test_8c" startline="35" endline="55">test_init_env</references>
         <references refid="env__test_8c_1a791d22f0a8695ef368626b927cb18caf" compoundref="env__test_8c" startline="72" endline="86">test_set_env</references>
@@ -61,7 +69,7 @@
         <argsstring>(t_minishell_data *data)</argsstring>
         <name>pipe_tests</name>
         <param>
-          <type>t_minishell_data *</type>
+          <type><ref refid="shell_8h_1a163dfbd200eaf940e5a56fd45345ff72" kindref="member">t_minishell_data</ref> *</type>
           <declname>data</declname>
         </param>
         <briefdescription>
@@ -95,13 +103,13 @@
 <codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>TEST_H</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/>define<sp/>TEST_H</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="15"><highlight class="normal"></highlight></codeline>
-<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/>include<sp/>&quot;shell.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/>include<sp/>&quot;<ref refid="shell_8h" kindref="compound">shell.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="17"><highlight class="normal"></highlight></codeline>
 <codeline lineno="18"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/>env<sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="19"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="test_8h_1ac2c82e11f71bdaefecc5df644f06d7c9" kindref="member">env_tests</ref>(t_minishell_data<sp/>*data,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>**envp);</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="test_8h_1ac2c82e11f71bdaefecc5df644f06d7c9" kindref="member">env_tests</ref>(<ref refid="structs__minishell__data" kindref="compound">t_minishell_data</ref><sp/>*data,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>**envp);</highlight></codeline>
 <codeline lineno="20"><highlight class="normal"></highlight></codeline>
 <codeline lineno="21"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/>pipe<sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="22"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="test_8h_1a86787b58c336d2fef7bad648f36a0d81" kindref="member">pipe_tests</ref>(t_minishell_data<sp/>*data);</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="test_8h_1a86787b58c336d2fef7bad648f36a0d81" kindref="member">pipe_tests</ref>(<ref refid="structs__minishell__data" kindref="compound">t_minishell_data</ref><sp/>*data);</highlight></codeline>
 <codeline lineno="23"><highlight class="normal"></highlight></codeline>
 <codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
     </programlisting>

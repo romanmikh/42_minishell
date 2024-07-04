@@ -1,0 +1,1836 @@
+.TH "/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" 3 "Version 1" "maxishell" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h
+.SH SYNOPSIS
+.br
+.PP
+\fR#include <stddef\&.h>\fP
+.br
+\fR#include <stdlib\&.h>\fP
+.br
+\fR#include <stdint\&.h>\fP
+.br
+\fR#include <limits\&.h>\fP
+.br
+\fR#include <unistd\&.h>\fP
+.br
+\fR#include <stdarg\&.h>\fP
+.br
+\fR#include <signal\&.h>\fP
+.br
+\fR#include <stdbool\&.h>\fP
+.br
+\fR#include <math\&.h>\fP
+.br
+
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBBUFFER_SIZE\fP   32"
+.br
+.ti -1c
+.RI "#define \fBTRUE\fP   1"
+.br
+.ti -1c
+.RI "#define \fBFALSE\fP   0"
+.br
+.ti -1c
+.RI "#define \fBSTDIN\fP   0"
+.br
+.ti -1c
+.RI "#define \fBSTDOUT\fP   1"
+.br
+.ti -1c
+.RI "#define \fBSTDERR\fP   2"
+.br
+.ti -1c
+.RI "#define \fBRESET\fP   '\\033[0m'"
+.br
+.ti -1c
+.RI "#define \fBBLK\fP   '\\033[0;30m'"
+.br
+.ti -1c
+.RI "#define \fBRED\fP   '\\033[0;31m'"
+.br
+.ti -1c
+.RI "#define \fBGRN\fP   '\\033[0;32m'"
+.br
+.ti -1c
+.RI "#define \fBYEL\fP   '\\033[0;33m'"
+.br
+.ti -1c
+.RI "#define \fBBLU\fP   '\\033[0;34m'"
+.br
+.ti -1c
+.RI "#define \fBMAG\fP   '\\033[0;35m'"
+.br
+.ti -1c
+.RI "#define \fBCYA\fP   '\\033[0;36m'"
+.br
+.ti -1c
+.RI "#define \fBWHI\fP   '\\033[0;37m'"
+.br
+.ti -1c
+.RI "#define \fBB_BLK\fP   '\\033[1;30m'"
+.br
+.ti -1c
+.RI "#define \fBB_RED\fP   '\\033[1;31m'"
+.br
+.ti -1c
+.RI "#define \fBB_GRN\fP   '\\033[1;32m'"
+.br
+.ti -1c
+.RI "#define \fBB_YEL\fP   '\\033[1;33m'"
+.br
+.ti -1c
+.RI "#define \fBB_BLU\fP   '\\033[1;34m'"
+.br
+.ti -1c
+.RI "#define \fBB_MAG\fP   '\\033[1;35m'"
+.br
+.ti -1c
+.RI "#define \fBB_CYA\fP   '\\033[1;36m'"
+.br
+.ti -1c
+.RI "#define \fBB_WHI\fP   '\\033[1;37m'"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "char * \fBft_get_next_line\fP (int fd)"
+.br
+.ti -1c
+.RI "int \fBft_isalpha\fP (int c)"
+.br
+.ti -1c
+.RI "int \fBft_isdigit\fP (int c)"
+.br
+.ti -1c
+.RI "int \fBft_is_num\fP (const char *n)"
+.br
+.ti -1c
+.RI "int \fBft_is_double\fP (const char *n)"
+.br
+.ti -1c
+.RI "int \fBft_isalnum\fP (int c)"
+.br
+.ti -1c
+.RI "int \fBft_isascii\fP (int c)"
+.br
+.ti -1c
+.RI "int \fBft_isprint\fP (int c)"
+.br
+.ti -1c
+.RI "int \fBft_toupper\fP (int c)"
+.br
+.ti -1c
+.RI "int \fBft_tolower\fP (int c)"
+.br
+.ti -1c
+.RI "int \fBft_atoi\fP (const char *str)"
+.br
+.ti -1c
+.RI "int \fBlist_len_char\fP (char a[])"
+.br
+.ti -1c
+.RI "int \fBlist_len_str\fP (char *a[])"
+.br
+.ti -1c
+.RI "int \fBisnum_from_str\fP (const char *str)"
+.br
+.ti -1c
+.RI "int \fBlist_repeat_check_int\fP (int a[], int size)"
+.br
+.ti -1c
+.RI "int \fBlist_repeat_check_str\fP (char *a[], int size)"
+.br
+.ti -1c
+.RI "int \fBft_strcmp\fP (const char *s1, const char *s2)"
+.br
+.ti -1c
+.RI "int \fBft_strncmp\fP (const char *s1, const char *s2, size_t n)"
+.br
+.ti -1c
+.RI "int \fBft_memcmp\fP (const void *s1, const void *s2, size_t n)"
+.br
+.ti -1c
+.RI "int \fBft_count_bits\fP (unsigned char current_char)"
+.br
+.ti -1c
+.RI "int \fBfind_max_in_list\fP (int a[], int size)"
+.br
+.ti -1c
+.RI "char * \fBft_itoa\fP (int n)"
+.br
+.ti -1c
+.RI "char * \fBft_strdup\fP (const char *s)"
+.br
+.ti -1c
+.RI "char * \fBft_strchr\fP (const char *s, int c)"
+.br
+.ti -1c
+.RI "char * \fBft_strcat\fP (char *dest, char *src)"
+.br
+.ti -1c
+.RI "char * \fBft_strrchr\fP (const char *s, int c)"
+.br
+.ti -1c
+.RI "char ** \fBft_split\fP (char const *s, char c)"
+.br
+.ti -1c
+.RI "char * \fBft_strcpy\fP (char *dest, const char *src)"
+.br
+.ti -1c
+.RI "char * \fBft_strndup\fP (const char *s, size_t n)"
+.br
+.ti -1c
+.RI "char * \fBft_strjoin\fP (char const *s1, char const *s2)"
+.br
+.ti -1c
+.RI "char * \fBft_strtrim\fP (char const *s1, char const *set)"
+.br
+.ti -1c
+.RI "char * \fBft_strstr\fP (const char *big, const char *little)"
+.br
+.ti -1c
+.RI "char * \fBft_strmapi\fP (char const *s, char(*f)(unsigned int, char))"
+.br
+.ti -1c
+.RI "char * \fBft_substr\fP (char const *s, unsigned int start, size_t len)"
+.br
+.ti -1c
+.RI "char * \fBft_strnstr\fP (const char *haystack, const char *needle, size_t len)"
+.br
+.ti -1c
+.RI "void \fBft_bzero\fP (void *s, size_t n)"
+.br
+.ti -1c
+.RI "void \fBft_putnbr_fd\fP (int n, int fd)"
+.br
+.ti -1c
+.RI "void \fBft_putchar_fd\fP (char c, int fd)"
+.br
+.ti -1c
+.RI "void \fBft_putstr_fd\fP (char *s, int fd)"
+.br
+.ti -1c
+.RI "void \fBft_putendl_fd\fP (char *s, int fd)"
+.br
+.ti -1c
+.RI "void * \fBft_memset\fP (void *s, int c, size_t n)"
+.br
+.ti -1c
+.RI "void * \fBft_calloc\fP (size_t count, size_t size)"
+.br
+.ti -1c
+.RI "void * \fBft_memchr\fP (const void *s, int c, size_t n)"
+.br
+.ti -1c
+.RI "void * \fBft_memcpy\fP (void *dest, const void *src, size_t n)"
+.br
+.ti -1c
+.RI "void * \fBft_memmove\fP (void *dest, const void *src, size_t n)"
+.br
+.ti -1c
+.RI "void \fBft_striteri\fP (char *s, void(*f)(unsigned int, char *))"
+.br
+.ti -1c
+.RI "size_t \fBft_strlen\fP (const char *s)"
+.br
+.ti -1c
+.RI "size_t \fBft_strlcpy\fP (char *dest, const char *src, size_t size)"
+.br
+.ti -1c
+.RI "size_t \fBft_strlcat\fP (char *dest, const char *src, size_t size)"
+.br
+.ti -1c
+.RI "int \fBft_printf\fP (const char *format,\&.\&.\&.)"
+.br
+.ti -1c
+.RI "int \fBft_print_char\fP (int c)"
+.br
+.ti -1c
+.RI "int \fBft_print_str\fP (char *str)"
+.br
+.ti -1c
+.RI "int \fBft_print_ptr\fP (unsigned long long ptr)"
+.br
+.ti -1c
+.RI "int \fBft_print_int\fP (int n)"
+.br
+.ti -1c
+.RI "int \fBft_print_unsigned_dec\fP (unsigned int n)"
+.br
+.ti -1c
+.RI "int \fBft_print_unsigned_hex\fP (unsigned int num, const char format)"
+.br
+.ti -1c
+.RI "int \fBft_print_percent\fP (void)"
+.br
+.ti -1c
+.RI "int \fBft_ptr_len\fP (uintptr_t num)"
+.br
+.ti -1c
+.RI "void \fBft_put_ptr\fP (uintptr_t num)"
+.br
+.ti -1c
+.RI "double \fBft_atof\fP (const char *str)"
+.br
+.ti -1c
+.RI "long \fBft_atol\fP (const char *nptr)"
+.br
+.ti -1c
+.RI "int \fBft_abs\fP (int n)"
+.br
+.ti -1c
+.RI "const char * \fBft_exclude_delimiters\fP (const char *str, char *delims)"
+.br
+.in -1c
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define B_BLK   '\\033[1;30m'"
+
+.PP
+Definition at line \fB113\fP of file \fBlibft\&.h\fP\&.
+.SS "#define B_BLU   '\\033[1;34m'"
+
+.PP
+Definition at line \fB117\fP of file \fBlibft\&.h\fP\&.
+.SS "#define B_CYA   '\\033[1;36m'"
+
+.PP
+Definition at line \fB119\fP of file \fBlibft\&.h\fP\&.
+.SS "#define B_GRN   '\\033[1;32m'"
+
+.PP
+Definition at line \fB115\fP of file \fBlibft\&.h\fP\&.
+.SS "#define B_MAG   '\\033[1;35m'"
+
+.PP
+Definition at line \fB118\fP of file \fBlibft\&.h\fP\&.
+.SS "#define B_RED   '\\033[1;31m'"
+
+.PP
+Definition at line \fB114\fP of file \fBlibft\&.h\fP\&.
+.SS "#define B_WHI   '\\033[1;37m'"
+
+.PP
+Definition at line \fB120\fP of file \fBlibft\&.h\fP\&.
+.SS "#define B_YEL   '\\033[1;33m'"
+
+.PP
+Definition at line \fB116\fP of file \fBlibft\&.h\fP\&.
+.SS "#define BLK   '\\033[0;30m'"
+
+.PP
+Definition at line \fB104\fP of file \fBlibft\&.h\fP\&.
+.SS "#define BLU   '\\033[0;34m'"
+
+.PP
+Definition at line \fB108\fP of file \fBlibft\&.h\fP\&.
+.PP
+Referenced by \fBexecute_ast()\fP\&.
+.SS "#define BUFFER_SIZE   32"
+
+.PP
+Definition at line \fB25\fP of file \fBlibft\&.h\fP\&.
+.PP
+Referenced by \fBft_get_next_line()\fP, and \fBread_from_fd()\fP\&.
+.SS "#define CYA   '\\033[0;36m'"
+
+.PP
+Definition at line \fB110\fP of file \fBlibft\&.h\fP\&.
+.PP
+Referenced by \fBexecute_ast()\fP\&.
+.SS "#define FALSE   0"
+
+.PP
+Definition at line \fB96\fP of file \fBlibft\&.h\fP\&.
+.PP
+Referenced by \fBft_is_double()\fP, and \fBft_is_num()\fP\&.
+.SS "#define GRN   '\\033[0;32m'"
+
+.PP
+Definition at line \fB106\fP of file \fBlibft\&.h\fP\&.
+.PP
+Referenced by \fBexecute_ast()\fP\&.
+.SS "#define MAG   '\\033[0;35m'"
+
+.PP
+Definition at line \fB109\fP of file \fBlibft\&.h\fP\&.
+.PP
+Referenced by \fBexecute_ast()\fP\&.
+.SS "#define RED   '\\033[0;31m'"
+
+.PP
+Definition at line \fB105\fP of file \fBlibft\&.h\fP\&.
+.PP
+Referenced by \fBexecute_ast()\fP\&.
+.SS "#define RESET   '\\033[0m'"
+
+.PP
+Definition at line \fB102\fP of file \fBlibft\&.h\fP\&.
+.PP
+Referenced by \fBexecute_ast()\fP\&.
+.SS "#define STDERR   2"
+
+.PP
+Definition at line \fB100\fP of file \fBlibft\&.h\fP\&.
+.SS "#define STDIN   0"
+
+.PP
+Definition at line \fB98\fP of file \fBlibft\&.h\fP\&.
+.SS "#define STDOUT   1"
+
+.PP
+Definition at line \fB99\fP of file \fBlibft\&.h\fP\&.
+.SS "#define TRUE   1"
+
+.PP
+Definition at line \fB95\fP of file \fBlibft\&.h\fP\&.
+.PP
+Referenced by \fBft_is_double()\fP, and \fBft_is_num()\fP\&.
+.SS "#define WHI   '\\033[0;37m'"
+
+.PP
+Definition at line \fB111\fP of file \fBlibft\&.h\fP\&.
+.SS "#define YEL   '\\033[0;33m'"
+
+.PP
+Definition at line \fB107\fP of file \fBlibft\&.h\fP\&.
+.PP
+Referenced by \fBexecute_ast()\fP\&.
+.SH "Function Documentation"
+.PP 
+.SS "int find_max_in_list (int a[], int size)"
+
+.PP
+Definition at line \fB15\fP of file \fBfind_max_in_list\&.c\fP\&.
+.nf
+16 {
+17     int max;
+18     int i;
+19 
+20     max = INT_MIN;
+21     i = 0;
+22     while (i < size)
+23     {
+24         if (a[i] > max)
+25             max = a[i];
+26         i++;
+27     }
+28     return (max);
+29 }
+.PP
+.fi
+
+.SS "int ft_abs (int n)"
+
+.PP
+Definition at line \fB15\fP of file \fBft_abs\&.c\fP\&.
+.nf
+16 {
+17     if (n < 0)
+18         return (\-n);
+19     return (n);
+20 }
+.PP
+.fi
+
+.SS "double ft_atof (const char * str)"
+
+.PP
+Definition at line \fB15\fP of file \fBft_atof\&.c\fP\&.
+.nf
+16 {
+17     double  res;
+18     double  neg;
+19     double  divider;
+20     size_t  i;
+21 
+22     divider = 0\&.1;
+23     res = 0;
+24     neg = 1;
+25     i = \-1;
+26     while (str[i] < '0' || str[i] > '9')
+27         if (str[i++] == '\-')
+28             neg = \-1;
+29     while (str[i] >= '0' && str[i] <= '9')
+30     {
+31         res = res * 10 + str[i++] \- 48;
+32     }
+33     if (str[i] == '\&.' || str[i] == ',')
+34         i++;
+35     while (str[i] >= '0' && str[i] <= '9')
+36     {
+37         res = res + (str[i] \- 48) * divider;
+38         divider /= 10;
+39         i++;
+40     }
+41     return (res * neg);
+42 }
+.PP
+.fi
+
+.SS "int ft_atoi (const char * str)"
+
+.SS "long ft_atol (const char * nptr)"
+
+.PP
+Definition at line \fB15\fP of file \fBft_atol\&.c\fP\&.
+.nf
+16 {
+17     int     i;
+18     int     neg;
+19     long    res;
+20 
+21     i = 0;
+22     neg = 1;
+23     res = 0;
+24     while (nptr[i] == '\\t' || nptr[i] == '\\v' || nptr[i] == '\\n'
+25         || nptr[i] == '\\f' || nptr[i] == '\\r' || nptr[i] == ' ')
+26         i++;
+27     if (nptr[i] == '\-' || nptr[i] == '+')
+28     {
+29         if (nptr[i] == '\-')
+30             neg = \-neg;
+31         i++;
+32     }
+33     while (nptr[i] >= '0' && nptr[i] <= '9')
+34         res = res * 10 + (nptr[i++] \- 48);
+35     return (res * neg);
+36 }
+.PP
+.fi
+
+.SS "void ft_bzero (void * s, size_t n)"
+
+.PP
+Definition at line \fB21\fP of file \fBft_bzero\&.c\fP\&.
+.nf
+22 {
+23     char    *p;
+24 
+25     p = s;
+26     while (n\-\-)
+27         *p++ = '\\0';
+28 }
+.PP
+.fi
+
+.SS "void * ft_calloc (size_t count, size_t size)"
+
+.PP
+Definition at line \fB23\fP of file \fBft_calloc\&.c\fP\&.
+.nf
+24 {
+25     void    *ptr;
+26 
+27     if (size != 0 && count > SIZE_MAX / size)
+28         return (NULL);
+29     ptr = malloc(count * size);
+30     if (!ptr)
+31         return (NULL);
+32     ft_memset(ptr, 0, count * size);
+33     return (ptr);
+34 }
+.PP
+.fi
+
+.PP
+References \fBft_memset()\fP\&.
+.SS "int ft_count_bits (unsigned char current_char)"
+
+.PP
+Definition at line \fB13\fP of file \fBft_count_bits\&.c\fP\&.
+.nf
+14 {
+15     int i;
+16 
+17     i = 0;
+18     while (current_char)
+19     {
+20         i += 1;
+21         current_char >>= 1;
+22     }
+23     return (i);
+24 }
+.PP
+.fi
+
+.SS "const char * ft_exclude_delimiters (const char * str, char * delims)"
+
+.PP
+Definition at line \fB15\fP of file \fBft_exclude_delimiters\&.c\fP\&.
+.nf
+16 {
+17     while (*str && (ft_strchr(delims, *str) != NULL))
+18         str++;
+19     return (str);
+20 }
+.PP
+.fi
+
+.PP
+References \fBft_strchr()\fP\&.
+.PP
+Referenced by \fBvalid_operator()\fP\&.
+.SS "char * ft_get_next_line (int fd)"
+
+.PP
+Definition at line \fB8\fP of file \fBft_get_next_line\&.c\fP\&.
+.nf
+9 {
+10     static char *saved = NULL;
+11     char        *line;
+12     char        *buf;
+13 
+14     if (fd < 0 || BUFFER_SIZE < 1 || fd > 4095)
+15         return (NULL);
+16     buf = malloc(BUFFER_SIZE + 1);
+17     if (!buf)
+18         return (NULL);
+19     saved = read_from_fd(fd, saved, buf);
+20     if (!saved)
+21     {
+22         free(saved);
+23         saved = NULL;
+24         return (NULL);
+25     }
+26     line = extract_line(&saved);
+27     if (line == NULL)
+28     {
+29         free(saved);
+30         saved = NULL;
+31     }
+32     return (line);
+33 }
+.PP
+.fi
+
+.PP
+References \fBBUFFER_SIZE\fP, \fBextract_line()\fP, and \fBread_from_fd()\fP\&.
+.SS "int ft_is_double (const char * n)"
+
+.PP
+Definition at line \fB15\fP of file \fBft_is_double\&.c\fP\&.
+.nf
+16 {
+17     unsigned long   i;
+18     int             p;
+19 
+20     i = 0;
+21     while (n[i] && (n[i] == '\\t' || n[i] == '\\n' || n[i] == '\\v'
+22             || n[i] == '\\f' || n[i] == '\\r' || n[i] == ' '))
+23         i++;
+24     if (n[i] && (n[i] == '+' || n[i] == '\-'))
+25         i++;
+26     if (!n[i])
+27         return (FALSE);
+28     p = FALSE;
+29     while (n[i])
+30     {
+31         if (!ft_isdigit(n[i]) && n[i] != '\&.' && n[i] != ',')
+32             return (FALSE);
+33         if ((n[i] == '\&.' || n[i] == ',') && p == TRUE)
+34             return (FALSE);
+35         if (n[i] == '\&.' || n[i] == ',')
+36             p = TRUE;
+37         i++;
+38     }
+39     return (TRUE);
+40 }
+.PP
+.fi
+
+.PP
+References \fBFALSE\fP, \fBft_isdigit()\fP, and \fBTRUE\fP\&.
+.SS "int ft_is_num (const char * n)"
+
+.PP
+Definition at line \fB15\fP of file \fBft_is_num\&.c\fP\&.
+.nf
+16 {
+17     unsigned long   i;
+18 
+19     i = 0;
+20     while (n[i] && (n[i] == '\\t' || n[i] == '\\n' || n[i] == '\\v'
+21             || n[i] == '\\f' || n[i] == '\\r' || n[i] == ' '))
+22         i++;
+23     if (n[i] && (n[i] == '+' || n[i] == '\-'))
+24         i++;
+25     if (!n[i])
+26         return (FALSE);
+27     while (n[i])
+28     {
+29         if (!ft_isdigit(n[i]))
+30             return (FALSE);
+31         i++;
+32     }
+33     return (TRUE);
+34 }
+.PP
+.fi
+
+.PP
+References \fBFALSE\fP, \fBft_isdigit()\fP, and \fBTRUE\fP\&.
+.SS "int ft_isalnum (int c)"
+
+.PP
+Definition at line \fB15\fP of file \fBft_isalnum\&.c\fP\&.
+.nf
+16 {
+17     return (ft_isalpha(c) || ft_isdigit(c));
+18 }
+.PP
+.fi
+
+.PP
+References \fBft_isalpha()\fP, and \fBft_isdigit()\fP\&.
+.SS "int ft_isalpha (int c)"
+
+.PP
+Definition at line \fB13\fP of file \fBft_isalpha\&.c\fP\&.
+.nf
+14 {
+15     return ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'));
+16 }
+.PP
+.fi
+
+.PP
+Referenced by \fBft_isalnum()\fP\&.
+.SS "int ft_isascii (int c)"
+
+.PP
+Definition at line \fB13\fP of file \fBft_isascii\&.c\fP\&.
+.nf
+14 {
+15     return (c >= 0 && c <= 127);
+16 }
+.PP
+.fi
+
+.SS "int ft_isdigit (int c)"
+
+.PP
+Definition at line \fB13\fP of file \fBft_isdigit\&.c\fP\&.
+.nf
+14 {
+15     return (c >= '0' && c <= '9');
+16 }
+.PP
+.fi
+
+.PP
+Referenced by \fBft_is_double()\fP, \fBft_is_num()\fP, and \fBft_isalnum()\fP\&.
+.SS "int ft_isprint (int c)"
+
+.PP
+Definition at line \fB13\fP of file \fBft_isprint\&.c\fP\&.
+.nf
+14 {
+15     return (c >= ' ' && c <= '~');
+16 }
+.PP
+.fi
+
+.SS "char * ft_itoa (int n)"
+
+.PP
+Definition at line \fB40\fP of file \fBft_itoa\&.c\fP\&.
+.nf
+41 {
+42     int     len;
+43     char    *str;
+44 
+45     if (n == INT_MIN)
+46         return (ft_strdup("\-2147483648"));
+47     if (n == 0)
+48         return (ft_strdup("0"));
+49     len = count_digits(n);
+50     str = (char *)malloc(len + 1);
+51     if (!str)
+52         return (NULL);
+53     str[len\-\-] = '\\0';
+54     if (n < 0)
+55     {
+56         str[0] = '\-';
+57         n = \-n;
+58     }
+59     while (n)
+60     {
+61         str[len\-\-] = n % 10 + '0';
+62         n /= 10;
+63     }
+64     return (str);
+65 }
+.PP
+.fi
+
+.PP
+References \fBcount_digits()\fP, and \fBft_strdup()\fP\&.
+.PP
+Referenced by \fBft_print_int()\fP\&.
+.SS "void * ft_memchr (const void * s, int c, size_t n)"
+
+.PP
+Definition at line \fB29\fP of file \fBft_memchr\&.c\fP\&.
+.nf
+30 {
+31     const unsigned char *st;
+32     unsigned char       ct;
+33 
+34     st = s;
+35     ct = (unsigned char)c;
+36     while (n\-\-)
+37     {
+38         if (*st == ct)
+39             return ((void *)st);
+40         st++;
+41     }
+42     return (NULL);
+43 }
+.PP
+.fi
+
+.SS "int ft_memcmp (const void * s1, const void * s2, size_t n)"
+
+.PP
+Definition at line \fB23\fP of file \fBft_memcmp\&.c\fP\&.
+.nf
+24 {
+25     const unsigned char     *st1;
+26     const unsigned char     *st2;
+27 
+28     st1 = s1;
+29     st2 = s2;
+30     while (n\-\-)
+31     {
+32         if (*st1 != *st2)
+33             return (*st1 \- *st2);
+34         st1++;
+35         st2++;
+36     }
+37     return (0);
+38 }
+.PP
+.fi
+
+.SS "void * ft_memcpy (void * dest, const void * src, size_t n)"
+
+.PP
+Definition at line \fB22\fP of file \fBft_memcpy\&.c\fP\&.
+.nf
+23 {
+24     char        *d;
+25     const char  *s;
+26 
+27     if (!dest && !src)
+28         return (NULL);
+29     s = src;
+30     d = dest;
+31     while (n\-\-)
+32         *d++ = *s++;
+33     return (dest);
+34 }
+.PP
+.fi
+
+.PP
+Referenced by \fBft_memmove()\fP, \fBft_strjoin_gnl()\fP, and \fBstrndup()\fP\&.
+.SS "void * ft_memmove (void * dest, const void * src, size_t n)"
+
+.PP
+Definition at line \fB24\fP of file \fBft_memmove\&.c\fP\&.
+.nf
+25 {
+26     char            *d;
+27     const char      *s;
+28 
+29     d = dest;
+30     s = src;
+31     if (d == s)
+32         return (dest);
+33     if (d < s || d >= s + n)
+34         ft_memcpy(d, s, n);
+35     else
+36     {
+37         d += n;
+38         s += n;
+39         while (n\-\-)
+40             *(\-\-d) = *(\-\-s);
+41     }
+42     return (dest);
+43 }
+.PP
+.fi
+
+.PP
+References \fBft_memcpy()\fP\&.
+.SS "void * ft_memset (void * s, int c, size_t n)"
+
+.PP
+Definition at line \fB28\fP of file \fBft_memset\&.c\fP\&.
+.nf
+29 {
+30     unsigned char   *ptr;
+31 
+32     ptr = s;
+33     while (n\-\- > 0)
+34         *ptr++ = (unsigned char)c;
+35     return (s);
+36 }
+.PP
+.fi
+
+.PP
+Referenced by \fBft_calloc()\fP\&.
+.SS "int ft_print_char (int c)"
+
+.PP
+Definition at line \fB15\fP of file \fBft_print_char\&.c\fP\&.
+.nf
+16 {
+17     ft_putchar_fd(c, 1);
+18     return (1);
+19 }
+.PP
+.fi
+
+.PP
+References \fBft_putchar_fd()\fP\&.
+.PP
+Referenced by \fBft_formatssssss()\fP, and \fBft_printf()\fP\&.
+.SS "int ft_print_int (int n)"
+
+.PP
+Definition at line \fB15\fP of file \fBft_print_int\&.c\fP\&.
+.nf
+16 {
+17     int     len;
+18     char    *num;
+19 
+20     num = ft_itoa(n);
+21     len = ft_print_str(num);
+22     free(num);
+23     return (len);
+24 }
+.PP
+.fi
+
+.PP
+References \fBft_itoa()\fP, and \fBft_print_str()\fP\&.
+.PP
+Referenced by \fBft_formatssssss()\fP\&.
+.SS "int ft_print_percent (void )"
+
+.PP
+Definition at line \fB15\fP of file \fBft_print_percent\&.c\fP\&.
+.nf
+16 {
+17     ft_putchar_fd('%', 1);
+18     return (1);
+19 }
+.PP
+.fi
+
+.PP
+References \fBft_putchar_fd()\fP\&.
+.PP
+Referenced by \fBft_formatssssss()\fP\&.
+.SS "int ft_print_ptr (unsigned long long ptr)"
+
+.PP
+Definition at line \fB44\fP of file \fBft_print_ptr\&.c\fP\&.
+.nf
+45 {
+46     int print_length;
+47 
+48     print_length = 0;
+49     if (ptr == 0)
+50         print_length += write(1, "(nil)", 5);
+51     else
+52     {
+53         print_length += write(1, "0x", 2);
+54         ft_put_ptr(ptr);
+55         print_length += ft_ptr_len(ptr);
+56     }
+57     return (print_length);
+58 }
+.PP
+.fi
+
+.PP
+References \fBft_ptr_len()\fP, and \fBft_put_ptr()\fP\&.
+.PP
+Referenced by \fBft_formatssssss()\fP\&.
+.SS "int ft_print_str (char * str)"
+
+.PP
+Definition at line \fB15\fP of file \fBft_print_str\&.c\fP\&.
+.nf
+16 {
+17     int len;
+18 
+19     len = 0;
+20     if (str == NULL)
+21     {
+22         ft_putstr_fd("(null)", 1);
+23         return (6);
+24     }
+25     while (*str)
+26     {
+27         ft_putchar_fd(*str++, 1);
+28         len++;
+29     }
+30     return (len);
+31 }
+.PP
+.fi
+
+.PP
+References \fBft_putchar_fd()\fP, and \fBft_putstr_fd()\fP\&.
+.PP
+Referenced by \fBft_formatssssss()\fP, \fBft_print_int()\fP, and \fBft_print_unsigned_dec()\fP\&.
+.SS "int ft_print_unsigned_dec (unsigned int n)"
+
+.PP
+Definition at line \fB47\fP of file \fBft_print_unsigned_dec\&.c\fP\&.
+.nf
+48 {
+49     int     count;
+50     char    *num;
+51 
+52     count = 0;
+53     if (n == 0)
+54         count += write(1, "0", 1);
+55     else
+56     {
+57         num = ft_uitoa(n);
+58         count += ft_print_str(num);
+59         free(num);
+60     }
+61     return (count);
+62 }
+.PP
+.fi
+
+.PP
+References \fBft_print_str()\fP, and \fBft_uitoa()\fP\&.
+.PP
+Referenced by \fBft_formatssssss()\fP\&.
+.SS "int ft_print_unsigned_hex (unsigned int num, const char format)"
+
+.PP
+Definition at line \fB49\fP of file \fBft_print_unsigned_hex\&.c\fP\&.
+.nf
+50 {
+51     if (n == 0)
+52     {
+53         ft_putchar_fd('0', 1);
+54         return (1);
+55     }
+56     else
+57         ft_put_hex(n, upper_lower);
+58     return (ft_hex_len(n));
+59 }
+.PP
+.fi
+
+.PP
+References \fBft_hex_len()\fP, \fBft_put_hex()\fP, and \fBft_putchar_fd()\fP\&.
+.PP
+Referenced by \fBft_formatssssss()\fP\&.
+.SS "int ft_printf (const char * format,  \&.\&.\&.)"
+
+.PP
+Definition at line \fB37\fP of file \fBft_printf\&.c\fP\&.
+.nf
+38 {
+39     int     i;
+40     va_list args;
+41     int     len;
+42 
+43     i = 0;
+44     len = 0;
+45     va_start(args, str);
+46     while (str[i])
+47     {
+48         if (str[i] == '%')
+49         {
+50             len += ft_formatssssss(args, str[i + 1]);
+51             i++;
+52         }
+53         else
+54             len += ft_print_char(str[i]);
+55         i++;
+56     }
+57     va_end(args);
+58     return (len);
+59 }
+.PP
+.fi
+
+.PP
+References \fBft_formatssssss()\fP, and \fBft_print_char()\fP\&.
+.PP
+Referenced by \fBappend_phrase_if_valid()\fP, \fBinput_error_checks()\fP, \fBprint_maxishell()\fP, and \fBprint_stack()\fP\&.
+.SS "int ft_ptr_len (uintptr_t num)"
+
+.PP
+Definition at line \fB15\fP of file \fBft_print_ptr\&.c\fP\&.
+.nf
+16 {
+17     int len;
+18 
+19     len = 0;
+20     while (num != 0)
+21     {
+22         len++;
+23         num = num / 16;
+24     }
+25     return (len);
+26 }
+.PP
+.fi
+
+.PP
+Referenced by \fBft_print_ptr()\fP\&.
+.SS "void ft_put_ptr (uintptr_t num)"
+
+.PP
+Definition at line \fB28\fP of file \fBft_print_ptr\&.c\fP\&.
+.nf
+29 {
+30     if (num >= 16)
+31     {
+32         ft_put_ptr(num / 16);
+33         ft_put_ptr(num % 16);
+34     }
+35     else
+36     {
+37         if (num <= 9)
+38             ft_putchar_fd((num + '0'), 1);
+39         else
+40             ft_putchar_fd((num \- 10 + 'a'), 1);
+41     }
+42 }
+.PP
+.fi
+
+.PP
+References \fBft_put_ptr()\fP, and \fBft_putchar_fd()\fP\&.
+.PP
+Referenced by \fBft_print_ptr()\fP, and \fBft_put_ptr()\fP\&.
+.SS "void ft_putchar_fd (char c, int fd)"
+
+.PP
+Definition at line \fB20\fP of file \fBft_putchar_fd\&.c\fP\&.
+.nf
+21 {
+22     write(fd, &c, 1);
+23 }
+.PP
+.fi
+
+.PP
+Referenced by \fBft_print_char()\fP, \fBft_print_percent()\fP, \fBft_print_str()\fP, \fBft_print_unsigned_hex()\fP, \fBft_put_hex()\fP, \fBft_put_ptr()\fP, \fBft_putendl_fd()\fP, and \fBft_putnbr_fd()\fP\&.
+.SS "void ft_putendl_fd (char * s, int fd)"
+
+.PP
+Definition at line \fB21\fP of file \fBft_putendl_fd\&.c\fP\&.
+.nf
+22 {
+23     if (s)
+24     {
+25         ft_putstr_fd(s, fd);
+26         ft_putchar_fd('\\n', fd);
+27     }
+28 }
+.PP
+.fi
+
+.PP
+References \fBft_putchar_fd()\fP, and \fBft_putstr_fd()\fP\&.
+.PP
+Referenced by \fBbuiltin_pwd()\fP, and \fBbuiltin_unset()\fP\&.
+.SS "void ft_putnbr_fd (int n, int fd)"
+
+.PP
+Definition at line \fB20\fP of file \fBft_putnbr_fd\&.c\fP\&.
+.nf
+21 {
+22     if (n == \-2147483648)
+23         ft_putstr_fd("\-2147483648", fd);
+24     else
+25     {
+26         if (n < 0)
+27         {
+28             ft_putchar_fd('\-', fd);
+29             n = \-n;
+30         }
+31         if (n >= 10)
+32             ft_putnbr_fd(n / 10, fd);
+33         ft_putchar_fd((n % 10) + '0', fd);
+34     }
+35 }
+.PP
+.fi
+
+.PP
+References \fBft_putchar_fd()\fP, \fBft_putnbr_fd()\fP, and \fBft_putstr_fd()\fP\&.
+.PP
+Referenced by \fBft_putnbr_fd()\fP\&.
+.SS "void ft_putstr_fd (char * s, int fd)"
+
+.PP
+Definition at line \fB20\fP of file \fBft_putstr_fd\&.c\fP\&.
+.nf
+21 {
+22     if (s)
+23         write(fd, s, ft_strlen(s));
+24 }
+.PP
+.fi
+
+.PP
+References \fBft_strlen()\fP\&.
+.PP
+Referenced by \fBbuiltin_cd()\fP, \fBbuiltin_pwd()\fP, \fBbuiltin_unset()\fP, \fBft_print_str()\fP, \fBft_putendl_fd()\fP, and \fBft_putnbr_fd()\fP\&.
+.SS "char ** ft_split (char const * s, char c)"
+
+.PP
+Definition at line \fB95\fP of file \fBft_split\&.c\fP\&.
+.nf
+96 {
+97     char    **result;
+98     int     word_count;
+99 
+100     if (!s)
+101         return (NULL);
+102     word_count = count_words(s, c);
+103     result = malloc(sizeof(char *) * (word_count + 1));
+104     if (!result)
+105         return (NULL);
+106     split_into_words(result, s, c);
+107     return (result);
+108 }
+.PP
+.fi
+
+.PP
+References \fBcount_words()\fP, and \fBsplit_into_words()\fP\&.
+.PP
+Referenced by \fBbuiltin_pipe_test()\fP, \fBcheck_heredoc()\fP, and \fBft_find_path()\fP\&.
+.SS "char * ft_strcat (char * dest, char * src)"
+
+.PP
+Definition at line \fB26\fP of file \fBft_strcat\&.c\fP\&.
+.nf
+27 {
+28     int i;
+29     int j;
+30 
+31     i = 0;
+32     while (dest[i] != '\\0')
+33         i++;
+34     j = 0;
+35     while (src[j] != '\\0')
+36     {
+37         dest[i + j] = src[j];
+38         j++;
+39     }
+40     dest[i + j] = '\\0';
+41     return (dest);
+42 }
+.PP
+.fi
+
+.SS "char * ft_strchr (const char * s, int c)"
+
+.PP
+Definition at line \fB25\fP of file \fBft_strchr\&.c\fP\&.
+.nf
+26 {
+27     unsigned char   uc;
+28 
+29     uc = (unsigned char)c;
+30     while (*s != '\\0' && *s != uc)
+31         s++;
+32     if (*s == uc)
+33         return ((char *)s);
+34     return (NULL);
+35 }
+.PP
+.fi
+
+.PP
+Referenced by \fBadd_env()\fP, \fBadd_env_node()\fP, \fBcheck_operators_loop()\fP, \fBextract_line()\fP, \fBft_exclude_delimiters()\fP, \fBhandle_phrase()\fP, \fBread_from_fd()\fP, and \fBtokenise()\fP\&.
+.SS "int ft_strcmp (const char * s1, const char * s2)"
+
+.PP
+Definition at line \fB24\fP of file \fBft_strcmp\&.c\fP\&.
+.nf
+25 {
+26     while (*s1 != '\\0' || *s2 != '\\0')
+27     {
+28         if (*s1 != *s2)
+29             return ((unsigned char)*s1 \- (unsigned char)*s2);
+30         s1++;
+31         s2++;
+32     }
+33     return (0);
+34 }
+.PP
+.fi
+
+.PP
+Referenced by \fBbuiltin_echo()\fP, \fBbuiltin_env()\fP, \fBcheck_heredoc()\fP, \fBexecute()\fP, \fBget_env()\fP, \fBheredoc()\fP, \fBopen_file()\fP, \fBset_env()\fP, \fBtest_get_env()\fP, \fBtest_set_env()\fP, \fBtest_unset_env()\fP, and \fBunset_env()\fP\&.
+.SS "char * ft_strcpy (char * dest, const char * src)"
+
+.PP
+Definition at line \fB25\fP of file \fBft_strcpy\&.c\fP\&.
+.nf
+26 {
+27     unsigned int    i;
+28 
+29     i = 0;
+30     while (src[i] != '\\0')
+31     {
+32         dest[i] = src[i];
+33         i++;
+34     }
+35     dest[i] = src[i];
+36     return (dest);
+37 }
+.PP
+.fi
+
+.PP
+Referenced by \fBgenerate_prompt()\fP\&.
+.SS "char * ft_strdup (const char * s)"
+
+.PP
+Definition at line \fB23\fP of file \fBft_strdup\&.c\fP\&.
+.nf
+24 {
+25     size_t  n;
+26     char    *new;
+27 
+28     n = ft_strlen(s);
+29     if (!s)
+30         return (NULL);
+31     new = malloc((n + 1) * sizeof(char));
+32     if (!new)
+33         return (NULL);
+34     ft_strlcpy(new, s, n + 1);
+35     return (new);
+36 }
+.PP
+.fi
+
+.PP
+References \fBft_strlcpy()\fP, and \fBft_strlen()\fP\&.
+.PP
+Referenced by \fBadd_env_node()\fP, \fBextract_line()\fP, \fBft_itoa()\fP, \fBlist_to_array()\fP, \fBnew_token()\fP, \fBset_command_args()\fP, and \fBset_env()\fP\&.
+.SS "void ft_striteri (char * s, void(* f )(unsigned int, char *))"
+
+.PP
+Definition at line \fB28\fP of file \fBft_striteri\&.c\fP\&.
+.nf
+29 {
+30     unsigned int    i;
+31 
+32     i = 0;
+33     if (!s || !f)
+34         return ;
+35     while (s[i] != '\\0')
+36     {
+37         f(i, &s[i]);
+38         i++;
+39     }
+40 }
+.PP
+.fi
+
+.SS "char * ft_strjoin (char const * s1, char const * s2)"
+
+.PP
+Definition at line \fB23\fP of file \fBft_strjoin\&.c\fP\&.
+.nf
+24 {
+25     size_t  len;
+26     char    *pt;
+27     char    *result;
+28 
+29     if (!s1 || !s2)
+30         return (NULL);
+31     len = ft_strlen(s1) + ft_strlen (s2) + 1;
+32     if (len == 0)
+33         return (NULL);
+34     pt = (char *)malloc(sizeof(char) * len);
+35     if (!pt)
+36         return (NULL);
+37     result = pt;
+38     while (*s1)
+39         *pt++ = *s1++;
+40     while (*s2)
+41         *pt++ = *s2++;
+42     *pt = '\\0';
+43     return (result);
+44 }
+.PP
+.fi
+
+.PP
+References \fBft_strlen()\fP\&.
+.PP
+Referenced by \fBenv_to_array()\fP, \fBft_find_path()\fP, \fBgenerate_prompt_string()\fP, and \fBheredoc()\fP\&.
+.SS "size_t ft_strlcat (char * dest, const char * src, size_t size)"
+
+.PP
+Definition at line \fB26\fP of file \fBft_strlcat\&.c\fP\&.
+.nf
+27 {
+28     char        *d;
+29     const char  *s;
+30     size_t      len_dst;
+31     size_t      remaining_space;
+32 
+33     len_dst = 0;
+34     s = src;
+35     d = dst;
+36     while (size > 0 && *d != '\\0')
+37     {
+38         d++;
+39         size\-\-;
+40         len_dst++;
+41     }
+42     remaining_space = size;
+43     if (remaining_space == 0)
+44         return (len_dst + ft_strlen(src));
+45     while (\-\-remaining_space > 0 && *s != '\\0')
+46         *d++ = *s++;
+47     *d = '\\0';
+48     return (len_dst + ft_strlen(src));
+49 }
+.PP
+.fi
+
+.PP
+References \fBft_strlen()\fP\&.
+.SS "size_t ft_strlcpy (char * dest, const char * src, size_t size)"
+
+.PP
+Definition at line \fB25\fP of file \fBft_strlcpy\&.c\fP\&.
+.nf
+26 {
+27     char        *d;
+28     const char  *s;
+29     size_t      n;
+30 
+31     d = dst;
+32     s = src;
+33     n = size;
+34     if (n > 0)
+35     {
+36         while (\-\-n > 0 && *s != '\\0')
+37             *d++ = *s++;
+38         *d = '\\0';
+39     }
+40     while (*s != '\\0')
+41         s++;
+42     return (s \- src);
+43 }
+.PP
+.fi
+
+.PP
+Referenced by \fBft_strdup()\fP, \fBft_strjoin_gnl()\fP, and \fBft_strndup()\fP\&.
+.SS "size_t ft_strlen (const char * s)"
+
+.PP
+Definition at line \fB15\fP of file \fBft_strlen\&.c\fP\&.
+.nf
+16 {
+17     size_t  i;
+18 
+19     i = 0;
+20     while (s[i])
+21         i++;
+22     return (i);
+23 }
+.PP
+.fi
+
+.PP
+Referenced by \fBbuiltin_echo()\fP, \fBbuiltin_exit()\fP, \fBft_putstr_fd()\fP, \fBft_strdup()\fP, \fBft_strjoin()\fP, \fBft_strjoin_gnl()\fP, \fBft_strlcat()\fP, \fBft_strndup()\fP, \fBft_strnstr()\fP, \fBft_strstr()\fP, \fBft_strtrim()\fP, \fBft_substr()\fP, \fBgenerate_prompt()\fP, and \fBgenerate_prompt_string()\fP\&.
+.SS "char * ft_strmapi (char const * s, char(* f )(unsigned int, char))"
+
+.PP
+Definition at line \fB28\fP of file \fBft_strmapi\&.c\fP\&.
+.nf
+29 {
+30     char    *result;
+31     size_t  len;
+32     size_t  i;
+33 
+34     if (!s || !f)
+35         return (NULL);
+36     len = 0;
+37     while (s[len] != '\\0')
+38         len++;
+39     result = (char *)malloc((len + 1) * sizeof(char));
+40     if (!result)
+41         return (NULL);
+42     i = 0;
+43     while (i < len)
+44     {
+45         result[i] = f(i, s[i]);
+46         i++;
+47     }
+48     result[len] = '\\0';
+49     return (result);
+50 }
+.PP
+.fi
+
+.SS "int ft_strncmp (const char * s1, const char * s2, size_t n)"
+
+.PP
+Definition at line \fB24\fP of file \fBft_strncmp\&.c\fP\&.
+.nf
+25 {
+26     while (n > 0 && (*s1 != '\\0' || *s2 != '\\0'))
+27     {
+28         if (*s1 != *s2)
+29             return ((unsigned char)*s1 \- (unsigned char)*s2);
+30         s1++;
+31         s2++;
+32         n\-\-;
+33     }
+34     return (0);
+35 }
+.PP
+.fi
+
+.PP
+Referenced by \fBbuiltin_export()\fP, \fBft_strnstr()\fP, \fBft_strstr()\fP, \fBgenerate_prompt_string()\fP, and \fBlist_repeat_check_str()\fP\&.
+.SS "char * ft_strndup (const char * s, size_t n)"
+
+.PP
+Definition at line \fB23\fP of file \fBft_strndup\&.c\fP\&.
+.nf
+24 {
+25     size_t  len;
+26     char    *new;
+27 
+28     len = ft_strlen(s);
+29     if (!s)
+30         return (NULL);
+31     new = malloc((n + 1) * sizeof(char));
+32     if (!new)
+33         return (NULL);
+34     if (n > len)
+35         n = len;
+36     ft_strlcpy(new, s, n + 1);
+37     return (new);
+38 }
+.PP
+.fi
+
+.PP
+References \fBft_strlcpy()\fP, and \fBft_strlen()\fP\&.
+.PP
+Referenced by \fBappend_phrase_if_valid()\fP\&.
+.SS "char * ft_strnstr (const char * haystack, const char * needle, size_t len)"
+
+.PP
+Definition at line \fB25\fP of file \fBft_strnstr\&.c\fP\&.
+.nf
+26 {
+27     size_t  little_len;
+28 
+29     if (!big && n == 0)
+30         return (NULL);
+31     little_len = ft_strlen(little);
+32     if (little[0] == '\\0')
+33         return ((char *)big);
+34     while (*big != '\\0' && n >= little_len)
+35     {
+36         if (ft_strncmp(big, little, little_len) == 0)
+37             return ((char *)big);
+38         big++;
+39         n\-\-;
+40     }
+41     return (NULL);
+42 }
+.PP
+.fi
+
+.PP
+References \fBft_strlen()\fP, and \fBft_strncmp()\fP\&.
+.SS "char * ft_strrchr (const char * s, int c)"
+
+.PP
+Definition at line \fB24\fP of file \fBft_strrchr\&.c\fP\&.
+.nf
+25 {
+26     unsigned char   uc;
+27     const char      *last_occurrence;
+28 
+29     last_occurrence = NULL;
+30     uc = (unsigned char)c;
+31     while (*s != '\\0')
+32     {
+33         if (*s == uc)
+34             last_occurrence = s;
+35         s++;
+36     }
+37     if (*s == uc)
+38         return ((char *)s);
+39     return ((char *)last_occurrence);
+40 }
+.PP
+.fi
+
+.SS "char * ft_strstr (const char * big, const char * little)"
+
+.PP
+Definition at line \fB24\fP of file \fBft_strstr\&.c\fP\&.
+.nf
+25 {
+26     size_t  little_len;
+27 
+28     if (!big)
+29         return (NULL);
+30     little_len = ft_strlen(little);
+31     if (little[0] == '\\0')
+32         return ((char *)big);
+33     while (*big != '\\0')
+34     {
+35         if (ft_strncmp(big, little, little_len) == 0)
+36             return ((char *)big);
+37         big++;
+38     }
+39     return (NULL);
+40 }
+.PP
+.fi
+
+.PP
+References \fBft_strlen()\fP, and \fBft_strncmp()\fP\&.
+.SS "char * ft_strtrim (char const * s1, char const * set)"
+
+.PP
+Definition at line \fB39\fP of file \fBft_strtrim\&.c\fP\&.
+.nf
+40 {
+41     char    *str;
+42     size_t  i;
+43     size_t  start;
+44     size_t  end;
+45 
+46     if (!s1 || !set)
+47         return (NULL);
+48     start = 0;
+49     while (s1[start] && ft_char_in_set(s1[start], set))
+50         start++;
+51     end = ft_strlen(s1);
+52     while (end > start && ft_char_in_set(s1[end \- 1], set))
+53         end\-\-;
+54     str = (char *)malloc(sizeof(*s1) * (end \- start + 1));
+55     if (!str)
+56         return (NULL);
+57     i = 0;
+58     while (start < end)
+59         str[i++] = s1[start++];
+60     str[i] = 0;
+61     return (str);
+62 }
+.PP
+.fi
+
+.PP
+References \fBft_char_in_set()\fP, and \fBft_strlen()\fP\&.
+.PP
+Referenced by \fBtrim_input()\fP\&.
+.SS "char * ft_substr (char const * s, unsigned int start, size_t len)"
+
+.PP
+Definition at line \fB27\fP of file \fBft_substr\&.c\fP\&.
+.nf
+28 {
+29     char    *new_str;
+30     size_t  i;
+31     size_t  j;
+32     size_t  size;
+33 
+34     size = ft_strlen(s) \- start;
+35     if (start > ft_strlen(s))
+36         size = 0;
+37     else if (size > len)
+38         size = len;
+39     new_str = (char *)malloc(size + 1);
+40     if (!s || !new_str)
+41         return (0);
+42     i = start;
+43     j = 0;
+44     while (i < ft_strlen(s) && j < len)
+45         new_str[j++] = s[i++];
+46     new_str[j] = '\\0';
+47     return (new_str);
+48 }
+.PP
+.fi
+
+.PP
+References \fBft_strlen()\fP\&.
+.PP
+Referenced by \fBextract_line()\fP\&.
+.SS "int ft_tolower (int c)"
+
+.PP
+Definition at line \fB15\fP of file \fBft_tolower\&.c\fP\&.
+.nf
+16 {
+17     if (c >= 'A' && c <= 'Z')
+18         return (c + ('a' \- 'A'));
+19     return (c);
+20 }
+.PP
+.fi
+
+.SS "int ft_toupper (int c)"
+
+.PP
+Definition at line \fB15\fP of file \fBft_toupper\&.c\fP\&.
+.nf
+16 {
+17     if (c >= 'a' && c <= 'z')
+18         return (c \- ('a' \- 'A'));
+19     return (c);
+20 }
+.PP
+.fi
+
+.SS "int isnum_from_str (const char * str)"
+
+.PP
+Definition at line \fB15\fP of file \fBisnum_from_str\&.c\fP\&.
+.nf
+16 {
+17     if (!str || *str == '\\0')
+18         return (0);
+19     if (*str == '\-' || *str == '+')
+20     {
+21         str++;
+22         if (*str == '\\0')
+23             return (0);
+24     }
+25     while (*str)
+26     {
+27         if (*str < '0' || *str > '9')
+28             return (0);
+29         str++;
+30     }
+31     return (1);
+32 }
+.PP
+.fi
+
+.SS "int list_len_char (char a[])"
+
+.PP
+Definition at line \fB13\fP of file \fBlist_len_char\&.c\fP\&.
+.nf
+14 {
+15     int i;
+16 
+17     i = 0;
+18     while (a[i] != '\\0')
+19         i++;
+20     return (i);
+21 }
+.PP
+.fi
+
+.SS "int list_len_str (char * a[])"
+
+.PP
+Definition at line \fB15\fP of file \fBlist_len_str\&.c\fP\&.
+.nf
+16 {
+17     int i;
+18 
+19     i = 0;
+20     while (a[i])
+21         i++;
+22     return (i);
+23 }
+.PP
+.fi
+
+.SS "int list_repeat_check_int (int a[], int size)"
+
+.PP
+Definition at line \fB15\fP of file \fBlist_repeat_check_int\&.c\fP\&.
+.nf
+16 {
+17     int i;
+18     int j;
+19 
+20     i = 0;
+21     while (i < size \- 1)
+22     {
+23         j = i + 1;
+24         while (j < size)
+25         {
+26             if (a[i] == a[j])
+27                 return (1);
+28             j++;
+29         }
+30         i++;
+31     }
+32     return (0);
+33 }
+.PP
+.fi
+
+.SS "int list_repeat_check_str (char * a[], int size)"
+
+.PP
+Definition at line \fB15\fP of file \fBlist_repeat_check_str\&.c\fP\&.
+.nf
+16 {
+17     int i;
+18     int j;
+19 
+20     i = 0;
+21     while (i < size \- 1)
+22     {
+23         j = i + 1;
+24         while (j < size)
+25         {
+26             if (ft_strncmp(a[i], a[j], size) == 0)
+27                 return (1);
+28             j++;
+29         }
+30         i++;
+31     }
+32     return (0);
+33 }
+.PP
+.fi
+
+.PP
+References \fBft_strncmp()\fP\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for maxishell from the source code\&.

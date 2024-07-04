@@ -1,0 +1,42 @@
+.TH "/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_putendl_fd.c" 3 "Version 1" "maxishell" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_putendl_fd.c
+.SH SYNOPSIS
+.br
+.PP
+\fR#include 'libft\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBft_putendl_fd\fP (char *s, int fd)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "void ft_putendl_fd (char * s, int fd)"
+
+.PP
+Definition at line \fB21\fP of file \fBft_putendl_fd\&.c\fP\&.
+.nf
+22 {
+23     if (s)
+24     {
+25         ft_putstr_fd(s, fd);
+26         ft_putchar_fd('\\n', fd);
+27     }
+28 }
+.PP
+.fi
+
+.PP
+References \fBft_putchar_fd()\fP, and \fBft_putstr_fd()\fP\&.
+.PP
+Referenced by \fBbuiltin_pwd()\fP, and \fBbuiltin_unset()\fP\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for maxishell from the source code\&.

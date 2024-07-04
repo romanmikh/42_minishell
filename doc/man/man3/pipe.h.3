@@ -1,0 +1,77 @@
+.TH "/Users/dimadem/Documents/GitHub/minishell/inc/pipe.h" 3 "Version 1" "maxishell" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/Users/dimadem/Documents/GitHub/minishell/inc/pipe.h
+.SH SYNOPSIS
+.br
+.PP
+\fR#include 'shell\&.h'\fP
+.br
+\fR#include 'tokens\&.h'\fP
+.br
+
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBWAIT_NEXT_COMMAND\fP   1"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "int \fBbuiltin_pipe\fP (\fBt_ast\fP *node, \fBt_minishell_data\fP *data)"
+.br
+.in -1c
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define WAIT_NEXT_COMMAND   1"
+
+.PP
+Definition at line \fB19\fP of file \fBpipe\&.h\fP\&.
+.PP
+Referenced by \fBbuiltin_pipe()\fP, and \fBstatus_handler()\fP\&.
+.SH "Function Documentation"
+.PP 
+.SS "int builtin_pipe (\fBt_ast\fP * node, \fBt_minishell_data\fP * data)"
+
+.PP
+Definition at line \fB25\fP of file \fBpipe\&.c\fP\&.
+.nf
+26 {
+27     int     fd[2];
+28     pid_t   pid_1;
+29     pid_t   pid_2;
+30     int     status;
+31 
+32     pid_2 = \-1;
+33     if (pipe(fd) == \-1)
+34         ft_perror("pipe");
+35     pid_1 = execute_child(node\->left, data, fd, 0);
+36     if (node\->right != NULL)
+37         pid_2 = execute_child(node\->right, data, fd, 1);
+38     else
+39     {
+40         close(fd[1]);
+41         data\->temp_fd = fd[0];
+42         return (WAIT_NEXT_COMMAND);
+43     }
+44     close_fds(fd);
+45     if (pid_1 > 0)
+46         waitpid(pid_1, &status, 0);
+47     if (node\->right != NULL && pid_2 > 0)
+48         waitpid(pid_2, &status, 0);
+49     return (WEXITSTATUS(status));
+50 }
+.PP
+.fi
+
+.PP
+References \fBclose_fds()\fP, \fBexecute_child()\fP, \fBft_perror()\fP, \fBs_ast::left\fP, \fBs_ast::right\fP, \fBs_minishell_data::temp_fd\fP, and \fBWAIT_NEXT_COMMAND\fP\&.
+.PP
+Referenced by \fBexecute_ast()\fP\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for maxishell from the source code\&.

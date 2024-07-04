@@ -112,18 +112,20 @@ $(function(){initNavTree('aux_8c_source.html',''); initResizable(true); });
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment">/*                                                                            */</span></div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment">/* ************************************************************************** */</span></div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &quot;tokens.h&quot;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &quot;<a class="code" href="tokens_8h.html">tokens.h</a>&quot;</span></div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
 <div class="foldopen" id="foldopen00015" data-start="{" data-end="}">
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="aux_8c.html#a94ee21f550bbf6448142ec3102526dde">   15</a></span><span class="keywordtype">void</span>    <a class="code hl_function" href="aux_8c.html#a94ee21f550bbf6448142ec3102526dde">make_history</a>(<span class="keywordtype">char</span> *line)</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="tokens_8h.html#a94ee21f550bbf6448142ec3102526dde">   15</a></span><span class="keywordtype">void</span>    <a class="code hl_function" href="aux_8c.html#a94ee21f550bbf6448142ec3102526dde">make_history</a>(<span class="keywordtype">char</span> *line)</div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>{</div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    printf(<span class="stringliteral">&quot;line: %s\n&quot;</span>, line);</div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <span class="keywordflow">if</span> (*line)</div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>        add_history(line);</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    write_history(HISTORY_PATH);</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    write_history(<a class="code hl_define" href="tokens_8h.html#a32f7389f2a161bbbb128130ca37ef8e1">HISTORY_PATH</a>);</div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>}</div>
 </div>
 <div class="ttc" id="aaux_8c_html_a94ee21f550bbf6448142ec3102526dde"><div class="ttname"><a href="aux_8c.html#a94ee21f550bbf6448142ec3102526dde">make_history</a></div><div class="ttdeci">void make_history(char *line)</div><div class="ttdef"><b>Definition</b> <a href="#l00015">aux.c:15</a></div></div>
+<div class="ttc" id="atokens_8h_html"><div class="ttname"><a href="tokens_8h.html">tokens.h</a></div></div>
+<div class="ttc" id="atokens_8h_html_a32f7389f2a161bbbb128130ca37ef8e1"><div class="ttname"><a href="tokens_8h.html#a32f7389f2a161bbbb128130ca37ef8e1">HISTORY_PATH</a></div><div class="ttdeci">#define HISTORY_PATH</div><div class="ttdef"><b>Definition</b> <a href="tokens_8h_source.html#l00027">tokens.h:27</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

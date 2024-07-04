@@ -19,12 +19,12 @@
 
 .in +1c
 .ti -1c
-.RI "int \fBbuiltin_pwd\fP (t_minishell_data *data)"
+.RI "int \fBbuiltin_pwd\fP (\fBt_minishell_data\fP *data)"
 .br
 .in -1c
 .SH "Function Documentation"
 .PP 
-.SS "int builtin_pwd (t_minishell_data * data)"
+.SS "int builtin_pwd (\fBt_minishell_data\fP * data)"
 
 .PP
 Definition at line \fB23\fP of file \fBpwd\&.c\fP\&.
@@ -46,6 +46,8 @@ Definition at line \fB23\fP of file \fBpwd\&.c\fP\&.
 .PP
 .fi
 
+.PP
+References \fBft_putendl_fd()\fP, and \fBft_putstr_fd()\fP\&.
 .PP
 Referenced by \fBexecute()\fP\&.
 .SH "Author"

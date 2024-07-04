@@ -1,0 +1,45 @@
+.TH "/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_memcpy.c" 3 "Version 1" "maxishell" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_memcpy.c
+.SH SYNOPSIS
+.br
+.PP
+\fR#include 'libft\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void * \fBft_memcpy\fP (void *dest, const void *src, size_t n)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "void * ft_memcpy (void * dest, const void * src, size_t n)"
+
+.PP
+Definition at line \fB22\fP of file \fBft_memcpy\&.c\fP\&.
+.nf
+23 {
+24     char        *d;
+25     const char  *s;
+26 
+27     if (!dest && !src)
+28         return (NULL);
+29     s = src;
+30     d = dest;
+31     while (n\-\-)
+32         *d++ = *s++;
+33     return (dest);
+34 }
+.PP
+.fi
+
+.PP
+Referenced by \fBft_memmove()\fP, \fBft_strjoin_gnl()\fP, and \fBstrndup()\fP\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for maxishell from the source code\&.

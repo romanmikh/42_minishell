@@ -2,16 +2,106 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.11.0" xml:lang="en-US">
   <compounddef id="visualiser_8c" kind="file" language="C++">
     <compoundname>visualiser.c</compoundname>
-    <includes local="yes">tokens.h</includes>
+    <includes refid="tokens_8h" local="yes">tokens.h</includes>
     <incdepgraph>
+      <node id="18">
+        <label>env.h</label>
+        <link refid="env_8h"/>
+      </node>
+      <node id="17">
+        <label>shell.h</label>
+        <link refid="shell_8h"/>
+        <childnode refid="18" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>tokens.h</label>
+        <link refid="tokens_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>../lib/libft/inc/libft.h</label>
+        <link refid="libft_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
       <node id="1">
         <label>/Users/dimadem/Documents/GitHub/minishell/src/utils/visualiser.c</label>
         <link refid="visualiser_8c"/>
         <childnode refid="2" relation="include">
         </childnode>
       </node>
-      <node id="2">
-        <label>tokens.h</label>
+      <node id="7">
+        <label>limits.h</label>
+      </node>
+      <node id="12">
+        <label>math.h</label>
+      </node>
+      <node id="16">
+        <label>pwd.h</label>
+      </node>
+      <node id="15">
+        <label>readline/history.h</label>
+      </node>
+      <node id="14">
+        <label>readline/readline.h</label>
+      </node>
+      <node id="10">
+        <label>signal.h</label>
+      </node>
+      <node id="9">
+        <label>stdarg.h</label>
+      </node>
+      <node id="11">
+        <label>stdbool.h</label>
+      </node>
+      <node id="4">
+        <label>stddef.h</label>
+      </node>
+      <node id="6">
+        <label>stdint.h</label>
+      </node>
+      <node id="13">
+        <label>stdio.h</label>
+      </node>
+      <node id="5">
+        <label>stdlib.h</label>
+      </node>
+      <node id="8">
+        <label>unistd.h</label>
       </node>
     </incdepgraph>
     <sectiondef kind="func">
@@ -21,7 +111,7 @@
         <argsstring>(t_token_type type)</argsstring>
         <name>get_token_type_name</name>
         <param>
-          <type>t_token_type</type>
+          <type><ref refid="tokens_8h_1aaa12264c004e358b28290c09bb20969a" kindref="member">t_token_type</ref></type>
           <declname>type</declname>
         </param>
         <briefdescription>
@@ -31,6 +121,13 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/dimadem/Documents/GitHub/minishell/src/utils/visualiser.c" line="15" column="11" bodyfile="/Users/dimadem/Documents/GitHub/minishell/src/utils/visualiser.c" bodystart="15" bodyend="33"/>
+        <references refid="tokens_8h_1a76a354e93d720f05344590ec8aa222deaf62fcc8d292e490f19a6cea724a10c00" compoundref="tokens_8h" startline="33">ENV_VAR</references>
+        <references refid="tokens_8h_1a76a354e93d720f05344590ec8aa222dea46ac44ddfb231d3c8f76820d4624c099" compoundref="tokens_8h" startline="31">PHRASE</references>
+        <references refid="tokens_8h_1a76a354e93d720f05344590ec8aa222dea9bc832fa28809fb974f6ce5bb0cc7117" compoundref="tokens_8h" startline="32">PIPE</references>
+        <references refid="tokens_8h_1a76a354e93d720f05344590ec8aa222deae6167ac4e4f266512f36d79961bde464" compoundref="tokens_8h" startline="36">REDIR_APPEND</references>
+        <references refid="tokens_8h_1a76a354e93d720f05344590ec8aa222dea6b4984ec77e78953297b7cb3f580a2e7" compoundref="tokens_8h" startline="37">REDIR_HEREDOC</references>
+        <references refid="tokens_8h_1a76a354e93d720f05344590ec8aa222dea18f3c2f496edb0cae413ac5244bb2452" compoundref="tokens_8h" startline="34">REDIR_IN</references>
+        <references refid="tokens_8h_1a76a354e93d720f05344590ec8aa222deacb2a363e84eabbbe3925fd298f7a3d01" compoundref="tokens_8h" startline="35">REDIR_OUT</references>
         <referencedby refid="visualiser_8c_1a13ff81f002e065c8be81f93b1e3bfecf" compoundref="visualiser_8c" startline="35" endline="61">print_ast_node</referencedby>
       </memberdef>
       <memberdef kind="function" id="visualiser_8c_1a13ff81f002e065c8be81f93b1e3bfecf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
@@ -39,7 +136,7 @@
         <argsstring>(t_ast *node, int depth, char *prefix, int is_left)</argsstring>
         <name>print_ast_node</name>
         <param>
-          <type>t_ast *</type>
+          <type><ref refid="tokens_8h_1a5fd329b243c6cd036f7b9ecbc86a9344" kindref="member">t_ast</ref> *</type>
           <declname>node</declname>
         </param>
         <param>
@@ -61,7 +158,9 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/dimadem/Documents/GitHub/minishell/src/utils/visualiser.c" line="35" column="5" bodyfile="/Users/dimadem/Documents/GitHub/minishell/src/utils/visualiser.c" bodystart="35" bodyend="61"/>
+        <references refid="structs__ast_1ab62d177d86a1908cf5bbdb5cf6e978f8" compoundref="tokens_8h" startline="51">s_ast::args</references>
         <references refid="visualiser_8c_1afdc55a243d68518be551b9ea0af3317c" compoundref="visualiser_8c" startline="15" endline="33">get_token_type_name</references>
+        <references refid="structs__ast_1ad1cd2bc8f77d3bbac46e3fdddff8b441" compoundref="tokens_8h" startline="50">s_ast::type</references>
         <referencedby refid="visualiser_8c_1ac38cad433d858a530a7d7479f134f81c" compoundref="visualiser_8c" startline="91" endline="101">print_ast_graphical</referencedby>
       </memberdef>
       <memberdef kind="function" id="visualiser_8c_1af0b35d9d3e66d95fbd123e60ccfe74b4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
@@ -96,7 +195,7 @@
         <argsstring>(t_ast *node, int depth, char *prefix, int is_left)</argsstring>
         <name>print_ast_graphical</name>
         <param>
-          <type>t_ast *</type>
+          <type><ref refid="tokens_8h_1a5fd329b243c6cd036f7b9ecbc86a9344" kindref="member">t_ast</ref> *</type>
           <declname>node</declname>
         </param>
         <param>
@@ -119,10 +218,12 @@
         </inbodydescription>
         <location file="/Users/dimadem/Documents/GitHub/minishell/src/utils/visualiser.c" line="91" column="5" bodyfile="/Users/dimadem/Documents/GitHub/minishell/src/utils/visualiser.c" bodystart="91" bodyend="101"/>
         <references refid="visualiser_8c_1af0b35d9d3e66d95fbd123e60ccfe74b4" compoundref="visualiser_8c" startline="63" endline="89">build_new_prefix</references>
+        <references refid="structs__ast_1ac3be51aa6a7ae13bd16b6ad0c7ac843c" compoundref="tokens_8h" startline="52">s_ast::left</references>
         <references refid="visualiser_8c_1ac38cad433d858a530a7d7479f134f81c" compoundref="visualiser_8c" startline="91" endline="101">print_ast_graphical</references>
         <references refid="visualiser_8c_1a13ff81f002e065c8be81f93b1e3bfecf" compoundref="visualiser_8c" startline="35" endline="61">print_ast_node</references>
+        <references refid="structs__ast_1ac2c9513b20e9351e45d9bc6361095f7b" compoundref="tokens_8h" startline="53">s_ast::right</references>
         <referencedby refid="visualiser_8c_1ac38cad433d858a530a7d7479f134f81c" compoundref="visualiser_8c" startline="91" endline="101">print_ast_graphical</referencedby>
-        <referencedby refid="visualiser_8c_1a16c146658d86ab8fa44a3af94804c5a9" compoundref="visualiser_8c" startline="103" endline="106">print_ast_root</referencedby>
+        <referencedby refid="tokens_8h_1a16c146658d86ab8fa44a3af94804c5a9" compoundref="visualiser_8c" startline="103" endline="106">print_ast_root</referencedby>
       </memberdef>
       <memberdef kind="function" id="visualiser_8c_1a16c146658d86ab8fa44a3af94804c5a9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -130,7 +231,7 @@
         <argsstring>(t_ast *root)</argsstring>
         <name>print_ast_root</name>
         <param>
-          <type>t_ast *</type>
+          <type><ref refid="tokens_8h_1a5fd329b243c6cd036f7b9ecbc86a9344" kindref="member">t_ast</ref> *</type>
           <declname>root</declname>
         </param>
         <briefdescription>
@@ -161,29 +262,29 @@
 <codeline lineno="10"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="11"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>**************************************************************************<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="12"><highlight class="normal"></highlight></codeline>
-<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;tokens.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="tokens_8h" kindref="compound">tokens.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="14"><highlight class="normal"></highlight></codeline>
-<codeline lineno="15" refid="visualiser_8c_1afdc55a243d68518be551b9ea0af3317c" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/>*<ref refid="visualiser_8c_1afdc55a243d68518be551b9ea0af3317c" kindref="member">get_token_type_name</ref>(t_token_type<sp/>type)</highlight></codeline>
+<codeline lineno="15" refid="visualiser_8c_1afdc55a243d68518be551b9ea0af3317c" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/>*<ref refid="visualiser_8c_1afdc55a243d68518be551b9ea0af3317c" kindref="member">get_token_type_name</ref>(<ref refid="tokens_8h_1aaa12264c004e358b28290c09bb20969a" kindref="member">t_token_type</ref><sp/>type)</highlight></codeline>
 <codeline lineno="16"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(type<sp/>==<sp/>PHRASE)</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(type<sp/>==<sp/><ref refid="tokens_8h_1a76a354e93d720f05344590ec8aa222dea46ac44ddfb231d3c8f76820d4624c099" kindref="member">PHRASE</ref>)</highlight></codeline>
 <codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(</highlight><highlight class="stringliteral">&quot;PHRASE&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(type<sp/>==<sp/>PIPE)</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(type<sp/>==<sp/><ref refid="tokens_8h_1a76a354e93d720f05344590ec8aa222dea9bc832fa28809fb974f6ce5bb0cc7117" kindref="member">PIPE</ref>)</highlight></codeline>
 <codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(</highlight><highlight class="stringliteral">&quot;PIPE&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(type<sp/>==<sp/>ENV_VAR)</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(type<sp/>==<sp/><ref refid="tokens_8h_1a76a354e93d720f05344590ec8aa222deaf62fcc8d292e490f19a6cea724a10c00" kindref="member">ENV_VAR</ref>)</highlight></codeline>
 <codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(</highlight><highlight class="stringliteral">&quot;ENV_VAR&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(type<sp/>==<sp/>REDIR_IN)</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(type<sp/>==<sp/><ref refid="tokens_8h_1a76a354e93d720f05344590ec8aa222dea18f3c2f496edb0cae413ac5244bb2452" kindref="member">REDIR_IN</ref>)</highlight></codeline>
 <codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(</highlight><highlight class="stringliteral">&quot;REDIR_IN&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(type<sp/>==<sp/>REDIR_OUT)</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(type<sp/>==<sp/><ref refid="tokens_8h_1a76a354e93d720f05344590ec8aa222deacb2a363e84eabbbe3925fd298f7a3d01" kindref="member">REDIR_OUT</ref>)</highlight></codeline>
 <codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(</highlight><highlight class="stringliteral">&quot;REDIR_OUT&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(type<sp/>==<sp/>REDIR_APPEND)</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(type<sp/>==<sp/><ref refid="tokens_8h_1a76a354e93d720f05344590ec8aa222deae6167ac4e4f266512f36d79961bde464" kindref="member">REDIR_APPEND</ref>)</highlight></codeline>
 <codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(</highlight><highlight class="stringliteral">&quot;REDIR_APPEND&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(type<sp/>==<sp/>REDIR_HEREDOC)</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(type<sp/>==<sp/><ref refid="tokens_8h_1a76a354e93d720f05344590ec8aa222dea6b4984ec77e78953297b7cb3f580a2e7" kindref="member">REDIR_HEREDOC</ref>)</highlight></codeline>
 <codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(</highlight><highlight class="stringliteral">&quot;REDIR_HEREDOC&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(</highlight><highlight class="stringliteral">&quot;UNKNOWN&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="33"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="34"><highlight class="normal"></highlight></codeline>
-<codeline lineno="35" refid="visualiser_8c_1a13ff81f002e065c8be81f93b1e3bfecf" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="visualiser_8c_1a13ff81f002e065c8be81f93b1e3bfecf" kindref="member">print_ast_node</ref>(t_ast<sp/>*node,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>depth,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*prefix,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>is_left)</highlight></codeline>
+<codeline lineno="35" refid="visualiser_8c_1a13ff81f002e065c8be81f93b1e3bfecf" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="visualiser_8c_1a13ff81f002e065c8be81f93b1e3bfecf" kindref="member">print_ast_node</ref>(<ref refid="structs__ast" kindref="compound">t_ast</ref><sp/>*node,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>depth,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*prefix,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>is_left)</highlight></codeline>
 <codeline lineno="36"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i;</highlight></codeline>
 <codeline lineno="38"><highlight class="normal"></highlight></codeline>
@@ -199,13 +300,13 @@
 <codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;R-&gt;<sp/>&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;Type:<sp/>%s\n&quot;</highlight><highlight class="normal">,<sp/><ref refid="visualiser_8c_1afdc55a243d68518be551b9ea0af3317c" kindref="member">get_token_type_name</ref>(node-&gt;type));</highlight></codeline>
-<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(node-&gt;args)</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;Type:<sp/>%s\n&quot;</highlight><highlight class="normal">,<sp/><ref refid="visualiser_8c_1afdc55a243d68518be551b9ea0af3317c" kindref="member">get_token_type_name</ref>(node-&gt;<ref refid="structs__ast_1ad1cd2bc8f77d3bbac46e3fdddff8b441" kindref="member">type</ref>));</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(node-&gt;<ref refid="structs__ast_1ab62d177d86a1908cf5bbdb5cf6e978f8" kindref="member">args</ref>)</highlight></codeline>
 <codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>i<sp/>=<sp/>0;</highlight></codeline>
-<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(node-&gt;args[i])</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(node-&gt;<ref refid="structs__ast_1ab62d177d86a1908cf5bbdb5cf6e978f8" kindref="member">args</ref>[i])</highlight></codeline>
 <codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;%s<sp/><sp/><sp/><sp/><sp/>Arg:<sp/>%s\n&quot;</highlight><highlight class="normal">,<sp/>prefix,<sp/>node-&gt;args[i]);</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;%s<sp/><sp/><sp/><sp/><sp/>Arg:<sp/>%s\n&quot;</highlight><highlight class="normal">,<sp/>prefix,<sp/>node-&gt;<ref refid="structs__ast_1ab62d177d86a1908cf5bbdb5cf6e978f8" kindref="member">args</ref>[i]);</highlight></codeline>
 <codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>i++;</highlight></codeline>
 <codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
@@ -239,19 +340,19 @@
 <codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/>new_prefix[j]<sp/>=<sp/></highlight><highlight class="charliteral">&apos;\0&apos;</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="89"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="90"><highlight class="normal"></highlight></codeline>
-<codeline lineno="91" refid="visualiser_8c_1ac38cad433d858a530a7d7479f134f81c" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="visualiser_8c_1ac38cad433d858a530a7d7479f134f81c" kindref="member">print_ast_graphical</ref>(t_ast<sp/>*node,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>depth,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*prefix,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>is_left)</highlight></codeline>
+<codeline lineno="91" refid="visualiser_8c_1ac38cad433d858a530a7d7479f134f81c" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="visualiser_8c_1ac38cad433d858a530a7d7479f134f81c" kindref="member">print_ast_graphical</ref>(<ref refid="structs__ast" kindref="compound">t_ast</ref><sp/>*node,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>depth,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*prefix,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>is_left)</highlight></codeline>
 <codeline lineno="92"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/><sp/><sp/>new_prefix[256];</highlight></codeline>
 <codeline lineno="94"><highlight class="normal"></highlight></codeline>
 <codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="visualiser_8c_1a13ff81f002e065c8be81f93b1e3bfecf" kindref="member">print_ast_node</ref>(node,<sp/>depth,<sp/>prefix,<sp/>is_left);</highlight></codeline>
 <codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="visualiser_8c_1af0b35d9d3e66d95fbd123e60ccfe74b4" kindref="member">build_new_prefix</ref>(new_prefix,<sp/>prefix,<sp/>is_left);</highlight></codeline>
-<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(node-&gt;left)</highlight></codeline>
-<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="visualiser_8c_1ac38cad433d858a530a7d7479f134f81c" kindref="member">print_ast_graphical</ref>(node-&gt;left,<sp/>depth<sp/>+<sp/>1,<sp/>new_prefix,<sp/>1);</highlight></codeline>
-<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(node-&gt;right)</highlight></codeline>
-<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="visualiser_8c_1ac38cad433d858a530a7d7479f134f81c" kindref="member">print_ast_graphical</ref>(node-&gt;right,<sp/>depth<sp/>+<sp/>1,<sp/>new_prefix,<sp/>0);</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(node-&gt;<ref refid="structs__ast_1ac3be51aa6a7ae13bd16b6ad0c7ac843c" kindref="member">left</ref>)</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="visualiser_8c_1ac38cad433d858a530a7d7479f134f81c" kindref="member">print_ast_graphical</ref>(node-&gt;<ref refid="structs__ast_1ac3be51aa6a7ae13bd16b6ad0c7ac843c" kindref="member">left</ref>,<sp/>depth<sp/>+<sp/>1,<sp/>new_prefix,<sp/>1);</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(node-&gt;<ref refid="structs__ast_1ac2c9513b20e9351e45d9bc6361095f7b" kindref="member">right</ref>)</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="visualiser_8c_1ac38cad433d858a530a7d7479f134f81c" kindref="member">print_ast_graphical</ref>(node-&gt;<ref refid="structs__ast_1ac2c9513b20e9351e45d9bc6361095f7b" kindref="member">right</ref>,<sp/>depth<sp/>+<sp/>1,<sp/>new_prefix,<sp/>0);</highlight></codeline>
 <codeline lineno="101"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="102"><highlight class="normal"></highlight></codeline>
-<codeline lineno="103" refid="visualiser_8c_1a16c146658d86ab8fa44a3af94804c5a9" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="visualiser_8c_1a16c146658d86ab8fa44a3af94804c5a9" kindref="member">print_ast_root</ref>(t_ast<sp/>*root)</highlight></codeline>
+<codeline lineno="103" refid="tokens_8h_1a16c146658d86ab8fa44a3af94804c5a9" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="visualiser_8c_1a16c146658d86ab8fa44a3af94804c5a9" kindref="member">print_ast_root</ref>(<ref refid="structs__ast" kindref="compound">t_ast</ref><sp/>*root)</highlight></codeline>
 <codeline lineno="104"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="visualiser_8c_1ac38cad433d858a530a7d7479f134f81c" kindref="member">print_ast_graphical</ref>(root,<sp/>0,<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">,<sp/>0);</highlight></codeline>
 <codeline lineno="106"><highlight class="normal">}</highlight></codeline>

@@ -2,16 +2,106 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.11.0" xml:lang="en-US">
   <compounddef id="stack__control__2_8c" kind="file" language="C++">
     <compoundname>stack_control_2.c</compoundname>
-    <includes local="yes">tokens.h</includes>
+    <includes refid="tokens_8h" local="yes">tokens.h</includes>
     <incdepgraph>
+      <node id="18">
+        <label>env.h</label>
+        <link refid="env_8h"/>
+      </node>
+      <node id="17">
+        <label>shell.h</label>
+        <link refid="shell_8h"/>
+        <childnode refid="18" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>tokens.h</label>
+        <link refid="tokens_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>../lib/libft/inc/libft.h</label>
+        <link refid="libft_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
       <node id="1">
         <label>/Users/dimadem/Documents/GitHub/minishell/src/utils/stack_control_2.c</label>
         <link refid="stack__control__2_8c"/>
         <childnode refid="2" relation="include">
         </childnode>
       </node>
-      <node id="2">
-        <label>tokens.h</label>
+      <node id="7">
+        <label>limits.h</label>
+      </node>
+      <node id="12">
+        <label>math.h</label>
+      </node>
+      <node id="16">
+        <label>pwd.h</label>
+      </node>
+      <node id="15">
+        <label>readline/history.h</label>
+      </node>
+      <node id="14">
+        <label>readline/readline.h</label>
+      </node>
+      <node id="10">
+        <label>signal.h</label>
+      </node>
+      <node id="9">
+        <label>stdarg.h</label>
+      </node>
+      <node id="11">
+        <label>stdbool.h</label>
+      </node>
+      <node id="4">
+        <label>stddef.h</label>
+      </node>
+      <node id="6">
+        <label>stdint.h</label>
+      </node>
+      <node id="13">
+        <label>stdio.h</label>
+      </node>
+      <node id="5">
+        <label>stdlib.h</label>
+      </node>
+      <node id="8">
+        <label>unistd.h</label>
       </node>
     </incdepgraph>
     <sectiondef kind="func">
@@ -21,7 +111,7 @@
         <argsstring>(t_token **tokens, char **argv)</argsstring>
         <name>build_linked_list</name>
         <param>
-          <type>t_token **</type>
+          <type><ref refid="tokens_8h_1aead06bc7a81ebdd60cbdcf6b3b8e51d4" kindref="member">t_token</ref> **</type>
           <declname>tokens</declname>
         </param>
         <param>
@@ -35,7 +125,7 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/dimadem/Documents/GitHub/minishell/src/utils/stack_control_2.c" line="15" column="5" bodyfile="/Users/dimadem/Documents/GitHub/minishell/src/utils/stack_control_2.c" bodystart="15" bodyend="25"/>
-        <references refid="stack__control_8c_1ad3cb8fb50ea5bbd7019b2480704d8e4e" compoundref="stack__control_8c" startline="15" endline="34">add_node</references>
+        <references refid="tokens_8h_1ad3cb8fb50ea5bbd7019b2480704d8e4e" compoundref="stack__control_8c" startline="15" endline="34">add_node</references>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -55,16 +145,16 @@
 <codeline lineno="10"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="11"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>**************************************************************************<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="12"><highlight class="normal"></highlight></codeline>
-<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;tokens.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="tokens_8h" kindref="compound">tokens.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="14"><highlight class="normal"></highlight></codeline>
-<codeline lineno="15" refid="stack__control__2_8c_1abe6ee9afbff4acb27c42380ff770c52a" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="stack__control__2_8c_1abe6ee9afbff4acb27c42380ff770c52a" kindref="member">build_linked_list</ref>(t_token<sp/>**tokens,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>**argv)</highlight></codeline>
+<codeline lineno="15" refid="tokens_8h_1abe6ee9afbff4acb27c42380ff770c52a" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="stack__control__2_8c_1abe6ee9afbff4acb27c42380ff770c52a" kindref="member">build_linked_list</ref>(<ref refid="structs__token" kindref="compound">t_token</ref><sp/>**tokens,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>**argv)</highlight></codeline>
 <codeline lineno="16"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i;</highlight></codeline>
 <codeline lineno="18"><highlight class="normal"></highlight></codeline>
 <codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/>i<sp/>=<sp/>0;</highlight></codeline>
 <codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(argv[i])</highlight></codeline>
 <codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="stack__control_8c_1ad3cb8fb50ea5bbd7019b2480704d8e4e" kindref="member">add_node</ref>(tokens,<sp/>argv[i]);<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="tokens_8h_1ad3cb8fb50ea5bbd7019b2480704d8e4e" kindref="member">add_node</ref>(tokens,<sp/>argv[i]);<sp/><sp/><sp/></highlight></codeline>
 <codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>i++;</highlight></codeline>
 <codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="25"><highlight class="normal">}</highlight></codeline>

@@ -1,0 +1,44 @@
+.TH "/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_calloc.c" 3 "Version 1" "maxishell" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_calloc.c
+.SH SYNOPSIS
+.br
+.PP
+\fR#include 'libft\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void * \fBft_calloc\fP (size_t count, size_t size)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "void * ft_calloc (size_t count, size_t size)"
+
+.PP
+Definition at line \fB23\fP of file \fBft_calloc\&.c\fP\&.
+.nf
+24 {
+25     void    *ptr;
+26 
+27     if (size != 0 && count > SIZE_MAX / size)
+28         return (NULL);
+29     ptr = malloc(count * size);
+30     if (!ptr)
+31         return (NULL);
+32     ft_memset(ptr, 0, count * size);
+33     return (ptr);
+34 }
+.PP
+.fi
+
+.PP
+References \fBft_memset()\fP\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for maxishell from the source code\&.

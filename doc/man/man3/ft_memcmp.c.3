@@ -1,0 +1,46 @@
+.TH "/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_memcmp.c" 3 "Version 1" "maxishell" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_memcmp.c
+.SH SYNOPSIS
+.br
+.PP
+\fR#include 'libft\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "int \fBft_memcmp\fP (const void *s1, const void *s2, size_t n)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "int ft_memcmp (const void * s1, const void * s2, size_t n)"
+
+.PP
+Definition at line \fB23\fP of file \fBft_memcmp\&.c\fP\&.
+.nf
+24 {
+25     const unsigned char     *st1;
+26     const unsigned char     *st2;
+27 
+28     st1 = s1;
+29     st2 = s2;
+30     while (n\-\-)
+31     {
+32         if (*st1 != *st2)
+33             return (*st1 \- *st2);
+34         st1++;
+35         st2++;
+36     }
+37     return (0);
+38 }
+.PP
+.fi
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for maxishell from the source code\&.

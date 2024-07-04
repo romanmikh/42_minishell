@@ -1,0 +1,77 @@
+.TH "s_minishell_data" 3 "Version 1" "maxishell" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+s_minishell_data
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fR#include <shell\&.h>\fP
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "char ** \fBargs\fP"
+.br
+.ti -1c
+.RI "\fBt_env\fP * \fBenvp\fP"
+.br
+.ti -1c
+.RI "\fBt_env\fP * \fBlocal_env\fP"
+.br
+.ti -1c
+.RI "int \fBtemp_fd\fP"
+.br
+.ti -1c
+.RI "char * \fBcurrent_dir\fP"
+.br
+.ti -1c
+.RI "int \fBexit_status\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line \fB18\fP of file \fBshell\&.h\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "char** s_minishell_data::args"
+
+.PP
+Definition at line \fB20\fP of file \fBshell\&.h\fP\&.
+.PP
+Referenced by \fBadd_env()\fP, \fBbuiltin_cd()\fP, \fBbuiltin_echo()\fP, \fBbuiltin_env()\fP, \fBbuiltin_export()\fP, \fBbuiltin_pipe_test()\fP, \fBbuiltin_unset()\fP, \fBexecute()\fP, \fBexecute_ast()\fP, \fBfree_minishell_data()\fP, \fBinit_minishell_data()\fP, and \fBnew_process()\fP\&.
+.SS "char* s_minishell_data::current_dir"
+
+.PP
+Definition at line \fB24\fP of file \fBshell\&.h\fP\&.
+.PP
+Referenced by \fBfree_minishell_data()\fP, and \fBinit_minishell_data()\fP\&.
+.SS "\fBt_env\fP* s_minishell_data::envp"
+
+.PP
+Definition at line \fB21\fP of file \fBshell\&.h\fP\&.
+.PP
+Referenced by \fBadd_env()\fP, \fBbuiltin_cd()\fP, \fBbuiltin_env()\fP, \fBbuiltin_export()\fP, \fBbuiltin_unset()\fP, \fBenv_tests()\fP, \fBfree_minishell_data()\fP, \fBgenerate_prompt_string()\fP, \fBinit_minishell_data()\fP, \fBmain()\fP, \fBnew_process()\fP, \fBtest_get_env()\fP, \fBtest_init_env()\fP, \fBtest_set_env()\fP, and \fBtest_unset_env()\fP\&.
+.SS "int s_minishell_data::exit_status"
+
+.PP
+Definition at line \fB25\fP of file \fBshell\&.h\fP\&.
+.PP
+Referenced by \fBbuiltin_exit()\fP, \fBbuiltin_unset()\fP, \fBinit_minishell_data()\fP, and \fBredirect_in()\fP\&.
+.SS "\fBt_env\fP* s_minishell_data::local_env"
+
+.PP
+Definition at line \fB22\fP of file \fBshell\&.h\fP\&.
+.PP
+Referenced by \fBfree_minishell_data()\fP, and \fBinit_minishell_data()\fP\&.
+.SS "int s_minishell_data::temp_fd"
+
+.PP
+Definition at line \fB23\fP of file \fBshell\&.h\fP\&.
+.PP
+Referenced by \fBbuiltin_pipe()\fP, \fBgenerate_prompt()\fP, \fBhandle_temp_fd()\fP, \fBinit_minishell_data()\fP, \fBnew_process()\fP, and \fBredirect_in()\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for maxishell from the source code\&.

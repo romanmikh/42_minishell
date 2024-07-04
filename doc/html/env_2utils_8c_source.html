@@ -112,19 +112,19 @@ $(function(){initNavTree('env_2utils_8c_source.html',''); initResizable(true); }
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment">/*                                                                            */</span></div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment">/* ************************************************************************** */</span></div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &quot;shell.h&quot;</span></div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &quot;env.h&quot;</span></div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &quot;libft.h&quot;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &quot;<a class="code" href="shell_8h.html">shell.h</a>&quot;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &quot;<a class="code" href="env_8h.html">env.h</a>&quot;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &quot;<a class="code" href="libft_8h.html">libft.h</a>&quot;</span></div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &lt;stdlib.h&gt;</span></div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="keywordtype">char</span>    **<a class="code hl_function" href="env_2utils_8c.html#a19f3a9e73371c1cfb3db076f94d33830">env_to_array</a>(t_env *envp);</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="keywordtype">char</span>    **<a class="code hl_function" href="env_2utils_8c.html#a19f3a9e73371c1cfb3db076f94d33830">env_to_array</a>(<a class="code hl_struct" href="structs__env.html">t_env</a> *envp);</div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="keywordtype">char</span>    *<a class="code hl_function" href="env_2utils_8c.html#a67c3dca975ac3373851ded9534701bf5">ft_strcdup</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *s, <span class="keywordtype">int</span> c);</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="keywordtype">void</span>    <a class="code hl_function" href="env_2utils_8c.html#a2c192ab32512a4454973d916c1bff54e">free_env</a>(t_env *envp);</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="keywordtype">void</span>    <a class="code hl_function" href="env_2utils_8c.html#a2c192ab32512a4454973d916c1bff54e">free_env</a>(<a class="code hl_struct" href="structs__env.html">t_env</a> *envp);</div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
 <div class="foldopen" id="foldopen00022" data-start="{" data-end="}">
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="env_2utils_8c.html#a19f3a9e73371c1cfb3db076f94d33830">   22</a></span><span class="keywordtype">char</span>    **<a class="code hl_function" href="env_2utils_8c.html#a19f3a9e73371c1cfb3db076f94d33830">env_to_array</a>(t_env *envp)</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="env_8h.html#a19f3a9e73371c1cfb3db076f94d33830">   22</a></span><span class="keywordtype">char</span>    **<a class="code hl_function" href="env_2utils_8c.html#a19f3a9e73371c1cfb3db076f94d33830">env_to_array</a>(<a class="code hl_struct" href="structs__env.html">t_env</a> *envp)</div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>{</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    t_env   *curr_node;</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <a class="code hl_struct" href="structs__env.html">t_env</a>   *curr_node;</div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <span class="keywordtype">char</span>    **env_array;</div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <span class="keywordtype">int</span>     i;</div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <span class="keywordtype">char</span>    *temp;</div>
@@ -134,18 +134,18 @@ $(function(){initNavTree('env_2utils_8c_source.html',''); initResizable(true); }
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="keywordflow">while</span> (curr_node)</div>
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    {</div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>        i++;</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        curr_node = curr_node-&gt;next;</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        curr_node = curr_node-&gt;<a class="code hl_variable" href="structs__env.html#a3caf3df6eb72714ffcd4e22f9c94ecf2">next</a>;</div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    }</div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    env_array = (<span class="keywordtype">char</span> **)malloc(<span class="keyword">sizeof</span>(<span class="keywordtype">char</span> *) * (i + 1));</div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    i = 0;</div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    curr_node = envp;</div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <span class="keywordflow">while</span> (curr_node)</div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    {</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        temp = ft_strjoin(curr_node-&gt;key, <span class="stringliteral">&quot;=&quot;</span>);</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>        env_array[i] = ft_strjoin(temp, curr_node-&gt;value);</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        temp = <a class="code hl_function" href="libft_8h.html#a91e6e3e428bcc9f2291b700e1829b82b">ft_strjoin</a>(curr_node-&gt;<a class="code hl_variable" href="structs__env.html#aac496ab31822220b5bf37affd2554f08">key</a>, <span class="stringliteral">&quot;=&quot;</span>);</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>        env_array[i] = <a class="code hl_function" href="libft_8h.html#a91e6e3e428bcc9f2291b700e1829b82b">ft_strjoin</a>(temp, curr_node-&gt;<a class="code hl_variable" href="structs__env.html#aeed22f6fb6689d3a190d64d3e11d989f">value</a>);</div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        free(temp);</div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        i++;</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        curr_node = curr_node-&gt;next;</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        curr_node = curr_node-&gt;<a class="code hl_variable" href="structs__env.html#a3caf3df6eb72714ffcd4e22f9c94ecf2">next</a>;</div>
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    }</div>
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    env_array[i] = NULL;</div>
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    <span class="keywordflow">return</span> (env_array);</div>
@@ -153,7 +153,7 @@ $(function(){initNavTree('env_2utils_8c_source.html',''); initResizable(true); }
 </div>
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
 <div class="foldopen" id="foldopen00051" data-start="{" data-end="}">
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="env_2utils_8c.html#a67c3dca975ac3373851ded9534701bf5">   51</a></span><span class="keywordtype">char</span>    *<a class="code hl_function" href="env_2utils_8c.html#a67c3dca975ac3373851ded9534701bf5">ft_strcdup</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *s, <span class="keywordtype">int</span> c)</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="env_8h.html#a67c3dca975ac3373851ded9534701bf5">   51</a></span><span class="keywordtype">char</span>    *<a class="code hl_function" href="env_2utils_8c.html#a67c3dca975ac3373851ded9534701bf5">ft_strcdup</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *s, <span class="keywordtype">int</span> c)</div>
 <div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>{</div>
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    <span class="keywordtype">char</span>    *str;</div>
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    <span class="keywordtype">size_t</span>  i;</div>
@@ -176,17 +176,17 @@ $(function(){initNavTree('env_2utils_8c_source.html',''); initResizable(true); }
 </div>
 <div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
 <div class="foldopen" id="foldopen00072" data-start="{" data-end="}">
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno"><a class="line" href="env_2utils_8c.html#a2c192ab32512a4454973d916c1bff54e">   72</a></span><span class="keywordtype">void</span>    <a class="code hl_function" href="env_2utils_8c.html#a2c192ab32512a4454973d916c1bff54e">free_env</a>(t_env *envp)</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno"><a class="line" href="env_8h.html#a2c192ab32512a4454973d916c1bff54e">   72</a></span><span class="keywordtype">void</span>    <a class="code hl_function" href="env_2utils_8c.html#a2c192ab32512a4454973d916c1bff54e">free_env</a>(<a class="code hl_struct" href="structs__env.html">t_env</a> *envp)</div>
 <div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>{</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    t_env   *curr_node;</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    t_env   *next_node;</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    <a class="code hl_struct" href="structs__env.html">t_env</a>   *curr_node;</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    <a class="code hl_struct" href="structs__env.html">t_env</a>   *next_node;</div>
 <div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
 <div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    curr_node = envp;</div>
 <div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    <span class="keywordflow">while</span> (curr_node)</div>
 <div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    {</div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>        next_node = curr_node-&gt;next;</div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>        free(curr_node-&gt;key);</div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>        free(curr_node-&gt;value);</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>        next_node = curr_node-&gt;<a class="code hl_variable" href="structs__env.html#a3caf3df6eb72714ffcd4e22f9c94ecf2">next</a>;</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>        free(curr_node-&gt;<a class="code hl_variable" href="structs__env.html#aac496ab31822220b5bf37affd2554f08">key</a>);</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>        free(curr_node-&gt;<a class="code hl_variable" href="structs__env.html#aeed22f6fb6689d3a190d64d3e11d989f">value</a>);</div>
 <div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>        free(curr_node);</div>
 <div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>        curr_node = next_node;</div>
 <div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    }</div>
@@ -195,6 +195,14 @@ $(function(){initNavTree('env_2utils_8c_source.html',''); initResizable(true); }
 <div class="ttc" id="aenv_2utils_8c_html_a19f3a9e73371c1cfb3db076f94d33830"><div class="ttname"><a href="env_2utils_8c.html#a19f3a9e73371c1cfb3db076f94d33830">env_to_array</a></div><div class="ttdeci">char ** env_to_array(t_env *envp)</div><div class="ttdef"><b>Definition</b> <a href="#l00022">utils.c:22</a></div></div>
 <div class="ttc" id="aenv_2utils_8c_html_a2c192ab32512a4454973d916c1bff54e"><div class="ttname"><a href="env_2utils_8c.html#a2c192ab32512a4454973d916c1bff54e">free_env</a></div><div class="ttdeci">void free_env(t_env *envp)</div><div class="ttdef"><b>Definition</b> <a href="#l00072">utils.c:72</a></div></div>
 <div class="ttc" id="aenv_2utils_8c_html_a67c3dca975ac3373851ded9534701bf5"><div class="ttname"><a href="env_2utils_8c.html#a67c3dca975ac3373851ded9534701bf5">ft_strcdup</a></div><div class="ttdeci">char * ft_strcdup(const char *s, int c)</div><div class="ttdef"><b>Definition</b> <a href="#l00051">utils.c:51</a></div></div>
+<div class="ttc" id="aenv_8h_html"><div class="ttname"><a href="env_8h.html">env.h</a></div></div>
+<div class="ttc" id="alibft_8h_html"><div class="ttname"><a href="libft_8h.html">libft.h</a></div></div>
+<div class="ttc" id="alibft_8h_html_a91e6e3e428bcc9f2291b700e1829b82b"><div class="ttname"><a href="libft_8h.html#a91e6e3e428bcc9f2291b700e1829b82b">ft_strjoin</a></div><div class="ttdeci">char * ft_strjoin(char const *s1, char const *s2)</div><div class="ttdef"><b>Definition</b> <a href="ft__strjoin_8c_source.html#l00023">ft_strjoin.c:23</a></div></div>
+<div class="ttc" id="ashell_8h_html"><div class="ttname"><a href="shell_8h.html">shell.h</a></div></div>
+<div class="ttc" id="astructs__env_html"><div class="ttname"><a href="structs__env.html">s_env</a></div><div class="ttdef"><b>Definition</b> <a href="env_8h_source.html#l00016">env.h:17</a></div></div>
+<div class="ttc" id="astructs__env_html_a3caf3df6eb72714ffcd4e22f9c94ecf2"><div class="ttname"><a href="structs__env.html#a3caf3df6eb72714ffcd4e22f9c94ecf2">s_env::next</a></div><div class="ttdeci">struct s_env * next</div><div class="ttdef"><b>Definition</b> <a href="env_8h_source.html#l00020">env.h:20</a></div></div>
+<div class="ttc" id="astructs__env_html_aac496ab31822220b5bf37affd2554f08"><div class="ttname"><a href="structs__env.html#aac496ab31822220b5bf37affd2554f08">s_env::key</a></div><div class="ttdeci">char * key</div><div class="ttdef"><b>Definition</b> <a href="env_8h_source.html#l00018">env.h:18</a></div></div>
+<div class="ttc" id="astructs__env_html_aeed22f6fb6689d3a190d64d3e11d989f"><div class="ttname"><a href="structs__env.html#aeed22f6fb6689d3a190d64d3e11d989f">s_env::value</a></div><div class="ttdeci">char * value</div><div class="ttdef"><b>Definition</b> <a href="env_8h_source.html#l00019">env.h:19</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

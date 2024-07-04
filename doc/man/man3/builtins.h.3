@@ -1,0 +1,231 @@
+.TH "/Users/dimadem/Documents/GitHub/minishell/inc/builtins.h" 3 "Version 1" "maxishell" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/Users/dimadem/Documents/GitHub/minishell/inc/builtins.h
+.SH SYNOPSIS
+.br
+.PP
+\fR#include 'shell\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "int \fBbuiltin_cd\fP (\fBt_minishell_data\fP *data)"
+.br
+.ti -1c
+.RI "int \fBbuiltin_echo\fP (\fBt_minishell_data\fP *data)"
+.br
+.ti -1c
+.RI "int \fBbuiltin_env\fP (\fBt_minishell_data\fP *data)"
+.br
+.ti -1c
+.RI "int \fBbuiltin_exit\fP (\fBt_minishell_data\fP *data)"
+.br
+.ti -1c
+.RI "int \fBbuiltin_export\fP (\fBt_minishell_data\fP *data)"
+.br
+.ti -1c
+.RI "int \fBbuiltin_pwd\fP (\fBt_minishell_data\fP *data)"
+.br
+.ti -1c
+.RI "int \fBbuiltin_unset\fP (\fBt_minishell_data\fP *data)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "int builtin_cd (\fBt_minishell_data\fP * data)"
+
+.PP
+Definition at line \fB26\fP of file \fBcd\&.c\fP\&.
+.nf
+27 {
+28     char    *target_dir;
+29     char    *home_dir;
+30     char    cwd[4096];
+31 
+32     printf("builtin_cd\\n");
+33     home_dir = get_env(data\->envp, "HOME");
+34     target_dir = (char *)data\->args[1];
+35     if (!target_dir)
+36         target_dir = home_dir;
+37     if (chdir(target_dir) != 0)
+38     {
+39         ft_putstr_fd("bash: cd: ", 2);
+40         perror(target_dir);
+41         return (1);
+42     }
+43     set_env(&data\->envp, "OLDPWD", get_env(data\->envp, "PWD"));
+44     if (getcwd(cwd, sizeof(cwd)) != NULL)
+45         set_env(&data\->envp, "PWD", cwd);
+46     return (0);
+47 }
+.PP
+.fi
+
+.PP
+References \fBs_minishell_data::args\fP, \fBs_minishell_data::envp\fP, \fBft_putstr_fd()\fP, \fBget_env()\fP, and \fBset_env()\fP\&.
+.PP
+Referenced by \fBexecute()\fP\&.
+.SS "int builtin_echo (\fBt_minishell_data\fP * data)"
+
+.PP
+Definition at line \fB21\fP of file \fBecho\&.c\fP\&.
+.nf
+22 {
+23     int newline;
+24     int i;
+25 
+26     newline = 1;
+27     if (ft_strcmp(data\->args[1], "\-n") == 0)
+28     {
+29         newline = 0;
+30         data\->args++;
+31     }
+32     i = 0;
+33     while (data\->args[++i])
+34     {
+35         write(1, data\->args[i], ft_strlen(data\->args[i]));
+36         if (data\->args[i + 1])
+37             write(1, " ", 1);
+38     }
+39     if (newline)
+40         write(1, "\\n", 1);
+41     return (0);
+42 }
+.PP
+.fi
+
+.PP
+References \fBs_minishell_data::args\fP, \fBft_strcmp()\fP, and \fBft_strlen()\fP\&.
+.PP
+Referenced by \fBexecute()\fP\&.
+.SS "int builtin_env (\fBt_minishell_data\fP * data)"
+
+.PP
+Definition at line \fB38\fP of file \fBenv\&.c\fP\&.
+.nf
+39 {
+40     printf("\\nbuiltin_env\\n");
+41     if (ft_strcmp(data\->args[0], "env") == 0 && data\->args[1] == NULL)
+42         print_env_stack(data\->envp);
+43     return (0);
+44 }
+.PP
+.fi
+
+.PP
+References \fBs_minishell_data::args\fP, \fBs_minishell_data::envp\fP, \fBft_strcmp()\fP, and \fBprint_env_stack()\fP\&.
+.PP
+Referenced by \fBexecute()\fP\&.
+.SS "int builtin_exit (\fBt_minishell_data\fP * data)"
+
+.PP
+Definition at line \fB26\fP of file \fBexit\&.c\fP\&.
+.nf
+27 {
+28     const char  *message;
+29 
+30     printf("\\nbuiltin_exit\\n");
+31     message = "exit\\n";
+32     write(STDOUT_FILENO, message, ft_strlen(message));
+33     // free_env(data\->envp);
+34     exit(data\->exit_status);
+35 }
+.PP
+.fi
+
+.PP
+References \fBs_minishell_data::exit_status\fP, and \fBft_strlen()\fP\&.
+.PP
+Referenced by \fBexecute()\fP\&.
+.SS "int builtin_export (\fBt_minishell_data\fP * data)"
+
+.PP
+Definition at line \fB28\fP of file \fBexport\&.c\fP\&.
+.nf
+29 {
+30     t_env   *curr_node;
+31     char    *key;
+32 
+33     key = NULL;
+34     if ((data\->args[1] == NULL && data\->args[2] == NULL) \\
+35             || ft_strncmp(data\->args[1], "\-p", 2) == 0)
+36     {
+37         curr_node = data\->envp;
+38         while (curr_node)
+39             curr_node = curr_node\->next;
+40     }
+41     else
+42         add_env(key, data);
+43     return (0);
+44 }
+.PP
+.fi
+
+.PP
+References \fBadd_env()\fP, \fBs_minishell_data::args\fP, \fBs_minishell_data::envp\fP, \fBft_strncmp()\fP, and \fBs_env::next\fP\&.
+.PP
+Referenced by \fBexecute()\fP\&.
+.SS "int builtin_pwd (\fBt_minishell_data\fP * data)"
+
+.PP
+Definition at line \fB23\fP of file \fBpwd\&.c\fP\&.
+.nf
+24 {
+25     char    cwd[4096];
+26 
+27     (void)data;
+28     if (getcwd(cwd, sizeof(cwd)) != NULL)
+29         ft_putendl_fd(cwd, STDOUT_FILENO);
+30     else
+31     {
+32         ft_putstr_fd("bash: cd: ", 2);
+33         perror("cwd");
+34         return (1);
+35     }
+36     return (0);
+37 }
+.PP
+.fi
+
+.PP
+References \fBft_putendl_fd()\fP, and \fBft_putstr_fd()\fP\&.
+.PP
+Referenced by \fBexecute()\fP\&.
+.SS "int builtin_unset (\fBt_minishell_data\fP * data)"
+
+.PP
+Definition at line \fB26\fP of file \fBunset\&.c\fP\&.
+.nf
+27 {
+28     int i;
+29     int ret;
+30 
+31     i = 0;
+32     ret = 0;
+33     while (data\->args[++i])
+34     {
+35         if (unset_env(&data\->envp, data\->args[i]) == \-1)
+36         {
+37             ft_putstr_fd("bash: unset: `", STDERR_FILENO);
+38             ft_putstr_fd(data\->args[i], STDERR_FILENO);
+39             ft_putendl_fd("': not a valid identifier", STDERR_FILENO);
+40             ret = 1;
+41         }
+42     }
+43     data\->exit_status = ret;
+44     return (ret);
+45 }
+.PP
+.fi
+
+.PP
+References \fBs_minishell_data::args\fP, \fBs_minishell_data::envp\fP, \fBs_minishell_data::exit_status\fP, \fBft_putendl_fd()\fP, \fBft_putstr_fd()\fP, and \fBunset_env()\fP\&.
+.PP
+Referenced by \fBexecute()\fP\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for maxishell from the source code\&.

@@ -13,19 +13,19 @@
 
 .in +1c
 .ti -1c
-.RI "const char * \fBget_token_type_name\fP (t_token_type type)"
+.RI "const char * \fBget_token_type_name\fP (\fBt_token_type\fP type)"
 .br
 .ti -1c
-.RI "void \fBprint_ast_node\fP (t_ast *node, int depth, char *prefix, int is_left)"
+.RI "void \fBprint_ast_node\fP (\fBt_ast\fP *node, int depth, char *prefix, int is_left)"
 .br
 .ti -1c
 .RI "void \fBbuild_new_prefix\fP (char *new_prefix, char *prefix, int is_left)"
 .br
 .ti -1c
-.RI "void \fBprint_ast_graphical\fP (t_ast *node, int depth, char *prefix, int is_left)"
+.RI "void \fBprint_ast_graphical\fP (\fBt_ast\fP *node, int depth, char *prefix, int is_left)"
 .br
 .ti -1c
-.RI "void \fBprint_ast_root\fP (t_ast *root)"
+.RI "void \fBprint_ast_root\fP (\fBt_ast\fP *root)"
 .br
 .in -1c
 .SH "Function Documentation"
@@ -66,7 +66,7 @@ Definition at line \fB63\fP of file \fBvisualiser\&.c\fP\&.
 
 .PP
 Referenced by \fBprint_ast_graphical()\fP\&.
-.SS "const char * get_token_type_name (t_token_type type)"
+.SS "const char * get_token_type_name (\fBt_token_type\fP type)"
 
 .PP
 Definition at line \fB15\fP of file \fBvisualiser\&.c\fP\&.
@@ -93,8 +93,10 @@ Definition at line \fB15\fP of file \fBvisualiser\&.c\fP\&.
 .fi
 
 .PP
+References \fBENV_VAR\fP, \fBPHRASE\fP, \fBPIPE\fP, \fBREDIR_APPEND\fP, \fBREDIR_HEREDOC\fP, \fBREDIR_IN\fP, and \fBREDIR_OUT\fP\&.
+.PP
 Referenced by \fBprint_ast_node()\fP\&.
-.SS "void print_ast_graphical (t_ast * node, int depth, char * prefix, int is_left)"
+.SS "void print_ast_graphical (\fBt_ast\fP * node, int depth, char * prefix, int is_left)"
 
 .PP
 Definition at line \fB91\fP of file \fBvisualiser\&.c\fP\&.
@@ -113,10 +115,10 @@ Definition at line \fB91\fP of file \fBvisualiser\&.c\fP\&.
 .fi
 
 .PP
-References \fBbuild_new_prefix()\fP, \fBprint_ast_graphical()\fP, and \fBprint_ast_node()\fP\&.
+References \fBbuild_new_prefix()\fP, \fBs_ast::left\fP, \fBprint_ast_graphical()\fP, \fBprint_ast_node()\fP, and \fBs_ast::right\fP\&.
 .PP
 Referenced by \fBprint_ast_graphical()\fP, and \fBprint_ast_root()\fP\&.
-.SS "void print_ast_node (t_ast * node, int depth, char * prefix, int is_left)"
+.SS "void print_ast_node (\fBt_ast\fP * node, int depth, char * prefix, int is_left)"
 
 .PP
 Definition at line \fB35\fP of file \fBvisualiser\&.c\fP\&.
@@ -151,10 +153,10 @@ Definition at line \fB35\fP of file \fBvisualiser\&.c\fP\&.
 .fi
 
 .PP
-References \fBget_token_type_name()\fP\&.
+References \fBs_ast::args\fP, \fBget_token_type_name()\fP, and \fBs_ast::type\fP\&.
 .PP
 Referenced by \fBprint_ast_graphical()\fP\&.
-.SS "void print_ast_root (t_ast * root)"
+.SS "void print_ast_root (\fBt_ast\fP * root)"
 
 .PP
 Definition at line \fB103\fP of file \fBvisualiser\&.c\fP\&.

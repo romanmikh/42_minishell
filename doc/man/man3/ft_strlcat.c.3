@@ -1,0 +1,56 @@
+.TH "/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_strlcat.c" 3 "Version 1" "maxishell" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_strlcat.c
+.SH SYNOPSIS
+.br
+.PP
+\fR#include 'libft\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "size_t \fBft_strlcat\fP (char *dst, const char *src, size_t size)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "size_t ft_strlcat (char * dst, const char * src, size_t size)"
+
+.PP
+Definition at line \fB26\fP of file \fBft_strlcat\&.c\fP\&.
+.nf
+27 {
+28     char        *d;
+29     const char  *s;
+30     size_t      len_dst;
+31     size_t      remaining_space;
+32 
+33     len_dst = 0;
+34     s = src;
+35     d = dst;
+36     while (size > 0 && *d != '\\0')
+37     {
+38         d++;
+39         size\-\-;
+40         len_dst++;
+41     }
+42     remaining_space = size;
+43     if (remaining_space == 0)
+44         return (len_dst + ft_strlen(src));
+45     while (\-\-remaining_space > 0 && *s != '\\0')
+46         *d++ = *s++;
+47     *d = '\\0';
+48     return (len_dst + ft_strlen(src));
+49 }
+.PP
+.fi
+
+.PP
+References \fBft_strlen()\fP\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for maxishell from the source code\&.

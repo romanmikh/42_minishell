@@ -13,27 +13,27 @@
 
 .in +1c
 .ti -1c
-.RI "t_ast * \fBclr_node\fP (t_token **tokens, t_token *next_token, t_ast *redirect_node)"
+.RI "\fBt_ast\fP * \fBclr_node\fP (\fBt_token\fP **tokens, \fBt_token\fP *next_token, \fBt_ast\fP *redirect_node)"
 .br
 .ti -1c
-.RI "t_ast * \fBmanage_redirs\fP (t_token **tokens)"
+.RI "\fBt_ast\fP * \fBmanage_redirs\fP (\fBt_token\fP **tokens)"
 .br
 .ti -1c
-.RI "t_ast * \fBcreate_redir_node\fP (t_token *token)"
+.RI "\fBt_ast\fP * \fBcreate_redir_node\fP (\fBt_token\fP *token)"
 .br
 .ti -1c
-.RI "int \fBis_redir_node\fP (t_token *tokens)"
+.RI "int \fBis_redir_node\fP (\fBt_token\fP *tokens)"
 .br
 .ti -1c
-.RI "t_ast * \fBmanage_pipe\fP (t_token **tokens)"
+.RI "\fBt_ast\fP * \fBmanage_pipe\fP (\fBt_token\fP **tokens)"
 .br
 .ti -1c
-.RI "t_ast * \fBparse_tokens\fP (t_token **tokens)"
+.RI "\fBt_ast\fP * \fBparse_tokens\fP (\fBt_token\fP **tokens)"
 .br
 .in -1c
 .SH "Function Documentation"
 .PP 
-.SS "t_ast * clr_node (t_token ** tokens, t_token * next_token, t_ast * redirect_node)"
+.SS "\fBt_ast\fP * clr_node (\fBt_token\fP ** tokens, \fBt_token\fP * next_token, \fBt_ast\fP * redirect_node)"
 
 .PP
 Definition at line \fB51\fP of file \fBparser\&.c\fP\&.
@@ -50,10 +50,10 @@ Definition at line \fB51\fP of file \fBparser\&.c\fP\&.
 .fi
 
 .PP
-References \fBcreate_redir_node()\fP, and \fBmanage_redirs()\fP\&.
+References \fBcreate_redir_node()\fP, \fBs_token::data\fP, \fBs_ast::left\fP, \fBmanage_redirs()\fP, \fBs_token::next\fP, and \fBs_ast::right\fP\&.
 .PP
 Referenced by \fBmanage_redirs()\fP\&.
-.SS "t_ast * create_redir_node (t_token * token)"
+.SS "\fBt_ast\fP * create_redir_node (\fBt_token\fP * token)"
 
 .PP
 Definition at line \fB19\fP of file \fBparser\&.c\fP\&.
@@ -82,8 +82,10 @@ Definition at line \fB19\fP of file \fBparser\&.c\fP\&.
 .fi
 
 .PP
+References \fBs_ast::args\fP, \fBs_token::data\fP, \fBs_ast::left\fP, \fBs_ast::right\fP, \fBs_ast::type\fP, and \fBs_token::type\fP\&.
+.PP
 Referenced by \fBclr_node()\fP, and \fBcreate_redir()\fP\&.
-.SS "int is_redir_node (t_token * tokens)"
+.SS "int is_redir_node (\fBt_token\fP * tokens)"
 
 .PP
 Definition at line \fB41\fP of file \fBparser\&.c\fP\&.
@@ -100,8 +102,10 @@ Definition at line \fB41\fP of file \fBparser\&.c\fP\&.
 .fi
 
 .PP
+References \fBREDIR_APPEND\fP, \fBREDIR_HEREDOC\fP, \fBREDIR_IN\fP, \fBREDIR_OUT\fP, and \fBs_token::type\fP\&.
+.PP
 Referenced by \fBmanage_redirs()\fP\&.
-.SS "t_ast * manage_pipe (t_token ** tokens)"
+.SS "\fBt_ast\fP * manage_pipe (\fBt_token\fP ** tokens)"
 
 .PP
 Definition at line \fB85\fP of file \fBparser\&.c\fP\&.
@@ -136,10 +140,10 @@ Definition at line \fB85\fP of file \fBparser\&.c\fP\&.
 .fi
 
 .PP
-References \fBmanage_pipe()\fP, \fBmanage_redirs()\fP, and \fBnew_ast_node()\fP\&.
+References \fBs_token::data\fP, \fBs_ast::left\fP, \fBmanage_pipe()\fP, \fBmanage_redirs()\fP, \fBnew_ast_node()\fP, \fBs_token::next\fP, \fBPIPE\fP, and \fBs_ast::right\fP\&.
 .PP
 Referenced by \fBmanage_pipe()\fP, and \fBparse_tokens()\fP\&.
-.SS "t_ast * manage_redirs (t_token ** tokens)"
+.SS "\fBt_ast\fP * manage_redirs (\fBt_token\fP ** tokens)"
 
 .PP
 Definition at line \fB61\fP of file \fBparser\&.c\fP\&.
@@ -170,10 +174,10 @@ Definition at line \fB61\fP of file \fBparser\&.c\fP\&.
 .fi
 
 .PP
-References \fBclr_node()\fP, \fBcreate_redir()\fP, \fBis_redir_node()\fP, \fBmanage_commands()\fP, and \fBnew_ast_node()\fP\&.
+References \fBclr_node()\fP, \fBcreate_redir()\fP, \fBis_redir_node()\fP, \fBmanage_commands()\fP, \fBnew_ast_node()\fP, and \fBs_token::next\fP\&.
 .PP
 Referenced by \fBclr_node()\fP, \fBcreate_redir()\fP, and \fBmanage_pipe()\fP\&.
-.SS "t_ast * parse_tokens (t_token ** tokens)"
+.SS "\fBt_ast\fP * parse_tokens (\fBt_token\fP ** tokens)"
 
 .PP
 Definition at line \fB113\fP of file \fBparser\&.c\fP\&.

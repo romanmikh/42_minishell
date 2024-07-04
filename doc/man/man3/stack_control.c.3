@@ -13,24 +13,24 @@
 
 .in +1c
 .ti -1c
-.RI "void \fBadd_node\fP (t_token **head, char *str)"
+.RI "void \fBadd_node\fP (\fBt_token\fP **head, char *str)"
 .br
 .ti -1c
-.RI "void \fBprint_stack\fP (t_token **stack)"
+.RI "void \fBprint_stack\fP (\fBt_token\fP **stack)"
 .br
 .ti -1c
-.RI "void \fBfree_stack\fP (t_token **stack)"
+.RI "void \fBfree_stack\fP (\fBt_token\fP **stack)"
 .br
 .ti -1c
-.RI "int \fBcalc_stack_size\fP (t_token *stack)"
+.RI "int \fBcalc_stack_size\fP (\fBt_token\fP *stack)"
 .br
 .ti -1c
-.RI "char ** \fBlist_to_array\fP (t_token *head)"
+.RI "char ** \fBlist_to_array\fP (\fBt_token\fP *head)"
 .br
 .in -1c
 .SH "Function Documentation"
 .PP 
-.SS "void add_node (t_token ** head, char * str)"
+.SS "void add_node (\fBt_token\fP ** head, char * str)"
 
 .PP
 Definition at line \fB15\fP of file \fBstack_control\&.c\fP\&.
@@ -58,8 +58,10 @@ Definition at line \fB15\fP of file \fBstack_control\&.c\fP\&.
 .fi
 
 .PP
+References \fBs_token::data\fP, and \fBs_token::next\fP\&.
+.PP
 Referenced by \fBbuild_linked_list()\fP\&.
-.SS "int calc_stack_size (t_token * stack)"
+.SS "int calc_stack_size (\fBt_token\fP * stack)"
 
 .PP
 Definition at line \fB65\fP of file \fBstack_control\&.c\fP\&.
@@ -81,8 +83,10 @@ Definition at line \fB65\fP of file \fBstack_control\&.c\fP\&.
 .fi
 
 .PP
+References \fBs_token::next\fP\&.
+.PP
 Referenced by \fBlist_to_array()\fP\&.
-.SS "void free_stack (t_token ** stack)"
+.SS "void free_stack (\fBt_token\fP ** stack)"
 
 .PP
 Definition at line \fB51\fP of file \fBstack_control\&.c\fP\&.
@@ -102,7 +106,9 @@ Definition at line \fB51\fP of file \fBstack_control\&.c\fP\&.
 .PP
 .fi
 
-.SS "char ** list_to_array (t_token * head)"
+.PP
+References \fBs_token::next\fP\&.
+.SS "char ** list_to_array (\fBt_token\fP * head)"
 
 .PP
 Definition at line \fB80\fP of file \fBstack_control\&.c\fP\&.
@@ -133,8 +139,8 @@ Definition at line \fB80\fP of file \fBstack_control\&.c\fP\&.
 .fi
 
 .PP
-References \fBcalc_stack_size()\fP\&.
-.SS "void print_stack (t_token ** stack)"
+References \fBcalc_stack_size()\fP, \fBs_token::data\fP, \fBft_strdup()\fP, and \fBs_token::next\fP\&.
+.SS "void print_stack (\fBt_token\fP ** stack)"
 
 .PP
 Definition at line \fB36\fP of file \fBstack_control\&.c\fP\&.
@@ -155,6 +161,8 @@ Definition at line \fB36\fP of file \fBstack_control\&.c\fP\&.
 .PP
 .fi
 
+.PP
+References \fBs_token::data\fP, \fBft_printf()\fP, and \fBs_token::next\fP\&.
 .SH "Author"
 .PP 
 Generated automatically by Doxygen for maxishell from the source code\&.

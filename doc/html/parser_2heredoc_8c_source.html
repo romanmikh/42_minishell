@@ -112,15 +112,15 @@ $(function(){initNavTree('parser_2heredoc_8c_source.html',''); initResizable(tru
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment">/*                                                                            */</span></div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment">/* ************************************************************************** */</span></div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &quot;tokens.h&quot;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &quot;<a class="code" href="tokens_8h.html">tokens.h</a>&quot;</span></div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
 <div class="foldopen" id="foldopen00015" data-start="{" data-end="}">
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="parser_2heredoc_8c.html#a4e1b3e73a18dd66697cd7eac990b0363">   15</a></span><span class="keywordtype">char</span>    *<a class="code hl_function" href="parser_2heredoc_8c.html#a4e1b3e73a18dd66697cd7eac990b0363">check_heredoc</a>(<span class="keywordtype">char</span> *line)</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="tokens_8h.html#a4e1b3e73a18dd66697cd7eac990b0363">   15</a></span><span class="keywordtype">char</span>    *<a class="code hl_function" href="parser_2heredoc_8c.html#a4e1b3e73a18dd66697cd7eac990b0363">check_heredoc</a>(<span class="keywordtype">char</span> *line)</div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>{</div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <span class="keywordtype">char</span>    **parsed;</div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    parsed = ft_split(line, <span class="charliteral">&#39; &#39;</span>);</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <span class="keywordflow">if</span> (!ft_strcmp(parsed[0], <span class="stringliteral">&quot;cat&quot;</span>) &amp;&amp; !ft_strcmp(parsed[1], <span class="stringliteral">&quot;&lt;&lt;&quot;</span>))</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    parsed = <a class="code hl_function" href="libft_8h.html#aa65c9de65051c8c589286cf133c4a1f4">ft_split</a>(line, <span class="charliteral">&#39; &#39;</span>);</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <span class="keywordflow">if</span> (!<a class="code hl_function" href="libft_8h.html#a1f2ff2312e5994560c9537cd9173be94">ft_strcmp</a>(parsed[0], <span class="stringliteral">&quot;cat&quot;</span>) &amp;&amp; !<a class="code hl_function" href="libft_8h.html#a1f2ff2312e5994560c9537cd9173be94">ft_strcmp</a>(parsed[1], <span class="stringliteral">&quot;&lt;&lt;&quot;</span>))</div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        <span class="keywordflow">return</span> (<a class="code hl_function" href="parser_2heredoc_8c.html#a132ce43db3d4fba988a166e932845375">heredoc</a>(<span class="stringliteral">&quot;EOF&quot;</span>));</div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <span class="keywordflow">else</span></div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        <span class="keywordflow">return</span> (line);</div>
@@ -128,7 +128,7 @@ $(function(){initNavTree('parser_2heredoc_8c_source.html',''); initResizable(tru
 </div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
 <div class="foldopen" id="foldopen00026" data-start="{" data-end="}">
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="parser_2heredoc_8c.html#a132ce43db3d4fba988a166e932845375">   26</a></span><span class="keywordtype">char</span>    *<a class="code hl_function" href="parser_2heredoc_8c.html#a132ce43db3d4fba988a166e932845375">heredoc</a>(<span class="keywordtype">char</span> *eof)</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="tokens_8h.html#a132ce43db3d4fba988a166e932845375">   26</a></span><span class="keywordtype">char</span>    *<a class="code hl_function" href="parser_2heredoc_8c.html#a132ce43db3d4fba988a166e932845375">heredoc</a>(<span class="keywordtype">char</span> *eof)</div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>{</div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <span class="keywordtype">char</span>    *line;</div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="keywordtype">char</span>    *comb;</div>
@@ -137,15 +137,19 @@ $(function(){initNavTree('parser_2heredoc_8c_source.html',''); initResizable(tru
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="keywordflow">while</span> (1)</div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    {</div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        line = readline(<span class="stringliteral">&quot;heredoc&gt;&quot;</span>);</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        <span class="keywordflow">if</span> (!ft_strcmp(line, eof))</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        <span class="keywordflow">if</span> (!<a class="code hl_function" href="libft_8h.html#a1f2ff2312e5994560c9537cd9173be94">ft_strcmp</a>(line, eof))</div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>            <span class="keywordflow">return</span> (comb);</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        comb = ft_strjoin(ft_strjoin(comb, line), <span class="stringliteral">&quot;\n&quot;</span>);</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        comb = <a class="code hl_function" href="libft_8h.html#a91e6e3e428bcc9f2291b700e1829b82b">ft_strjoin</a>(<a class="code hl_function" href="libft_8h.html#a91e6e3e428bcc9f2291b700e1829b82b">ft_strjoin</a>(comb, line), <span class="stringliteral">&quot;\n&quot;</span>);</div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        free(line);</div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    }</div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>}</div>
 </div>
+<div class="ttc" id="alibft_8h_html_a1f2ff2312e5994560c9537cd9173be94"><div class="ttname"><a href="libft_8h.html#a1f2ff2312e5994560c9537cd9173be94">ft_strcmp</a></div><div class="ttdeci">int ft_strcmp(const char *s1, const char *s2)</div><div class="ttdef"><b>Definition</b> <a href="ft__strcmp_8c_source.html#l00024">ft_strcmp.c:24</a></div></div>
+<div class="ttc" id="alibft_8h_html_a91e6e3e428bcc9f2291b700e1829b82b"><div class="ttname"><a href="libft_8h.html#a91e6e3e428bcc9f2291b700e1829b82b">ft_strjoin</a></div><div class="ttdeci">char * ft_strjoin(char const *s1, char const *s2)</div><div class="ttdef"><b>Definition</b> <a href="ft__strjoin_8c_source.html#l00023">ft_strjoin.c:23</a></div></div>
+<div class="ttc" id="alibft_8h_html_aa65c9de65051c8c589286cf133c4a1f4"><div class="ttname"><a href="libft_8h.html#aa65c9de65051c8c589286cf133c4a1f4">ft_split</a></div><div class="ttdeci">char ** ft_split(char const *s, char c)</div><div class="ttdef"><b>Definition</b> <a href="ft__split_8c_source.html#l00095">ft_split.c:95</a></div></div>
 <div class="ttc" id="aparser_2heredoc_8c_html_a132ce43db3d4fba988a166e932845375"><div class="ttname"><a href="parser_2heredoc_8c.html#a132ce43db3d4fba988a166e932845375">heredoc</a></div><div class="ttdeci">char * heredoc(char *eof)</div><div class="ttdef"><b>Definition</b> <a href="#l00026">heredoc.c:26</a></div></div>
 <div class="ttc" id="aparser_2heredoc_8c_html_a4e1b3e73a18dd66697cd7eac990b0363"><div class="ttname"><a href="parser_2heredoc_8c.html#a4e1b3e73a18dd66697cd7eac990b0363">check_heredoc</a></div><div class="ttdeci">char * check_heredoc(char *line)</div><div class="ttdef"><b>Definition</b> <a href="#l00015">heredoc.c:15</a></div></div>
+<div class="ttc" id="atokens_8h_html"><div class="ttname"><a href="tokens_8h.html">tokens.h</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

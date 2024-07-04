@@ -112,107 +112,107 @@ $(function(){initNavTree('parser_8c_source.html',''); initResizable(true); });
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment">/*                                                                            */</span></div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment">/* ************************************************************************** */</span></div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &quot;tokens.h&quot;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &quot;<a class="code" href="tokens_8h.html">tokens.h</a>&quot;</span></div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>t_ast   *<a class="code hl_function" href="parser_8c.html#a2a00e61e381f3754b1bb8cc4d9906b9f">clr_node</a>(t_token **tokens, t_token *next_token, t_ast *redirect_node);</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>t_ast   *<a class="code hl_function" href="parser_8c.html#ac5e108e945caf03bd60f26514c270963">manage_redirs</a>(t_token **tokens);</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>t_ast   *<a class="code hl_function" href="parser_8c.html#a665af377c02015d59f668e4b2b2434bf">create_redir_node</a>(t_token *token);</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><a class="code hl_struct" href="structs__ast.html">t_ast</a>   *<a class="code hl_function" href="parser_8c.html#a2a00e61e381f3754b1bb8cc4d9906b9f">clr_node</a>(<a class="code hl_struct" href="structs__token.html">t_token</a> **tokens, <a class="code hl_struct" href="structs__token.html">t_token</a> *next_token, <a class="code hl_struct" href="structs__ast.html">t_ast</a> *redirect_node);</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><a class="code hl_struct" href="structs__ast.html">t_ast</a>   *<a class="code hl_function" href="parser_8c.html#ac5e108e945caf03bd60f26514c270963">manage_redirs</a>(<a class="code hl_struct" href="structs__token.html">t_token</a> **tokens);</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><a class="code hl_struct" href="structs__ast.html">t_ast</a>   *<a class="code hl_function" href="parser_8c.html#a665af377c02015d59f668e4b2b2434bf">create_redir_node</a>(<a class="code hl_struct" href="structs__token.html">t_token</a> *token);</div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
 <div class="foldopen" id="foldopen00019" data-start="{" data-end="}">
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="parser_8c.html#a665af377c02015d59f668e4b2b2434bf">   19</a></span>t_ast   *<a class="code hl_function" href="parser_8c.html#a665af377c02015d59f668e4b2b2434bf">create_redir_node</a>(t_token *token)</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="tokens_8h.html#a665af377c02015d59f668e4b2b2434bf">   19</a></span><a class="code hl_struct" href="structs__ast.html">t_ast</a>   *<a class="code hl_function" href="parser_8c.html#a665af377c02015d59f668e4b2b2434bf">create_redir_node</a>(<a class="code hl_struct" href="structs__token.html">t_token</a> *token)</div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>{</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    t_ast           *node;</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <a class="code hl_struct" href="structs__ast.html">t_ast</a>           *node;</div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    node = malloc(<span class="keyword">sizeof</span>(t_ast));</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    node = malloc(<span class="keyword">sizeof</span>(<a class="code hl_struct" href="structs__ast.html">t_ast</a>));</div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="keywordflow">if</span> (!node)</div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        <span class="keywordflow">return</span> (NULL);</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    node-&gt;type = token-&gt;type;</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    node-&gt;args = malloc(<span class="keyword">sizeof</span>(<span class="keywordtype">char</span> *) * 2);</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <span class="keywordflow">if</span> (!node-&gt;args)</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    node-&gt;<a class="code hl_variable" href="structs__ast.html#ad1cd2bc8f77d3bbac46e3fdddff8b441">type</a> = token-&gt;<a class="code hl_variable" href="structs__token.html#a350680c70abb7e7173240477e92dc0a3">type</a>;</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    node-&gt;<a class="code hl_variable" href="structs__ast.html#ab62d177d86a1908cf5bbdb5cf6e978f8">args</a> = malloc(<span class="keyword">sizeof</span>(<span class="keywordtype">char</span> *) * 2);</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <span class="keywordflow">if</span> (!node-&gt;<a class="code hl_variable" href="structs__ast.html#ab62d177d86a1908cf5bbdb5cf6e978f8">args</a>)</div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    {</div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        free(node);</div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        <span class="keywordflow">return</span> (NULL);</div>
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    }</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    node-&gt;args[0] = token-&gt;data;</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    node-&gt;args[1] = NULL;</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    node-&gt;left = NULL;</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    node-&gt;right = NULL;</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    node-&gt;<a class="code hl_variable" href="structs__ast.html#ab62d177d86a1908cf5bbdb5cf6e978f8">args</a>[0] = token-&gt;<a class="code hl_variable" href="structs__token.html#afe30f6c413b34095d2a562e112a52e9a">data</a>;</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    node-&gt;<a class="code hl_variable" href="structs__ast.html#ab62d177d86a1908cf5bbdb5cf6e978f8">args</a>[1] = NULL;</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    node-&gt;<a class="code hl_variable" href="structs__ast.html#ac3be51aa6a7ae13bd16b6ad0c7ac843c">left</a> = NULL;</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    node-&gt;<a class="code hl_variable" href="structs__ast.html#ac2c9513b20e9351e45d9bc6361095f7b">right</a> = NULL;</div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    free(token);</div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <span class="keywordflow">return</span> (node);</div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>}</div>
 </div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
 <div class="foldopen" id="foldopen00041" data-start="{" data-end="}">
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="parser_8c.html#a963f3ae14f7e2f5334b13c7a67deabbd">   41</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="parser_8c.html#a963f3ae14f7e2f5334b13c7a67deabbd">is_redir_node</a>(t_token *tokens)</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="tokens_8h.html#a963f3ae14f7e2f5334b13c7a67deabbd">   41</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="parser_8c.html#a963f3ae14f7e2f5334b13c7a67deabbd">is_redir_node</a>(<a class="code hl_struct" href="structs__token.html">t_token</a> *tokens)</div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>{</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <span class="keywordflow">if</span> (tokens-&gt;type == REDIR_IN</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        || tokens-&gt;type == REDIR_OUT</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        || tokens-&gt;type == REDIR_APPEND</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        || tokens-&gt;type == REDIR_HEREDOC)</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <span class="keywordflow">if</span> (tokens-&gt;<a class="code hl_variable" href="structs__token.html#a350680c70abb7e7173240477e92dc0a3">type</a> == <a class="code hl_enumvalue" href="tokens_8h.html#a76a354e93d720f05344590ec8aa222dea18f3c2f496edb0cae413ac5244bb2452">REDIR_IN</a></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        || tokens-&gt;<a class="code hl_variable" href="structs__token.html#a350680c70abb7e7173240477e92dc0a3">type</a> == <a class="code hl_enumvalue" href="tokens_8h.html#a76a354e93d720f05344590ec8aa222deacb2a363e84eabbbe3925fd298f7a3d01">REDIR_OUT</a></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        || tokens-&gt;<a class="code hl_variable" href="structs__token.html#a350680c70abb7e7173240477e92dc0a3">type</a> == <a class="code hl_enumvalue" href="tokens_8h.html#a76a354e93d720f05344590ec8aa222deae6167ac4e4f266512f36d79961bde464">REDIR_APPEND</a></div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        || tokens-&gt;<a class="code hl_variable" href="structs__token.html#a350680c70abb7e7173240477e92dc0a3">type</a> == <a class="code hl_enumvalue" href="tokens_8h.html#a76a354e93d720f05344590ec8aa222dea6b4984ec77e78953297b7cb3f580a2e7">REDIR_HEREDOC</a>)</div>
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        <span class="keywordflow">return</span> (1);</div>
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    <span class="keywordflow">return</span> (0);</div>
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>}</div>
 </div>
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
 <div class="foldopen" id="foldopen00051" data-start="{" data-end="}">
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="parser_8c.html#a2a00e61e381f3754b1bb8cc4d9906b9f">   51</a></span>t_ast   *<a class="code hl_function" href="parser_8c.html#a2a00e61e381f3754b1bb8cc4d9906b9f">clr_node</a>(t_token **tokens, t_token *next_token, t_ast *redirect_node)</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="parser_8c.html#a2a00e61e381f3754b1bb8cc4d9906b9f">   51</a></span><a class="code hl_struct" href="structs__ast.html">t_ast</a>   *<a class="code hl_function" href="parser_8c.html#a2a00e61e381f3754b1bb8cc4d9906b9f">clr_node</a>(<a class="code hl_struct" href="structs__token.html">t_token</a> **tokens, <a class="code hl_struct" href="structs__token.html">t_token</a> *next_token, <a class="code hl_struct" href="structs__ast.html">t_ast</a> *redirect_node)</div>
 <div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>{</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    (*tokens)-&gt;next = next_token-&gt;next-&gt;next;</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    redirect_node-&gt;left = <a class="code hl_function" href="parser_8c.html#ac5e108e945caf03bd60f26514c270963">manage_redirs</a>(tokens);</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    redirect_node-&gt;right = <a class="code hl_function" href="parser_8c.html#a665af377c02015d59f668e4b2b2434bf">create_redir_node</a>((next_token-&gt;next));</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    free(next_token-&gt;data);</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    (*tokens)-&gt;next = next_token-&gt;<a class="code hl_variable" href="structs__token.html#a5dae434205818bfc83a61809d4a34a29">next</a>-&gt;<a class="code hl_variable" href="structs__token.html#a5dae434205818bfc83a61809d4a34a29">next</a>;</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    redirect_node-&gt;<a class="code hl_variable" href="structs__ast.html#ac3be51aa6a7ae13bd16b6ad0c7ac843c">left</a> = <a class="code hl_function" href="parser_8c.html#ac5e108e945caf03bd60f26514c270963">manage_redirs</a>(tokens);</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    redirect_node-&gt;<a class="code hl_variable" href="structs__ast.html#ac2c9513b20e9351e45d9bc6361095f7b">right</a> = <a class="code hl_function" href="parser_8c.html#a665af377c02015d59f668e4b2b2434bf">create_redir_node</a>((next_token-&gt;<a class="code hl_variable" href="structs__token.html#a5dae434205818bfc83a61809d4a34a29">next</a>));</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    free(next_token-&gt;<a class="code hl_variable" href="structs__token.html#afe30f6c413b34095d2a562e112a52e9a">data</a>);</div>
 <div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    free(next_token);</div>
 <div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    <span class="keywordflow">return</span> (redirect_node);</div>
 <div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>}</div>
 </div>
 <div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
 <div class="foldopen" id="foldopen00061" data-start="{" data-end="}">
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno"><a class="line" href="parser_8c.html#ac5e108e945caf03bd60f26514c270963">   61</a></span>t_ast   *<a class="code hl_function" href="parser_8c.html#ac5e108e945caf03bd60f26514c270963">manage_redirs</a>(t_token **tokens)</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno"><a class="line" href="tokens_8h.html#ac5e108e945caf03bd60f26514c270963">   61</a></span><a class="code hl_struct" href="structs__ast.html">t_ast</a>   *<a class="code hl_function" href="parser_8c.html#ac5e108e945caf03bd60f26514c270963">manage_redirs</a>(<a class="code hl_struct" href="structs__token.html">t_token</a> **tokens)</div>
 <div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>{</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    t_token     *tmp;</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    t_ast       *redirect_node;</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    t_token     *next_token;</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    <a class="code hl_struct" href="structs__token.html">t_token</a>     *tmp;</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    <a class="code hl_struct" href="structs__ast.html">t_ast</a>       *redirect_node;</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    <a class="code hl_struct" href="structs__token.html">t_token</a>     *next_token;</div>
 <div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
 <div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    <span class="keywordflow">if</span> (!*tokens)</div>
 <div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>        <span class="keywordflow">return</span> (NULL);</div>
 <div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    tmp = *tokens;</div>
 <div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="parser_8c.html#a963f3ae14f7e2f5334b13c7a67deabbd">is_redir_node</a>(*tokens))</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>        <span class="keywordflow">return</span> (<a class="code hl_function" href="parser__helpers_8c.html#a66cf17aa7377cfb20adcaccdc1f38b1c">create_redir</a>(tokens, tmp));</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    <span class="keywordflow">while</span> (*tokens &amp;&amp; (*tokens)-&gt;next)</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>        <span class="keywordflow">return</span> (<a class="code hl_function" href="tokens_8h.html#a66cf17aa7377cfb20adcaccdc1f38b1c">create_redir</a>(tokens, tmp));</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    <span class="keywordflow">while</span> (*tokens &amp;&amp; (*tokens)-&gt;<a class="code hl_variable" href="structs__token.html#a5dae434205818bfc83a61809d4a34a29">next</a>)</div>
 <div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    {</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>        next_token = (*tokens)-&gt;next;</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>        next_token = (*tokens)-&gt;<a class="code hl_variable" href="structs__token.html#a5dae434205818bfc83a61809d4a34a29">next</a>;</div>
 <div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>        <span class="keywordflow">if</span> (<a class="code hl_function" href="parser_8c.html#a963f3ae14f7e2f5334b13c7a67deabbd">is_redir_node</a>((*tokens)-&gt;next))</div>
 <div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>        {</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>            redirect_node = <a class="code hl_function" href="parser__helpers_8c.html#a57973a9791a885be52c3b8b13cdf327e">new_ast_node</a>((*tokens)-&gt;next-&gt;type);</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>            redirect_node = <a class="code hl_function" href="tokens_8h.html#a57973a9791a885be52c3b8b13cdf327e">new_ast_node</a>((*tokens)-&gt;next-&gt;type);</div>
 <div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>            <span class="keywordflow">return</span> (<a class="code hl_function" href="parser_8c.html#a2a00e61e381f3754b1bb8cc4d9906b9f">clr_node</a>(tokens, next_token, redirect_node));</div>
 <div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>        }</div>
 <div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>        *tokens = next_token;</div>
 <div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    }</div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    <span class="keywordflow">return</span> (<a class="code hl_function" href="parser__helpers_8c.html#a89cb417ed5bc7db489f0249b3d3e3ec6">manage_commands</a>(&amp;tmp));</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    <span class="keywordflow">return</span> (<a class="code hl_function" href="tokens_8h.html#a89cb417ed5bc7db489f0249b3d3e3ec6">manage_commands</a>(&amp;tmp));</div>
 <div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>}</div>
 </div>
 <div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span> </div>
 <div class="foldopen" id="foldopen00085" data-start="{" data-end="}">
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno"><a class="line" href="parser_8c.html#a42a514028763c0c9c9f12226556407fe">   85</a></span>t_ast   *<a class="code hl_function" href="parser_8c.html#a42a514028763c0c9c9f12226556407fe">manage_pipe</a>(t_token **tokens)</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno"><a class="line" href="tokens_8h.html#a42a514028763c0c9c9f12226556407fe">   85</a></span><a class="code hl_struct" href="structs__ast.html">t_ast</a>   *<a class="code hl_function" href="parser_8c.html#a42a514028763c0c9c9f12226556407fe">manage_pipe</a>(<a class="code hl_struct" href="structs__token.html">t_token</a> **tokens)</div>
 <div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>{</div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    t_token     *tmp;</div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    t_token     *next_token;</div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    t_ast       *pipe_node;</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    <a class="code hl_struct" href="structs__token.html">t_token</a>     *tmp;</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    <a class="code hl_struct" href="structs__token.html">t_token</a>     *next_token;</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    <a class="code hl_struct" href="structs__ast.html">t_ast</a>       *pipe_node;</div>
 <div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span> </div>
 <div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    tmp = *tokens;</div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    <span class="keywordflow">while</span> (*tokens &amp;&amp; (*tokens)-&gt;next)</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    <span class="keywordflow">while</span> (*tokens &amp;&amp; (*tokens)-&gt;<a class="code hl_variable" href="structs__token.html#a5dae434205818bfc83a61809d4a34a29">next</a>)</div>
 <div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    {</div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>        next_token = (*tokens)-&gt;next;</div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>        <span class="keywordflow">if</span> ((*tokens)-&gt;next-&gt;type == PIPE)</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>        next_token = (*tokens)-&gt;<a class="code hl_variable" href="structs__token.html#a5dae434205818bfc83a61809d4a34a29">next</a>;</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>        <span class="keywordflow">if</span> ((*tokens)-&gt;next-&gt;type == <a class="code hl_enumvalue" href="tokens_8h.html#a76a354e93d720f05344590ec8aa222dea9bc832fa28809fb974f6ce5bb0cc7117">PIPE</a>)</div>
 <div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>        {</div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>            pipe_node = <a class="code hl_function" href="parser__helpers_8c.html#a57973a9791a885be52c3b8b13cdf327e">new_ast_node</a>((*tokens)-&gt;next-&gt;type);</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>            pipe_node = <a class="code hl_function" href="tokens_8h.html#a57973a9791a885be52c3b8b13cdf327e">new_ast_node</a>((*tokens)-&gt;next-&gt;type);</div>
 <div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>            (*tokens)-&gt;next = NULL;</div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>            pipe_node-&gt;left = <a class="code hl_function" href="parser_8c.html#ac5e108e945caf03bd60f26514c270963">manage_redirs</a>(&amp;tmp);</div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>            <span class="keywordflow">if</span> (next_token-&gt;next == NULL)</div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>                pipe_node-&gt;right = NULL;</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>            pipe_node-&gt;<a class="code hl_variable" href="structs__ast.html#ac3be51aa6a7ae13bd16b6ad0c7ac843c">left</a> = <a class="code hl_function" href="parser_8c.html#ac5e108e945caf03bd60f26514c270963">manage_redirs</a>(&amp;tmp);</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>            <span class="keywordflow">if</span> (next_token-&gt;<a class="code hl_variable" href="structs__token.html#a5dae434205818bfc83a61809d4a34a29">next</a> == NULL)</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>                pipe_node-&gt;<a class="code hl_variable" href="structs__ast.html#ac2c9513b20e9351e45d9bc6361095f7b">right</a> = NULL;</div>
 <div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>            <span class="keywordflow">else</span></div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>                pipe_node-&gt;right = <a class="code hl_function" href="parser_8c.html#a42a514028763c0c9c9f12226556407fe">manage_pipe</a>(&amp;(next_token-&gt;next));</div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>            free(next_token-&gt;data);</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>                pipe_node-&gt;<a class="code hl_variable" href="structs__ast.html#ac2c9513b20e9351e45d9bc6361095f7b">right</a> = <a class="code hl_function" href="parser_8c.html#a42a514028763c0c9c9f12226556407fe">manage_pipe</a>(&amp;(next_token-&gt;<a class="code hl_variable" href="structs__token.html#a5dae434205818bfc83a61809d4a34a29">next</a>));</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>            free(next_token-&gt;<a class="code hl_variable" href="structs__token.html#afe30f6c413b34095d2a562e112a52e9a">data</a>);</div>
 <div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>            free(next_token);</div>
 <div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>            <span class="keywordflow">return</span> (pipe_node);</div>
 <div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>        }</div>
@@ -223,7 +223,7 @@ $(function(){initNavTree('parser_8c_source.html',''); initResizable(true); });
 </div>
 <div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span> </div>
 <div class="foldopen" id="foldopen00113" data-start="{" data-end="}">
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno"><a class="line" href="parser_8c.html#a171ed3b5a6467eddcde6183a461caf02">  113</a></span>t_ast   *<a class="code hl_function" href="parser_8c.html#a171ed3b5a6467eddcde6183a461caf02">parse_tokens</a>(t_token **tokens)</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno"><a class="line" href="tokens_8h.html#a171ed3b5a6467eddcde6183a461caf02">  113</a></span><a class="code hl_struct" href="structs__ast.html">t_ast</a>   *<a class="code hl_function" href="parser_8c.html#a171ed3b5a6467eddcde6183a461caf02">parse_tokens</a>(<a class="code hl_struct" href="structs__token.html">t_token</a> **tokens)</div>
 <div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>{</div>
 <div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>    <span class="keywordflow">if</span> (!tokens || !*tokens)</div>
 <div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>        <span class="keywordflow">return</span> (NULL);</div>
@@ -285,9 +285,24 @@ $(function(){initNavTree('parser_8c_source.html',''); initResizable(true); });
 <div class="ttc" id="aparser_8c_html_a665af377c02015d59f668e4b2b2434bf"><div class="ttname"><a href="parser_8c.html#a665af377c02015d59f668e4b2b2434bf">create_redir_node</a></div><div class="ttdeci">t_ast * create_redir_node(t_token *token)</div><div class="ttdef"><b>Definition</b> <a href="#l00019">parser.c:19</a></div></div>
 <div class="ttc" id="aparser_8c_html_a963f3ae14f7e2f5334b13c7a67deabbd"><div class="ttname"><a href="parser_8c.html#a963f3ae14f7e2f5334b13c7a67deabbd">is_redir_node</a></div><div class="ttdeci">int is_redir_node(t_token *tokens)</div><div class="ttdef"><b>Definition</b> <a href="#l00041">parser.c:41</a></div></div>
 <div class="ttc" id="aparser_8c_html_ac5e108e945caf03bd60f26514c270963"><div class="ttname"><a href="parser_8c.html#ac5e108e945caf03bd60f26514c270963">manage_redirs</a></div><div class="ttdeci">t_ast * manage_redirs(t_token **tokens)</div><div class="ttdef"><b>Definition</b> <a href="#l00061">parser.c:61</a></div></div>
-<div class="ttc" id="aparser__helpers_8c_html_a57973a9791a885be52c3b8b13cdf327e"><div class="ttname"><a href="parser__helpers_8c.html#a57973a9791a885be52c3b8b13cdf327e">new_ast_node</a></div><div class="ttdeci">t_ast * new_ast_node(t_token_type type)</div><div class="ttdef"><b>Definition</b> <a href="parser__helpers_8c_source.html#l00015">parser_helpers.c:15</a></div></div>
-<div class="ttc" id="aparser__helpers_8c_html_a66cf17aa7377cfb20adcaccdc1f38b1c"><div class="ttname"><a href="parser__helpers_8c.html#a66cf17aa7377cfb20adcaccdc1f38b1c">create_redir</a></div><div class="ttdeci">t_ast * create_redir(t_token **tokens, t_token *tmp)</div><div class="ttdef"><b>Definition</b> <a href="parser__helpers_8c_source.html#l00029">parser_helpers.c:29</a></div></div>
-<div class="ttc" id="aparser__helpers_8c_html_a89cb417ed5bc7db489f0249b3d3e3ec6"><div class="ttname"><a href="parser__helpers_8c.html#a89cb417ed5bc7db489f0249b3d3e3ec6">manage_commands</a></div><div class="ttdeci">t_ast * manage_commands(t_token **tokens)</div><div class="ttdef"><b>Definition</b> <a href="parser__helpers_8c_source.html#l00074">parser_helpers.c:74</a></div></div>
+<div class="ttc" id="astructs__ast_html"><div class="ttname"><a href="structs__ast.html">s_ast</a></div><div class="ttdef"><b>Definition</b> <a href="tokens_8h_source.html#l00048">tokens.h:49</a></div></div>
+<div class="ttc" id="astructs__ast_html_ab62d177d86a1908cf5bbdb5cf6e978f8"><div class="ttname"><a href="structs__ast.html#ab62d177d86a1908cf5bbdb5cf6e978f8">s_ast::args</a></div><div class="ttdeci">char ** args</div><div class="ttdef"><b>Definition</b> <a href="tokens_8h_source.html#l00051">tokens.h:51</a></div></div>
+<div class="ttc" id="astructs__ast_html_ac2c9513b20e9351e45d9bc6361095f7b"><div class="ttname"><a href="structs__ast.html#ac2c9513b20e9351e45d9bc6361095f7b">s_ast::right</a></div><div class="ttdeci">struct s_ast * right</div><div class="ttdef"><b>Definition</b> <a href="tokens_8h_source.html#l00053">tokens.h:53</a></div></div>
+<div class="ttc" id="astructs__ast_html_ac3be51aa6a7ae13bd16b6ad0c7ac843c"><div class="ttname"><a href="structs__ast.html#ac3be51aa6a7ae13bd16b6ad0c7ac843c">s_ast::left</a></div><div class="ttdeci">struct s_ast * left</div><div class="ttdef"><b>Definition</b> <a href="tokens_8h_source.html#l00052">tokens.h:52</a></div></div>
+<div class="ttc" id="astructs__ast_html_ad1cd2bc8f77d3bbac46e3fdddff8b441"><div class="ttname"><a href="structs__ast.html#ad1cd2bc8f77d3bbac46e3fdddff8b441">s_ast::type</a></div><div class="ttdeci">t_token_type type</div><div class="ttdef"><b>Definition</b> <a href="tokens_8h_source.html#l00050">tokens.h:50</a></div></div>
+<div class="ttc" id="astructs__token_html"><div class="ttname"><a href="structs__token.html">s_token</a></div><div class="ttdef"><b>Definition</b> <a href="tokens_8h_source.html#l00040">tokens.h:41</a></div></div>
+<div class="ttc" id="astructs__token_html_a350680c70abb7e7173240477e92dc0a3"><div class="ttname"><a href="structs__token.html#a350680c70abb7e7173240477e92dc0a3">s_token::type</a></div><div class="ttdeci">t_token_type type</div><div class="ttdef"><b>Definition</b> <a href="tokens_8h_source.html#l00042">tokens.h:42</a></div></div>
+<div class="ttc" id="astructs__token_html_a5dae434205818bfc83a61809d4a34a29"><div class="ttname"><a href="structs__token.html#a5dae434205818bfc83a61809d4a34a29">s_token::next</a></div><div class="ttdeci">struct s_token * next</div><div class="ttdef"><b>Definition</b> <a href="tokens_8h_source.html#l00044">tokens.h:44</a></div></div>
+<div class="ttc" id="astructs__token_html_afe30f6c413b34095d2a562e112a52e9a"><div class="ttname"><a href="structs__token.html#afe30f6c413b34095d2a562e112a52e9a">s_token::data</a></div><div class="ttdeci">char * data</div><div class="ttdef"><b>Definition</b> <a href="tokens_8h_source.html#l00043">tokens.h:43</a></div></div>
+<div class="ttc" id="atokens_8h_html"><div class="ttname"><a href="tokens_8h.html">tokens.h</a></div></div>
+<div class="ttc" id="atokens_8h_html_a57973a9791a885be52c3b8b13cdf327e"><div class="ttname"><a href="tokens_8h.html#a57973a9791a885be52c3b8b13cdf327e">new_ast_node</a></div><div class="ttdeci">t_ast * new_ast_node(t_token_type type)</div><div class="ttdef"><b>Definition</b> <a href="parser__helpers_8c_source.html#l00015">parser_helpers.c:15</a></div></div>
+<div class="ttc" id="atokens_8h_html_a66cf17aa7377cfb20adcaccdc1f38b1c"><div class="ttname"><a href="tokens_8h.html#a66cf17aa7377cfb20adcaccdc1f38b1c">create_redir</a></div><div class="ttdeci">t_ast * create_redir(t_token **tokens, t_token *tmp)</div><div class="ttdef"><b>Definition</b> <a href="parser__helpers_8c_source.html#l00029">parser_helpers.c:29</a></div></div>
+<div class="ttc" id="atokens_8h_html_a76a354e93d720f05344590ec8aa222dea18f3c2f496edb0cae413ac5244bb2452"><div class="ttname"><a href="tokens_8h.html#a76a354e93d720f05344590ec8aa222dea18f3c2f496edb0cae413ac5244bb2452">REDIR_IN</a></div><div class="ttdeci">@ REDIR_IN</div><div class="ttdef"><b>Definition</b> <a href="tokens_8h_source.html#l00034">tokens.h:34</a></div></div>
+<div class="ttc" id="atokens_8h_html_a76a354e93d720f05344590ec8aa222dea6b4984ec77e78953297b7cb3f580a2e7"><div class="ttname"><a href="tokens_8h.html#a76a354e93d720f05344590ec8aa222dea6b4984ec77e78953297b7cb3f580a2e7">REDIR_HEREDOC</a></div><div class="ttdeci">@ REDIR_HEREDOC</div><div class="ttdef"><b>Definition</b> <a href="tokens_8h_source.html#l00038">tokens.h:37</a></div></div>
+<div class="ttc" id="atokens_8h_html_a76a354e93d720f05344590ec8aa222dea9bc832fa28809fb974f6ce5bb0cc7117"><div class="ttname"><a href="tokens_8h.html#a76a354e93d720f05344590ec8aa222dea9bc832fa28809fb974f6ce5bb0cc7117">PIPE</a></div><div class="ttdeci">@ PIPE</div><div class="ttdef"><b>Definition</b> <a href="tokens_8h_source.html#l00032">tokens.h:32</a></div></div>
+<div class="ttc" id="atokens_8h_html_a76a354e93d720f05344590ec8aa222deacb2a363e84eabbbe3925fd298f7a3d01"><div class="ttname"><a href="tokens_8h.html#a76a354e93d720f05344590ec8aa222deacb2a363e84eabbbe3925fd298f7a3d01">REDIR_OUT</a></div><div class="ttdeci">@ REDIR_OUT</div><div class="ttdef"><b>Definition</b> <a href="tokens_8h_source.html#l00035">tokens.h:35</a></div></div>
+<div class="ttc" id="atokens_8h_html_a76a354e93d720f05344590ec8aa222deae6167ac4e4f266512f36d79961bde464"><div class="ttname"><a href="tokens_8h.html#a76a354e93d720f05344590ec8aa222deae6167ac4e4f266512f36d79961bde464">REDIR_APPEND</a></div><div class="ttdeci">@ REDIR_APPEND</div><div class="ttdef"><b>Definition</b> <a href="tokens_8h_source.html#l00036">tokens.h:36</a></div></div>
+<div class="ttc" id="atokens_8h_html_a89cb417ed5bc7db489f0249b3d3e3ec6"><div class="ttname"><a href="tokens_8h.html#a89cb417ed5bc7db489f0249b3d3e3ec6">manage_commands</a></div><div class="ttdeci">t_ast * manage_commands(t_token **tokens)</div><div class="ttdef"><b>Definition</b> <a href="parser__helpers_8c_source.html#l00074">parser_helpers.c:74</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

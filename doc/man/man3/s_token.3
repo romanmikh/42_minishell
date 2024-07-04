@@ -1,0 +1,57 @@
+.TH "s_token" 3 "Version 1" "maxishell" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+s_token
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fR#include <tokens\&.h>\fP
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBt_token_type\fP \fBtype\fP"
+.br
+.ti -1c
+.RI "char * \fBdata\fP"
+.br
+.ti -1c
+.RI "struct \fBs_token\fP * \fBnext\fP"
+.br
+.ti -1c
+.RI "struct \fBs_token\fP * \fBprev\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line \fB40\fP of file \fBtokens\&.h\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "char* s_token::data"
+
+.PP
+Definition at line \fB43\fP of file \fBtokens\&.h\fP\&.
+.PP
+Referenced by \fBadd_node()\fP, \fBclr_node()\fP, \fBcreate_redir()\fP, \fBcreate_redir_node()\fP, \fBfree_all_tokens()\fP, \fBlist_to_array()\fP, \fBmanage_pipe()\fP, \fBnew_token()\fP, \fBprint_stack()\fP, \fBprint_tokens()\fP, and \fBset_command_args()\fP\&.
+.SS "struct \fBs_token\fP* s_token::next"
+
+.PP
+Definition at line \fB44\fP of file \fBtokens\&.h\fP\&.
+.PP
+Referenced by \fBadd_node()\fP, \fBappend_token()\fP, \fBarg_len()\fP, \fBcalc_stack_size()\fP, \fBclr_node()\fP, \fBcreate_redir()\fP, \fBfree_all_tokens()\fP, \fBfree_stack()\fP, \fBlist_to_array()\fP, \fBmanage_pipe()\fP, \fBmanage_redirs()\fP, \fBnew_token()\fP, \fBprint_stack()\fP, \fBprint_tokens()\fP, and \fBset_command_args()\fP\&.
+.SS "struct \fBs_token\fP* s_token::prev"
+
+.PP
+Definition at line \fB45\fP of file \fBtokens\&.h\fP\&.
+.SS "\fBt_token_type\fP s_token::type"
+
+.PP
+Definition at line \fB42\fP of file \fBtokens\&.h\fP\&.
+.PP
+Referenced by \fBarg_len()\fP, \fBcreate_redir_node()\fP, \fBis_redir_node()\fP, and \fBnew_token()\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for maxishell from the source code\&.

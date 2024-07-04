@@ -18,13 +18,13 @@
 .RI "void \fBfree_args\fP (char **args)"
 .br
 .ti -1c
-.RI "void \fBfree_env_list\fP (t_env *env)"
+.RI "void \fBfree_env_list\fP (\fBt_env\fP *env)"
 .br
 .ti -1c
-.RI "void \fBfree_minishell_data\fP (t_minishell_data *data)"
+.RI "void \fBfree_minishell_data\fP (\fBt_minishell_data\fP *data)"
 .br
 .ti -1c
-.RI "void \fBloop_cleanup\fP (char *line, t_token *tokens, char *prompt, t_ast *tree)"
+.RI "void \fBloop_cleanup\fP (char *line, \fBt_token\fP *tokens, char *prompt, \fBt_ast\fP *tree)"
 .br
 .in -1c
 .SH "Function Documentation"
@@ -50,7 +50,7 @@ Definition at line \fB16\fP of file \fBclean_general\&.c\fP\&.
 
 .PP
 Referenced by \fBfree_minishell_data()\fP\&.
-.SS "void free_env_list (t_env * env)"
+.SS "void free_env_list (\fBt_env\fP * env)"
 
 .PP
 Definition at line \fB29\fP of file \fBclean_general\&.c\fP\&.
@@ -71,8 +71,10 @@ Definition at line \fB29\fP of file \fBclean_general\&.c\fP\&.
 .fi
 
 .PP
+References \fBs_env::key\fP, \fBs_env::next\fP, and \fBs_env::value\fP\&.
+.PP
 Referenced by \fBfree_minishell_data()\fP\&.
-.SS "void free_minishell_data (t_minishell_data * data)"
+.SS "void free_minishell_data (\fBt_minishell_data\fP * data)"
 
 .PP
 Definition at line \fB43\fP of file \fBclean_general\&.c\fP\&.
@@ -91,10 +93,10 @@ Definition at line \fB43\fP of file \fBclean_general\&.c\fP\&.
 .fi
 
 .PP
-References \fBfree_args()\fP, and \fBfree_env_list()\fP\&.
+References \fBs_minishell_data::args\fP, \fBs_minishell_data::current_dir\fP, \fBs_minishell_data::envp\fP, \fBfree_args()\fP, \fBfree_env_list()\fP, and \fBs_minishell_data::local_env\fP\&.
 .PP
 Referenced by \fBmain()\fP\&.
-.SS "void loop_cleanup (char * line, t_token * tokens, char * prompt, t_ast * tree)"
+.SS "void loop_cleanup (char * line, \fBt_token\fP * tokens, char * prompt, \fBt_ast\fP * tree)"
 
 .PP
 Definition at line \fB55\fP of file \fBclean_general\&.c\fP\&.

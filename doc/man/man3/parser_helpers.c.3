@@ -13,24 +13,24 @@
 
 .in +1c
 .ti -1c
-.RI "t_ast * \fBnew_ast_node\fP (t_token_type type)"
+.RI "\fBt_ast\fP * \fBnew_ast_node\fP (\fBt_token_type\fP type)"
 .br
 .ti -1c
-.RI "t_ast * \fBcreate_redir\fP (t_token **tokens, t_token *tmp)"
+.RI "\fBt_ast\fP * \fBcreate_redir\fP (\fBt_token\fP **tokens, \fBt_token\fP *tmp)"
 .br
 .ti -1c
-.RI "int \fBarg_len\fP (t_token *current)"
+.RI "int \fBarg_len\fP (\fBt_token\fP *current)"
 .br
 .ti -1c
-.RI "void \fBset_command_args\fP (t_ast *command_node, t_token **tokens, int arg_count)"
+.RI "void \fBset_command_args\fP (\fBt_ast\fP *command_node, \fBt_token\fP **tokens, int arg_count)"
 .br
 .ti -1c
-.RI "t_ast * \fBmanage_commands\fP (t_token **tokens)"
+.RI "\fBt_ast\fP * \fBmanage_commands\fP (\fBt_token\fP **tokens)"
 .br
 .in -1c
 .SH "Function Documentation"
 .PP 
-.SS "int arg_len (t_token * current)"
+.SS "int arg_len (\fBt_token\fP * current)"
 
 .PP
 Definition at line \fB42\fP of file \fBparser_helpers\&.c\fP\&.
@@ -50,8 +50,10 @@ Definition at line \fB42\fP of file \fBparser_helpers\&.c\fP\&.
 .fi
 
 .PP
+References \fBs_token::next\fP, \fBPHRASE\fP, and \fBs_token::type\fP\&.
+.PP
 Referenced by \fBmanage_commands()\fP\&.
-.SS "t_ast * create_redir (t_token ** tokens, t_token * tmp)"
+.SS "\fBt_ast\fP * create_redir (\fBt_token\fP ** tokens, \fBt_token\fP * tmp)"
 
 .PP
 Definition at line \fB29\fP of file \fBparser_helpers\&.c\fP\&.
@@ -71,10 +73,10 @@ Definition at line \fB29\fP of file \fBparser_helpers\&.c\fP\&.
 .fi
 
 .PP
-References \fBcreate_redir_node()\fP, \fBmanage_redirs()\fP, and \fBnew_ast_node()\fP\&.
+References \fBcreate_redir_node()\fP, \fBs_token::data\fP, \fBs_ast::left\fP, \fBmanage_redirs()\fP, \fBnew_ast_node()\fP, \fBs_token::next\fP, and \fBs_ast::right\fP\&.
 .PP
 Referenced by \fBmanage_redirs()\fP\&.
-.SS "t_ast * manage_commands (t_token ** tokens)"
+.SS "\fBt_ast\fP * manage_commands (\fBt_token\fP ** tokens)"
 
 .PP
 Definition at line \fB74\fP of file \fBparser_helpers\&.c\fP\&.
@@ -95,10 +97,10 @@ Definition at line \fB74\fP of file \fBparser_helpers\&.c\fP\&.
 .fi
 
 .PP
-References \fBarg_len()\fP, \fBnew_ast_node()\fP, and \fBset_command_args()\fP\&.
+References \fBarg_len()\fP, \fBs_ast::args\fP, \fBnew_ast_node()\fP, \fBPHRASE\fP, and \fBset_command_args()\fP\&.
 .PP
 Referenced by \fBmanage_redirs()\fP\&.
-.SS "t_ast * new_ast_node (t_token_type type)"
+.SS "\fBt_ast\fP * new_ast_node (\fBt_token_type\fP type)"
 
 .PP
 Definition at line \fB15\fP of file \fBparser_helpers\&.c\fP\&.
@@ -119,8 +121,10 @@ Definition at line \fB15\fP of file \fBparser_helpers\&.c\fP\&.
 .fi
 
 .PP
+References \fBs_ast::args\fP, \fBs_ast::left\fP, \fBs_ast::right\fP, and \fBs_ast::type\fP\&.
+.PP
 Referenced by \fBcreate_redir()\fP, \fBmanage_commands()\fP, \fBmanage_pipe()\fP, and \fBmanage_redirs()\fP\&.
-.SS "void set_command_args (t_ast * command_node, t_token ** tokens, int arg_count)"
+.SS "void set_command_args (\fBt_ast\fP * command_node, \fBt_token\fP ** tokens, int arg_count)"
 
 .PP
 Definition at line \fB55\fP of file \fBparser_helpers\&.c\fP\&.
@@ -144,6 +148,8 @@ Definition at line \fB55\fP of file \fBparser_helpers\&.c\fP\&.
 .PP
 .fi
 
+.PP
+References \fBs_ast::args\fP, \fBs_token::data\fP, \fBft_strdup()\fP, and \fBs_token::next\fP\&.
 .PP
 Referenced by \fBmanage_commands()\fP\&.
 .SH "Author"

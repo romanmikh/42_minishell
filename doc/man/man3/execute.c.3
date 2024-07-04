@@ -29,18 +29,18 @@
 
 .in +1c
 .ti -1c
-.RI "int \fBexecute_ast\fP (t_ast *node, t_minishell_data *data)"
+.RI "int \fBexecute_ast\fP (\fBt_ast\fP *node, \fBt_minishell_data\fP *data)"
 .br
 .ti -1c
-.RI "int \fBexecute\fP (t_minishell_data *data)"
+.RI "int \fBexecute\fP (\fBt_minishell_data\fP *data)"
 .br
 .ti -1c
-.RI "int \fBnew_process\fP (t_minishell_data *data)"
+.RI "int \fBnew_process\fP (\fBt_minishell_data\fP *data)"
 .br
 .in -1c
 .SH "Function Documentation"
 .PP 
-.SS "int execute (t_minishell_data * data)"
+.SS "int execute (\fBt_minishell_data\fP * data)"
 
 .PP
 Definition at line \fB74\fP of file \fBexecute\&.c\fP\&.
@@ -76,10 +76,10 @@ Definition at line \fB74\fP of file \fBexecute\&.c\fP\&.
 .fi
 
 .PP
-References \fBbuiltin_cd()\fP, \fBbuiltin_echo()\fP, \fBbuiltin_env()\fP, \fBbuiltin_exit()\fP, \fBbuiltin_export()\fP, \fBbuiltin_pwd()\fP, \fBbuiltin_unset()\fP, and \fBnew_process()\fP\&.
+References \fBs_minishell_data::args\fP, \fBbuiltin_cd()\fP, \fBbuiltin_echo()\fP, \fBbuiltin_env()\fP, \fBbuiltin_exit()\fP, \fBbuiltin_export()\fP, \fBbuiltin_pwd()\fP, \fBbuiltin_unset()\fP, \fBft_strcmp()\fP, and \fBnew_process()\fP\&.
 .PP
 Referenced by \fBexecute_ast()\fP\&.
-.SS "int execute_ast (t_ast * node, t_minishell_data * data)"
+.SS "int execute_ast (\fBt_ast\fP * node, \fBt_minishell_data\fP * data)"
 
 .PP
 Definition at line \fB31\fP of file \fBexecute\&.c\fP\&.
@@ -129,10 +129,10 @@ Definition at line \fB31\fP of file \fBexecute\&.c\fP\&.
 .fi
 
 .PP
-References \fBbuiltin_pipe()\fP, \fBexecute()\fP, \fBredirect_in()\fP, and \fBredirect_out()\fP\&.
+References \fBs_ast::args\fP, \fBs_minishell_data::args\fP, \fBBLU\fP, \fBbuiltin_pipe()\fP, \fBCYA\fP, \fBENV_VAR\fP, \fBexecute()\fP, \fBGRN\fP, \fBMAG\fP, \fBPHRASE\fP, \fBPIPE\fP, \fBRED\fP, \fBREDIR_APPEND\fP, \fBREDIR_HEREDOC\fP, \fBREDIR_IN\fP, \fBREDIR_OUT\fP, \fBredirect_in()\fP, \fBredirect_out()\fP, \fBRESET\fP, \fBs_ast::type\fP, and \fBYEL\fP\&.
 .PP
 Referenced by \fBexecute_child()\fP, \fBexecute_redirect()\fP, \fBmain_loop()\fP, and \fBredirect_in()\fP\&.
-.SS "int new_process (t_minishell_data * data)"
+.SS "int new_process (\fBt_minishell_data\fP * data)"
 
 .PP
 Definition at line \fB103\fP of file \fBexecute\&.c\fP\&.
@@ -171,7 +171,7 @@ Definition at line \fB103\fP of file \fBexecute\&.c\fP\&.
 .fi
 
 .PP
-References \fBenv_to_array()\fP, \fBft_find_path()\fP, \fBft_free_2d_arr()\fP, and \fBft_perror()\fP\&.
+References \fBs_minishell_data::args\fP, \fBenv_to_array()\fP, \fBs_minishell_data::envp\fP, \fBft_find_path()\fP, \fBft_free_2d_arr()\fP, \fBft_perror()\fP, and \fBs_minishell_data::temp_fd\fP\&.
 .PP
 Referenced by \fBexecute()\fP\&.
 .SH "Author"

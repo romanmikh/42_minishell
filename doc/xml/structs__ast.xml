@@ -1,0 +1,119 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.11.0" xml:lang="en-US">
+  <compounddef id="structs__ast" kind="struct" language="C++" prot="public">
+    <compoundname>s_ast</compoundname>
+    <includes refid="tokens_8h" local="no">tokens.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structs__ast_1ad1cd2bc8f77d3bbac46e3fdddff8b441" prot="public" static="no" mutable="no">
+        <type><ref refid="tokens_8h_1aaa12264c004e358b28290c09bb20969a" kindref="member">t_token_type</ref></type>
+        <definition>t_token_type s_ast::type</definition>
+        <argsstring></argsstring>
+        <name>type</name>
+        <qualifiedname>s_ast::type</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/dimadem/Documents/GitHub/minishell/inc/tokens.h" line="50" column="13" bodyfile="/Users/dimadem/Documents/GitHub/minishell/inc/tokens.h" bodystart="50" bodyend="-1"/>
+        <referencedby refid="tokens_8h_1a665af377c02015d59f668e4b2b2434bf" compoundref="parser_8c" startline="19" endline="39">create_redir_node</referencedby>
+        <referencedby refid="execute_8h_1ace4c3a2246919797e40140123d79596a" compoundref="execute_8c" startline="31" endline="72">execute_ast</referencedby>
+        <referencedby refid="tokens_8h_1a0a4196019426e41a9f5ec36835396e81" compoundref="clean__tree_8c" startline="37" endline="56">free_ast</referencedby>
+        <referencedby refid="tokens_8h_1a57973a9791a885be52c3b8b13cdf327e" compoundref="parser__helpers_8c" startline="15" endline="27">new_ast_node</referencedby>
+        <referencedby refid="visualiser_8c_1a13ff81f002e065c8be81f93b1e3bfecf" compoundref="visualiser_8c" startline="35" endline="61">print_ast_node</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structs__ast_1ab62d177d86a1908cf5bbdb5cf6e978f8" prot="public" static="no" mutable="no">
+        <type>char **</type>
+        <definition>char** s_ast::args</definition>
+        <argsstring></argsstring>
+        <name>args</name>
+        <qualifiedname>s_ast::args</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/dimadem/Documents/GitHub/minishell/inc/tokens.h" line="51" column="5" bodyfile="/Users/dimadem/Documents/GitHub/minishell/inc/tokens.h" bodystart="51" bodyend="-1"/>
+        <referencedby refid="tokens_8h_1a665af377c02015d59f668e4b2b2434bf" compoundref="parser_8c" startline="19" endline="39">create_redir_node</referencedby>
+        <referencedby refid="execute_8h_1ace4c3a2246919797e40140123d79596a" compoundref="execute_8c" startline="31" endline="72">execute_ast</referencedby>
+        <referencedby refid="tokens_8h_1a0a4196019426e41a9f5ec36835396e81" compoundref="clean__tree_8c" startline="37" endline="56">free_ast</referencedby>
+        <referencedby refid="tokens_8h_1a89cb417ed5bc7db489f0249b3d3e3ec6" compoundref="parser__helpers_8c" startline="74" endline="86">manage_commands</referencedby>
+        <referencedby refid="tokens_8h_1a57973a9791a885be52c3b8b13cdf327e" compoundref="parser__helpers_8c" startline="15" endline="27">new_ast_node</referencedby>
+        <referencedby refid="redirection_8h_1a2fe566529f8c7046fe274f2b3a35b39b" compoundref="redirection_2utils_8c" startline="10" endline="25">open_file</referencedby>
+        <referencedby refid="visualiser_8c_1a13ff81f002e065c8be81f93b1e3bfecf" compoundref="visualiser_8c" startline="35" endline="61">print_ast_node</referencedby>
+        <referencedby refid="tokens_8h_1ab5f23ff7ab59a241fa7476e6fca458cf" compoundref="parser__helpers_8c" startline="55" endline="72">set_command_args</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structs__ast_1ac3be51aa6a7ae13bd16b6ad0c7ac843c" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structs__ast" kindref="compound">s_ast</ref> *</type>
+        <definition>struct s_ast* s_ast::left</definition>
+        <argsstring></argsstring>
+        <name>left</name>
+        <qualifiedname>s_ast::left</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/dimadem/Documents/GitHub/minishell/inc/tokens.h" line="52" column="12" bodyfile="/Users/dimadem/Documents/GitHub/minishell/inc/tokens.h" bodystart="52" bodyend="-1"/>
+        <referencedby refid="pipe_8h_1a7947b63271b47934f419fe6d217bf8df" compoundref="pipe_8c" startline="25" endline="50">builtin_pipe</referencedby>
+        <referencedby refid="parser_8c_1a2a00e61e381f3754b1bb8cc4d9906b9f" compoundref="parser_8c" startline="51" endline="59">clr_node</referencedby>
+        <referencedby refid="tokens_8h_1a66cf17aa7377cfb20adcaccdc1f38b1c" compoundref="parser__helpers_8c" startline="29" endline="40">create_redir</referencedby>
+        <referencedby refid="tokens_8h_1a665af377c02015d59f668e4b2b2434bf" compoundref="parser_8c" startline="19" endline="39">create_redir_node</referencedby>
+        <referencedby refid="tokens_8h_1a0a4196019426e41a9f5ec36835396e81" compoundref="clean__tree_8c" startline="37" endline="56">free_ast</referencedby>
+        <referencedby refid="tokens_8h_1a42a514028763c0c9c9f12226556407fe" compoundref="parser_8c" startline="85" endline="111">manage_pipe</referencedby>
+        <referencedby refid="tokens_8h_1a57973a9791a885be52c3b8b13cdf327e" compoundref="parser__helpers_8c" startline="15" endline="27">new_ast_node</referencedby>
+        <referencedby refid="visualiser_8c_1ac38cad433d858a530a7d7479f134f81c" compoundref="visualiser_8c" startline="91" endline="101">print_ast_graphical</referencedby>
+        <referencedby refid="redirection_8h_1a2635bab3d0023f67288d2832903bdbd9" compoundref="redirect__in_8c" startline="13" endline="30">redirect_in</referencedby>
+        <referencedby refid="redirection_8h_1a13afb8e911eca2b32bd9e843eda752a5" compoundref="redirect__out_8c" startline="10" endline="25">redirect_out</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structs__ast_1ac2c9513b20e9351e45d9bc6361095f7b" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structs__ast" kindref="compound">s_ast</ref> *</type>
+        <definition>struct s_ast* s_ast::right</definition>
+        <argsstring></argsstring>
+        <name>right</name>
+        <qualifiedname>s_ast::right</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/dimadem/Documents/GitHub/minishell/inc/tokens.h" line="53" column="12" bodyfile="/Users/dimadem/Documents/GitHub/minishell/inc/tokens.h" bodystart="53" bodyend="-1"/>
+        <referencedby refid="pipe_8h_1a7947b63271b47934f419fe6d217bf8df" compoundref="pipe_8c" startline="25" endline="50">builtin_pipe</referencedby>
+        <referencedby refid="parser_8c_1a2a00e61e381f3754b1bb8cc4d9906b9f" compoundref="parser_8c" startline="51" endline="59">clr_node</referencedby>
+        <referencedby refid="tokens_8h_1a66cf17aa7377cfb20adcaccdc1f38b1c" compoundref="parser__helpers_8c" startline="29" endline="40">create_redir</referencedby>
+        <referencedby refid="tokens_8h_1a665af377c02015d59f668e4b2b2434bf" compoundref="parser_8c" startline="19" endline="39">create_redir_node</referencedby>
+        <referencedby refid="tokens_8h_1a0a4196019426e41a9f5ec36835396e81" compoundref="clean__tree_8c" startline="37" endline="56">free_ast</referencedby>
+        <referencedby refid="tokens_8h_1a42a514028763c0c9c9f12226556407fe" compoundref="parser_8c" startline="85" endline="111">manage_pipe</referencedby>
+        <referencedby refid="tokens_8h_1a57973a9791a885be52c3b8b13cdf327e" compoundref="parser__helpers_8c" startline="15" endline="27">new_ast_node</referencedby>
+        <referencedby refid="visualiser_8c_1ac38cad433d858a530a7d7479f134f81c" compoundref="visualiser_8c" startline="91" endline="101">print_ast_graphical</referencedby>
+        <referencedby refid="redirection_8h_1a2635bab3d0023f67288d2832903bdbd9" compoundref="redirect__in_8c" startline="13" endline="30">redirect_in</referencedby>
+        <referencedby refid="redirection_8h_1a13afb8e911eca2b32bd9e843eda752a5" compoundref="redirect__out_8c" startline="10" endline="25">redirect_out</referencedby>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>s_ast</label>
+        <link refid="structs__ast"/>
+        <childnode refid="1" relation="usage">
+          <edgelabel>left</edgelabel>
+          <edgelabel>right</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/Users/dimadem/Documents/GitHub/minishell/inc/tokens.h" line="48" column="1" bodyfile="/Users/dimadem/Documents/GitHub/minishell/inc/tokens.h" bodystart="49" bodyend="54"/>
+    <listofallmembers>
+      <member refid="structs__ast_1ab62d177d86a1908cf5bbdb5cf6e978f8" prot="public" virt="non-virtual"><scope>s_ast</scope><name>args</name></member>
+      <member refid="structs__ast_1ac3be51aa6a7ae13bd16b6ad0c7ac843c" prot="public" virt="non-virtual"><scope>s_ast</scope><name>left</name></member>
+      <member refid="structs__ast_1ac2c9513b20e9351e45d9bc6361095f7b" prot="public" virt="non-virtual"><scope>s_ast</scope><name>right</name></member>
+      <member refid="structs__ast_1ad1cd2bc8f77d3bbac46e3fdddff8b441" prot="public" virt="non-virtual"><scope>s_ast</scope><name>type</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,47 @@
+.TH "/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_strrchr.c" 3 "Version 1" "maxishell" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_strrchr.c
+.SH SYNOPSIS
+.br
+.PP
+\fR#include 'libft\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "char * \fBft_strrchr\fP (const char *s, int c)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "char * ft_strrchr (const char * s, int c)"
+
+.PP
+Definition at line \fB24\fP of file \fBft_strrchr\&.c\fP\&.
+.nf
+25 {
+26     unsigned char   uc;
+27     const char      *last_occurrence;
+28 
+29     last_occurrence = NULL;
+30     uc = (unsigned char)c;
+31     while (*s != '\\0')
+32     {
+33         if (*s == uc)
+34             last_occurrence = s;
+35         s++;
+36     }
+37     if (*s == uc)
+38         return ((char *)s);
+39     return ((char *)last_occurrence);
+40 }
+.PP
+.fi
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for maxishell from the source code\&.

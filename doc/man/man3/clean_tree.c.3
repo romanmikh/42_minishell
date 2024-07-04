@@ -13,15 +13,15 @@
 
 .in +1c
 .ti -1c
-.RI "void \fBfree_all_tokens\fP (t_token *tokens)"
+.RI "void \fBfree_all_tokens\fP (\fBt_token\fP *tokens)"
 .br
 .ti -1c
-.RI "void \fBfree_ast\fP (t_ast *node)"
+.RI "void \fBfree_ast\fP (\fBt_ast\fP *node)"
 .br
 .in -1c
 .SH "Function Documentation"
 .PP 
-.SS "void free_all_tokens (t_token * tokens)"
+.SS "void free_all_tokens (\fBt_token\fP * tokens)"
 
 .PP
 Definition at line \fB16\fP of file \fBclean_tree\&.c\fP\&.
@@ -48,7 +48,9 @@ Definition at line \fB16\fP of file \fBclean_tree\&.c\fP\&.
 .PP
 .fi
 
-.SS "void free_ast (t_ast * node)"
+.PP
+References \fBs_token::data\fP, and \fBs_token::next\fP\&.
+.SS "void free_ast (\fBt_ast\fP * node)"
 
 .PP
 Definition at line \fB37\fP of file \fBclean_tree\&.c\fP\&.
@@ -76,7 +78,7 @@ Definition at line \fB37\fP of file \fBclean_tree\&.c\fP\&.
 .fi
 
 .PP
-References \fBfree_ast()\fP\&.
+References \fBs_ast::args\fP, \fBfree_ast()\fP, \fBs_ast::left\fP, \fBPHRASE\fP, \fBs_ast::right\fP, and \fBs_ast::type\fP\&.
 .PP
 Referenced by \fBfree_ast()\fP, and \fBloop_cleanup()\fP\&.
 .SH "Author"

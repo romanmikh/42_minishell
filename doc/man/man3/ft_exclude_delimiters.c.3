@@ -1,0 +1,40 @@
+.TH "/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_exclude_delimiters.c" 3 "Version 1" "maxishell" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_exclude_delimiters.c
+.SH SYNOPSIS
+.br
+.PP
+\fR#include 'libft\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "const char * \fBft_exclude_delimiters\fP (const char *str, char *delims)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "const char * ft_exclude_delimiters (const char * str, char * delims)"
+
+.PP
+Definition at line \fB15\fP of file \fBft_exclude_delimiters\&.c\fP\&.
+.nf
+16 {
+17     while (*str && (ft_strchr(delims, *str) != NULL))
+18         str++;
+19     return (str);
+20 }
+.PP
+.fi
+
+.PP
+References \fBft_strchr()\fP\&.
+.PP
+Referenced by \fBvalid_operator()\fP\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for maxishell from the source code\&.

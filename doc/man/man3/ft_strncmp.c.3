@@ -1,0 +1,44 @@
+.TH "/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_strncmp.c" 3 "Version 1" "maxishell" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_strncmp.c
+.SH SYNOPSIS
+.br
+.PP
+\fR#include 'libft\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "int \fBft_strncmp\fP (const char *s1, const char *s2, size_t n)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "int ft_strncmp (const char * s1, const char * s2, size_t n)"
+
+.PP
+Definition at line \fB24\fP of file \fBft_strncmp\&.c\fP\&.
+.nf
+25 {
+26     while (n > 0 && (*s1 != '\\0' || *s2 != '\\0'))
+27     {
+28         if (*s1 != *s2)
+29             return ((unsigned char)*s1 \- (unsigned char)*s2);
+30         s1++;
+31         s2++;
+32         n\-\-;
+33     }
+34     return (0);
+35 }
+.PP
+.fi
+
+.PP
+Referenced by \fBbuiltin_export()\fP, \fBft_strnstr()\fP, \fBft_strstr()\fP, \fBgenerate_prompt_string()\fP, and \fBlist_repeat_check_str()\fP\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for maxishell from the source code\&.

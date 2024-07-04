@@ -25,15 +25,15 @@
 
 .in +1c
 .ti -1c
-.RI "int \fBbuiltin_pipe\fP (t_ast *node, t_minishell_data *data)"
+.RI "int \fBbuiltin_pipe\fP (\fBt_ast\fP *node, \fBt_minishell_data\fP *data)"
 .br
 .ti -1c
-.RI "pid_t \fBexecute_child\fP (t_ast *node, t_minishell_data *data, int fd[2], int direction)"
+.RI "pid_t \fBexecute_child\fP (\fBt_ast\fP *node, \fBt_minishell_data\fP *data, int fd[2], int direction)"
 .br
 .in -1c
 .SH "Function Documentation"
 .PP 
-.SS "int builtin_pipe (t_ast * node, t_minishell_data * data)"
+.SS "int builtin_pipe (\fBt_ast\fP * node, \fBt_minishell_data\fP * data)"
 
 .PP
 Definition at line \fB25\fP of file \fBpipe\&.c\fP\&.
@@ -67,10 +67,10 @@ Definition at line \fB25\fP of file \fBpipe\&.c\fP\&.
 .fi
 
 .PP
-References \fBclose_fds()\fP, \fBexecute_child()\fP, and \fBft_perror()\fP\&.
+References \fBclose_fds()\fP, \fBexecute_child()\fP, \fBft_perror()\fP, \fBs_ast::left\fP, \fBs_ast::right\fP, \fBs_minishell_data::temp_fd\fP, and \fBWAIT_NEXT_COMMAND\fP\&.
 .PP
 Referenced by \fBexecute_ast()\fP\&.
-.SS "pid_t execute_child (t_ast * node, t_minishell_data * data, int fd[2], int direction)"
+.SS "pid_t execute_child (\fBt_ast\fP * node, \fBt_minishell_data\fP * data, int fd[2], int direction)"
 
 .PP
 Definition at line \fB52\fP of file \fBpipe\&.c\fP\&.

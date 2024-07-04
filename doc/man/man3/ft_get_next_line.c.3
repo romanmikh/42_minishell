@@ -59,6 +59,8 @@ Definition at line \fB85\fP of file \fBft_get_next_line\&.c\fP\&.
 .fi
 
 .PP
+References \fBft_strchr()\fP, \fBft_strdup()\fP, and \fBft_substr()\fP\&.
+.PP
 Referenced by \fBft_get_next_line()\fP\&.
 .SS "char * ft_get_next_line (int fd)"
 
@@ -94,7 +96,7 @@ Definition at line \fB8\fP of file \fBft_get_next_line\&.c\fP\&.
 .fi
 
 .PP
-References \fBextract_line()\fP, and \fBread_from_fd()\fP\&.
+References \fBBUFFER_SIZE\fP, \fBextract_line()\fP, and \fBread_from_fd()\fP\&.
 .SS "char * ft_strjoin_gnl (char * s1, char const * s2)"
 
 .PP
@@ -125,6 +127,8 @@ Definition at line \fB35\fP of file \fBft_get_next_line\&.c\fP\&.
 .PP
 .fi
 
+.PP
+References \fBft_memcpy()\fP, \fBft_strlcpy()\fP, and \fBft_strlen()\fP\&.
 .PP
 Referenced by \fBread_from_fd()\fP\&.
 .SS "static char * read_from_fd (int fd, char * saved, char * buf)\fR [static]\fP"
@@ -160,7 +164,7 @@ Definition at line \fB59\fP of file \fBft_get_next_line\&.c\fP\&.
 .fi
 
 .PP
-References \fBft_strjoin_gnl()\fP\&.
+References \fBBUFFER_SIZE\fP, \fBft_strchr()\fP, and \fBft_strjoin_gnl()\fP\&.
 .PP
 Referenced by \fBft_get_next_line()\fP\&.
 .SH "Author"

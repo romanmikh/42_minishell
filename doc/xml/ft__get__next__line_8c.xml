@@ -2,16 +2,62 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.11.0" xml:lang="en-US">
   <compounddef id="ft__get__next__line_8c" kind="file" language="C++">
     <compoundname>ft_get_next_line.c</compoundname>
-    <includes local="yes">libft.h</includes>
+    <includes refid="libft_8h" local="yes">libft.h</includes>
     <incdepgraph>
+      <node id="2">
+        <label>libft.h</label>
+        <link refid="libft_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
       <node id="1">
         <label>/Users/dimadem/Documents/GitHub/minishell/src/redirection/ft_get_next_line.c</label>
         <link refid="ft__get__next__line_8c"/>
         <childnode refid="2" relation="include">
         </childnode>
       </node>
-      <node id="2">
-        <label>libft.h</label>
+      <node id="6">
+        <label>limits.h</label>
+      </node>
+      <node id="11">
+        <label>math.h</label>
+      </node>
+      <node id="9">
+        <label>signal.h</label>
+      </node>
+      <node id="8">
+        <label>stdarg.h</label>
+      </node>
+      <node id="10">
+        <label>stdbool.h</label>
+      </node>
+      <node id="3">
+        <label>stddef.h</label>
+      </node>
+      <node id="5">
+        <label>stdint.h</label>
+      </node>
+      <node id="4">
+        <label>stdlib.h</label>
+      </node>
+      <node id="7">
+        <label>unistd.h</label>
       </node>
     </incdepgraph>
     <sectiondef kind="func">
@@ -31,6 +77,7 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/dimadem/Documents/GitHub/minishell/src/redirection/ft_get_next_line.c" line="8" column="5" bodyfile="/Users/dimadem/Documents/GitHub/minishell/src/redirection/ft_get_next_line.c" bodystart="8" bodyend="33" declfile="/Users/dimadem/Documents/GitHub/minishell/src/redirection/ft_get_next_line.c" declline="3" declcolumn="13"/>
+        <references refid="libft_8h_1a6b20d41d6252e9871430c242cb1a56e7" compoundref="libft_8h" startline="25">BUFFER_SIZE</references>
         <references refid="ft__get__next__line_8c_1a33d78aafe6a0e75e4fdfe3606cbd9348" compoundref="ft__get__next__line_8c" startline="85" endline="108">extract_line</references>
         <references refid="ft__get__next__line_8c_1aa5a7db94bcb5970b93bff4df02b52108" compoundref="ft__get__next__line_8c" startline="59" endline="83">read_from_fd</references>
       </memberdef>
@@ -50,7 +97,10 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/dimadem/Documents/GitHub/minishell/src/redirection/ft_get_next_line.c" line="85" column="12" bodyfile="/Users/dimadem/Documents/GitHub/minishell/src/redirection/ft_get_next_line.c" bodystart="85" bodyend="108" declfile="/Users/dimadem/Documents/GitHub/minishell/src/redirection/ft_get_next_line.c" declline="4" declcolumn="12"/>
-        <referencedby refid="ft__get__next__line_8c_1a5feb28b63e00d9f45e4887ee15da4ab8" compoundref="ft__get__next__line_8c" startline="8" endline="33">ft_get_next_line</referencedby>
+        <references refid="libft_8h_1aa6d0c2d180f32ee585485e1a1ce3d55d" compoundref="ft__strchr_8c" startline="25" endline="35">ft_strchr</references>
+        <references refid="libft_8h_1aebe73f27c70c56ac5053f860ef5436c9" compoundref="ft__strdup_8c" startline="23" endline="36">ft_strdup</references>
+        <references refid="libft_8h_1a78c402cbf3d55b1374693c3b7d34f71d" compoundref="ft__substr_8c" startline="27" endline="48">ft_substr</references>
+        <referencedby refid="libft_8h_1a5feb28b63e00d9f45e4887ee15da4ab8" compoundref="ft__get__next__line_8c" startline="8" endline="33">ft_get_next_line</referencedby>
       </memberdef>
       <memberdef kind="function" id="ft__get__next__line_8c_1aa5a7db94bcb5970b93bff4df02b52108" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>char *</type>
@@ -76,8 +126,10 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/dimadem/Documents/GitHub/minishell/src/redirection/ft_get_next_line.c" line="59" column="12" bodyfile="/Users/dimadem/Documents/GitHub/minishell/src/redirection/ft_get_next_line.c" bodystart="59" bodyend="83" declfile="/Users/dimadem/Documents/GitHub/minishell/src/redirection/ft_get_next_line.c" declline="5" declcolumn="12"/>
+        <references refid="libft_8h_1a6b20d41d6252e9871430c242cb1a56e7" compoundref="libft_8h" startline="25">BUFFER_SIZE</references>
+        <references refid="libft_8h_1aa6d0c2d180f32ee585485e1a1ce3d55d" compoundref="ft__strchr_8c" startline="25" endline="35">ft_strchr</references>
         <references refid="ft__get__next__line_8c_1accf11845776c5585dc691f37a0f60b8f" compoundref="ft__get__next__line_8c" startline="35" endline="57">ft_strjoin_gnl</references>
-        <referencedby refid="ft__get__next__line_8c_1a5feb28b63e00d9f45e4887ee15da4ab8" compoundref="ft__get__next__line_8c" startline="8" endline="33">ft_get_next_line</referencedby>
+        <referencedby refid="libft_8h_1a5feb28b63e00d9f45e4887ee15da4ab8" compoundref="ft__get__next__line_8c" startline="8" endline="33">ft_get_next_line</referencedby>
       </memberdef>
       <memberdef kind="function" id="ft__get__next__line_8c_1accf11845776c5585dc691f37a0f60b8f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>char *</type>
@@ -99,6 +151,9 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/dimadem/Documents/GitHub/minishell/src/redirection/ft_get_next_line.c" line="35" column="5" bodyfile="/Users/dimadem/Documents/GitHub/minishell/src/redirection/ft_get_next_line.c" bodystart="35" bodyend="57" declfile="/Users/dimadem/Documents/GitHub/minishell/src/redirection/ft_get_next_line.c" declline="6" declcolumn="13"/>
+        <references refid="libft_8h_1a41a6f05af30cf85ff63a08e383826322" compoundref="ft__memcpy_8c" startline="22" endline="34">ft_memcpy</references>
+        <references refid="libft_8h_1a95de924e4140ae426bf2e05acfb5fe4f" compoundref="ft__strlcpy_8c" startline="25" endline="43">ft_strlcpy</references>
+        <references refid="libft_8h_1abbb8c6c4ed85d892e7f1509f65f5768a" compoundref="ft__strlen_8c" startline="15" endline="23">ft_strlen</references>
         <referencedby refid="ft__get__next__line_8c_1aa5a7db94bcb5970b93bff4df02b52108" compoundref="ft__get__next__line_8c" startline="59" endline="83">read_from_fd</referencedby>
       </memberdef>
     </sectiondef>
@@ -107,22 +162,22 @@
     <detaileddescription>
     </detaileddescription>
     <programlisting>
-<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;libft.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;<ref refid="libft_8h" kindref="compound">libft.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="2"><highlight class="normal"></highlight></codeline>
 <codeline lineno="3"><highlight class="normal"></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<ref refid="ft__get__next__line_8c_1a5feb28b63e00d9f45e4887ee15da4ab8" kindref="member">ft_get_next_line</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>fd);</highlight></codeline>
 <codeline lineno="4"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<ref refid="ft__get__next__line_8c_1a33d78aafe6a0e75e4fdfe3606cbd9348" kindref="member">extract_line</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>**saved);</highlight></codeline>
 <codeline lineno="5"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<ref refid="ft__get__next__line_8c_1aa5a7db94bcb5970b93bff4df02b52108" kindref="member">read_from_fd</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>fd,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*saved,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*buf);</highlight></codeline>
 <codeline lineno="6"><highlight class="normal"></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<ref refid="ft__get__next__line_8c_1accf11845776c5585dc691f37a0f60b8f" kindref="member">ft_strjoin_gnl</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*s1,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>*s2);</highlight></codeline>
 <codeline lineno="7"><highlight class="normal"></highlight></codeline>
-<codeline lineno="8" refid="ft__get__next__line_8c_1a5feb28b63e00d9f45e4887ee15da4ab8" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/><sp/><sp/>*<ref refid="ft__get__next__line_8c_1a5feb28b63e00d9f45e4887ee15da4ab8" kindref="member">ft_get_next_line</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>fd)</highlight></codeline>
+<codeline lineno="8" refid="libft_8h_1a5feb28b63e00d9f45e4887ee15da4ab8" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/><sp/><sp/>*<ref refid="ft__get__next__line_8c_1a5feb28b63e00d9f45e4887ee15da4ab8" kindref="member">ft_get_next_line</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>fd)</highlight></codeline>
 <codeline lineno="9"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*saved<sp/>=<sp/>NULL;</highlight></codeline>
 <codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*line;</highlight></codeline>
 <codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*buf;</highlight></codeline>
 <codeline lineno="13"><highlight class="normal"></highlight></codeline>
-<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(fd<sp/>&lt;<sp/>0<sp/>||<sp/>BUFFER_SIZE<sp/>&lt;<sp/>1<sp/>||<sp/>fd<sp/>&gt;<sp/>4095)</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(fd<sp/>&lt;<sp/>0<sp/>||<sp/><ref refid="libft_8h_1a6b20d41d6252e9871430c242cb1a56e7" kindref="member">BUFFER_SIZE &lt; 1 || fd &gt;</ref><sp/>4095)</highlight></codeline>
 <codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(NULL);</highlight></codeline>
-<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/>buf<sp/>=<sp/>malloc(BUFFER_SIZE<sp/>+<sp/>1);</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/>buf<sp/>=<sp/>malloc(<ref refid="libft_8h_1a6b20d41d6252e9871430c242cb1a56e7" kindref="member">BUFFER_SIZE</ref><sp/>+<sp/>1);</highlight></codeline>
 <codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!buf)</highlight></codeline>
 <codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(NULL);</highlight></codeline>
 <codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/>saved<sp/>=<sp/><ref refid="ft__get__next__line_8c_1aa5a7db94bcb5970b93bff4df02b52108" kindref="member">read_from_fd</ref>(fd,<sp/>saved,<sp/>buf);</highlight></codeline>
@@ -150,18 +205,18 @@
 <codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!s2)</highlight></codeline>
 <codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(NULL);</highlight></codeline>
 <codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(s1)</highlight></codeline>
-<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>s1_len<sp/>=<sp/>ft_strlen(s1);</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>s1_len<sp/>=<sp/><ref refid="libft_8h_1abbb8c6c4ed85d892e7f1509f65f5768a" kindref="member">ft_strlen</ref>(s1);</highlight></codeline>
 <codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>s1_len<sp/>=<sp/>0;</highlight></codeline>
-<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/>s2_len<sp/>=<sp/>ft_strlen(s2);</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/>s2_len<sp/>=<sp/><ref refid="libft_8h_1abbb8c6c4ed85d892e7f1509f65f5768a" kindref="member">ft_strlen</ref>(s2);</highlight></codeline>
 <codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/>str<sp/>=<sp/>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*)malloc(s1_len<sp/>+<sp/>s2_len<sp/>+<sp/>1);</highlight></codeline>
 <codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!str)</highlight></codeline>
 <codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(NULL);</highlight></codeline>
 <codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(s1)</highlight></codeline>
-<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ft_strlcpy(str,<sp/>s1,<sp/>s1_len<sp/>+<sp/>1);</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="libft_8h_1a95de924e4140ae426bf2e05acfb5fe4f" kindref="member">ft_strlcpy</ref>(str,<sp/>s1,<sp/>s1_len<sp/>+<sp/>1);</highlight></codeline>
 <codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>str[0]<sp/>=<sp/></highlight><highlight class="charliteral">&apos;\0&apos;</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/>ft_memcpy(str<sp/>+<sp/>s1_len,<sp/>s2,<sp/>s2_len<sp/>+<sp/>1);</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="libft_8h_1a41a6f05af30cf85ff63a08e383826322" kindref="member">ft_memcpy</ref>(str<sp/>+<sp/>s1_len,<sp/>s2,<sp/>s2_len<sp/>+<sp/>1);</highlight></codeline>
 <codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(str);</highlight></codeline>
 <codeline lineno="57"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="58"><highlight class="normal"></highlight></codeline>
@@ -170,16 +225,16 @@
 <codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>chars_read;</highlight></codeline>
 <codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/><sp/><sp/>*temp;</highlight></codeline>
 <codeline lineno="63"><highlight class="normal"></highlight></codeline>
-<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/>chars_read<sp/>=<sp/>read(fd,<sp/>buf,<sp/>BUFFER_SIZE);</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/>chars_read<sp/>=<sp/>read(fd,<sp/>buf,<sp/><ref refid="libft_8h_1a6b20d41d6252e9871430c242cb1a56e7" kindref="member">BUFFER_SIZE</ref>);</highlight></codeline>
 <codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(chars_read<sp/>&gt;<sp/>0)</highlight></codeline>
 <codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>buf[chars_read]<sp/>=<sp/></highlight><highlight class="charliteral">&apos;\0&apos;</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>temp<sp/>=<sp/>saved;</highlight></codeline>
 <codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>saved<sp/>=<sp/><ref refid="ft__get__next__line_8c_1accf11845776c5585dc691f37a0f60b8f" kindref="member">ft_strjoin_gnl</ref>(saved,<sp/>buf);</highlight></codeline>
 <codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>free(temp);</highlight></codeline>
-<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(ft_strchr(saved,<sp/></highlight><highlight class="charliteral">&apos;\n&apos;</highlight><highlight class="normal">))</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="libft_8h_1aa6d0c2d180f32ee585485e1a1ce3d55d" kindref="member">ft_strchr</ref>(saved,<sp/></highlight><highlight class="charliteral">&apos;\n&apos;</highlight><highlight class="normal">))</highlight></codeline>
 <codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>break<sp/>;</highlight></codeline>
-<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>chars_read<sp/>=<sp/>read(fd,<sp/>buf,<sp/>BUFFER_SIZE);</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>chars_read<sp/>=<sp/>read(fd,<sp/>buf,<sp/><ref refid="libft_8h_1a6b20d41d6252e9871430c242cb1a56e7" kindref="member">BUFFER_SIZE</ref>);</highlight></codeline>
 <codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/>free(buf);</highlight></codeline>
 <codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(chars_read<sp/>&lt;<sp/>0)</highlight></codeline>
@@ -197,18 +252,18 @@
 <codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/><sp/><sp/>*line;</highlight></codeline>
 <codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/><sp/><sp/>*temp;</highlight></codeline>
 <codeline lineno="90"><highlight class="normal"></highlight></codeline>
-<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/>new_line_ptr<sp/>=<sp/>ft_strchr(*saved,<sp/></highlight><highlight class="charliteral">&apos;\n&apos;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/>new_line_ptr<sp/>=<sp/><ref refid="libft_8h_1aa6d0c2d180f32ee585485e1a1ce3d55d" kindref="member">ft_strchr</ref>(*saved,<sp/></highlight><highlight class="charliteral">&apos;\n&apos;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(new_line_ptr)</highlight></codeline>
 <codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>line<sp/>=<sp/>ft_substr(*saved,<sp/>0,<sp/>new_line_ptr<sp/>-<sp/>*saved<sp/>+<sp/>1);</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>line<sp/>=<sp/><ref refid="libft_8h_1a78c402cbf3d55b1374693c3b7d34f71d" kindref="member">ft_substr</ref>(*saved,<sp/>0,<sp/>new_line_ptr<sp/>-<sp/>*saved<sp/>+<sp/>1);</highlight></codeline>
 <codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>temp<sp/>=<sp/>*saved;</highlight></codeline>
-<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*saved<sp/>=<sp/>ft_strdup(new_line_ptr<sp/>+<sp/>1);</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*saved<sp/>=<sp/><ref refid="libft_8h_1aebe73f27c70c56ac5053f860ef5436c9" kindref="member">ft_strdup</ref>(new_line_ptr<sp/>+<sp/>1);</highlight></codeline>
 <codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>free(temp);</highlight></codeline>
 <codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(line);</highlight></codeline>
 <codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(**saved)</highlight></codeline>
 <codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>line<sp/>=<sp/>ft_strdup(*saved);</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>line<sp/>=<sp/><ref refid="libft_8h_1aebe73f27c70c56ac5053f860ef5436c9" kindref="member">ft_strdup</ref>(*saved);</highlight></codeline>
 <codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>free(*saved);</highlight></codeline>
 <codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*saved<sp/>=<sp/>NULL;</highlight></codeline>
 <codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(line);</highlight></codeline>

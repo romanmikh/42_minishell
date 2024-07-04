@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['unset_2ec_0',['unset.c',['../unset_8c.html',1,'']]],
-  ['utils_2ec_1',['utils.c',['../env_2utils_8c.html',1,'(Global Namespace)'],['../execute_2utils_8c.html',1,'(Global Namespace)'],['../redirection_2utils_8c.html',1,'(Global Namespace)']]]
+  ['shell_2eh_0',['shell.h',['../shell_8h.html',1,'']]],
+  ['stack_5fcontrol_2ec_1',['stack_control.c',['../stack__control_8c.html',1,'']]],
+  ['stack_5fcontrol_5f2_2ec_2',['stack_control_2.c',['../stack__control__2_8c.html',1,'']]]
 ];
