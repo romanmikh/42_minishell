@@ -15,9 +15,9 @@
 - 
 - @param node current node in the AST
 - @param data minishell structure data
-- @return int return status:
-- 				- 0: success
-- 				- 1: error
+- @return status:
+			0: success
+			1: error
  */
 
 int	 redirect_in(t_ast *node, t_minishell_data *data)
@@ -29,8 +29,8 @@ int	 redirect_in(t_ast *node, t_minishell_data *data)
 		return (1);
 	if (pid == 0)
 	{
-		data->temp_fd = open_file(node->right, "<");
-		if (data->temp_fd == -1)
+		data->std_in = open_file(node->right, "<");
+		if (data->std_in == -1)
 			return (1);
 		execute_ast(node->left, data);
 		exit(0);

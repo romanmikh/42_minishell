@@ -16,13 +16,15 @@
     <includedby refid="redirection_8h" local="yes">/Users/dimadem/Documents/GitHub/minishell/inc/redirection.h</includedby>
     <includedby refid="execute_8c" local="yes">/Users/dimadem/Documents/GitHub/minishell/src/execute/execute.c</includedby>
     <includedby refid="main_8c" local="yes">/Users/dimadem/Documents/GitHub/minishell/src/main.c</includedby>
-    <includedby refid="parser_2heredoc_8c" local="yes">/Users/dimadem/Documents/GitHub/minishell/src/parser/heredoc.c</includedby>
+    <includedby refid="heredoc_8c" local="yes">/Users/dimadem/Documents/GitHub/minishell/src/parser/heredoc.c</includedby>
     <includedby refid="input__checker_8c" local="yes">/Users/dimadem/Documents/GitHub/minishell/src/parser/input_checker.c</includedby>
     <includedby refid="input__checker__helpers_8c" local="yes">/Users/dimadem/Documents/GitHub/minishell/src/parser/input_checker_helpers.c</includedby>
     <includedby refid="parser_8c" local="yes">/Users/dimadem/Documents/GitHub/minishell/src/parser/parser.c</includedby>
     <includedby refid="parser__helpers_8c" local="yes">/Users/dimadem/Documents/GitHub/minishell/src/parser/parser_helpers.c</includedby>
     <includedby refid="tokeniser_8c" local="yes">/Users/dimadem/Documents/GitHub/minishell/src/parser/tokeniser.c</includedby>
     <includedby refid="tokeniser__helpers_8c" local="yes">/Users/dimadem/Documents/GitHub/minishell/src/parser/tokeniser_helpers.c</includedby>
+    <includedby refid="redirect__append_8c" local="yes">/Users/dimadem/Documents/GitHub/minishell/src/redirection/redirect_append.c</includedby>
+    <includedby refid="redirect__heredoc_8c" local="yes">/Users/dimadem/Documents/GitHub/minishell/src/redirection/redirect_heredoc.c</includedby>
     <includedby refid="redirect__in_8c" local="yes">/Users/dimadem/Documents/GitHub/minishell/src/redirection/redirect_in.c</includedby>
     <includedby refid="redirect__out_8c" local="yes">/Users/dimadem/Documents/GitHub/minishell/src/redirection/redirect_out.c</includedby>
     <includedby refid="redirection_2utils_8c" local="yes">/Users/dimadem/Documents/GitHub/minishell/src/redirection/utils.c</includedby>
@@ -143,8 +145,12 @@
         </childnode>
         <childnode refid="7" relation="include">
         </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
       </node>
-      <node id="8">
+      <node id="10">
         <label>/Users/dimadem/Documents/GitHub/minishell/inc/pipe.h</label>
         <link refid="pipe_8h"/>
         <childnode refid="3" relation="include">
@@ -153,12 +159,12 @@
         </childnode>
         <childnode refid="5" relation="include">
         </childnode>
-        <childnode refid="7" relation="include">
-        </childnode>
         <childnode refid="9" relation="include">
         </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
       </node>
-      <node id="10">
+      <node id="12">
         <label>/Users/dimadem/Documents/GitHub/minishell/inc/redirection.h</label>
         <link refid="redirection_8h"/>
         <childnode refid="3" relation="include">
@@ -167,23 +173,23 @@
         </childnode>
         <childnode refid="7" relation="include">
         </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
       </node>
       <node id="1">
         <label>/Users/dimadem/Documents/GitHub/minishell/inc/tokens.h</label>
         <link refid="tokens_8h"/>
         <childnode refid="2" relation="include">
         </childnode>
-        <childnode refid="8" relation="include">
-        </childnode>
         <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
         </childnode>
         <childnode refid="3" relation="include">
         </childnode>
         <childnode refid="4" relation="include">
-        </childnode>
-        <childnode refid="11" relation="include">
-        </childnode>
-        <childnode refid="12" relation="include">
         </childnode>
         <childnode refid="13" relation="include">
         </childnode>
@@ -195,13 +201,17 @@
         </childnode>
         <childnode refid="17" relation="include">
         </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
         <childnode refid="6" relation="include">
         </childnode>
         <childnode refid="7" relation="include">
         </childnode>
-        <childnode refid="18" relation="include">
+        <childnode refid="8" relation="include">
         </childnode>
-        <childnode refid="19" relation="include">
+        <childnode refid="9" relation="include">
         </childnode>
         <childnode refid="20" relation="include">
         </childnode>
@@ -217,6 +227,10 @@
         </childnode>
         <childnode refid="26" relation="include">
         </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
       </node>
       <node id="3">
         <label>/Users/dimadem/Documents/GitHub/minishell/src/execute/execute.c</label>
@@ -226,31 +240,31 @@
         <label>/Users/dimadem/Documents/GitHub/minishell/src/main.c</label>
         <link refid="main_8c"/>
       </node>
-      <node id="11">
+      <node id="13">
         <label>/Users/dimadem/Documents/GitHub/minishell/src/parser/heredoc.c</label>
-        <link refid="parser_2heredoc_8c"/>
+        <link refid="heredoc_8c"/>
       </node>
-      <node id="12">
+      <node id="14">
         <label>/Users/dimadem/Documents/GitHub/minishell/src/parser/input_checker.c</label>
         <link refid="input__checker_8c"/>
       </node>
-      <node id="13">
+      <node id="15">
         <label>/Users/dimadem/Documents/GitHub/minishell/src/parser/input_checker_helpers.c</label>
         <link refid="input__checker__helpers_8c"/>
       </node>
-      <node id="14">
+      <node id="16">
         <label>/Users/dimadem/Documents/GitHub/minishell/src/parser/parser.c</label>
         <link refid="parser_8c"/>
       </node>
-      <node id="15">
+      <node id="17">
         <label>/Users/dimadem/Documents/GitHub/minishell/src/parser/parser_helpers.c</label>
         <link refid="parser__helpers_8c"/>
       </node>
-      <node id="16">
+      <node id="18">
         <label>/Users/dimadem/Documents/GitHub/minishell/src/parser/tokeniser.c</label>
         <link refid="tokeniser_8c"/>
       </node>
-      <node id="17">
+      <node id="19">
         <label>/Users/dimadem/Documents/GitHub/minishell/src/parser/tokeniser_helpers.c</label>
         <link refid="tokeniser__helpers_8c"/>
       </node>
@@ -259,50 +273,58 @@
         <link refid="pipe_8c"/>
       </node>
       <node id="6">
+        <label>/Users/dimadem/Documents/GitHub/minishell/src/redirection/redirect_append.c</label>
+        <link refid="redirect__append_8c"/>
+      </node>
+      <node id="7">
+        <label>/Users/dimadem/Documents/GitHub/minishell/src/redirection/redirect_heredoc.c</label>
+        <link refid="redirect__heredoc_8c"/>
+      </node>
+      <node id="8">
         <label>/Users/dimadem/Documents/GitHub/minishell/src/redirection/redirect_in.c</label>
         <link refid="redirect__in_8c"/>
       </node>
-      <node id="7">
+      <node id="9">
         <label>/Users/dimadem/Documents/GitHub/minishell/src/redirection/redirect_out.c</label>
         <link refid="redirect__out_8c"/>
       </node>
-      <node id="18">
+      <node id="20">
         <label>/Users/dimadem/Documents/GitHub/minishell/src/redirection/utils.c</label>
         <link refid="redirection_2utils_8c"/>
       </node>
-      <node id="9">
+      <node id="11">
         <label>/Users/dimadem/Documents/GitHub/minishell/src/test/pipe/pipe_test.c</label>
         <link refid="pipe__test_8c"/>
       </node>
-      <node id="19">
+      <node id="21">
         <label>/Users/dimadem/Documents/GitHub/minishell/src/utils/aux.c</label>
         <link refid="aux_8c"/>
       </node>
-      <node id="20">
+      <node id="22">
         <label>/Users/dimadem/Documents/GitHub/minishell/src/utils/clean_general.c</label>
         <link refid="clean__general_8c"/>
       </node>
-      <node id="21">
+      <node id="23">
         <label>/Users/dimadem/Documents/GitHub/minishell/src/utils/clean_tree.c</label>
         <link refid="clean__tree_8c"/>
       </node>
-      <node id="22">
+      <node id="24">
         <label>/Users/dimadem/Documents/GitHub/minishell/src/utils/initialise.c</label>
         <link refid="initialise_8c"/>
       </node>
-      <node id="23">
+      <node id="25">
         <label>/Users/dimadem/Documents/GitHub/minishell/src/utils/prompt.c</label>
         <link refid="prompt_8c"/>
       </node>
-      <node id="24">
+      <node id="26">
         <label>/Users/dimadem/Documents/GitHub/minishell/src/utils/stack_control.c</label>
         <link refid="stack__control_8c"/>
       </node>
-      <node id="25">
+      <node id="27">
         <label>/Users/dimadem/Documents/GitHub/minishell/src/utils/stack_control_2.c</label>
         <link refid="stack__control__2_8c"/>
       </node>
-      <node id="26">
+      <node id="28">
         <label>/Users/dimadem/Documents/GitHub/minishell/src/utils/visualiser.c</label>
         <link refid="visualiser_8c"/>
       </node>
@@ -321,7 +343,7 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/dimadem/Documents/GitHub/minishell/inc/tokens.h" line="27" column="10" bodyfile="/Users/dimadem/Documents/GitHub/minishell/inc/tokens.h" bodystart="27" bodyend="-1"/>
-        <referencedby refid="tokens_8h_1a41e7a8e4355566996a5984b4a31fb8fe" compoundref="initialise_8c" startline="27" endline="35">initialise</referencedby>
+        <referencedby refid="tokens_8h_1a41e7a8e4355566996a5984b4a31fb8fe" compoundref="initialise_8c" startline="29" endline="37">initialise</referencedby>
         <referencedby refid="tokens_8h_1a94ee21f550bbf6448142ec3102526dde" compoundref="aux_8c" startline="15" endline="21">make_history</referencedby>
       </memberdef>
     </sectiondef>
@@ -610,7 +632,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/dimadem/Documents/GitHub/minishell/inc/tokens.h" line="72" column="5" bodyfile="/Users/dimadem/Documents/GitHub/minishell/src/parser/tokeniser.c" bodystart="21" bodyend="46" declfile="/Users/dimadem/Documents/GitHub/minishell/inc/tokens.h" declline="72" declcolumn="5"/>
+        <location file="/Users/dimadem/Documents/GitHub/minishell/inc/tokens.h" line="72" column="5" bodyfile="/Users/dimadem/Documents/GitHub/minishell/src/parser/tokeniser.c" bodystart="22" bodyend="47" declfile="/Users/dimadem/Documents/GitHub/minishell/inc/tokens.h" declline="72" declcolumn="5"/>
         <references refid="tokens_8h_1a6c482f0c73f7263b3253aaa8e1bd4fb6" compoundref="tokeniser__helpers_8c" startline="33" endline="46">append_token</references>
         <references refid="tokens_8h_1a07793427f42bd19d0f4ea6771441be99" compoundref="tokeniser__helpers_8c" startline="15" endline="31">new_token</references>
         <references refid="tokens_8h_1a76a354e93d720f05344590ec8aa222dea9bc832fa28809fb974f6ce5bb0cc7117" compoundref="tokens_8h" startline="32">PIPE</references>
@@ -618,7 +640,7 @@
         <references refid="tokens_8h_1a76a354e93d720f05344590ec8aa222dea6b4984ec77e78953297b7cb3f580a2e7" compoundref="tokens_8h" startline="37">REDIR_HEREDOC</references>
         <references refid="tokens_8h_1a76a354e93d720f05344590ec8aa222dea18f3c2f496edb0cae413ac5244bb2452" compoundref="tokens_8h" startline="34">REDIR_IN</references>
         <references refid="tokens_8h_1a76a354e93d720f05344590ec8aa222deacb2a363e84eabbbe3925fd298f7a3d01" compoundref="tokens_8h" startline="35">REDIR_OUT</references>
-        <referencedby refid="tokens_8h_1a5482db056a3edf1a61079f863ba7dc99" compoundref="tokeniser_8c" startline="105" endline="120">tokenise</referencedby>
+        <referencedby refid="tokens_8h_1a5482db056a3edf1a61079f863ba7dc99" compoundref="tokeniser_8c" startline="106" endline="121">tokenise</referencedby>
       </memberdef>
       <memberdef kind="function" id="tokens_8h_1a7fef00789eeca097ecbd68176503d4e4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -755,7 +777,7 @@
         <location file="/Users/dimadem/Documents/GitHub/minishell/inc/tokens.h" line="80" column="5" bodyfile="/Users/dimadem/Documents/GitHub/minishell/src/utils/prompt.c" bodystart="31" bodyend="69" declfile="/Users/dimadem/Documents/GitHub/minishell/inc/tokens.h" declline="80" declcolumn="5"/>
         <references refid="libft_8h_1a916ac44ff3e67ef20834dd45e3837ac4" compoundref="ft__strcpy_8c" startline="25" endline="37">ft_strcpy</references>
         <references refid="libft_8h_1abbb8c6c4ed85d892e7f1509f65f5768a" compoundref="ft__strlen_8c" startline="15" endline="23">ft_strlen</references>
-        <references refid="structs__minishell__data_1a880c653419f6a3adb22024e5bb05c69b" compoundref="shell_8h" startline="23">s_minishell_data::temp_fd</references>
+        <references refid="structs__minishell__data_1a9ed5685097b7e4b55c3c1307b70869ef" compoundref="shell_8h" startline="23">s_minishell_data::std_in</references>
         <referencedby refid="main_8c_1abaf800210325f066cb9289aaae9e2c86" compoundref="main_8c" startline="29" endline="51">main_loop</referencedby>
       </memberdef>
       <memberdef kind="function" id="tokens_8h_1a94ee21f550bbf6448142ec3102526dde" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
@@ -825,7 +847,7 @@
         </inbodydescription>
         <location file="/Users/dimadem/Documents/GitHub/minishell/inc/tokens.h" line="84" column="5" bodyfile="/Users/dimadem/Documents/GitHub/minishell/src/utils/clean_general.c" bodystart="43" bodyend="53" declfile="/Users/dimadem/Documents/GitHub/minishell/inc/tokens.h" declline="84" declcolumn="5"/>
         <references refid="structs__minishell__data_1aeb4af268850af7d0f6d0c64f2bfefdea" compoundref="shell_8h" startline="20">s_minishell_data::args</references>
-        <references refid="structs__minishell__data_1a147731c1cf1a04c1fc1b85e6343cc7cc" compoundref="shell_8h" startline="24">s_minishell_data::current_dir</references>
+        <references refid="structs__minishell__data_1a147731c1cf1a04c1fc1b85e6343cc7cc" compoundref="shell_8h" startline="27">s_minishell_data::current_dir</references>
         <references refid="structs__minishell__data_1a8a0b3f50c8893e061062e93115f3d723" compoundref="shell_8h" startline="21">s_minishell_data::envp</references>
         <references refid="clean__general_8c_1ae6e1002c1a56f5bfa4ea13de63d3deae" compoundref="clean__general_8c" startline="16" endline="27">free_args</references>
         <references refid="clean__general_8c_1a9062b9b7e34cb35cb4b78c5251b020b0" compoundref="clean__general_8c" startline="29" endline="41">free_env_list</references>
@@ -850,7 +872,7 @@
         <location file="/Users/dimadem/Documents/GitHub/minishell/inc/tokens.h" line="85" column="5" bodyfile="/Users/dimadem/Documents/GitHub/minishell/src/parser/heredoc.c" bodystart="15" bodyend="24" declfile="/Users/dimadem/Documents/GitHub/minishell/inc/tokens.h" declline="85" declcolumn="5"/>
         <references refid="libft_8h_1aa65c9de65051c8c589286cf133c4a1f4" compoundref="ft__split_8c" startline="95" endline="108">ft_split</references>
         <references refid="libft_8h_1a1f2ff2312e5994560c9537cd9173be94" compoundref="ft__strcmp_8c" startline="24" endline="34">ft_strcmp</references>
-        <references refid="parser_2heredoc_8c_1a132ce43db3d4fba988a166e932845375" compoundref="parser_2heredoc_8c" startline="26" endline="40">heredoc</references>
+        <references refid="heredoc_8c_1a132ce43db3d4fba988a166e932845375" compoundref="heredoc_8c" startline="26" endline="40">heredoc</references>
       </memberdef>
       <memberdef kind="function" id="tokens_8h_1a132ce43db3d4fba988a166e932845375" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>char *</type>
@@ -870,7 +892,7 @@
         <location file="/Users/dimadem/Documents/GitHub/minishell/inc/tokens.h" line="86" column="5" bodyfile="/Users/dimadem/Documents/GitHub/minishell/src/parser/heredoc.c" bodystart="26" bodyend="40" declfile="/Users/dimadem/Documents/GitHub/minishell/inc/tokens.h" declline="86" declcolumn="5"/>
         <references refid="libft_8h_1a1f2ff2312e5994560c9537cd9173be94" compoundref="ft__strcmp_8c" startline="24" endline="34">ft_strcmp</references>
         <references refid="libft_8h_1a91e6e3e428bcc9f2291b700e1829b82b" compoundref="ft__strjoin_8c" startline="23" endline="44">ft_strjoin</references>
-        <referencedby refid="tokens_8h_1a4e1b3e73a18dd66697cd7eac990b0363" compoundref="parser_2heredoc_8c" startline="15" endline="24">check_heredoc</referencedby>
+        <referencedby refid="tokens_8h_1a4e1b3e73a18dd66697cd7eac990b0363" compoundref="heredoc_8c" startline="15" endline="24">check_heredoc</referencedby>
       </memberdef>
       <memberdef kind="function" id="tokens_8h_1ab7986766cca35553aa796f6a732d856a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -891,14 +913,16 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/dimadem/Documents/GitHub/minishell/inc/tokens.h" line="87" column="5" bodyfile="/Users/dimadem/Documents/GitHub/minishell/src/utils/initialise.c" bodystart="16" bodyend="25" declfile="/Users/dimadem/Documents/GitHub/minishell/inc/tokens.h" declline="87" declcolumn="5"/>
+        <location file="/Users/dimadem/Documents/GitHub/minishell/inc/tokens.h" line="87" column="5" bodyfile="/Users/dimadem/Documents/GitHub/minishell/src/utils/initialise.c" bodystart="16" bodyend="27" declfile="/Users/dimadem/Documents/GitHub/minishell/inc/tokens.h" declline="87" declcolumn="5"/>
         <references refid="structs__minishell__data_1aeb4af268850af7d0f6d0c64f2bfefdea" compoundref="shell_8h" startline="20">s_minishell_data::args</references>
-        <references refid="structs__minishell__data_1a147731c1cf1a04c1fc1b85e6343cc7cc" compoundref="shell_8h" startline="24">s_minishell_data::current_dir</references>
+        <references refid="structs__minishell__data_1a147731c1cf1a04c1fc1b85e6343cc7cc" compoundref="shell_8h" startline="27">s_minishell_data::current_dir</references>
         <references refid="structs__minishell__data_1a8a0b3f50c8893e061062e93115f3d723" compoundref="shell_8h" startline="21">s_minishell_data::envp</references>
-        <references refid="structs__minishell__data_1a978016fddb1d9faa4fbda6859a9a199e" compoundref="shell_8h" startline="25">s_minishell_data::exit_status</references>
+        <references refid="structs__minishell__data_1a978016fddb1d9faa4fbda6859a9a199e" compoundref="shell_8h" startline="28">s_minishell_data::exit_status</references>
         <references refid="env_8h_1a2344221e4d3b1327b956157b837a727b" compoundref="env_2env_8c" startline="24" endline="31">init_env</references>
         <references refid="structs__minishell__data_1a46b92ee58356d0f35174a79ed568253b" compoundref="shell_8h" startline="22">s_minishell_data::local_env</references>
-        <references refid="structs__minishell__data_1a880c653419f6a3adb22024e5bb05c69b" compoundref="shell_8h" startline="23">s_minishell_data::temp_fd</references>
+        <references refid="structs__minishell__data_1a5122e3a902d8f28e8b69576175f28c2b" compoundref="shell_8h" startline="25">s_minishell_data::std_err</references>
+        <references refid="structs__minishell__data_1a9ed5685097b7e4b55c3c1307b70869ef" compoundref="shell_8h" startline="23">s_minishell_data::std_in</references>
+        <references refid="structs__minishell__data_1ac90001aa8bc9a89b165ee6bca5f05ef3" compoundref="shell_8h" startline="24">s_minishell_data::std_out</references>
         <referencedby refid="main_8c_1a647f21a28344e1d9c643f4115516d7c9" compoundref="main_8c" startline="54" endline="66">main</referencedby>
       </memberdef>
       <memberdef kind="function" id="tokens_8h_1a41e7a8e4355566996a5984b4a31fb8fe" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
@@ -920,7 +944,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/dimadem/Documents/GitHub/minishell/inc/tokens.h" line="88" column="5" bodyfile="/Users/dimadem/Documents/GitHub/minishell/src/utils/initialise.c" bodystart="27" bodyend="35" declfile="/Users/dimadem/Documents/GitHub/minishell/inc/tokens.h" declline="88" declcolumn="5"/>
+        <location file="/Users/dimadem/Documents/GitHub/minishell/inc/tokens.h" line="88" column="5" bodyfile="/Users/dimadem/Documents/GitHub/minishell/src/utils/initialise.c" bodystart="29" bodyend="37" declfile="/Users/dimadem/Documents/GitHub/minishell/inc/tokens.h" declline="88" declcolumn="5"/>
         <references refid="tokens_8h_1a32f7389f2a161bbbb128130ca37ef8e1" compoundref="tokens_8h" startline="27">HISTORY_PATH</references>
         <referencedby refid="main_8c_1a647f21a28344e1d9c643f4115516d7c9" compoundref="main_8c" startline="54" endline="66">main</referencedby>
       </memberdef>
@@ -1000,10 +1024,10 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/dimadem/Documents/GitHub/minishell/inc/tokens.h" line="92" column="8" bodyfile="/Users/dimadem/Documents/GitHub/minishell/src/parser/tokeniser.c" bodystart="105" bodyend="120" declfile="/Users/dimadem/Documents/GitHub/minishell/inc/tokens.h" declline="92" declcolumn="8"/>
+        <location file="/Users/dimadem/Documents/GitHub/minishell/inc/tokens.h" line="92" column="8" bodyfile="/Users/dimadem/Documents/GitHub/minishell/src/parser/tokeniser.c" bodystart="106" bodyend="121" declfile="/Users/dimadem/Documents/GitHub/minishell/inc/tokens.h" declline="92" declcolumn="8"/>
         <references refid="libft_8h_1aa6d0c2d180f32ee585485e1a1ce3d55d" compoundref="ft__strchr_8c" startline="25" endline="35">ft_strchr</references>
-        <references refid="tokeniser_8c_1a35855ff1421748c284cbaa495e26ef92" compoundref="tokeniser_8c" startline="65" endline="88">handle_phrase</references>
-        <references refid="tokeniser_8c_1a0e22b8f037ef12eb28986615da9b79a6" compoundref="tokeniser_8c" startline="21" endline="46">handle_special_chars</references>
+        <references refid="tokeniser_8c_1a35855ff1421748c284cbaa495e26ef92" compoundref="tokeniser_8c" startline="66" endline="89">handle_phrase</references>
+        <references refid="tokeniser_8c_1a0e22b8f037ef12eb28986615da9b79a6" compoundref="tokeniser_8c" startline="22" endline="47">handle_special_chars</references>
         <referencedby refid="main_8c_1abaf800210325f066cb9289aaae9e2c86" compoundref="main_8c" startline="29" endline="51">main_loop</referencedby>
       </memberdef>
       <memberdef kind="function" id="tokens_8h_1ac0f556c5b74afdbd7ce730e294df7b76" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
@@ -1021,7 +1045,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/dimadem/Documents/GitHub/minishell/inc/tokens.h" line="93" column="5" bodyfile="/Users/dimadem/Documents/GitHub/minishell/src/parser/tokeniser.c" bodystart="90" bodyend="103" declfile="/Users/dimadem/Documents/GitHub/minishell/inc/tokens.h" declline="93" declcolumn="5"/>
+        <location file="/Users/dimadem/Documents/GitHub/minishell/inc/tokens.h" line="93" column="5" bodyfile="/Users/dimadem/Documents/GitHub/minishell/src/parser/tokeniser.c" bodystart="91" bodyend="104" declfile="/Users/dimadem/Documents/GitHub/minishell/inc/tokens.h" declline="93" declcolumn="5"/>
         <references refid="structs__token_1afe30f6c413b34095d2a562e112a52e9a" compoundref="tokens_8h" startline="43">s_token::data</references>
         <references refid="structs__token_1a5dae434205818bfc83a61809d4a34a29" compoundref="tokens_8h" startline="44">s_token::next</references>
       </memberdef>
@@ -1129,9 +1153,9 @@
         <references refid="libft_8h_1aebe73f27c70c56ac5053f860ef5436c9" compoundref="ft__strdup_8c" startline="23" endline="36">ft_strdup</references>
         <references refid="structs__token_1a5dae434205818bfc83a61809d4a34a29" compoundref="tokens_8h" startline="44">s_token::next</references>
         <references refid="structs__token_1a350680c70abb7e7173240477e92dc0a3" compoundref="tokens_8h" startline="42">s_token::type</references>
-        <referencedby refid="tokeniser_8c_1a596263e54e7fc7ea1bde318a1da5cdc6" compoundref="tokeniser_8c" startline="48" endline="63">append_phrase_if_valid</referencedby>
+        <referencedby refid="tokeniser_8c_1a596263e54e7fc7ea1bde318a1da5cdc6" compoundref="tokeniser_8c" startline="49" endline="64">append_phrase_if_valid</referencedby>
         <referencedby refid="tokens_8h_1a6c482f0c73f7263b3253aaa8e1bd4fb6" compoundref="tokeniser__helpers_8c" startline="33" endline="46">append_token</referencedby>
-        <referencedby refid="tokens_8h_1a0e22b8f037ef12eb28986615da9b79a6" compoundref="tokeniser_8c" startline="21" endline="46">handle_special_chars</referencedby>
+        <referencedby refid="tokens_8h_1a0e22b8f037ef12eb28986615da9b79a6" compoundref="tokeniser_8c" startline="22" endline="47">handle_special_chars</referencedby>
       </memberdef>
       <memberdef kind="function" id="tokens_8h_1a6c482f0c73f7263b3253aaa8e1bd4fb6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -1155,8 +1179,8 @@
         <location file="/Users/dimadem/Documents/GitHub/minishell/inc/tokens.h" line="100" column="5" bodyfile="/Users/dimadem/Documents/GitHub/minishell/src/parser/tokeniser_helpers.c" bodystart="33" bodyend="46" declfile="/Users/dimadem/Documents/GitHub/minishell/inc/tokens.h" declline="100" declcolumn="5"/>
         <references refid="tokeniser__helpers_8c_1a07793427f42bd19d0f4ea6771441be99" compoundref="tokeniser__helpers_8c" startline="15" endline="31">new_token</references>
         <references refid="structs__token_1a5dae434205818bfc83a61809d4a34a29" compoundref="tokens_8h" startline="44">s_token::next</references>
-        <referencedby refid="tokeniser_8c_1a596263e54e7fc7ea1bde318a1da5cdc6" compoundref="tokeniser_8c" startline="48" endline="63">append_phrase_if_valid</referencedby>
-        <referencedby refid="tokens_8h_1a0e22b8f037ef12eb28986615da9b79a6" compoundref="tokeniser_8c" startline="21" endline="46">handle_special_chars</referencedby>
+        <referencedby refid="tokeniser_8c_1a596263e54e7fc7ea1bde318a1da5cdc6" compoundref="tokeniser_8c" startline="49" endline="64">append_phrase_if_valid</referencedby>
+        <referencedby refid="tokens_8h_1a0e22b8f037ef12eb28986615da9b79a6" compoundref="tokeniser_8c" startline="22" endline="47">handle_special_chars</referencedby>
       </memberdef>
       <memberdef kind="function" id="tokens_8h_1a04ef790ab9a9ed430a25b0a6d6cc95b5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>

@@ -583,38 +583,36 @@ Referenced by \fBvalid_operator()\fP\&.
 .SS "char * ft_get_next_line (int fd)"
 
 .PP
-Definition at line \fB8\fP of file \fBft_get_next_line\&.c\fP\&.
+Definition at line \fB41\fP of file \fButils\&.c\fP\&.
 .nf
-9 {
-10     static char *saved = NULL;
-11     char        *line;
-12     char        *buf;
-13 
-14     if (fd < 0 || BUFFER_SIZE < 1 || fd > 4095)
-15         return (NULL);
-16     buf = malloc(BUFFER_SIZE + 1);
-17     if (!buf)
-18         return (NULL);
-19     saved = read_from_fd(fd, saved, buf);
-20     if (!saved)
-21     {
-22         free(saved);
-23         saved = NULL;
-24         return (NULL);
-25     }
-26     line = extract_line(&saved);
-27     if (line == NULL)
-28     {
-29         free(saved);
-30         saved = NULL;
-31     }
-32     return (line);
-33 }
+42 {
+43     static char *saved = NULL;
+44     char        *line;
+45     char        *buf;
+46 
+47     if (fd < 0 || BUFFER_SIZE < 1 || fd > 4095)
+48         return (NULL);
+49     buf = malloc(BUFFER_SIZE + 1);
+50     if (!buf)
+51         return (NULL);
+52     saved = read_from_fd(fd, saved, buf);
+53     if (!saved)
+54     {
+55         free(saved);
+56         saved = NULL;
+57         return (NULL);
+58     }
+59     line = extract_line(&saved);
+60     if (line == NULL)
+61     {
+62         free(saved);
+63         saved = NULL;
+64     }
+65     return (line);
+66 }
 .PP
 .fi
 
-.PP
-References \fBBUFFER_SIZE\fP, \fBextract_line()\fP, and \fBread_from_fd()\fP\&.
 .SS "int ft_is_double (const char * n)"
 
 .PP
@@ -1291,7 +1289,7 @@ Definition at line \fB24\fP of file \fBft_strcmp\&.c\fP\&.
 .fi
 
 .PP
-Referenced by \fBbuiltin_echo()\fP, \fBbuiltin_env()\fP, \fBcheck_heredoc()\fP, \fBexecute()\fP, \fBget_env()\fP, \fBheredoc()\fP, \fBopen_file()\fP, \fBset_env()\fP, \fBtest_get_env()\fP, \fBtest_set_env()\fP, \fBtest_unset_env()\fP, and \fBunset_env()\fP\&.
+Referenced by \fBbuiltin_echo()\fP, \fBbuiltin_env()\fP, \fBcheck_heredoc()\fP, \fBexecute()\fP, \fBget_env()\fP, \fBheredoc()\fP, \fBopen_file()\fP, \fBredirect_here_doc()\fP, \fBset_env()\fP, \fBtest_get_env()\fP, \fBtest_set_env()\fP, \fBtest_unset_env()\fP, and \fBunset_env()\fP\&.
 .SS "char * ft_strcpy (char * dest, const char * src)"
 
 .PP
@@ -1338,7 +1336,7 @@ Definition at line \fB23\fP of file \fBft_strdup\&.c\fP\&.
 .PP
 References \fBft_strlcpy()\fP, and \fBft_strlen()\fP\&.
 .PP
-Referenced by \fBadd_env_node()\fP, \fBextract_line()\fP, \fBft_itoa()\fP, \fBlist_to_array()\fP, \fBnew_token()\fP, \fBset_command_args()\fP, and \fBset_env()\fP\&.
+Referenced by \fBadd_env_node()\fP, \fBextract_line()\fP, \fBft_itoa()\fP, \fBlist_to_array()\fP, \fBnew_token()\fP, \fBredirect_here_doc()\fP, \fBset_command_args()\fP, and \fBset_env()\fP\&.
 .SS "void ft_striteri (char * s, void(* f )(unsigned int, char *))"
 
 .PP
@@ -1470,7 +1468,7 @@ Definition at line \fB15\fP of file \fBft_strlen\&.c\fP\&.
 .fi
 
 .PP
-Referenced by \fBbuiltin_echo()\fP, \fBbuiltin_exit()\fP, \fBft_putstr_fd()\fP, \fBft_strdup()\fP, \fBft_strjoin()\fP, \fBft_strjoin_gnl()\fP, \fBft_strlcat()\fP, \fBft_strndup()\fP, \fBft_strnstr()\fP, \fBft_strstr()\fP, \fBft_strtrim()\fP, \fBft_substr()\fP, \fBgenerate_prompt()\fP, and \fBgenerate_prompt_string()\fP\&.
+Referenced by \fBbuiltin_echo()\fP, \fBbuiltin_exit()\fP, \fBft_putstr_fd()\fP, \fBft_strdup()\fP, \fBft_strjoin()\fP, \fBft_strjoin_gnl()\fP, \fBft_strlcat()\fP, \fBft_strndup()\fP, \fBft_strnstr()\fP, \fBft_strstr()\fP, \fBft_strtrim()\fP, \fBft_substr()\fP, \fBgenerate_prompt()\fP, \fBgenerate_prompt_string()\fP, and \fBredirect_here_doc()\fP\&.
 .SS "char * ft_strmapi (char const * s, char(* f )(unsigned int, char))"
 
 .PP

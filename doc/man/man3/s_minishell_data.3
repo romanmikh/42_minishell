@@ -21,7 +21,16 @@ s_minishell_data
 .RI "\fBt_env\fP * \fBlocal_env\fP"
 .br
 .ti -1c
-.RI "int \fBtemp_fd\fP"
+.RI "int \fBstd_in\fP"
+.br
+.ti -1c
+.RI "int \fBstd_out\fP"
+.br
+.ti -1c
+.RI "int \fBstd_err\fP"
+.br
+.ti -1c
+.RI "const char * \fBheredoc_delimiter\fP"
 .br
 .ti -1c
 .RI "char * \fBcurrent_dir\fP"
@@ -44,7 +53,7 @@ Referenced by \fBadd_env()\fP, \fBbuiltin_cd()\fP, \fBbuiltin_echo()\fP, \fBbuil
 .SS "char* s_minishell_data::current_dir"
 
 .PP
-Definition at line \fB24\fP of file \fBshell\&.h\fP\&.
+Definition at line \fB27\fP of file \fBshell\&.h\fP\&.
 .PP
 Referenced by \fBfree_minishell_data()\fP, and \fBinit_minishell_data()\fP\&.
 .SS "\fBt_env\fP* s_minishell_data::envp"
@@ -56,21 +65,37 @@ Referenced by \fBadd_env()\fP, \fBbuiltin_cd()\fP, \fBbuiltin_env()\fP, \fBbuilt
 .SS "int s_minishell_data::exit_status"
 
 .PP
-Definition at line \fB25\fP of file \fBshell\&.h\fP\&.
+Definition at line \fB28\fP of file \fBshell\&.h\fP\&.
 .PP
-Referenced by \fBbuiltin_exit()\fP, \fBbuiltin_unset()\fP, \fBinit_minishell_data()\fP, and \fBredirect_in()\fP\&.
+Referenced by \fBbuiltin_exit()\fP, \fBbuiltin_unset()\fP, \fBinit_minishell_data()\fP, \fBnew_process()\fP, and \fBredirect_in()\fP\&.
+.SS "const char* s_minishell_data::heredoc_delimiter"
+
+.PP
+Definition at line \fB26\fP of file \fBshell\&.h\fP\&.
 .SS "\fBt_env\fP* s_minishell_data::local_env"
 
 .PP
 Definition at line \fB22\fP of file \fBshell\&.h\fP\&.
 .PP
 Referenced by \fBfree_minishell_data()\fP, and \fBinit_minishell_data()\fP\&.
-.SS "int s_minishell_data::temp_fd"
+.SS "int s_minishell_data::std_err"
+
+.PP
+Definition at line \fB25\fP of file \fBshell\&.h\fP\&.
+.PP
+Referenced by \fBinit_minishell_data()\fP\&.
+.SS "int s_minishell_data::std_in"
 
 .PP
 Definition at line \fB23\fP of file \fBshell\&.h\fP\&.
 .PP
-Referenced by \fBbuiltin_pipe()\fP, \fBgenerate_prompt()\fP, \fBhandle_temp_fd()\fP, \fBinit_minishell_data()\fP, \fBnew_process()\fP, and \fBredirect_in()\fP\&.
+Referenced by \fBbuiltin_pipe()\fP, \fBgenerate_prompt()\fP, \fBhandle_io_fd()\fP, \fBinit_minishell_data()\fP, \fBnew_process()\fP, \fBredirect_here_doc()\fP, and \fBredirect_in()\fP\&.
+.SS "int s_minishell_data::std_out"
+
+.PP
+Definition at line \fB24\fP of file \fBshell\&.h\fP\&.
+.PP
+Referenced by \fBhandle_io_fd()\fP, \fBinit_minishell_data()\fP, \fBnew_process()\fP, \fBredirect_append()\fP, \fBredirect_here_doc()\fP, and \fBredirect_out()\fP\&.
 
 .SH "Author"
 .PP 

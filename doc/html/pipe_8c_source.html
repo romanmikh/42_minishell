@@ -141,10 +141,10 @@ $(function(){initNavTree('pipe_8c_source.html',''); initResizable(true); });
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    <span class="keywordflow">else</span></div>
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    {</div>
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        close(fd[1]);</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        data-&gt;<a class="code hl_variable" href="structs__minishell__data.html#a880c653419f6a3adb22024e5bb05c69b">temp_fd</a> = fd[0];</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        data-&gt;<a class="code hl_variable" href="structs__minishell__data.html#a9ed5685097b7e4b55c3c1307b70869ef">std_in</a> = fd[0];</div>
 <div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        <span class="keywordflow">return</span> (<a class="code hl_define" href="pipe_8h.html#a816f42487cd607fbdb7df660a0d913fc">WAIT_NEXT_COMMAND</a>);</div>
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    }</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    <a class="code hl_function" href="execute_8h.html#a3efc1daab192679556df183345e1c83d">close_fds</a>(fd);</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    <a class="code hl_function" href="execute_8h.html#ab9bcddf9275f12cc49348081000beb62">close_fds</a>(fd[0], fd[1]);</div>
 <div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    <span class="keywordflow">if</span> (pid_1 &gt; 0)</div>
 <div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>        waitpid(pid_1, &amp;status, 0);</div>
 <div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    <span class="keywordflow">if</span> (node-&gt;<a class="code hl_variable" href="structs__ast.html#ac2c9513b20e9351e45d9bc6361095f7b">right</a> != NULL &amp;&amp; pid_2 &gt; 0)</div>
@@ -168,7 +168,7 @@ $(function(){initNavTree('pipe_8c_source.html',''); initResizable(true); });
 <div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>            dup2(fd[1], STDOUT_FILENO);</div>
 <div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>        <span class="keywordflow">else</span></div>
 <div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>            dup2(fd[0], STDIN_FILENO);</div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>        <a class="code hl_function" href="execute_8h.html#a3efc1daab192679556df183345e1c83d">close_fds</a>(fd);</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>        <a class="code hl_function" href="execute_8h.html#ab9bcddf9275f12cc49348081000beb62">close_fds</a>(fd[0], fd[1]);</div>
 <div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>        <a class="code hl_function" href="execute_8h.html#ace4c3a2246919797e40140123d79596a">execute_ast</a>(node, data);</div>
 <div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>        exit(EXIT_SUCCESS);</div>
 <div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    }</div>
@@ -176,9 +176,9 @@ $(function(){initNavTree('pipe_8c_source.html',''); initResizable(true); });
 <div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>}</div>
 </div>
 <div class="ttc" id="aexecute_8h_html"><div class="ttname"><a href="execute_8h.html">execute.h</a></div></div>
-<div class="ttc" id="aexecute_8h_html_a3efc1daab192679556df183345e1c83d"><div class="ttname"><a href="execute_8h.html#a3efc1daab192679556df183345e1c83d">close_fds</a></div><div class="ttdeci">void close_fds(int fds[2])</div><div class="ttdoc">close two file descriptors</div><div class="ttdef"><b>Definition</b> <a href="execute_2utils_8c_source.html#l00093">utils.c:93</a></div></div>
+<div class="ttc" id="aexecute_8h_html_ab9bcddf9275f12cc49348081000beb62"><div class="ttname"><a href="execute_8h.html#ab9bcddf9275f12cc49348081000beb62">close_fds</a></div><div class="ttdeci">void close_fds(int in, int out)</div><div class="ttdoc">close two file descriptors</div><div class="ttdef"><b>Definition</b> <a href="utils__0_8c_source.html#l00093">utils_0.c:93</a></div></div>
 <div class="ttc" id="aexecute_8h_html_ace4c3a2246919797e40140123d79596a"><div class="ttname"><a href="execute_8h.html#ace4c3a2246919797e40140123d79596a">execute_ast</a></div><div class="ttdeci">int execute_ast(t_ast *node, t_minishell_data *data)</div><div class="ttdoc">execute Abstract Syntax Tree</div><div class="ttdef"><b>Definition</b> <a href="execute_8c_source.html#l00041">execute.c:41</a></div></div>
-<div class="ttc" id="aexecute_8h_html_aedc550f2251badad69cf4b6dfda183ef"><div class="ttname"><a href="execute_8h.html#aedc550f2251badad69cf4b6dfda183ef">ft_perror</a></div><div class="ttdeci">int ft_perror(char *str)</div><div class="ttdoc">return error message and exit</div><div class="ttdef"><b>Definition</b> <a href="execute_2utils_8c_source.html#l00081">utils.c:81</a></div></div>
+<div class="ttc" id="aexecute_8h_html_aedc550f2251badad69cf4b6dfda183ef"><div class="ttname"><a href="execute_8h.html#aedc550f2251badad69cf4b6dfda183ef">ft_perror</a></div><div class="ttdeci">int ft_perror(char *str)</div><div class="ttdoc">return error message and exit</div><div class="ttdef"><b>Definition</b> <a href="utils__0_8c_source.html#l00081">utils_0.c:81</a></div></div>
 <div class="ttc" id="alibft_8h_html"><div class="ttname"><a href="libft_8h.html">libft.h</a></div></div>
 <div class="ttc" id="apipe_8c_html_a3a1c19716357baba879b799300b3c077"><div class="ttname"><a href="pipe_8c.html#a3a1c19716357baba879b799300b3c077">execute_child</a></div><div class="ttdeci">pid_t execute_child(t_ast *node, t_minishell_data *data, int fd[2], int direction)</div><div class="ttdoc">execute child process in the pipe context</div><div class="ttdef"><b>Definition</b> <a href="#l00071">pipe.c:71</a></div></div>
 <div class="ttc" id="apipe_8c_html_a7947b63271b47934f419fe6d217bf8df"><div class="ttname"><a href="pipe_8c.html#a7947b63271b47934f419fe6d217bf8df">builtin_pipe</a></div><div class="ttdeci">int builtin_pipe(t_ast *node, t_minishell_data *data)</div><div class="ttdoc">execute pipe when | is found in the command</div><div class="ttdef"><b>Definition</b> <a href="#l00035">pipe.c:35</a></div></div>
@@ -189,7 +189,7 @@ $(function(){initNavTree('pipe_8c_source.html',''); initResizable(true); });
 <div class="ttc" id="astructs__ast_html_ac2c9513b20e9351e45d9bc6361095f7b"><div class="ttname"><a href="structs__ast.html#ac2c9513b20e9351e45d9bc6361095f7b">s_ast::right</a></div><div class="ttdeci">struct s_ast * right</div><div class="ttdef"><b>Definition</b> <a href="tokens_8h_source.html#l00053">tokens.h:53</a></div></div>
 <div class="ttc" id="astructs__ast_html_ac3be51aa6a7ae13bd16b6ad0c7ac843c"><div class="ttname"><a href="structs__ast.html#ac3be51aa6a7ae13bd16b6ad0c7ac843c">s_ast::left</a></div><div class="ttdeci">struct s_ast * left</div><div class="ttdef"><b>Definition</b> <a href="tokens_8h_source.html#l00052">tokens.h:52</a></div></div>
 <div class="ttc" id="astructs__minishell__data_html"><div class="ttname"><a href="structs__minishell__data.html">s_minishell_data</a></div><div class="ttdef"><b>Definition</b> <a href="shell_8h_source.html#l00018">shell.h:19</a></div></div>
-<div class="ttc" id="astructs__minishell__data_html_a880c653419f6a3adb22024e5bb05c69b"><div class="ttname"><a href="structs__minishell__data.html#a880c653419f6a3adb22024e5bb05c69b">s_minishell_data::temp_fd</a></div><div class="ttdeci">int temp_fd</div><div class="ttdef"><b>Definition</b> <a href="shell_8h_source.html#l00023">shell.h:23</a></div></div>
+<div class="ttc" id="astructs__minishell__data_html_a9ed5685097b7e4b55c3c1307b70869ef"><div class="ttname"><a href="structs__minishell__data.html#a9ed5685097b7e4b55c3c1307b70869ef">s_minishell_data::std_in</a></div><div class="ttdeci">int std_in</div><div class="ttdef"><b>Definition</b> <a href="shell_8h_source.html#l00023">shell.h:23</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

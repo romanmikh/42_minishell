@@ -1,0 +1,229 @@
+.TH "/Users/dimadem/Documents/GitHub/minishell/src/execute/utils_0.c" 3 "Version 1" "maxishell" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/Users/dimadem/Documents/GitHub/minishell/src/execute/utils_0.c
+.SH SYNOPSIS
+.br
+.PP
+\fR#include 'libft\&.h'\fP
+.br
+\fR#include 'env\&.h'\fP
+.br
+\fR#include <stdio\&.h>\fP
+.br
+\fR#include 'shell\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "char * \fBft_find_path\fP (char *cmd, \fBt_env\fP *envp)"
+.br
+.RI "function find the full path of the executed command "
+.ti -1c
+.RI "void \fBft_free_2d_arr\fP (char **arr)"
+.br
+.RI "clean up 2d array "
+.ti -1c
+.RI "int \fBft_perror\fP (char *str)"
+.br
+.RI "return error message and exit "
+.ti -1c
+.RI "void \fBclose_fds\fP (int in, int out)"
+.br
+.RI "close two file descriptors "
+.ti -1c
+.RI "void \fBhandle_temp_fd\fP (\fBt_minishell_data\fP *data)"
+.br
+.ti -1c
+.RI "void \fBhandle_io_fd\fP (\fBt_minishell_data\fP *data)"
+.br
+.RI "close temporary input/output file descriptors and reset them to -1 "
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "void close_fds (int in, int out)"
+
+.PP
+close two file descriptors --
+.IP "\(bu" 2
+\fBParameters\fP
+.RS 4
+\fIfds\fP file descriptors 
+.RE
+.PP
+
+.PP
+
+.PP
+Definition at line \fB93\fP of file \fButils_0\&.c\fP\&.
+.nf
+94 {
+95     close(in);
+96     close(out);
+97 }
+.PP
+.fi
+
+.PP
+Referenced by \fBbuiltin_pipe()\fP, \fBexecute_child()\fP, \fBnew_process()\fP, and \fBredirect_here_doc()\fP\&.
+.SS "char * ft_find_path (char * cmd, \fBt_env\fP * envp)"
+
+.PP
+function find the full path of the executed command --
+.IP "\(bu" 2
+\fBParameters\fP
+.RS 4
+\fIcmd\fP string from the first argument
+.RE
+.PP
+
+.IP "\(bu" 2
+\fBParameters\fP
+.RS 4
+\fIenvp\fP structure with environment variables
+.RE
+.PP
+
+.IP "\(bu" 2
+\fBReturns\fP
+.RS 4
+char* returns the full path of the command 
+.RE
+.PP
+
+.PP
+
+.PP
+Definition at line \fB32\fP of file \fButils_0\&.c\fP\&.
+.nf
+33 {
+34     char    **path;
+35     char    *tmp_slash;
+36     char    *tmp_full_path;
+37     int     i;
+38 
+39     path = ft_split(get_env(envp, "PATH"), ':');
+40     i = \-1;
+41     while (path[++i] != NULL)
+42     {
+43         tmp_slash = ft_strjoin(path[i], "/");
+44         tmp_full_path = ft_strjoin(tmp_slash, cmd);
+45         free(tmp_slash);
+46         if (access(tmp_full_path, F_OK) == 0)
+47         {
+48             ft_free_2d_arr(path);
+49             return (tmp_full_path);
+50         }
+51         free(tmp_full_path);
+52     }
+53     ft_free_2d_arr(path);
+54     return (NULL);
+55 }
+.PP
+.fi
+
+.PP
+References \fBft_free_2d_arr()\fP, \fBft_split()\fP, \fBft_strjoin()\fP, and \fBget_env()\fP\&.
+.PP
+Referenced by \fBnew_process()\fP\&.
+.SS "void ft_free_2d_arr (char ** arr)"
+
+.PP
+clean up 2d array --
+.IP "\(bu" 2
+\fBParameters\fP
+.RS 4
+\fIarr\fP simple two dimensional array 
+.RE
+.PP
+
+.PP
+
+.PP
+Definition at line \fB63\fP of file \fButils_0\&.c\fP\&.
+.nf
+64 {
+65     int i;
+66 
+67     i = \-1;
+68     while (arr[++i] != NULL)
+69         free(arr[i]);
+70     free(arr);
+71 }
+.PP
+.fi
+
+.PP
+Referenced by \fBft_find_path()\fP\&.
+.SS "int ft_perror (char * str)"
+
+.PP
+return error message and exit --
+.IP "\(bu" 2
+\fBParameters\fP
+.RS 4
+\fIstr\fP paste the error message
+.RE
+.PP
+
+.IP "\(bu" 2
+\fBReturns\fP
+.RS 4
+int return status:
+.RE
+.PP
+
+.IP "\(bu" 2
+- 1: EXIT_FAILURE 
+.PP
+
+.PP
+Definition at line \fB81\fP of file \fButils_0\&.c\fP\&.
+.nf
+82 {
+83     perror (str);
+84     exit(EXIT_FAILURE);
+85 }
+.PP
+.fi
+
+.PP
+Referenced by \fBbuiltin_pipe()\fP, \fBexecute_child()\fP, \fBnew_process()\fP, and \fBredirect_here_doc()\fP\&.
+.SS "void handle_io_fd (\fBt_minishell_data\fP * data)"
+
+.PP
+close temporary input/output file descriptors and reset them to -1 -- 
+.PP
+\fBParameters\fP
+.RS 4
+\fIdata\fP minishell structure 
+.RE
+.PP
+
+.PP
+Definition at line \fB104\fP of file \fButils_0\&.c\fP\&.
+.nf
+105 {
+106     if (data\->std_in != \-1 && data\->std_out != \-1)
+107     {
+108         close(data\->std_in);
+109         close(data\->std_out);
+110         data\->std_in = \-1;
+111         data\->std_out = \-1;
+112     }
+113 }
+.PP
+.fi
+
+.PP
+References \fBs_minishell_data::std_in\fP, and \fBs_minishell_data::std_out\fP\&.
+.PP
+Referenced by \fBmain_loop()\fP\&.
+.SS "void handle_temp_fd (\fBt_minishell_data\fP * data)"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for maxishell from the source code\&.

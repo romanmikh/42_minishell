@@ -25,6 +25,15 @@
         "readline.h": "c",
         "pwd.h": "c",
         "locale": "c",
-        "redirection.h": "c"
-    }
+        "redirection.h": "c",
+        "cdefs.h": "c",
+        "wait.h": "c",
+        "stdlib.h": "c"
+    },
+    "docwriter.style": "Doxygen",
+    "docwriter.progress.trackFunctions": true,
+    "docwriter.progress.trackMethods": false,
+    "docwriter.progress.trackClasses": true,
+    "docwriter.progress.trackTypes": true,
+    "docwriter.language": "English"
 }

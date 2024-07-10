@@ -20,7 +20,10 @@ typedef struct s_minishell_data
 	char	**args;
 	t_env	*envp;
 	t_env	*local_env;
-	int		temp_fd;
+	int		std_in;
+	int		std_out;
+	int		std_err;
+	const char *heredoc_delimiter;
 	char	*current_dir;
 	int		exit_status;
 }				t_minishell_data;

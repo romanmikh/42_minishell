@@ -86,7 +86,7 @@
         </inbodydescription>
         <location file="/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_substr.c" line="27" column="5" bodyfile="/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_substr.c" bodystart="27" bodyend="48"/>
         <references refid="libft_8h_1abbb8c6c4ed85d892e7f1509f65f5768a" compoundref="ft__strlen_8c" startline="15" endline="23">ft_strlen</references>
-        <referencedby refid="ft__get__next__line_8c_1a33d78aafe6a0e75e4fdfe3606cbd9348" compoundref="ft__get__next__line_8c" startline="85" endline="108">extract_line</referencedby>
+        <referencedby refid="redirection_2utils_8c_1a33d78aafe6a0e75e4fdfe3606cbd9348" compoundref="redirection_2utils_8c" startline="118" endline="141">extract_line</referencedby>
       </memberdef>
     </sectiondef>
     <briefdescription>

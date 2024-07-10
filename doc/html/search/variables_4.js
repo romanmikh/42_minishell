@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['input_0',['input',['../structs__loop__data.html#aa4db2151823e8c8b49c2251837a7e367',1,'s_loop_data']]]
+  ['heredoc_5fdelimiter_0',['heredoc_delimiter',['../structs__minishell__data.html#ab5977108384c093aac9e05ce4d13c566',1,'s_minishell_data']]]
 ];

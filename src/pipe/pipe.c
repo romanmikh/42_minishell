@@ -48,10 +48,10 @@ int	builtin_pipe(t_ast *node, t_minishell_data *data)
 	else
 	{
 		close(fd[1]);
-		data->temp_fd = fd[0];
+		data->std_in = fd[0];
 		return (WAIT_NEXT_COMMAND);
 	}
-	close_fds(fd);
+	close_fds(fd[0], fd[1]);
 	if (pid_1 > 0)
 		waitpid(pid_1, &status, 0);
 	if (node->right != NULL && pid_2 > 0)
@@ -82,7 +82,7 @@ pid_t	execute_child(t_ast *node, t_minishell_data *data, \
 			dup2(fd[1], STDOUT_FILENO);
 		else
 			dup2(fd[0], STDIN_FILENO);
-		close_fds(fd);
+		close_fds(fd[0], fd[1]);
 		execute_ast(node, data);
 		exit(EXIT_SUCCESS);
 	}

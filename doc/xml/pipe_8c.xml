@@ -191,12 +191,12 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/dimadem/Documents/GitHub/minishell/src/pipe/pipe.c" line="35" column="4" bodyfile="/Users/dimadem/Documents/GitHub/minishell/src/pipe/pipe.c" bodystart="35" bodyend="60" declfile="/Users/dimadem/Documents/GitHub/minishell/src/pipe/pipe.c" declline="21" declcolumn="4"/>
-        <references refid="execute_8h_1a3efc1daab192679556df183345e1c83d" compoundref="execute_2utils_8c" startline="93" endline="97">close_fds</references>
+        <references refid="execute_8h_1ab9bcddf9275f12cc49348081000beb62" compoundref="utils__0_8c" startline="93" endline="97">close_fds</references>
         <references refid="pipe_8c_1a3a1c19716357baba879b799300b3c077" compoundref="pipe_8c" startline="71" endline="90">execute_child</references>
-        <references refid="execute_8h_1aedc550f2251badad69cf4b6dfda183ef" compoundref="execute_2utils_8c" startline="81" endline="85">ft_perror</references>
+        <references refid="execute_8h_1aedc550f2251badad69cf4b6dfda183ef" compoundref="utils__0_8c" startline="81" endline="85">ft_perror</references>
         <references refid="structs__ast_1ac3be51aa6a7ae13bd16b6ad0c7ac843c" compoundref="tokens_8h" startline="52">s_ast::left</references>
         <references refid="structs__ast_1ac2c9513b20e9351e45d9bc6361095f7b" compoundref="tokens_8h" startline="53">s_ast::right</references>
-        <references refid="structs__minishell__data_1a880c653419f6a3adb22024e5bb05c69b" compoundref="shell_8h" startline="23">s_minishell_data::temp_fd</references>
+        <references refid="structs__minishell__data_1a9ed5685097b7e4b55c3c1307b70869ef" compoundref="shell_8h" startline="23">s_minishell_data::std_in</references>
         <references refid="pipe_8h_1a816f42487cd607fbdb7df660a0d913fc" compoundref="pipe_8h" startline="19">WAIT_NEXT_COMMAND</references>
         <referencedby refid="execute_8h_1ace4c3a2246919797e40140123d79596a" compoundref="execute_8c" startline="41" endline="82">execute_ast</referencedby>
       </memberdef>
@@ -274,9 +274,9 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/dimadem/Documents/GitHub/minishell/src/pipe/pipe.c" line="71" column="6" bodyfile="/Users/dimadem/Documents/GitHub/minishell/src/pipe/pipe.c" bodystart="71" bodyend="90" declfile="/Users/dimadem/Documents/GitHub/minishell/src/pipe/pipe.c" declline="22" declcolumn="6"/>
-        <references refid="execute_8h_1a3efc1daab192679556df183345e1c83d" compoundref="execute_2utils_8c" startline="93" endline="97">close_fds</references>
+        <references refid="execute_8h_1ab9bcddf9275f12cc49348081000beb62" compoundref="utils__0_8c" startline="93" endline="97">close_fds</references>
         <references refid="execute_8h_1ace4c3a2246919797e40140123d79596a" compoundref="execute_8c" startline="41" endline="82">execute_ast</references>
-        <references refid="execute_8h_1aedc550f2251badad69cf4b6dfda183ef" compoundref="execute_2utils_8c" startline="81" endline="85">ft_perror</references>
+        <references refid="execute_8h_1aedc550f2251badad69cf4b6dfda183ef" compoundref="utils__0_8c" startline="81" endline="85">ft_perror</references>
         <referencedby refid="pipe_8h_1a7947b63271b47934f419fe6d217bf8df" compoundref="pipe_8c" startline="35" endline="60">builtin_pipe</referencedby>
       </memberdef>
     </sectiondef>
@@ -325,10 +325,10 @@
 <codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>close(fd[1]);</highlight></codeline>
-<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>data-&gt;<ref refid="structs__minishell__data_1a880c653419f6a3adb22024e5bb05c69b" kindref="member">temp_fd</ref><sp/>=<sp/>fd[0];</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>data-&gt;<ref refid="structs__minishell__data_1a9ed5685097b7e4b55c3c1307b70869ef" kindref="member">std_in</ref><sp/>=<sp/>fd[0];</highlight></codeline>
 <codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(<ref refid="pipe_8h_1a816f42487cd607fbdb7df660a0d913fc" kindref="member">WAIT_NEXT_COMMAND</ref>);</highlight></codeline>
 <codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="execute_8h_1a3efc1daab192679556df183345e1c83d" kindref="member">close_fds</ref>(fd);</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="execute_8h_1ab9bcddf9275f12cc49348081000beb62" kindref="member">close_fds</ref>(fd[0],<sp/>fd[1]);</highlight></codeline>
 <codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(pid_1<sp/>&gt;<sp/>0)</highlight></codeline>
 <codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>waitpid(pid_1,<sp/>&amp;status,<sp/>0);</highlight></codeline>
 <codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(node-&gt;<ref refid="structs__ast_1ac2c9513b20e9351e45d9bc6361095f7b" kindref="member">right</ref><sp/>!=<sp/>NULL<sp/>&amp;&amp;<sp/>pid_2<sp/>&gt;<sp/>0)</highlight></codeline>
@@ -350,7 +350,7 @@
 <codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>dup2(fd[1],<sp/>STDOUT_FILENO);</highlight></codeline>
 <codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>dup2(fd[0],<sp/>STDIN_FILENO);</highlight></codeline>
-<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="execute_8h_1a3efc1daab192679556df183345e1c83d" kindref="member">close_fds</ref>(fd);</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="execute_8h_1ab9bcddf9275f12cc49348081000beb62" kindref="member">close_fds</ref>(fd[0],<sp/>fd[1]);</highlight></codeline>
 <codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="execute_8h_1ace4c3a2246919797e40140123d79596a" kindref="member">execute_ast</ref>(node,<sp/>data);</highlight></codeline>
 <codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>exit(EXIT_SUCCESS);</highlight></codeline>
 <codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>

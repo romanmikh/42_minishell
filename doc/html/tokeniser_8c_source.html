@@ -118,117 +118,118 @@ $(function(){initNavTree('tokeniser_8c_source.html',''); initResizable(true); })
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="comment">/*</span></div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="comment">    TODO:</span></div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="comment">    fix ft_printf in print_tokens(t_token *tokens)</span></div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="comment">*/</span></div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
-<div class="foldopen" id="foldopen00021" data-start="{" data-end="}">
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="tokens_8h.html#a0e22b8f037ef12eb28986615da9b79a6">   21</a></span><span class="keywordtype">void</span>    <a class="code hl_function" href="tokeniser_8c.html#a0e22b8f037ef12eb28986615da9b79a6">handle_special_chars</a>(<span class="keywordtype">char</span> **str, <a class="code hl_struct" href="structs__token.html">t_token</a> **tokens)</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>{</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <span class="keywordflow">if</span> (**str == <span class="charliteral">&#39;&lt;&#39;</span>)</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    {</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        <span class="keywordflow">if</span> (*(*str + 1) == <span class="charliteral">&#39;&lt;&#39;</span>)</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        {</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>            <a class="code hl_function" href="tokens_8h.html#a6c482f0c73f7263b3253aaa8e1bd4fb6">append_token</a>(tokens, <a class="code hl_function" href="tokens_8h.html#a07793427f42bd19d0f4ea6771441be99">new_token</a>(<span class="stringliteral">&quot;&lt;&lt;&quot;</span>, <a class="code hl_enumvalue" href="tokens_8h.html#a76a354e93d720f05344590ec8aa222dea6b4984ec77e78953297b7cb3f580a2e7">REDIR_HEREDOC</a>));</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>            (*str)++;</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>        }</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        <span class="keywordflow">else</span></div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>            <a class="code hl_function" href="tokens_8h.html#a6c482f0c73f7263b3253aaa8e1bd4fb6">append_token</a>(tokens, <a class="code hl_function" href="tokens_8h.html#a07793427f42bd19d0f4ea6771441be99">new_token</a>(<span class="stringliteral">&quot;&lt;&quot;</span>, <a class="code hl_enumvalue" href="tokens_8h.html#a76a354e93d720f05344590ec8aa222dea18f3c2f496edb0cae413ac5244bb2452">REDIR_IN</a>));</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    }</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (**str == <span class="charliteral">&#39;&gt;&#39;</span>)</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    {</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        <span class="keywordflow">if</span> (*(*str + 1) == <span class="charliteral">&#39;&gt;&#39;</span>)</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>        {</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>            <a class="code hl_function" href="tokens_8h.html#a6c482f0c73f7263b3253aaa8e1bd4fb6">append_token</a>(tokens, <a class="code hl_function" href="tokens_8h.html#a07793427f42bd19d0f4ea6771441be99">new_token</a>(<span class="stringliteral">&quot;&gt;&gt;&quot;</span>, <a class="code hl_enumvalue" href="tokens_8h.html#a76a354e93d720f05344590ec8aa222deae6167ac4e4f266512f36d79961bde464">REDIR_APPEND</a>));</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>            (*str)++;</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        }</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        <span class="keywordflow">else</span></div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>            <a class="code hl_function" href="tokens_8h.html#a6c482f0c73f7263b3253aaa8e1bd4fb6">append_token</a>(tokens, <a class="code hl_function" href="tokens_8h.html#a07793427f42bd19d0f4ea6771441be99">new_token</a>(<span class="stringliteral">&quot;&gt;&quot;</span>, <a class="code hl_enumvalue" href="tokens_8h.html#a76a354e93d720f05344590ec8aa222deacb2a363e84eabbbe3925fd298f7a3d01">REDIR_OUT</a>));</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    }</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (**str == <span class="charliteral">&#39;|&#39;</span>)</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        <a class="code hl_function" href="tokens_8h.html#a6c482f0c73f7263b3253aaa8e1bd4fb6">append_token</a>(tokens, <a class="code hl_function" href="tokens_8h.html#a07793427f42bd19d0f4ea6771441be99">new_token</a>(<span class="stringliteral">&quot;|&quot;</span>, <a class="code hl_enumvalue" href="tokens_8h.html#a76a354e93d720f05344590ec8aa222dea9bc832fa28809fb974f6ce5bb0cc7117">PIPE</a>));</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    (*str)++;</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>}</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="comment">    add limiter to heredoc</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="comment">*/</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="foldopen" id="foldopen00022" data-start="{" data-end="}">
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="tokens_8h.html#a0e22b8f037ef12eb28986615da9b79a6">   22</a></span><span class="keywordtype">void</span>    <a class="code hl_function" href="tokeniser_8c.html#a0e22b8f037ef12eb28986615da9b79a6">handle_special_chars</a>(<span class="keywordtype">char</span> **str, <a class="code hl_struct" href="structs__token.html">t_token</a> **tokens)</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>{</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="keywordflow">if</span> (**str == <span class="charliteral">&#39;&lt;&#39;</span>)</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    {</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        <span class="keywordflow">if</span> (*(*str + 1) == <span class="charliteral">&#39;&lt;&#39;</span>)</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        {</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>            <a class="code hl_function" href="tokens_8h.html#a6c482f0c73f7263b3253aaa8e1bd4fb6">append_token</a>(tokens, <a class="code hl_function" href="tokens_8h.html#a07793427f42bd19d0f4ea6771441be99">new_token</a>(<span class="stringliteral">&quot;&lt;&lt;&quot;</span>, <a class="code hl_enumvalue" href="tokens_8h.html#a76a354e93d720f05344590ec8aa222dea6b4984ec77e78953297b7cb3f580a2e7">REDIR_HEREDOC</a>));</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>            (*str)++;</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        }</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        <span class="keywordflow">else</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>            <a class="code hl_function" href="tokens_8h.html#a6c482f0c73f7263b3253aaa8e1bd4fb6">append_token</a>(tokens, <a class="code hl_function" href="tokens_8h.html#a07793427f42bd19d0f4ea6771441be99">new_token</a>(<span class="stringliteral">&quot;&lt;&quot;</span>, <a class="code hl_enumvalue" href="tokens_8h.html#a76a354e93d720f05344590ec8aa222dea18f3c2f496edb0cae413ac5244bb2452">REDIR_IN</a>));</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    }</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (**str == <span class="charliteral">&#39;&gt;&#39;</span>)</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    {</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>        <span class="keywordflow">if</span> (*(*str + 1) == <span class="charliteral">&#39;&gt;&#39;</span>)</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        {</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>            <a class="code hl_function" href="tokens_8h.html#a6c482f0c73f7263b3253aaa8e1bd4fb6">append_token</a>(tokens, <a class="code hl_function" href="tokens_8h.html#a07793427f42bd19d0f4ea6771441be99">new_token</a>(<span class="stringliteral">&quot;&gt;&gt;&quot;</span>, <a class="code hl_enumvalue" href="tokens_8h.html#a76a354e93d720f05344590ec8aa222deae6167ac4e4f266512f36d79961bde464">REDIR_APPEND</a>));</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>            (*str)++;</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        }</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        <span class="keywordflow">else</span></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>            <a class="code hl_function" href="tokens_8h.html#a6c482f0c73f7263b3253aaa8e1bd4fb6">append_token</a>(tokens, <a class="code hl_function" href="tokens_8h.html#a07793427f42bd19d0f4ea6771441be99">new_token</a>(<span class="stringliteral">&quot;&gt;&quot;</span>, <a class="code hl_enumvalue" href="tokens_8h.html#a76a354e93d720f05344590ec8aa222deacb2a363e84eabbbe3925fd298f7a3d01">REDIR_OUT</a>));</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    }</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (**str == <span class="charliteral">&#39;|&#39;</span>)</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        <a class="code hl_function" href="tokens_8h.html#a6c482f0c73f7263b3253aaa8e1bd4fb6">append_token</a>(tokens, <a class="code hl_function" href="tokens_8h.html#a07793427f42bd19d0f4ea6771441be99">new_token</a>(<span class="stringliteral">&quot;|&quot;</span>, <a class="code hl_enumvalue" href="tokens_8h.html#a76a354e93d720f05344590ec8aa222dea9bc832fa28809fb974f6ce5bb0cc7117">PIPE</a>));</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    (*str)++;</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>}</div>
 </div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
-<div class="foldopen" id="foldopen00048" data-start="{" data-end="}">
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="tokeniser_8c.html#a596263e54e7fc7ea1bde318a1da5cdc6">   48</a></span><span class="keywordtype">void</span>    <a class="code hl_function" href="tokeniser_8c.html#a596263e54e7fc7ea1bde318a1da5cdc6">append_phrase_if_valid</a>(<span class="keywordtype">char</span> **start, <span class="keywordtype">char</span> **str, <a class="code hl_struct" href="structs__token.html">t_token</a> **tokens)</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>{</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    <span class="keywordtype">char</span>    *phrase;</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    <span class="keywordflow">if</span> (*str &gt; *start)</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    {</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>        phrase = <a class="code hl_function" href="libft_8h.html#a2d5f42a11a38830b809bced1fc209c20">ft_strndup</a>(*start, *str - *start);</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>        <span class="keywordflow">if</span> (phrase)</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>        {</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>            <a class="code hl_function" href="tokens_8h.html#a6c482f0c73f7263b3253aaa8e1bd4fb6">append_token</a>(tokens, <a class="code hl_function" href="tokens_8h.html#a07793427f42bd19d0f4ea6771441be99">new_token</a>(phrase, <a class="code hl_enumvalue" href="tokens_8h.html#a76a354e93d720f05344590ec8aa222dea46ac44ddfb231d3c8f76820d4624c099">PHRASE</a>));</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>            free(phrase);</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>        }</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>        <span class="keywordflow">else</span></div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>            <a class="code hl_function" href="libft_8h.html#a1ee8ae8a80a7d9141ea5339af8565f2e">ft_printf</a>(<span class="stringliteral">&quot;Error: unable to allocate memory for token\n&quot;</span>);</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    }</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>}</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
+<div class="foldopen" id="foldopen00049" data-start="{" data-end="}">
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="tokeniser_8c.html#a596263e54e7fc7ea1bde318a1da5cdc6">   49</a></span><span class="keywordtype">void</span>    <a class="code hl_function" href="tokeniser_8c.html#a596263e54e7fc7ea1bde318a1da5cdc6">append_phrase_if_valid</a>(<span class="keywordtype">char</span> **start, <span class="keywordtype">char</span> **str, <a class="code hl_struct" href="structs__token.html">t_token</a> **tokens)</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>{</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    <span class="keywordtype">char</span>    *phrase;</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    <span class="keywordflow">if</span> (*str &gt; *start)</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    {</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>        phrase = <a class="code hl_function" href="libft_8h.html#a2d5f42a11a38830b809bced1fc209c20">ft_strndup</a>(*start, *str - *start);</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>        <span class="keywordflow">if</span> (phrase)</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>        {</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>            <a class="code hl_function" href="tokens_8h.html#a6c482f0c73f7263b3253aaa8e1bd4fb6">append_token</a>(tokens, <a class="code hl_function" href="tokens_8h.html#a07793427f42bd19d0f4ea6771441be99">new_token</a>(phrase, <a class="code hl_enumvalue" href="tokens_8h.html#a76a354e93d720f05344590ec8aa222dea46ac44ddfb231d3c8f76820d4624c099">PHRASE</a>));</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>            free(phrase);</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>        }</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>        <span class="keywordflow">else</span></div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>            <a class="code hl_function" href="libft_8h.html#a1ee8ae8a80a7d9141ea5339af8565f2e">ft_printf</a>(<span class="stringliteral">&quot;Error: unable to allocate memory for token\n&quot;</span>);</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    }</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>}</div>
 </div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
-<div class="foldopen" id="foldopen00065" data-start="{" data-end="}">
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno"><a class="line" href="tokeniser_8c.html#a35855ff1421748c284cbaa495e26ef92">   65</a></span><span class="keywordtype">void</span>    <a class="code hl_function" href="tokeniser_8c.html#a35855ff1421748c284cbaa495e26ef92">handle_phrase</a>(<span class="keywordtype">char</span> **str, <a class="code hl_struct" href="structs__token.html">t_token</a> **tokens)</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>{</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    <span class="keywordtype">char</span>    *start;</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    <span class="keywordtype">char</span>    quote_flag;</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    <span class="keywordtype">char</span>    quote_type;</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span> </div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    start = *str;</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    quote_flag = 0;</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    quote_type = 0;</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    <span class="keywordflow">while</span> (**str)</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    {</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>        <span class="keywordflow">if</span> (!quote_flag &amp;&amp; (**str == <span class="charliteral">&#39;\&#39;&#39;</span> || **str == <span class="charliteral">&#39;\&quot;&#39;</span>))</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>        {</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>            quote_flag = 1;</div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>            quote_type = **str;</div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>        }</div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (quote_flag &amp;&amp; **str == quote_type)</div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>            quote_flag = 0;</div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>        <span class="keywordflow">if</span> (!quote_flag &amp;&amp; <a class="code hl_function" href="libft_8h.html#aa6d0c2d180f32ee585485e1a1ce3d55d">ft_strchr</a>(<span class="stringliteral">&quot; \t\n\r\v\f&lt;|&gt;&quot;</span>, **str) != NULL)</div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>            break ;</div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>        (*str)++;</div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    }</div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    <a class="code hl_function" href="tokeniser_8c.html#a596263e54e7fc7ea1bde318a1da5cdc6">append_phrase_if_valid</a>(&amp;start, str, tokens);</div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>}</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
+<div class="foldopen" id="foldopen00066" data-start="{" data-end="}">
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno"><a class="line" href="tokeniser_8c.html#a35855ff1421748c284cbaa495e26ef92">   66</a></span><span class="keywordtype">void</span>    <a class="code hl_function" href="tokeniser_8c.html#a35855ff1421748c284cbaa495e26ef92">handle_phrase</a>(<span class="keywordtype">char</span> **str, <a class="code hl_struct" href="structs__token.html">t_token</a> **tokens)</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>{</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    <span class="keywordtype">char</span>    *start;</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    <span class="keywordtype">char</span>    quote_flag;</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    <span class="keywordtype">char</span>    quote_type;</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    start = *str;</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    quote_flag = 0;</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    quote_type = 0;</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    <span class="keywordflow">while</span> (**str)</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    {</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>        <span class="keywordflow">if</span> (!quote_flag &amp;&amp; (**str == <span class="charliteral">&#39;\&#39;&#39;</span> || **str == <span class="charliteral">&#39;\&quot;&#39;</span>))</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>        {</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>            quote_flag = 1;</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>            quote_type = **str;</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>        }</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (quote_flag &amp;&amp; **str == quote_type)</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>            quote_flag = 0;</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>        <span class="keywordflow">if</span> (!quote_flag &amp;&amp; <a class="code hl_function" href="libft_8h.html#aa6d0c2d180f32ee585485e1a1ce3d55d">ft_strchr</a>(<span class="stringliteral">&quot; \t\n\r\v\f&lt;|&gt;&quot;</span>, **str) != NULL)</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>            break ;</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>        (*str)++;</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    }</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    <a class="code hl_function" href="tokeniser_8c.html#a596263e54e7fc7ea1bde318a1da5cdc6">append_phrase_if_valid</a>(&amp;start, str, tokens);</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>}</div>
 </div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span> </div>
-<div class="foldopen" id="foldopen00090" data-start="{" data-end="}">
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno"><a class="line" href="tokens_8h.html#ac0f556c5b74afdbd7ce730e294df7b76">   90</a></span><span class="keywordtype">void</span>    <a class="code hl_function" href="tokeniser_8c.html#ac0f556c5b74afdbd7ce730e294df7b76">print_tokens</a>(<a class="code hl_struct" href="structs__token.html">t_token</a> *tokens)</div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>{</div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    <a class="code hl_struct" href="structs__token.html">t_token</a> *token;</div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    <span class="keywordtype">int</span>     i;              </div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span> </div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    i = 0;</div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    token = tokens;</div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>    <span class="keywordflow">while</span> (token != NULL)</div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    {</div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>        printf(<span class="stringliteral">&quot;input[%d] -&gt;  %s \n&quot;</span>, i, token-&gt;<a class="code hl_variable" href="structs__token.html#afe30f6c413b34095d2a562e112a52e9a">data</a>);</div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>        token = token-&gt;<a class="code hl_variable" href="structs__token.html#a5dae434205818bfc83a61809d4a34a29">next</a>;</div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>        i++;</div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    }</div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>}</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span> </div>
+<div class="foldopen" id="foldopen00091" data-start="{" data-end="}">
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno"><a class="line" href="tokens_8h.html#ac0f556c5b74afdbd7ce730e294df7b76">   91</a></span><span class="keywordtype">void</span>    <a class="code hl_function" href="tokeniser_8c.html#ac0f556c5b74afdbd7ce730e294df7b76">print_tokens</a>(<a class="code hl_struct" href="structs__token.html">t_token</a> *tokens)</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>{</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    <a class="code hl_struct" href="structs__token.html">t_token</a> *token;</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    <span class="keywordtype">int</span>     i;              </div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span> </div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    i = 0;</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>    token = tokens;</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    <span class="keywordflow">while</span> (token != NULL)</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    {</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>        printf(<span class="stringliteral">&quot;input[%d] -&gt;  %s \n&quot;</span>, i, token-&gt;<a class="code hl_variable" href="structs__token.html#afe30f6c413b34095d2a562e112a52e9a">data</a>);</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>        token = token-&gt;<a class="code hl_variable" href="structs__token.html#a5dae434205818bfc83a61809d4a34a29">next</a>;</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>        i++;</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    }</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>}</div>
 </div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span> </div>
-<div class="foldopen" id="foldopen00105" data-start="{" data-end="}">
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno"><a class="line" href="tokens_8h.html#a5482db056a3edf1a61079f863ba7dc99">  105</a></span><a class="code hl_struct" href="structs__token.html">t_token</a> *<a class="code hl_function" href="tokeniser_8c.html#a5482db056a3edf1a61079f863ba7dc99">tokenise</a>(<span class="keywordtype">char</span> *str)</div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>{</div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>    <a class="code hl_struct" href="structs__token.html">t_token</a> *tokens;</div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span> </div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>    tokens = NULL;</div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    <span class="keywordflow">while</span> (*str)</div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>    {</div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>        <span class="keywordflow">while</span> (*str &amp;&amp; <a class="code hl_function" href="libft_8h.html#aa6d0c2d180f32ee585485e1a1ce3d55d">ft_strchr</a>(<span class="stringliteral">&quot; \t\n\r\v\f&quot;</span>, *str) != NULL)</div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>            str++;</div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>        <span class="keywordflow">if</span> (<a class="code hl_function" href="libft_8h.html#aa6d0c2d180f32ee585485e1a1ce3d55d">ft_strchr</a>(<span class="stringliteral">&quot;&lt;|&gt;&quot;</span>, *str) != NULL)</div>
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>            <a class="code hl_function" href="tokeniser_8c.html#a0e22b8f037ef12eb28986615da9b79a6">handle_special_chars</a>(&amp;str, &amp;tokens);</div>
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>        <span class="keywordflow">else</span></div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>            <a class="code hl_function" href="tokeniser_8c.html#a35855ff1421748c284cbaa495e26ef92">handle_phrase</a>(&amp;str, &amp;tokens);</div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>    }</div>
-<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>    <span class="keywordflow">return</span> (tokens);</div>
-<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>}</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span> </div>
+<div class="foldopen" id="foldopen00106" data-start="{" data-end="}">
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno"><a class="line" href="tokens_8h.html#a5482db056a3edf1a61079f863ba7dc99">  106</a></span><a class="code hl_struct" href="structs__token.html">t_token</a> *<a class="code hl_function" href="tokeniser_8c.html#a5482db056a3edf1a61079f863ba7dc99">tokenise</a>(<span class="keywordtype">char</span> *str)</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>{</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>    <a class="code hl_struct" href="structs__token.html">t_token</a> *tokens;</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span> </div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    tokens = NULL;</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>    <span class="keywordflow">while</span> (*str)</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>    {</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>        <span class="keywordflow">while</span> (*str &amp;&amp; <a class="code hl_function" href="libft_8h.html#aa6d0c2d180f32ee585485e1a1ce3d55d">ft_strchr</a>(<span class="stringliteral">&quot; \t\n\r\v\f&quot;</span>, *str) != NULL)</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>            str++;</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>        <span class="keywordflow">if</span> (<a class="code hl_function" href="libft_8h.html#aa6d0c2d180f32ee585485e1a1ce3d55d">ft_strchr</a>(<span class="stringliteral">&quot;&lt;|&gt;&quot;</span>, *str) != NULL)</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>            <a class="code hl_function" href="tokeniser_8c.html#a0e22b8f037ef12eb28986615da9b79a6">handle_special_chars</a>(&amp;str, &amp;tokens);</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>        <span class="keywordflow">else</span></div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>            <a class="code hl_function" href="tokeniser_8c.html#a35855ff1421748c284cbaa495e26ef92">handle_phrase</a>(&amp;str, &amp;tokens);</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>    }</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>    <span class="keywordflow">return</span> (tokens);</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>}</div>
 </div>
 <div class="ttc" id="alibft_8h_html_a1ee8ae8a80a7d9141ea5339af8565f2e"><div class="ttname"><a href="libft_8h.html#a1ee8ae8a80a7d9141ea5339af8565f2e">ft_printf</a></div><div class="ttdeci">int ft_printf(const char *format,...)</div><div class="ttdef"><b>Definition</b> <a href="ft__printf_8c_source.html#l00037">ft_printf.c:37</a></div></div>
 <div class="ttc" id="alibft_8h_html_a2d5f42a11a38830b809bced1fc209c20"><div class="ttname"><a href="libft_8h.html#a2d5f42a11a38830b809bced1fc209c20">ft_strndup</a></div><div class="ttdeci">char * ft_strndup(const char *s, size_t n)</div><div class="ttdef"><b>Definition</b> <a href="ft__strndup_8c_source.html#l00023">ft_strndup.c:23</a></div></div>
@@ -236,11 +237,11 @@ $(function(){initNavTree('tokeniser_8c_source.html',''); initResizable(true); })
 <div class="ttc" id="astructs__token_html"><div class="ttname"><a href="structs__token.html">s_token</a></div><div class="ttdef"><b>Definition</b> <a href="tokens_8h_source.html#l00040">tokens.h:41</a></div></div>
 <div class="ttc" id="astructs__token_html_a5dae434205818bfc83a61809d4a34a29"><div class="ttname"><a href="structs__token.html#a5dae434205818bfc83a61809d4a34a29">s_token::next</a></div><div class="ttdeci">struct s_token * next</div><div class="ttdef"><b>Definition</b> <a href="tokens_8h_source.html#l00044">tokens.h:44</a></div></div>
 <div class="ttc" id="astructs__token_html_afe30f6c413b34095d2a562e112a52e9a"><div class="ttname"><a href="structs__token.html#afe30f6c413b34095d2a562e112a52e9a">s_token::data</a></div><div class="ttdeci">char * data</div><div class="ttdef"><b>Definition</b> <a href="tokens_8h_source.html#l00043">tokens.h:43</a></div></div>
-<div class="ttc" id="atokeniser_8c_html_a0e22b8f037ef12eb28986615da9b79a6"><div class="ttname"><a href="tokeniser_8c.html#a0e22b8f037ef12eb28986615da9b79a6">handle_special_chars</a></div><div class="ttdeci">void handle_special_chars(char **str, t_token **tokens)</div><div class="ttdef"><b>Definition</b> <a href="#l00021">tokeniser.c:21</a></div></div>
-<div class="ttc" id="atokeniser_8c_html_a35855ff1421748c284cbaa495e26ef92"><div class="ttname"><a href="tokeniser_8c.html#a35855ff1421748c284cbaa495e26ef92">handle_phrase</a></div><div class="ttdeci">void handle_phrase(char **str, t_token **tokens)</div><div class="ttdef"><b>Definition</b> <a href="#l00065">tokeniser.c:65</a></div></div>
-<div class="ttc" id="atokeniser_8c_html_a5482db056a3edf1a61079f863ba7dc99"><div class="ttname"><a href="tokeniser_8c.html#a5482db056a3edf1a61079f863ba7dc99">tokenise</a></div><div class="ttdeci">t_token * tokenise(char *str)</div><div class="ttdef"><b>Definition</b> <a href="#l00105">tokeniser.c:105</a></div></div>
-<div class="ttc" id="atokeniser_8c_html_a596263e54e7fc7ea1bde318a1da5cdc6"><div class="ttname"><a href="tokeniser_8c.html#a596263e54e7fc7ea1bde318a1da5cdc6">append_phrase_if_valid</a></div><div class="ttdeci">void append_phrase_if_valid(char **start, char **str, t_token **tokens)</div><div class="ttdef"><b>Definition</b> <a href="#l00048">tokeniser.c:48</a></div></div>
-<div class="ttc" id="atokeniser_8c_html_ac0f556c5b74afdbd7ce730e294df7b76"><div class="ttname"><a href="tokeniser_8c.html#ac0f556c5b74afdbd7ce730e294df7b76">print_tokens</a></div><div class="ttdeci">void print_tokens(t_token *tokens)</div><div class="ttdef"><b>Definition</b> <a href="#l00090">tokeniser.c:90</a></div></div>
+<div class="ttc" id="atokeniser_8c_html_a0e22b8f037ef12eb28986615da9b79a6"><div class="ttname"><a href="tokeniser_8c.html#a0e22b8f037ef12eb28986615da9b79a6">handle_special_chars</a></div><div class="ttdeci">void handle_special_chars(char **str, t_token **tokens)</div><div class="ttdef"><b>Definition</b> <a href="#l00022">tokeniser.c:22</a></div></div>
+<div class="ttc" id="atokeniser_8c_html_a35855ff1421748c284cbaa495e26ef92"><div class="ttname"><a href="tokeniser_8c.html#a35855ff1421748c284cbaa495e26ef92">handle_phrase</a></div><div class="ttdeci">void handle_phrase(char **str, t_token **tokens)</div><div class="ttdef"><b>Definition</b> <a href="#l00066">tokeniser.c:66</a></div></div>
+<div class="ttc" id="atokeniser_8c_html_a5482db056a3edf1a61079f863ba7dc99"><div class="ttname"><a href="tokeniser_8c.html#a5482db056a3edf1a61079f863ba7dc99">tokenise</a></div><div class="ttdeci">t_token * tokenise(char *str)</div><div class="ttdef"><b>Definition</b> <a href="#l00106">tokeniser.c:106</a></div></div>
+<div class="ttc" id="atokeniser_8c_html_a596263e54e7fc7ea1bde318a1da5cdc6"><div class="ttname"><a href="tokeniser_8c.html#a596263e54e7fc7ea1bde318a1da5cdc6">append_phrase_if_valid</a></div><div class="ttdeci">void append_phrase_if_valid(char **start, char **str, t_token **tokens)</div><div class="ttdef"><b>Definition</b> <a href="#l00049">tokeniser.c:49</a></div></div>
+<div class="ttc" id="atokeniser_8c_html_ac0f556c5b74afdbd7ce730e294df7b76"><div class="ttname"><a href="tokeniser_8c.html#ac0f556c5b74afdbd7ce730e294df7b76">print_tokens</a></div><div class="ttdeci">void print_tokens(t_token *tokens)</div><div class="ttdef"><b>Definition</b> <a href="#l00091">tokeniser.c:91</a></div></div>
 <div class="ttc" id="atokens_8h_html"><div class="ttname"><a href="tokens_8h.html">tokens.h</a></div></div>
 <div class="ttc" id="atokens_8h_html_a07793427f42bd19d0f4ea6771441be99"><div class="ttname"><a href="tokens_8h.html#a07793427f42bd19d0f4ea6771441be99">new_token</a></div><div class="ttdeci">t_token * new_token(char *value, t_token_type type)</div><div class="ttdef"><b>Definition</b> <a href="tokeniser__helpers_8c_source.html#l00015">tokeniser_helpers.c:15</a></div></div>
 <div class="ttc" id="atokens_8h_html_a6c482f0c73f7263b3253aaa8e1bd4fb6"><div class="ttname"><a href="tokens_8h.html#a6c482f0c73f7263b3253aaa8e1bd4fb6">append_token</a></div><div class="ttdeci">void append_token(t_token **tokens, t_token *new_token)</div><div class="ttdef"><b>Definition</b> <a href="tokeniser__helpers_8c_source.html#l00033">tokeniser_helpers.c:33</a></div></div>

@@ -21,97 +21,16 @@
 
 .in +1c
 .ti -1c
-.RI "pid_t \fBexecute_redirect\fP (\fBt_ast\fP *node, \fBt_minishell_data\fP *data, int fd[2], int direction)"
-.br
-.RI "execute child process in the redirection context "
-.ti -1c
 .RI "int \fBredirect_out\fP (\fBt_ast\fP *node, \fBt_minishell_data\fP *data)"
 .br
-.RI "redirect out in the context of executing AST "
+.RI "redirect out '>' to the file output "
 .in -1c
 .SH "Function Documentation"
 .PP 
-.SS "pid_t execute_redirect (\fBt_ast\fP * node, \fBt_minishell_data\fP * data, int fd[2], int direction)"
-
-.PP
-execute child process in the redirection context --
-.IP "\(bu" 2
-\fBParameters\fP
-.RS 4
-\fInode\fP current node in the AST
-.RE
-.PP
-
-.IP "\(bu" 2
-\fBParameters\fP
-.RS 4
-\fIdata\fP minishell data structure
-.RE
-.PP
-
-.IP "\(bu" 2
-\fBParameters\fP
-.RS 4
-\fIfd\fP file descriptors
-.RE
-.PP
-
-.IP "\(bu" 2
-\fBParameters\fP
-.RS 4
-\fIdirection\fP redirection if 0 - node_left, if 1 - node_right
-.RE
-.PP
-
-.IP "\(bu" 2
-\fBReturns\fP
-.RS 4
-pid_t the process id 
-.RE
-.PP
-
-.PP
-
-.PP
-Definition at line \fB48\fP of file \fBredirect_out\&.c\fP\&.
-.nf
-49 {
-50     pid_t pid;
-51 
-52     pid = fork();
-53     if (pid == \-1)
-54         ft_perror("fork");  
-55     if (pid == 0)
-56     {
-57         if (direction == 0)
-58         {
-59             dup2(fd[1], STDIN_FILENO);
-60             close_fds(fd);
-61             execute_ast(node, data);
-62             exit(EXIT_SUCCESS);
-63         }
-64         else if (direction == 1)
-65         {
-66             fd[0] = open_file(node, ">");
-67             dup2(fd[0], STDOUT_FILENO);
-68             close_fds(fd);
-69         }
-70     }
-71     return (pid);
-72 }
-.PP
-.fi
-
-.PP
-References \fBclose_fds()\fP, \fBexecute_ast()\fP, \fBft_perror()\fP, and \fBopen_file()\fP\&.
-.PP
-Referenced by \fBredirect_out()\fP\&.
 .SS "int redirect_out (\fBt_ast\fP * node, \fBt_minishell_data\fP * data)"
 
 .PP
-redirect out in the context of executing AST -- looking similar to the pipe function
-.IP "\(bu" 2
-
+redirect out '>' to the file output --
 .IP "\(bu" 2
 \fBParameters\fP
 .RS 4
@@ -129,39 +48,38 @@ redirect out in the context of executing AST -- looking similar to the pipe func
 .IP "\(bu" 2
 \fBReturns\fP
 .RS 4
-int status:
+status: 0: success 1: error 
 .RE
 .PP
 
-.IP "\(bu" 2
-- 0: success
-.IP "\(bu" 2
-- 1: error 
 .PP
 
 .PP
-Definition at line \fB21\fP of file \fBredirect_out\&.c\fP\&.
+Definition at line \fB23\fP of file \fBredirect_out\&.c\fP\&.
 .nf
-22 {
-23         int fd[2];
-24     pid_t   pid_1;
-25     pid_t   pid_2;
+24 {
+25     pid_t pid;
 26     int status;
 27 
-28     if (pipe(fd) == \-1)
-29         ft_perror("pipe");
-30     pid_1 = execute_redirect(node\->left, data, fd, 0);
-31     pid_2 = execute_redirect(node\->right, data, fd, 1);
-32     close_fds(fd);
-33     waitpid(pid_1, &status, 0);
-34         waitpid(pid_2, &status, 0);
-35     return (WEXITSTATUS(status));
-36 }
+28     pid = fork();
+29     if (pid == \-1)
+30         return (1);
+31     if (pid == 0)
+32     {
+33         data\->std_out = open_file(node\->right, ">");
+34         if (data\->std_out == \-1)
+35             return (1);
+36         execute_ast(node\->left, data);
+37         exit(0);
+38     }
+39     waitpid(pid, &status, 0);
+40     return (WEXITSTATUS(status));
+41 }
 .PP
 .fi
 
 .PP
-References \fBclose_fds()\fP, \fBexecute_redirect()\fP, \fBft_perror()\fP, \fBs_ast::left\fP, and \fBs_ast::right\fP\&.
+References \fBexecute_ast()\fP, \fBs_ast::left\fP, \fBopen_file()\fP, \fBs_ast::right\fP, and \fBs_minishell_data::std_out\fP\&.
 .PP
 Referenced by \fBexecute_ast()\fP\&.
 .SH "Author"

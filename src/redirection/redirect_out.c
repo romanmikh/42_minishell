@@ -4,69 +4,38 @@
 #include "execute.h"
 #include "pipe.h"
 
-pid_t	execute_redirect(t_ast *node, t_minishell_data *data, \
-			int fd[2], int direction);
+/*
+	! FIX
+	wc > output.txt - work fine
+	wc -l > output.txt - not work (:bad address error)
+*/
 
 /**
-- @brief redirect out in the context of executing AST
--        looking similar to the pipe function
+- @brief redirect out ">" to the file output
 - 
 - @param node current node in the AST
 - @param data minishell data structure
-- @return int status:
-- 				- 0: success
-- 				- 1: error
- */
+- @return status:
+            0: success
+            1: error
+*/
 
 int redirect_out(t_ast *node, t_minishell_data *data)
 {
-    	int	fd[2];
-	pid_t	pid_1;
-	pid_t	pid_2;
-	int	status;
-
-	if (pipe(fd) == -1)
-		ft_perror("pipe");
-	pid_1 = execute_redirect(node->left, data, fd, 0);
-	pid_2 = execute_redirect(node->right, data, fd, 1);
-	close_fds(fd);
-	waitpid(pid_1, &status, 0);
-    	waitpid(pid_2, &status, 0);
-	return (WEXITSTATUS(status));
-}
-
-/**
-- @brief execute child process in the redirection context
-- 
-- @param node current node in the AST
-- @param data minishell data structure
-- @param fd file descriptors
-- @param direction redirection if 0 - node_left, if 1 - node_right
-- @return pid_t the process id
- */
-
-pid_t execute_redirect(t_ast *node, t_minishell_data *data, int fd[2], int direction)
-{
     pid_t pid;
+    int status;
 
     pid = fork();
     if (pid == -1)
-        ft_perror("fork");  
+        return (1);
     if (pid == 0)
     {
-        if (direction == 0)
-        {
-            dup2(fd[1], STDIN_FILENO);
-            close_fds(fd);
-            execute_ast(node, data);
-            exit(EXIT_SUCCESS);
-        }
-        else if (direction == 1)
-        {
-            fd[0] = open_file(node, ">");
-            dup2(fd[0], STDOUT_FILENO);
-            close_fds(fd);
-        }
+        data->std_out = open_file(node->right, ">");
+        if (data->std_out == -1)
+            return (1);
+        execute_ast(node->left, data);
+        exit(0);
     }
-    return (pid);
+    waitpid(pid, &status, 0);
+	return (WEXITSTATUS(status));
 }

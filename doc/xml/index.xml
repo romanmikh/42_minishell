@@ -22,7 +22,10 @@
     <member refid="structs__minishell__data_1aeb4af268850af7d0f6d0c64f2bfefdea" kind="variable"><name>args</name></member>
     <member refid="structs__minishell__data_1a8a0b3f50c8893e061062e93115f3d723" kind="variable"><name>envp</name></member>
     <member refid="structs__minishell__data_1a46b92ee58356d0f35174a79ed568253b" kind="variable"><name>local_env</name></member>
-    <member refid="structs__minishell__data_1a880c653419f6a3adb22024e5bb05c69b" kind="variable"><name>temp_fd</name></member>
+    <member refid="structs__minishell__data_1a9ed5685097b7e4b55c3c1307b70869ef" kind="variable"><name>std_in</name></member>
+    <member refid="structs__minishell__data_1ac90001aa8bc9a89b165ee6bca5f05ef3" kind="variable"><name>std_out</name></member>
+    <member refid="structs__minishell__data_1a5122e3a902d8f28e8b69576175f28c2b" kind="variable"><name>std_err</name></member>
+    <member refid="structs__minishell__data_1ab5977108384c093aac9e05ce4d13c566" kind="variable"><name>heredoc_delimiter</name></member>
     <member refid="structs__minishell__data_1a147731c1cf1a04c1fc1b85e6343cc7cc" kind="variable"><name>current_dir</name></member>
     <member refid="structs__minishell__data_1a978016fddb1d9faa4fbda6859a9a199e" kind="variable"><name>exit_status</name></member>
   </compound>
@@ -59,8 +62,8 @@
     <member refid="execute_8h_1a3de2eb0e796441d7b827cf213bd8d789" kind="function"><name>ft_find_path</name></member>
     <member refid="execute_8h_1a5d9d8b46bb6c3dbbc91e99b69bb63e9d" kind="function"><name>ft_free_2d_arr</name></member>
     <member refid="execute_8h_1aedc550f2251badad69cf4b6dfda183ef" kind="function"><name>ft_perror</name></member>
-    <member refid="execute_8h_1a3efc1daab192679556df183345e1c83d" kind="function"><name>close_fds</name></member>
-    <member refid="execute_8h_1a8f9d65fb9405c61cf1e58b429f4f5728" kind="function"><name>handle_temp_fd</name></member>
+    <member refid="execute_8h_1ab9bcddf9275f12cc49348081000beb62" kind="function"><name>close_fds</name></member>
+    <member refid="execute_8h_1a6f45c6b2374dd1d4eea803d3ba8879b2" kind="function"><name>handle_io_fd</name></member>
   </compound>
   <compound refid="pipe_8h" kind="file"><name>pipe.h</name>
     <member refid="pipe_8h_1a816f42487cd607fbdb7df660a0d913fc" kind="define"><name>WAIT_NEXT_COMMAND</name></member>
@@ -69,7 +72,10 @@
   <compound refid="redirection_8h" kind="file"><name>redirection.h</name>
     <member refid="redirection_8h_1a2635bab3d0023f67288d2832903bdbd9" kind="function"><name>redirect_in</name></member>
     <member refid="redirection_8h_1a13afb8e911eca2b32bd9e843eda752a5" kind="function"><name>redirect_out</name></member>
+    <member refid="redirection_8h_1a780ae5fe0eba6dcc6cab3a347507d636" kind="function"><name>redirect_append</name></member>
+    <member refid="redirection_8h_1a0dc55a5a9752d658c1b8b6e3760f5813" kind="function"><name>redirect_here_doc</name></member>
     <member refid="redirection_8h_1a2fe566529f8c7046fe274f2b3a35b39b" kind="function"><name>open_file</name></member>
+    <member refid="redirection_8h_1a5feb28b63e00d9f45e4887ee15da4ab8" kind="function"><name>ft_get_next_line</name></member>
   </compound>
   <compound refid="shell_8h" kind="file"><name>shell.h</name>
     <member refid="shell_8h_1a163dfbd200eaf940e5a56fd45345ff72" kind="typedef"><name>t_minishell_data</name></member>
@@ -451,6 +457,20 @@
     <member refid="execute_8c_1a825187f25304f9bd1a3e7a5e97327801" kind="function"><name>execute</name></member>
     <member refid="execute_8c_1a82e1e73d725f74b5fdad62dd3a99bab5" kind="function"><name>new_process</name></member>
   </compound>
+  <compound refid="utils__0_8c" kind="file"><name>utils_0.c</name>
+    <member refid="utils__0_8c_1a3de2eb0e796441d7b827cf213bd8d789" kind="function"><name>ft_find_path</name></member>
+    <member refid="utils__0_8c_1a5d9d8b46bb6c3dbbc91e99b69bb63e9d" kind="function"><name>ft_free_2d_arr</name></member>
+    <member refid="utils__0_8c_1aedc550f2251badad69cf4b6dfda183ef" kind="function"><name>ft_perror</name></member>
+    <member refid="utils__0_8c_1ab9bcddf9275f12cc49348081000beb62" kind="function"><name>close_fds</name></member>
+    <member refid="utils__0_8c_1a8f9d65fb9405c61cf1e58b429f4f5728" kind="function"><name>handle_temp_fd</name></member>
+    <member refid="utils__0_8c_1a6f45c6b2374dd1d4eea803d3ba8879b2" kind="function"><name>handle_io_fd</name></member>
+  </compound>
+  <compound refid="utils__1_8c" kind="file"><name>utils_1.c</name>
+  </compound>
+  <compound refid="heredoc_8c" kind="file"><name>heredoc.c</name>
+    <member refid="heredoc_8c_1a4e1b3e73a18dd66697cd7eac990b0363" kind="function"><name>check_heredoc</name></member>
+    <member refid="heredoc_8c_1a132ce43db3d4fba988a166e932845375" kind="function"><name>heredoc</name></member>
+  </compound>
   <compound refid="input__checker_8c" kind="file"><name>input_checker.c</name>
     <member refid="input__checker_8c_1a8bd1dd00648c512046de42538bd97b8e" kind="function"><name>check_operators_loop</name></member>
     <member refid="input__checker_8c_1a1e938e2d09f6e98fe3304b21f5367369" kind="function"><name>check_operators</name></member>
@@ -492,23 +512,16 @@
     <member refid="pipe_8c_1a7947b63271b47934f419fe6d217bf8df" kind="function"><name>builtin_pipe</name></member>
     <member refid="pipe_8c_1a3a1c19716357baba879b799300b3c077" kind="function"><name>execute_child</name></member>
   </compound>
-  <compound refid="ft__get__next__line_8c" kind="file"><name>ft_get_next_line.c</name>
-    <member refid="ft__get__next__line_8c_1a5feb28b63e00d9f45e4887ee15da4ab8" kind="function"><name>ft_get_next_line</name></member>
-    <member refid="ft__get__next__line_8c_1a33d78aafe6a0e75e4fdfe3606cbd9348" kind="function"><name>extract_line</name></member>
-    <member refid="ft__get__next__line_8c_1aa5a7db94bcb5970b93bff4df02b52108" kind="function"><name>read_from_fd</name></member>
-    <member refid="ft__get__next__line_8c_1accf11845776c5585dc691f37a0f60b8f" kind="function"><name>ft_strjoin_gnl</name></member>
+  <compound refid="redirect__append_8c" kind="file"><name>redirect_append.c</name>
+    <member refid="redirect__append_8c_1a780ae5fe0eba6dcc6cab3a347507d636" kind="function"><name>redirect_append</name></member>
   </compound>
-  <compound refid="parser_2heredoc_8c" kind="file"><name>heredoc.c</name>
-    <member refid="parser_2heredoc_8c_1a4e1b3e73a18dd66697cd7eac990b0363" kind="function"><name>check_heredoc</name></member>
-    <member refid="parser_2heredoc_8c_1a132ce43db3d4fba988a166e932845375" kind="function"><name>heredoc</name></member>
-  </compound>
-  <compound refid="redirection_2heredoc_8c" kind="file"><name>heredoc.c</name>
+  <compound refid="redirect__heredoc_8c" kind="file"><name>redirect_heredoc.c</name>
+    <member refid="redirect__heredoc_8c_1a0dc55a5a9752d658c1b8b6e3760f5813" kind="function"><name>redirect_here_doc</name></member>
   </compound>
   <compound refid="redirect__in_8c" kind="file"><name>redirect_in.c</name>
     <member refid="redirect__in_8c_1a2635bab3d0023f67288d2832903bdbd9" kind="function"><name>redirect_in</name></member>
   </compound>
   <compound refid="redirect__out_8c" kind="file"><name>redirect_out.c</name>
-    <member refid="redirect__out_8c_1a15c40d3dc28662aeb1f6b4fb03f74537" kind="function"><name>execute_redirect</name></member>
     <member refid="redirect__out_8c_1a13afb8e911eca2b32bd9e843eda752a5" kind="function"><name>redirect_out</name></member>
   </compound>
   <compound refid="env_2utils_8c" kind="file"><name>utils.c</name>
@@ -516,15 +529,12 @@
     <member refid="env_2utils_8c_1a67c3dca975ac3373851ded9534701bf5" kind="function"><name>ft_strcdup</name></member>
     <member refid="env_2utils_8c_1a2c192ab32512a4454973d916c1bff54e" kind="function"><name>free_env</name></member>
   </compound>
-  <compound refid="execute_2utils_8c" kind="file"><name>utils.c</name>
-    <member refid="execute_2utils_8c_1a3de2eb0e796441d7b827cf213bd8d789" kind="function"><name>ft_find_path</name></member>
-    <member refid="execute_2utils_8c_1a5d9d8b46bb6c3dbbc91e99b69bb63e9d" kind="function"><name>ft_free_2d_arr</name></member>
-    <member refid="execute_2utils_8c_1aedc550f2251badad69cf4b6dfda183ef" kind="function"><name>ft_perror</name></member>
-    <member refid="execute_2utils_8c_1a3efc1daab192679556df183345e1c83d" kind="function"><name>close_fds</name></member>
-    <member refid="execute_2utils_8c_1a8f9d65fb9405c61cf1e58b429f4f5728" kind="function"><name>handle_temp_fd</name></member>
-  </compound>
   <compound refid="redirection_2utils_8c" kind="file"><name>utils.c</name>
     <member refid="redirection_2utils_8c_1a2fe566529f8c7046fe274f2b3a35b39b" kind="function"><name>open_file</name></member>
+    <member refid="redirection_2utils_8c_1a5feb28b63e00d9f45e4887ee15da4ab8" kind="function"><name>ft_get_next_line</name></member>
+    <member refid="redirection_2utils_8c_1a33d78aafe6a0e75e4fdfe3606cbd9348" kind="function"><name>extract_line</name></member>
+    <member refid="redirection_2utils_8c_1aa5a7db94bcb5970b93bff4df02b52108" kind="function"><name>read_from_fd</name></member>
+    <member refid="redirection_2utils_8c_1accf11845776c5585dc691f37a0f60b8f" kind="function"><name>ft_strjoin_gnl</name></member>
   </compound>
   <compound refid="env__test_8c" kind="file"><name>env_test.c</name>
     <member refid="env__test_8c_1ac2c82e11f71bdaefecc5df644f06d7c9" kind="function"><name>env_tests</name></member>

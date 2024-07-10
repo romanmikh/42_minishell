@@ -43,10 +43,10 @@ Definition at line \fB31\fP of file \fBprompt\&.c\fP\&.
 41      pwd = NULL;
 42      pwd = generate_prompt_string(data, pwd, home_dir);
 43 */
-44     if (data\->temp_fd != \-1)
-45         prompt_len = ft_strlen("> ") + 1;
+44     if (data\->std_in == \-1)
+45         prompt_len = ft_strlen("minishell:~> ") + 1;
 46     else
-47         prompt_len = ft_strlen("minishell:~> ") + 1;
+47         prompt_len = ft_strlen("> ") + 1;
 48 /*
 49      prompt_len = ft_strlen("🌴\\e[1m @maxishell:~> \\e[m") + \\
 50             ft_strlen(get_env(data\->envp, "LOGNAME")) + \\
@@ -56,10 +56,10 @@ Definition at line \fB31\fP of file \fBprompt\&.c\fP\&.
 54     prompt = (char *)malloc(prompt_len);
 55     if (!prompt)
 56         exit(EXIT_FAILURE);
-57     if (data\->temp_fd != \-1)
-58         ft_strcpy(prompt, "> ");
+57     if (data\->std_in == \-1)
+58         ft_strcpy(prompt, "minishell:~> ");
 59     else
-60         ft_strcpy(prompt, "minishell:~> ");
+60         ft_strcpy(prompt, "> ");
 61 /*
 62     ft_strcpy(prompt, "🌴\\e[1m ");
 63     ft_strcat(prompt, get_env(data\->envp, "LOGNAME"));
@@ -73,7 +73,7 @@ Definition at line \fB31\fP of file \fBprompt\&.c\fP\&.
 .fi
 
 .PP
-References \fBft_strcpy()\fP, \fBft_strlen()\fP, and \fBs_minishell_data::temp_fd\fP\&.
+References \fBft_strcpy()\fP, \fBft_strlen()\fP, and \fBs_minishell_data::std_in\fP\&.
 .PP
 Referenced by \fBmain_loop()\fP\&.
 .SS "char * generate_prompt_string (\fBt_minishell_data\fP * data, char * pwd, char * home_dir)"

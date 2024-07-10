@@ -86,7 +86,7 @@
         </inbodydescription>
         <location file="/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_strlcpy.c" line="25" column="7" bodyfile="/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_strlcpy.c" bodystart="25" bodyend="43"/>
         <referencedby refid="libft_8h_1aebe73f27c70c56ac5053f860ef5436c9" compoundref="ft__strdup_8c" startline="23" endline="36">ft_strdup</referencedby>
-        <referencedby refid="ft__get__next__line_8c_1accf11845776c5585dc691f37a0f60b8f" compoundref="ft__get__next__line_8c" startline="35" endline="57">ft_strjoin_gnl</referencedby>
+        <referencedby refid="redirection_2utils_8c_1accf11845776c5585dc691f37a0f60b8f" compoundref="redirection_2utils_8c" startline="68" endline="90">ft_strjoin_gnl</referencedby>
         <referencedby refid="libft_8h_1a2d5f42a11a38830b809bced1fc209c20" compoundref="ft__strndup_8c" startline="23" endline="38">ft_strndup</referencedby>
       </memberdef>
     </sectiondef>

@@ -25,7 +25,7 @@ int		new_process(t_minishell_data *data);
 char	*ft_find_path(char *cmd, t_env *envp);
 void	ft_free_2d_arr(char **arr);
 int		ft_perror(char *str);
-void	close_fds(int fds[2]);
-void	handle_temp_fd(t_minishell_data *data);
+void	close_fds(int in, int out);
+void	handle_io_fd(t_minishell_data *data);
 
 #endif

@@ -11,7 +11,7 @@
     <includedby refid="unset_8c" local="yes">/Users/dimadem/Documents/GitHub/minishell/src/builtins/unset.c</includedby>
     <includedby refid="env_2env_8c" local="yes">/Users/dimadem/Documents/GitHub/minishell/src/env/env.c</includedby>
     <includedby refid="env_2utils_8c" local="yes">/Users/dimadem/Documents/GitHub/minishell/src/env/utils.c</includedby>
-    <includedby refid="execute_2utils_8c" local="yes">/Users/dimadem/Documents/GitHub/minishell/src/execute/utils.c</includedby>
+    <includedby refid="utils__0_8c" local="yes">/Users/dimadem/Documents/GitHub/minishell/src/execute/utils_0.c</includedby>
     <includedby refid="env__test_8c" local="yes">/Users/dimadem/Documents/GitHub/minishell/src/test/env/env_test.c</includedby>
     <includedby refid="clean__general_8c" local="yes">/Users/dimadem/Documents/GitHub/minishell/src/utils/clean_general.c</includedby>
     <includedby refid="initialise_8c" local="yes">/Users/dimadem/Documents/GitHub/minishell/src/utils/initialise.c</includedby>
@@ -28,31 +28,31 @@
         <link refid="env_8h"/>
         <childnode refid="2" relation="include">
         </childnode>
-        <childnode refid="13" relation="include">
-        </childnode>
-        <childnode refid="30" relation="include">
+        <childnode refid="15" relation="include">
         </childnode>
         <childnode refid="32" relation="include">
         </childnode>
-        <childnode refid="33" relation="include">
-        </childnode>
         <childnode refid="34" relation="include">
+        </childnode>
+        <childnode refid="35" relation="include">
         </childnode>
         <childnode refid="36" relation="include">
         </childnode>
-        <childnode refid="42" relation="include">
-        </childnode>
-        <childnode refid="37" relation="include">
-        </childnode>
         <childnode refid="38" relation="include">
+        </childnode>
+        <childnode refid="44" relation="include">
         </childnode>
         <childnode refid="39" relation="include">
         </childnode>
-        <childnode refid="23" relation="include">
+        <childnode refid="40" relation="include">
+        </childnode>
+        <childnode refid="41" relation="include">
         </childnode>
         <childnode refid="25" relation="include">
         </childnode>
-        <childnode refid="26" relation="include">
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
         </childnode>
       </node>
       <node id="5">
@@ -68,8 +68,12 @@
         </childnode>
         <childnode refid="9" relation="include">
         </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
       </node>
-      <node id="10">
+      <node id="12">
         <label>/Users/dimadem/Documents/GitHub/minishell/inc/pipe.h</label>
         <link refid="pipe_8h"/>
         <childnode refid="4" relation="include">
@@ -78,12 +82,12 @@
         </childnode>
         <childnode refid="7" relation="include">
         </childnode>
-        <childnode refid="9" relation="include">
-        </childnode>
         <childnode refid="11" relation="include">
         </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
       </node>
-      <node id="12">
+      <node id="14">
         <label>/Users/dimadem/Documents/GitHub/minishell/inc/redirection.h</label>
         <link refid="redirection_8h"/>
         <childnode refid="4" relation="include">
@@ -91,6 +95,10 @@
         <childnode refid="8" relation="include">
         </childnode>
         <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
         </childnode>
       </node>
       <node id="2">
@@ -100,15 +108,11 @@
         </childnode>
         <childnode refid="5" relation="include">
         </childnode>
-        <childnode refid="10" relation="include">
-        </childnode>
         <childnode refid="12" relation="include">
         </childnode>
-        <childnode refid="13" relation="include">
+        <childnode refid="14" relation="include">
         </childnode>
-        <childnode refid="30" relation="include">
-        </childnode>
-        <childnode refid="31" relation="include">
+        <childnode refid="15" relation="include">
         </childnode>
         <childnode refid="32" relation="include">
         </childnode>
@@ -122,9 +126,13 @@
         </childnode>
         <childnode refid="37" relation="include">
         </childnode>
+        <childnode refid="38" relation="include">
+        </childnode>
+        <childnode refid="39" relation="include">
+        </childnode>
         <childnode refid="4" relation="include">
         </childnode>
-        <childnode refid="38" relation="include">
+        <childnode refid="40" relation="include">
         </childnode>
         <childnode refid="6" relation="include">
         </childnode>
@@ -134,33 +142,33 @@
         </childnode>
         <childnode refid="9" relation="include">
         </childnode>
-        <childnode refid="21" relation="include">
-        </childnode>
-        <childnode refid="39" relation="include">
-        </childnode>
-        <childnode refid="40" relation="include">
+        <childnode refid="10" relation="include">
         </childnode>
         <childnode refid="11" relation="include">
         </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
         <childnode refid="41" relation="include">
         </childnode>
+        <childnode refid="42" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="43" relation="include">
+        </childnode>
       </node>
-      <node id="13">
+      <node id="15">
         <label>/Users/dimadem/Documents/GitHub/minishell/inc/tokens.h</label>
         <link refid="tokens_8h"/>
         <childnode refid="5" relation="include">
         </childnode>
-        <childnode refid="10" relation="include">
-        </childnode>
         <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
         </childnode>
         <childnode refid="4" relation="include">
         </childnode>
         <childnode refid="6" relation="include">
-        </childnode>
-        <childnode refid="14" relation="include">
-        </childnode>
-        <childnode refid="15" relation="include">
         </childnode>
         <childnode refid="16" relation="include">
         </childnode>
@@ -172,13 +180,17 @@
         </childnode>
         <childnode refid="20" relation="include">
         </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
         <childnode refid="8" relation="include">
         </childnode>
         <childnode refid="9" relation="include">
         </childnode>
-        <childnode refid="21" relation="include">
+        <childnode refid="10" relation="include">
         </childnode>
-        <childnode refid="22" relation="include">
+        <childnode refid="11" relation="include">
         </childnode>
         <childnode refid="23" relation="include">
         </childnode>
@@ -194,40 +206,44 @@
         </childnode>
         <childnode refid="29" relation="include">
         </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
       </node>
-      <node id="30">
+      <node id="32">
         <label>/Users/dimadem/Documents/GitHub/minishell/src/builtins/cd.c</label>
         <link refid="cd_8c"/>
       </node>
-      <node id="31">
+      <node id="33">
         <label>/Users/dimadem/Documents/GitHub/minishell/src/builtins/echo.c</label>
         <link refid="echo_8c"/>
       </node>
-      <node id="32">
+      <node id="34">
         <label>/Users/dimadem/Documents/GitHub/minishell/src/builtins/env.c</label>
         <link refid="builtins_2env_8c"/>
       </node>
-      <node id="33">
+      <node id="35">
         <label>/Users/dimadem/Documents/GitHub/minishell/src/builtins/exit.c</label>
         <link refid="exit_8c"/>
       </node>
-      <node id="34">
+      <node id="36">
         <label>/Users/dimadem/Documents/GitHub/minishell/src/builtins/export.c</label>
         <link refid="export_8c"/>
       </node>
-      <node id="35">
+      <node id="37">
         <label>/Users/dimadem/Documents/GitHub/minishell/src/builtins/pwd.c</label>
         <link refid="pwd_8c"/>
       </node>
-      <node id="36">
+      <node id="38">
         <label>/Users/dimadem/Documents/GitHub/minishell/src/builtins/unset.c</label>
         <link refid="unset_8c"/>
       </node>
-      <node id="42">
+      <node id="44">
         <label>/Users/dimadem/Documents/GitHub/minishell/src/env/env.c</label>
         <link refid="env_2env_8c"/>
       </node>
-      <node id="37">
+      <node id="39">
         <label>/Users/dimadem/Documents/GitHub/minishell/src/env/utils.c</label>
         <link refid="env_2utils_8c"/>
       </node>
@@ -235,39 +251,39 @@
         <label>/Users/dimadem/Documents/GitHub/minishell/src/execute/execute.c</label>
         <link refid="execute_8c"/>
       </node>
-      <node id="38">
-        <label>/Users/dimadem/Documents/GitHub/minishell/src/execute/utils.c</label>
-        <link refid="execute_2utils_8c"/>
+      <node id="40">
+        <label>/Users/dimadem/Documents/GitHub/minishell/src/execute/utils_0.c</label>
+        <link refid="utils__0_8c"/>
       </node>
       <node id="6">
         <label>/Users/dimadem/Documents/GitHub/minishell/src/main.c</label>
         <link refid="main_8c"/>
       </node>
-      <node id="14">
+      <node id="16">
         <label>/Users/dimadem/Documents/GitHub/minishell/src/parser/heredoc.c</label>
-        <link refid="parser_2heredoc_8c"/>
+        <link refid="heredoc_8c"/>
       </node>
-      <node id="15">
+      <node id="17">
         <label>/Users/dimadem/Documents/GitHub/minishell/src/parser/input_checker.c</label>
         <link refid="input__checker_8c"/>
       </node>
-      <node id="16">
+      <node id="18">
         <label>/Users/dimadem/Documents/GitHub/minishell/src/parser/input_checker_helpers.c</label>
         <link refid="input__checker__helpers_8c"/>
       </node>
-      <node id="17">
+      <node id="19">
         <label>/Users/dimadem/Documents/GitHub/minishell/src/parser/parser.c</label>
         <link refid="parser_8c"/>
       </node>
-      <node id="18">
+      <node id="20">
         <label>/Users/dimadem/Documents/GitHub/minishell/src/parser/parser_helpers.c</label>
         <link refid="parser__helpers_8c"/>
       </node>
-      <node id="19">
+      <node id="21">
         <label>/Users/dimadem/Documents/GitHub/minishell/src/parser/tokeniser.c</label>
         <link refid="tokeniser_8c"/>
       </node>
-      <node id="20">
+      <node id="22">
         <label>/Users/dimadem/Documents/GitHub/minishell/src/parser/tokeniser_helpers.c</label>
         <link refid="tokeniser__helpers_8c"/>
       </node>
@@ -276,64 +292,72 @@
         <link refid="pipe_8c"/>
       </node>
       <node id="8">
+        <label>/Users/dimadem/Documents/GitHub/minishell/src/redirection/redirect_append.c</label>
+        <link refid="redirect__append_8c"/>
+      </node>
+      <node id="9">
+        <label>/Users/dimadem/Documents/GitHub/minishell/src/redirection/redirect_heredoc.c</label>
+        <link refid="redirect__heredoc_8c"/>
+      </node>
+      <node id="10">
         <label>/Users/dimadem/Documents/GitHub/minishell/src/redirection/redirect_in.c</label>
         <link refid="redirect__in_8c"/>
       </node>
-      <node id="9">
+      <node id="11">
         <label>/Users/dimadem/Documents/GitHub/minishell/src/redirection/redirect_out.c</label>
         <link refid="redirect__out_8c"/>
       </node>
-      <node id="21">
+      <node id="23">
         <label>/Users/dimadem/Documents/GitHub/minishell/src/redirection/utils.c</label>
         <link refid="redirection_2utils_8c"/>
       </node>
-      <node id="39">
+      <node id="41">
         <label>/Users/dimadem/Documents/GitHub/minishell/src/test/env/env_test.c</label>
         <link refid="env__test_8c"/>
       </node>
-      <node id="40">
+      <node id="42">
         <label>/Users/dimadem/Documents/GitHub/minishell/src/test/main.c</label>
         <link refid="test_2main_8c"/>
       </node>
-      <node id="11">
+      <node id="13">
         <label>/Users/dimadem/Documents/GitHub/minishell/src/test/pipe/pipe_test.c</label>
         <link refid="pipe__test_8c"/>
       </node>
-      <node id="41">
+      <node id="43">
         <label>/Users/dimadem/Documents/GitHub/minishell/src/test/test.h</label>
         <link refid="test_8h"/>
-        <childnode refid="40" relation="include">
+        <childnode refid="42" relation="include">
         </childnode>
       </node>
-      <node id="22">
+      <node id="24">
         <label>/Users/dimadem/Documents/GitHub/minishell/src/utils/aux.c</label>
         <link refid="aux_8c"/>
       </node>
-      <node id="23">
+      <node id="25">
         <label>/Users/dimadem/Documents/GitHub/minishell/src/utils/clean_general.c</label>
         <link refid="clean__general_8c"/>
       </node>
-      <node id="24">
+      <node id="26">
         <label>/Users/dimadem/Documents/GitHub/minishell/src/utils/clean_tree.c</label>
         <link refid="clean__tree_8c"/>
       </node>
-      <node id="25">
+      <node id="27">
         <label>/Users/dimadem/Documents/GitHub/minishell/src/utils/initialise.c</label>
         <link refid="initialise_8c"/>
       </node>
-      <node id="26">
+      <node id="28">
         <label>/Users/dimadem/Documents/GitHub/minishell/src/utils/prompt.c</label>
         <link refid="prompt_8c"/>
       </node>
-      <node id="27">
+      <node id="29">
         <label>/Users/dimadem/Documents/GitHub/minishell/src/utils/stack_control.c</label>
         <link refid="stack__control_8c"/>
       </node>
-      <node id="28">
+      <node id="30">
         <label>/Users/dimadem/Documents/GitHub/minishell/src/utils/stack_control_2.c</label>
         <link refid="stack__control__2_8c"/>
       </node>
-      <node id="29">
+      <node id="31">
         <label>/Users/dimadem/Documents/GitHub/minishell/src/utils/visualiser.c</label>
         <link refid="visualiser_8c"/>
       </node>
@@ -376,7 +400,7 @@
         </inbodydescription>
         <location file="/Users/dimadem/Documents/GitHub/minishell/inc/env.h" line="24" column="5" bodyfile="/Users/dimadem/Documents/GitHub/minishell/src/env/env.c" bodystart="24" bodyend="31" declfile="/Users/dimadem/Documents/GitHub/minishell/inc/env.h" declline="24" declcolumn="5"/>
         <references refid="env_2env_8c_1aa2e361e75c8c044d588ec5c07b560659" compoundref="env_2env_8c" startline="33" endline="58">add_env_node</references>
-        <referencedby refid="tokens_8h_1ab7986766cca35553aa796f6a732d856a" compoundref="initialise_8c" startline="16" endline="25">init_minishell_data</referencedby>
+        <referencedby refid="tokens_8h_1ab7986766cca35553aa796f6a732d856a" compoundref="initialise_8c" startline="16" endline="27">init_minishell_data</referencedby>
         <referencedby refid="env__test_8c_1a4adfeb719435c39cc19b4c8f4e7e67a0" compoundref="env__test_8c" startline="57" endline="70">test_get_env</referencedby>
         <referencedby refid="env__test_8c_1acac11373a53e4554ff03dd0e197c767b" compoundref="env__test_8c" startline="35" endline="55">test_init_env</referencedby>
         <referencedby refid="env__test_8c_1a791d22f0a8695ef368626b927cb18caf" compoundref="env__test_8c" startline="72" endline="86">test_set_env</referencedby>
@@ -435,7 +459,7 @@
         <references refid="structs__env_1aeed22f6fb6689d3a190d64d3e11d989f" compoundref="env_8h" startline="19">s_env::value</references>
         <referencedby refid="export_8c_1a9572a06bde314d79d284738ffef37d8d" compoundref="export_8c" startline="46" endline="66">add_env</referencedby>
         <referencedby refid="builtins_8h_1a90c33b349e024075c96efdc320f7138f" compoundref="cd_8c" startline="26" endline="47">builtin_cd</referencedby>
-        <referencedby refid="execute_8h_1a3de2eb0e796441d7b827cf213bd8d789" compoundref="execute_2utils_8c" startline="32" endline="55">ft_find_path</referencedby>
+        <referencedby refid="execute_8h_1a3de2eb0e796441d7b827cf213bd8d789" compoundref="utils__0_8c" startline="32" endline="55">ft_find_path</referencedby>
         <referencedby refid="prompt_8c_1a5663e22274d85c42c9c7f51e22afc301" compoundref="prompt_8c" startline="71" endline="88">generate_prompt_string</referencedby>
         <referencedby refid="env__test_8c_1a4adfeb719435c39cc19b4c8f4e7e67a0" compoundref="env__test_8c" startline="57" endline="70">test_get_env</referencedby>
         <referencedby refid="env__test_8c_1a791d22f0a8695ef368626b927cb18caf" compoundref="env__test_8c" startline="72" endline="86">test_set_env</referencedby>
@@ -522,7 +546,7 @@
         <references refid="structs__env_1aac496ab31822220b5bf37affd2554f08" compoundref="env_8h" startline="18">s_env::key</references>
         <references refid="structs__env_1a3caf3df6eb72714ffcd4e22f9c94ecf2" compoundref="env_8h" startline="20">s_env::next</references>
         <references refid="structs__env_1aeed22f6fb6689d3a190d64d3e11d989f" compoundref="env_8h" startline="19">s_env::value</references>
-        <referencedby refid="execute_8h_1a82e1e73d725f74b5fdad62dd3a99bab5" compoundref="execute_8c" startline="131" endline="161">new_process</referencedby>
+        <referencedby refid="execute_8h_1a82e1e73d725f74b5fdad62dd3a99bab5" compoundref="execute_8c" startline="131" endline="158">new_process</referencedby>
         <referencedby refid="env__test_8c_1acac11373a53e4554ff03dd0e197c767b" compoundref="env__test_8c" startline="35" endline="55">test_init_env</referencedby>
       </memberdef>
       <memberdef kind="function" id="env_8h_1a67c3dca975ac3373851ded9534701bf5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">

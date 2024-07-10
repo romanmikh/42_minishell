@@ -35,28 +35,30 @@ Definition at line \fB16\fP of file \fBinitialise\&.c\fP\&.
 21     data\->local_env = NULL;
 22     data\->current_dir = getcwd(NULL, 0);
 23     data\->exit_status = 0;
-24     data\->temp_fd = \-1;
-25 }
+24     data\->std_in = \-1;
+25     data\->std_out = \-1;
+26     data\->std_err = 2;
+27 }
 .PP
 .fi
 
 .PP
-References \fBs_minishell_data::args\fP, \fBs_minishell_data::current_dir\fP, \fBs_minishell_data::envp\fP, \fBs_minishell_data::exit_status\fP, \fBinit_env()\fP, \fBs_minishell_data::local_env\fP, and \fBs_minishell_data::temp_fd\fP\&.
+References \fBs_minishell_data::args\fP, \fBs_minishell_data::current_dir\fP, \fBs_minishell_data::envp\fP, \fBs_minishell_data::exit_status\fP, \fBinit_env()\fP, \fBs_minishell_data::local_env\fP, \fBs_minishell_data::std_err\fP, \fBs_minishell_data::std_in\fP, and \fBs_minishell_data::std_out\fP\&.
 .PP
 Referenced by \fBmain()\fP\&.
 .SS "void initialise (int argc, char ** argv)"
 
 .PP
-Definition at line \fB27\fP of file \fBinitialise\&.c\fP\&.
+Definition at line \fB29\fP of file \fBinitialise\&.c\fP\&.
 .nf
-28 {
-29     if (argc > 1)
-30     {
-31         printf("Usage: %s\\n", argv[0]);
-32         exit(EXIT_FAILURE);
-33     }
-34     read_history(HISTORY_PATH);
-35 }
+30 {
+31     if (argc > 1)
+32     {
+33         printf("Usage: %s\\n", argv[0]);
+34         exit(EXIT_FAILURE);
+35     }
+36     read_history(HISTORY_PATH);
+37 }
 .PP
 .fi
 

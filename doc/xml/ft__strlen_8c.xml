@@ -36,7 +36,7 @@
         <referencedby refid="libft_8h_1acefce9ac519f8f8b7d3fde33dbafe469" compoundref="ft__putstr__fd_8c" startline="20" endline="24">ft_putstr_fd</referencedby>
         <referencedby refid="libft_8h_1aebe73f27c70c56ac5053f860ef5436c9" compoundref="ft__strdup_8c" startline="23" endline="36">ft_strdup</referencedby>
         <referencedby refid="libft_8h_1a91e6e3e428bcc9f2291b700e1829b82b" compoundref="ft__strjoin_8c" startline="23" endline="44">ft_strjoin</referencedby>
-        <referencedby refid="ft__get__next__line_8c_1accf11845776c5585dc691f37a0f60b8f" compoundref="ft__get__next__line_8c" startline="35" endline="57">ft_strjoin_gnl</referencedby>
+        <referencedby refid="redirection_2utils_8c_1accf11845776c5585dc691f37a0f60b8f" compoundref="redirection_2utils_8c" startline="68" endline="90">ft_strjoin_gnl</referencedby>
         <referencedby refid="libft_8h_1a87a42176d750415c82eb7d453abb39ee" compoundref="ft__strlcat_8c" startline="26" endline="49">ft_strlcat</referencedby>
         <referencedby refid="libft_8h_1a2d5f42a11a38830b809bced1fc209c20" compoundref="ft__strndup_8c" startline="23" endline="38">ft_strndup</referencedby>
         <referencedby refid="libft_8h_1ae00229613cc0bf361e86dca72ad92591" compoundref="ft__strnstr_8c" startline="25" endline="42">ft_strnstr</referencedby>
@@ -45,6 +45,7 @@
         <referencedby refid="libft_8h_1a78c402cbf3d55b1374693c3b7d34f71d" compoundref="ft__substr_8c" startline="27" endline="48">ft_substr</referencedby>
         <referencedby refid="tokens_8h_1a4c523064ece03ba20eb609b52253b88e" compoundref="prompt_8c" startline="31" endline="69">generate_prompt</referencedby>
         <referencedby refid="prompt_8c_1a5663e22274d85c42c9c7f51e22afc301" compoundref="prompt_8c" startline="71" endline="88">generate_prompt_string</referencedby>
+        <referencedby refid="redirection_8h_1a0dc55a5a9752d658c1b8b6e3760f5813" compoundref="redirect__heredoc_8c" startline="17" endline="61">redirect_here_doc</referencedby>
       </memberdef>
     </sectiondef>
     <briefdescription>

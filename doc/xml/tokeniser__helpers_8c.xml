@@ -129,9 +129,9 @@
         <references refid="libft_8h_1aebe73f27c70c56ac5053f860ef5436c9" compoundref="ft__strdup_8c" startline="23" endline="36">ft_strdup</references>
         <references refid="structs__token_1a5dae434205818bfc83a61809d4a34a29" compoundref="tokens_8h" startline="44">s_token::next</references>
         <references refid="structs__token_1a350680c70abb7e7173240477e92dc0a3" compoundref="tokens_8h" startline="42">s_token::type</references>
-        <referencedby refid="tokeniser_8c_1a596263e54e7fc7ea1bde318a1da5cdc6" compoundref="tokeniser_8c" startline="48" endline="63">append_phrase_if_valid</referencedby>
+        <referencedby refid="tokeniser_8c_1a596263e54e7fc7ea1bde318a1da5cdc6" compoundref="tokeniser_8c" startline="49" endline="64">append_phrase_if_valid</referencedby>
         <referencedby refid="tokens_8h_1a6c482f0c73f7263b3253aaa8e1bd4fb6" compoundref="tokeniser__helpers_8c" startline="33" endline="46">append_token</referencedby>
-        <referencedby refid="tokens_8h_1a0e22b8f037ef12eb28986615da9b79a6" compoundref="tokeniser_8c" startline="21" endline="46">handle_special_chars</referencedby>
+        <referencedby refid="tokens_8h_1a0e22b8f037ef12eb28986615da9b79a6" compoundref="tokeniser_8c" startline="22" endline="47">handle_special_chars</referencedby>
       </memberdef>
       <memberdef kind="function" id="tokeniser__helpers_8c_1a6c482f0c73f7263b3253aaa8e1bd4fb6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -155,8 +155,8 @@
         <location file="/Users/dimadem/Documents/GitHub/minishell/src/parser/tokeniser_helpers.c" line="33" column="5" bodyfile="/Users/dimadem/Documents/GitHub/minishell/src/parser/tokeniser_helpers.c" bodystart="33" bodyend="46"/>
         <references refid="tokeniser__helpers_8c_1a07793427f42bd19d0f4ea6771441be99" compoundref="tokeniser__helpers_8c" startline="15" endline="31">new_token</references>
         <references refid="structs__token_1a5dae434205818bfc83a61809d4a34a29" compoundref="tokens_8h" startline="44">s_token::next</references>
-        <referencedby refid="tokeniser_8c_1a596263e54e7fc7ea1bde318a1da5cdc6" compoundref="tokeniser_8c" startline="48" endline="63">append_phrase_if_valid</referencedby>
-        <referencedby refid="tokens_8h_1a0e22b8f037ef12eb28986615da9b79a6" compoundref="tokeniser_8c" startline="21" endline="46">handle_special_chars</referencedby>
+        <referencedby refid="tokeniser_8c_1a596263e54e7fc7ea1bde318a1da5cdc6" compoundref="tokeniser_8c" startline="49" endline="64">append_phrase_if_valid</referencedby>
+        <referencedby refid="tokens_8h_1a0e22b8f037ef12eb28986615da9b79a6" compoundref="tokeniser_8c" startline="22" endline="47">handle_special_chars</referencedby>
       </memberdef>
     </sectiondef>
     <briefdescription>

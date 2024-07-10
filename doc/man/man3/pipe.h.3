@@ -85,10 +85,10 @@ Definition at line \fB35\fP of file \fBpipe\&.c\fP\&.
 48     else
 49     {
 50         close(fd[1]);
-51         data\->temp_fd = fd[0];
+51         data\->std_in = fd[0];
 52         return (WAIT_NEXT_COMMAND);
 53     }
-54     close_fds(fd);
+54     close_fds(fd[0], fd[1]);
 55     if (pid_1 > 0)
 56         waitpid(pid_1, &status, 0);
 57     if (node\->right != NULL && pid_2 > 0)
@@ -99,7 +99,7 @@ Definition at line \fB35\fP of file \fBpipe\&.c\fP\&.
 .fi
 
 .PP
-References \fBclose_fds()\fP, \fBexecute_child()\fP, \fBft_perror()\fP, \fBs_ast::left\fP, \fBs_ast::right\fP, \fBs_minishell_data::temp_fd\fP, and \fBWAIT_NEXT_COMMAND\fP\&.
+References \fBclose_fds()\fP, \fBexecute_child()\fP, \fBft_perror()\fP, \fBs_ast::left\fP, \fBs_ast::right\fP, \fBs_minishell_data::std_in\fP, and \fBWAIT_NEXT_COMMAND\fP\&.
 .PP
 Referenced by \fBexecute_ast()\fP\&.
 .SH "Author"

@@ -586,10 +586,10 @@ Definition at line \fB31\fP of file \fBprompt\&.c\fP\&.
 41      pwd = NULL;
 42      pwd = generate_prompt_string(data, pwd, home_dir);
 43 */
-44     if (data\->temp_fd != \-1)
-45         prompt_len = ft_strlen("> ") + 1;
+44     if (data\->std_in == \-1)
+45         prompt_len = ft_strlen("minishell:~> ") + 1;
 46     else
-47         prompt_len = ft_strlen("minishell:~> ") + 1;
+47         prompt_len = ft_strlen("> ") + 1;
 48 /*
 49      prompt_len = ft_strlen("🌴\\e[1m @maxishell:~> \\e[m") + \\
 50             ft_strlen(get_env(data\->envp, "LOGNAME")) + \\
@@ -599,10 +599,10 @@ Definition at line \fB31\fP of file \fBprompt\&.c\fP\&.
 54     prompt = (char *)malloc(prompt_len);
 55     if (!prompt)
 56         exit(EXIT_FAILURE);
-57     if (data\->temp_fd != \-1)
-58         ft_strcpy(prompt, "> ");
+57     if (data\->std_in == \-1)
+58         ft_strcpy(prompt, "minishell:~> ");
 59     else
-60         ft_strcpy(prompt, "minishell:~> ");
+60         ft_strcpy(prompt, "> ");
 61 /*
 62     ft_strcpy(prompt, "🌴\\e[1m ");
 63     ft_strcat(prompt, get_env(data\->envp, "LOGNAME"));
@@ -616,7 +616,7 @@ Definition at line \fB31\fP of file \fBprompt\&.c\fP\&.
 .fi
 
 .PP
-References \fBft_strcpy()\fP, \fBft_strlen()\fP, and \fBs_minishell_data::temp_fd\fP\&.
+References \fBft_strcpy()\fP, \fBft_strlen()\fP, and \fBs_minishell_data::std_in\fP\&.
 .PP
 Referenced by \fBmain_loop()\fP\&.
 .SS "void handle_quotes (char ** tokens, int * pos, char ** input)"
@@ -626,33 +626,33 @@ Referenced by \fBmain_loop()\fP\&.
 .SS "void handle_special_chars (char ** str, \fBt_token\fP ** tokens)"
 
 .PP
-Definition at line \fB21\fP of file \fBtokeniser\&.c\fP\&.
+Definition at line \fB22\fP of file \fBtokeniser\&.c\fP\&.
 .nf
-22 {
-23     if (**str == '<')
-24     {
-25         if (*(*str + 1) == '<')
-26         {
-27             append_token(tokens, new_token("<<", REDIR_HEREDOC));
-28             (*str)++;
-29         }
-30         else
-31             append_token(tokens, new_token("<", REDIR_IN));
-32     }
-33     else if (**str == '>')
-34     {
-35         if (*(*str + 1) == '>')
-36         {
-37             append_token(tokens, new_token(">>", REDIR_APPEND));
-38             (*str)++;
-39         }
-40         else
-41             append_token(tokens, new_token(">", REDIR_OUT));
-42     }
-43     else if (**str == '|')
-44         append_token(tokens, new_token("|", PIPE));
-45     (*str)++;
-46 }
+23 {
+24     if (**str == '<')
+25     {
+26         if (*(*str + 1) == '<')
+27         {
+28             append_token(tokens, new_token("<<", REDIR_HEREDOC));
+29             (*str)++;
+30         }
+31         else
+32             append_token(tokens, new_token("<", REDIR_IN));
+33     }
+34     else if (**str == '>')
+35     {
+36         if (*(*str + 1) == '>')
+37         {
+38             append_token(tokens, new_token(">>", REDIR_APPEND));
+39             (*str)++;
+40         }
+41         else
+42             append_token(tokens, new_token(">", REDIR_OUT));
+43     }
+44     else if (**str == '|')
+45         append_token(tokens, new_token("|", PIPE));
+46     (*str)++;
+47 }
 .PP
 .fi
 
@@ -698,28 +698,30 @@ Definition at line \fB16\fP of file \fBinitialise\&.c\fP\&.
 21     data\->local_env = NULL;
 22     data\->current_dir = getcwd(NULL, 0);
 23     data\->exit_status = 0;
-24     data\->temp_fd = \-1;
-25 }
+24     data\->std_in = \-1;
+25     data\->std_out = \-1;
+26     data\->std_err = 2;
+27 }
 .PP
 .fi
 
 .PP
-References \fBs_minishell_data::args\fP, \fBs_minishell_data::current_dir\fP, \fBs_minishell_data::envp\fP, \fBs_minishell_data::exit_status\fP, \fBinit_env()\fP, \fBs_minishell_data::local_env\fP, and \fBs_minishell_data::temp_fd\fP\&.
+References \fBs_minishell_data::args\fP, \fBs_minishell_data::current_dir\fP, \fBs_minishell_data::envp\fP, \fBs_minishell_data::exit_status\fP, \fBinit_env()\fP, \fBs_minishell_data::local_env\fP, \fBs_minishell_data::std_err\fP, \fBs_minishell_data::std_in\fP, and \fBs_minishell_data::std_out\fP\&.
 .PP
 Referenced by \fBmain()\fP\&.
 .SS "void initialise (int argc, char ** argv)"
 
 .PP
-Definition at line \fB27\fP of file \fBinitialise\&.c\fP\&.
+Definition at line \fB29\fP of file \fBinitialise\&.c\fP\&.
 .nf
-28 {
-29     if (argc > 1)
-30     {
-31         printf("Usage: %s\\n", argv[0]);
-32         exit(EXIT_FAILURE);
-33     }
-34     read_history(HISTORY_PATH);
-35 }
+30 {
+31     if (argc > 1)
+32     {
+33         printf("Usage: %s\\n", argv[0]);
+34         exit(EXIT_FAILURE);
+35     }
+36     read_history(HISTORY_PATH);
+37 }
 .PP
 .fi
 
@@ -1079,21 +1081,21 @@ References \fBs_token::data\fP, \fBft_printf()\fP, and \fBs_token::next\fP\&.
 .SS "void print_tokens (\fBt_token\fP * tokens)"
 
 .PP
-Definition at line \fB90\fP of file \fBtokeniser\&.c\fP\&.
+Definition at line \fB91\fP of file \fBtokeniser\&.c\fP\&.
 .nf
-91 {
-92     t_token *token;
-93     int     i;              
-94 
-95     i = 0;
-96     token = tokens;
-97     while (token != NULL)
-98     {
-99         printf("input[%d] \->  %s \\n", i, token\->data);
-100         token = token\->next;
-101         i++;
-102     }
-103 }
+92 {
+93     t_token *token;
+94     int     i;              
+95 
+96     i = 0;
+97     token = tokens;
+98     while (token != NULL)
+99     {
+100         printf("input[%d] \->  %s \\n", i, token\->data);
+101         token = token\->next;
+102         i++;
+103     }
+104 }
 .PP
 .fi
 
@@ -1134,23 +1136,23 @@ Referenced by \fBmanage_commands()\fP\&.
 .SS "\fBt_token\fP * tokenise (char * str)"
 
 .PP
-Definition at line \fB105\fP of file \fBtokeniser\&.c\fP\&.
+Definition at line \fB106\fP of file \fBtokeniser\&.c\fP\&.
 .nf
-106 {
-107     t_token *tokens;
-108 
-109     tokens = NULL;
-110     while (*str)
-111     {
-112         while (*str && ft_strchr(" \\t\\n\\r\\v\\f", *str) != NULL)
-113             str++;
-114         if (ft_strchr("<|>", *str) != NULL)
-115             handle_special_chars(&str, &tokens);
-116         else
-117             handle_phrase(&str, &tokens);
-118     }
-119     return (tokens);
-120 }
+107 {
+108     t_token *tokens;
+109 
+110     tokens = NULL;
+111     while (*str)
+112     {
+113         while (*str && ft_strchr(" \\t\\n\\r\\v\\f", *str) != NULL)
+114             str++;
+115         if (ft_strchr("<|>", *str) != NULL)
+116             handle_special_chars(&str, &tokens);
+117         else
+118             handle_phrase(&str, &tokens);
+119     }
+120     return (tokens);
+121 }
 .PP
 .fi
 

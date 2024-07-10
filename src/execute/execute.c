@@ -65,12 +65,12 @@ int	execute_ast(t_ast *node, t_minishell_data *data)
 	else if (node->type == REDIR_APPEND) // ">>"
 	{
 		printf(CYA"REDIR_APPEND\n"RESET);
-		//execute_sequence(node, data);
+		return (redirect_append(node, data));
 	}
 	else if (node->type == REDIR_HEREDOC) // "<<"
 	{
 		printf(MAG"REDIR_HEREDOC\n"RESET);
-		//execute_sequence(node, data);
+		return (redirect_here_doc(node, data));
 	}
 	else if (node->type == PHRASE)
 	{
@@ -130,32 +130,29 @@ int	execute(t_minishell_data *data)
 
 int	new_process(t_minishell_data *data)
 {
-	char	*path;
-	char	**envp;
 	pid_t	pid;
 
-	envp = env_to_array(data->envp);
-	path = ft_find_path(data->args[0], data->envp);
+	printf("data->std_in: %d\n", data->std_in);
+	printf("data->std_out: %d\n", data->std_out);
+	if(data->std_in == -1)
+		data->std_in = dup(STDIN_FILENO);
+	if(data->std_out == -1)
+		data->std_out = dup(STDOUT_FILENO);
 	pid = fork();
 	if (pid == -1)
 		ft_perror("fork");
 	if (pid == 0)
 	{
-		if (data->temp_fd != -1)
-		{
-			dup2(data->temp_fd, STDIN_FILENO);
-			close(data->temp_fd);
-		}
-		if (data->temp_fd == 1)
-		{
-			dup2(data->temp_fd, STDOUT_FILENO);
-			close(data->temp_fd);
-		}
-		if (execve(path, data->args, envp) == -1)
+		if (data->std_in != -1)
+			dup2(data->std_in, STDIN_FILENO);
+		if (data->std_out != -1)
+			dup2(data->std_out, STDOUT_FILENO);
+		close_fds(data->std_in, data->std_out);
+		if (execve(ft_find_path(data->args[0], data->envp), \
+				data->args, env_to_array(data->envp)) == -1)
 			ft_perror("minishell");
 	}
-	waitpid(pid, NULL, 0);
-	free(path);
-	ft_free_2d_arr(envp);
+	waitpid(pid, &data->exit_status, 0);
+	close_fds(data->std_in, data->std_out);
 	return (0);
 }

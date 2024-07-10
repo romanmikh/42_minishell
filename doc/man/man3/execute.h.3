@@ -39,17 +39,17 @@
 .br
 .RI "return error message and exit "
 .ti -1c
-.RI "void \fBclose_fds\fP (int fds[2])"
+.RI "void \fBclose_fds\fP (int in, int out)"
 .br
 .RI "close two file descriptors "
 .ti -1c
-.RI "void \fBhandle_temp_fd\fP (\fBt_minishell_data\fP *data)"
+.RI "void \fBhandle_io_fd\fP (\fBt_minishell_data\fP *data)"
 .br
-.RI "close temporary file descriptor if it is open "
+.RI "close temporary input/output file descriptors and reset them to -1 "
 .in -1c
 .SH "Function Documentation"
 .PP 
-.SS "void close_fds (int fds[2])"
+.SS "void close_fds (int in, int out)"
 
 .PP
 close two file descriptors --
@@ -63,17 +63,17 @@ close two file descriptors --
 .PP
 
 .PP
-Definition at line \fB93\fP of file \fButils\&.c\fP\&.
+Definition at line \fB93\fP of file \fButils_0\&.c\fP\&.
 .nf
 94 {
-95     close(fds[0]);
-96     close(fds[1]);
+95     close(in);
+96     close(out);
 97 }
 .PP
 .fi
 
 .PP
-Referenced by \fBbuiltin_pipe()\fP, \fBexecute_child()\fP, \fBexecute_redirect()\fP, and \fBredirect_out()\fP\&.
+Referenced by \fBbuiltin_pipe()\fP, \fBexecute_child()\fP, \fBnew_process()\fP, and \fBredirect_here_doc()\fP\&.
 .SS "int execute (\fBt_minishell_data\fP * data)"
 
 .PP
@@ -199,12 +199,12 @@ Definition at line \fB41\fP of file \fBexecute\&.c\fP\&.
 65     else if (node\->type == REDIR_APPEND) // ">>"
 66     {
 67         printf(CYA"REDIR_APPEND\\n"RESET);
-68         //execute_sequence(node, data);
+68         return (redirect_append(node, data));
 69     }
 70     else if (node\->type == REDIR_HEREDOC) // "<<"
 71     {
 72         printf(MAG"REDIR_HEREDOC\\n"RESET);
-73         //execute_sequence(node, data);
+73         return (redirect_here_doc(node, data));
 74     }
 75     else if (node\->type == PHRASE)
 76     {
@@ -218,9 +218,9 @@ Definition at line \fB41\fP of file \fBexecute\&.c\fP\&.
 .fi
 
 .PP
-References \fBs_ast::args\fP, \fBs_minishell_data::args\fP, \fBBLU\fP, \fBbuiltin_pipe()\fP, \fBCYA\fP, \fBENV_VAR\fP, \fBexecute()\fP, \fBGRN\fP, \fBMAG\fP, \fBPHRASE\fP, \fBPIPE\fP, \fBRED\fP, \fBREDIR_APPEND\fP, \fBREDIR_HEREDOC\fP, \fBREDIR_IN\fP, \fBREDIR_OUT\fP, \fBredirect_in()\fP, \fBredirect_out()\fP, \fBRESET\fP, \fBs_ast::type\fP, and \fBYEL\fP\&.
+References \fBs_ast::args\fP, \fBs_minishell_data::args\fP, \fBBLU\fP, \fBbuiltin_pipe()\fP, \fBCYA\fP, \fBENV_VAR\fP, \fBexecute()\fP, \fBGRN\fP, \fBMAG\fP, \fBPHRASE\fP, \fBPIPE\fP, \fBRED\fP, \fBREDIR_APPEND\fP, \fBREDIR_HEREDOC\fP, \fBREDIR_IN\fP, \fBREDIR_OUT\fP, \fBredirect_append()\fP, \fBredirect_here_doc()\fP, \fBredirect_in()\fP, \fBredirect_out()\fP, \fBRESET\fP, \fBs_ast::type\fP, and \fBYEL\fP\&.
 .PP
-Referenced by \fBexecute_child()\fP, \fBexecute_redirect()\fP, \fBmain_loop()\fP, and \fBredirect_in()\fP\&.
+Referenced by \fBexecute_child()\fP, \fBmain_loop()\fP, \fBredirect_append()\fP, \fBredirect_here_doc()\fP, \fBredirect_in()\fP, and \fBredirect_out()\fP\&.
 .SS "char * ft_find_path (char * cmd, \fBt_env\fP * envp)"
 
 .PP
@@ -249,7 +249,7 @@ char* returns the full path of the command
 .PP
 
 .PP
-Definition at line \fB32\fP of file \fButils\&.c\fP\&.
+Definition at line \fB32\fP of file \fButils_0\&.c\fP\&.
 .nf
 33 {
 34     char    **path;
@@ -295,7 +295,7 @@ clean up 2d array --
 .PP
 
 .PP
-Definition at line \fB63\fP of file \fButils\&.c\fP\&.
+Definition at line \fB63\fP of file \fButils_0\&.c\fP\&.
 .nf
 64 {
 65     int i;
@@ -309,7 +309,7 @@ Definition at line \fB63\fP of file \fButils\&.c\fP\&.
 .fi
 
 .PP
-Referenced by \fBft_find_path()\fP, and \fBnew_process()\fP\&.
+Referenced by \fBft_find_path()\fP\&.
 .SS "int ft_perror (char * str)"
 
 .PP
@@ -333,7 +333,7 @@ int return status:
 .PP
 
 .PP
-Definition at line \fB81\fP of file \fButils\&.c\fP\&.
+Definition at line \fB81\fP of file \fButils_0\&.c\fP\&.
 .nf
 82 {
 83     perror (str);
@@ -343,12 +343,12 @@ Definition at line \fB81\fP of file \fButils\&.c\fP\&.
 .fi
 
 .PP
-Referenced by \fBbuiltin_pipe()\fP, \fBexecute_child()\fP, \fBexecute_redirect()\fP, \fBnew_process()\fP, and \fBredirect_out()\fP\&.
-.SS "void handle_temp_fd (\fBt_minishell_data\fP * data)"
+Referenced by \fBbuiltin_pipe()\fP, \fBexecute_child()\fP, \fBnew_process()\fP, and \fBredirect_here_doc()\fP\&.
+.SS "void handle_io_fd (\fBt_minishell_data\fP * data)"
 
 .PP
-close temporary file descriptor if it is open --
-.IP "\(bu" 2
+close temporary input/output file descriptors and reset them to -1 -- 
+.PP
 \fBParameters\fP
 .RS 4
 \fIdata\fP minishell structure 
@@ -356,22 +356,22 @@ close temporary file descriptor if it is open --
 .PP
 
 .PP
-
-.PP
-Definition at line \fB105\fP of file \fButils\&.c\fP\&.
+Definition at line \fB104\fP of file \fButils_0\&.c\fP\&.
 .nf
-106 {
-107     if (data\->temp_fd != \-1)
-108     {
-109         close(data\->temp_fd);
-110         data\->temp_fd = \-1;
-111     }
-112 }
+105 {
+106     if (data\->std_in != \-1 && data\->std_out != \-1)
+107     {
+108         close(data\->std_in);
+109         close(data\->std_out);
+110         data\->std_in = \-1;
+111         data\->std_out = \-1;
+112     }
+113 }
 .PP
 .fi
 
 .PP
-References \fBs_minishell_data::temp_fd\fP\&.
+References \fBs_minishell_data::std_in\fP, and \fBs_minishell_data::std_out\fP\&.
 .PP
 Referenced by \fBmain_loop()\fP\&.
 .SS "int new_process (\fBt_minishell_data\fP * data)"
@@ -404,40 +404,37 @@ int return status:
 Definition at line \fB131\fP of file \fBexecute\&.c\fP\&.
 .nf
 132 {
-133     char    *path;
-134     char    **envp;
-135     pid_t   pid;
-136 
-137     envp = env_to_array(data\->envp);
-138     path = ft_find_path(data\->args[0], data\->envp);
-139     pid = fork();
-140     if (pid == \-1)
-141         ft_perror("fork");
-142     if (pid == 0)
-143     {
-144         if (data\->temp_fd != \-1)
-145         {
-146             dup2(data\->temp_fd, STDIN_FILENO);
-147             close(data\->temp_fd);
-148         }
-149         if (data\->temp_fd == 1)
-150         {
-151             dup2(data\->temp_fd, STDOUT_FILENO);
-152             close(data\->temp_fd);
-153         }
-154         if (execve(path, data\->args, envp) == \-1)
-155             ft_perror("minishell");
-156     }
-157     waitpid(pid, NULL, 0);
-158     free(path);
-159     ft_free_2d_arr(envp);
-160     return (0);
-161 }
+133     pid_t   pid;
+134 
+135     printf("data\->std_in: %d\\n", data\->std_in);
+136     printf("data\->std_out: %d\\n", data\->std_out);
+137     if(data\->std_in == \-1)
+138         data\->std_in = dup(STDIN_FILENO);
+139     if(data\->std_out == \-1)
+140         data\->std_out = dup(STDOUT_FILENO);
+141     pid = fork();
+142     if (pid == \-1)
+143         ft_perror("fork");
+144     if (pid == 0)
+145     {
+146         if (data\->std_in != \-1)
+147             dup2(data\->std_in, STDIN_FILENO);
+148         if (data\->std_out != \-1)
+149             dup2(data\->std_out, STDOUT_FILENO);
+150         close_fds(data\->std_in, data\->std_out);
+151         if (execve(ft_find_path(data\->args[0], data\->envp), \\
+152                 data\->args, env_to_array(data\->envp)) == \-1)
+153             ft_perror("minishell");
+154     }
+155     waitpid(pid, &data\->exit_status, 0);
+156     close_fds(data\->std_in, data\->std_out);
+157     return (0);
+158 }
 .PP
 .fi
 
 .PP
-References \fBs_minishell_data::args\fP, \fBenv_to_array()\fP, \fBs_minishell_data::envp\fP, \fBft_find_path()\fP, \fBft_free_2d_arr()\fP, \fBft_perror()\fP, and \fBs_minishell_data::temp_fd\fP\&.
+References \fBs_minishell_data::args\fP, \fBclose_fds()\fP, \fBenv_to_array()\fP, \fBs_minishell_data::envp\fP, \fBs_minishell_data::exit_status\fP, \fBft_find_path()\fP, \fBft_perror()\fP, \fBs_minishell_data::std_in\fP, and \fBs_minishell_data::std_out\fP\&.
 .PP
 Referenced by \fBexecute()\fP\&.
 .SH "Author"

@@ -18,7 +18,7 @@
 char	*ft_find_path(char *cmd, t_env *envp);
 void	ft_free_2d_arr(char **arr);
 int		ft_perror(char *str);
-void	close_fds(int fds[2]);
+void	close_fds(int in, int out);
 void	handle_temp_fd(t_minishell_data *data);
 
 /**
@@ -90,23 +90,24 @@ int	ft_perror(char *str)
 - @param fds file descriptors
  */
 
-void	close_fds(int fds[2])
+void	close_fds(int in, int out)
 {
-	close(fds[0]);
-	close(fds[1]);
+	close(in);
+	close(out);
 }
 
 /**
-- @brief close temporary file descriptor if it is open
-- 
+- @brief close temporary input/output file descriptors and reset them to -1
 - @param data minishell structure
  */
 
-void	handle_temp_fd(t_minishell_data *data)
+void	handle_io_fd(t_minishell_data *data)
 {
-	if (data->temp_fd != -1)
+	if (data->std_in != -1 && data->std_out != -1)
 	{
-		close(data->temp_fd);
-		data->temp_fd = -1;
+		close(data->std_in);
+		close(data->std_out);
+		data->std_in = -1;
+		data->std_out = -1;
 	}
 }

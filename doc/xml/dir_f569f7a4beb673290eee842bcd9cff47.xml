@@ -2,8 +2,8 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.11.0" xml:lang="en-US">
   <compounddef id="dir_f569f7a4beb673290eee842bcd9cff47" kind="dir">
     <compoundname>/Users/dimadem/Documents/GitHub/minishell/src/redirection</compoundname>
-    <innerfile refid="ft__get__next__line_8c">ft_get_next_line.c</innerfile>
-    <innerfile refid="redirection_2heredoc_8c">heredoc.c</innerfile>
+    <innerfile refid="redirect__append_8c">redirect_append.c</innerfile>
+    <innerfile refid="redirect__heredoc_8c">redirect_heredoc.c</innerfile>
     <innerfile refid="redirect__in_8c">redirect_in.c</innerfile>
     <innerfile refid="redirect__out_8c">redirect_out.c</innerfile>
     <innerfile refid="redirection_2utils_8c">utils.c</innerfile>
