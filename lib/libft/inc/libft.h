@@ -6,7 +6,7 @@
 /*   By: rmikhayl <rmikhayl@student.42london.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/17 17:25:48 by rmikhayl          #+#    #+#             */
-/*   Updated: 2024/06/06 18:12:41 by rmikhayl         ###   ########.fr       */
+/*   Updated: 2024/07/11 15:02:22 by dmdemirk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,8 @@
 # include <math.h>
 
 # define BUFFER_SIZE 32
-char	*ft_get_next_line(int fd);
+
+char		*ft_get_next_line(int fd);
 int			ft_isalpha(int c);
 int			ft_isdigit(int c);
 int			ft_is_num(const char *n);

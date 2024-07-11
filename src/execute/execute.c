@@ -6,7 +6,7 @@
 /*   By: dmdemirk <dmdemirk@student.42london.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/31 11:02:00 by dmdemirk          #+#    #+#             */
-/*   Updated: 2024/06/26 15:27:32 by dmdemirk         ###   ########.fr       */
+/*   Updated: 2024/07/11 14:58:47 by dmdemirk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,22 +20,18 @@
 #include "pipe.h"
 #include "redirection.h"
 
-/*
-	REFACTORING HERE
-*/
-
 int	execute_ast(t_ast *node, t_minishell_data *data);
 int	execute(t_minishell_data *data);
 int	new_process(t_minishell_data *data);
 
 /**
-- @brief execute Abstract Syntax Tree
-- 
-- @param node Abstract Syntax Tree Node
-- @param data minishell data struct
-- @return int return status:
-- 				- 0: success	
-- 				- 1: error
+  - @brief execute Abstract Syntax Tree
+  - 
+  - @param node Abstract Syntax Tree Node
+  - @param data minishell data struct
+  - @return int return status:
+  - 				- 0: success	
+  - 				- 1: error
  */
 
 int	execute_ast(t_ast *node, t_minishell_data *data)
@@ -47,27 +43,26 @@ int	execute_ast(t_ast *node, t_minishell_data *data)
 		printf(RED"PIPE\n"RESET);
 		return (builtin_pipe(node, data));
 	}
-	else if (node->type == ENV_VAR) 	// "$()"
+	else if (node->type == ENV_VAR)
 	{
 		printf(BLU"ENV_VAR\n"RESET);
-		//execute_redirect(node, data);
 	}
 	else if (node->type == REDIR_IN)
 	{
 		printf(GRN"REDIR_IN\n"RESET);
 		return (redirect_in(node, data));
 	}
-	else if (node->type == REDIR_OUT)	// ">"
+	else if (node->type == REDIR_OUT)
 	{
 		printf(CYA"REDIR_OUT\n"RESET);
 		return (redirect_out(node, data));
 	}
-	else if (node->type == REDIR_APPEND) // ">>"
+	else if (node->type == REDIR_APPEND)
 	{
 		printf(CYA"REDIR_APPEND\n"RESET);
 		return (redirect_append(node, data));
 	}
-	else if (node->type == REDIR_HEREDOC) // "<<"
+	else if (node->type == REDIR_HEREDOC)
 	{
 		printf(MAG"REDIR_HEREDOC\n"RESET);
 		return (redirect_here_doc(node, data));
@@ -82,12 +77,12 @@ int	execute_ast(t_ast *node, t_minishell_data *data)
 }
 
 /**
-- @brief execute distribution function checks if the command is a builtin or a new process
-- 
-- @param data minishell data struct
-- @return int return status:
-- 				- 0: success	
-- 				- 1: error
+  - @brief execute distribution function
+  - 
+  - @param data minishell data struct
+  - @return int return status:
+  - 				- 0: success	
+  - 				- 1: error
  */
 
 int	execute(t_minishell_data *data)
@@ -120,12 +115,12 @@ int	execute(t_minishell_data *data)
 }
 
 /**
-- @brief executes a new process
-- 
-- @param data minishell data structure
-- @return int return status:
-- 				- 0: success	
-- 				- 1: error
+  - @brief executes a new process
+  - 
+  - @param data minishell data structure
+  - @return int return status:
+  - 				- 0: success	
+  - 				- 1: error
  */
 
 int	new_process(t_minishell_data *data)
@@ -135,9 +130,9 @@ int	new_process(t_minishell_data *data)
 	printf("new_process\n");
 	printf("data->std_in: %d\n", data->std_in);
 	printf("data->std_out: %d\n", data->std_out);
-	if(data->std_in == -1)
+	if (data->std_in == -1)
 		data->std_in = dup(STDIN_FILENO);
-	if(data->std_out == -1)
+	if (data->std_out == -1)
 		data->std_out = dup(STDOUT_FILENO);
 	pid = fork();
 	if (pid == -1)
@@ -150,7 +145,7 @@ int	new_process(t_minishell_data *data)
 			dup2(data->std_out, STDOUT_FILENO);
 		close_fds(data->std_in, data->std_out);
 		if (execve(ft_find_path(data->args[0], data->envp), \
-				data->args, env_to_array(data->envp)) == -1)
+					data->args, env_to_array(data->envp)) == -1)
 			ft_perror("minishell");
 	}
 	waitpid(pid, &data->exit_status, 0);
