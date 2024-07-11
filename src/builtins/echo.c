@@ -6,7 +6,7 @@
 /*   By: dmdemirk <dmdemirk@student.42london.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/03 16:31:33 by dmdemirk          #+#    #+#             */
-/*   Updated: 2024/06/04 12:25:47 by dmdemirk         ###   ########.fr       */
+/*   Updated: 2024/07/11 17:57:16 by dmdemirk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	builtin_echo(t_minishell_data *data)
 	int	i;
 
 	newline = 1;
-	if (ft_strcmp(data->args[1], "-n") == 0)
+	if (data->args[1] && (ft_strcmp(data->args[1], "-n") == 0))
 	{
 		newline = 0;
 		data->args++;

@@ -12,6 +12,12 @@
 
 #include "tokens.h"
 
+t_ast	*new_ast_node(t_token_type type);
+t_ast	*create_redir(t_token **tokens, t_token *tmp);
+int		arg_len(t_token *current);
+void	set_command_args(t_ast *command_node, t_token **tokens, int arg_count);
+t_ast	*manage_commands(t_token **tokens);
+
 t_ast	*new_ast_node(t_token_type type)
 {
 	t_ast		*node;

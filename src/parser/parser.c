@@ -6,15 +6,17 @@
 /*   By: rocky <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/12 19:35:45 by rocky             #+#    #+#             */
-/*   Updated: 2024/06/26 15:00:24 by dmdemirk         ###   ########.fr       */
+/*   Updated: 2024/07/11 18:44:23 by dmdemirk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "tokens.h"
 
+t_ast	*create_redir_node(t_token *token);
+int		is_redir_node(t_token *tokens);
 t_ast	*clr_node(t_token **tokens, t_token *next_token, t_ast *redirect_node);
 t_ast	*manage_redirs(t_token **tokens);
-t_ast	*create_redir_node(t_token *token);
+t_ast	*manage_pipe(t_token **tokens);
 
 t_ast	*create_redir_node(t_token *token)
 {
@@ -108,13 +110,6 @@ t_ast	*manage_pipe(t_token **tokens)
 		*tokens = next_token;
 	}
 	return (manage_redirs(&tmp));
-}
-
-t_ast	*parse_tokens(t_token **tokens)
-{
-	if (!tokens || !*tokens)
-		return (NULL);
-	return (manage_pipe(tokens));
 }
 
 //void print_spaces(int count) {
