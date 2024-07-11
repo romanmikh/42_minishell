@@ -1313,7 +1313,7 @@
         <referencedby refid="env_8h_1a41133e0ba7230727a51eedce713a225c" compoundref="env_2env_8c" startline="60" endline="72">get_env</referencedby>
         <referencedby refid="tokens_8h_1a132ce43db3d4fba988a166e932845375" compoundref="heredoc_8c" startline="26" endline="40">heredoc</referencedby>
         <referencedby refid="redirection_8h_1a2fe566529f8c7046fe274f2b3a35b39b" compoundref="redirection_2utils_8c" startline="24" endline="39">open_file</referencedby>
-        <referencedby refid="redirection_8h_1a0dc55a5a9752d658c1b8b6e3760f5813" compoundref="redirect__heredoc_8c" startline="17" endline="61">redirect_here_doc</referencedby>
+        <referencedby refid="redirection_8h_1a0dc55a5a9752d658c1b8b6e3760f5813" compoundref="redirect__heredoc_8c" startline="17" endline="63">redirect_here_doc</referencedby>
         <referencedby refid="env_8h_1a194b2552273340441e8b481b4ce5202c" compoundref="env_2env_8c" startline="79" endline="99">set_env</referencedby>
         <referencedby refid="env__test_8c_1a4adfeb719435c39cc19b4c8f4e7e67a0" compoundref="env__test_8c" startline="57" endline="70">test_get_env</referencedby>
         <referencedby refid="env__test_8c_1a791d22f0a8695ef368626b927cb18caf" compoundref="env__test_8c" startline="72" endline="86">test_set_env</referencedby>
@@ -1457,7 +1457,7 @@
         <referencedby refid="libft_8h_1a8a6ea3765dfd826eabfc00d36e28ea38" compoundref="ft__itoa_8c" startline="40" endline="65">ft_itoa</referencedby>
         <referencedby refid="tokens_8h_1a950dc11d8cce4e58af12882a1781128c" compoundref="stack__control_8c" startline="80" endline="102">list_to_array</referencedby>
         <referencedby refid="tokens_8h_1a07793427f42bd19d0f4ea6771441be99" compoundref="tokeniser__helpers_8c" startline="15" endline="31">new_token</referencedby>
-        <referencedby refid="redirection_8h_1a0dc55a5a9752d658c1b8b6e3760f5813" compoundref="redirect__heredoc_8c" startline="17" endline="61">redirect_here_doc</referencedby>
+        <referencedby refid="redirection_8h_1a0dc55a5a9752d658c1b8b6e3760f5813" compoundref="redirect__heredoc_8c" startline="17" endline="63">redirect_here_doc</referencedby>
         <referencedby refid="tokens_8h_1ab5f23ff7ab59a241fa7476e6fca458cf" compoundref="parser__helpers_8c" startline="55" endline="72">set_command_args</referencedby>
         <referencedby refid="env_8h_1a194b2552273340441e8b481b4ce5202c" compoundref="env_2env_8c" startline="79" endline="99">set_env</referencedby>
       </memberdef>
@@ -2058,7 +2058,7 @@
         <referencedby refid="libft_8h_1a78c402cbf3d55b1374693c3b7d34f71d" compoundref="ft__substr_8c" startline="27" endline="48">ft_substr</referencedby>
         <referencedby refid="tokens_8h_1a4c523064ece03ba20eb609b52253b88e" compoundref="prompt_8c" startline="31" endline="69">generate_prompt</referencedby>
         <referencedby refid="prompt_8c_1a5663e22274d85c42c9c7f51e22afc301" compoundref="prompt_8c" startline="71" endline="88">generate_prompt_string</referencedby>
-        <referencedby refid="redirection_8h_1a0dc55a5a9752d658c1b8b6e3760f5813" compoundref="redirect__heredoc_8c" startline="17" endline="61">redirect_here_doc</referencedby>
+        <referencedby refid="redirection_8h_1a0dc55a5a9752d658c1b8b6e3760f5813" compoundref="redirect__heredoc_8c" startline="17" endline="63">redirect_here_doc</referencedby>
       </memberdef>
       <memberdef kind="function" id="libft_8h_1a95de924e4140ae426bf2e05acfb5fe4f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>size_t</type>

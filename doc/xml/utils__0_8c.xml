@@ -134,7 +134,7 @@
         <references refid="libft_8h_1aa65c9de65051c8c589286cf133c4a1f4" compoundref="ft__split_8c" startline="95" endline="108">ft_split</references>
         <references refid="libft_8h_1a91e6e3e428bcc9f2291b700e1829b82b" compoundref="ft__strjoin_8c" startline="23" endline="44">ft_strjoin</references>
         <references refid="env_8h_1a41133e0ba7230727a51eedce713a225c" compoundref="env_2env_8c" startline="60" endline="72">get_env</references>
-        <referencedby refid="execute_8h_1a82e1e73d725f74b5fdad62dd3a99bab5" compoundref="execute_8c" startline="131" endline="158">new_process</referencedby>
+        <referencedby refid="execute_8h_1a82e1e73d725f74b5fdad62dd3a99bab5" compoundref="execute_8c" startline="131" endline="159">new_process</referencedby>
       </memberdef>
       <memberdef kind="function" id="utils__0_8c_1a5d9d8b46bb6c3dbbc91e99b69bb63e9d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -204,8 +204,8 @@
         <location file="/Users/dimadem/Documents/GitHub/minishell/src/execute/utils_0.c" line="81" column="4" bodyfile="/Users/dimadem/Documents/GitHub/minishell/src/execute/utils_0.c" bodystart="81" bodyend="85" declfile="/Users/dimadem/Documents/GitHub/minishell/src/execute/utils_0.c" declline="20" declcolumn="4"/>
         <referencedby refid="pipe_8h_1a7947b63271b47934f419fe6d217bf8df" compoundref="pipe_8c" startline="35" endline="60">builtin_pipe</referencedby>
         <referencedby refid="pipe_8c_1a3a1c19716357baba879b799300b3c077" compoundref="pipe_8c" startline="71" endline="90">execute_child</referencedby>
-        <referencedby refid="execute_8h_1a82e1e73d725f74b5fdad62dd3a99bab5" compoundref="execute_8c" startline="131" endline="158">new_process</referencedby>
-        <referencedby refid="redirection_8h_1a0dc55a5a9752d658c1b8b6e3760f5813" compoundref="redirect__heredoc_8c" startline="17" endline="61">redirect_here_doc</referencedby>
+        <referencedby refid="execute_8h_1a82e1e73d725f74b5fdad62dd3a99bab5" compoundref="execute_8c" startline="131" endline="159">new_process</referencedby>
+        <referencedby refid="redirection_8h_1a0dc55a5a9752d658c1b8b6e3760f5813" compoundref="redirect__heredoc_8c" startline="17" endline="63">redirect_here_doc</referencedby>
       </memberdef>
       <memberdef kind="function" id="utils__0_8c_1ab9bcddf9275f12cc49348081000beb62" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -243,8 +243,7 @@
         <location file="/Users/dimadem/Documents/GitHub/minishell/src/execute/utils_0.c" line="93" column="5" bodyfile="/Users/dimadem/Documents/GitHub/minishell/src/execute/utils_0.c" bodystart="93" bodyend="97" declfile="/Users/dimadem/Documents/GitHub/minishell/src/execute/utils_0.c" declline="21" declcolumn="5"/>
         <referencedby refid="pipe_8h_1a7947b63271b47934f419fe6d217bf8df" compoundref="pipe_8c" startline="35" endline="60">builtin_pipe</referencedby>
         <referencedby refid="pipe_8c_1a3a1c19716357baba879b799300b3c077" compoundref="pipe_8c" startline="71" endline="90">execute_child</referencedby>
-        <referencedby refid="execute_8h_1a82e1e73d725f74b5fdad62dd3a99bab5" compoundref="execute_8c" startline="131" endline="158">new_process</referencedby>
-        <referencedby refid="redirection_8h_1a0dc55a5a9752d658c1b8b6e3760f5813" compoundref="redirect__heredoc_8c" startline="17" endline="61">redirect_here_doc</referencedby>
+        <referencedby refid="execute_8h_1a82e1e73d725f74b5fdad62dd3a99bab5" compoundref="execute_8c" startline="131" endline="159">new_process</referencedby>
       </memberdef>
       <memberdef kind="function" id="utils__0_8c_1a8f9d65fb9405c61cf1e58b429f4f5728" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>

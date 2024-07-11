@@ -43,7 +43,7 @@
         <referencedby refid="tokens_8h_1a57973a9791a885be52c3b8b13cdf327e" compoundref="parser__helpers_8c" startline="15" endline="27">new_ast_node</referencedby>
         <referencedby refid="redirection_8h_1a2fe566529f8c7046fe274f2b3a35b39b" compoundref="redirection_2utils_8c" startline="24" endline="39">open_file</referencedby>
         <referencedby refid="visualiser_8c_1a13ff81f002e065c8be81f93b1e3bfecf" compoundref="visualiser_8c" startline="35" endline="61">print_ast_node</referencedby>
-        <referencedby refid="redirection_8h_1a0dc55a5a9752d658c1b8b6e3760f5813" compoundref="redirect__heredoc_8c" startline="17" endline="61">redirect_here_doc</referencedby>
+        <referencedby refid="redirection_8h_1a0dc55a5a9752d658c1b8b6e3760f5813" compoundref="redirect__heredoc_8c" startline="17" endline="63">redirect_here_doc</referencedby>
         <referencedby refid="tokens_8h_1ab5f23ff7ab59a241fa7476e6fca458cf" compoundref="parser__helpers_8c" startline="55" endline="72">set_command_args</referencedby>
       </memberdef>
       <memberdef kind="variable" id="structs__ast_1ac3be51aa6a7ae13bd16b6ad0c7ac843c" prot="public" static="no" mutable="no">
@@ -68,7 +68,7 @@
         <referencedby refid="tokens_8h_1a57973a9791a885be52c3b8b13cdf327e" compoundref="parser__helpers_8c" startline="15" endline="27">new_ast_node</referencedby>
         <referencedby refid="visualiser_8c_1ac38cad433d858a530a7d7479f134f81c" compoundref="visualiser_8c" startline="91" endline="101">print_ast_graphical</referencedby>
         <referencedby refid="redirection_8h_1a780ae5fe0eba6dcc6cab3a347507d636" compoundref="redirect__append_8c" startline="16" endline="34">redirect_append</referencedby>
-        <referencedby refid="redirection_8h_1a0dc55a5a9752d658c1b8b6e3760f5813" compoundref="redirect__heredoc_8c" startline="17" endline="61">redirect_here_doc</referencedby>
+        <referencedby refid="redirection_8h_1a0dc55a5a9752d658c1b8b6e3760f5813" compoundref="redirect__heredoc_8c" startline="17" endline="63">redirect_here_doc</referencedby>
         <referencedby refid="redirection_8h_1a2635bab3d0023f67288d2832903bdbd9" compoundref="redirect__in_8c" startline="23" endline="40">redirect_in</referencedby>
         <referencedby refid="redirection_8h_1a13afb8e911eca2b32bd9e843eda752a5" compoundref="redirect__out_8c" startline="23" endline="41">redirect_out</referencedby>
       </memberdef>
@@ -94,7 +94,7 @@
         <referencedby refid="tokens_8h_1a57973a9791a885be52c3b8b13cdf327e" compoundref="parser__helpers_8c" startline="15" endline="27">new_ast_node</referencedby>
         <referencedby refid="visualiser_8c_1ac38cad433d858a530a7d7479f134f81c" compoundref="visualiser_8c" startline="91" endline="101">print_ast_graphical</referencedby>
         <referencedby refid="redirection_8h_1a780ae5fe0eba6dcc6cab3a347507d636" compoundref="redirect__append_8c" startline="16" endline="34">redirect_append</referencedby>
-        <referencedby refid="redirection_8h_1a0dc55a5a9752d658c1b8b6e3760f5813" compoundref="redirect__heredoc_8c" startline="17" endline="61">redirect_here_doc</referencedby>
+        <referencedby refid="redirection_8h_1a0dc55a5a9752d658c1b8b6e3760f5813" compoundref="redirect__heredoc_8c" startline="17" endline="63">redirect_here_doc</referencedby>
         <referencedby refid="redirection_8h_1a2635bab3d0023f67288d2832903bdbd9" compoundref="redirect__in_8c" startline="23" endline="40">redirect_in</referencedby>
         <referencedby refid="redirection_8h_1a13afb8e911eca2b32bd9e843eda752a5" compoundref="redirect__out_8c" startline="23" endline="41">redirect_out</referencedby>
       </memberdef>

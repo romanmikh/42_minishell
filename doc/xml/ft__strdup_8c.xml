@@ -84,7 +84,7 @@
         <referencedby refid="libft_8h_1a8a6ea3765dfd826eabfc00d36e28ea38" compoundref="ft__itoa_8c" startline="40" endline="65">ft_itoa</referencedby>
         <referencedby refid="tokens_8h_1a950dc11d8cce4e58af12882a1781128c" compoundref="stack__control_8c" startline="80" endline="102">list_to_array</referencedby>
         <referencedby refid="tokens_8h_1a07793427f42bd19d0f4ea6771441be99" compoundref="tokeniser__helpers_8c" startline="15" endline="31">new_token</referencedby>
-        <referencedby refid="redirection_8h_1a0dc55a5a9752d658c1b8b6e3760f5813" compoundref="redirect__heredoc_8c" startline="17" endline="61">redirect_here_doc</referencedby>
+        <referencedby refid="redirection_8h_1a0dc55a5a9752d658c1b8b6e3760f5813" compoundref="redirect__heredoc_8c" startline="17" endline="63">redirect_here_doc</referencedby>
         <referencedby refid="tokens_8h_1ab5f23ff7ab59a241fa7476e6fca458cf" compoundref="parser__helpers_8c" startline="55" endline="72">set_command_args</referencedby>
         <referencedby refid="env_8h_1a194b2552273340441e8b481b4ce5202c" compoundref="env_2env_8c" startline="79" endline="99">set_env</referencedby>
       </memberdef>

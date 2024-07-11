@@ -132,6 +132,7 @@ int	new_process(t_minishell_data *data)
 {
 	pid_t	pid;
 
+	printf("new_process\n");
 	printf("data->std_in: %d\n", data->std_in);
 	printf("data->std_out: %d\n", data->std_out);
 	if(data->std_in == -1)

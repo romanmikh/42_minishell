@@ -358,9 +358,8 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/dimadem/Documents/GitHub/minishell/inc/redirection.h" line="11" column="5" bodyfile="/Users/dimadem/Documents/GitHub/minishell/src/redirection/redirect_heredoc.c" bodystart="17" bodyend="61" declfile="/Users/dimadem/Documents/GitHub/minishell/inc/redirection.h" declline="11" declcolumn="5"/>
+        <location file="/Users/dimadem/Documents/GitHub/minishell/inc/redirection.h" line="11" column="5" bodyfile="/Users/dimadem/Documents/GitHub/minishell/src/redirection/redirect_heredoc.c" bodystart="17" bodyend="63" declfile="/Users/dimadem/Documents/GitHub/minishell/inc/redirection.h" declline="11" declcolumn="5"/>
         <references refid="structs__ast_1ab62d177d86a1908cf5bbdb5cf6e978f8" compoundref="tokens_8h" startline="51">s_ast::args</references>
-        <references refid="execute_8h_1ab9bcddf9275f12cc49348081000beb62" compoundref="utils__0_8c" startline="93" endline="97">close_fds</references>
         <references refid="execute_8h_1ace4c3a2246919797e40140123d79596a" compoundref="execute_8c" startline="41" endline="82">execute_ast</references>
         <references refid="execute_8h_1aedc550f2251badad69cf4b6dfda183ef" compoundref="utils__0_8c" startline="81" endline="85">ft_perror</references>
         <references refid="libft_8h_1a1f2ff2312e5994560c9537cd9173be94" compoundref="ft__strcmp_8c" startline="24" endline="34">ft_strcmp</references>
@@ -369,7 +368,6 @@
         <references refid="structs__ast_1ac3be51aa6a7ae13bd16b6ad0c7ac843c" compoundref="tokens_8h" startline="52">s_ast::left</references>
         <references refid="structs__ast_1ac2c9513b20e9351e45d9bc6361095f7b" compoundref="tokens_8h" startline="53">s_ast::right</references>
         <references refid="structs__minishell__data_1a9ed5685097b7e4b55c3c1307b70869ef" compoundref="shell_8h" startline="23">s_minishell_data::std_in</references>
-        <references refid="structs__minishell__data_1ac90001aa8bc9a89b165ee6bca5f05ef3" compoundref="shell_8h" startline="24">s_minishell_data::std_out</references>
         <referencedby refid="execute_8h_1ace4c3a2246919797e40140123d79596a" compoundref="execute_8c" startline="41" endline="82">execute_ast</referencedby>
       </memberdef>
       <memberdef kind="function" id="redirection_8h_1a2fe566529f8c7046fe274f2b3a35b39b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">

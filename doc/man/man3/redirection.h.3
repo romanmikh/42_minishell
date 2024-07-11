@@ -231,17 +231,17 @@ Definition at line \fB17\fP of file \fBredirect_heredoc\&.c\fP\&.
 26     if (node\->right\->args[0] == NULL)
 27         return (1);
 28     eof = ft_strdup(node\->right\->args[0]);
-29     file_fd = open("/tmp/heredoc", O_WRONLY | O_CREAT | O_TRUNC, 0644);
+29     file_fd = open("tmp/heredoc", O_WRONLY | O_CREAT | O_TRUNC, 0644);
 30     if (file_fd < 0)
 31     {
 32         free(eof);
-33         return (1);
+33         exit(1);
 34     }
 35     line = readline("> ");
 36     while (line && (ft_strcmp(line, eof) != 0))
 37     {
-38         write(data\->std_out, line, ft_strlen(line));
-39         write(data\->std_out, "\\n", 1);
+38         write(file_fd, line, ft_strlen(line));
+39         write(file_fd, "\\n", 1);
 40         free(line);
 41         line = readline("> ");
 42     }
@@ -249,26 +249,28 @@ Definition at line \fB17\fP of file \fBredirect_heredoc\&.c\fP\&.
 44     free(eof);
 45     close(file_fd);
 46 
-47     file_fd = open("/tmp/heredoc", O_RDONLY);
-48     data\->std_in = file_fd;
-49     if (file_fd < 0)
-50         return (1);
-51     pid = fork();
-52     if (pid == \-1)
-53         ft_perror("fork");
-54     if (pid == 0)
-55     {
-56         close_fds(data\->std_in, data\->std_out);
-57         execute_ast(node\->left, data);
-58         exit(1);
-59     }
-60     return (0);
-61 }
+47     file_fd = open("tmp/heredoc", O_RDONLY);
+48     if (file_fd < 0)
+49         return (1);
+50     pid = fork();
+51     if (pid == \-1)
+52         ft_perror("fork");
+53     if (pid == 0)
+54     {
+55         data\->std_in = dup(file_fd);
+56         execute_ast(node\->left, data);
+57         exit(0);
+58     }
+59     close(file_fd);
+60     waitpid(pid, NULL, 0);
+61     unlink("tmp/heredoc");
+62     return (0);
+63 }
 .PP
 .fi
 
 .PP
-References \fBs_ast::args\fP, \fBclose_fds()\fP, \fBexecute_ast()\fP, \fBft_perror()\fP, \fBft_strcmp()\fP, \fBft_strdup()\fP, \fBft_strlen()\fP, \fBs_ast::left\fP, \fBs_ast::right\fP, \fBs_minishell_data::std_in\fP, and \fBs_minishell_data::std_out\fP\&.
+References \fBs_ast::args\fP, \fBexecute_ast()\fP, \fBft_perror()\fP, \fBft_strcmp()\fP, \fBft_strdup()\fP, \fBft_strlen()\fP, \fBs_ast::left\fP, \fBs_ast::right\fP, and \fBs_minishell_data::std_in\fP\&.
 .PP
 Referenced by \fBexecute_ast()\fP\&.
 .SS "int redirect_in (\fBt_ast\fP * node, \fBt_minishell_data\fP * data)"

@@ -222,30 +222,31 @@ Definition at line \fB131\fP of file \fBexecute\&.c\fP\&.
 132 {
 133     pid_t   pid;
 134 
-135     printf("data\->std_in: %d\\n", data\->std_in);
-136     printf("data\->std_out: %d\\n", data\->std_out);
-137     if(data\->std_in == \-1)
-138         data\->std_in = dup(STDIN_FILENO);
-139     if(data\->std_out == \-1)
-140         data\->std_out = dup(STDOUT_FILENO);
-141     pid = fork();
-142     if (pid == \-1)
-143         ft_perror("fork");
-144     if (pid == 0)
-145     {
-146         if (data\->std_in != \-1)
-147             dup2(data\->std_in, STDIN_FILENO);
-148         if (data\->std_out != \-1)
-149             dup2(data\->std_out, STDOUT_FILENO);
-150         close_fds(data\->std_in, data\->std_out);
-151         if (execve(ft_find_path(data\->args[0], data\->envp), \\
-152                 data\->args, env_to_array(data\->envp)) == \-1)
-153             ft_perror("minishell");
-154     }
-155     waitpid(pid, &data\->exit_status, 0);
-156     close_fds(data\->std_in, data\->std_out);
-157     return (0);
-158 }
+135     printf("new_process\\n");
+136     printf("data\->std_in: %d\\n", data\->std_in);
+137     printf("data\->std_out: %d\\n", data\->std_out);
+138     if(data\->std_in == \-1)
+139         data\->std_in = dup(STDIN_FILENO);
+140     if(data\->std_out == \-1)
+141         data\->std_out = dup(STDOUT_FILENO);
+142     pid = fork();
+143     if (pid == \-1)
+144         ft_perror("fork");
+145     if (pid == 0)
+146     {
+147         if (data\->std_in != \-1)
+148             dup2(data\->std_in, STDIN_FILENO);
+149         if (data\->std_out != \-1)
+150             dup2(data\->std_out, STDOUT_FILENO);
+151         close_fds(data\->std_in, data\->std_out);
+152         if (execve(ft_find_path(data\->args[0], data\->envp), \\
+153                 data\->args, env_to_array(data\->envp)) == \-1)
+154             ft_perror("minishell");
+155     }
+156     waitpid(pid, &data\->exit_status, 0);
+157     close_fds(data\->std_in, data\->std_out);
+158     return (0);
+159 }
 .PP
 .fi
 

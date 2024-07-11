@@ -26,17 +26,17 @@ int redirect_here_doc(t_ast *node, t_minishell_data *data)
     if (node->right->args[0] == NULL)
         return (1);
     eof = ft_strdup(node->right->args[0]);
-    file_fd = open("/tmp/heredoc", O_WRONLY | O_CREAT | O_TRUNC, 0644);
+    file_fd = open("tmp/heredoc", O_WRONLY | O_CREAT | O_TRUNC, 0644);
     if (file_fd < 0)
     {
         free(eof);
-        return (1);
+        exit(1);
     }
     line = readline("> ");
     while (line && (ft_strcmp(line, eof) != 0))
     {
-        write(data->std_out, line, ft_strlen(line));
-        write(data->std_out, "\n", 1);
+        write(file_fd, line, ft_strlen(line));
+        write(file_fd, "\n", 1);
         free(line);
         line = readline("> ");
     }
@@ -44,8 +44,7 @@ int redirect_here_doc(t_ast *node, t_minishell_data *data)
     free(eof);
     close(file_fd);
 
-    file_fd = open("/tmp/heredoc", O_RDONLY);
-    data->std_in = file_fd;
+    file_fd = open("tmp/heredoc", O_RDONLY);
     if (file_fd < 0)
         return (1);
     pid = fork();
@@ -53,9 +52,12 @@ int redirect_here_doc(t_ast *node, t_minishell_data *data)
         ft_perror("fork");
     if (pid == 0)
     {
-        close_fds(data->std_in, data->std_out);
+        data->std_in = dup(file_fd);
         execute_ast(node->left, data);
-        exit(1);
+        exit(0);
     }
+    close(file_fd);
+    waitpid(pid, NULL, 0);
+    unlink("tmp/heredoc");
     return (0);
 }
