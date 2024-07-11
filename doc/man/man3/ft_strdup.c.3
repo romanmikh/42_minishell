@@ -1,0 +1,48 @@
+.TH "/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_strdup.c" 3 "Version 1" "maxishell" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_strdup.c
+.SH SYNOPSIS
+.br
+.PP
+\fR#include 'libft\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "char * \fBft_strdup\fP (const char *s)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "char * ft_strdup (const char * s)"
+
+.PP
+Definition at line \fB23\fP of file \fBft_strdup\&.c\fP\&.
+.nf
+24 {
+25     size_t  n;
+26     char    *new;
+27 
+28     n = ft_strlen(s);
+29     if (!s)
+30         return (NULL);
+31     new = malloc((n + 1) * sizeof(char));
+32     if (!new)
+33         return (NULL);
+34     ft_strlcpy(new, s, n + 1);
+35     return (new);
+36 }
+.PP
+.fi
+
+.PP
+References \fBft_strlcpy()\fP, and \fBft_strlen()\fP\&.
+.PP
+Referenced by \fBadd_env_node()\fP, \fBextract_line()\fP, \fBft_itoa()\fP, \fBlist_to_array()\fP, \fBnew_token()\fP, \fBredirect_here_doc()\fP, \fBset_command_args()\fP, and \fBset_env()\fP\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for maxishell from the source code\&.

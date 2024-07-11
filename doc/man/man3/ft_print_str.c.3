@@ -1,0 +1,51 @@
+.TH "/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_print_str.c" 3 "Version 1" "maxishell" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_print_str.c
+.SH SYNOPSIS
+.br
+.PP
+\fR#include 'libft\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "int \fBft_print_str\fP (char *str)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "int ft_print_str (char * str)"
+
+.PP
+Definition at line \fB15\fP of file \fBft_print_str\&.c\fP\&.
+.nf
+16 {
+17     int len;
+18 
+19     len = 0;
+20     if (str == NULL)
+21     {
+22         ft_putstr_fd("(null)", 1);
+23         return (6);
+24     }
+25     while (*str)
+26     {
+27         ft_putchar_fd(*str++, 1);
+28         len++;
+29     }
+30     return (len);
+31 }
+.PP
+.fi
+
+.PP
+References \fBft_putchar_fd()\fP, and \fBft_putstr_fd()\fP\&.
+.PP
+Referenced by \fBft_formatssssss()\fP, \fBft_print_int()\fP, and \fBft_print_unsigned_dec()\fP\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for maxishell from the source code\&.

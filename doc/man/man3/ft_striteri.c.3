@@ -1,0 +1,43 @@
+.TH "/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_striteri.c" 3 "Version 1" "maxishell" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_striteri.c
+.SH SYNOPSIS
+.br
+.PP
+\fR#include 'libft\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBft_striteri\fP (char *s, void(*f)(unsigned int, char *))"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "void ft_striteri (char * s, void(* f )(unsigned int, char *))"
+
+.PP
+Definition at line \fB28\fP of file \fBft_striteri\&.c\fP\&.
+.nf
+29 {
+30     unsigned int    i;
+31 
+32     i = 0;
+33     if (!s || !f)
+34         return ;
+35     while (s[i] != '\\0')
+36     {
+37         f(i, &s[i]);
+38         i++;
+39     }
+40 }
+.PP
+.fi
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for maxishell from the source code\&.

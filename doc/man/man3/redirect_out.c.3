@@ -1,0 +1,87 @@
+.TH "/Users/dimadem/Documents/GitHub/minishell/src/redirection/redirect_out.c" 3 "Version 1" "maxishell" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/Users/dimadem/Documents/GitHub/minishell/src/redirection/redirect_out.c
+.SH SYNOPSIS
+.br
+.PP
+\fR#include 'tokens\&.h'\fP
+.br
+\fR#include 'shell\&.h'\fP
+.br
+\fR#include 'redirection\&.h'\fP
+.br
+\fR#include 'execute\&.h'\fP
+.br
+\fR#include 'pipe\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "int \fBredirect_out\fP (\fBt_ast\fP *node, \fBt_minishell_data\fP *data)"
+.br
+.RI "redirect out '>' to the file output "
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "int redirect_out (\fBt_ast\fP * node, \fBt_minishell_data\fP * data)"
+
+.PP
+redirect out '>' to the file output --
+.IP "\(bu" 2
+\fBParameters\fP
+.RS 4
+\fInode\fP current node in the AST
+.RE
+.PP
+
+.IP "\(bu" 2
+\fBParameters\fP
+.RS 4
+\fIdata\fP minishell data structure
+.RE
+.PP
+
+.IP "\(bu" 2
+\fBReturns\fP
+.RS 4
+status: 0: success 1: error 
+.RE
+.PP
+
+.PP
+
+.PP
+Definition at line \fB23\fP of file \fBredirect_out\&.c\fP\&.
+.nf
+24 {
+25     pid_t pid;
+26     int status;
+27 
+28     pid = fork();
+29     if (pid == \-1)
+30         return (1);
+31     if (pid == 0)
+32     {
+33         data\->std_out = open_file(node\->right, ">");
+34         if (data\->std_out == \-1)
+35             return (1);
+36         execute_ast(node\->left, data);
+37         exit(0);
+38     }
+39     waitpid(pid, &status, 0);
+40     return (WEXITSTATUS(status));
+41 }
+.PP
+.fi
+
+.PP
+References \fBexecute_ast()\fP, \fBs_ast::left\fP, \fBopen_file()\fP, \fBs_ast::right\fP, and \fBs_minishell_data::std_out\fP\&.
+.PP
+Referenced by \fBexecute_ast()\fP\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for maxishell from the source code\&.

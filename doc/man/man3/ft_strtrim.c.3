@@ -1,0 +1,83 @@
+.TH "/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_strtrim.c" 3 "Version 1" "maxishell" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_strtrim.c
+.SH SYNOPSIS
+.br
+.PP
+\fR#include 'libft\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "static int \fBft_char_in_set\fP (char c, char const *set)"
+.br
+.ti -1c
+.RI "char * \fBft_strtrim\fP (char const *s1, char const *set)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "static int ft_char_in_set (char c, char const * set)\fR [static]\fP"
+
+.PP
+Definition at line \fB25\fP of file \fBft_strtrim\&.c\fP\&.
+.nf
+26 {
+27     size_t  i;
+28 
+29     i = 0;
+30     while (set[i])
+31     {
+32         if (set[i] == c)
+33             return (1);
+34         i++;
+35     }
+36     return (0);
+37 }
+.PP
+.fi
+
+.PP
+Referenced by \fBft_strtrim()\fP\&.
+.SS "char * ft_strtrim (char const * s1, char const * set)"
+
+.PP
+Definition at line \fB39\fP of file \fBft_strtrim\&.c\fP\&.
+.nf
+40 {
+41     char    *str;
+42     size_t  i;
+43     size_t  start;
+44     size_t  end;
+45 
+46     if (!s1 || !set)
+47         return (NULL);
+48     start = 0;
+49     while (s1[start] && ft_char_in_set(s1[start], set))
+50         start++;
+51     end = ft_strlen(s1);
+52     while (end > start && ft_char_in_set(s1[end \- 1], set))
+53         end\-\-;
+54     str = (char *)malloc(sizeof(*s1) * (end \- start + 1));
+55     if (!str)
+56         return (NULL);
+57     i = 0;
+58     while (start < end)
+59         str[i++] = s1[start++];
+60     str[i] = 0;
+61     return (str);
+62 }
+.PP
+.fi
+
+.PP
+References \fBft_char_in_set()\fP, and \fBft_strlen()\fP\&.
+.PP
+Referenced by \fBtrim_input()\fP\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for maxishell from the source code\&.

@@ -1,0 +1,116 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.11.0" xml:lang="en-US">
+  <compounddef id="structs__token" kind="struct" language="C++" prot="public">
+    <compoundname>s_token</compoundname>
+    <includes refid="tokens_8h" local="no">tokens.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structs__token_1a350680c70abb7e7173240477e92dc0a3" prot="public" static="no" mutable="no">
+        <type><ref refid="tokens_8h_1aaa12264c004e358b28290c09bb20969a" kindref="member">t_token_type</ref></type>
+        <definition>t_token_type s_token::type</definition>
+        <argsstring></argsstring>
+        <name>type</name>
+        <qualifiedname>s_token::type</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/dimadem/Documents/GitHub/minishell/inc/tokens.h" line="42" column="13" bodyfile="/Users/dimadem/Documents/GitHub/minishell/inc/tokens.h" bodystart="42" bodyend="-1"/>
+        <referencedby refid="tokens_8h_1a4f595528e4e305887fda33e53258d602" compoundref="parser__helpers_8c" startline="42" endline="53">arg_len</referencedby>
+        <referencedby refid="tokens_8h_1a665af377c02015d59f668e4b2b2434bf" compoundref="parser_8c" startline="19" endline="39">create_redir_node</referencedby>
+        <referencedby refid="tokens_8h_1a963f3ae14f7e2f5334b13c7a67deabbd" compoundref="parser_8c" startline="41" endline="49">is_redir_node</referencedby>
+        <referencedby refid="tokens_8h_1a07793427f42bd19d0f4ea6771441be99" compoundref="tokeniser__helpers_8c" startline="15" endline="31">new_token</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structs__token_1afe30f6c413b34095d2a562e112a52e9a" prot="public" static="no" mutable="no">
+        <type>char *</type>
+        <definition>char* s_token::data</definition>
+        <argsstring></argsstring>
+        <name>data</name>
+        <qualifiedname>s_token::data</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/dimadem/Documents/GitHub/minishell/inc/tokens.h" line="43" column="5" bodyfile="/Users/dimadem/Documents/GitHub/minishell/inc/tokens.h" bodystart="43" bodyend="-1"/>
+        <referencedby refid="tokens_8h_1ad3cb8fb50ea5bbd7019b2480704d8e4e" compoundref="stack__control_8c" startline="15" endline="34">add_node</referencedby>
+        <referencedby refid="parser_8c_1a2a00e61e381f3754b1bb8cc4d9906b9f" compoundref="parser_8c" startline="51" endline="59">clr_node</referencedby>
+        <referencedby refid="tokens_8h_1a66cf17aa7377cfb20adcaccdc1f38b1c" compoundref="parser__helpers_8c" startline="29" endline="40">create_redir</referencedby>
+        <referencedby refid="tokens_8h_1a665af377c02015d59f668e4b2b2434bf" compoundref="parser_8c" startline="19" endline="39">create_redir_node</referencedby>
+        <referencedby refid="tokens_8h_1a643bfec4ad8bf3d845c5fbed35caf95c" compoundref="clean__tree_8c" startline="16" endline="35">free_all_tokens</referencedby>
+        <referencedby refid="tokens_8h_1a950dc11d8cce4e58af12882a1781128c" compoundref="stack__control_8c" startline="80" endline="102">list_to_array</referencedby>
+        <referencedby refid="tokens_8h_1a42a514028763c0c9c9f12226556407fe" compoundref="parser_8c" startline="85" endline="111">manage_pipe</referencedby>
+        <referencedby refid="tokens_8h_1a07793427f42bd19d0f4ea6771441be99" compoundref="tokeniser__helpers_8c" startline="15" endline="31">new_token</referencedby>
+        <referencedby refid="tokens_8h_1af90eff9f4a4a22eec7f50142c9e1b591" compoundref="stack__control_8c" startline="36" endline="49">print_stack</referencedby>
+        <referencedby refid="tokens_8h_1ac0f556c5b74afdbd7ce730e294df7b76" compoundref="tokeniser_8c" startline="91" endline="104">print_tokens</referencedby>
+        <referencedby refid="tokens_8h_1ab5f23ff7ab59a241fa7476e6fca458cf" compoundref="parser__helpers_8c" startline="55" endline="72">set_command_args</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structs__token_1a5dae434205818bfc83a61809d4a34a29" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structs__token" kindref="compound">s_token</ref> *</type>
+        <definition>struct s_token* s_token::next</definition>
+        <argsstring></argsstring>
+        <name>next</name>
+        <qualifiedname>s_token::next</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/dimadem/Documents/GitHub/minishell/inc/tokens.h" line="44" column="14" bodyfile="/Users/dimadem/Documents/GitHub/minishell/inc/tokens.h" bodystart="44" bodyend="-1"/>
+        <referencedby refid="tokens_8h_1ad3cb8fb50ea5bbd7019b2480704d8e4e" compoundref="stack__control_8c" startline="15" endline="34">add_node</referencedby>
+        <referencedby refid="tokens_8h_1a6c482f0c73f7263b3253aaa8e1bd4fb6" compoundref="tokeniser__helpers_8c" startline="33" endline="46">append_token</referencedby>
+        <referencedby refid="tokens_8h_1a4f595528e4e305887fda33e53258d602" compoundref="parser__helpers_8c" startline="42" endline="53">arg_len</referencedby>
+        <referencedby refid="tokens_8h_1a962defbcd8ea61b01724b658199944ec" compoundref="stack__control_8c" startline="65" endline="78">calc_stack_size</referencedby>
+        <referencedby refid="parser_8c_1a2a00e61e381f3754b1bb8cc4d9906b9f" compoundref="parser_8c" startline="51" endline="59">clr_node</referencedby>
+        <referencedby refid="tokens_8h_1a66cf17aa7377cfb20adcaccdc1f38b1c" compoundref="parser__helpers_8c" startline="29" endline="40">create_redir</referencedby>
+        <referencedby refid="tokens_8h_1a643bfec4ad8bf3d845c5fbed35caf95c" compoundref="clean__tree_8c" startline="16" endline="35">free_all_tokens</referencedby>
+        <referencedby refid="tokens_8h_1aea956fb83b5f5930d3ac2d3f9f8f3c36" compoundref="stack__control_8c" startline="51" endline="63">free_stack</referencedby>
+        <referencedby refid="tokens_8h_1a950dc11d8cce4e58af12882a1781128c" compoundref="stack__control_8c" startline="80" endline="102">list_to_array</referencedby>
+        <referencedby refid="tokens_8h_1a42a514028763c0c9c9f12226556407fe" compoundref="parser_8c" startline="85" endline="111">manage_pipe</referencedby>
+        <referencedby refid="tokens_8h_1ac5e108e945caf03bd60f26514c270963" compoundref="parser_8c" startline="61" endline="83">manage_redirs</referencedby>
+        <referencedby refid="tokens_8h_1a07793427f42bd19d0f4ea6771441be99" compoundref="tokeniser__helpers_8c" startline="15" endline="31">new_token</referencedby>
+        <referencedby refid="tokens_8h_1af90eff9f4a4a22eec7f50142c9e1b591" compoundref="stack__control_8c" startline="36" endline="49">print_stack</referencedby>
+        <referencedby refid="tokens_8h_1ac0f556c5b74afdbd7ce730e294df7b76" compoundref="tokeniser_8c" startline="91" endline="104">print_tokens</referencedby>
+        <referencedby refid="tokens_8h_1ab5f23ff7ab59a241fa7476e6fca458cf" compoundref="parser__helpers_8c" startline="55" endline="72">set_command_args</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structs__token_1a5937fde6f83a598dbe93df2b06d95c7b" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structs__token" kindref="compound">s_token</ref> *</type>
+        <definition>struct s_token* s_token::prev</definition>
+        <argsstring></argsstring>
+        <name>prev</name>
+        <qualifiedname>s_token::prev</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/dimadem/Documents/GitHub/minishell/inc/tokens.h" line="45" column="14" bodyfile="/Users/dimadem/Documents/GitHub/minishell/inc/tokens.h" bodystart="45" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>s_token</label>
+        <link refid="structs__token"/>
+        <childnode refid="1" relation="usage">
+          <edgelabel>next</edgelabel>
+          <edgelabel>prev</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/Users/dimadem/Documents/GitHub/minishell/inc/tokens.h" line="40" column="1" bodyfile="/Users/dimadem/Documents/GitHub/minishell/inc/tokens.h" bodystart="41" bodyend="46"/>
+    <listofallmembers>
+      <member refid="structs__token_1afe30f6c413b34095d2a562e112a52e9a" prot="public" virt="non-virtual"><scope>s_token</scope><name>data</name></member>
+      <member refid="structs__token_1a5dae434205818bfc83a61809d4a34a29" prot="public" virt="non-virtual"><scope>s_token</scope><name>next</name></member>
+      <member refid="structs__token_1a5937fde6f83a598dbe93df2b06d95c7b" prot="public" virt="non-virtual"><scope>s_token</scope><name>prev</name></member>
+      <member refid="structs__token_1a350680c70abb7e7173240477e92dc0a3" prot="public" virt="non-virtual"><scope>s_token</scope><name>type</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

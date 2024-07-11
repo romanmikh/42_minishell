@@ -1,0 +1,43 @@
+.TH "/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_strchr.c" 3 "Version 1" "maxishell" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_strchr.c
+.SH SYNOPSIS
+.br
+.PP
+\fR#include 'libft\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "char * \fBft_strchr\fP (const char *s, int c)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "char * ft_strchr (const char * s, int c)"
+
+.PP
+Definition at line \fB25\fP of file \fBft_strchr\&.c\fP\&.
+.nf
+26 {
+27     unsigned char   uc;
+28 
+29     uc = (unsigned char)c;
+30     while (*s != '\\0' && *s != uc)
+31         s++;
+32     if (*s == uc)
+33         return ((char *)s);
+34     return (NULL);
+35 }
+.PP
+.fi
+
+.PP
+Referenced by \fBadd_env()\fP, \fBadd_env_node()\fP, \fBcheck_operators_loop()\fP, \fBextract_line()\fP, \fBft_exclude_delimiters()\fP, \fBhandle_phrase()\fP, \fBread_from_fd()\fP, and \fBtokenise()\fP\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for maxishell from the source code\&.

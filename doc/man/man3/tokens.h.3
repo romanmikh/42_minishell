@@ -1,0 +1,1210 @@
+.TH "/Users/dimadem/Documents/GitHub/minishell/inc/tokens.h" 3 "Version 1" "maxishell" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/Users/dimadem/Documents/GitHub/minishell/inc/tokens.h
+.SH SYNOPSIS
+.br
+.PP
+\fR#include '\&.\&./lib/libft/inc/libft\&.h'\fP
+.br
+\fR#include <stdlib\&.h>\fP
+.br
+\fR#include <stdio\&.h>\fP
+.br
+\fR#include <unistd\&.h>\fP
+.br
+\fR#include <readline/readline\&.h>\fP
+.br
+\fR#include <readline/history\&.h>\fP
+.br
+\fR#include <pwd\&.h>\fP
+.br
+\fR#include 'shell\&.h'\fP
+.br
+\fR#include 'env\&.h'\fP
+.br
+
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "struct \fBs_token\fP"
+.br
+.ti -1c
+.RI "struct \fBs_ast\fP"
+.br
+.ti -1c
+.RI "struct \fBs_loop_data\fP"
+.br
+.in -1c
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBHISTORY_PATH\fP   '\&./utils/\&.maxishell_history'"
+.br
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef enum \fBe_token_type\fP \fBt_token_type\fP"
+.br
+.ti -1c
+.RI "typedef struct \fBs_token\fP \fBt_token\fP"
+.br
+.ti -1c
+.RI "typedef struct \fBs_ast\fP \fBt_ast\fP"
+.br
+.ti -1c
+.RI "typedef struct \fBs_loop_data\fP \fBt_loop_data\fP"
+.br
+.in -1c
+.SS "Enumerations"
+
+.in +1c
+.ti -1c
+.RI "enum \fBe_token_type\fP { \fBPHRASE\fP, \fBPIPE\fP, \fBENV_VAR\fP, \fBREDIR_IN\fP, \fBREDIR_OUT\fP, \fBREDIR_APPEND\fP, \fBREDIR_HEREDOC\fP }"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBadd_node\fP (\fBt_token\fP **head, char *str)"
+.br
+.ti -1c
+.RI "void \fBprint_stack\fP (\fBt_token\fP **stack)"
+.br
+.ti -1c
+.RI "void \fBfree_stack\fP (\fBt_token\fP **stack)"
+.br
+.ti -1c
+.RI "int \fBcalc_stack_size\fP (\fBt_token\fP *stack)"
+.br
+.ti -1c
+.RI "char ** \fBlist_to_array\fP (\fBt_token\fP *head)"
+.br
+.ti -1c
+.RI "void \fBbuild_linked_list\fP (\fBt_token\fP **tokens, char **argv)"
+.br
+.ti -1c
+.RI "void \fBhandle_quotes\fP (char **tokens, int *pos, char **input)"
+.br
+.ti -1c
+.RI "void \fBhandle_special_chars\fP (char **str, \fBt_token\fP **tokens)"
+.br
+.ti -1c
+.RI "void \fBhandle_regular_chars\fP (char **tokens, int *pos, char **input, char *delim)"
+.br
+.ti -1c
+.RI "void \fBskip_delimiters\fP (char **input, char *delim)"
+.br
+.ti -1c
+.RI "void \fBreallocate_tokens\fP (char ***tokens, int *bufsize)"
+.br
+.ti -1c
+.RI "void \fBparse_loop\fP (char **input, char **tokens, int *pos, int *bufsize)"
+.br
+.ti -1c
+.RI "char ** \fBparse_input\fP (char *input)"
+.br
+.ti -1c
+.RI "char * \fBgenerate_prompt\fP (\fBt_minishell_data\fP *data)"
+.br
+.ti -1c
+.RI "void \fBmake_history\fP (char *line)"
+.br
+.ti -1c
+.RI "void \fBloop_cleanup\fP (char *line, \fBt_token\fP *tokens, char *prompt, \fBt_ast\fP *tree)"
+.br
+.ti -1c
+.RI "void \fBfree_minishell_data\fP (\fBt_minishell_data\fP *data)"
+.br
+.ti -1c
+.RI "char * \fBcheck_heredoc\fP (char *line)"
+.br
+.ti -1c
+.RI "char * \fBheredoc\fP (char *eof)"
+.br
+.ti -1c
+.RI "void \fBinit_minishell_data\fP (\fBt_minishell_data\fP *data, char **envp)"
+.br
+.ti -1c
+.RI "void \fBinitialise\fP (int argc, char **argv)"
+.br
+.ti -1c
+.RI "void \fBexecute_command\fP (char **parsed_text, \fBt_token\fP **tokens)"
+.br
+.ti -1c
+.RI "void \fBprint_maxishell\fP (void)"
+.br
+.ti -1c
+.RI "int \fBinput_error_checks\fP (const char *str)"
+.br
+.ti -1c
+.RI "\fBt_token\fP * \fBtokenise\fP (char *str)"
+.br
+.ti -1c
+.RI "void \fBprint_tokens\fP (\fBt_token\fP *tokens)"
+.br
+.ti -1c
+.RI "\fBt_ast\fP * \fBparse_tokens\fP (\fBt_token\fP **tokens)"
+.br
+.ti -1c
+.RI "void \fBvisualize_ast\fP (\fBt_ast\fP *root)"
+.br
+.ti -1c
+.RI "void \fBfree_ast\fP (\fBt_ast\fP *node)"
+.br
+.ti -1c
+.RI "void \fBfree_all_tokens\fP (\fBt_token\fP *tokens)"
+.br
+.ti -1c
+.RI "\fBt_token\fP * \fBnew_token\fP (char *value, \fBt_token_type\fP type)"
+.br
+.ti -1c
+.RI "void \fBappend_token\fP (\fBt_token\fP **tokens, \fBt_token\fP *\fBnew_token\fP)"
+.br
+.ti -1c
+.RI "int \fBvalid_operator\fP (const char **str)"
+.br
+.ti -1c
+.RI "\fBt_ast\fP * \fBnew_ast_node\fP (\fBt_token_type\fP type)"
+.br
+.ti -1c
+.RI "\fBt_ast\fP * \fBcreate_redir\fP (\fBt_token\fP **tokens, \fBt_token\fP *tmp)"
+.br
+.ti -1c
+.RI "int \fBarg_len\fP (\fBt_token\fP *current)"
+.br
+.ti -1c
+.RI "void \fBset_command_args\fP (\fBt_ast\fP *command_node, \fBt_token\fP **tokens, int arg_count)"
+.br
+.ti -1c
+.RI "\fBt_ast\fP * \fBmanage_commands\fP (\fBt_token\fP **tokens)"
+.br
+.ti -1c
+.RI "\fBt_ast\fP * \fBcreate_redir_node\fP (\fBt_token\fP *token)"
+.br
+.ti -1c
+.RI "int \fBis_redir_node\fP (\fBt_token\fP *tokens)"
+.br
+.ti -1c
+.RI "\fBt_ast\fP * \fBmanage_redirs\fP (\fBt_token\fP **tokens)"
+.br
+.ti -1c
+.RI "\fBt_ast\fP * \fBmanage_pipe\fP (\fBt_token\fP **tokens)"
+.br
+.ti -1c
+.RI "char * \fBtrim_input\fP (char *str)"
+.br
+.ti -1c
+.RI "void \fBprint_ast_root\fP (\fBt_ast\fP *root)"
+.br
+.ti -1c
+.RI "void \fBexecute_tree\fP (\fBt_ast\fP *node, \fBt_minishell_data\fP *data)"
+.br
+.in -1c
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define HISTORY_PATH   '\&./utils/\&.maxishell_history'"
+
+.PP
+Definition at line \fB27\fP of file \fBtokens\&.h\fP\&.
+.PP
+Referenced by \fBinitialise()\fP, and \fBmake_history()\fP\&.
+.SH "Typedef Documentation"
+.PP 
+.SS "typedef struct \fBs_ast\fP \fBt_ast\fP"
+
+.SS "typedef struct \fBs_loop_data\fP \fBt_loop_data\fP"
+
+.SS "typedef struct \fBs_token\fP \fBt_token\fP"
+
+.SS "typedef enum \fBe_token_type\fP \fBt_token_type\fP"
+
+.SH "Enumeration Type Documentation"
+.PP 
+.SS "enum \fBe_token_type\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIPHRASE \fP\fP
+.TP
+\fB\fIPIPE \fP\fP
+.TP
+\fB\fIENV_VAR \fP\fP
+.TP
+\fB\fIREDIR_IN \fP\fP
+.TP
+\fB\fIREDIR_OUT \fP\fP
+.TP
+\fB\fIREDIR_APPEND \fP\fP
+.TP
+\fB\fIREDIR_HEREDOC \fP\fP
+.PP
+Definition at line \fB29\fP of file \fBtokens\&.h\fP\&.
+.nf
+30 {
+31     PHRASE,
+32     PIPE,
+33     ENV_VAR,
+34     REDIR_IN,
+35     REDIR_OUT,
+36     REDIR_APPEND,
+37     REDIR_HEREDOC
+38 }   t_token_type;
+.PP
+.fi
+
+.SH "Function Documentation"
+.PP 
+.SS "void add_node (\fBt_token\fP ** head, char * str)"
+
+.PP
+Definition at line \fB15\fP of file \fBstack_control\&.c\fP\&.
+.nf
+16 {
+17     t_token *new_node;  
+18     t_token *curr_node;
+19 
+20     new_node = (t_token *)malloc(sizeof(t_token));
+21     if (!new_node)
+22         return ;
+23     new_node\->data = str;
+24     new_node\->next = NULL;
+25     if (*head == NULL)
+26     {
+27         *head = new_node;
+28         return ;
+29     }
+30     curr_node = *head;
+31     while (curr_node\->next != NULL)
+32         curr_node = curr_node\->next;
+33     curr_node\->next = new_node;
+34 }
+.PP
+.fi
+
+.PP
+References \fBs_token::data\fP, and \fBs_token::next\fP\&.
+.PP
+Referenced by \fBbuild_linked_list()\fP\&.
+.SS "void append_token (\fBt_token\fP ** tokens, \fBt_token\fP * new_token)"
+
+.PP
+Definition at line \fB33\fP of file \fBtokeniser_helpers\&.c\fP\&.
+.nf
+34 {
+35     t_token *prev;
+36 
+37     if (!*tokens)
+38         *tokens = new_token;
+39     else
+40     {
+41         prev = *tokens;
+42         while (prev\->next)
+43             prev = prev\->next;
+44         prev\->next = new_token;
+45     }
+46 }
+.PP
+.fi
+
+.PP
+References \fBnew_token()\fP, and \fBs_token::next\fP\&.
+.PP
+Referenced by \fBappend_phrase_if_valid()\fP, and \fBhandle_special_chars()\fP\&.
+.SS "int arg_len (\fBt_token\fP * current)"
+
+.PP
+Definition at line \fB42\fP of file \fBparser_helpers\&.c\fP\&.
+.nf
+43 {
+44     int arg_count;
+45 
+46     arg_count = 0;
+47     while (current && current\->type == PHRASE)
+48     {
+49         arg_count++;
+50         current = current\->next;
+51     }
+52     return (arg_count);
+53 }
+.PP
+.fi
+
+.PP
+References \fBs_token::next\fP, \fBPHRASE\fP, and \fBs_token::type\fP\&.
+.PP
+Referenced by \fBmanage_commands()\fP\&.
+.SS "void build_linked_list (\fBt_token\fP ** tokens, char ** argv)"
+
+.PP
+Definition at line \fB15\fP of file \fBstack_control_2\&.c\fP\&.
+.nf
+16 {
+17     int i;
+18 
+19     i = 0;
+20     while (argv[i])
+21     {
+22         add_node(tokens, argv[i]);   
+23         i++;
+24     }
+25 }
+.PP
+.fi
+
+.PP
+References \fBadd_node()\fP\&.
+.SS "int calc_stack_size (\fBt_token\fP * stack)"
+
+.PP
+Definition at line \fB65\fP of file \fBstack_control\&.c\fP\&.
+.nf
+66 {
+67     int         size;
+68     t_token     *current;
+69 
+70     size = 0;
+71     current = stack;
+72     while (current != NULL)
+73     {
+74         size++;
+75         current = current\->next;
+76     }
+77     return (size);
+78 }
+.PP
+.fi
+
+.PP
+References \fBs_token::next\fP\&.
+.PP
+Referenced by \fBlist_to_array()\fP\&.
+.SS "char * check_heredoc (char * line)"
+
+.PP
+Definition at line \fB15\fP of file \fBheredoc\&.c\fP\&.
+.nf
+16 {
+17     char    **parsed;
+18 
+19     parsed = ft_split(line, ' ');
+20     if (!ft_strcmp(parsed[0], "cat") && !ft_strcmp(parsed[1], "<<"))
+21         return (heredoc("EOF"));
+22     else
+23         return (line);
+24 }
+.PP
+.fi
+
+.PP
+References \fBft_split()\fP, \fBft_strcmp()\fP, and \fBheredoc()\fP\&.
+.SS "\fBt_ast\fP * create_redir (\fBt_token\fP ** tokens, \fBt_token\fP * tmp)"
+
+.PP
+Definition at line \fB29\fP of file \fBparser_helpers\&.c\fP\&.
+.nf
+30 {
+31     t_ast   *redirect_node;
+32 
+33     redirect_node = new_ast_node((*tokens)\->type);
+34     *tokens = (*tokens)\->next\->next;
+35     redirect_node\->left = manage_redirs(tokens);
+36     redirect_node\->right = create_redir_node(tmp\->next);
+37     free(tmp\->data);
+38     free(tmp);
+39     return (redirect_node);
+40 }
+.PP
+.fi
+
+.PP
+References \fBcreate_redir_node()\fP, \fBs_token::data\fP, \fBs_ast::left\fP, \fBmanage_redirs()\fP, \fBnew_ast_node()\fP, \fBs_token::next\fP, and \fBs_ast::right\fP\&.
+.PP
+Referenced by \fBmanage_redirs()\fP\&.
+.SS "\fBt_ast\fP * create_redir_node (\fBt_token\fP * token)"
+
+.PP
+Definition at line \fB19\fP of file \fBparser\&.c\fP\&.
+.nf
+20 {
+21     t_ast           *node;
+22 
+23     node = malloc(sizeof(t_ast));
+24     if (!node)
+25         return (NULL);
+26     node\->type = token\->type;
+27     node\->args = malloc(sizeof(char *) * 2);
+28     if (!node\->args)
+29     {
+30         free(node);
+31         return (NULL);
+32     }
+33     node\->args[0] = token\->data;
+34     node\->args[1] = NULL;
+35     node\->left = NULL;
+36     node\->right = NULL;
+37     free(token);
+38     return (node);
+39 }
+.PP
+.fi
+
+.PP
+References \fBs_ast::args\fP, \fBs_token::data\fP, \fBs_ast::left\fP, \fBs_ast::right\fP, \fBs_ast::type\fP, and \fBs_token::type\fP\&.
+.PP
+Referenced by \fBclr_node()\fP, and \fBcreate_redir()\fP\&.
+.SS "void execute_command (char ** parsed_text, \fBt_token\fP ** tokens)"
+
+.SS "void execute_tree (\fBt_ast\fP * node, \fBt_minishell_data\fP * data)"
+
+.SS "void free_all_tokens (\fBt_token\fP * tokens)"
+
+.PP
+Definition at line \fB16\fP of file \fBclean_tree\&.c\fP\&.
+.nf
+17 {
+18     t_token *temp;
+19 
+20     while (tokens)
+21     {
+22         temp = tokens;
+23         tokens = tokens\->next;
+24         if (temp)
+25         {
+26             if (temp\->data)
+27             {
+28                 free(temp\->data);
+29                 temp\->data = NULL;
+30             }
+31         }
+32         free(temp);
+33         temp = NULL;
+34     }
+35 }
+.PP
+.fi
+
+.PP
+References \fBs_token::data\fP, and \fBs_token::next\fP\&.
+.SS "void free_ast (\fBt_ast\fP * node)"
+
+.PP
+Definition at line \fB37\fP of file \fBclean_tree\&.c\fP\&.
+.nf
+38 {
+39     int             i;
+40 
+41     i = 0;
+42     if (!node)
+43         return ;
+44     if (node\->type == PHRASE && node\->args)
+45     {
+46         while (node\->args && node\->args[i])
+47         {
+48             free(node\->args[i]);
+49             i++;
+50         }
+51         free(node\->args);
+52     }
+53     free_ast(node\->left);
+54     free_ast(node\->right);
+55     free(node);
+56 }
+.PP
+.fi
+
+.PP
+References \fBs_ast::args\fP, \fBfree_ast()\fP, \fBs_ast::left\fP, \fBPHRASE\fP, \fBs_ast::right\fP, and \fBs_ast::type\fP\&.
+.PP
+Referenced by \fBfree_ast()\fP, and \fBloop_cleanup()\fP\&.
+.SS "void free_minishell_data (\fBt_minishell_data\fP * data)"
+
+.PP
+Definition at line \fB43\fP of file \fBclean_general\&.c\fP\&.
+.nf
+44 {
+45     if (data)
+46     {
+47         free_args(data\->args);
+48         free_env_list(data\->envp);
+49         free_env_list(data\->local_env);
+50         free(data\->current_dir);
+51         free(data);
+52     }
+53 }
+.PP
+.fi
+
+.PP
+References \fBs_minishell_data::args\fP, \fBs_minishell_data::current_dir\fP, \fBs_minishell_data::envp\fP, \fBfree_args()\fP, \fBfree_env_list()\fP, and \fBs_minishell_data::local_env\fP\&.
+.PP
+Referenced by \fBmain()\fP\&.
+.SS "void free_stack (\fBt_token\fP ** stack)"
+
+.PP
+Definition at line \fB51\fP of file \fBstack_control\&.c\fP\&.
+.nf
+52 {
+53     t_token *current;
+54     t_token *next;
+55 
+56     current = *stack;
+57     while (current != NULL)
+58     {
+59         next = current\->next;
+60         free(current);
+61         current = next;
+62     }
+63 }
+.PP
+.fi
+
+.PP
+References \fBs_token::next\fP\&.
+.SS "char * generate_prompt (\fBt_minishell_data\fP * data)"
+
+.PP
+Definition at line \fB31\fP of file \fBprompt\&.c\fP\&.
+.nf
+32 {
+33     char    *prompt;
+34     size_t  prompt_len;
+35 
+36 /*
+37      char   *pwd;
+38      char   *home_dir;
+39 
+40      home_dir = NULL;
+41      pwd = NULL;
+42      pwd = generate_prompt_string(data, pwd, home_dir);
+43 */
+44     if (data\->std_in == \-1)
+45         prompt_len = ft_strlen("minishell:~> ") + 1;
+46     else
+47         prompt_len = ft_strlen("> ") + 1;
+48 /*
+49      prompt_len = ft_strlen("🌴\\e[1m @maxishell:~> \\e[m") + \\
+50             ft_strlen(get_env(data\->envp, "LOGNAME")) + \\
+51             ft_strlen(pwd) + \\
+52             1;
+53 */
+54     prompt = (char *)malloc(prompt_len);
+55     if (!prompt)
+56         exit(EXIT_FAILURE);
+57     if (data\->std_in == \-1)
+58         ft_strcpy(prompt, "minishell:~> ");
+59     else
+60         ft_strcpy(prompt, "> ");
+61 /*
+62     ft_strcpy(prompt, "🌴\\e[1m ");
+63     ft_strcat(prompt, get_env(data\->envp, "LOGNAME"));
+64     ft_strcat(prompt, "@maxishell:");
+65     ft_strcat(prompt, pwd);
+66     ft_strcat(prompt, "> \\e[m");
+67 */
+68     return (prompt);
+69 }
+.PP
+.fi
+
+.PP
+References \fBft_strcpy()\fP, \fBft_strlen()\fP, and \fBs_minishell_data::std_in\fP\&.
+.PP
+Referenced by \fBmain_loop()\fP\&.
+.SS "void handle_quotes (char ** tokens, int * pos, char ** input)"
+
+.SS "void handle_regular_chars (char ** tokens, int * pos, char ** input, char * delim)"
+
+.SS "void handle_special_chars (char ** str, \fBt_token\fP ** tokens)"
+
+.PP
+Definition at line \fB22\fP of file \fBtokeniser\&.c\fP\&.
+.nf
+23 {
+24     if (**str == '<')
+25     {
+26         if (*(*str + 1) == '<')
+27         {
+28             append_token(tokens, new_token("<<", REDIR_HEREDOC));
+29             (*str)++;
+30         }
+31         else
+32             append_token(tokens, new_token("<", REDIR_IN));
+33     }
+34     else if (**str == '>')
+35     {
+36         if (*(*str + 1) == '>')
+37         {
+38             append_token(tokens, new_token(">>", REDIR_APPEND));
+39             (*str)++;
+40         }
+41         else
+42             append_token(tokens, new_token(">", REDIR_OUT));
+43     }
+44     else if (**str == '|')
+45         append_token(tokens, new_token("|", PIPE));
+46     (*str)++;
+47 }
+.PP
+.fi
+
+.PP
+References \fBappend_token()\fP, \fBnew_token()\fP, \fBPIPE\fP, \fBREDIR_APPEND\fP, \fBREDIR_HEREDOC\fP, \fBREDIR_IN\fP, and \fBREDIR_OUT\fP\&.
+.PP
+Referenced by \fBtokenise()\fP\&.
+.SS "char * heredoc (char * eof)"
+
+.PP
+Definition at line \fB26\fP of file \fBheredoc\&.c\fP\&.
+.nf
+27 {
+28     char    *line;
+29     char    *comb;
+30 
+31     comb = "";
+32     while (1)
+33     {
+34         line = readline("heredoc>");
+35         if (!ft_strcmp(line, eof))
+36             return (comb);
+37         comb = ft_strjoin(ft_strjoin(comb, line), "\\n");
+38         free(line);
+39     }
+40 }
+.PP
+.fi
+
+.PP
+References \fBft_strcmp()\fP, and \fBft_strjoin()\fP\&.
+.PP
+Referenced by \fBcheck_heredoc()\fP\&.
+.SS "void init_minishell_data (\fBt_minishell_data\fP * data, char ** envp)"
+
+.PP
+Definition at line \fB16\fP of file \fBinitialise\&.c\fP\&.
+.nf
+17 {
+18     data\->args = NULL;
+19     data\->envp = NULL;
+20     init_env(&data\->envp, envp);
+21     data\->local_env = NULL;
+22     data\->current_dir = getcwd(NULL, 0);
+23     data\->exit_status = 0;
+24     data\->std_in = \-1;
+25     data\->std_out = \-1;
+26     data\->std_err = 2;
+27 }
+.PP
+.fi
+
+.PP
+References \fBs_minishell_data::args\fP, \fBs_minishell_data::current_dir\fP, \fBs_minishell_data::envp\fP, \fBs_minishell_data::exit_status\fP, \fBinit_env()\fP, \fBs_minishell_data::local_env\fP, \fBs_minishell_data::std_err\fP, \fBs_minishell_data::std_in\fP, and \fBs_minishell_data::std_out\fP\&.
+.PP
+Referenced by \fBmain()\fP\&.
+.SS "void initialise (int argc, char ** argv)"
+
+.PP
+Definition at line \fB29\fP of file \fBinitialise\&.c\fP\&.
+.nf
+30 {
+31     if (argc > 1)
+32     {
+33         printf("Usage: %s\\n", argv[0]);
+34         exit(EXIT_FAILURE);
+35     }
+36     read_history(HISTORY_PATH);
+37 }
+.PP
+.fi
+
+.PP
+References \fBHISTORY_PATH\fP\&.
+.PP
+Referenced by \fBmain()\fP\&.
+.SS "int input_error_checks (const char * str)"
+
+.PP
+Definition at line \fB99\fP of file \fBinput_checker\&.c\fP\&.
+.nf
+100 {
+101     if (check_redirections(str))
+102         ft_printf("Input error: invalid redirection\&.\\n");
+103     else if (check_operators(str))
+104         ft_printf("Input error: invalid operator\&.\\n");
+105     else if (check_open_quotes(str))
+106         ft_printf("Input error: open quote\&.\\n");
+107     else
+108         return (0);
+109     return (1);
+110 }
+.PP
+.fi
+
+.PP
+References \fBcheck_open_quotes()\fP, \fBcheck_operators()\fP, \fBcheck_redirections()\fP, and \fBft_printf()\fP\&.
+.PP
+Referenced by \fBmain_loop()\fP\&.
+.SS "int is_redir_node (\fBt_token\fP * tokens)"
+
+.PP
+Definition at line \fB41\fP of file \fBparser\&.c\fP\&.
+.nf
+42 {
+43     if (tokens\->type == REDIR_IN
+44         || tokens\->type == REDIR_OUT
+45         || tokens\->type == REDIR_APPEND
+46         || tokens\->type == REDIR_HEREDOC)
+47         return (1);
+48     return (0);
+49 }
+.PP
+.fi
+
+.PP
+References \fBREDIR_APPEND\fP, \fBREDIR_HEREDOC\fP, \fBREDIR_IN\fP, \fBREDIR_OUT\fP, and \fBs_token::type\fP\&.
+.PP
+Referenced by \fBmanage_redirs()\fP\&.
+.SS "char ** list_to_array (\fBt_token\fP * head)"
+
+.PP
+Definition at line \fB80\fP of file \fBstack_control\&.c\fP\&.
+.nf
+81 {
+82     int         count;
+83     int         i;
+84     char        **arr;
+85     t_token     *current;
+86 
+87     current = head;
+88     count = calc_stack_size(current);
+89     arr = (char **)malloc((count + 1) * sizeof(char *));
+90     if (!arr)
+91         return (NULL);
+92     current = head;
+93     i = 0;
+94     while (i < count)
+95     {
+96         arr[i] = ft_strdup(current\->data);
+97         current = current\->next;
+98         i++;
+99     }
+100     arr[count] = NULL;
+101     return (arr);
+102 }
+.PP
+.fi
+
+.PP
+References \fBcalc_stack_size()\fP, \fBs_token::data\fP, \fBft_strdup()\fP, and \fBs_token::next\fP\&.
+.SS "void loop_cleanup (char * line, \fBt_token\fP * tokens, char * prompt, \fBt_ast\fP * tree)"
+
+.PP
+Definition at line \fB55\fP of file \fBclean_general\&.c\fP\&.
+.nf
+56 {
+57     free(line);
+58     free(prompt);
+59     (void)tokens;
+60     free_ast(tree);
+61 }
+.PP
+.fi
+
+.PP
+References \fBfree_ast()\fP\&.
+.PP
+Referenced by \fBmain_loop()\fP, and \fBstatus_handler()\fP\&.
+.SS "void make_history (char * line)"
+
+.PP
+Definition at line \fB15\fP of file \fBaux\&.c\fP\&.
+.nf
+16 {
+17     printf("line: %s\\n", line);
+18     if (*line)
+19         add_history(line);
+20     write_history(HISTORY_PATH);
+21 }
+.PP
+.fi
+
+.PP
+References \fBHISTORY_PATH\fP\&.
+.SS "\fBt_ast\fP * manage_commands (\fBt_token\fP ** tokens)"
+
+.PP
+Definition at line \fB74\fP of file \fBparser_helpers\&.c\fP\&.
+.nf
+75 {
+76     t_ast       *command_node;
+77     int         arg_count;
+78 
+79     command_node = new_ast_node(PHRASE);
+80     arg_count = arg_len(*tokens);
+81     command_node\->args = malloc(sizeof(char *) * (arg_count + 1));
+82     if (!command_node\->args)
+83         return (NULL);
+84     set_command_args(command_node, tokens, arg_count);
+85     return (command_node);
+86 }
+.PP
+.fi
+
+.PP
+References \fBarg_len()\fP, \fBs_ast::args\fP, \fBnew_ast_node()\fP, \fBPHRASE\fP, and \fBset_command_args()\fP\&.
+.PP
+Referenced by \fBmanage_redirs()\fP\&.
+.SS "\fBt_ast\fP * manage_pipe (\fBt_token\fP ** tokens)"
+
+.PP
+Definition at line \fB85\fP of file \fBparser\&.c\fP\&.
+.nf
+86 {
+87     t_token     *tmp;
+88     t_token     *next_token;
+89     t_ast       *pipe_node;
+90 
+91     tmp = *tokens;
+92     while (*tokens && (*tokens)\->next)
+93     {
+94         next_token = (*tokens)\->next;
+95         if ((*tokens)\->next\->type == PIPE)
+96         {
+97             pipe_node = new_ast_node((*tokens)\->next\->type);
+98             (*tokens)\->next = NULL;
+99             pipe_node\->left = manage_redirs(&tmp);
+100             if (next_token\->next == NULL)
+101                 pipe_node\->right = NULL;
+102             else
+103                 pipe_node\->right = manage_pipe(&(next_token\->next));
+104             free(next_token\->data);
+105             free(next_token);
+106             return (pipe_node);
+107         }
+108         *tokens = next_token;
+109     }
+110     return (manage_redirs(&tmp));
+111 }
+.PP
+.fi
+
+.PP
+References \fBs_token::data\fP, \fBs_ast::left\fP, \fBmanage_pipe()\fP, \fBmanage_redirs()\fP, \fBnew_ast_node()\fP, \fBs_token::next\fP, \fBPIPE\fP, and \fBs_ast::right\fP\&.
+.PP
+Referenced by \fBmanage_pipe()\fP, and \fBparse_tokens()\fP\&.
+.SS "\fBt_ast\fP * manage_redirs (\fBt_token\fP ** tokens)"
+
+.PP
+Definition at line \fB61\fP of file \fBparser\&.c\fP\&.
+.nf
+62 {
+63     t_token     *tmp;
+64     t_ast       *redirect_node;
+65     t_token     *next_token;
+66 
+67     if (!*tokens)
+68         return (NULL);
+69     tmp = *tokens;
+70     if (is_redir_node(*tokens))
+71         return (create_redir(tokens, tmp));
+72     while (*tokens && (*tokens)\->next)
+73     {
+74         next_token = (*tokens)\->next;
+75         if (is_redir_node((*tokens)\->next))
+76         {
+77             redirect_node = new_ast_node((*tokens)\->next\->type);
+78             return (clr_node(tokens, next_token, redirect_node));
+79         }
+80         *tokens = next_token;
+81     }
+82     return (manage_commands(&tmp));
+83 }
+.PP
+.fi
+
+.PP
+References \fBclr_node()\fP, \fBcreate_redir()\fP, \fBis_redir_node()\fP, \fBmanage_commands()\fP, \fBnew_ast_node()\fP, and \fBs_token::next\fP\&.
+.PP
+Referenced by \fBclr_node()\fP, \fBcreate_redir()\fP, and \fBmanage_pipe()\fP\&.
+.SS "\fBt_ast\fP * new_ast_node (\fBt_token_type\fP type)"
+
+.PP
+Definition at line \fB15\fP of file \fBparser_helpers\&.c\fP\&.
+.nf
+16 {
+17     t_ast       *node;
+18 
+19     node = malloc(sizeof(t_ast));
+20     if (!node)
+21         return (NULL);
+22     node\->type = type;
+23     node\->args = NULL;
+24     node\->left = NULL;
+25     node\->right = NULL;
+26     return (node);
+27 }
+.PP
+.fi
+
+.PP
+References \fBs_ast::args\fP, \fBs_ast::left\fP, \fBs_ast::right\fP, and \fBs_ast::type\fP\&.
+.PP
+Referenced by \fBcreate_redir()\fP, \fBmanage_commands()\fP, \fBmanage_pipe()\fP, and \fBmanage_redirs()\fP\&.
+.SS "\fBt_token\fP * new_token (char * value, \fBt_token_type\fP type)"
+
+.PP
+Definition at line \fB15\fP of file \fBtokeniser_helpers\&.c\fP\&.
+.nf
+16 {
+17     t_token *token;
+18 
+19     token = malloc(sizeof(t_token));
+20     if (!token)
+21         return (NULL);
+22     token\->data = ft_strdup(value);
+23     if (!token\->data)
+24     {
+25         free(token);
+26         return (NULL);
+27     }
+28     token\->type = type;
+29     token\->next = NULL;
+30     return (token);
+31 }
+.PP
+.fi
+
+.PP
+References \fBs_token::data\fP, \fBft_strdup()\fP, \fBs_token::next\fP, and \fBs_token::type\fP\&.
+.PP
+Referenced by \fBappend_phrase_if_valid()\fP, \fBappend_token()\fP, and \fBhandle_special_chars()\fP\&.
+.SS "char ** parse_input (char * input)"
+
+.SS "void parse_loop (char ** input, char ** tokens, int * pos, int * bufsize)"
+
+.SS "\fBt_ast\fP * parse_tokens (\fBt_token\fP ** tokens)"
+
+.PP
+Definition at line \fB113\fP of file \fBparser\&.c\fP\&.
+.nf
+114 {
+115     if (!tokens || !*tokens)
+116         return (NULL);
+117     return (manage_pipe(tokens));
+118 }
+.PP
+.fi
+
+.PP
+References \fBmanage_pipe()\fP\&.
+.PP
+Referenced by \fBmain_loop()\fP\&.
+.SS "void print_ast_root (\fBt_ast\fP * root)"
+
+.PP
+Definition at line \fB103\fP of file \fBvisualiser\&.c\fP\&.
+.nf
+104 {
+105     print_ast_graphical(root, 0, "", 0);
+106 }
+.PP
+.fi
+
+.PP
+References \fBprint_ast_graphical()\fP\&.
+.PP
+Referenced by \fBmain_loop()\fP\&.
+.SS "void print_maxishell (void )"
+
+.PP
+Definition at line \fB90\fP of file \fBprompt\&.c\fP\&.
+.nf
+91 {
+92     ft_printf("\\033[1;33m\\n\\n\\n\\n\\n");
+93     ft_printf("███╗░░░███╗░█████╗░██╗░░██╗██╗░██████╗██╗░"
+94         "░██╗███████╗██╗░░░░░██╗░░░░░\\n");
+95     ft_printf("████╗░████║██╔══██╗╚██╗██╔╝██║██╔════╝██║░"
+96         "░██║██╔════╝██║░░░░░██║░░░░░\\n");
+97     ft_printf("██╔████╔██║███████║░╚███╔╝░██║╚█████╗░█████"
+98         "██║█████╗░░██║░░░░░██║░░░░░\\n");
+99     ft_printf("██║╚██╔╝██║██╔══██║░██╔██╗░██║░╚═══██╗██╔══"
+100         "██║██╔══╝░░██║░░░░░██║░░░░░\\n");
+101     ft_printf("██║░╚═╝░██║██║░░██║██╔╝╚██╗██║██████╔╝██║░░"
+102         "██║███████╗███████╗███████╗\\n");
+103     ft_printf("╚═╝░░░░░╚═╝╚═╝░░╚═╝╚═╝░░╚═╝╚═╝╚═════╝░╚═╝░░"
+104         "╚═╝╚══════╝╚══════╝╚══════╝\\n");
+105     ft_printf("\\n");
+106     ft_printf("            \\033[1;34m"
+107         "Version 0\&.0\&.0\\033[0m\\n");
+108     ft_printf("           \\033[1;36m"
+109         "By Димас и Ромас\\033[0m\\n");
+110     ft_printf("\\n");
+111 }
+.PP
+.fi
+
+.PP
+References \fBft_printf()\fP\&.
+.PP
+Referenced by \fBmain()\fP\&.
+.SS "void print_stack (\fBt_token\fP ** stack)"
+
+.PP
+Definition at line \fB36\fP of file \fBstack_control\&.c\fP\&.
+.nf
+37 {
+38     t_token *current_node;
+39     int     i;
+40 
+41     i = 0;
+42     current_node = *stack;
+43     while (current_node != NULL)
+44     {
+45         ft_printf("input[%d] \->  %s \\n", i, current_node\->data);
+46         current_node = current_node\->next;
+47         i++;
+48     }
+49 }
+.PP
+.fi
+
+.PP
+References \fBs_token::data\fP, \fBft_printf()\fP, and \fBs_token::next\fP\&.
+.SS "void print_tokens (\fBt_token\fP * tokens)"
+
+.PP
+Definition at line \fB91\fP of file \fBtokeniser\&.c\fP\&.
+.nf
+92 {
+93     t_token *token;
+94     int     i;              
+95 
+96     i = 0;
+97     token = tokens;
+98     while (token != NULL)
+99     {
+100         printf("input[%d] \->  %s \\n", i, token\->data);
+101         token = token\->next;
+102         i++;
+103     }
+104 }
+.PP
+.fi
+
+.PP
+References \fBs_token::data\fP, and \fBs_token::next\fP\&.
+.SS "void reallocate_tokens (char *** tokens, int * bufsize)"
+
+.SS "void set_command_args (\fBt_ast\fP * command_node, \fBt_token\fP ** tokens, int arg_count)"
+
+.PP
+Definition at line \fB55\fP of file \fBparser_helpers\&.c\fP\&.
+.nf
+57 {
+58     int     i;
+59     t_token *tmp;
+60 
+61     i = 0;
+62     while (i < arg_count)
+63     {
+64         command_node\->args[i] = ft_strdup((*tokens)\->data);
+65         tmp = *tokens;
+66         *tokens = (*tokens)\->next;
+67         free(tmp\->data);
+68         free(tmp);
+69         i++;
+70     }
+71     command_node\->args[arg_count] = NULL;
+72 }
+.PP
+.fi
+
+.PP
+References \fBs_ast::args\fP, \fBs_token::data\fP, \fBft_strdup()\fP, and \fBs_token::next\fP\&.
+.PP
+Referenced by \fBmanage_commands()\fP\&.
+.SS "void skip_delimiters (char ** input, char * delim)"
+
+.SS "\fBt_token\fP * tokenise (char * str)"
+
+.PP
+Definition at line \fB106\fP of file \fBtokeniser\&.c\fP\&.
+.nf
+107 {
+108     t_token *tokens;
+109 
+110     tokens = NULL;
+111     while (*str)
+112     {
+113         while (*str && ft_strchr(" \\t\\n\\r\\v\\f", *str) != NULL)
+114             str++;
+115         if (ft_strchr("<|>", *str) != NULL)
+116             handle_special_chars(&str, &tokens);
+117         else
+118             handle_phrase(&str, &tokens);
+119     }
+120     return (tokens);
+121 }
+.PP
+.fi
+
+.PP
+References \fBft_strchr()\fP, \fBhandle_phrase()\fP, and \fBhandle_special_chars()\fP\&.
+.PP
+Referenced by \fBmain_loop()\fP\&.
+.SS "char * trim_input (char * str)"
+
+.PP
+Definition at line \fB15\fP of file \fBinput_checker_helpers\&.c\fP\&.
+.nf
+16 {
+17     char    *trimmed_str;
+18 
+19     trimmed_str = ft_strtrim(str, " \\t\\n\\r\\v\\f");
+20     if (!trimmed_str)
+21         return (0);
+22     return (trimmed_str);
+23 }
+.PP
+.fi
+
+.PP
+References \fBft_strtrim()\fP\&.
+.PP
+Referenced by \fBmain_loop()\fP\&.
+.SS "int valid_operator (const char ** str)"
+
+.PP
+Definition at line \fB25\fP of file \fBinput_checker_helpers\&.c\fP\&.
+.nf
+26 {
+27     const char  *start;
+28 
+29     start = (*str)++;
+30     if (*start == **str)
+31         (*str)++;
+32     *str = ft_exclude_delimiters(*str, " \\t\\n\\r\\v\\f");
+33     if (**str == '<' || **str == '>' || **str == '|' || **str == '\\0')
+34         return (0);
+35     return (1);
+36 }
+.PP
+.fi
+
+.PP
+References \fBft_exclude_delimiters()\fP\&.
+.PP
+Referenced by \fBcheck_redirections()\fP\&.
+.SS "void visualize_ast (\fBt_ast\fP * root)"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for maxishell from the source code\&.

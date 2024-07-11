@@ -6,7 +6,7 @@
 /*   By: dmdemirk <dmdemirk@student.42london.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/03 16:31:07 by dmdemirk          #+#    #+#             */
-/*   Updated: 2024/06/17 11:13:55 by dmdemirk         ###   ########.fr       */
+/*   Updated: 2024/07/11 16:06:37 by dmdemirk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,12 @@
 #include "env.h"
 
 /*
-	Functionality:
-		- Change the current directory
-		- Update the PWD and OLDPWD environment variables
-		- If no argument is provided, change to the HOME directory
-		- If the target directory does not exist, print an error message
-*/
+   - Functionality:
+   - Change the current directory
+   - Update the PWD and OLDPWD environment variables
+   - If no argument is provided, change to the HOME directory
+   - If the target directory does not exist, print an error message
+ */
 
 int	builtin_cd(t_minishell_data *data)
 {

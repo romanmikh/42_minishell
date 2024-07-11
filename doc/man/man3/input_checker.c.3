@@ -1,0 +1,179 @@
+.TH "/Users/dimadem/Documents/GitHub/minishell/src/parser/input_checker.c" 3 "Version 1" "maxishell" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/Users/dimadem/Documents/GitHub/minishell/src/parser/input_checker.c
+.SH SYNOPSIS
+.br
+.PP
+\fR#include 'tokens\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "int \fBcheck_operators_loop\fP (const char **str, int *single_quotes, int *double_quotes, int *cmd_flag)"
+.br
+.ti -1c
+.RI "int \fBcheck_operators\fP (const char *str)"
+.br
+.ti -1c
+.RI "int \fBcheck_redirections\fP (const char *str)"
+.br
+.ti -1c
+.RI "int \fBcheck_open_quotes\fP (const char *str)"
+.br
+.ti -1c
+.RI "int \fBinput_error_checks\fP (const char *str)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "int check_open_quotes (const char * str)"
+
+.PP
+Definition at line \fB79\fP of file \fBinput_checker\&.c\fP\&.
+.nf
+80 {
+81     int single_quote_open;
+82     int double_quote_open;
+83 
+84     single_quote_open = 0;
+85     double_quote_open = 0;
+86     while (*str)
+87     {
+88         if (*str == '\\'' && !double_quote_open)
+89         {
+90             single_quote_open = !single_quote_open;
+91         }
+92         else if (*str == '"' && !single_quote_open)
+93             double_quote_open = !double_quote_open;
+94         str++;
+95     }
+96     return (single_quote_open || double_quote_open);
+97 }
+.PP
+.fi
+
+.PP
+Referenced by \fBinput_error_checks()\fP\&.
+.SS "int check_operators (const char * str)"
+
+.PP
+Definition at line \fB34\fP of file \fBinput_checker\&.c\fP\&.
+.nf
+35 {
+36     int single_quotes;
+37     int double_quotes;
+38     int cmd_flag;
+39 
+40     single_quotes = 0;
+41     double_quotes = 0;
+42     cmd_flag = 0;
+43     if (*str == '&' || *str == '|')
+44         return (1);
+45     while (*str)
+46         if (check_operators_loop(&str, &single_quotes, \\
+47             &double_quotes, &cmd_flag) == 1)
+48             return (1);
+49     if (cmd_flag)
+50         return (1);
+51     return (0);
+52 }
+.PP
+.fi
+
+.PP
+References \fBcheck_operators_loop()\fP\&.
+.PP
+Referenced by \fBinput_error_checks()\fP\&.
+.SS "int check_operators_loop (const char ** str, int * single_quotes, int * double_quotes, int * cmd_flag)"
+
+.PP
+Definition at line \fB15\fP of file \fBinput_checker\&.c\fP\&.
+.nf
+17 {
+18     if (**str == '\\'')
+19         (*single_quotes)++;
+20     if (**str == '\\"')
+21         (*double_quotes)++;
+22     if (**str == '|' && !(*single_quotes % 2) && !(*double_quotes % 2))
+23     {
+24         if (*cmd_flag)
+25             return (1);
+26         *cmd_flag = 1;
+27     }
+28     else if (ft_strchr(" \\t\\n\\r\\v\\f", **str) != NULL)
+29         *cmd_flag = 0;
+30     (*str)++;
+31     return (0);
+32 }
+.PP
+.fi
+
+.PP
+References \fBft_strchr()\fP\&.
+.PP
+Referenced by \fBcheck_operators()\fP\&.
+.SS "int check_redirections (const char * str)"
+
+.PP
+Definition at line \fB54\fP of file \fBinput_checker\&.c\fP\&.
+.nf
+55 {
+56     int single_quotes;
+57     int double_quotes;
+58 
+59     single_quotes = 0;
+60     double_quotes = 0;
+61     while (*str)
+62     {
+63         if (*str == '\\'')
+64             single_quotes++;
+65         if (*str == '\\"')
+66             double_quotes++;
+67         if ((!(single_quotes % 2) && !(double_quotes % 2))
+68             && (*str == '>' || *str == '<'))
+69         {
+70             if (!valid_operator(&str))
+71                 return (1);
+72         }
+73         else
+74             str++;
+75     }
+76     return (0);
+77 }
+.PP
+.fi
+
+.PP
+References \fBvalid_operator()\fP\&.
+.PP
+Referenced by \fBinput_error_checks()\fP\&.
+.SS "int input_error_checks (const char * str)"
+
+.PP
+Definition at line \fB99\fP of file \fBinput_checker\&.c\fP\&.
+.nf
+100 {
+101     if (check_redirections(str))
+102         ft_printf("Input error: invalid redirection\&.\\n");
+103     else if (check_operators(str))
+104         ft_printf("Input error: invalid operator\&.\\n");
+105     else if (check_open_quotes(str))
+106         ft_printf("Input error: open quote\&.\\n");
+107     else
+108         return (0);
+109     return (1);
+110 }
+.PP
+.fi
+
+.PP
+References \fBcheck_open_quotes()\fP, \fBcheck_operators()\fP, \fBcheck_redirections()\fP, and \fBft_printf()\fP\&.
+.PP
+Referenced by \fBmain_loop()\fP\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for maxishell from the source code\&.

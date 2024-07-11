@@ -1,0 +1,36 @@
+.TH "/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_tolower.c" 3 "Version 1" "maxishell" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_tolower.c
+.SH SYNOPSIS
+.br
+.PP
+\fR#include 'libft\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "int \fBft_tolower\fP (int c)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "int ft_tolower (int c)"
+
+.PP
+Definition at line \fB15\fP of file \fBft_tolower\&.c\fP\&.
+.nf
+16 {
+17     if (c >= 'A' && c <= 'Z')
+18         return (c + ('a' \- 'A'));
+19     return (c);
+20 }
+.PP
+.fi
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for maxishell from the source code\&.

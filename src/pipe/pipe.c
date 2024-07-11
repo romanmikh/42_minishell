@@ -22,6 +22,16 @@ int		builtin_pipe(t_ast *node, t_minishell_data *data);
 pid_t	execute_child(t_ast *node, t_minishell_data *data, \
 			int fd[2], int direction);
 
+/**
+- @brief execute pipe when | is found in the command
+- 
+- @param node current node in the AST
+- @param data minishell structure data
+- @return int return status:
+- 				- 0: success
+- 				- 1: error
+ */
+
 int	builtin_pipe(t_ast *node, t_minishell_data *data)
 {
 	int		fd[2];
@@ -38,16 +48,25 @@ int	builtin_pipe(t_ast *node, t_minishell_data *data)
 	else
 	{
 		close(fd[1]);
-		data->temp_fd = fd[0];
+		data->std_in = fd[0];
 		return (WAIT_NEXT_COMMAND);
 	}
-	close_fds(fd);
+	close_fds(fd[0], fd[1]);
 	if (pid_1 > 0)
 		waitpid(pid_1, &status, 0);
 	if (node->right != NULL && pid_2 > 0)
 		waitpid(pid_2, &status, 0);
 	return (WEXITSTATUS(status));
 }
+
+/**
+- @brief execute child process in the pipe context
+- @param node current node in the AST
+- @param data minishell structure data
+- @param fd file descriptors
+- @param direction direction of the pipe if 0 - node_left, if 1 - node_right
+- @return pid_t return the process id
+ */
 
 pid_t	execute_child(t_ast *node, t_minishell_data *data, \
 			int fd[2], int direction)
@@ -63,7 +82,7 @@ pid_t	execute_child(t_ast *node, t_minishell_data *data, \
 			dup2(fd[1], STDOUT_FILENO);
 		else
 			dup2(fd[0], STDIN_FILENO);
-		close_fds(fd);
+		close_fds(fd[0], fd[1]);
 		execute_ast(node, data);
 		exit(EXIT_SUCCESS);
 	}

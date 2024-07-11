@@ -1,0 +1,69 @@
+.TH "/Users/dimadem/Documents/GitHub/minishell/src/parser/input_checker_helpers.c" 3 "Version 1" "maxishell" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/Users/dimadem/Documents/GitHub/minishell/src/parser/input_checker_helpers.c
+.SH SYNOPSIS
+.br
+.PP
+\fR#include 'tokens\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "char * \fBtrim_input\fP (char *str)"
+.br
+.ti -1c
+.RI "int \fBvalid_operator\fP (const char **str)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "char * trim_input (char * str)"
+
+.PP
+Definition at line \fB15\fP of file \fBinput_checker_helpers\&.c\fP\&.
+.nf
+16 {
+17     char    *trimmed_str;
+18 
+19     trimmed_str = ft_strtrim(str, " \\t\\n\\r\\v\\f");
+20     if (!trimmed_str)
+21         return (0);
+22     return (trimmed_str);
+23 }
+.PP
+.fi
+
+.PP
+References \fBft_strtrim()\fP\&.
+.PP
+Referenced by \fBmain_loop()\fP\&.
+.SS "int valid_operator (const char ** str)"
+
+.PP
+Definition at line \fB25\fP of file \fBinput_checker_helpers\&.c\fP\&.
+.nf
+26 {
+27     const char  *start;
+28 
+29     start = (*str)++;
+30     if (*start == **str)
+31         (*str)++;
+32     *str = ft_exclude_delimiters(*str, " \\t\\n\\r\\v\\f");
+33     if (**str == '<' || **str == '>' || **str == '|' || **str == '\\0')
+34         return (0);
+35     return (1);
+36 }
+.PP
+.fi
+
+.PP
+References \fBft_exclude_delimiters()\fP\&.
+.PP
+Referenced by \fBcheck_redirections()\fP\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for maxishell from the source code\&.

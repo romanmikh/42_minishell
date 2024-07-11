@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.11.0" xml:lang="en-US">
+  <compounddef id="dir_313caf1132e152dd9b58bea13a4052ca" kind="dir">
+    <compoundname>/Users/dimadem/Documents/GitHub/minishell/src/utils</compoundname>
+    <innerfile refid="aux_8c">aux.c</innerfile>
+    <innerfile refid="clean__general_8c">clean_general.c</innerfile>
+    <innerfile refid="clean__tree_8c">clean_tree.c</innerfile>
+    <innerfile refid="initialise_8c">initialise.c</innerfile>
+    <innerfile refid="prompt_8c">prompt.c</innerfile>
+    <innerfile refid="stack__control_8c">stack_control.c</innerfile>
+    <innerfile refid="stack__control__2_8c">stack_control_2.c</innerfile>
+    <innerfile refid="visualiser_8c">visualiser.c</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/dimadem/Documents/GitHub/minishell/src/utils/"/>
+  </compounddef>
+</doxygen>

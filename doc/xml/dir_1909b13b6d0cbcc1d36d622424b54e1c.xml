@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.11.0" xml:lang="en-US">
+  <compounddef id="dir_1909b13b6d0cbcc1d36d622424b54e1c" kind="dir">
+    <compoundname>/Users/dimadem/Documents/GitHub/minishell/src/builtins</compoundname>
+    <innerfile refid="cd_8c">cd.c</innerfile>
+    <innerfile refid="echo_8c">echo.c</innerfile>
+    <innerfile refid="builtins_2env_8c">env.c</innerfile>
+    <innerfile refid="exit_8c">exit.c</innerfile>
+    <innerfile refid="export_8c">export.c</innerfile>
+    <innerfile refid="pwd_8c">pwd.c</innerfile>
+    <innerfile refid="unset_8c">unset.c</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/dimadem/Documents/GitHub/minishell/src/builtins/"/>
+  </compounddef>
+</doxygen>

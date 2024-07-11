@@ -18,9 +18,7 @@ char	*trim_input(char *str)
 
 	trimmed_str = ft_strtrim(str, " \t\n\r\v\f");
 	if (!trimmed_str)
-	{
 		return (0);
-	}
 	return (trimmed_str);
 }
 

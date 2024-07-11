@@ -1,0 +1,480 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.11.0" xml:lang="en-US">
+  <compounddef id="execute_8c" kind="file" language="C++">
+    <compoundname>execute.c</compoundname>
+    <includes refid="builtins_8h" local="yes">builtins.h</includes>
+    <includes refid="libft_8h" local="yes">libft.h</includes>
+    <includes local="no">stdio.h</includes>
+    <includes local="no">sys/wait.h</includes>
+    <includes refid="shell_8h" local="yes">shell.h</includes>
+    <includes refid="execute_8h" local="yes">execute.h</includes>
+    <includes refid="tokens_8h" local="yes">tokens.h</includes>
+    <includes refid="pipe_8h" local="yes">pipe.h</includes>
+    <includes refid="redirection_8h" local="yes">redirection.h</includes>
+    <incdepgraph>
+      <node id="2">
+        <label>builtins.h</label>
+        <link refid="builtins_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>env.h</label>
+        <link refid="env_8h"/>
+      </node>
+      <node id="17">
+        <label>execute.h</label>
+        <link refid="execute_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+      </node>
+      <node id="22">
+        <label>pipe.h</label>
+        <link refid="pipe_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+      </node>
+      <node id="23">
+        <label>redirection.h</label>
+        <link refid="redirection_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>shell.h</label>
+        <link refid="shell_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="18">
+        <label>tokens.h</label>
+        <link refid="tokens_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>libft.h</label>
+        <link refid="libft_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>/Users/dimadem/Documents/GitHub/minishell/src/execute/execute.c</label>
+        <link refid="execute_8c"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>limits.h</label>
+      </node>
+      <node id="14">
+        <label>math.h</label>
+      </node>
+      <node id="21">
+        <label>pwd.h</label>
+      </node>
+      <node id="20">
+        <label>readline/history.h</label>
+      </node>
+      <node id="19">
+        <label>readline/readline.h</label>
+      </node>
+      <node id="12">
+        <label>signal.h</label>
+      </node>
+      <node id="11">
+        <label>stdarg.h</label>
+      </node>
+      <node id="13">
+        <label>stdbool.h</label>
+      </node>
+      <node id="6">
+        <label>stddef.h</label>
+      </node>
+      <node id="8">
+        <label>stdint.h</label>
+      </node>
+      <node id="15">
+        <label>stdio.h</label>
+      </node>
+      <node id="7">
+        <label>stdlib.h</label>
+      </node>
+      <node id="16">
+        <label>sys/wait.h</label>
+      </node>
+      <node id="10">
+        <label>unistd.h</label>
+      </node>
+    </incdepgraph>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="execute_8c_1ace4c3a2246919797e40140123d79596a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int execute_ast</definition>
+        <argsstring>(t_ast *node, t_minishell_data *data)</argsstring>
+        <name>execute_ast</name>
+        <param>
+          <type><ref refid="tokens_8h_1a5fd329b243c6cd036f7b9ecbc86a9344" kindref="member">t_ast</ref> *</type>
+          <declname>node</declname>
+        </param>
+        <param>
+          <type><ref refid="shell_8h_1a163dfbd200eaf940e5a56fd45345ff72" kindref="member">t_minishell_data</ref> *</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+<para>execute Abstract Syntax Tree </para>
+        </briefdescription>
+        <detaileddescription>
+<para>--<itemizedlist>
+<listitem><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>node</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Abstract Syntax Tree Node</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+</listitem><listitem><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>minishell data struct</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+</listitem><listitem><para><simplesect kind="return"><para>int return status:</para>
+</simplesect>
+</para>
+</listitem><listitem><para>- 0: success <linebreak/>
+</para>
+</listitem><listitem><para>- 1: error </para>
+</listitem></itemizedlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/dimadem/Documents/GitHub/minishell/src/execute/execute.c" line="41" column="4" bodyfile="/Users/dimadem/Documents/GitHub/minishell/src/execute/execute.c" bodystart="41" bodyend="82" declfile="/Users/dimadem/Documents/GitHub/minishell/src/execute/execute.c" declline="27" declcolumn="4"/>
+        <references refid="structs__ast_1ab62d177d86a1908cf5bbdb5cf6e978f8" compoundref="tokens_8h" startline="51">s_ast::args</references>
+        <references refid="structs__minishell__data_1aeb4af268850af7d0f6d0c64f2bfefdea" compoundref="shell_8h" startline="20">s_minishell_data::args</references>
+        <references refid="libft_8h_1add9307de87f38e77d336751e305886f6" compoundref="libft_8h" startline="108">BLU</references>
+        <references refid="pipe_8h_1a7947b63271b47934f419fe6d217bf8df" compoundref="pipe_8c" startline="35" endline="60">builtin_pipe</references>
+        <references refid="libft_8h_1a25f4cb00b763d4c7c8e627e4c0350383" compoundref="libft_8h" startline="110">CYA</references>
+        <references refid="tokens_8h_1a76a354e93d720f05344590ec8aa222deaf62fcc8d292e490f19a6cea724a10c00" compoundref="tokens_8h" startline="33">ENV_VAR</references>
+        <references refid="execute_8c_1a825187f25304f9bd1a3e7a5e97327801" compoundref="execute_8c" startline="93" endline="120">execute</references>
+        <references refid="libft_8h_1aea69ffbacdcdf16c21b8c9961df84448" compoundref="libft_8h" startline="106">GRN</references>
+        <references refid="libft_8h_1af54a5a977c0c499323d656315f008ee0" compoundref="libft_8h" startline="109">MAG</references>
+        <references refid="tokens_8h_1a76a354e93d720f05344590ec8aa222dea46ac44ddfb231d3c8f76820d4624c099" compoundref="tokens_8h" startline="31">PHRASE</references>
+        <references refid="tokens_8h_1a76a354e93d720f05344590ec8aa222dea9bc832fa28809fb974f6ce5bb0cc7117" compoundref="tokens_8h" startline="32">PIPE</references>
+        <references refid="libft_8h_1a8d23feea868a983c8c2b661e1e16972f" compoundref="libft_8h" startline="105">RED</references>
+        <references refid="tokens_8h_1a76a354e93d720f05344590ec8aa222deae6167ac4e4f266512f36d79961bde464" compoundref="tokens_8h" startline="36">REDIR_APPEND</references>
+        <references refid="tokens_8h_1a76a354e93d720f05344590ec8aa222dea6b4984ec77e78953297b7cb3f580a2e7" compoundref="tokens_8h" startline="37">REDIR_HEREDOC</references>
+        <references refid="tokens_8h_1a76a354e93d720f05344590ec8aa222dea18f3c2f496edb0cae413ac5244bb2452" compoundref="tokens_8h" startline="34">REDIR_IN</references>
+        <references refid="tokens_8h_1a76a354e93d720f05344590ec8aa222deacb2a363e84eabbbe3925fd298f7a3d01" compoundref="tokens_8h" startline="35">REDIR_OUT</references>
+        <references refid="redirection_8h_1a780ae5fe0eba6dcc6cab3a347507d636" compoundref="redirect__append_8c" startline="16" endline="34">redirect_append</references>
+        <references refid="redirection_8h_1a0dc55a5a9752d658c1b8b6e3760f5813" compoundref="redirect__heredoc_8c" startline="17" endline="63">redirect_here_doc</references>
+        <references refid="redirection_8h_1a2635bab3d0023f67288d2832903bdbd9" compoundref="redirect__in_8c" startline="23" endline="40">redirect_in</references>
+        <references refid="redirection_8h_1a13afb8e911eca2b32bd9e843eda752a5" compoundref="redirect__out_8c" startline="23" endline="41">redirect_out</references>
+        <references refid="libft_8h_1ab702106cf3b3e96750b6845ded4e0299" compoundref="libft_8h" startline="102">RESET</references>
+        <references refid="structs__ast_1ad1cd2bc8f77d3bbac46e3fdddff8b441" compoundref="tokens_8h" startline="50">s_ast::type</references>
+        <references refid="libft_8h_1a96fac03c4ab3363f06a0328e0e53a40c" compoundref="libft_8h" startline="107">YEL</references>
+        <referencedby refid="pipe_8c_1a3a1c19716357baba879b799300b3c077" compoundref="pipe_8c" startline="71" endline="90">execute_child</referencedby>
+        <referencedby refid="main_8c_1abaf800210325f066cb9289aaae9e2c86" compoundref="main_8c" startline="29" endline="51">main_loop</referencedby>
+        <referencedby refid="redirection_8h_1a780ae5fe0eba6dcc6cab3a347507d636" compoundref="redirect__append_8c" startline="16" endline="34">redirect_append</referencedby>
+        <referencedby refid="redirection_8h_1a0dc55a5a9752d658c1b8b6e3760f5813" compoundref="redirect__heredoc_8c" startline="17" endline="63">redirect_here_doc</referencedby>
+        <referencedby refid="redirection_8h_1a2635bab3d0023f67288d2832903bdbd9" compoundref="redirect__in_8c" startline="23" endline="40">redirect_in</referencedby>
+        <referencedby refid="redirection_8h_1a13afb8e911eca2b32bd9e843eda752a5" compoundref="redirect__out_8c" startline="23" endline="41">redirect_out</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="execute_8c_1a825187f25304f9bd1a3e7a5e97327801" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int execute</definition>
+        <argsstring>(t_minishell_data *data)</argsstring>
+        <name>execute</name>
+        <param>
+          <type><ref refid="shell_8h_1a163dfbd200eaf940e5a56fd45345ff72" kindref="member">t_minishell_data</ref> *</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+<para>execute distribution function checks if the command is a builtin or a new process </para>
+        </briefdescription>
+        <detaileddescription>
+<para>--<itemizedlist>
+<listitem><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>minishell data struct</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+</listitem><listitem><para><simplesect kind="return"><para>int return status:</para>
+</simplesect>
+</para>
+</listitem><listitem><para>- 0: success <linebreak/>
+</para>
+</listitem><listitem><para>- 1: error </para>
+</listitem></itemizedlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/dimadem/Documents/GitHub/minishell/src/execute/execute.c" line="93" column="4" bodyfile="/Users/dimadem/Documents/GitHub/minishell/src/execute/execute.c" bodystart="93" bodyend="120" declfile="/Users/dimadem/Documents/GitHub/minishell/src/execute/execute.c" declline="28" declcolumn="4"/>
+        <references refid="structs__minishell__data_1aeb4af268850af7d0f6d0c64f2bfefdea" compoundref="shell_8h" startline="20">s_minishell_data::args</references>
+        <references refid="builtins_8h_1a90c33b349e024075c96efdc320f7138f" compoundref="cd_8c" startline="26" endline="47">builtin_cd</references>
+        <references refid="builtins_8h_1a9c4bf413cef22ef46427c4026734a97d" compoundref="echo_8c" startline="21" endline="42">builtin_echo</references>
+        <references refid="builtins_8h_1adfc1db1f94cf16d71aea54b09370c032" compoundref="builtins_2env_8c" startline="38" endline="44">builtin_env</references>
+        <references refid="builtins_8h_1a6a7d93447961b415c9c16ebdfcd3d5fa" compoundref="exit_8c" startline="26" endline="35">builtin_exit</references>
+        <references refid="builtins_8h_1a9e6f1e14f0125cd68c70e8e31ef606aa" compoundref="export_8c" startline="28" endline="44">builtin_export</references>
+        <references refid="builtins_8h_1aa9f1acae4ed9a914564af529571db30a" compoundref="pwd_8c" startline="23" endline="37">builtin_pwd</references>
+        <references refid="builtins_8h_1aa04be64406f96e5ae8f361421bf72cec" compoundref="unset_8c" startline="26" endline="45">builtin_unset</references>
+        <references refid="libft_8h_1a1f2ff2312e5994560c9537cd9173be94" compoundref="ft__strcmp_8c" startline="24" endline="34">ft_strcmp</references>
+        <references refid="execute_8c_1a82e1e73d725f74b5fdad62dd3a99bab5" compoundref="execute_8c" startline="131" endline="159">new_process</references>
+        <referencedby refid="execute_8h_1ace4c3a2246919797e40140123d79596a" compoundref="execute_8c" startline="41" endline="82">execute_ast</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="execute_8c_1a82e1e73d725f74b5fdad62dd3a99bab5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int new_process</definition>
+        <argsstring>(t_minishell_data *data)</argsstring>
+        <name>new_process</name>
+        <param>
+          <type><ref refid="shell_8h_1a163dfbd200eaf940e5a56fd45345ff72" kindref="member">t_minishell_data</ref> *</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+<para>executes a new process </para>
+        </briefdescription>
+        <detaileddescription>
+<para>--<itemizedlist>
+<listitem><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>minishell data structure</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+</listitem><listitem><para><simplesect kind="return"><para>int return status:</para>
+</simplesect>
+</para>
+</listitem><listitem><para>- 0: success <linebreak/>
+</para>
+</listitem><listitem><para>- 1: error </para>
+</listitem></itemizedlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/dimadem/Documents/GitHub/minishell/src/execute/execute.c" line="131" column="4" bodyfile="/Users/dimadem/Documents/GitHub/minishell/src/execute/execute.c" bodystart="131" bodyend="159" declfile="/Users/dimadem/Documents/GitHub/minishell/src/execute/execute.c" declline="29" declcolumn="4"/>
+        <references refid="structs__minishell__data_1aeb4af268850af7d0f6d0c64f2bfefdea" compoundref="shell_8h" startline="20">s_minishell_data::args</references>
+        <references refid="execute_8h_1ab9bcddf9275f12cc49348081000beb62" compoundref="utils__0_8c" startline="93" endline="97">close_fds</references>
+        <references refid="env_8h_1a19f3a9e73371c1cfb3db076f94d33830" compoundref="env_2utils_8c" startline="22" endline="49">env_to_array</references>
+        <references refid="structs__minishell__data_1a8a0b3f50c8893e061062e93115f3d723" compoundref="shell_8h" startline="21">s_minishell_data::envp</references>
+        <references refid="structs__minishell__data_1a978016fddb1d9faa4fbda6859a9a199e" compoundref="shell_8h" startline="28">s_minishell_data::exit_status</references>
+        <references refid="execute_8h_1a3de2eb0e796441d7b827cf213bd8d789" compoundref="utils__0_8c" startline="32" endline="55">ft_find_path</references>
+        <references refid="execute_8h_1aedc550f2251badad69cf4b6dfda183ef" compoundref="utils__0_8c" startline="81" endline="85">ft_perror</references>
+        <references refid="structs__minishell__data_1a9ed5685097b7e4b55c3c1307b70869ef" compoundref="shell_8h" startline="23">s_minishell_data::std_in</references>
+        <references refid="structs__minishell__data_1ac90001aa8bc9a89b165ee6bca5f05ef3" compoundref="shell_8h" startline="24">s_minishell_data::std_out</references>
+        <referencedby refid="execute_8h_1a825187f25304f9bd1a3e7a5e97327801" compoundref="execute_8c" startline="93" endline="120">execute</referencedby>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*<sp/>**************************************************************************<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:::<sp/><sp/><sp/><sp/><sp/><sp/>::::::::<sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/>execute.c<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:+:<sp/><sp/><sp/><sp/><sp/><sp/>:+:<sp/><sp/><sp/><sp/>:+:<sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>+:+<sp/>+:+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>+:+<sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/>By:<sp/>dmdemirk<sp/>&lt;dmdemirk@student.42london.c<sp/><sp/><sp/><sp/><sp/><sp/>+#+<sp/><sp/>+:+<sp/><sp/><sp/><sp/><sp/><sp/><sp/>+#+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>+#+#+#+#+#+<sp/><sp/><sp/>+#+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/>Created:<sp/>2024/05/31<sp/>11:02:00<sp/>by<sp/>dmdemirk<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>#+#<sp/><sp/><sp/><sp/>#+#<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/>Updated:<sp/>2024/06/26<sp/>15:27:32<sp/>by<sp/>dmdemirk<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>###<sp/><sp/><sp/>########.fr<sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>**************************************************************************<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="builtins_8h" kindref="compound">builtins.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="libft_8h" kindref="compound">libft.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdio.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;sys/wait.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="shell_8h" kindref="compound">shell.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="execute_8h" kindref="compound">execute.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="tokens_8h" kindref="compound">tokens.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="pipe_8h" kindref="compound">pipe.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="redirection_8h" kindref="compound">redirection.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="24"><highlight class="comment"><sp/><sp/><sp/><sp/>REFACTORING<sp/>HERE</highlight></codeline>
+<codeline lineno="25"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="execute_8c_1ace4c3a2246919797e40140123d79596a" kindref="member">execute_ast</ref>(<ref refid="structs__ast" kindref="compound">t_ast</ref><sp/>*node,<sp/><ref refid="structs__minishell__data" kindref="compound">t_minishell_data</ref><sp/>*data);</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="execute_8c_1a825187f25304f9bd1a3e7a5e97327801" kindref="member">execute</ref>(<ref refid="structs__minishell__data" kindref="compound">t_minishell_data</ref><sp/>*data);</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="execute_8c_1a82e1e73d725f74b5fdad62dd3a99bab5" kindref="member">new_process</ref>(<ref refid="structs__minishell__data" kindref="compound">t_minishell_data</ref><sp/>*data);</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41" refid="execute_8h_1ace4c3a2246919797e40140123d79596a" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="execute_8c_1ace4c3a2246919797e40140123d79596a" kindref="member">execute_ast</ref>(<ref refid="structs__ast" kindref="compound">t_ast</ref><sp/>*node,<sp/><ref refid="structs__minishell__data" kindref="compound">t_minishell_data</ref><sp/>*data)</highlight></codeline>
+<codeline lineno="42"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!node)</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(1);</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(node-&gt;<ref refid="structs__ast_1ad1cd2bc8f77d3bbac46e3fdddff8b441" kindref="member">type</ref><sp/>==<sp/><ref refid="tokens_8h_1a76a354e93d720f05344590ec8aa222dea9bc832fa28809fb974f6ce5bb0cc7117" kindref="member">PIPE</ref>)</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(<ref refid="libft_8h_1a8d23feea868a983c8c2b661e1e16972f" kindref="member">RED</ref></highlight><highlight class="stringliteral">&quot;PIPE\n&quot;</highlight><highlight class="normal"><ref refid="libft_8h_1ab702106cf3b3e96750b6845ded4e0299" kindref="member">RESET</ref>);</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(<ref refid="pipe_8h_1a7947b63271b47934f419fe6d217bf8df" kindref="member">builtin_pipe</ref>(node,<sp/>data));</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(node-&gt;<ref refid="structs__ast_1ad1cd2bc8f77d3bbac46e3fdddff8b441" kindref="member">type</ref><sp/>==<sp/><ref refid="tokens_8h_1a76a354e93d720f05344590ec8aa222deaf62fcc8d292e490f19a6cea724a10c00" kindref="member">ENV_VAR</ref>)<sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>&quot;$()&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(<ref refid="libft_8h_1add9307de87f38e77d336751e305886f6" kindref="member">BLU</ref></highlight><highlight class="stringliteral">&quot;ENV_VAR\n&quot;</highlight><highlight class="normal"><ref refid="libft_8h_1ab702106cf3b3e96750b6845ded4e0299" kindref="member">RESET</ref>);</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//execute_redirect(node,<sp/>data);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(node-&gt;<ref refid="structs__ast_1ad1cd2bc8f77d3bbac46e3fdddff8b441" kindref="member">type</ref><sp/>==<sp/><ref refid="tokens_8h_1a76a354e93d720f05344590ec8aa222dea18f3c2f496edb0cae413ac5244bb2452" kindref="member">REDIR_IN</ref>)</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(<ref refid="libft_8h_1aea69ffbacdcdf16c21b8c9961df84448" kindref="member">GRN</ref></highlight><highlight class="stringliteral">&quot;REDIR_IN\n&quot;</highlight><highlight class="normal"><ref refid="libft_8h_1ab702106cf3b3e96750b6845ded4e0299" kindref="member">RESET</ref>);</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(<ref refid="redirection_8h_1a2635bab3d0023f67288d2832903bdbd9" kindref="member">redirect_in</ref>(node,<sp/>data));</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(node-&gt;<ref refid="structs__ast_1ad1cd2bc8f77d3bbac46e3fdddff8b441" kindref="member">type</ref><sp/>==<sp/><ref refid="tokens_8h_1a76a354e93d720f05344590ec8aa222deacb2a363e84eabbbe3925fd298f7a3d01" kindref="member">REDIR_OUT</ref>)<sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>&quot;&gt;&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(<ref refid="libft_8h_1a25f4cb00b763d4c7c8e627e4c0350383" kindref="member">CYA</ref></highlight><highlight class="stringliteral">&quot;REDIR_OUT\n&quot;</highlight><highlight class="normal"><ref refid="libft_8h_1ab702106cf3b3e96750b6845ded4e0299" kindref="member">RESET</ref>);</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(<ref refid="redirection_8h_1a13afb8e911eca2b32bd9e843eda752a5" kindref="member">redirect_out</ref>(node,<sp/>data));</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(node-&gt;<ref refid="structs__ast_1ad1cd2bc8f77d3bbac46e3fdddff8b441" kindref="member">type</ref><sp/>==<sp/><ref refid="tokens_8h_1a76a354e93d720f05344590ec8aa222deae6167ac4e4f266512f36d79961bde464" kindref="member">REDIR_APPEND</ref>)<sp/></highlight><highlight class="comment">//<sp/>&quot;&gt;&gt;&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(<ref refid="libft_8h_1a25f4cb00b763d4c7c8e627e4c0350383" kindref="member">CYA</ref></highlight><highlight class="stringliteral">&quot;REDIR_APPEND\n&quot;</highlight><highlight class="normal"><ref refid="libft_8h_1ab702106cf3b3e96750b6845ded4e0299" kindref="member">RESET</ref>);</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(<ref refid="redirection_8h_1a780ae5fe0eba6dcc6cab3a347507d636" kindref="member">redirect_append</ref>(node,<sp/>data));</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(node-&gt;<ref refid="structs__ast_1ad1cd2bc8f77d3bbac46e3fdddff8b441" kindref="member">type</ref><sp/>==<sp/><ref refid="tokens_8h_1a76a354e93d720f05344590ec8aa222dea6b4984ec77e78953297b7cb3f580a2e7" kindref="member">REDIR_HEREDOC</ref>)<sp/></highlight><highlight class="comment">//<sp/>&quot;&lt;&lt;&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(<ref refid="libft_8h_1af54a5a977c0c499323d656315f008ee0" kindref="member">MAG</ref></highlight><highlight class="stringliteral">&quot;REDIR_HEREDOC\n&quot;</highlight><highlight class="normal"><ref refid="libft_8h_1ab702106cf3b3e96750b6845ded4e0299" kindref="member">RESET</ref>);</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(<ref refid="redirection_8h_1a0dc55a5a9752d658c1b8b6e3760f5813" kindref="member">redirect_here_doc</ref>(node,<sp/>data));</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(node-&gt;<ref refid="structs__ast_1ad1cd2bc8f77d3bbac46e3fdddff8b441" kindref="member">type</ref><sp/>==<sp/><ref refid="tokens_8h_1a76a354e93d720f05344590ec8aa222dea46ac44ddfb231d3c8f76820d4624c099" kindref="member">PHRASE</ref>)</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(<ref refid="libft_8h_1a96fac03c4ab3363f06a0328e0e53a40c" kindref="member">YEL</ref></highlight><highlight class="stringliteral">&quot;PHRASE\n&quot;</highlight><highlight class="normal"><ref refid="libft_8h_1ab702106cf3b3e96750b6845ded4e0299" kindref="member">RESET</ref>);</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>data-&gt;<ref refid="structs__minishell__data_1aeb4af268850af7d0f6d0c64f2bfefdea" kindref="member">args</ref><sp/>=<sp/>node-&gt;<ref refid="structs__ast_1ab62d177d86a1908cf5bbdb5cf6e978f8" kindref="member">args</ref>;</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(<ref refid="execute_8c_1a825187f25304f9bd1a3e7a5e97327801" kindref="member">execute</ref>(data));</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(0);</highlight></codeline>
+<codeline lineno="82"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight></codeline>
+<codeline lineno="93" refid="execute_8h_1a825187f25304f9bd1a3e7a5e97327801" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="execute_8c_1a825187f25304f9bd1a3e7a5e97327801" kindref="member">execute</ref>(<ref refid="structs__minishell__data" kindref="compound">t_minishell_data</ref><sp/>*data)</highlight></codeline>
+<codeline lineno="94"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><sp/>i;</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/><sp/><sp/>*builtin_commands[7];</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/>int<sp/><sp/><sp/><sp/><sp/>(*builtin_functions[7])(<ref refid="structs__minishell__data" kindref="compound">t_minishell_data</ref><sp/>*);</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/>builtin_commands[0]<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;cd&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/>builtin_commands[1]<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;echo&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/>builtin_commands[2]<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;env&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/>builtin_commands[3]<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;exit&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/>builtin_commands[4]<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;export&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/>builtin_commands[5]<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;pwd&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/>builtin_commands[6]<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;unset&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/>builtin_functions[0]<sp/>=<sp/>&amp;<ref refid="builtins_8h_1a90c33b349e024075c96efdc320f7138f" kindref="member">builtin_cd</ref>;</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/>builtin_functions[1]<sp/>=<sp/>&amp;<ref refid="builtins_8h_1a9c4bf413cef22ef46427c4026734a97d" kindref="member">builtin_echo</ref>;</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/>builtin_functions[2]<sp/>=<sp/>&amp;<ref refid="builtins_8h_1adfc1db1f94cf16d71aea54b09370c032" kindref="member">builtin_env</ref>;</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/>builtin_functions[3]<sp/>=<sp/>&amp;<ref refid="builtins_8h_1a6a7d93447961b415c9c16ebdfcd3d5fa" kindref="member">builtin_exit</ref>;</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/>builtin_functions[4]<sp/>=<sp/>&amp;<ref refid="builtins_8h_1a9e6f1e14f0125cd68c70e8e31ef606aa" kindref="member">builtin_export</ref>;</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/>builtin_functions[5]<sp/>=<sp/>&amp;<ref refid="builtins_8h_1aa9f1acae4ed9a914564af529571db30a" kindref="member">builtin_pwd</ref>;</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/>builtin_functions[6]<sp/>=<sp/>&amp;<ref refid="builtins_8h_1aa04be64406f96e5ae8f361421bf72cec" kindref="member">builtin_unset</ref>;</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(data-&gt;<ref refid="structs__minishell__data_1aeb4af268850af7d0f6d0c64f2bfefdea" kindref="member">args</ref>[0]<sp/>==<sp/>NULL)</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(2);</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/>i<sp/>=<sp/>-1;</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(++i<sp/>&lt;<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(builtin_commands)<sp/>/<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*))</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="libft_8h_1a1f2ff2312e5994560c9537cd9173be94" kindref="member">ft_strcmp</ref>(data-&gt;<ref refid="structs__minishell__data_1aeb4af268850af7d0f6d0c64f2bfefdea" kindref="member">args</ref>[0],<sp/>builtin_commands[i])<sp/>==<sp/>0)</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>((*builtin_functions[i])(data));</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(<ref refid="execute_8c_1a82e1e73d725f74b5fdad62dd3a99bab5" kindref="member">new_process</ref>(data));</highlight></codeline>
+<codeline lineno="120"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"></highlight></codeline>
+<codeline lineno="131" refid="execute_8h_1a82e1e73d725f74b5fdad62dd3a99bab5" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="execute_8c_1a82e1e73d725f74b5fdad62dd3a99bab5" kindref="member">new_process</ref>(<ref refid="structs__minishell__data" kindref="compound">t_minishell_data</ref><sp/>*data)</highlight></codeline>
+<codeline lineno="132"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/>pid_t<sp/><sp/><sp/>pid;</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"></highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;new_process\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;data-&gt;std_in:<sp/>%d\n&quot;</highlight><highlight class="normal">,<sp/>data-&gt;<ref refid="structs__minishell__data_1a9ed5685097b7e4b55c3c1307b70869ef" kindref="member">std_in</ref>);</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;data-&gt;std_out:<sp/>%d\n&quot;</highlight><highlight class="normal">,<sp/>data-&gt;<ref refid="structs__minishell__data_1ac90001aa8bc9a89b165ee6bca5f05ef3" kindref="member">std_out</ref>);</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(data-&gt;<ref refid="structs__minishell__data_1a9ed5685097b7e4b55c3c1307b70869ef" kindref="member">std_in</ref><sp/>==<sp/>-1)</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>data-&gt;<ref refid="structs__minishell__data_1a9ed5685097b7e4b55c3c1307b70869ef" kindref="member">std_in</ref><sp/>=<sp/>dup(STDIN_FILENO);</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(data-&gt;<ref refid="structs__minishell__data_1ac90001aa8bc9a89b165ee6bca5f05ef3" kindref="member">std_out</ref><sp/>==<sp/>-1)</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>data-&gt;<ref refid="structs__minishell__data_1ac90001aa8bc9a89b165ee6bca5f05ef3" kindref="member">std_out</ref><sp/>=<sp/>dup(STDOUT_FILENO);</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/>pid<sp/>=<sp/>fork();</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(pid<sp/>==<sp/>-1)</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="execute_8h_1aedc550f2251badad69cf4b6dfda183ef" kindref="member">ft_perror</ref>(</highlight><highlight class="stringliteral">&quot;fork&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(pid<sp/>==<sp/>0)</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(data-&gt;<ref refid="structs__minishell__data_1a9ed5685097b7e4b55c3c1307b70869ef" kindref="member">std_in</ref><sp/>!=<sp/>-1)</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>dup2(data-&gt;<ref refid="structs__minishell__data_1a9ed5685097b7e4b55c3c1307b70869ef" kindref="member">std_in</ref>,<sp/>STDIN_FILENO);</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(data-&gt;<ref refid="structs__minishell__data_1ac90001aa8bc9a89b165ee6bca5f05ef3" kindref="member">std_out</ref><sp/>!=<sp/>-1)</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>dup2(data-&gt;<ref refid="structs__minishell__data_1ac90001aa8bc9a89b165ee6bca5f05ef3" kindref="member">std_out</ref>,<sp/>STDOUT_FILENO);</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="execute_8h_1ab9bcddf9275f12cc49348081000beb62" kindref="member">close_fds</ref>(data-&gt;<ref refid="structs__minishell__data_1a9ed5685097b7e4b55c3c1307b70869ef" kindref="member">std_in</ref>,<sp/>data-&gt;<ref refid="structs__minishell__data_1ac90001aa8bc9a89b165ee6bca5f05ef3" kindref="member">std_out</ref>);</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(execve(<ref refid="execute_8h_1a3de2eb0e796441d7b827cf213bd8d789" kindref="member">ft_find_path</ref>(data-&gt;<ref refid="structs__minishell__data_1aeb4af268850af7d0f6d0c64f2bfefdea" kindref="member">args</ref>[0],<sp/>data-&gt;<ref refid="structs__minishell__data_1a8a0b3f50c8893e061062e93115f3d723" kindref="member">envp</ref>),<sp/>\</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>data-&gt;<ref refid="structs__minishell__data_1aeb4af268850af7d0f6d0c64f2bfefdea" kindref="member">args</ref>,<sp/><ref refid="env_8h_1a19f3a9e73371c1cfb3db076f94d33830" kindref="member">env_to_array</ref>(data-&gt;<ref refid="structs__minishell__data_1a8a0b3f50c8893e061062e93115f3d723" kindref="member">envp</ref>))<sp/>==<sp/>-1)</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="execute_8h_1aedc550f2251badad69cf4b6dfda183ef" kindref="member">ft_perror</ref>(</highlight><highlight class="stringliteral">&quot;minishell&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/>waitpid(pid,<sp/>&amp;data-&gt;<ref refid="structs__minishell__data_1a978016fddb1d9faa4fbda6859a9a199e" kindref="member">exit_status</ref>,<sp/>0);</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="execute_8h_1ab9bcddf9275f12cc49348081000beb62" kindref="member">close_fds</ref>(data-&gt;<ref refid="structs__minishell__data_1a9ed5685097b7e4b55c3c1307b70869ef" kindref="member">std_in</ref>,<sp/>data-&gt;<ref refid="structs__minishell__data_1ac90001aa8bc9a89b165ee6bca5f05ef3" kindref="member">std_out</ref>);</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(0);</highlight></codeline>
+<codeline lineno="159"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="/Users/dimadem/Documents/GitHub/minishell/src/execute/execute.c"/>
+  </compounddef>
+</doxygen>

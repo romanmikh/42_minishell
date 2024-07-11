@@ -1,0 +1,106 @@
+.TH "/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_print_unsigned_dec.c" 3 "Version 1" "maxishell" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_print_unsigned_dec.c
+.SH SYNOPSIS
+.br
+.PP
+\fR#include 'libft\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "int \fBft_num_len\fP (unsigned int num)"
+.br
+.ti -1c
+.RI "char * \fBft_uitoa\fP (unsigned int n)"
+.br
+.ti -1c
+.RI "int \fBft_print_unsigned_dec\fP (unsigned int n)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "int ft_num_len (unsigned int num)"
+
+.PP
+Definition at line \fB15\fP of file \fBft_print_unsigned_dec\&.c\fP\&.
+.nf
+16 {
+17     int len;
+18 
+19     len = 0;
+20     while (num != 0)
+21     {
+22         len++;
+23         num = num / 10;
+24     }
+25     return (len);
+26 }
+.PP
+.fi
+
+.PP
+Referenced by \fBft_uitoa()\fP\&.
+.SS "int ft_print_unsigned_dec (unsigned int n)"
+
+.PP
+Definition at line \fB47\fP of file \fBft_print_unsigned_dec\&.c\fP\&.
+.nf
+48 {
+49     int     count;
+50     char    *num;
+51 
+52     count = 0;
+53     if (n == 0)
+54         count += write(1, "0", 1);
+55     else
+56     {
+57         num = ft_uitoa(n);
+58         count += ft_print_str(num);
+59         free(num);
+60     }
+61     return (count);
+62 }
+.PP
+.fi
+
+.PP
+References \fBft_print_str()\fP, and \fBft_uitoa()\fP\&.
+.PP
+Referenced by \fBft_formatssssss()\fP\&.
+.SS "char * ft_uitoa (unsigned int n)"
+
+.PP
+Definition at line \fB28\fP of file \fBft_print_unsigned_dec\&.c\fP\&.
+.nf
+29 {
+30     char    *num;
+31     int     len;
+32 
+33     len = ft_num_len(n);
+34     num = (char *)malloc(sizeof(char) * (len + 1));
+35     if (!num)
+36         return (0);
+37     num[len] = '\\0';
+38     while (n != 0)
+39     {
+40         num[len \- 1] = n % 10 + 48;
+41         n = n / 10;
+42         len\-\-;
+43     }
+44     return (num);
+45 }
+.PP
+.fi
+
+.PP
+References \fBft_num_len()\fP\&.
+.PP
+Referenced by \fBft_print_unsigned_dec()\fP\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for maxishell from the source code\&.

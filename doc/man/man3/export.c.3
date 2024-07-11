@@ -1,0 +1,94 @@
+.TH "/Users/dimadem/Documents/GitHub/minishell/src/builtins/export.c" 3 "Version 1" "maxishell" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/Users/dimadem/Documents/GitHub/minishell/src/builtins/export.c
+.SH SYNOPSIS
+.br
+.PP
+\fR#include 'env\&.h'\fP
+.br
+\fR#include 'libft\&.h'\fP
+.br
+\fR#include <stdlib\&.h>\fP
+.br
+\fR#include 'shell\&.h'\fP
+.br
+\fR#include <stdio\&.h>\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "int \fBbuiltin_export\fP (\fBt_minishell_data\fP *data)"
+.br
+.ti -1c
+.RI "void \fBadd_env\fP (char *key, \fBt_minishell_data\fP *data)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "void add_env (char * key, \fBt_minishell_data\fP * data)"
+
+.PP
+Definition at line \fB46\fP of file \fBexport\&.c\fP\&.
+.nf
+47 {
+48     int i;
+49 
+50     i = 0;
+51     while (data\->args[++i])
+52     {
+53         if (ft_strchr(data\->args[i], '='))
+54             set_env(&data\->envp, data\->args[i], \\
+55                     ft_strchr(data\->args[i], '=') + 1);
+56         else
+57         {
+58             key = ft_strcdup(data\->args[i], '=');
+59             if (get_env(data\->envp, key))
+60                 set_env(&data\->envp, key, "");
+61             else
+62                 set_env(&data\->envp, key, NULL);
+63             free(key);
+64         }
+65     }
+66 }
+.PP
+.fi
+
+.PP
+References \fBs_minishell_data::args\fP, \fBs_minishell_data::envp\fP, \fBft_strcdup()\fP, \fBft_strchr()\fP, \fBget_env()\fP, and \fBset_env()\fP\&.
+.PP
+Referenced by \fBbuiltin_export()\fP\&.
+.SS "int builtin_export (\fBt_minishell_data\fP * data)"
+
+.PP
+Definition at line \fB28\fP of file \fBexport\&.c\fP\&.
+.nf
+29 {
+30     t_env   *curr_node;
+31     char    *key;
+32 
+33     key = NULL;
+34     if ((data\->args[1] == NULL && data\->args[2] == NULL) \\
+35             || ft_strncmp(data\->args[1], "\-p", 2) == 0)
+36     {
+37         curr_node = data\->envp;
+38         while (curr_node)
+39             curr_node = curr_node\->next;
+40     }
+41     else
+42         add_env(key, data);
+43     return (0);
+44 }
+.PP
+.fi
+
+.PP
+References \fBadd_env()\fP, \fBs_minishell_data::args\fP, \fBs_minishell_data::envp\fP, \fBft_strncmp()\fP, and \fBs_env::next\fP\&.
+.PP
+Referenced by \fBexecute()\fP\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for maxishell from the source code\&.

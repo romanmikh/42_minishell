@@ -41,10 +41,10 @@ char	*generate_prompt(t_minishell_data *data)
 	 pwd = NULL;
 	 pwd = generate_prompt_string(data, pwd, home_dir);
 */
-	if (data->temp_fd != -1)
-		prompt_len = ft_strlen("> ") + 1;
-	else
+	if (data->std_in == -1)
 		prompt_len = ft_strlen("minishell:~> ") + 1;
+	else
+		prompt_len = ft_strlen("> ") + 1;
 /*
 	 prompt_len = ft_strlen("🌴\e[1m @maxishell:~> \e[m") + \
 	 		ft_strlen(get_env(data->envp, "LOGNAME")) + \
@@ -54,10 +54,10 @@ char	*generate_prompt(t_minishell_data *data)
 	prompt = (char *)malloc(prompt_len);
 	if (!prompt)
 		exit(EXIT_FAILURE);
-	if (data->temp_fd != -1)
-		ft_strcpy(prompt, "> ");
-	else
+	if (data->std_in == -1)
 		ft_strcpy(prompt, "minishell:~> ");
+	else
+		ft_strcpy(prompt, "> ");
 /*
 	ft_strcpy(prompt, "🌴\e[1m ");
 	ft_strcat(prompt, get_env(data->envp, "LOGNAME"));

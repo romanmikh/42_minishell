@@ -1,0 +1,50 @@
+.TH "/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_strnstr.c" 3 "Version 1" "maxishell" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_strnstr.c
+.SH SYNOPSIS
+.br
+.PP
+\fR#include 'libft\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "char * \fBft_strnstr\fP (const char *big, const char *little, size_t n)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "char * ft_strnstr (const char * big, const char * little, size_t n)"
+
+.PP
+Definition at line \fB25\fP of file \fBft_strnstr\&.c\fP\&.
+.nf
+26 {
+27     size_t  little_len;
+28 
+29     if (!big && n == 0)
+30         return (NULL);
+31     little_len = ft_strlen(little);
+32     if (little[0] == '\\0')
+33         return ((char *)big);
+34     while (*big != '\\0' && n >= little_len)
+35     {
+36         if (ft_strncmp(big, little, little_len) == 0)
+37             return ((char *)big);
+38         big++;
+39         n\-\-;
+40     }
+41     return (NULL);
+42 }
+.PP
+.fi
+
+.PP
+References \fBft_strlen()\fP, and \fBft_strncmp()\fP\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for maxishell from the source code\&.

@@ -1,0 +1,52 @@
+.TH "/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_is_num.c" 3 "Version 1" "maxishell" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_is_num.c
+.SH SYNOPSIS
+.br
+.PP
+\fR#include 'libft\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "int \fBft_is_num\fP (const char *n)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "int ft_is_num (const char * n)"
+
+.PP
+Definition at line \fB15\fP of file \fBft_is_num\&.c\fP\&.
+.nf
+16 {
+17     unsigned long   i;
+18 
+19     i = 0;
+20     while (n[i] && (n[i] == '\\t' || n[i] == '\\n' || n[i] == '\\v'
+21             || n[i] == '\\f' || n[i] == '\\r' || n[i] == ' '))
+22         i++;
+23     if (n[i] && (n[i] == '+' || n[i] == '\-'))
+24         i++;
+25     if (!n[i])
+26         return (FALSE);
+27     while (n[i])
+28     {
+29         if (!ft_isdigit(n[i]))
+30             return (FALSE);
+31         i++;
+32     }
+33     return (TRUE);
+34 }
+.PP
+.fi
+
+.PP
+References \fBFALSE\fP, \fBft_isdigit()\fP, and \fBTRUE\fP\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for maxishell from the source code\&.

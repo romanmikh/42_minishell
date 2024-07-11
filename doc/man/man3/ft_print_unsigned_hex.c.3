@@ -1,0 +1,103 @@
+.TH "/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_print_unsigned_hex.c" 3 "Version 1" "maxishell" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_print_unsigned_hex.c
+.SH SYNOPSIS
+.br
+.PP
+\fR#include 'libft\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "int \fBft_hex_len\fP (unsigned int n)"
+.br
+.ti -1c
+.RI "void \fBft_put_hex\fP (unsigned int n, const char upper_lower)"
+.br
+.ti -1c
+.RI "int \fBft_print_unsigned_hex\fP (unsigned int n, const char upper_lower)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "int ft_hex_len (unsigned int n)"
+
+.PP
+Definition at line \fB15\fP of file \fBft_print_unsigned_hex\&.c\fP\&.
+.nf
+16 {
+17     int len;
+18 
+19     len = 0;
+20     while (n != 0)
+21     {
+22         n = n / 16;
+23         len++;
+24     }
+25     return (len);
+26 }
+.PP
+.fi
+
+.PP
+Referenced by \fBft_print_unsigned_hex()\fP\&.
+.SS "int ft_print_unsigned_hex (unsigned int n, const char upper_lower)"
+
+.PP
+Definition at line \fB49\fP of file \fBft_print_unsigned_hex\&.c\fP\&.
+.nf
+50 {
+51     if (n == 0)
+52     {
+53         ft_putchar_fd('0', 1);
+54         return (1);
+55     }
+56     else
+57         ft_put_hex(n, upper_lower);
+58     return (ft_hex_len(n));
+59 }
+.PP
+.fi
+
+.PP
+References \fBft_hex_len()\fP, \fBft_put_hex()\fP, and \fBft_putchar_fd()\fP\&.
+.PP
+Referenced by \fBft_formatssssss()\fP\&.
+.SS "void ft_put_hex (unsigned int n, const char upper_lower)"
+
+.PP
+Definition at line \fB28\fP of file \fBft_print_unsigned_hex\&.c\fP\&.
+.nf
+29 {
+30     if (n >= 16)
+31     {
+32         ft_put_hex(n / 16, upper_lower);
+33         ft_put_hex(n % 16, upper_lower);
+34     }
+35     else
+36     {
+37         if (n <= 9)
+38             ft_putchar_fd((n + '0'), 1);
+39         else
+40         {
+41             if (upper_lower == 'x')
+42                 ft_putchar_fd((n \- 10 + 'a'), 1);
+43             if (upper_lower == 'X')
+44                 ft_putchar_fd((n \- 10 + 'A'), 1);
+45         }
+46     }
+47 }
+.PP
+.fi
+
+.PP
+References \fBft_put_hex()\fP, and \fBft_putchar_fd()\fP\&.
+.PP
+Referenced by \fBft_print_unsigned_hex()\fP, and \fBft_put_hex()\fP\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for maxishell from the source code\&.

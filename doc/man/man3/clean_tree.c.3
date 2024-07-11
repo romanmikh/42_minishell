@@ -1,0 +1,86 @@
+.TH "/Users/dimadem/Documents/GitHub/minishell/src/utils/clean_tree.c" 3 "Version 1" "maxishell" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/Users/dimadem/Documents/GitHub/minishell/src/utils/clean_tree.c
+.SH SYNOPSIS
+.br
+.PP
+\fR#include 'tokens\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBfree_all_tokens\fP (\fBt_token\fP *tokens)"
+.br
+.ti -1c
+.RI "void \fBfree_ast\fP (\fBt_ast\fP *node)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "void free_all_tokens (\fBt_token\fP * tokens)"
+
+.PP
+Definition at line \fB16\fP of file \fBclean_tree\&.c\fP\&.
+.nf
+17 {
+18     t_token *temp;
+19 
+20     while (tokens)
+21     {
+22         temp = tokens;
+23         tokens = tokens\->next;
+24         if (temp)
+25         {
+26             if (temp\->data)
+27             {
+28                 free(temp\->data);
+29                 temp\->data = NULL;
+30             }
+31         }
+32         free(temp);
+33         temp = NULL;
+34     }
+35 }
+.PP
+.fi
+
+.PP
+References \fBs_token::data\fP, and \fBs_token::next\fP\&.
+.SS "void free_ast (\fBt_ast\fP * node)"
+
+.PP
+Definition at line \fB37\fP of file \fBclean_tree\&.c\fP\&.
+.nf
+38 {
+39     int             i;
+40 
+41     i = 0;
+42     if (!node)
+43         return ;
+44     if (node\->type == PHRASE && node\->args)
+45     {
+46         while (node\->args && node\->args[i])
+47         {
+48             free(node\->args[i]);
+49             i++;
+50         }
+51         free(node\->args);
+52     }
+53     free_ast(node\->left);
+54     free_ast(node\->right);
+55     free(node);
+56 }
+.PP
+.fi
+
+.PP
+References \fBs_ast::args\fP, \fBfree_ast()\fP, \fBs_ast::left\fP, \fBPHRASE\fP, \fBs_ast::right\fP, and \fBs_ast::type\fP\&.
+.PP
+Referenced by \fBfree_ast()\fP, and \fBloop_cleanup()\fP\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for maxishell from the source code\&.

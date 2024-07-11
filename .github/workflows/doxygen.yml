@@ -1,0 +1,24 @@
+name: Generate Doxygen Documentation
+
+on:
+  push:
+    branches: [ main, dimadem_redirection ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+      
+    - name: Doxygen Action
+      uses: mattnotmitt/doxygen-action@v1.9.8
+      with:
+        working-directory: './doc'
+        doxyfile-path: './Doxyfile'
+        
+    - name: Deploy
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./doc/html

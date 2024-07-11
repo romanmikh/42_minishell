@@ -1,0 +1,43 @@
+.TH "/Users/dimadem/Documents/GitHub/minishell/src/utils/stack_control_2.c" 3 "Version 1" "maxishell" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/Users/dimadem/Documents/GitHub/minishell/src/utils/stack_control_2.c
+.SH SYNOPSIS
+.br
+.PP
+\fR#include 'tokens\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBbuild_linked_list\fP (\fBt_token\fP **tokens, char **argv)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "void build_linked_list (\fBt_token\fP ** tokens, char ** argv)"
+
+.PP
+Definition at line \fB15\fP of file \fBstack_control_2\&.c\fP\&.
+.nf
+16 {
+17     int i;
+18 
+19     i = 0;
+20     while (argv[i])
+21     {
+22         add_node(tokens, argv[i]);   
+23         i++;
+24     }
+25 }
+.PP
+.fi
+
+.PP
+References \fBadd_node()\fP\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for maxishell from the source code\&.

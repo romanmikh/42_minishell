@@ -1,0 +1,300 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.11.0" xml:lang="en-US">
+  <compounddef id="prompt_8c" kind="file" language="C++">
+    <compoundname>prompt.c</compoundname>
+    <includes refid="tokens_8h" local="yes">tokens.h</includes>
+    <includes refid="env_8h" local="yes">env.h</includes>
+    <incdepgraph>
+      <node id="18">
+        <label>env.h</label>
+        <link refid="env_8h"/>
+      </node>
+      <node id="17">
+        <label>shell.h</label>
+        <link refid="shell_8h"/>
+        <childnode refid="18" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>tokens.h</label>
+        <link refid="tokens_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>../lib/libft/inc/libft.h</label>
+        <link refid="libft_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>/Users/dimadem/Documents/GitHub/minishell/src/utils/prompt.c</label>
+        <link refid="prompt_8c"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>limits.h</label>
+      </node>
+      <node id="12">
+        <label>math.h</label>
+      </node>
+      <node id="16">
+        <label>pwd.h</label>
+      </node>
+      <node id="15">
+        <label>readline/history.h</label>
+      </node>
+      <node id="14">
+        <label>readline/readline.h</label>
+      </node>
+      <node id="10">
+        <label>signal.h</label>
+      </node>
+      <node id="9">
+        <label>stdarg.h</label>
+      </node>
+      <node id="11">
+        <label>stdbool.h</label>
+      </node>
+      <node id="4">
+        <label>stddef.h</label>
+      </node>
+      <node id="6">
+        <label>stdint.h</label>
+      </node>
+      <node id="13">
+        <label>stdio.h</label>
+      </node>
+      <node id="5">
+        <label>stdlib.h</label>
+      </node>
+      <node id="8">
+        <label>unistd.h</label>
+      </node>
+    </incdepgraph>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="prompt_8c_1a4c523064ece03ba20eb609b52253b88e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>char *</type>
+        <definition>char * generate_prompt</definition>
+        <argsstring>(t_minishell_data *data)</argsstring>
+        <name>generate_prompt</name>
+        <param>
+          <type><ref refid="shell_8h_1a163dfbd200eaf940e5a56fd45345ff72" kindref="member">t_minishell_data</ref> *</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/dimadem/Documents/GitHub/minishell/src/utils/prompt.c" line="31" column="5" bodyfile="/Users/dimadem/Documents/GitHub/minishell/src/utils/prompt.c" bodystart="31" bodyend="69" declfile="/Users/dimadem/Documents/GitHub/minishell/src/utils/prompt.c" declline="27" declcolumn="5"/>
+        <references refid="libft_8h_1a916ac44ff3e67ef20834dd45e3837ac4" compoundref="ft__strcpy_8c" startline="25" endline="37">ft_strcpy</references>
+        <references refid="libft_8h_1abbb8c6c4ed85d892e7f1509f65f5768a" compoundref="ft__strlen_8c" startline="15" endline="23">ft_strlen</references>
+        <references refid="structs__minishell__data_1a9ed5685097b7e4b55c3c1307b70869ef" compoundref="shell_8h" startline="23">s_minishell_data::std_in</references>
+        <referencedby refid="main_8c_1abaf800210325f066cb9289aaae9e2c86" compoundref="main_8c" startline="29" endline="51">main_loop</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="prompt_8c_1a5663e22274d85c42c9c7f51e22afc301" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>char *</type>
+        <definition>char * generate_prompt_string</definition>
+        <argsstring>(t_minishell_data *data, char *pwd, char *home_dir)</argsstring>
+        <name>generate_prompt_string</name>
+        <param>
+          <type><ref refid="shell_8h_1a163dfbd200eaf940e5a56fd45345ff72" kindref="member">t_minishell_data</ref> *</type>
+          <declname>data</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>pwd</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>home_dir</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/dimadem/Documents/GitHub/minishell/src/utils/prompt.c" line="71" column="5" bodyfile="/Users/dimadem/Documents/GitHub/minishell/src/utils/prompt.c" bodystart="71" bodyend="88" declfile="/Users/dimadem/Documents/GitHub/minishell/src/utils/prompt.c" declline="28" declcolumn="5"/>
+        <references refid="structs__minishell__data_1a8a0b3f50c8893e061062e93115f3d723" compoundref="shell_8h" startline="21">s_minishell_data::envp</references>
+        <references refid="libft_8h_1a91e6e3e428bcc9f2291b700e1829b82b" compoundref="ft__strjoin_8c" startline="23" endline="44">ft_strjoin</references>
+        <references refid="libft_8h_1abbb8c6c4ed85d892e7f1509f65f5768a" compoundref="ft__strlen_8c" startline="15" endline="23">ft_strlen</references>
+        <references refid="libft_8h_1a9d2fe792187aa4ed08e5864fb2c4d6dc" compoundref="ft__strncmp_8c" startline="24" endline="35">ft_strncmp</references>
+        <references refid="env_8h_1a41133e0ba7230727a51eedce713a225c" compoundref="env_2env_8c" startline="60" endline="72">get_env</references>
+      </memberdef>
+      <memberdef kind="function" id="prompt_8c_1a4e673b7c7d3f45e10377ab9f537b8bf9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void print_maxishell</definition>
+        <argsstring>(void)</argsstring>
+        <name>print_maxishell</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/dimadem/Documents/GitHub/minishell/src/utils/prompt.c" line="90" column="5" bodyfile="/Users/dimadem/Documents/GitHub/minishell/src/utils/prompt.c" bodystart="90" bodyend="111"/>
+        <references refid="libft_8h_1a1ee8ae8a80a7d9141ea5339af8565f2e" compoundref="ft__printf_8c" startline="37" endline="59">ft_printf</references>
+        <referencedby refid="main_8c_1a647f21a28344e1d9c643f4115516d7c9" compoundref="main_8c" startline="54" endline="66">main</referencedby>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*<sp/>**************************************************************************<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:::<sp/><sp/><sp/><sp/><sp/><sp/>::::::::<sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/>prompt.c<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:+:<sp/><sp/><sp/><sp/><sp/><sp/>:+:<sp/><sp/><sp/><sp/>:+:<sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>+:+<sp/>+:+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>+:+<sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/>By:<sp/>rmikhayl<sp/>&lt;marvin@42.fr&gt;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>+#+<sp/><sp/>+:+<sp/><sp/><sp/><sp/><sp/><sp/><sp/>+#+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>+#+#+#+#+#+<sp/><sp/><sp/>+#+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/>Created:<sp/>2024/06/05<sp/>13:58:23<sp/>by<sp/>rmikhayl<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>#+#<sp/><sp/><sp/><sp/>#+#<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/>Updated:<sp/>2024/06/26<sp/>14:54:11<sp/>by<sp/>dmdemirk<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>###<sp/><sp/><sp/>########.fr<sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>**************************************************************************<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="tokens_8h" kindref="compound">tokens.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="env_8h" kindref="compound">env.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="17"><highlight class="comment">todo:<sp/></highlight></codeline>
+<codeline lineno="18"><highlight class="comment">extract<sp/>and<sp/>print<sp/>only<sp/>after<sp/>LOGNAME</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"></highlight></codeline>
+<codeline lineno="20"><highlight class="comment">!wrong<sp/>example:</highlight></codeline>
+<codeline lineno="21"><highlight class="comment">🌴<sp/>dmdemirk@maxishell:~/home/dmdemirk/Documents/minishell&gt;</highlight></codeline>
+<codeline lineno="22"><highlight class="comment"></highlight></codeline>
+<codeline lineno="23"><highlight class="comment">correct<sp/>example:</highlight></codeline>
+<codeline lineno="24"><highlight class="comment">🌴<sp/>dmdemirk@maxishell:~/Documents/minishell&gt;</highlight></codeline>
+<codeline lineno="25"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/><sp/><sp/>*<ref refid="prompt_8c_1a4c523064ece03ba20eb609b52253b88e" kindref="member">generate_prompt</ref>(<ref refid="structs__minishell__data" kindref="compound">t_minishell_data</ref><sp/>*data);</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/><sp/><sp/>*<ref refid="prompt_8c_1a5663e22274d85c42c9c7f51e22afc301" kindref="member">generate_prompt_string</ref>(<ref refid="structs__minishell__data" kindref="compound">t_minishell_data</ref><sp/>*data,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*pwd,<sp/>\</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*home_dir);</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31" refid="tokens_8h_1a4c523064ece03ba20eb609b52253b88e" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/><sp/><sp/>*<ref refid="prompt_8c_1a4c523064ece03ba20eb609b52253b88e" kindref="member">generate_prompt</ref>(<ref refid="structs__minishell__data" kindref="compound">t_minishell_data</ref><sp/>*data)</highlight></codeline>
+<codeline lineno="32"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/><sp/><sp/>*prompt;</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><sp/>prompt_len;</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="37"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>char<sp/><sp/><sp/>*pwd;</highlight></codeline>
+<codeline lineno="38"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>char<sp/><sp/><sp/>*home_dir;</highlight></codeline>
+<codeline lineno="39"><highlight class="comment"></highlight></codeline>
+<codeline lineno="40"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>home_dir<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="41"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>pwd<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="42"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>pwd<sp/>=<sp/>generate_prompt_string(data,<sp/>pwd,<sp/>home_dir);</highlight></codeline>
+<codeline lineno="43"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(data-&gt;<ref refid="structs__minishell__data_1a9ed5685097b7e4b55c3c1307b70869ef" kindref="member">std_in</ref><sp/>==<sp/>-1)</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>prompt_len<sp/>=<sp/><ref refid="libft_8h_1abbb8c6c4ed85d892e7f1509f65f5768a" kindref="member">ft_strlen</ref>(</highlight><highlight class="stringliteral">&quot;minishell:~&gt;<sp/>&quot;</highlight><highlight class="normal">)<sp/>+<sp/>1;</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>prompt_len<sp/>=<sp/><ref refid="libft_8h_1abbb8c6c4ed85d892e7f1509f65f5768a" kindref="member">ft_strlen</ref>(</highlight><highlight class="stringliteral">&quot;&gt;<sp/>&quot;</highlight><highlight class="normal">)<sp/>+<sp/>1;</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="49"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>prompt_len<sp/>=<sp/>ft_strlen(&quot;🌴\e[1m<sp/>@maxishell:~&gt;<sp/>\e[m&quot;)<sp/>+<sp/>\</highlight></codeline>
+<codeline lineno="50"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ft_strlen(get_env(data-&gt;envp,<sp/>&quot;LOGNAME&quot;))<sp/>+<sp/>\</highlight></codeline>
+<codeline lineno="51"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ft_strlen(pwd)<sp/>+<sp/>\</highlight></codeline>
+<codeline lineno="52"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1;</highlight></codeline>
+<codeline lineno="53"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/>prompt<sp/>=<sp/>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*)malloc(prompt_len);</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!prompt)</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>exit(EXIT_FAILURE);</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(data-&gt;<ref refid="structs__minishell__data_1a9ed5685097b7e4b55c3c1307b70869ef" kindref="member">std_in</ref><sp/>==<sp/>-1)</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="libft_8h_1a916ac44ff3e67ef20834dd45e3837ac4" kindref="member">ft_strcpy</ref>(prompt,<sp/></highlight><highlight class="stringliteral">&quot;minishell:~&gt;<sp/>&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="libft_8h_1a916ac44ff3e67ef20834dd45e3837ac4" kindref="member">ft_strcpy</ref>(prompt,<sp/></highlight><highlight class="stringliteral">&quot;&gt;<sp/>&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="62"><highlight class="comment"><sp/><sp/><sp/><sp/>ft_strcpy(prompt,<sp/>&quot;🌴\e[1m<sp/>&quot;);</highlight></codeline>
+<codeline lineno="63"><highlight class="comment"><sp/><sp/><sp/><sp/>ft_strcat(prompt,<sp/>get_env(data-&gt;envp,<sp/>&quot;LOGNAME&quot;));</highlight></codeline>
+<codeline lineno="64"><highlight class="comment"><sp/><sp/><sp/><sp/>ft_strcat(prompt,<sp/>&quot;@maxishell:&quot;);</highlight></codeline>
+<codeline lineno="65"><highlight class="comment"><sp/><sp/><sp/><sp/>ft_strcat(prompt,<sp/>pwd);</highlight></codeline>
+<codeline lineno="66"><highlight class="comment"><sp/><sp/><sp/><sp/>ft_strcat(prompt,<sp/>&quot;&gt;<sp/>\e[m&quot;);</highlight></codeline>
+<codeline lineno="67"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(prompt);</highlight></codeline>
+<codeline lineno="69"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight></codeline>
+<codeline lineno="71" refid="prompt_8c_1a5663e22274d85c42c9c7f51e22afc301" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/><sp/><sp/>*<ref refid="prompt_8c_1a5663e22274d85c42c9c7f51e22afc301" kindref="member">generate_prompt_string</ref>(<ref refid="structs__minishell__data" kindref="compound">t_minishell_data</ref><sp/>*data,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*pwd,<sp/>\</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*home_dir)</highlight></codeline>
+<codeline lineno="73"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/><sp/><sp/>*temp_pwd;</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/>pwd<sp/>=<sp/><ref refid="env_8h_1a41133e0ba7230727a51eedce713a225c" kindref="member">get_env</ref>(data-&gt;<ref refid="structs__minishell__data_1a8a0b3f50c8893e061062e93115f3d723" kindref="member">envp</ref>,<sp/></highlight><highlight class="stringliteral">&quot;PWD&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(pwd)</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>home_dir<sp/>=<sp/><ref refid="env_8h_1a41133e0ba7230727a51eedce713a225c" kindref="member">get_env</ref>(data-&gt;<ref refid="structs__minishell__data_1a8a0b3f50c8893e061062e93115f3d723" kindref="member">envp</ref>,<sp/></highlight><highlight class="stringliteral">&quot;HOME&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(home_dir<sp/>&amp;&amp;<sp/><ref refid="libft_8h_1a9d2fe792187aa4ed08e5864fb2c4d6dc" kindref="member">ft_strncmp</ref>(pwd,<sp/>home_dir,<sp/><ref refid="libft_8h_1abbb8c6c4ed85d892e7f1509f65f5768a" kindref="member">ft_strlen</ref>(home_dir))<sp/>==<sp/>0)</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>temp_pwd<sp/>=<sp/><ref refid="libft_8h_1a91e6e3e428bcc9f2291b700e1829b82b" kindref="member">ft_strjoin</ref>(</highlight><highlight class="stringliteral">&quot;~&quot;</highlight><highlight class="normal">,<sp/>pwd<sp/>+<sp/><ref refid="libft_8h_1abbb8c6c4ed85d892e7f1509f65f5768a" kindref="member">ft_strlen</ref>(home_dir));</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>free(pwd);</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pwd<sp/>=<sp/>temp_pwd;</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(pwd);</highlight></codeline>
+<codeline lineno="88"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight></codeline>
+<codeline lineno="90" refid="tokens_8h_1a4e673b7c7d3f45e10377ab9f537b8bf9" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="prompt_8c_1a4e673b7c7d3f45e10377ab9f537b8bf9" kindref="member">print_maxishell</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="91"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="libft_8h_1a1ee8ae8a80a7d9141ea5339af8565f2e" kindref="member">ft_printf</ref>(</highlight><highlight class="stringliteral">&quot;\033[1;33m\n\n\n\n\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="libft_8h_1a1ee8ae8a80a7d9141ea5339af8565f2e" kindref="member">ft_printf</ref>(</highlight><highlight class="stringliteral">&quot;███╗░░░███╗░█████╗░██╗░░██╗██╗░██████╗██╗░&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;░██╗███████╗██╗░░░░░██╗░░░░░\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="libft_8h_1a1ee8ae8a80a7d9141ea5339af8565f2e" kindref="member">ft_printf</ref>(</highlight><highlight class="stringliteral">&quot;████╗░████║██╔══██╗╚██╗██╔╝██║██╔════╝██║░&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;░██║██╔════╝██║░░░░░██║░░░░░\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="libft_8h_1a1ee8ae8a80a7d9141ea5339af8565f2e" kindref="member">ft_printf</ref>(</highlight><highlight class="stringliteral">&quot;██╔████╔██║███████║░╚███╔╝░██║╚█████╗░█████&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;██║█████╗░░██║░░░░░██║░░░░░\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="libft_8h_1a1ee8ae8a80a7d9141ea5339af8565f2e" kindref="member">ft_printf</ref>(</highlight><highlight class="stringliteral">&quot;██║╚██╔╝██║██╔══██║░██╔██╗░██║░╚═══██╗██╔══&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;██║██╔══╝░░██║░░░░░██║░░░░░\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="libft_8h_1a1ee8ae8a80a7d9141ea5339af8565f2e" kindref="member">ft_printf</ref>(</highlight><highlight class="stringliteral">&quot;██║░╚═╝░██║██║░░██║██╔╝╚██╗██║██████╔╝██║░░&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;██║███████╗███████╗███████╗\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="libft_8h_1a1ee8ae8a80a7d9141ea5339af8565f2e" kindref="member">ft_printf</ref>(</highlight><highlight class="stringliteral">&quot;╚═╝░░░░░╚═╝╚═╝░░╚═╝╚═╝░░╚═╝╚═╝╚═════╝░╚═╝░░&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;╚═╝╚══════╝╚══════╝╚══════╝\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="libft_8h_1a1ee8ae8a80a7d9141ea5339af8565f2e" kindref="member">ft_printf</ref>(</highlight><highlight class="stringliteral">&quot;\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="libft_8h_1a1ee8ae8a80a7d9141ea5339af8565f2e" kindref="member">ft_printf</ref>(</highlight><highlight class="stringliteral">&quot;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\033[1;34m&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;Version<sp/>0.0.0\033[0m\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="libft_8h_1a1ee8ae8a80a7d9141ea5339af8565f2e" kindref="member">ft_printf</ref>(</highlight><highlight class="stringliteral">&quot;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\033[1;36m&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;By<sp/>Димас<sp/>и<sp/>Ромас\033[0m\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="libft_8h_1a1ee8ae8a80a7d9141ea5339af8565f2e" kindref="member">ft_printf</ref>(</highlight><highlight class="stringliteral">&quot;\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="111"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="/Users/dimadem/Documents/GitHub/minishell/src/utils/prompt.c"/>
+  </compounddef>
+</doxygen>

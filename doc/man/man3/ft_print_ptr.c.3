@@ -1,0 +1,102 @@
+.TH "/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_print_ptr.c" 3 "Version 1" "maxishell" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_print_ptr.c
+.SH SYNOPSIS
+.br
+.PP
+\fR#include 'libft\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "int \fBft_ptr_len\fP (uintptr_t num)"
+.br
+.ti -1c
+.RI "void \fBft_put_ptr\fP (uintptr_t num)"
+.br
+.ti -1c
+.RI "int \fBft_print_ptr\fP (unsigned long long ptr)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "int ft_print_ptr (unsigned long long ptr)"
+
+.PP
+Definition at line \fB44\fP of file \fBft_print_ptr\&.c\fP\&.
+.nf
+45 {
+46     int print_length;
+47 
+48     print_length = 0;
+49     if (ptr == 0)
+50         print_length += write(1, "(nil)", 5);
+51     else
+52     {
+53         print_length += write(1, "0x", 2);
+54         ft_put_ptr(ptr);
+55         print_length += ft_ptr_len(ptr);
+56     }
+57     return (print_length);
+58 }
+.PP
+.fi
+
+.PP
+References \fBft_ptr_len()\fP, and \fBft_put_ptr()\fP\&.
+.PP
+Referenced by \fBft_formatssssss()\fP\&.
+.SS "int ft_ptr_len (uintptr_t num)"
+
+.PP
+Definition at line \fB15\fP of file \fBft_print_ptr\&.c\fP\&.
+.nf
+16 {
+17     int len;
+18 
+19     len = 0;
+20     while (num != 0)
+21     {
+22         len++;
+23         num = num / 16;
+24     }
+25     return (len);
+26 }
+.PP
+.fi
+
+.PP
+Referenced by \fBft_print_ptr()\fP\&.
+.SS "void ft_put_ptr (uintptr_t num)"
+
+.PP
+Definition at line \fB28\fP of file \fBft_print_ptr\&.c\fP\&.
+.nf
+29 {
+30     if (num >= 16)
+31     {
+32         ft_put_ptr(num / 16);
+33         ft_put_ptr(num % 16);
+34     }
+35     else
+36     {
+37         if (num <= 9)
+38             ft_putchar_fd((num + '0'), 1);
+39         else
+40             ft_putchar_fd((num \- 10 + 'a'), 1);
+41     }
+42 }
+.PP
+.fi
+
+.PP
+References \fBft_put_ptr()\fP, and \fBft_putchar_fd()\fP\&.
+.PP
+Referenced by \fBft_print_ptr()\fP, and \fBft_put_ptr()\fP\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for maxishell from the source code\&.

@@ -14,6 +14,7 @@
 
 void	make_history(char *line)
 {
+	printf("line: %s\n", line);
 	if (*line)
 		add_history(line);
 	write_history(HISTORY_PATH);

@@ -1,0 +1,115 @@
+.TH "/Users/dimadem/Documents/GitHub/minishell/src/redirection/redirect_heredoc.c" 3 "Version 1" "maxishell" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/Users/dimadem/Documents/GitHub/minishell/src/redirection/redirect_heredoc.c
+.SH SYNOPSIS
+.br
+.PP
+\fR#include 'shell\&.h'\fP
+.br
+\fR#include 'tokens\&.h'\fP
+.br
+\fR#include 'redirection\&.h'\fP
+.br
+\fR#include 'execute\&.h'\fP
+.br
+\fR#include <fcntl\&.h>\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "int \fBredirect_here_doc\fP (\fBt_ast\fP *node, \fBt_minishell_data\fP *data)"
+.br
+.RI "This function handle '<<' heredoc functionality\&. "
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "int redirect_here_doc (\fBt_ast\fP * node, \fBt_minishell_data\fP * data)"
+
+.PP
+This function handle '<<' heredoc functionality\&. --
+.IP "\(bu" 2
+\fBParameters\fP
+.RS 4
+\fInode\fP current node in the AST
+.RE
+.PP
+
+.IP "\(bu" 2
+\fBParameters\fP
+.RS 4
+\fIdata\fP minishell data structure
+.RE
+.PP
+
+.IP "\(bu" 2
+\fBReturns\fP
+.RS 4
+status: 0: success 1: error 
+.RE
+.PP
+
+.PP
+
+.PP
+Definition at line \fB17\fP of file \fBredirect_heredoc\&.c\fP\&.
+.nf
+18 {
+19     char   *line;
+20     char   *eof;
+21     int    file_fd;
+22     pid_t  pid;
+23 
+24     line = NULL;
+25 
+26     if (node\->right\->args[0] == NULL)
+27         return (1);
+28     eof = ft_strdup(node\->right\->args[0]);
+29     file_fd = open("tmp/heredoc", O_WRONLY | O_CREAT | O_TRUNC, 0644);
+30     if (file_fd < 0)
+31     {
+32         free(eof);
+33         exit(1);
+34     }
+35     line = readline("> ");
+36     while (line && (ft_strcmp(line, eof) != 0))
+37     {
+38         write(file_fd, line, ft_strlen(line));
+39         write(file_fd, "\\n", 1);
+40         free(line);
+41         line = readline("> ");
+42     }
+43     free(line);
+44     free(eof);
+45     close(file_fd);
+46 
+47     file_fd = open("tmp/heredoc", O_RDONLY);
+48     if (file_fd < 0)
+49         return (1);
+50     pid = fork();
+51     if (pid == \-1)
+52         ft_perror("fork");
+53     if (pid == 0)
+54     {
+55         data\->std_in = dup(file_fd);
+56         execute_ast(node\->left, data);
+57         exit(0);
+58     }
+59     close(file_fd);
+60     waitpid(pid, NULL, 0);
+61     unlink("tmp/heredoc");
+62     return (0);
+63 }
+.PP
+.fi
+
+.PP
+References \fBs_ast::args\fP, \fBexecute_ast()\fP, \fBft_perror()\fP, \fBft_strcmp()\fP, \fBft_strdup()\fP, \fBft_strlen()\fP, \fBs_ast::left\fP, \fBs_ast::right\fP, and \fBs_minishell_data::std_in\fP\&.
+.PP
+Referenced by \fBexecute_ast()\fP\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for maxishell from the source code\&.

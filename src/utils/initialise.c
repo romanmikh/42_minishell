@@ -21,7 +21,9 @@ void	init_minishell_data(t_minishell_data *data, char **envp)
 	data->local_env = NULL;
 	data->current_dir = getcwd(NULL, 0);
 	data->exit_status = 0;
-	data->temp_fd = -1;
+	data->std_in = -1;
+	data->std_out = -1;
+	data->std_err = 2;
 }
 
 void	initialise(int argc, char **argv)

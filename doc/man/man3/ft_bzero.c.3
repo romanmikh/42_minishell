@@ -1,0 +1,38 @@
+.TH "/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_bzero.c" 3 "Version 1" "maxishell" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_bzero.c
+.SH SYNOPSIS
+.br
+.PP
+\fR#include 'libft\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBft_bzero\fP (void *s, size_t n)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "void ft_bzero (void * s, size_t n)"
+
+.PP
+Definition at line \fB21\fP of file \fBft_bzero\&.c\fP\&.
+.nf
+22 {
+23     char    *p;
+24 
+25     p = s;
+26     while (n\-\-)
+27         *p++ = '\\0';
+28 }
+.PP
+.fi
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for maxishell from the source code\&.

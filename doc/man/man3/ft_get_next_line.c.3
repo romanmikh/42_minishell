@@ -1,0 +1,172 @@
+.TH "/Users/dimadem/Documents/GitHub/minishell/src/redirection/ft_get_next_line.c" 3 "Version 1" "maxishell" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/Users/dimadem/Documents/GitHub/minishell/src/redirection/ft_get_next_line.c
+.SH SYNOPSIS
+.br
+.PP
+\fR#include 'libft\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "char * \fBft_get_next_line\fP (int fd)"
+.br
+.ti -1c
+.RI "static char * \fBextract_line\fP (char **saved)"
+.br
+.ti -1c
+.RI "static char * \fBread_from_fd\fP (int fd, char *saved, char *buf)"
+.br
+.ti -1c
+.RI "char * \fBft_strjoin_gnl\fP (char *s1, char const *s2)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "static char * extract_line (char ** saved)\fR [static]\fP"
+
+.PP
+Definition at line \fB85\fP of file \fBft_get_next_line\&.c\fP\&.
+.nf
+86 {
+87     char    *new_line_ptr;
+88     char    *line;
+89     char    *temp;
+90 
+91     new_line_ptr = ft_strchr(*saved, '\\n');
+92     if (new_line_ptr)
+93     {
+94         line = ft_substr(*saved, 0, new_line_ptr \- *saved + 1);
+95         temp = *saved;
+96         *saved = ft_strdup(new_line_ptr + 1);
+97         free(temp);
+98         return (line);
+99     }
+100     if (**saved)
+101     {
+102         line = ft_strdup(*saved);
+103         free(*saved);
+104         *saved = NULL;
+105         return (line);
+106     }
+107     return (NULL);
+108 }
+.PP
+.fi
+
+.PP
+References \fBft_strchr()\fP, \fBft_strdup()\fP, and \fBft_substr()\fP\&.
+.PP
+Referenced by \fBft_get_next_line()\fP\&.
+.SS "char * ft_get_next_line (int fd)"
+
+.PP
+Definition at line \fB8\fP of file \fBft_get_next_line\&.c\fP\&.
+.nf
+9 {
+10     static char *saved = NULL;
+11     char        *line;
+12     char        *buf;
+13 
+14     if (fd < 0 || BUFFER_SIZE < 1 || fd > 4095)
+15         return (NULL);
+16     buf = malloc(BUFFER_SIZE + 1);
+17     if (!buf)
+18         return (NULL);
+19     saved = read_from_fd(fd, saved, buf);
+20     if (!saved)
+21     {
+22         free(saved);
+23         saved = NULL;
+24         return (NULL);
+25     }
+26     line = extract_line(&saved);
+27     if (line == NULL)
+28     {
+29         free(saved);
+30         saved = NULL;
+31     }
+32     return (line);
+33 }
+.PP
+.fi
+
+.PP
+References \fBBUFFER_SIZE\fP, \fBextract_line()\fP, and \fBread_from_fd()\fP\&.
+.SS "char * ft_strjoin_gnl (char * s1, char const * s2)"
+
+.PP
+Definition at line \fB35\fP of file \fBft_get_next_line\&.c\fP\&.
+.nf
+36 {
+37     char    *str;
+38     size_t  s1_len;
+39     size_t  s2_len;
+40 
+41     if (!s2)
+42         return (NULL);
+43     if (s1)
+44         s1_len = ft_strlen(s1);
+45     else
+46         s1_len = 0;
+47     s2_len = ft_strlen(s2);
+48     str = (char *)malloc(s1_len + s2_len + 1);
+49     if (!str)
+50         return (NULL);
+51     if (s1)
+52         ft_strlcpy(str, s1, s1_len + 1);
+53     else
+54         str[0] = '\\0';
+55     ft_memcpy(str + s1_len, s2, s2_len + 1);
+56     return (str);
+57 }
+.PP
+.fi
+
+.PP
+References \fBft_memcpy()\fP, \fBft_strlcpy()\fP, and \fBft_strlen()\fP\&.
+.PP
+Referenced by \fBread_from_fd()\fP\&.
+.SS "static char * read_from_fd (int fd, char * saved, char * buf)\fR [static]\fP"
+
+.PP
+Definition at line \fB59\fP of file \fBft_get_next_line\&.c\fP\&.
+.nf
+60 {
+61     int     chars_read;
+62     char    *temp;
+63 
+64     chars_read = read(fd, buf, BUFFER_SIZE);
+65     while (chars_read > 0)
+66     {
+67         buf[chars_read] = '\\0';
+68         temp = saved;
+69         saved = ft_strjoin_gnl(saved, buf);
+70         free(temp);
+71         if (ft_strchr(saved, '\\n'))
+72             break ;
+73         chars_read = read(fd, buf, BUFFER_SIZE);
+74     }
+75     free(buf);
+76     if (chars_read < 0)
+77     {
+78         free(saved);
+79         saved = NULL;
+80         return (NULL);
+81     }
+82     return (saved);
+83 }
+.PP
+.fi
+
+.PP
+References \fBBUFFER_SIZE\fP, \fBft_strchr()\fP, and \fBft_strjoin_gnl()\fP\&.
+.PP
+Referenced by \fBft_get_next_line()\fP\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for maxishell from the source code\&.

@@ -1,0 +1,157 @@
+.TH "/Users/dimadem/Documents/GitHub/minishell/src/parser/parser_helpers.c" 3 "Version 1" "maxishell" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/Users/dimadem/Documents/GitHub/minishell/src/parser/parser_helpers.c
+.SH SYNOPSIS
+.br
+.PP
+\fR#include 'tokens\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBt_ast\fP * \fBnew_ast_node\fP (\fBt_token_type\fP type)"
+.br
+.ti -1c
+.RI "\fBt_ast\fP * \fBcreate_redir\fP (\fBt_token\fP **tokens, \fBt_token\fP *tmp)"
+.br
+.ti -1c
+.RI "int \fBarg_len\fP (\fBt_token\fP *current)"
+.br
+.ti -1c
+.RI "void \fBset_command_args\fP (\fBt_ast\fP *command_node, \fBt_token\fP **tokens, int arg_count)"
+.br
+.ti -1c
+.RI "\fBt_ast\fP * \fBmanage_commands\fP (\fBt_token\fP **tokens)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "int arg_len (\fBt_token\fP * current)"
+
+.PP
+Definition at line \fB42\fP of file \fBparser_helpers\&.c\fP\&.
+.nf
+43 {
+44     int arg_count;
+45 
+46     arg_count = 0;
+47     while (current && current\->type == PHRASE)
+48     {
+49         arg_count++;
+50         current = current\->next;
+51     }
+52     return (arg_count);
+53 }
+.PP
+.fi
+
+.PP
+References \fBs_token::next\fP, \fBPHRASE\fP, and \fBs_token::type\fP\&.
+.PP
+Referenced by \fBmanage_commands()\fP\&.
+.SS "\fBt_ast\fP * create_redir (\fBt_token\fP ** tokens, \fBt_token\fP * tmp)"
+
+.PP
+Definition at line \fB29\fP of file \fBparser_helpers\&.c\fP\&.
+.nf
+30 {
+31     t_ast   *redirect_node;
+32 
+33     redirect_node = new_ast_node((*tokens)\->type);
+34     *tokens = (*tokens)\->next\->next;
+35     redirect_node\->left = manage_redirs(tokens);
+36     redirect_node\->right = create_redir_node(tmp\->next);
+37     free(tmp\->data);
+38     free(tmp);
+39     return (redirect_node);
+40 }
+.PP
+.fi
+
+.PP
+References \fBcreate_redir_node()\fP, \fBs_token::data\fP, \fBs_ast::left\fP, \fBmanage_redirs()\fP, \fBnew_ast_node()\fP, \fBs_token::next\fP, and \fBs_ast::right\fP\&.
+.PP
+Referenced by \fBmanage_redirs()\fP\&.
+.SS "\fBt_ast\fP * manage_commands (\fBt_token\fP ** tokens)"
+
+.PP
+Definition at line \fB74\fP of file \fBparser_helpers\&.c\fP\&.
+.nf
+75 {
+76     t_ast       *command_node;
+77     int         arg_count;
+78 
+79     command_node = new_ast_node(PHRASE);
+80     arg_count = arg_len(*tokens);
+81     command_node\->args = malloc(sizeof(char *) * (arg_count + 1));
+82     if (!command_node\->args)
+83         return (NULL);
+84     set_command_args(command_node, tokens, arg_count);
+85     return (command_node);
+86 }
+.PP
+.fi
+
+.PP
+References \fBarg_len()\fP, \fBs_ast::args\fP, \fBnew_ast_node()\fP, \fBPHRASE\fP, and \fBset_command_args()\fP\&.
+.PP
+Referenced by \fBmanage_redirs()\fP\&.
+.SS "\fBt_ast\fP * new_ast_node (\fBt_token_type\fP type)"
+
+.PP
+Definition at line \fB15\fP of file \fBparser_helpers\&.c\fP\&.
+.nf
+16 {
+17     t_ast       *node;
+18 
+19     node = malloc(sizeof(t_ast));
+20     if (!node)
+21         return (NULL);
+22     node\->type = type;
+23     node\->args = NULL;
+24     node\->left = NULL;
+25     node\->right = NULL;
+26     return (node);
+27 }
+.PP
+.fi
+
+.PP
+References \fBs_ast::args\fP, \fBs_ast::left\fP, \fBs_ast::right\fP, and \fBs_ast::type\fP\&.
+.PP
+Referenced by \fBcreate_redir()\fP, \fBmanage_commands()\fP, \fBmanage_pipe()\fP, and \fBmanage_redirs()\fP\&.
+.SS "void set_command_args (\fBt_ast\fP * command_node, \fBt_token\fP ** tokens, int arg_count)"
+
+.PP
+Definition at line \fB55\fP of file \fBparser_helpers\&.c\fP\&.
+.nf
+57 {
+58     int     i;
+59     t_token *tmp;
+60 
+61     i = 0;
+62     while (i < arg_count)
+63     {
+64         command_node\->args[i] = ft_strdup((*tokens)\->data);
+65         tmp = *tokens;
+66         *tokens = (*tokens)\->next;
+67         free(tmp\->data);
+68         free(tmp);
+69         i++;
+70     }
+71     command_node\->args[arg_count] = NULL;
+72 }
+.PP
+.fi
+
+.PP
+References \fBs_ast::args\fP, \fBs_token::data\fP, \fBft_strdup()\fP, and \fBs_token::next\fP\&.
+.PP
+Referenced by \fBmanage_commands()\fP\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for maxishell from the source code\&.

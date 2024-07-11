@@ -1,0 +1,2532 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.11.0" xml:lang="en-US">
+  <compounddef id="libft_8h" kind="file" language="C++">
+    <compoundname>libft.h</compoundname>
+    <includes local="no">stddef.h</includes>
+    <includes local="no">stdlib.h</includes>
+    <includes local="no">stdint.h</includes>
+    <includes local="no">limits.h</includes>
+    <includes local="no">unistd.h</includes>
+    <includes local="no">stdarg.h</includes>
+    <includes local="no">signal.h</includes>
+    <includes local="no">stdbool.h</includes>
+    <includes local="no">math.h</includes>
+    <includedby refid="tokens_8h" local="yes">/Users/dimadem/Documents/GitHub/minishell/inc/tokens.h</includedby>
+    <includedby refid="find__max__in__list_8c" local="yes">/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/find_max_in_list.c</includedby>
+    <includedby refid="ft__abs_8c" local="yes">/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_abs.c</includedby>
+    <includedby refid="ft__atof_8c" local="yes">/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_atof.c</includedby>
+    <includedby refid="ft__atol_8c" local="yes">/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_atol.c</includedby>
+    <includedby refid="ft__bzero_8c" local="yes">/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_bzero.c</includedby>
+    <includedby refid="ft__calloc_8c" local="yes">/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_calloc.c</includedby>
+    <includedby refid="ft__exclude__delimiters_8c" local="yes">/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_exclude_delimiters.c</includedby>
+    <includedby refid="ft__is__double_8c" local="yes">/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_is_double.c</includedby>
+    <includedby refid="ft__is__num_8c" local="yes">/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_is_num.c</includedby>
+    <includedby refid="ft__isalnum_8c" local="yes">/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_isalnum.c</includedby>
+    <includedby refid="ft__itoa_8c" local="yes">/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_itoa.c</includedby>
+    <includedby refid="ft__memchr_8c" local="yes">/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_memchr.c</includedby>
+    <includedby refid="ft__memcmp_8c" local="yes">/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_memcmp.c</includedby>
+    <includedby refid="ft__memcpy_8c" local="yes">/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_memcpy.c</includedby>
+    <includedby refid="ft__memmove_8c" local="yes">/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_memmove.c</includedby>
+    <includedby refid="ft__memset_8c" local="yes">/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_memset.c</includedby>
+    <includedby refid="ft__print__char_8c" local="yes">/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_print_char.c</includedby>
+    <includedby refid="ft__print__int_8c" local="yes">/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_print_int.c</includedby>
+    <includedby refid="ft__print__percent_8c" local="yes">/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_print_percent.c</includedby>
+    <includedby refid="ft__print__ptr_8c" local="yes">/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_print_ptr.c</includedby>
+    <includedby refid="ft__print__str_8c" local="yes">/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_print_str.c</includedby>
+    <includedby refid="ft__print__unsigned__dec_8c" local="yes">/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_print_unsigned_dec.c</includedby>
+    <includedby refid="ft__print__unsigned__hex_8c" local="yes">/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_print_unsigned_hex.c</includedby>
+    <includedby refid="ft__printf_8c" local="yes">/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_printf.c</includedby>
+    <includedby refid="ft__putchar__fd_8c" local="yes">/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_putchar_fd.c</includedby>
+    <includedby refid="ft__putendl__fd_8c" local="yes">/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_putendl_fd.c</includedby>
+    <includedby refid="ft__putnbr__fd_8c" local="yes">/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_putnbr_fd.c</includedby>
+    <includedby refid="ft__putstr__fd_8c" local="yes">/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_putstr_fd.c</includedby>
+    <includedby refid="ft__split_8c" local="yes">/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_split.c</includedby>
+    <includedby refid="ft__strcat_8c" local="yes">/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_strcat.c</includedby>
+    <includedby refid="ft__strchr_8c" local="yes">/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_strchr.c</includedby>
+    <includedby refid="ft__strcmp_8c" local="yes">/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_strcmp.c</includedby>
+    <includedby refid="ft__strcpy_8c" local="yes">/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_strcpy.c</includedby>
+    <includedby refid="ft__strdup_8c" local="yes">/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_strdup.c</includedby>
+    <includedby refid="ft__striteri_8c" local="yes">/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_striteri.c</includedby>
+    <includedby refid="ft__strjoin_8c" local="yes">/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_strjoin.c</includedby>
+    <includedby refid="ft__strlcat_8c" local="yes">/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_strlcat.c</includedby>
+    <includedby refid="ft__strlcpy_8c" local="yes">/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_strlcpy.c</includedby>
+    <includedby refid="ft__strmapi_8c" local="yes">/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_strmapi.c</includedby>
+    <includedby refid="ft__strncmp_8c" local="yes">/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_strncmp.c</includedby>
+    <includedby refid="ft__strndup_8c" local="yes">/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_strndup.c</includedby>
+    <includedby refid="ft__strnstr_8c" local="yes">/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_strnstr.c</includedby>
+    <includedby refid="ft__strrchr_8c" local="yes">/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_strrchr.c</includedby>
+    <includedby refid="ft__strstr_8c" local="yes">/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_strstr.c</includedby>
+    <includedby refid="ft__strtrim_8c" local="yes">/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_strtrim.c</includedby>
+    <includedby refid="ft__substr_8c" local="yes">/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_substr.c</includedby>
+    <includedby refid="ft__tolower_8c" local="yes">/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_tolower.c</includedby>
+    <includedby refid="ft__toupper_8c" local="yes">/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_toupper.c</includedby>
+    <includedby refid="isnum__from__str_8c" local="yes">/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/isnum_from_str.c</includedby>
+    <includedby refid="list__len__str_8c" local="yes">/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/list_len_str.c</includedby>
+    <includedby refid="list__repeat__check__int_8c" local="yes">/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/list_repeat_check_int.c</includedby>
+    <includedby refid="list__repeat__check__str_8c" local="yes">/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/list_repeat_check_str.c</includedby>
+    <includedby refid="cd_8c" local="yes">/Users/dimadem/Documents/GitHub/minishell/src/builtins/cd.c</includedby>
+    <includedby refid="echo_8c" local="yes">/Users/dimadem/Documents/GitHub/minishell/src/builtins/echo.c</includedby>
+    <includedby refid="builtins_2env_8c" local="yes">/Users/dimadem/Documents/GitHub/minishell/src/builtins/env.c</includedby>
+    <includedby refid="exit_8c" local="yes">/Users/dimadem/Documents/GitHub/minishell/src/builtins/exit.c</includedby>
+    <includedby refid="export_8c" local="yes">/Users/dimadem/Documents/GitHub/minishell/src/builtins/export.c</includedby>
+    <includedby refid="pwd_8c" local="yes">/Users/dimadem/Documents/GitHub/minishell/src/builtins/pwd.c</includedby>
+    <includedby refid="unset_8c" local="yes">/Users/dimadem/Documents/GitHub/minishell/src/builtins/unset.c</includedby>
+    <includedby refid="env_2env_8c" local="yes">/Users/dimadem/Documents/GitHub/minishell/src/env/env.c</includedby>
+    <includedby refid="env_2utils_8c" local="yes">/Users/dimadem/Documents/GitHub/minishell/src/env/utils.c</includedby>
+    <includedby refid="execute_8c" local="yes">/Users/dimadem/Documents/GitHub/minishell/src/execute/execute.c</includedby>
+    <includedby refid="utils__0_8c" local="yes">/Users/dimadem/Documents/GitHub/minishell/src/execute/utils_0.c</includedby>
+    <includedby refid="pipe_8c" local="yes">/Users/dimadem/Documents/GitHub/minishell/src/pipe/pipe.c</includedby>
+    <includedby refid="redirection_2utils_8c" local="yes">/Users/dimadem/Documents/GitHub/minishell/src/redirection/utils.c</includedby>
+    <includedby refid="env__test_8c" local="yes">/Users/dimadem/Documents/GitHub/minishell/src/test/env/env_test.c</includedby>
+    <includedby refid="pipe__test_8c" local="yes">/Users/dimadem/Documents/GitHub/minishell/src/test/pipe/pipe_test.c</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h</label>
+        <link refid="libft_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>limits.h</label>
+      </node>
+      <node id="10">
+        <label>math.h</label>
+      </node>
+      <node id="8">
+        <label>signal.h</label>
+      </node>
+      <node id="7">
+        <label>stdarg.h</label>
+      </node>
+      <node id="9">
+        <label>stdbool.h</label>
+      </node>
+      <node id="2">
+        <label>stddef.h</label>
+      </node>
+      <node id="4">
+        <label>stdint.h</label>
+      </node>
+      <node id="3">
+        <label>stdlib.h</label>
+      </node>
+      <node id="6">
+        <label>unistd.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="3">
+        <label>/Users/dimadem/Documents/GitHub/minishell/inc/execute.h</label>
+        <link refid="execute_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>/Users/dimadem/Documents/GitHub/minishell/inc/pipe.h</label>
+        <link refid="pipe_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>/Users/dimadem/Documents/GitHub/minishell/inc/redirection.h</label>
+        <link refid="redirection_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>/Users/dimadem/Documents/GitHub/minishell/inc/tokens.h</label>
+        <link refid="tokens_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h</label>
+        <link refid="libft_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+        <childnode refid="33" relation="include">
+        </childnode>
+        <childnode refid="34" relation="include">
+        </childnode>
+        <childnode refid="35" relation="include">
+        </childnode>
+        <childnode refid="36" relation="include">
+        </childnode>
+        <childnode refid="37" relation="include">
+        </childnode>
+        <childnode refid="38" relation="include">
+        </childnode>
+        <childnode refid="39" relation="include">
+        </childnode>
+        <childnode refid="40" relation="include">
+        </childnode>
+        <childnode refid="41" relation="include">
+        </childnode>
+        <childnode refid="42" relation="include">
+        </childnode>
+        <childnode refid="43" relation="include">
+        </childnode>
+        <childnode refid="44" relation="include">
+        </childnode>
+        <childnode refid="45" relation="include">
+        </childnode>
+        <childnode refid="46" relation="include">
+        </childnode>
+        <childnode refid="47" relation="include">
+        </childnode>
+        <childnode refid="48" relation="include">
+        </childnode>
+        <childnode refid="49" relation="include">
+        </childnode>
+        <childnode refid="50" relation="include">
+        </childnode>
+        <childnode refid="51" relation="include">
+        </childnode>
+        <childnode refid="52" relation="include">
+        </childnode>
+        <childnode refid="53" relation="include">
+        </childnode>
+        <childnode refid="54" relation="include">
+        </childnode>
+        <childnode refid="55" relation="include">
+        </childnode>
+        <childnode refid="56" relation="include">
+        </childnode>
+        <childnode refid="57" relation="include">
+        </childnode>
+        <childnode refid="58" relation="include">
+        </childnode>
+        <childnode refid="59" relation="include">
+        </childnode>
+        <childnode refid="60" relation="include">
+        </childnode>
+        <childnode refid="61" relation="include">
+        </childnode>
+        <childnode refid="62" relation="include">
+        </childnode>
+        <childnode refid="63" relation="include">
+        </childnode>
+        <childnode refid="64" relation="include">
+        </childnode>
+        <childnode refid="65" relation="include">
+        </childnode>
+        <childnode refid="66" relation="include">
+        </childnode>
+        <childnode refid="67" relation="include">
+        </childnode>
+        <childnode refid="68" relation="include">
+        </childnode>
+        <childnode refid="69" relation="include">
+        </childnode>
+        <childnode refid="70" relation="include">
+        </childnode>
+        <childnode refid="71" relation="include">
+        </childnode>
+        <childnode refid="72" relation="include">
+        </childnode>
+        <childnode refid="73" relation="include">
+        </childnode>
+        <childnode refid="74" relation="include">
+        </childnode>
+        <childnode refid="75" relation="include">
+        </childnode>
+        <childnode refid="76" relation="include">
+        </childnode>
+        <childnode refid="77" relation="include">
+        </childnode>
+        <childnode refid="78" relation="include">
+        </childnode>
+        <childnode refid="79" relation="include">
+        </childnode>
+        <childnode refid="80" relation="include">
+        </childnode>
+        <childnode refid="81" relation="include">
+        </childnode>
+        <childnode refid="82" relation="include">
+        </childnode>
+        <childnode refid="83" relation="include">
+        </childnode>
+        <childnode refid="84" relation="include">
+        </childnode>
+        <childnode refid="85" relation="include">
+        </childnode>
+        <childnode refid="86" relation="include">
+        </childnode>
+        <childnode refid="87" relation="include">
+        </childnode>
+        <childnode refid="88" relation="include">
+        </childnode>
+        <childnode refid="89" relation="include">
+        </childnode>
+        <childnode refid="90" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="91" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="92" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="30">
+        <label>/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/find_max_in_list.c</label>
+        <link refid="find__max__in__list_8c"/>
+      </node>
+      <node id="31">
+        <label>/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_abs.c</label>
+        <link refid="ft__abs_8c"/>
+      </node>
+      <node id="32">
+        <label>/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_atof.c</label>
+        <link refid="ft__atof_8c"/>
+      </node>
+      <node id="33">
+        <label>/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_atol.c</label>
+        <link refid="ft__atol_8c"/>
+      </node>
+      <node id="34">
+        <label>/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_bzero.c</label>
+        <link refid="ft__bzero_8c"/>
+      </node>
+      <node id="35">
+        <label>/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_calloc.c</label>
+        <link refid="ft__calloc_8c"/>
+      </node>
+      <node id="36">
+        <label>/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_exclude_delimiters.c</label>
+        <link refid="ft__exclude__delimiters_8c"/>
+      </node>
+      <node id="37">
+        <label>/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_is_double.c</label>
+        <link refid="ft__is__double_8c"/>
+      </node>
+      <node id="38">
+        <label>/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_is_num.c</label>
+        <link refid="ft__is__num_8c"/>
+      </node>
+      <node id="39">
+        <label>/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_isalnum.c</label>
+        <link refid="ft__isalnum_8c"/>
+      </node>
+      <node id="40">
+        <label>/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_itoa.c</label>
+        <link refid="ft__itoa_8c"/>
+      </node>
+      <node id="41">
+        <label>/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_memchr.c</label>
+        <link refid="ft__memchr_8c"/>
+      </node>
+      <node id="42">
+        <label>/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_memcmp.c</label>
+        <link refid="ft__memcmp_8c"/>
+      </node>
+      <node id="43">
+        <label>/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_memcpy.c</label>
+        <link refid="ft__memcpy_8c"/>
+      </node>
+      <node id="44">
+        <label>/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_memmove.c</label>
+        <link refid="ft__memmove_8c"/>
+      </node>
+      <node id="45">
+        <label>/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_memset.c</label>
+        <link refid="ft__memset_8c"/>
+      </node>
+      <node id="46">
+        <label>/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_print_char.c</label>
+        <link refid="ft__print__char_8c"/>
+      </node>
+      <node id="47">
+        <label>/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_print_int.c</label>
+        <link refid="ft__print__int_8c"/>
+      </node>
+      <node id="48">
+        <label>/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_print_percent.c</label>
+        <link refid="ft__print__percent_8c"/>
+      </node>
+      <node id="49">
+        <label>/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_print_ptr.c</label>
+        <link refid="ft__print__ptr_8c"/>
+      </node>
+      <node id="50">
+        <label>/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_print_str.c</label>
+        <link refid="ft__print__str_8c"/>
+      </node>
+      <node id="51">
+        <label>/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_print_unsigned_dec.c</label>
+        <link refid="ft__print__unsigned__dec_8c"/>
+      </node>
+      <node id="52">
+        <label>/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_print_unsigned_hex.c</label>
+        <link refid="ft__print__unsigned__hex_8c"/>
+      </node>
+      <node id="53">
+        <label>/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_printf.c</label>
+        <link refid="ft__printf_8c"/>
+      </node>
+      <node id="54">
+        <label>/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_putchar_fd.c</label>
+        <link refid="ft__putchar__fd_8c"/>
+      </node>
+      <node id="55">
+        <label>/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_putendl_fd.c</label>
+        <link refid="ft__putendl__fd_8c"/>
+      </node>
+      <node id="56">
+        <label>/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_putnbr_fd.c</label>
+        <link refid="ft__putnbr__fd_8c"/>
+      </node>
+      <node id="57">
+        <label>/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_putstr_fd.c</label>
+        <link refid="ft__putstr__fd_8c"/>
+      </node>
+      <node id="58">
+        <label>/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_split.c</label>
+        <link refid="ft__split_8c"/>
+      </node>
+      <node id="59">
+        <label>/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_strcat.c</label>
+        <link refid="ft__strcat_8c"/>
+      </node>
+      <node id="60">
+        <label>/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_strchr.c</label>
+        <link refid="ft__strchr_8c"/>
+      </node>
+      <node id="61">
+        <label>/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_strcmp.c</label>
+        <link refid="ft__strcmp_8c"/>
+      </node>
+      <node id="62">
+        <label>/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_strcpy.c</label>
+        <link refid="ft__strcpy_8c"/>
+      </node>
+      <node id="63">
+        <label>/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_strdup.c</label>
+        <link refid="ft__strdup_8c"/>
+      </node>
+      <node id="64">
+        <label>/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_striteri.c</label>
+        <link refid="ft__striteri_8c"/>
+      </node>
+      <node id="65">
+        <label>/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_strjoin.c</label>
+        <link refid="ft__strjoin_8c"/>
+      </node>
+      <node id="66">
+        <label>/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_strlcat.c</label>
+        <link refid="ft__strlcat_8c"/>
+      </node>
+      <node id="67">
+        <label>/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_strlcpy.c</label>
+        <link refid="ft__strlcpy_8c"/>
+      </node>
+      <node id="68">
+        <label>/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_strmapi.c</label>
+        <link refid="ft__strmapi_8c"/>
+      </node>
+      <node id="69">
+        <label>/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_strncmp.c</label>
+        <link refid="ft__strncmp_8c"/>
+      </node>
+      <node id="70">
+        <label>/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_strndup.c</label>
+        <link refid="ft__strndup_8c"/>
+      </node>
+      <node id="71">
+        <label>/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_strnstr.c</label>
+        <link refid="ft__strnstr_8c"/>
+      </node>
+      <node id="72">
+        <label>/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_strrchr.c</label>
+        <link refid="ft__strrchr_8c"/>
+      </node>
+      <node id="73">
+        <label>/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_strstr.c</label>
+        <link refid="ft__strstr_8c"/>
+      </node>
+      <node id="74">
+        <label>/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_strtrim.c</label>
+        <link refid="ft__strtrim_8c"/>
+      </node>
+      <node id="75">
+        <label>/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_substr.c</label>
+        <link refid="ft__substr_8c"/>
+      </node>
+      <node id="76">
+        <label>/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_tolower.c</label>
+        <link refid="ft__tolower_8c"/>
+      </node>
+      <node id="77">
+        <label>/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_toupper.c</label>
+        <link refid="ft__toupper_8c"/>
+      </node>
+      <node id="78">
+        <label>/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/isnum_from_str.c</label>
+        <link refid="isnum__from__str_8c"/>
+      </node>
+      <node id="79">
+        <label>/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/list_len_str.c</label>
+        <link refid="list__len__str_8c"/>
+      </node>
+      <node id="80">
+        <label>/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/list_repeat_check_int.c</label>
+        <link refid="list__repeat__check__int_8c"/>
+      </node>
+      <node id="81">
+        <label>/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/list_repeat_check_str.c</label>
+        <link refid="list__repeat__check__str_8c"/>
+      </node>
+      <node id="82">
+        <label>/Users/dimadem/Documents/GitHub/minishell/src/builtins/cd.c</label>
+        <link refid="cd_8c"/>
+      </node>
+      <node id="83">
+        <label>/Users/dimadem/Documents/GitHub/minishell/src/builtins/echo.c</label>
+        <link refid="echo_8c"/>
+      </node>
+      <node id="84">
+        <label>/Users/dimadem/Documents/GitHub/minishell/src/builtins/env.c</label>
+        <link refid="builtins_2env_8c"/>
+      </node>
+      <node id="85">
+        <label>/Users/dimadem/Documents/GitHub/minishell/src/builtins/exit.c</label>
+        <link refid="exit_8c"/>
+      </node>
+      <node id="86">
+        <label>/Users/dimadem/Documents/GitHub/minishell/src/builtins/export.c</label>
+        <link refid="export_8c"/>
+      </node>
+      <node id="87">
+        <label>/Users/dimadem/Documents/GitHub/minishell/src/builtins/pwd.c</label>
+        <link refid="pwd_8c"/>
+      </node>
+      <node id="88">
+        <label>/Users/dimadem/Documents/GitHub/minishell/src/builtins/unset.c</label>
+        <link refid="unset_8c"/>
+      </node>
+      <node id="89">
+        <label>/Users/dimadem/Documents/GitHub/minishell/src/env/env.c</label>
+        <link refid="env_2env_8c"/>
+      </node>
+      <node id="90">
+        <label>/Users/dimadem/Documents/GitHub/minishell/src/env/utils.c</label>
+        <link refid="env_2utils_8c"/>
+      </node>
+      <node id="4">
+        <label>/Users/dimadem/Documents/GitHub/minishell/src/execute/execute.c</label>
+        <link refid="execute_8c"/>
+      </node>
+      <node id="91">
+        <label>/Users/dimadem/Documents/GitHub/minishell/src/execute/utils_0.c</label>
+        <link refid="utils__0_8c"/>
+      </node>
+      <node id="5">
+        <label>/Users/dimadem/Documents/GitHub/minishell/src/main.c</label>
+        <link refid="main_8c"/>
+      </node>
+      <node id="14">
+        <label>/Users/dimadem/Documents/GitHub/minishell/src/parser/heredoc.c</label>
+        <link refid="heredoc_8c"/>
+      </node>
+      <node id="15">
+        <label>/Users/dimadem/Documents/GitHub/minishell/src/parser/input_checker.c</label>
+        <link refid="input__checker_8c"/>
+      </node>
+      <node id="16">
+        <label>/Users/dimadem/Documents/GitHub/minishell/src/parser/input_checker_helpers.c</label>
+        <link refid="input__checker__helpers_8c"/>
+      </node>
+      <node id="17">
+        <label>/Users/dimadem/Documents/GitHub/minishell/src/parser/parser.c</label>
+        <link refid="parser_8c"/>
+      </node>
+      <node id="18">
+        <label>/Users/dimadem/Documents/GitHub/minishell/src/parser/parser_helpers.c</label>
+        <link refid="parser__helpers_8c"/>
+      </node>
+      <node id="19">
+        <label>/Users/dimadem/Documents/GitHub/minishell/src/parser/tokeniser.c</label>
+        <link refid="tokeniser_8c"/>
+      </node>
+      <node id="20">
+        <label>/Users/dimadem/Documents/GitHub/minishell/src/parser/tokeniser_helpers.c</label>
+        <link refid="tokeniser__helpers_8c"/>
+      </node>
+      <node id="6">
+        <label>/Users/dimadem/Documents/GitHub/minishell/src/pipe/pipe.c</label>
+        <link refid="pipe_8c"/>
+      </node>
+      <node id="7">
+        <label>/Users/dimadem/Documents/GitHub/minishell/src/redirection/redirect_append.c</label>
+        <link refid="redirect__append_8c"/>
+      </node>
+      <node id="8">
+        <label>/Users/dimadem/Documents/GitHub/minishell/src/redirection/redirect_heredoc.c</label>
+        <link refid="redirect__heredoc_8c"/>
+      </node>
+      <node id="9">
+        <label>/Users/dimadem/Documents/GitHub/minishell/src/redirection/redirect_in.c</label>
+        <link refid="redirect__in_8c"/>
+      </node>
+      <node id="10">
+        <label>/Users/dimadem/Documents/GitHub/minishell/src/redirection/redirect_out.c</label>
+        <link refid="redirect__out_8c"/>
+      </node>
+      <node id="21">
+        <label>/Users/dimadem/Documents/GitHub/minishell/src/redirection/utils.c</label>
+        <link refid="redirection_2utils_8c"/>
+      </node>
+      <node id="92">
+        <label>/Users/dimadem/Documents/GitHub/minishell/src/test/env/env_test.c</label>
+        <link refid="env__test_8c"/>
+      </node>
+      <node id="12">
+        <label>/Users/dimadem/Documents/GitHub/minishell/src/test/pipe/pipe_test.c</label>
+        <link refid="pipe__test_8c"/>
+      </node>
+      <node id="22">
+        <label>/Users/dimadem/Documents/GitHub/minishell/src/utils/aux.c</label>
+        <link refid="aux_8c"/>
+      </node>
+      <node id="23">
+        <label>/Users/dimadem/Documents/GitHub/minishell/src/utils/clean_general.c</label>
+        <link refid="clean__general_8c"/>
+      </node>
+      <node id="24">
+        <label>/Users/dimadem/Documents/GitHub/minishell/src/utils/clean_tree.c</label>
+        <link refid="clean__tree_8c"/>
+      </node>
+      <node id="25">
+        <label>/Users/dimadem/Documents/GitHub/minishell/src/utils/initialise.c</label>
+        <link refid="initialise_8c"/>
+      </node>
+      <node id="26">
+        <label>/Users/dimadem/Documents/GitHub/minishell/src/utils/prompt.c</label>
+        <link refid="prompt_8c"/>
+      </node>
+      <node id="27">
+        <label>/Users/dimadem/Documents/GitHub/minishell/src/utils/stack_control.c</label>
+        <link refid="stack__control_8c"/>
+      </node>
+      <node id="28">
+        <label>/Users/dimadem/Documents/GitHub/minishell/src/utils/stack_control_2.c</label>
+        <link refid="stack__control__2_8c"/>
+      </node>
+      <node id="29">
+        <label>/Users/dimadem/Documents/GitHub/minishell/src/utils/visualiser.c</label>
+        <link refid="visualiser_8c"/>
+      </node>
+    </invincdepgraph>
+    <sectiondef kind="define">
+      <memberdef kind="define" id="libft_8h_1a6b20d41d6252e9871430c242cb1a56e7" prot="public" static="no">
+        <name>BUFFER_SIZE</name>
+        <initializer>32</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" line="25" column="10" bodyfile="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" bodystart="25" bodyend="-1"/>
+        <referencedby refid="redirection_8h_1a5feb28b63e00d9f45e4887ee15da4ab8" compoundref="redirection_2utils_8c" startline="41" endline="66">ft_get_next_line</referencedby>
+        <referencedby refid="redirection_2utils_8c_1aa5a7db94bcb5970b93bff4df02b52108" compoundref="redirection_2utils_8c" startline="92" endline="116">read_from_fd</referencedby>
+      </memberdef>
+      <memberdef kind="define" id="libft_8h_1aa8cecfc5c5c054d2875c03e77b7be15d" prot="public" static="no">
+        <name>TRUE</name>
+        <initializer>1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" line="95" column="10" bodyfile="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" bodystart="95" bodyend="-1"/>
+        <referencedby refid="libft_8h_1ae16fec1d497ae2334d6a0582ed73e5bb" compoundref="ft__is__double_8c" startline="15" endline="40">ft_is_double</referencedby>
+        <referencedby refid="libft_8h_1af71b082a2409cf4a63929f244d0d0a08" compoundref="ft__is__num_8c" startline="15" endline="34">ft_is_num</referencedby>
+      </memberdef>
+      <memberdef kind="define" id="libft_8h_1aa93f0eb578d23995850d61f7d61c55c1" prot="public" static="no">
+        <name>FALSE</name>
+        <initializer>0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" line="96" column="10" bodyfile="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" bodystart="96" bodyend="-1"/>
+        <referencedby refid="libft_8h_1ae16fec1d497ae2334d6a0582ed73e5bb" compoundref="ft__is__double_8c" startline="15" endline="40">ft_is_double</referencedby>
+        <referencedby refid="libft_8h_1af71b082a2409cf4a63929f244d0d0a08" compoundref="ft__is__num_8c" startline="15" endline="34">ft_is_num</referencedby>
+      </memberdef>
+      <memberdef kind="define" id="libft_8h_1ac00bfb46347d26fdc58568fe1ab5fa5b" prot="public" static="no">
+        <name>STDIN</name>
+        <initializer>0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" line="98" column="10" bodyfile="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" bodystart="98" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="libft_8h_1a8875037d0772a4fc34516f1e03d7e238" prot="public" static="no">
+        <name>STDOUT</name>
+        <initializer>1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" line="99" column="10" bodyfile="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" bodystart="99" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="libft_8h_1a3a540e3eef339eec06aff31c4ba1eb25" prot="public" static="no">
+        <name>STDERR</name>
+        <initializer>2</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" line="100" column="10" bodyfile="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" bodystart="100" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="libft_8h_1ab702106cf3b3e96750b6845ded4e0299" prot="public" static="no">
+        <name>RESET</name>
+        <initializer>&quot;\033[0m&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" line="102" column="10" bodyfile="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" bodystart="102" bodyend="-1"/>
+        <referencedby refid="execute_8h_1ace4c3a2246919797e40140123d79596a" compoundref="execute_8c" startline="41" endline="82">execute_ast</referencedby>
+      </memberdef>
+      <memberdef kind="define" id="libft_8h_1a6283768c836fd4a0f382514973bc3ff4" prot="public" static="no">
+        <name>BLK</name>
+        <initializer>&quot;\033[0;30m&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" line="104" column="10" bodyfile="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" bodystart="104" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="libft_8h_1a8d23feea868a983c8c2b661e1e16972f" prot="public" static="no">
+        <name>RED</name>
+        <initializer>&quot;\033[0;31m&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" line="105" column="10" bodyfile="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" bodystart="105" bodyend="-1"/>
+        <referencedby refid="execute_8h_1ace4c3a2246919797e40140123d79596a" compoundref="execute_8c" startline="41" endline="82">execute_ast</referencedby>
+      </memberdef>
+      <memberdef kind="define" id="libft_8h_1aea69ffbacdcdf16c21b8c9961df84448" prot="public" static="no">
+        <name>GRN</name>
+        <initializer>&quot;\033[0;32m&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" line="106" column="10" bodyfile="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" bodystart="106" bodyend="-1"/>
+        <referencedby refid="execute_8h_1ace4c3a2246919797e40140123d79596a" compoundref="execute_8c" startline="41" endline="82">execute_ast</referencedby>
+      </memberdef>
+      <memberdef kind="define" id="libft_8h_1a96fac03c4ab3363f06a0328e0e53a40c" prot="public" static="no">
+        <name>YEL</name>
+        <initializer>&quot;\033[0;33m&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" line="107" column="10" bodyfile="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" bodystart="107" bodyend="-1"/>
+        <referencedby refid="execute_8h_1ace4c3a2246919797e40140123d79596a" compoundref="execute_8c" startline="41" endline="82">execute_ast</referencedby>
+      </memberdef>
+      <memberdef kind="define" id="libft_8h_1add9307de87f38e77d336751e305886f6" prot="public" static="no">
+        <name>BLU</name>
+        <initializer>&quot;\033[0;34m&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" line="108" column="10" bodyfile="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" bodystart="108" bodyend="-1"/>
+        <referencedby refid="execute_8h_1ace4c3a2246919797e40140123d79596a" compoundref="execute_8c" startline="41" endline="82">execute_ast</referencedby>
+      </memberdef>
+      <memberdef kind="define" id="libft_8h_1af54a5a977c0c499323d656315f008ee0" prot="public" static="no">
+        <name>MAG</name>
+        <initializer>&quot;\033[0;35m&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" line="109" column="10" bodyfile="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" bodystart="109" bodyend="-1"/>
+        <referencedby refid="execute_8h_1ace4c3a2246919797e40140123d79596a" compoundref="execute_8c" startline="41" endline="82">execute_ast</referencedby>
+      </memberdef>
+      <memberdef kind="define" id="libft_8h_1a25f4cb00b763d4c7c8e627e4c0350383" prot="public" static="no">
+        <name>CYA</name>
+        <initializer>&quot;\033[0;36m&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" line="110" column="10" bodyfile="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" bodystart="110" bodyend="-1"/>
+        <referencedby refid="execute_8h_1ace4c3a2246919797e40140123d79596a" compoundref="execute_8c" startline="41" endline="82">execute_ast</referencedby>
+      </memberdef>
+      <memberdef kind="define" id="libft_8h_1ad9686e0f37fe7ff78cef4840f8dcc8b4" prot="public" static="no">
+        <name>WHI</name>
+        <initializer>&quot;\033[0;37m&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" line="111" column="10" bodyfile="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" bodystart="111" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="libft_8h_1aff49c5095216c7e8b78b59eb1b91c883" prot="public" static="no">
+        <name>B_BLK</name>
+        <initializer>&quot;\033[1;30m&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" line="113" column="10" bodyfile="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" bodystart="113" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="libft_8h_1a99aab81746be2e0e639f9341c1626c21" prot="public" static="no">
+        <name>B_RED</name>
+        <initializer>&quot;\033[1;31m&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" line="114" column="10" bodyfile="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" bodystart="114" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="libft_8h_1a7fbd3ddd204beaba10029ec76f366d75" prot="public" static="no">
+        <name>B_GRN</name>
+        <initializer>&quot;\033[1;32m&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" line="115" column="10" bodyfile="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" bodystart="115" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="libft_8h_1aeb916ac96767cf5c1fe782e8a4d36bf5" prot="public" static="no">
+        <name>B_YEL</name>
+        <initializer>&quot;\033[1;33m&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" line="116" column="10" bodyfile="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" bodystart="116" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="libft_8h_1a9ec94737cff3a7dc5111d45f16a24e8e" prot="public" static="no">
+        <name>B_BLU</name>
+        <initializer>&quot;\033[1;34m&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" line="117" column="10" bodyfile="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" bodystart="117" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="libft_8h_1ae5b8398d856de0bf7b23bb8e2bb262c7" prot="public" static="no">
+        <name>B_MAG</name>
+        <initializer>&quot;\033[1;35m&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" line="118" column="10" bodyfile="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" bodystart="118" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="libft_8h_1adff31d55645467cce89cbfd00211d653" prot="public" static="no">
+        <name>B_CYA</name>
+        <initializer>&quot;\033[1;36m&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" line="119" column="10" bodyfile="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" bodystart="119" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="libft_8h_1a2872fc7b9a402558a066fa4dc7e8d93a" prot="public" static="no">
+        <name>B_WHI</name>
+        <initializer>&quot;\033[1;37m&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" line="120" column="10" bodyfile="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" bodystart="120" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="libft_8h_1a5feb28b63e00d9f45e4887ee15da4ab8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>char *</type>
+        <definition>char * ft_get_next_line</definition>
+        <argsstring>(int fd)</argsstring>
+        <name>ft_get_next_line</name>
+        <param>
+          <type>int</type>
+          <declname>fd</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" line="26" column="5" bodyfile="/Users/dimadem/Documents/GitHub/minishell/src/redirection/utils.c" bodystart="41" bodyend="66" declfile="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" declline="26" declcolumn="5"/>
+      </memberdef>
+      <memberdef kind="function" id="libft_8h_1ac283963beaa3b8c7d09b78851cda297e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int ft_isalpha</definition>
+        <argsstring>(int c)</argsstring>
+        <name>ft_isalpha</name>
+        <param>
+          <type>int</type>
+          <declname>c</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" line="27" column="4" bodyfile="/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_isalpha.c" bodystart="13" bodyend="16" declfile="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" declline="27" declcolumn="4"/>
+        <referencedby refid="libft_8h_1a9c2c3821ea43ebdf97de07b123503f8b" compoundref="ft__isalnum_8c" startline="15" endline="18">ft_isalnum</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="libft_8h_1a2cf15b8a1a277d1e2ce3654101a2003d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int ft_isdigit</definition>
+        <argsstring>(int c)</argsstring>
+        <name>ft_isdigit</name>
+        <param>
+          <type>int</type>
+          <declname>c</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" line="28" column="4" bodyfile="/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_isdigit.c" bodystart="13" bodyend="16" declfile="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" declline="28" declcolumn="4"/>
+        <referencedby refid="libft_8h_1ae16fec1d497ae2334d6a0582ed73e5bb" compoundref="ft__is__double_8c" startline="15" endline="40">ft_is_double</referencedby>
+        <referencedby refid="libft_8h_1af71b082a2409cf4a63929f244d0d0a08" compoundref="ft__is__num_8c" startline="15" endline="34">ft_is_num</referencedby>
+        <referencedby refid="libft_8h_1a9c2c3821ea43ebdf97de07b123503f8b" compoundref="ft__isalnum_8c" startline="15" endline="18">ft_isalnum</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="libft_8h_1af71b082a2409cf4a63929f244d0d0a08" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int ft_is_num</definition>
+        <argsstring>(const char *n)</argsstring>
+        <name>ft_is_num</name>
+        <param>
+          <type>const char *</type>
+          <declname>n</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" line="29" column="4" bodyfile="/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_is_num.c" bodystart="15" bodyend="34" declfile="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" declline="29" declcolumn="4"/>
+        <references refid="libft_8h_1aa93f0eb578d23995850d61f7d61c55c1" compoundref="libft_8h" startline="96">FALSE</references>
+        <references refid="libft_8h_1a2cf15b8a1a277d1e2ce3654101a2003d" compoundref="ft__isdigit_8c" startline="13" endline="16">ft_isdigit</references>
+        <references refid="libft_8h_1aa8cecfc5c5c054d2875c03e77b7be15d" compoundref="libft_8h" startline="95">TRUE</references>
+      </memberdef>
+      <memberdef kind="function" id="libft_8h_1ae16fec1d497ae2334d6a0582ed73e5bb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int ft_is_double</definition>
+        <argsstring>(const char *n)</argsstring>
+        <name>ft_is_double</name>
+        <param>
+          <type>const char *</type>
+          <declname>n</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" line="30" column="4" bodyfile="/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_is_double.c" bodystart="15" bodyend="40" declfile="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" declline="30" declcolumn="4"/>
+        <references refid="libft_8h_1aa93f0eb578d23995850d61f7d61c55c1" compoundref="libft_8h" startline="96">FALSE</references>
+        <references refid="libft_8h_1a2cf15b8a1a277d1e2ce3654101a2003d" compoundref="ft__isdigit_8c" startline="13" endline="16">ft_isdigit</references>
+        <references refid="libft_8h_1aa8cecfc5c5c054d2875c03e77b7be15d" compoundref="libft_8h" startline="95">TRUE</references>
+      </memberdef>
+      <memberdef kind="function" id="libft_8h_1a9c2c3821ea43ebdf97de07b123503f8b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int ft_isalnum</definition>
+        <argsstring>(int c)</argsstring>
+        <name>ft_isalnum</name>
+        <param>
+          <type>int</type>
+          <declname>c</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" line="31" column="4" bodyfile="/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_isalnum.c" bodystart="15" bodyend="18" declfile="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" declline="31" declcolumn="4"/>
+        <references refid="libft_8h_1ac283963beaa3b8c7d09b78851cda297e" compoundref="ft__isalpha_8c" startline="13" endline="16">ft_isalpha</references>
+        <references refid="libft_8h_1a2cf15b8a1a277d1e2ce3654101a2003d" compoundref="ft__isdigit_8c" startline="13" endline="16">ft_isdigit</references>
+      </memberdef>
+      <memberdef kind="function" id="libft_8h_1abf60ddbec6479540e81f3648cf71f1f4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int ft_isascii</definition>
+        <argsstring>(int c)</argsstring>
+        <name>ft_isascii</name>
+        <param>
+          <type>int</type>
+          <declname>c</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" line="32" column="4" bodyfile="/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_isascii.c" bodystart="13" bodyend="16" declfile="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" declline="32" declcolumn="4"/>
+      </memberdef>
+      <memberdef kind="function" id="libft_8h_1abcdba69692f21146aeea5b3d59b7d0ca" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int ft_isprint</definition>
+        <argsstring>(int c)</argsstring>
+        <name>ft_isprint</name>
+        <param>
+          <type>int</type>
+          <declname>c</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" line="33" column="4" bodyfile="/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_isprint.c" bodystart="13" bodyend="16" declfile="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" declline="33" declcolumn="4"/>
+      </memberdef>
+      <memberdef kind="function" id="libft_8h_1aef116be7b5bceafff4b59f20a4433d12" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int ft_toupper</definition>
+        <argsstring>(int c)</argsstring>
+        <name>ft_toupper</name>
+        <param>
+          <type>int</type>
+          <declname>c</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" line="34" column="4" bodyfile="/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_toupper.c" bodystart="15" bodyend="20" declfile="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" declline="34" declcolumn="4"/>
+      </memberdef>
+      <memberdef kind="function" id="libft_8h_1ab86e5297914753b6c82d7e3c3020ce17" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int ft_tolower</definition>
+        <argsstring>(int c)</argsstring>
+        <name>ft_tolower</name>
+        <param>
+          <type>int</type>
+          <declname>c</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" line="35" column="4" bodyfile="/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_tolower.c" bodystart="15" bodyend="20" declfile="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" declline="35" declcolumn="4"/>
+      </memberdef>
+      <memberdef kind="function" id="libft_8h_1afad2ec371b4188602da9a94db687cb16" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int ft_atoi</definition>
+        <argsstring>(const char *str)</argsstring>
+        <name>ft_atoi</name>
+        <param>
+          <type>const char *</type>
+          <declname>str</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" line="36" column="4" declfile="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" declline="36" declcolumn="4"/>
+      </memberdef>
+      <memberdef kind="function" id="libft_8h_1aab7f1931ab998ddb4eb54946ae8421fe" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int list_len_char</definition>
+        <argsstring>(char a[])</argsstring>
+        <name>list_len_char</name>
+        <param>
+          <type>char</type>
+          <declname>a</declname>
+          <array>[]</array>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" line="37" column="4" bodyfile="/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/list_len_char.c" bodystart="13" bodyend="21" declfile="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" declline="37" declcolumn="4"/>
+      </memberdef>
+      <memberdef kind="function" id="libft_8h_1ab9ed0039097548fb0f687d04cd62cb4f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int list_len_str</definition>
+        <argsstring>(char *a[])</argsstring>
+        <name>list_len_str</name>
+        <param>
+          <type>char *</type>
+          <declname>a</declname>
+          <array>[]</array>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" line="38" column="4" bodyfile="/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/list_len_str.c" bodystart="15" bodyend="23" declfile="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" declline="38" declcolumn="4"/>
+      </memberdef>
+      <memberdef kind="function" id="libft_8h_1a7662f93566f07ffd795db3e64b143094" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int isnum_from_str</definition>
+        <argsstring>(const char *str)</argsstring>
+        <name>isnum_from_str</name>
+        <param>
+          <type>const char *</type>
+          <declname>str</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" line="39" column="4" bodyfile="/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/isnum_from_str.c" bodystart="15" bodyend="32" declfile="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" declline="39" declcolumn="4"/>
+      </memberdef>
+      <memberdef kind="function" id="libft_8h_1ada62675eb549f655cbf9c4ebb9848471" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int list_repeat_check_int</definition>
+        <argsstring>(int a[], int size)</argsstring>
+        <name>list_repeat_check_int</name>
+        <param>
+          <type>int</type>
+          <declname>a</declname>
+          <array>[]</array>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>size</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" line="40" column="4" bodyfile="/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/list_repeat_check_int.c" bodystart="15" bodyend="33" declfile="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" declline="40" declcolumn="4"/>
+      </memberdef>
+      <memberdef kind="function" id="libft_8h_1a7a215fb6793487678a9c7a647373a40a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int list_repeat_check_str</definition>
+        <argsstring>(char *a[], int size)</argsstring>
+        <name>list_repeat_check_str</name>
+        <param>
+          <type>char *</type>
+          <declname>a</declname>
+          <array>[]</array>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>size</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" line="41" column="4" bodyfile="/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/list_repeat_check_str.c" bodystart="15" bodyend="33" declfile="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" declline="41" declcolumn="4"/>
+        <references refid="libft_8h_1a9d2fe792187aa4ed08e5864fb2c4d6dc" compoundref="ft__strncmp_8c" startline="24" endline="35">ft_strncmp</references>
+      </memberdef>
+      <memberdef kind="function" id="libft_8h_1a1f2ff2312e5994560c9537cd9173be94" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int ft_strcmp</definition>
+        <argsstring>(const char *s1, const char *s2)</argsstring>
+        <name>ft_strcmp</name>
+        <param>
+          <type>const char *</type>
+          <declname>s1</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>s2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" line="42" column="4" bodyfile="/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_strcmp.c" bodystart="24" bodyend="34" declfile="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" declline="42" declcolumn="4"/>
+        <referencedby refid="builtins_8h_1a9c4bf413cef22ef46427c4026734a97d" compoundref="echo_8c" startline="21" endline="42">builtin_echo</referencedby>
+        <referencedby refid="builtins_8h_1adfc1db1f94cf16d71aea54b09370c032" compoundref="builtins_2env_8c" startline="38" endline="44">builtin_env</referencedby>
+        <referencedby refid="tokens_8h_1a4e1b3e73a18dd66697cd7eac990b0363" compoundref="heredoc_8c" startline="15" endline="24">check_heredoc</referencedby>
+        <referencedby refid="execute_8h_1a825187f25304f9bd1a3e7a5e97327801" compoundref="execute_8c" startline="93" endline="120">execute</referencedby>
+        <referencedby refid="env_8h_1a41133e0ba7230727a51eedce713a225c" compoundref="env_2env_8c" startline="60" endline="72">get_env</referencedby>
+        <referencedby refid="tokens_8h_1a132ce43db3d4fba988a166e932845375" compoundref="heredoc_8c" startline="26" endline="40">heredoc</referencedby>
+        <referencedby refid="redirection_8h_1a2fe566529f8c7046fe274f2b3a35b39b" compoundref="redirection_2utils_8c" startline="24" endline="39">open_file</referencedby>
+        <referencedby refid="redirection_8h_1a0dc55a5a9752d658c1b8b6e3760f5813" compoundref="redirect__heredoc_8c" startline="17" endline="63">redirect_here_doc</referencedby>
+        <referencedby refid="env_8h_1a194b2552273340441e8b481b4ce5202c" compoundref="env_2env_8c" startline="79" endline="99">set_env</referencedby>
+        <referencedby refid="env__test_8c_1a4adfeb719435c39cc19b4c8f4e7e67a0" compoundref="env__test_8c" startline="57" endline="70">test_get_env</referencedby>
+        <referencedby refid="env__test_8c_1a791d22f0a8695ef368626b927cb18caf" compoundref="env__test_8c" startline="72" endline="86">test_set_env</referencedby>
+        <referencedby refid="env__test_8c_1a42689ea8be8292c12da563c4d8cfbc5f" compoundref="env__test_8c" startline="88" endline="103">test_unset_env</referencedby>
+        <referencedby refid="env_8h_1a0854396366b7055e0df29e25f8e520d3" compoundref="env_2env_8c" startline="101" endline="125">unset_env</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="libft_8h_1a9d2fe792187aa4ed08e5864fb2c4d6dc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int ft_strncmp</definition>
+        <argsstring>(const char *s1, const char *s2, size_t n)</argsstring>
+        <name>ft_strncmp</name>
+        <param>
+          <type>const char *</type>
+          <declname>s1</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>s2</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>n</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" line="43" column="4" bodyfile="/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_strncmp.c" bodystart="24" bodyend="35" declfile="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" declline="43" declcolumn="4"/>
+        <referencedby refid="builtins_8h_1a9e6f1e14f0125cd68c70e8e31ef606aa" compoundref="export_8c" startline="28" endline="44">builtin_export</referencedby>
+        <referencedby refid="libft_8h_1ae00229613cc0bf361e86dca72ad92591" compoundref="ft__strnstr_8c" startline="25" endline="42">ft_strnstr</referencedby>
+        <referencedby refid="libft_8h_1a7eba6d6022f99a664b9c76a60b2f5dbc" compoundref="ft__strstr_8c" startline="24" endline="40">ft_strstr</referencedby>
+        <referencedby refid="prompt_8c_1a5663e22274d85c42c9c7f51e22afc301" compoundref="prompt_8c" startline="71" endline="88">generate_prompt_string</referencedby>
+        <referencedby refid="libft_8h_1a7a215fb6793487678a9c7a647373a40a" compoundref="list__repeat__check__str_8c" startline="15" endline="33">list_repeat_check_str</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="libft_8h_1a08f665a1828c402f2ffe2e2187f135fc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int ft_memcmp</definition>
+        <argsstring>(const void *s1, const void *s2, size_t n)</argsstring>
+        <name>ft_memcmp</name>
+        <param>
+          <type>const void *</type>
+          <declname>s1</declname>
+        </param>
+        <param>
+          <type>const void *</type>
+          <declname>s2</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>n</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" line="44" column="4" bodyfile="/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_memcmp.c" bodystart="23" bodyend="38" declfile="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" declline="44" declcolumn="4"/>
+      </memberdef>
+      <memberdef kind="function" id="libft_8h_1aff95d419ccc24001a16c8e4fa1115279" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int ft_count_bits</definition>
+        <argsstring>(unsigned char current_char)</argsstring>
+        <name>ft_count_bits</name>
+        <param>
+          <type>unsigned char</type>
+          <declname>current_char</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" line="45" column="4" bodyfile="/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_count_bits.c" bodystart="13" bodyend="24" declfile="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" declline="45" declcolumn="4"/>
+      </memberdef>
+      <memberdef kind="function" id="libft_8h_1a84b2c4d47c892d0517d581f39732a6ff" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int find_max_in_list</definition>
+        <argsstring>(int a[], int size)</argsstring>
+        <name>find_max_in_list</name>
+        <param>
+          <type>int</type>
+          <declname>a</declname>
+          <array>[]</array>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>size</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" line="46" column="4" bodyfile="/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/find_max_in_list.c" bodystart="15" bodyend="29" declfile="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" declline="46" declcolumn="4"/>
+      </memberdef>
+      <memberdef kind="function" id="libft_8h_1a8a6ea3765dfd826eabfc00d36e28ea38" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>char *</type>
+        <definition>char * ft_itoa</definition>
+        <argsstring>(int n)</argsstring>
+        <name>ft_itoa</name>
+        <param>
+          <type>int</type>
+          <declname>n</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" line="48" column="5" bodyfile="/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_itoa.c" bodystart="40" bodyend="65" declfile="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" declline="48" declcolumn="5"/>
+        <references refid="ft__itoa_8c_1a01efab229ef959ceedc93dfa15b56689" compoundref="ft__itoa_8c" startline="23" endline="38">count_digits</references>
+        <references refid="libft_8h_1aebe73f27c70c56ac5053f860ef5436c9" compoundref="ft__strdup_8c" startline="23" endline="36">ft_strdup</references>
+        <referencedby refid="libft_8h_1ae462756310d90a26c1fbbd0d4c1439dd" compoundref="ft__print__int_8c" startline="15" endline="24">ft_print_int</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="libft_8h_1aebe73f27c70c56ac5053f860ef5436c9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>char *</type>
+        <definition>char * ft_strdup</definition>
+        <argsstring>(const char *s)</argsstring>
+        <name>ft_strdup</name>
+        <param>
+          <type>const char *</type>
+          <declname>s</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" line="49" column="5" bodyfile="/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_strdup.c" bodystart="23" bodyend="36" declfile="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" declline="49" declcolumn="5"/>
+        <references refid="libft_8h_1a95de924e4140ae426bf2e05acfb5fe4f" compoundref="ft__strlcpy_8c" startline="25" endline="43">ft_strlcpy</references>
+        <references refid="libft_8h_1abbb8c6c4ed85d892e7f1509f65f5768a" compoundref="ft__strlen_8c" startline="15" endline="23">ft_strlen</references>
+        <referencedby refid="env_8h_1aa2e361e75c8c044d588ec5c07b560659" compoundref="env_2env_8c" startline="33" endline="58">add_env_node</referencedby>
+        <referencedby refid="redirection_2utils_8c_1a33d78aafe6a0e75e4fdfe3606cbd9348" compoundref="redirection_2utils_8c" startline="118" endline="141">extract_line</referencedby>
+        <referencedby refid="libft_8h_1a8a6ea3765dfd826eabfc00d36e28ea38" compoundref="ft__itoa_8c" startline="40" endline="65">ft_itoa</referencedby>
+        <referencedby refid="tokens_8h_1a950dc11d8cce4e58af12882a1781128c" compoundref="stack__control_8c" startline="80" endline="102">list_to_array</referencedby>
+        <referencedby refid="tokens_8h_1a07793427f42bd19d0f4ea6771441be99" compoundref="tokeniser__helpers_8c" startline="15" endline="31">new_token</referencedby>
+        <referencedby refid="redirection_8h_1a0dc55a5a9752d658c1b8b6e3760f5813" compoundref="redirect__heredoc_8c" startline="17" endline="63">redirect_here_doc</referencedby>
+        <referencedby refid="tokens_8h_1ab5f23ff7ab59a241fa7476e6fca458cf" compoundref="parser__helpers_8c" startline="55" endline="72">set_command_args</referencedby>
+        <referencedby refid="env_8h_1a194b2552273340441e8b481b4ce5202c" compoundref="env_2env_8c" startline="79" endline="99">set_env</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="libft_8h_1aa6d0c2d180f32ee585485e1a1ce3d55d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>char *</type>
+        <definition>char * ft_strchr</definition>
+        <argsstring>(const char *s, int c)</argsstring>
+        <name>ft_strchr</name>
+        <param>
+          <type>const char *</type>
+          <declname>s</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>c</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" line="50" column="5" bodyfile="/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_strchr.c" bodystart="25" bodyend="35" declfile="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" declline="50" declcolumn="5"/>
+        <referencedby refid="export_8c_1a9572a06bde314d79d284738ffef37d8d" compoundref="export_8c" startline="46" endline="66">add_env</referencedby>
+        <referencedby refid="env_8h_1aa2e361e75c8c044d588ec5c07b560659" compoundref="env_2env_8c" startline="33" endline="58">add_env_node</referencedby>
+        <referencedby refid="input__checker_8c_1a8bd1dd00648c512046de42538bd97b8e" compoundref="input__checker_8c" startline="15" endline="32">check_operators_loop</referencedby>
+        <referencedby refid="redirection_2utils_8c_1a33d78aafe6a0e75e4fdfe3606cbd9348" compoundref="redirection_2utils_8c" startline="118" endline="141">extract_line</referencedby>
+        <referencedby refid="libft_8h_1a1678f2722c7a602695a99e3edd948d35" compoundref="ft__exclude__delimiters_8c" startline="15" endline="20">ft_exclude_delimiters</referencedby>
+        <referencedby refid="tokeniser_8c_1a35855ff1421748c284cbaa495e26ef92" compoundref="tokeniser_8c" startline="66" endline="89">handle_phrase</referencedby>
+        <referencedby refid="redirection_2utils_8c_1aa5a7db94bcb5970b93bff4df02b52108" compoundref="redirection_2utils_8c" startline="92" endline="116">read_from_fd</referencedby>
+        <referencedby refid="tokens_8h_1a5482db056a3edf1a61079f863ba7dc99" compoundref="tokeniser_8c" startline="106" endline="121">tokenise</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="libft_8h_1ac7bb7d543c62b46aae49fdc97c9ae837" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>char *</type>
+        <definition>char * ft_strcat</definition>
+        <argsstring>(char *dest, char *src)</argsstring>
+        <name>ft_strcat</name>
+        <param>
+          <type>char *</type>
+          <declname>dest</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>src</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" line="51" column="5" bodyfile="/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_strcat.c" bodystart="26" bodyend="42" declfile="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" declline="51" declcolumn="5"/>
+      </memberdef>
+      <memberdef kind="function" id="libft_8h_1a49c260cf80f9997975d6f3ec74ead582" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>char *</type>
+        <definition>char * ft_strrchr</definition>
+        <argsstring>(const char *s, int c)</argsstring>
+        <name>ft_strrchr</name>
+        <param>
+          <type>const char *</type>
+          <declname>s</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>c</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" line="52" column="5" bodyfile="/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_strrchr.c" bodystart="24" bodyend="40" declfile="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" declline="52" declcolumn="5"/>
+      </memberdef>
+      <memberdef kind="function" id="libft_8h_1aa65c9de65051c8c589286cf133c4a1f4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>char **</type>
+        <definition>char ** ft_split</definition>
+        <argsstring>(char const *s, char c)</argsstring>
+        <name>ft_split</name>
+        <param>
+          <type>char const *</type>
+          <declname>s</declname>
+        </param>
+        <param>
+          <type>char</type>
+          <declname>c</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" line="53" column="5" bodyfile="/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_split.c" bodystart="95" bodyend="108" declfile="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" declline="53" declcolumn="5"/>
+        <references refid="ft__split_8c_1ad8019fb71c0c8134127025b3c37dd126" compoundref="ft__split_8c" startline="32" endline="54">count_words</references>
+        <references refid="ft__split_8c_1a862cc35631d136bfab5e3a968040ef84" compoundref="ft__split_8c" startline="68" endline="93">split_into_words</references>
+        <referencedby refid="pipe__test_8c_1a4e02daca82e791c68ff9bf7c0ad25030" compoundref="pipe__test_8c" startline="32" endline="37">builtin_pipe_test</referencedby>
+        <referencedby refid="tokens_8h_1a4e1b3e73a18dd66697cd7eac990b0363" compoundref="heredoc_8c" startline="15" endline="24">check_heredoc</referencedby>
+        <referencedby refid="execute_8h_1a3de2eb0e796441d7b827cf213bd8d789" compoundref="utils__0_8c" startline="32" endline="55">ft_find_path</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="libft_8h_1a916ac44ff3e67ef20834dd45e3837ac4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>char *</type>
+        <definition>char * ft_strcpy</definition>
+        <argsstring>(char *dest, const char *src)</argsstring>
+        <name>ft_strcpy</name>
+        <param>
+          <type>char *</type>
+          <declname>dest</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>src</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" line="54" column="5" bodyfile="/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_strcpy.c" bodystart="25" bodyend="37" declfile="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" declline="54" declcolumn="5"/>
+        <referencedby refid="tokens_8h_1a4c523064ece03ba20eb609b52253b88e" compoundref="prompt_8c" startline="31" endline="69">generate_prompt</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="libft_8h_1a2d5f42a11a38830b809bced1fc209c20" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>char *</type>
+        <definition>char * ft_strndup</definition>
+        <argsstring>(const char *s, size_t n)</argsstring>
+        <name>ft_strndup</name>
+        <param>
+          <type>const char *</type>
+          <declname>s</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>n</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" line="55" column="5" bodyfile="/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_strndup.c" bodystart="23" bodyend="38" declfile="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" declline="55" declcolumn="5"/>
+        <references refid="libft_8h_1a95de924e4140ae426bf2e05acfb5fe4f" compoundref="ft__strlcpy_8c" startline="25" endline="43">ft_strlcpy</references>
+        <references refid="libft_8h_1abbb8c6c4ed85d892e7f1509f65f5768a" compoundref="ft__strlen_8c" startline="15" endline="23">ft_strlen</references>
+        <referencedby refid="tokeniser_8c_1a596263e54e7fc7ea1bde318a1da5cdc6" compoundref="tokeniser_8c" startline="49" endline="64">append_phrase_if_valid</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="libft_8h_1a91e6e3e428bcc9f2291b700e1829b82b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>char *</type>
+        <definition>char * ft_strjoin</definition>
+        <argsstring>(char const *s1, char const *s2)</argsstring>
+        <name>ft_strjoin</name>
+        <param>
+          <type>char const *</type>
+          <declname>s1</declname>
+        </param>
+        <param>
+          <type>char const *</type>
+          <declname>s2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" line="56" column="5" bodyfile="/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_strjoin.c" bodystart="23" bodyend="44" declfile="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" declline="56" declcolumn="5"/>
+        <references refid="libft_8h_1abbb8c6c4ed85d892e7f1509f65f5768a" compoundref="ft__strlen_8c" startline="15" endline="23">ft_strlen</references>
+        <referencedby refid="env_8h_1a19f3a9e73371c1cfb3db076f94d33830" compoundref="env_2utils_8c" startline="22" endline="49">env_to_array</referencedby>
+        <referencedby refid="execute_8h_1a3de2eb0e796441d7b827cf213bd8d789" compoundref="utils__0_8c" startline="32" endline="55">ft_find_path</referencedby>
+        <referencedby refid="prompt_8c_1a5663e22274d85c42c9c7f51e22afc301" compoundref="prompt_8c" startline="71" endline="88">generate_prompt_string</referencedby>
+        <referencedby refid="tokens_8h_1a132ce43db3d4fba988a166e932845375" compoundref="heredoc_8c" startline="26" endline="40">heredoc</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="libft_8h_1a60352c5b39fab08469b3e28131a79e25" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>char *</type>
+        <definition>char * ft_strtrim</definition>
+        <argsstring>(char const *s1, char const *set)</argsstring>
+        <name>ft_strtrim</name>
+        <param>
+          <type>char const *</type>
+          <declname>s1</declname>
+        </param>
+        <param>
+          <type>char const *</type>
+          <declname>set</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" line="57" column="5" bodyfile="/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_strtrim.c" bodystart="39" bodyend="62" declfile="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" declline="57" declcolumn="5"/>
+        <references refid="ft__strtrim_8c_1a95cf60212c891ccb8f665fa74f806c8d" compoundref="ft__strtrim_8c" startline="25" endline="37">ft_char_in_set</references>
+        <references refid="libft_8h_1abbb8c6c4ed85d892e7f1509f65f5768a" compoundref="ft__strlen_8c" startline="15" endline="23">ft_strlen</references>
+        <referencedby refid="tokens_8h_1ad85feb33dfe75120540e2bc4dc28209a" compoundref="input__checker__helpers_8c" startline="15" endline="23">trim_input</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="libft_8h_1a7eba6d6022f99a664b9c76a60b2f5dbc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>char *</type>
+        <definition>char * ft_strstr</definition>
+        <argsstring>(const char *big, const char *little)</argsstring>
+        <name>ft_strstr</name>
+        <param>
+          <type>const char *</type>
+          <declname>big</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>little</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" line="58" column="5" bodyfile="/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_strstr.c" bodystart="24" bodyend="40" declfile="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" declline="58" declcolumn="5"/>
+        <references refid="libft_8h_1abbb8c6c4ed85d892e7f1509f65f5768a" compoundref="ft__strlen_8c" startline="15" endline="23">ft_strlen</references>
+        <references refid="libft_8h_1a9d2fe792187aa4ed08e5864fb2c4d6dc" compoundref="ft__strncmp_8c" startline="24" endline="35">ft_strncmp</references>
+      </memberdef>
+      <memberdef kind="function" id="libft_8h_1a668b60557bfc9d60c2d3ccda8afadf49" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>char *</type>
+        <definition>char * ft_strmapi</definition>
+        <argsstring>(char const *s, char(*f)(unsigned int, char))</argsstring>
+        <name>ft_strmapi</name>
+        <param>
+          <type>char const *</type>
+          <declname>s</declname>
+        </param>
+        <param>
+          <type>char(*)(unsigned int, char)</type>
+          <declname>f</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" line="59" column="5" bodyfile="/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_strmapi.c" bodystart="28" bodyend="50" declfile="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" declline="59" declcolumn="5"/>
+      </memberdef>
+      <memberdef kind="function" id="libft_8h_1a78c402cbf3d55b1374693c3b7d34f71d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>char *</type>
+        <definition>char * ft_substr</definition>
+        <argsstring>(char const *s, unsigned int start, size_t len)</argsstring>
+        <name>ft_substr</name>
+        <param>
+          <type>char const *</type>
+          <declname>s</declname>
+        </param>
+        <param>
+          <type>unsigned int</type>
+          <declname>start</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>len</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" line="60" column="5" bodyfile="/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_substr.c" bodystart="27" bodyend="48" declfile="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" declline="60" declcolumn="5"/>
+        <references refid="libft_8h_1abbb8c6c4ed85d892e7f1509f65f5768a" compoundref="ft__strlen_8c" startline="15" endline="23">ft_strlen</references>
+        <referencedby refid="redirection_2utils_8c_1a33d78aafe6a0e75e4fdfe3606cbd9348" compoundref="redirection_2utils_8c" startline="118" endline="141">extract_line</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="libft_8h_1ae00229613cc0bf361e86dca72ad92591" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>char *</type>
+        <definition>char * ft_strnstr</definition>
+        <argsstring>(const char *haystack, const char *needle, size_t len)</argsstring>
+        <name>ft_strnstr</name>
+        <param>
+          <type>const char *</type>
+          <declname>haystack</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>needle</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>len</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" line="61" column="5" bodyfile="/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_strnstr.c" bodystart="25" bodyend="42" declfile="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" declline="61" declcolumn="5"/>
+        <references refid="libft_8h_1abbb8c6c4ed85d892e7f1509f65f5768a" compoundref="ft__strlen_8c" startline="15" endline="23">ft_strlen</references>
+        <references refid="libft_8h_1a9d2fe792187aa4ed08e5864fb2c4d6dc" compoundref="ft__strncmp_8c" startline="24" endline="35">ft_strncmp</references>
+      </memberdef>
+      <memberdef kind="function" id="libft_8h_1a5937ab0d08e31d0e3e4a16ec71e293a1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ft_bzero</definition>
+        <argsstring>(void *s, size_t n)</argsstring>
+        <name>ft_bzero</name>
+        <param>
+          <type>void *</type>
+          <declname>s</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>n</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" line="63" column="5" bodyfile="/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_bzero.c" bodystart="21" bodyend="28" declfile="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" declline="63" declcolumn="5"/>
+      </memberdef>
+      <memberdef kind="function" id="libft_8h_1a63cc0aec12256d125d3f85e472280972" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ft_putnbr_fd</definition>
+        <argsstring>(int n, int fd)</argsstring>
+        <name>ft_putnbr_fd</name>
+        <param>
+          <type>int</type>
+          <declname>n</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>fd</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" line="64" column="5" bodyfile="/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_putnbr_fd.c" bodystart="20" bodyend="35" declfile="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" declline="64" declcolumn="5"/>
+        <references refid="libft_8h_1a8ee15a511946c1397bd2bdea4aed6aee" compoundref="ft__putchar__fd_8c" startline="20" endline="23">ft_putchar_fd</references>
+        <references refid="ft__putnbr__fd_8c_1a63cc0aec12256d125d3f85e472280972" compoundref="ft__putnbr__fd_8c" startline="20" endline="35">ft_putnbr_fd</references>
+        <references refid="libft_8h_1acefce9ac519f8f8b7d3fde33dbafe469" compoundref="ft__putstr__fd_8c" startline="20" endline="24">ft_putstr_fd</references>
+        <referencedby refid="libft_8h_1a63cc0aec12256d125d3f85e472280972" compoundref="ft__putnbr__fd_8c" startline="20" endline="35">ft_putnbr_fd</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="libft_8h_1a8ee15a511946c1397bd2bdea4aed6aee" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ft_putchar_fd</definition>
+        <argsstring>(char c, int fd)</argsstring>
+        <name>ft_putchar_fd</name>
+        <param>
+          <type>char</type>
+          <declname>c</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>fd</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" line="65" column="5" bodyfile="/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_putchar_fd.c" bodystart="20" bodyend="23" declfile="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" declline="65" declcolumn="5"/>
+        <referencedby refid="libft_8h_1a8d58f57c578f3dbcf2615448216bd43b" compoundref="ft__print__char_8c" startline="15" endline="19">ft_print_char</referencedby>
+        <referencedby refid="libft_8h_1a3585300e4e2235d6d8edde3b2c0f58a5" compoundref="ft__print__percent_8c" startline="15" endline="19">ft_print_percent</referencedby>
+        <referencedby refid="libft_8h_1a70ef4d03492c95bd3069d86ba8ededda" compoundref="ft__print__str_8c" startline="15" endline="31">ft_print_str</referencedby>
+        <referencedby refid="libft_8h_1adff9bde3e605301b3f19812e02ea670e" compoundref="ft__print__unsigned__hex_8c" startline="49" endline="59">ft_print_unsigned_hex</referencedby>
+        <referencedby refid="ft__print__unsigned__hex_8c_1a5f1d53b6392735065c905c857136c490" compoundref="ft__print__unsigned__hex_8c" startline="28" endline="47">ft_put_hex</referencedby>
+        <referencedby refid="libft_8h_1a8548b6592870051b3d16635ece9c9f04" compoundref="ft__print__ptr_8c" startline="28" endline="42">ft_put_ptr</referencedby>
+        <referencedby refid="libft_8h_1aeb112152acfc553d58d61a5df38afcde" compoundref="ft__putendl__fd_8c" startline="21" endline="28">ft_putendl_fd</referencedby>
+        <referencedby refid="libft_8h_1a63cc0aec12256d125d3f85e472280972" compoundref="ft__putnbr__fd_8c" startline="20" endline="35">ft_putnbr_fd</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="libft_8h_1acefce9ac519f8f8b7d3fde33dbafe469" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ft_putstr_fd</definition>
+        <argsstring>(char *s, int fd)</argsstring>
+        <name>ft_putstr_fd</name>
+        <param>
+          <type>char *</type>
+          <declname>s</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>fd</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" line="66" column="5" bodyfile="/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_putstr_fd.c" bodystart="20" bodyend="24" declfile="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" declline="66" declcolumn="5"/>
+        <references refid="libft_8h_1abbb8c6c4ed85d892e7f1509f65f5768a" compoundref="ft__strlen_8c" startline="15" endline="23">ft_strlen</references>
+        <referencedby refid="builtins_8h_1a90c33b349e024075c96efdc320f7138f" compoundref="cd_8c" startline="26" endline="47">builtin_cd</referencedby>
+        <referencedby refid="builtins_8h_1aa9f1acae4ed9a914564af529571db30a" compoundref="pwd_8c" startline="23" endline="37">builtin_pwd</referencedby>
+        <referencedby refid="builtins_8h_1aa04be64406f96e5ae8f361421bf72cec" compoundref="unset_8c" startline="26" endline="45">builtin_unset</referencedby>
+        <referencedby refid="libft_8h_1a70ef4d03492c95bd3069d86ba8ededda" compoundref="ft__print__str_8c" startline="15" endline="31">ft_print_str</referencedby>
+        <referencedby refid="libft_8h_1aeb112152acfc553d58d61a5df38afcde" compoundref="ft__putendl__fd_8c" startline="21" endline="28">ft_putendl_fd</referencedby>
+        <referencedby refid="libft_8h_1a63cc0aec12256d125d3f85e472280972" compoundref="ft__putnbr__fd_8c" startline="20" endline="35">ft_putnbr_fd</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="libft_8h_1aeb112152acfc553d58d61a5df38afcde" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ft_putendl_fd</definition>
+        <argsstring>(char *s, int fd)</argsstring>
+        <name>ft_putendl_fd</name>
+        <param>
+          <type>char *</type>
+          <declname>s</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>fd</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" line="67" column="5" bodyfile="/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_putendl_fd.c" bodystart="21" bodyend="28" declfile="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" declline="67" declcolumn="5"/>
+        <references refid="libft_8h_1a8ee15a511946c1397bd2bdea4aed6aee" compoundref="ft__putchar__fd_8c" startline="20" endline="23">ft_putchar_fd</references>
+        <references refid="libft_8h_1acefce9ac519f8f8b7d3fde33dbafe469" compoundref="ft__putstr__fd_8c" startline="20" endline="24">ft_putstr_fd</references>
+        <referencedby refid="builtins_8h_1aa9f1acae4ed9a914564af529571db30a" compoundref="pwd_8c" startline="23" endline="37">builtin_pwd</referencedby>
+        <referencedby refid="builtins_8h_1aa04be64406f96e5ae8f361421bf72cec" compoundref="unset_8c" startline="26" endline="45">builtin_unset</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="libft_8h_1a557de65a3f3e16f953f5dae59cdb6106" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void *</type>
+        <definition>void * ft_memset</definition>
+        <argsstring>(void *s, int c, size_t n)</argsstring>
+        <name>ft_memset</name>
+        <param>
+          <type>void *</type>
+          <declname>s</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>c</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>n</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" line="68" column="5" bodyfile="/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_memset.c" bodystart="28" bodyend="36" declfile="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" declline="68" declcolumn="5"/>
+        <referencedby refid="libft_8h_1ae0a6807f9f78ed4bf4f958323582d22f" compoundref="ft__calloc_8c" startline="23" endline="34">ft_calloc</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="libft_8h_1ae0a6807f9f78ed4bf4f958323582d22f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void *</type>
+        <definition>void * ft_calloc</definition>
+        <argsstring>(size_t count, size_t size)</argsstring>
+        <name>ft_calloc</name>
+        <param>
+          <type>size_t</type>
+          <declname>count</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>size</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" line="69" column="5" bodyfile="/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_calloc.c" bodystart="23" bodyend="34" declfile="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" declline="69" declcolumn="5"/>
+        <references refid="libft_8h_1a557de65a3f3e16f953f5dae59cdb6106" compoundref="ft__memset_8c" startline="28" endline="36">ft_memset</references>
+      </memberdef>
+      <memberdef kind="function" id="libft_8h_1abf633e8e48a8afbe61947f61de5ac695" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void *</type>
+        <definition>void * ft_memchr</definition>
+        <argsstring>(const void *s, int c, size_t n)</argsstring>
+        <name>ft_memchr</name>
+        <param>
+          <type>const void *</type>
+          <declname>s</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>c</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>n</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" line="70" column="5" bodyfile="/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_memchr.c" bodystart="29" bodyend="43" declfile="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" declline="70" declcolumn="5"/>
+      </memberdef>
+      <memberdef kind="function" id="libft_8h_1a41a6f05af30cf85ff63a08e383826322" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void *</type>
+        <definition>void * ft_memcpy</definition>
+        <argsstring>(void *dest, const void *src, size_t n)</argsstring>
+        <name>ft_memcpy</name>
+        <param>
+          <type>void *</type>
+          <declname>dest</declname>
+        </param>
+        <param>
+          <type>const void *</type>
+          <declname>src</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>n</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" line="71" column="5" bodyfile="/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_memcpy.c" bodystart="22" bodyend="34" declfile="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" declline="71" declcolumn="5"/>
+        <referencedby refid="libft_8h_1a69673d42c601e17a8e682b592167c775" compoundref="ft__memmove_8c" startline="24" endline="43">ft_memmove</referencedby>
+        <referencedby refid="redirection_2utils_8c_1accf11845776c5585dc691f37a0f60b8f" compoundref="redirection_2utils_8c" startline="68" endline="90">ft_strjoin_gnl</referencedby>
+        <referencedby refid="ft__split_8c_1a9ebd163b43c9f200b020184cbfe2d308" compoundref="ft__split_8c" startline="56" endline="66">strndup</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="libft_8h_1a69673d42c601e17a8e682b592167c775" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void *</type>
+        <definition>void * ft_memmove</definition>
+        <argsstring>(void *dest, const void *src, size_t n)</argsstring>
+        <name>ft_memmove</name>
+        <param>
+          <type>void *</type>
+          <declname>dest</declname>
+        </param>
+        <param>
+          <type>const void *</type>
+          <declname>src</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>n</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" line="72" column="5" bodyfile="/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_memmove.c" bodystart="24" bodyend="43" declfile="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" declline="72" declcolumn="5"/>
+        <references refid="libft_8h_1a41a6f05af30cf85ff63a08e383826322" compoundref="ft__memcpy_8c" startline="22" endline="34">ft_memcpy</references>
+      </memberdef>
+      <memberdef kind="function" id="libft_8h_1ada722cffd2c6c8169ae339afd0f9763c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ft_striteri</definition>
+        <argsstring>(char *s, void(*f)(unsigned int, char *))</argsstring>
+        <name>ft_striteri</name>
+        <param>
+          <type>char *</type>
+          <declname>s</declname>
+        </param>
+        <param>
+          <type>void(*)(unsigned int, char *)</type>
+          <declname>f</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" line="73" column="5" bodyfile="/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_striteri.c" bodystart="28" bodyend="40" declfile="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" declline="73" declcolumn="5"/>
+      </memberdef>
+      <memberdef kind="function" id="libft_8h_1abbb8c6c4ed85d892e7f1509f65f5768a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>size_t</type>
+        <definition>size_t ft_strlen</definition>
+        <argsstring>(const char *s)</argsstring>
+        <name>ft_strlen</name>
+        <param>
+          <type>const char *</type>
+          <declname>s</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" line="75" column="7" bodyfile="/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_strlen.c" bodystart="15" bodyend="23" declfile="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" declline="75" declcolumn="7"/>
+        <referencedby refid="builtins_8h_1a9c4bf413cef22ef46427c4026734a97d" compoundref="echo_8c" startline="21" endline="42">builtin_echo</referencedby>
+        <referencedby refid="builtins_8h_1a6a7d93447961b415c9c16ebdfcd3d5fa" compoundref="exit_8c" startline="26" endline="35">builtin_exit</referencedby>
+        <referencedby refid="libft_8h_1acefce9ac519f8f8b7d3fde33dbafe469" compoundref="ft__putstr__fd_8c" startline="20" endline="24">ft_putstr_fd</referencedby>
+        <referencedby refid="libft_8h_1aebe73f27c70c56ac5053f860ef5436c9" compoundref="ft__strdup_8c" startline="23" endline="36">ft_strdup</referencedby>
+        <referencedby refid="libft_8h_1a91e6e3e428bcc9f2291b700e1829b82b" compoundref="ft__strjoin_8c" startline="23" endline="44">ft_strjoin</referencedby>
+        <referencedby refid="redirection_2utils_8c_1accf11845776c5585dc691f37a0f60b8f" compoundref="redirection_2utils_8c" startline="68" endline="90">ft_strjoin_gnl</referencedby>
+        <referencedby refid="libft_8h_1a87a42176d750415c82eb7d453abb39ee" compoundref="ft__strlcat_8c" startline="26" endline="49">ft_strlcat</referencedby>
+        <referencedby refid="libft_8h_1a2d5f42a11a38830b809bced1fc209c20" compoundref="ft__strndup_8c" startline="23" endline="38">ft_strndup</referencedby>
+        <referencedby refid="libft_8h_1ae00229613cc0bf361e86dca72ad92591" compoundref="ft__strnstr_8c" startline="25" endline="42">ft_strnstr</referencedby>
+        <referencedby refid="libft_8h_1a7eba6d6022f99a664b9c76a60b2f5dbc" compoundref="ft__strstr_8c" startline="24" endline="40">ft_strstr</referencedby>
+        <referencedby refid="libft_8h_1a60352c5b39fab08469b3e28131a79e25" compoundref="ft__strtrim_8c" startline="39" endline="62">ft_strtrim</referencedby>
+        <referencedby refid="libft_8h_1a78c402cbf3d55b1374693c3b7d34f71d" compoundref="ft__substr_8c" startline="27" endline="48">ft_substr</referencedby>
+        <referencedby refid="tokens_8h_1a4c523064ece03ba20eb609b52253b88e" compoundref="prompt_8c" startline="31" endline="69">generate_prompt</referencedby>
+        <referencedby refid="prompt_8c_1a5663e22274d85c42c9c7f51e22afc301" compoundref="prompt_8c" startline="71" endline="88">generate_prompt_string</referencedby>
+        <referencedby refid="redirection_8h_1a0dc55a5a9752d658c1b8b6e3760f5813" compoundref="redirect__heredoc_8c" startline="17" endline="63">redirect_here_doc</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="libft_8h_1a95de924e4140ae426bf2e05acfb5fe4f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>size_t</type>
+        <definition>size_t ft_strlcpy</definition>
+        <argsstring>(char *dest, const char *src, size_t size)</argsstring>
+        <name>ft_strlcpy</name>
+        <param>
+          <type>char *</type>
+          <declname>dest</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>src</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>size</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" line="76" column="7" bodyfile="/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_strlcpy.c" bodystart="25" bodyend="43" declfile="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" declline="76" declcolumn="7"/>
+        <referencedby refid="libft_8h_1aebe73f27c70c56ac5053f860ef5436c9" compoundref="ft__strdup_8c" startline="23" endline="36">ft_strdup</referencedby>
+        <referencedby refid="redirection_2utils_8c_1accf11845776c5585dc691f37a0f60b8f" compoundref="redirection_2utils_8c" startline="68" endline="90">ft_strjoin_gnl</referencedby>
+        <referencedby refid="libft_8h_1a2d5f42a11a38830b809bced1fc209c20" compoundref="ft__strndup_8c" startline="23" endline="38">ft_strndup</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="libft_8h_1a87a42176d750415c82eb7d453abb39ee" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>size_t</type>
+        <definition>size_t ft_strlcat</definition>
+        <argsstring>(char *dest, const char *src, size_t size)</argsstring>
+        <name>ft_strlcat</name>
+        <param>
+          <type>char *</type>
+          <declname>dest</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>src</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>size</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" line="77" column="7" bodyfile="/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_strlcat.c" bodystart="26" bodyend="49" declfile="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" declline="77" declcolumn="7"/>
+        <references refid="libft_8h_1abbb8c6c4ed85d892e7f1509f65f5768a" compoundref="ft__strlen_8c" startline="15" endline="23">ft_strlen</references>
+      </memberdef>
+      <memberdef kind="function" id="libft_8h_1a1ee8ae8a80a7d9141ea5339af8565f2e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int ft_printf</definition>
+        <argsstring>(const char *format,...)</argsstring>
+        <name>ft_printf</name>
+        <param>
+          <type>const char *</type>
+          <declname>format</declname>
+        </param>
+        <param>
+          <type>...</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" line="79" column="4" bodyfile="/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_printf.c" bodystart="37" bodyend="59" declfile="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" declline="79" declcolumn="4"/>
+        <references refid="ft__printf_8c_1a068faf32152bcaef19d5087ccf586e4c" compoundref="ft__printf_8c" startline="15" endline="35">ft_formatssssss</references>
+        <references refid="libft_8h_1a8d58f57c578f3dbcf2615448216bd43b" compoundref="ft__print__char_8c" startline="15" endline="19">ft_print_char</references>
+        <referencedby refid="tokeniser_8c_1a596263e54e7fc7ea1bde318a1da5cdc6" compoundref="tokeniser_8c" startline="49" endline="64">append_phrase_if_valid</referencedby>
+        <referencedby refid="tokens_8h_1a8ba7929cbd2a023ebba26c83879e553c" compoundref="input__checker_8c" startline="99" endline="110">input_error_checks</referencedby>
+        <referencedby refid="tokens_8h_1a4e673b7c7d3f45e10377ab9f537b8bf9" compoundref="prompt_8c" startline="90" endline="111">print_maxishell</referencedby>
+        <referencedby refid="tokens_8h_1af90eff9f4a4a22eec7f50142c9e1b591" compoundref="stack__control_8c" startline="36" endline="49">print_stack</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="libft_8h_1a8d58f57c578f3dbcf2615448216bd43b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int ft_print_char</definition>
+        <argsstring>(int c)</argsstring>
+        <name>ft_print_char</name>
+        <param>
+          <type>int</type>
+          <declname>c</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" line="80" column="4" bodyfile="/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_print_char.c" bodystart="15" bodyend="19" declfile="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" declline="80" declcolumn="4"/>
+        <references refid="libft_8h_1a8ee15a511946c1397bd2bdea4aed6aee" compoundref="ft__putchar__fd_8c" startline="20" endline="23">ft_putchar_fd</references>
+        <referencedby refid="ft__printf_8c_1a068faf32152bcaef19d5087ccf586e4c" compoundref="ft__printf_8c" startline="15" endline="35">ft_formatssssss</referencedby>
+        <referencedby refid="libft_8h_1a1ee8ae8a80a7d9141ea5339af8565f2e" compoundref="ft__printf_8c" startline="37" endline="59">ft_printf</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="libft_8h_1a70ef4d03492c95bd3069d86ba8ededda" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int ft_print_str</definition>
+        <argsstring>(char *str)</argsstring>
+        <name>ft_print_str</name>
+        <param>
+          <type>char *</type>
+          <declname>str</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" line="81" column="4" bodyfile="/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_print_str.c" bodystart="15" bodyend="31" declfile="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" declline="81" declcolumn="4"/>
+        <references refid="libft_8h_1a8ee15a511946c1397bd2bdea4aed6aee" compoundref="ft__putchar__fd_8c" startline="20" endline="23">ft_putchar_fd</references>
+        <references refid="libft_8h_1acefce9ac519f8f8b7d3fde33dbafe469" compoundref="ft__putstr__fd_8c" startline="20" endline="24">ft_putstr_fd</references>
+        <referencedby refid="ft__printf_8c_1a068faf32152bcaef19d5087ccf586e4c" compoundref="ft__printf_8c" startline="15" endline="35">ft_formatssssss</referencedby>
+        <referencedby refid="libft_8h_1ae462756310d90a26c1fbbd0d4c1439dd" compoundref="ft__print__int_8c" startline="15" endline="24">ft_print_int</referencedby>
+        <referencedby refid="libft_8h_1ae0e844e30ea88b8900b5bf754a949e47" compoundref="ft__print__unsigned__dec_8c" startline="47" endline="62">ft_print_unsigned_dec</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="libft_8h_1a33aac8593b2a77df5d79036d0428cdf8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int ft_print_ptr</definition>
+        <argsstring>(unsigned long long ptr)</argsstring>
+        <name>ft_print_ptr</name>
+        <param>
+          <type>unsigned long long</type>
+          <declname>ptr</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" line="82" column="4" bodyfile="/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_print_ptr.c" bodystart="44" bodyend="58" declfile="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" declline="82" declcolumn="4"/>
+        <references refid="ft__print__ptr_8c_1a9efd82464e85d2e76947b5056c19794c" compoundref="ft__print__ptr_8c" startline="15" endline="26">ft_ptr_len</references>
+        <references refid="ft__print__ptr_8c_1a8548b6592870051b3d16635ece9c9f04" compoundref="ft__print__ptr_8c" startline="28" endline="42">ft_put_ptr</references>
+        <referencedby refid="ft__printf_8c_1a068faf32152bcaef19d5087ccf586e4c" compoundref="ft__printf_8c" startline="15" endline="35">ft_formatssssss</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="libft_8h_1ae462756310d90a26c1fbbd0d4c1439dd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int ft_print_int</definition>
+        <argsstring>(int n)</argsstring>
+        <name>ft_print_int</name>
+        <param>
+          <type>int</type>
+          <declname>n</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" line="83" column="4" bodyfile="/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_print_int.c" bodystart="15" bodyend="24" declfile="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" declline="83" declcolumn="4"/>
+        <references refid="libft_8h_1a8a6ea3765dfd826eabfc00d36e28ea38" compoundref="ft__itoa_8c" startline="40" endline="65">ft_itoa</references>
+        <references refid="libft_8h_1a70ef4d03492c95bd3069d86ba8ededda" compoundref="ft__print__str_8c" startline="15" endline="31">ft_print_str</references>
+        <referencedby refid="ft__printf_8c_1a068faf32152bcaef19d5087ccf586e4c" compoundref="ft__printf_8c" startline="15" endline="35">ft_formatssssss</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="libft_8h_1ae0e844e30ea88b8900b5bf754a949e47" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int ft_print_unsigned_dec</definition>
+        <argsstring>(unsigned int n)</argsstring>
+        <name>ft_print_unsigned_dec</name>
+        <param>
+          <type>unsigned int</type>
+          <declname>n</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" line="84" column="4" bodyfile="/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_print_unsigned_dec.c" bodystart="47" bodyend="62" declfile="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" declline="84" declcolumn="4"/>
+        <references refid="libft_8h_1a70ef4d03492c95bd3069d86ba8ededda" compoundref="ft__print__str_8c" startline="15" endline="31">ft_print_str</references>
+        <references refid="ft__print__unsigned__dec_8c_1a4f8aaff43b7d218dc7ac357631df9ca0" compoundref="ft__print__unsigned__dec_8c" startline="28" endline="45">ft_uitoa</references>
+        <referencedby refid="ft__printf_8c_1a068faf32152bcaef19d5087ccf586e4c" compoundref="ft__printf_8c" startline="15" endline="35">ft_formatssssss</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="libft_8h_1adff9bde3e605301b3f19812e02ea670e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int ft_print_unsigned_hex</definition>
+        <argsstring>(unsigned int num, const char format)</argsstring>
+        <name>ft_print_unsigned_hex</name>
+        <param>
+          <type>unsigned int</type>
+          <declname>num</declname>
+        </param>
+        <param>
+          <type>const char</type>
+          <declname>format</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" line="85" column="4" bodyfile="/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_print_unsigned_hex.c" bodystart="49" bodyend="59" declfile="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" declline="85" declcolumn="4"/>
+        <references refid="ft__print__unsigned__hex_8c_1a397ac62bd572cf30f7f3d55b4186e5fc" compoundref="ft__print__unsigned__hex_8c" startline="15" endline="26">ft_hex_len</references>
+        <references refid="ft__print__unsigned__hex_8c_1a5f1d53b6392735065c905c857136c490" compoundref="ft__print__unsigned__hex_8c" startline="28" endline="47">ft_put_hex</references>
+        <references refid="libft_8h_1a8ee15a511946c1397bd2bdea4aed6aee" compoundref="ft__putchar__fd_8c" startline="20" endline="23">ft_putchar_fd</references>
+        <referencedby refid="ft__printf_8c_1a068faf32152bcaef19d5087ccf586e4c" compoundref="ft__printf_8c" startline="15" endline="35">ft_formatssssss</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="libft_8h_1a3585300e4e2235d6d8edde3b2c0f58a5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int ft_print_percent</definition>
+        <argsstring>(void)</argsstring>
+        <name>ft_print_percent</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" line="86" column="4" bodyfile="/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_print_percent.c" bodystart="15" bodyend="19" declfile="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" declline="86" declcolumn="4"/>
+        <references refid="libft_8h_1a8ee15a511946c1397bd2bdea4aed6aee" compoundref="ft__putchar__fd_8c" startline="20" endline="23">ft_putchar_fd</references>
+        <referencedby refid="ft__printf_8c_1a068faf32152bcaef19d5087ccf586e4c" compoundref="ft__printf_8c" startline="15" endline="35">ft_formatssssss</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="libft_8h_1a9efd82464e85d2e76947b5056c19794c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int ft_ptr_len</definition>
+        <argsstring>(uintptr_t num)</argsstring>
+        <name>ft_ptr_len</name>
+        <param>
+          <type>uintptr_t</type>
+          <declname>num</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" line="87" column="4" bodyfile="/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_print_ptr.c" bodystart="15" bodyend="26" declfile="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" declline="87" declcolumn="4"/>
+        <referencedby refid="libft_8h_1a33aac8593b2a77df5d79036d0428cdf8" compoundref="ft__print__ptr_8c" startline="44" endline="58">ft_print_ptr</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="libft_8h_1a8548b6592870051b3d16635ece9c9f04" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ft_put_ptr</definition>
+        <argsstring>(uintptr_t num)</argsstring>
+        <name>ft_put_ptr</name>
+        <param>
+          <type>uintptr_t</type>
+          <declname>num</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" line="88" column="5" bodyfile="/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_print_ptr.c" bodystart="28" bodyend="42" declfile="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" declline="88" declcolumn="5"/>
+        <references refid="ft__print__ptr_8c_1a8548b6592870051b3d16635ece9c9f04" compoundref="ft__print__ptr_8c" startline="28" endline="42">ft_put_ptr</references>
+        <references refid="libft_8h_1a8ee15a511946c1397bd2bdea4aed6aee" compoundref="ft__putchar__fd_8c" startline="20" endline="23">ft_putchar_fd</references>
+        <referencedby refid="libft_8h_1a33aac8593b2a77df5d79036d0428cdf8" compoundref="ft__print__ptr_8c" startline="44" endline="58">ft_print_ptr</referencedby>
+        <referencedby refid="libft_8h_1a8548b6592870051b3d16635ece9c9f04" compoundref="ft__print__ptr_8c" startline="28" endline="42">ft_put_ptr</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="libft_8h_1afca08c39a126e18b2cec12b916ff212f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double ft_atof</definition>
+        <argsstring>(const char *str)</argsstring>
+        <name>ft_atof</name>
+        <param>
+          <type>const char *</type>
+          <declname>str</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" line="89" column="7" bodyfile="/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_atof.c" bodystart="15" bodyend="42" declfile="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" declline="89" declcolumn="7"/>
+      </memberdef>
+      <memberdef kind="function" id="libft_8h_1a20d3650c5c970c5150e00fe73c7db2ec" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>long</type>
+        <definition>long ft_atol</definition>
+        <argsstring>(const char *nptr)</argsstring>
+        <name>ft_atol</name>
+        <param>
+          <type>const char *</type>
+          <declname>nptr</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" line="90" column="5" bodyfile="/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_atol.c" bodystart="15" bodyend="36" declfile="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" declline="90" declcolumn="5"/>
+      </memberdef>
+      <memberdef kind="function" id="libft_8h_1aa7c4f303aebd3737b7cc180a9e7608f1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int ft_abs</definition>
+        <argsstring>(int n)</argsstring>
+        <name>ft_abs</name>
+        <param>
+          <type>int</type>
+          <declname>n</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" line="91" column="4" bodyfile="/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_abs.c" bodystart="15" bodyend="20" declfile="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" declline="91" declcolumn="4"/>
+      </memberdef>
+      <memberdef kind="function" id="libft_8h_1a1678f2722c7a602695a99e3edd948d35" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const char *</type>
+        <definition>const char * ft_exclude_delimiters</definition>
+        <argsstring>(const char *str, char *delims)</argsstring>
+        <name>ft_exclude_delimiters</name>
+        <param>
+          <type>const char *</type>
+          <declname>str</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>delims</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" line="93" column="11" bodyfile="/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_exclude_delimiters.c" bodystart="15" bodyend="20" declfile="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h" declline="93" declcolumn="11"/>
+        <references refid="libft_8h_1aa6d0c2d180f32ee585485e1a1ce3d55d" compoundref="ft__strchr_8c" startline="25" endline="35">ft_strchr</references>
+        <referencedby refid="tokens_8h_1a04ef790ab9a9ed430a25b0a6d6cc95b5" compoundref="input__checker__helpers_8c" startline="25" endline="36">valid_operator</referencedby>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*<sp/>**************************************************************************<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:::<sp/><sp/><sp/><sp/><sp/><sp/>::::::::<sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/>libft.h<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:+:<sp/><sp/><sp/><sp/><sp/><sp/>:+:<sp/><sp/><sp/><sp/>:+:<sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>+:+<sp/>+:+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>+:+<sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/>By:<sp/>rmikhayl<sp/>&lt;rmikhayl@student.42london.c<sp/><sp/><sp/><sp/><sp/><sp/>+#+<sp/><sp/>+:+<sp/><sp/><sp/><sp/><sp/><sp/><sp/>+#+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>+#+#+#+#+#+<sp/><sp/><sp/>+#+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/>Created:<sp/>2023/12/17<sp/>17:25:48<sp/>by<sp/>rmikhayl<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>#+#<sp/><sp/><sp/><sp/>#+#<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/>Updated:<sp/>2024/06/06<sp/>18:12:41<sp/>by<sp/>rmikhayl<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>###<sp/><sp/><sp/>########.fr<sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>**************************************************************************<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>LIBFT_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/>define<sp/>LIBFT_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/>include<sp/>&lt;stddef.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/>include<sp/>&lt;stdlib.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/>include<sp/>&lt;stdint.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/>include<sp/>&lt;limits.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/>include<sp/>&lt;unistd.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/>include<sp/>&lt;stdarg.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/>include<sp/>&lt;signal.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/>include<sp/>&lt;stdbool.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/>include<sp/>&lt;math.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25" refid="libft_8h_1a6b20d41d6252e9871430c242cb1a56e7" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/>define<sp/>BUFFER_SIZE<sp/>32</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/><sp/><sp/>*<ref refid="libft_8h_1a5feb28b63e00d9f45e4887ee15da4ab8" kindref="member">ft_get_next_line</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>fd);</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="libft_8h_1ac283963beaa3b8c7d09b78851cda297e" kindref="member">ft_isalpha</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>c);</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="libft_8h_1a2cf15b8a1a277d1e2ce3654101a2003d" kindref="member">ft_isdigit</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>c);</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="libft_8h_1af71b082a2409cf4a63929f244d0d0a08" kindref="member">ft_is_num</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*n);</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="libft_8h_1ae16fec1d497ae2334d6a0582ed73e5bb" kindref="member">ft_is_double</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*n);</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="libft_8h_1a9c2c3821ea43ebdf97de07b123503f8b" kindref="member">ft_isalnum</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>c);</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="libft_8h_1abf60ddbec6479540e81f3648cf71f1f4" kindref="member">ft_isascii</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>c);</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="libft_8h_1abcdba69692f21146aeea5b3d59b7d0ca" kindref="member">ft_isprint</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>c);</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="libft_8h_1aef116be7b5bceafff4b59f20a4433d12" kindref="member">ft_toupper</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>c);</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="libft_8h_1ab86e5297914753b6c82d7e3c3020ce17" kindref="member">ft_tolower</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>c);</highlight></codeline>
+<codeline lineno="36" refid="libft_8h_1afad2ec371b4188602da9a94db687cb16" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="libft_8h_1afad2ec371b4188602da9a94db687cb16" kindref="member">ft_atoi</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*str);</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="libft_8h_1aab7f1931ab998ddb4eb54946ae8421fe" kindref="member">list_len_char</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>a[]);</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="libft_8h_1ab9ed0039097548fb0f687d04cd62cb4f" kindref="member">list_len_str</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*a[]);</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="libft_8h_1a7662f93566f07ffd795db3e64b143094" kindref="member">isnum_from_str</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*str);</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="libft_8h_1ada62675eb549f655cbf9c4ebb9848471" kindref="member">list_repeat_check_int</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>a[],<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>size);</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="libft_8h_1a7a215fb6793487678a9c7a647373a40a" kindref="member">list_repeat_check_str</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*a[],<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>size);</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="libft_8h_1a1f2ff2312e5994560c9537cd9173be94" kindref="member">ft_strcmp</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*s1,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*s2);</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="libft_8h_1a9d2fe792187aa4ed08e5864fb2c4d6dc" kindref="member">ft_strncmp</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*s1,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*s2,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>n);</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="libft_8h_1a08f665a1828c402f2ffe2e2187f135fc" kindref="member">ft_memcmp</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*s1,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*s2,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>n);</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="libft_8h_1aff95d419ccc24001a16c8e4fa1115279" kindref="member">ft_count_bits</ref>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>current_char);</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="libft_8h_1a84b2c4d47c892d0517d581f39732a6ff" kindref="member">find_max_in_list</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>a[],<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>size);</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<ref refid="libft_8h_1a8a6ea3765dfd826eabfc00d36e28ea38" kindref="member">ft_itoa</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>n);</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<ref refid="libft_8h_1aebe73f27c70c56ac5053f860ef5436c9" kindref="member">ft_strdup</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*s);</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<ref refid="libft_8h_1aa6d0c2d180f32ee585485e1a1ce3d55d" kindref="member">ft_strchr</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*s,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>c);</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<ref refid="libft_8h_1ac7bb7d543c62b46aae49fdc97c9ae837" kindref="member">ft_strcat</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*dest,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*src);</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<ref refid="libft_8h_1a49c260cf80f9997975d6f3ec74ead582" kindref="member">ft_strrchr</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*s,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>c);</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>**<ref refid="libft_8h_1aa65c9de65051c8c589286cf133c4a1f4" kindref="member">ft_split</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>*s,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>c);</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<ref refid="libft_8h_1a916ac44ff3e67ef20834dd45e3837ac4" kindref="member">ft_strcpy</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*dest,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*src);</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<ref refid="libft_8h_1a2d5f42a11a38830b809bced1fc209c20" kindref="member">ft_strndup</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*s,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>n);</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<ref refid="libft_8h_1a91e6e3e428bcc9f2291b700e1829b82b" kindref="member">ft_strjoin</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>*s1,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>*s2);</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<ref refid="libft_8h_1a60352c5b39fab08469b3e28131a79e25" kindref="member">ft_strtrim</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>*s1,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>*set);</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<ref refid="libft_8h_1a7eba6d6022f99a664b9c76a60b2f5dbc" kindref="member">ft_strstr</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*big,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*little);</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<ref refid="libft_8h_1a668b60557bfc9d60c2d3ccda8afadf49" kindref="member">ft_strmapi</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>*s,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>(*f)(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">));</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<ref refid="libft_8h_1a78c402cbf3d55b1374693c3b7d34f71d" kindref="member">ft_substr</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>*s,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>start,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>len);</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<ref refid="libft_8h_1ae00229613cc0bf361e86dca72ad92591" kindref="member">ft_strnstr</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*haystack,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*needle,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>len);</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="libft_8h_1a5937ab0d08e31d0e3e4a16ec71e293a1" kindref="member">ft_bzero</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*s,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>n);</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="libft_8h_1a63cc0aec12256d125d3f85e472280972" kindref="member">ft_putnbr_fd</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>n,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>fd);</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="libft_8h_1a8ee15a511946c1397bd2bdea4aed6aee" kindref="member">ft_putchar_fd</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>c,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>fd);</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="libft_8h_1acefce9ac519f8f8b7d3fde33dbafe469" kindref="member">ft_putstr_fd</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*s,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>fd);</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="libft_8h_1aeb112152acfc553d58d61a5df38afcde" kindref="member">ft_putendl_fd</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*s,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>fd);</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<ref refid="libft_8h_1a557de65a3f3e16f953f5dae59cdb6106" kindref="member">ft_memset</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*s,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>c,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>n);</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<ref refid="libft_8h_1ae0a6807f9f78ed4bf4f958323582d22f" kindref="member">ft_calloc</ref>(</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>count,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>size);</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<ref refid="libft_8h_1abf633e8e48a8afbe61947f61de5ac695" kindref="member">ft_memchr</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*s,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>c,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>n);</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<ref refid="libft_8h_1a41a6f05af30cf85ff63a08e383826322" kindref="member">ft_memcpy</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*dest,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*src,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>n);</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<ref refid="libft_8h_1a69673d42c601e17a8e682b592167c775" kindref="member">ft_memmove</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*dest,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*src,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>n);</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="libft_8h_1ada722cffd2c6c8169ae339afd0f9763c" kindref="member">ft_striteri</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*s,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>(*f)(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*));</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="libft_8h_1abbb8c6c4ed85d892e7f1509f65f5768a" kindref="member">ft_strlen</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*s);</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="libft_8h_1a95de924e4140ae426bf2e05acfb5fe4f" kindref="member">ft_strlcpy</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*dest,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*src,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>size);</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="libft_8h_1a87a42176d750415c82eb7d453abb39ee" kindref="member">ft_strlcat</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*dest,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*src,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>size);</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="libft_8h_1a1ee8ae8a80a7d9141ea5339af8565f2e" kindref="member">ft_printf</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*format,<sp/>...);</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="libft_8h_1a8d58f57c578f3dbcf2615448216bd43b" kindref="member">ft_print_char</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>c);</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="libft_8h_1a70ef4d03492c95bd3069d86ba8ededda" kindref="member">ft_print_str</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*str);</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="libft_8h_1a33aac8593b2a77df5d79036d0428cdf8" kindref="member">ft_print_ptr</ref>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>ptr);</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="libft_8h_1ae462756310d90a26c1fbbd0d4c1439dd" kindref="member">ft_print_int</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>n);</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="libft_8h_1ae0e844e30ea88b8900b5bf754a949e47" kindref="member">ft_print_unsigned_dec</ref>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>n);</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="libft_8h_1adff9bde3e605301b3f19812e02ea670e" kindref="member">ft_print_unsigned_hex</ref>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>num,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>format);</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="libft_8h_1a3585300e4e2235d6d8edde3b2c0f58a5" kindref="member">ft_print_percent</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="libft_8h_1a9efd82464e85d2e76947b5056c19794c" kindref="member">ft_ptr_len</ref>(uintptr_t<sp/>num);</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="libft_8h_1a8548b6592870051b3d16635ece9c9f04" kindref="member">ft_put_ptr</ref>(uintptr_t<sp/>num);</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="libft_8h_1afca08c39a126e18b2cec12b916ff212f" kindref="member">ft_atof</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*str);</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="libft_8h_1a20d3650c5c970c5150e00fe73c7db2ec" kindref="member">ft_atol</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*nptr);</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="libft_8h_1aa7c4f303aebd3737b7cc180a9e7608f1" kindref="member">ft_abs</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>n);</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/>*<ref refid="libft_8h_1a1678f2722c7a602695a99e3edd948d35" kindref="member">ft_exclude_delimiters</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*str,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*delims);</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight></codeline>
+<codeline lineno="95" refid="libft_8h_1aa8cecfc5c5c054d2875c03e77b7be15d" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/>define<sp/>TRUE<sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="96" refid="libft_8h_1aa93f0eb578d23995850d61f7d61c55c1" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/>define<sp/>FALSE<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight></codeline>
+<codeline lineno="98" refid="libft_8h_1ac00bfb46347d26fdc58568fe1ab5fa5b" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/>define<sp/>STDIN<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="99" refid="libft_8h_1a8875037d0772a4fc34516f1e03d7e238" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/>define<sp/>STDOUT<sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="100" refid="libft_8h_1a3a540e3eef339eec06aff31c4ba1eb25" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/>define<sp/>STDERR<sp/>2</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="101"><highlight class="normal"></highlight></codeline>
+<codeline lineno="102" refid="libft_8h_1ab702106cf3b3e96750b6845ded4e0299" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/>define<sp/>RESET<sp/>&quot;\033[0m&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="103"><highlight class="normal"></highlight></codeline>
+<codeline lineno="104" refid="libft_8h_1a6283768c836fd4a0f382514973bc3ff4" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/>define<sp/>BLK<sp/>&quot;\033[0;30m&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="105" refid="libft_8h_1a8d23feea868a983c8c2b661e1e16972f" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/>define<sp/>RED<sp/>&quot;\033[0;31m&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="106" refid="libft_8h_1aea69ffbacdcdf16c21b8c9961df84448" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/>define<sp/>GRN<sp/>&quot;\033[0;32m&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="107" refid="libft_8h_1a96fac03c4ab3363f06a0328e0e53a40c" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/>define<sp/>YEL<sp/>&quot;\033[0;33m&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="108" refid="libft_8h_1add9307de87f38e77d336751e305886f6" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/>define<sp/>BLU<sp/>&quot;\033[0;34m&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="109" refid="libft_8h_1af54a5a977c0c499323d656315f008ee0" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/>define<sp/>MAG<sp/>&quot;\033[0;35m&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="110" refid="libft_8h_1a25f4cb00b763d4c7c8e627e4c0350383" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/>define<sp/>CYA<sp/>&quot;\033[0;36m&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="111" refid="libft_8h_1ad9686e0f37fe7ff78cef4840f8dcc8b4" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/>define<sp/>WHI<sp/>&quot;\033[0;37m&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="112"><highlight class="normal"></highlight></codeline>
+<codeline lineno="113" refid="libft_8h_1aff49c5095216c7e8b78b59eb1b91c883" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/>define<sp/>B_BLK<sp/>&quot;\033[1;30m&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="114" refid="libft_8h_1a99aab81746be2e0e639f9341c1626c21" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/>define<sp/>B_RED<sp/>&quot;\033[1;31m&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="115" refid="libft_8h_1a7fbd3ddd204beaba10029ec76f366d75" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/>define<sp/>B_GRN<sp/>&quot;\033[1;32m&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="116" refid="libft_8h_1aeb916ac96767cf5c1fe782e8a4d36bf5" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/>define<sp/>B_YEL<sp/>&quot;\033[1;33m&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="117" refid="libft_8h_1a9ec94737cff3a7dc5111d45f16a24e8e" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/>define<sp/>B_BLU<sp/>&quot;\033[1;34m&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="118" refid="libft_8h_1ae5b8398d856de0bf7b23bb8e2bb262c7" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/>define<sp/>B_MAG<sp/>&quot;\033[1;35m&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="119" refid="libft_8h_1adff31d55645467cce89cbfd00211d653" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/>define<sp/>B_CYA<sp/>&quot;\033[1;36m&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="120" refid="libft_8h_1a2872fc7b9a402558a066fa4dc7e8d93a" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/>define<sp/>B_WHI<sp/>&quot;\033[1;37m&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="121"><highlight class="normal"></highlight></codeline>
+<codeline lineno="122"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>LIBFT_H<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+    </programlisting>
+    <location file="/Users/dimadem/Documents/GitHub/minishell/lib/libft/inc/libft.h"/>
+  </compounddef>
+</doxygen>
