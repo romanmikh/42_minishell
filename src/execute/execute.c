@@ -6,7 +6,7 @@
 /*   By: dmdemirk <dmdemirk@student.42london.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/31 11:02:00 by dmdemirk          #+#    #+#             */
-/*   Updated: 2024/07/11 14:58:47 by dmdemirk         ###   ########.fr       */
+/*   Updated: 2024/07/11 17:33:43 by dmdemirk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@
 #include "pipe.h"
 #include "redirection.h"
 
-int	execute_ast(t_ast *node, t_minishell_data *data);
-int	execute(t_minishell_data *data);
-int	new_process(t_minishell_data *data);
+int			execute_ast(t_ast *node, t_minishell_data *data);
+static int	execute(t_minishell_data *data);
+static int	new_process(t_minishell_data *data);
 
 /**
   - @brief execute Abstract Syntax Tree
@@ -85,7 +85,7 @@ int	execute_ast(t_ast *node, t_minishell_data *data)
   - 				- 1: error
  */
 
-int	execute(t_minishell_data *data)
+static int	execute(t_minishell_data *data)
 {
 	size_t	i;
 	char	*builtin_commands[7];
@@ -106,7 +106,7 @@ int	execute(t_minishell_data *data)
 	builtin_functions[5] = &builtin_pwd;
 	builtin_functions[6] = &builtin_unset;
 	if (data->args[0] == NULL)
-		return (2);
+		ft_perror("minishel");
 	i = -1;
 	while (++i < sizeof(builtin_commands) / sizeof(char *))
 		if (ft_strcmp(data->args[0], builtin_commands[i]) == 0)
@@ -123,13 +123,10 @@ int	execute(t_minishell_data *data)
   - 				- 1: error
  */
 
-int	new_process(t_minishell_data *data)
+static int	new_process(t_minishell_data *data)
 {
 	pid_t	pid;
 
-	printf("new_process\n");
-	printf("data->std_in: %d\n", data->std_in);
-	printf("data->std_out: %d\n", data->std_out);
 	if (data->std_in == -1)
 		data->std_in = dup(STDIN_FILENO);
 	if (data->std_out == -1)
@@ -148,7 +145,7 @@ int	new_process(t_minishell_data *data)
 					data->args, env_to_array(data->envp)) == -1)
 			ft_perror("minishell");
 	}
-	waitpid(pid, &data->exit_status, 0);
 	close_fds(data->std_in, data->std_out);
+	waitpid(pid, &data->exit_status, 0);
 	return (0);
 }

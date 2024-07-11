@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.c                                            :+:      :+:    :+:   */
+/*   utils_0.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dmdemirk <dmdemirk@student.42london.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 17:32:22 by dmdemirk          #+#    #+#             */
-/*   Updated: 2024/06/26 15:27:16 by dmdemirk         ###   ########.fr       */
+/*   Updated: 2024/07/11 16:38:00 by dmdemirk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,9 +40,14 @@ char	*ft_find_path(char *cmd, t_env *envp)
 	i = -1;
 	while (path[++i] != NULL)
 	{
-		tmp_slash = ft_strjoin(path[i], "/");
-		tmp_full_path = ft_strjoin(tmp_slash, cmd);
-		free(tmp_slash);
+		if (ft_strncmp(cmd, "/", 1) != 0)
+		{
+			tmp_slash = ft_strjoin(path[i], "/");
+			tmp_full_path = ft_strjoin(tmp_slash, cmd);
+			free(tmp_slash);
+		}
+		else
+			tmp_full_path = ft_strdup(cmd);
 		if (access(tmp_full_path, F_OK) == 0)
 		{
 			ft_free_2d_arr(path);

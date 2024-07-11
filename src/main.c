@@ -6,7 +6,7 @@
 /*   By: rmikhayl <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 13:23:26 by rmikhayl          #+#    #+#             */
-/*   Updated: 2024/06/26 15:33:21 by dmdemirk         ###   ########.fr       */
+/*   Updated: 2024/07/11 16:03:10 by dmdemirk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,6 @@ void	main_loop(t_minishell_data *data, t_loop_data *loop_data)
 		}
 	}
 }
-/* test some thing */
 
 int	main(int argc, char **argv, char **envp)
 {
