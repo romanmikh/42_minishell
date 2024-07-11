@@ -164,12 +164,12 @@
         </inbodydescription>
         <location file="/Users/dimadem/Documents/GitHub/minishell/src/utils/clean_general.c" line="43" column="5" bodyfile="/Users/dimadem/Documents/GitHub/minishell/src/utils/clean_general.c" bodystart="43" bodyend="53"/>
         <references refid="structs__minishell__data_1aeb4af268850af7d0f6d0c64f2bfefdea" compoundref="shell_8h" startline="20">s_minishell_data::args</references>
-        <references refid="structs__minishell__data_1a147731c1cf1a04c1fc1b85e6343cc7cc" compoundref="shell_8h" startline="27">s_minishell_data::current_dir</references>
+        <references refid="structs__minishell__data_1a147731c1cf1a04c1fc1b85e6343cc7cc" compoundref="shell_8h" startline="26">s_minishell_data::current_dir</references>
         <references refid="structs__minishell__data_1a8a0b3f50c8893e061062e93115f3d723" compoundref="shell_8h" startline="21">s_minishell_data::envp</references>
         <references refid="clean__general_8c_1ae6e1002c1a56f5bfa4ea13de63d3deae" compoundref="clean__general_8c" startline="16" endline="27">free_args</references>
         <references refid="clean__general_8c_1a9062b9b7e34cb35cb4b78c5251b020b0" compoundref="clean__general_8c" startline="29" endline="41">free_env_list</references>
         <references refid="structs__minishell__data_1a46b92ee58356d0f35174a79ed568253b" compoundref="shell_8h" startline="22">s_minishell_data::local_env</references>
-        <referencedby refid="main_8c_1a647f21a28344e1d9c643f4115516d7c9" compoundref="main_8c" startline="54" endline="66">main</referencedby>
+        <referencedby refid="main_8c_1a647f21a28344e1d9c643f4115516d7c9" compoundref="main_8c" startline="53" endline="65">main</referencedby>
       </memberdef>
       <memberdef kind="function" id="clean__general_8c_1a3f6fbbc61bc797c26b4ece51216fbb67" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>

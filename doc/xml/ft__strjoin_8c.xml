@@ -83,9 +83,9 @@
         <location file="/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_strjoin.c" line="23" column="5" bodyfile="/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_strjoin.c" bodystart="23" bodyend="44"/>
         <references refid="libft_8h_1abbb8c6c4ed85d892e7f1509f65f5768a" compoundref="ft__strlen_8c" startline="15" endline="23">ft_strlen</references>
         <referencedby refid="env_8h_1a19f3a9e73371c1cfb3db076f94d33830" compoundref="env_2utils_8c" startline="22" endline="49">env_to_array</referencedby>
-        <referencedby refid="execute_8h_1a3de2eb0e796441d7b827cf213bd8d789" compoundref="utils__0_8c" startline="32" endline="55">ft_find_path</referencedby>
-        <referencedby refid="prompt_8c_1a5663e22274d85c42c9c7f51e22afc301" compoundref="prompt_8c" startline="71" endline="88">generate_prompt_string</referencedby>
+        <referencedby refid="prompt_8c_1a5663e22274d85c42c9c7f51e22afc301" compoundref="prompt_8c" startline="50" endline="67">generate_prompt_string</referencedby>
         <referencedby refid="tokens_8h_1a132ce43db3d4fba988a166e932845375" compoundref="heredoc_8c" startline="26" endline="40">heredoc</referencedby>
+        <referencedby refid="utils__1_8c_1ac48357d68e0cbc48befd5e157c67c0d6" compoundref="utils__1_8c" startline="53" endline="60">relative_path_handle</referencedby>
       </memberdef>
     </sectiondef>
     <briefdescription>

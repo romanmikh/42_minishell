@@ -7,6 +7,7 @@
     <innerfile refid="input__checker__helpers_8c">input_checker_helpers.c</innerfile>
     <innerfile refid="parser_8c">parser.c</innerfile>
     <innerfile refid="parser__helpers_8c">parser_helpers.c</innerfile>
+    <innerfile refid="parser__utils_8c">parser_utils.c</innerfile>
     <innerfile refid="tokeniser_8c">tokeniser.c</innerfile>
     <innerfile refid="tokeniser__helpers_8c">tokeniser_helpers.c</innerfile>
     <briefdescription>

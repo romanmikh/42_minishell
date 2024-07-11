@@ -33,20 +33,20 @@
 .br
 .RI "execute Abstract Syntax Tree "
 .ti -1c
-.RI "int \fBexecute\fP (\fBt_minishell_data\fP *data)"
+.RI "static int \fBexecute\fP (\fBt_minishell_data\fP *data)"
 .br
-.RI "execute distribution function checks if the command is a builtin or a new process "
+.RI "execute distribution function "
 .ti -1c
-.RI "int \fBnew_process\fP (\fBt_minishell_data\fP *data)"
+.RI "static int \fBnew_process\fP (\fBt_minishell_data\fP *data)"
 .br
 .RI "executes a new process "
 .in -1c
 .SH "Function Documentation"
 .PP 
-.SS "int execute (\fBt_minishell_data\fP * data)"
+.SS "static int execute (\fBt_minishell_data\fP * data)\fR [static]\fP"
 
 .PP
-execute distribution function checks if the command is a builtin or a new process --
+execute distribution function --
 .IP "\(bu" 2
 \fBParameters\fP
 .RS 4
@@ -70,40 +70,40 @@ int return status:
 .PP
 
 .PP
-Definition at line \fB93\fP of file \fBexecute\&.c\fP\&.
+Definition at line \fB70\fP of file \fBexecute\&.c\fP\&.
 .nf
-94 {
-95     size_t  i;
-96     char    *builtin_commands[7];
-97     int     (*builtin_functions[7])(t_minishell_data *);
-98 
-99     builtin_commands[0] = "cd";
-100     builtin_commands[1] = "echo";
-101     builtin_commands[2] = "env";
-102     builtin_commands[3] = "exit";
-103     builtin_commands[4] = "export";
-104     builtin_commands[5] = "pwd";
-105     builtin_commands[6] = "unset";
-106     builtin_functions[0] = &builtin_cd;
-107     builtin_functions[1] = &builtin_echo;
-108     builtin_functions[2] = &builtin_env;
-109     builtin_functions[3] = &builtin_exit;
-110     builtin_functions[4] = &builtin_export;
-111     builtin_functions[5] = &builtin_pwd;
-112     builtin_functions[6] = &builtin_unset;
-113     if (data\->args[0] == NULL)
-114         return (2);
-115     i = \-1;
-116     while (++i < sizeof(builtin_commands) / sizeof(char *))
-117         if (ft_strcmp(data\->args[0], builtin_commands[i]) == 0)
-118             return ((*builtin_functions[i])(data));
-119     return (new_process(data));
-120 }
+71 {
+72     size_t  i;
+73     char    *builtin_commands[7];
+74     int     (*builtin_functions[7])(t_minishell_data *);
+75 
+76     builtin_commands[0] = "cd";
+77     builtin_commands[1] = "echo";
+78     builtin_commands[2] = "env";
+79     builtin_commands[3] = "exit";
+80     builtin_commands[4] = "export";
+81     builtin_commands[5] = "pwd";
+82     builtin_commands[6] = "unset";
+83     builtin_functions[0] = &builtin_cd;
+84     builtin_functions[1] = &builtin_echo;
+85     builtin_functions[2] = &builtin_env;
+86     builtin_functions[3] = &builtin_exit;
+87     builtin_functions[4] = &builtin_export;
+88     builtin_functions[5] = &builtin_pwd;
+89     builtin_functions[6] = &builtin_unset;
+90     if (data\->args[0] == NULL)
+91         ft_perror("minishel");
+92     i = \-1;
+93     while (++i < sizeof(builtin_commands) / sizeof(char *))
+94         if (ft_strcmp(data\->args[0], builtin_commands[i]) == 0)
+95             return ((*builtin_functions[i])(data));
+96     return (new_process(data));
+97 }
 .PP
 .fi
 
 .PP
-References \fBs_minishell_data::args\fP, \fBbuiltin_cd()\fP, \fBbuiltin_echo()\fP, \fBbuiltin_env()\fP, \fBbuiltin_exit()\fP, \fBbuiltin_export()\fP, \fBbuiltin_pwd()\fP, \fBbuiltin_unset()\fP, \fBft_strcmp()\fP, and \fBnew_process()\fP\&.
+References \fBs_minishell_data::args\fP, \fBbuiltin_cd()\fP, \fBbuiltin_echo()\fP, \fBbuiltin_env()\fP, \fBbuiltin_exit()\fP, \fBbuiltin_export()\fP, \fBbuiltin_pwd()\fP, \fBbuiltin_unset()\fP, \fBft_perror()\fP, \fBft_strcmp()\fP, and \fBnew_process()\fP\&.
 .PP
 Referenced by \fBexecute_ast()\fP\&.
 .SS "int execute_ast (\fBt_ast\fP * node, \fBt_minishell_data\fP * data)"
@@ -140,57 +140,38 @@ int return status:
 .PP
 
 .PP
-Definition at line \fB41\fP of file \fBexecute\&.c\fP\&.
+Definition at line \fB37\fP of file \fBexecute\&.c\fP\&.
 .nf
-42 {
-43     if (!node)
-44         return (1);
-45     if (node\->type == PIPE)
-46     {
-47         printf(RED"PIPE\\n"RESET);
-48         return (builtin_pipe(node, data));
-49     }
-50     else if (node\->type == ENV_VAR)  // "$()"
-51     {
-52         printf(BLU"ENV_VAR\\n"RESET);
-53         //execute_redirect(node, data);
-54     }
-55     else if (node\->type == REDIR_IN)
-56     {
-57         printf(GRN"REDIR_IN\\n"RESET);
-58         return (redirect_in(node, data));
-59     }
-60     else if (node\->type == REDIR_OUT)    // ">"
-61     {
-62         printf(CYA"REDIR_OUT\\n"RESET);
-63         return (redirect_out(node, data));
-64     }
-65     else if (node\->type == REDIR_APPEND) // ">>"
-66     {
-67         printf(CYA"REDIR_APPEND\\n"RESET);
-68         return (redirect_append(node, data));
-69     }
-70     else if (node\->type == REDIR_HEREDOC) // "<<"
-71     {
-72         printf(MAG"REDIR_HEREDOC\\n"RESET);
-73         return (redirect_here_doc(node, data));
-74     }
-75     else if (node\->type == PHRASE)
-76     {
-77         printf(YEL"PHRASE\\n"RESET);
-78         data\->args = node\->args;
-79         return (execute(data));
-80     }
-81     return (0);
-82 }
+38 {
+39     if (!node)
+40         return (1);
+41     if (node\->type == PIPE)
+42         return (builtin_pipe(node, data));
+43     else if (node\->type == ENV_VAR)
+44         printf(BLU"ENV_VAR\\n"RESET);
+45     else if (node\->type == REDIR_IN)
+46         return (redirect_in(node, data));
+47     else if (node\->type == REDIR_OUT)
+48         return (redirect_out(node, data));
+49     else if (node\->type == REDIR_APPEND)
+50         return (redirect_append(node, data));
+51     else if (node\->type == REDIR_HEREDOC)
+52         return (redirect_here_doc(node, data));
+53     else if (node\->type == PHRASE)
+54     {
+55         data\->args = node\->args;
+56         return (execute(data));
+57     }
+58     return (0);
+59 }
 .PP
 .fi
 
 .PP
-References \fBs_ast::args\fP, \fBs_minishell_data::args\fP, \fBBLU\fP, \fBbuiltin_pipe()\fP, \fBCYA\fP, \fBENV_VAR\fP, \fBexecute()\fP, \fBGRN\fP, \fBMAG\fP, \fBPHRASE\fP, \fBPIPE\fP, \fBRED\fP, \fBREDIR_APPEND\fP, \fBREDIR_HEREDOC\fP, \fBREDIR_IN\fP, \fBREDIR_OUT\fP, \fBredirect_append()\fP, \fBredirect_here_doc()\fP, \fBredirect_in()\fP, \fBredirect_out()\fP, \fBRESET\fP, \fBs_ast::type\fP, and \fBYEL\fP\&.
+References \fBs_ast::args\fP, \fBs_minishell_data::args\fP, \fBBLU\fP, \fBbuiltin_pipe()\fP, \fBENV_VAR\fP, \fBexecute()\fP, \fBPHRASE\fP, \fBPIPE\fP, \fBREDIR_APPEND\fP, \fBREDIR_HEREDOC\fP, \fBREDIR_IN\fP, \fBREDIR_OUT\fP, \fBredirect_append()\fP, \fBredirect_here_doc()\fP, \fBredirect_in()\fP, \fBredirect_out()\fP, \fBRESET\fP, and \fBs_ast::type\fP\&.
 .PP
-Referenced by \fBexecute_child()\fP, \fBmain_loop()\fP, \fBredirect_append()\fP, \fBredirect_here_doc()\fP, \fBredirect_in()\fP, and \fBredirect_out()\fP\&.
-.SS "int new_process (\fBt_minishell_data\fP * data)"
+Referenced by \fBexecute_child()\fP, \fBexecute_child()\fP, \fBmain_loop()\fP, \fBredirect_append()\fP, \fBredirect_in()\fP, and \fBredirect_out()\fP\&.
+.SS "static int new_process (\fBt_minishell_data\fP * data)\fR [static]\fP"
 
 .PP
 executes a new process --
@@ -217,36 +198,33 @@ int return status:
 .PP
 
 .PP
-Definition at line \fB131\fP of file \fBexecute\&.c\fP\&.
+Definition at line \fB108\fP of file \fBexecute\&.c\fP\&.
 .nf
-132 {
-133     pid_t   pid;
-134 
-135     printf("new_process\\n");
-136     printf("data\->std_in: %d\\n", data\->std_in);
-137     printf("data\->std_out: %d\\n", data\->std_out);
-138     if(data\->std_in == \-1)
-139         data\->std_in = dup(STDIN_FILENO);
-140     if(data\->std_out == \-1)
-141         data\->std_out = dup(STDOUT_FILENO);
-142     pid = fork();
-143     if (pid == \-1)
-144         ft_perror("fork");
-145     if (pid == 0)
-146     {
-147         if (data\->std_in != \-1)
-148             dup2(data\->std_in, STDIN_FILENO);
-149         if (data\->std_out != \-1)
-150             dup2(data\->std_out, STDOUT_FILENO);
-151         close_fds(data\->std_in, data\->std_out);
-152         if (execve(ft_find_path(data\->args[0], data\->envp), \\
-153                 data\->args, env_to_array(data\->envp)) == \-1)
-154             ft_perror("minishell");
-155     }
-156     waitpid(pid, &data\->exit_status, 0);
-157     close_fds(data\->std_in, data\->std_out);
-158     return (0);
-159 }
+109 {
+110     pid_t   pid;
+111 
+112     if (data\->std_in == \-1)
+113         data\->std_in = dup(STDIN_FILENO);
+114     if (data\->std_out == \-1)
+115         data\->std_out = dup(STDOUT_FILENO);
+116     pid = fork();
+117     if (pid == \-1)
+118         ft_perror("fork");
+119     if (pid == 0)
+120     {
+121         if (data\->std_in != \-1)
+122             dup2(data\->std_in, STDIN_FILENO);
+123         if (data\->std_out != \-1)
+124             dup2(data\->std_out, STDOUT_FILENO);
+125         close_fds(data\->std_in, data\->std_out);
+126         if (execve(ft_find_path(data\->args[0], data\->envp), \\
+127                     data\->args, env_to_array(data\->envp)) == \-1)
+128             ft_perror("minishell");
+129     }
+130     close_fds(data\->std_in, data\->std_out);
+131     waitpid(pid, &data\->exit_status, 0);
+132     return (0);
+133 }
 .PP
 .fi
 

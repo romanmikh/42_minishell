@@ -22,125 +22,9 @@
 .RI "int \fBopen_file\fP (\fBt_ast\fP *node, char *direction)"
 .br
 .RI "open file in the context of redirection "
-.ti -1c
-.RI "char * \fBft_get_next_line\fP (int fd)"
-.br
-.ti -1c
-.RI "static char * \fBextract_line\fP (char **saved)"
-.br
-.ti -1c
-.RI "static char * \fBread_from_fd\fP (int fd, char *saved, char *buf)"
-.br
-.ti -1c
-.RI "char * \fBft_strjoin_gnl\fP (char *s1, char const *s2)"
-.br
 .in -1c
 .SH "Function Documentation"
 .PP 
-.SS "static char * extract_line (char ** saved)\fR [static]\fP"
-
-.PP
-Definition at line \fB118\fP of file \fButils\&.c\fP\&.
-.nf
-119 {
-120     char    *new_line_ptr;
-121     char    *line;
-122     char    *temp;
-123 
-124     new_line_ptr = ft_strchr(*saved, '\\n');
-125     if (new_line_ptr)
-126     {
-127         line = ft_substr(*saved, 0, new_line_ptr \- *saved + 1);
-128         temp = *saved;
-129         *saved = ft_strdup(new_line_ptr + 1);
-130         free(temp);
-131         return (line);
-132     }
-133     if (**saved)
-134     {
-135         line = ft_strdup(*saved);
-136         free(*saved);
-137         *saved = NULL;
-138         return (line);
-139     }
-140     return (NULL);
-141 }
-.PP
-.fi
-
-.PP
-References \fBft_strchr()\fP, \fBft_strdup()\fP, and \fBft_substr()\fP\&.
-.PP
-Referenced by \fBft_get_next_line()\fP\&.
-.SS "char * ft_get_next_line (int fd)"
-
-.PP
-Definition at line \fB41\fP of file \fButils\&.c\fP\&.
-.nf
-42 {
-43     static char *saved = NULL;
-44     char        *line;
-45     char        *buf;
-46 
-47     if (fd < 0 || BUFFER_SIZE < 1 || fd > 4095)
-48         return (NULL);
-49     buf = malloc(BUFFER_SIZE + 1);
-50     if (!buf)
-51         return (NULL);
-52     saved = read_from_fd(fd, saved, buf);
-53     if (!saved)
-54     {
-55         free(saved);
-56         saved = NULL;
-57         return (NULL);
-58     }
-59     line = extract_line(&saved);
-60     if (line == NULL)
-61     {
-62         free(saved);
-63         saved = NULL;
-64     }
-65     return (line);
-66 }
-.PP
-.fi
-
-.PP
-References \fBBUFFER_SIZE\fP, \fBextract_line()\fP, and \fBread_from_fd()\fP\&.
-.SS "char * ft_strjoin_gnl (char * s1, char const * s2)"
-
-.PP
-Definition at line \fB68\fP of file \fButils\&.c\fP\&.
-.nf
-69 {
-70     char    *str;
-71     size_t  s1_len;
-72     size_t  s2_len;
-73 
-74     if (!s2)
-75         return (NULL);
-76     if (s1)
-77         s1_len = ft_strlen(s1);
-78     else
-79         s1_len = 0;
-80     s2_len = ft_strlen(s2);
-81     str = (char *)malloc(s1_len + s2_len + 1);
-82     if (!str)
-83         return (NULL);
-84     if (s1)
-85         ft_strlcpy(str, s1, s1_len + 1);
-86     else
-87         str[0] = '\\0';
-88     ft_memcpy(str + s1_len, s2, s2_len + 1);
-89     return (str);
-90 }
-.PP
-.fi
-
-.PP
-References \fBft_memcpy()\fP, \fBft_strlcpy()\fP, and \fBft_strlen()\fP\&.
-.PP
-Referenced by \fBread_from_fd()\fP\&.
 .SS "int open_file (\fBt_ast\fP * node, char * direction)"
 
 .PP
@@ -177,23 +61,24 @@ int file descriptor
 .PP
 
 .PP
-Definition at line \fB24\fP of file \fButils\&.c\fP\&.
+Definition at line \fB32\fP of file \fButils\&.c\fP\&.
 .nf
-25 {
-26     int fd;
-27     
-28     if ((ft_strcmp(direction, "<") == 0) || (ft_strcmp(direction, "read") == 0))
-29         fd = open(node\->args[0], O_RDONLY);
-30     else if (ft_strcmp(direction, ">") == 0)
-31         fd = open(node\->args[0], O_WRONLY | O_CREAT | O_TRUNC, 0644);
-32     else if ((ft_strcmp(direction, ">>") == 0) || (ft_strcmp(direction, "temp") == 0))
-33         fd = open(node\->args[0], O_WRONLY | O_CREAT | O_APPEND, 0644);
-34     else if (ft_strcmp(direction, "tty") == 0)
-35         fd = open("/dev/tty", O_RDWR);
-36     else
-37         fd = \-1;
-38     return (fd);
-39 }
+33 {
+34     int fd;
+35 
+36     if ((ft_strcmp(direction, "<") == 0) || (ft_strcmp(direction, "read") == 0))
+37         fd = open(node\->args[0], O_RDONLY);
+38     else if (ft_strcmp(direction, ">") == 0)
+39         fd = open(node\->args[0], O_WRONLY | O_CREAT | O_TRUNC, 0644);
+40     else if ((ft_strcmp(direction, ">>") == 0) \\
+41                 || (ft_strcmp(direction, "temp") == 0))
+42         fd = open(node\->args[0], O_WRONLY | O_CREAT | O_APPEND, 0644);
+43     else if (ft_strcmp(direction, "tty") == 0)
+44         fd = open("/dev/tty", O_RDWR);
+45     else
+46         fd = \-1;
+47     return (fd);
+48 }
 .PP
 .fi
 
@@ -201,42 +86,6 @@ Definition at line \fB24\fP of file \fButils\&.c\fP\&.
 References \fBs_ast::args\fP, and \fBft_strcmp()\fP\&.
 .PP
 Referenced by \fBredirect_append()\fP, \fBredirect_in()\fP, and \fBredirect_out()\fP\&.
-.SS "static char * read_from_fd (int fd, char * saved, char * buf)\fR [static]\fP"
-
-.PP
-Definition at line \fB92\fP of file \fButils\&.c\fP\&.
-.nf
-93 {
-94     int     chars_read;
-95     char    *temp;
-96 
-97     chars_read = read(fd, buf, BUFFER_SIZE);
-98     while (chars_read > 0)
-99     {
-100         buf[chars_read] = '\\0';
-101         temp = saved;
-102         saved = ft_strjoin_gnl(saved, buf);
-103         free(temp);
-104         if (ft_strchr(saved, '\\n'))
-105             break ;
-106         chars_read = read(fd, buf, BUFFER_SIZE);
-107     }
-108     free(buf);
-109     if (chars_read < 0)
-110     {
-111         free(saved);
-112         saved = NULL;
-113         return (NULL);
-114     }
-115     return (saved);
-116 }
-.PP
-.fi
-
-.PP
-References \fBBUFFER_SIZE\fP, \fBft_strchr()\fP, and \fBft_strjoin_gnl()\fP\&.
-.PP
-Referenced by \fBft_get_next_line()\fP\&.
 .SH "Author"
 .PP 
 Generated automatically by Doxygen for maxishell from the source code\&.

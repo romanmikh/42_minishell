@@ -86,9 +86,10 @@
         </inbodydescription>
         <location file="/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_strncmp.c" line="24" column="4" bodyfile="/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_strncmp.c" bodystart="24" bodyend="35"/>
         <referencedby refid="builtins_8h_1a9e6f1e14f0125cd68c70e8e31ef606aa" compoundref="export_8c" startline="28" endline="44">builtin_export</referencedby>
+        <referencedby refid="execute_8h_1a3de2eb0e796441d7b827cf213bd8d789" compoundref="utils__1_8c" startline="28" endline="51">ft_find_path</referencedby>
         <referencedby refid="libft_8h_1ae00229613cc0bf361e86dca72ad92591" compoundref="ft__strnstr_8c" startline="25" endline="42">ft_strnstr</referencedby>
         <referencedby refid="libft_8h_1a7eba6d6022f99a664b9c76a60b2f5dbc" compoundref="ft__strstr_8c" startline="24" endline="40">ft_strstr</referencedby>
-        <referencedby refid="prompt_8c_1a5663e22274d85c42c9c7f51e22afc301" compoundref="prompt_8c" startline="71" endline="88">generate_prompt_string</referencedby>
+        <referencedby refid="prompt_8c_1a5663e22274d85c42c9c7f51e22afc301" compoundref="prompt_8c" startline="50" endline="67">generate_prompt_string</referencedby>
         <referencedby refid="libft_8h_1a7a215fb6793487678a9c7a647373a40a" compoundref="list__repeat__check__str_8c" startline="15" endline="33">list_repeat_check_str</referencedby>
       </memberdef>
     </sectiondef>

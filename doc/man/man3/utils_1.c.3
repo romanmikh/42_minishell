@@ -6,6 +6,105 @@
 .SH SYNOPSIS
 .br
 .PP
+\fR#include 'libft\&.h'\fP
+.br
+\fR#include 'env\&.h'\fP
+.br
+\fR#include 'execute\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "char * \fBft_find_path\fP (char *cmd, \fBt_env\fP *envp)"
+.br
+.RI "function find the full path of the executed command "
+.ti -1c
+.RI "static void \fBrelative_path_handle\fP (char *cmd, char *path, char **tmp_full_path)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "char * ft_find_path (char * cmd, \fBt_env\fP * envp)"
+
+.PP
+function find the full path of the executed command --
+.IP "\(bu" 2
+\fBParameters\fP
+.RS 4
+\fIcmd\fP string from the first argument
+.RE
+.PP
+
+.IP "\(bu" 2
+\fBParameters\fP
+.RS 4
+\fIenvp\fP structure with environment variables
+.RE
+.PP
+
+.IP "\(bu" 2
+\fBReturns\fP
+.RS 4
+char* returns the full path of the command 
+.RE
+.PP
+
+.PP
+
+.PP
+Definition at line \fB28\fP of file \fButils_1\&.c\fP\&.
+.nf
+29 {
+30     char    **path;
+31     char    *tmp_full_path;
+32     int     i;
+33 
+34     path = ft_split(get_env(envp, "PATH"), ':');
+35     i = \-1;
+36     while (path[++i] != NULL)
+37     {
+38         if (ft_strncmp(cmd, "/", 1) != 0)
+39             relative_path_handle(cmd, path[i], &tmp_full_path);
+40         else
+41             tmp_full_path = ft_strdup(cmd);
+42         if (access(tmp_full_path, F_OK) == 0)
+43         {
+44             ft_free_2d_arr(path);
+45             return (tmp_full_path);
+46         }
+47         free(tmp_full_path);
+48     }
+49     ft_free_2d_arr(path);
+50     return (NULL);
+51 }
+.PP
+.fi
+
+.PP
+References \fBft_free_2d_arr()\fP, \fBft_split()\fP, \fBft_strdup()\fP, \fBft_strncmp()\fP, \fBget_env()\fP, and \fBrelative_path_handle()\fP\&.
+.PP
+Referenced by \fBnew_process()\fP\&.
+.SS "static void relative_path_handle (char * cmd, char * path, char ** tmp_full_path)\fR [static]\fP"
+
+.PP
+Definition at line \fB53\fP of file \fButils_1\&.c\fP\&.
+.nf
+54 {
+55     char    *tmp_slash;
+56 
+57     tmp_slash = ft_strjoin(path, "/");
+58     *tmp_full_path = ft_strjoin(tmp_slash, cmd);
+59     free(tmp_slash);
+60 }
+.PP
+.fi
+
+.PP
+References \fBft_strjoin()\fP\&.
+.PP
+Referenced by \fBft_find_path()\fP\&.
 .SH "Author"
 .PP 
 Generated automatically by Doxygen for maxishell from the source code\&.

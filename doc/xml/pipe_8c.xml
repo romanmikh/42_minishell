@@ -191,14 +191,15 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/dimadem/Documents/GitHub/minishell/src/pipe/pipe.c" line="35" column="4" bodyfile="/Users/dimadem/Documents/GitHub/minishell/src/pipe/pipe.c" bodystart="35" bodyend="60" declfile="/Users/dimadem/Documents/GitHub/minishell/src/pipe/pipe.c" declline="21" declcolumn="4"/>
-        <references refid="execute_8h_1ab9bcddf9275f12cc49348081000beb62" compoundref="utils__0_8c" startline="93" endline="97">close_fds</references>
+        <references refid="execute_8h_1ab9bcddf9275f12cc49348081000beb62" compoundref="utils__0_8c" startline="58" endline="62">close_fds</references>
         <references refid="pipe_8c_1a3a1c19716357baba879b799300b3c077" compoundref="pipe_8c" startline="71" endline="90">execute_child</references>
-        <references refid="execute_8h_1aedc550f2251badad69cf4b6dfda183ef" compoundref="utils__0_8c" startline="81" endline="85">ft_perror</references>
+        <references refid="execute_8h_1aedc550f2251badad69cf4b6dfda183ef" compoundref="utils__0_8c" startline="46" endline="50">ft_perror</references>
         <references refid="structs__ast_1ac3be51aa6a7ae13bd16b6ad0c7ac843c" compoundref="tokens_8h" startline="52">s_ast::left</references>
         <references refid="structs__ast_1ac2c9513b20e9351e45d9bc6361095f7b" compoundref="tokens_8h" startline="53">s_ast::right</references>
         <references refid="structs__minishell__data_1a9ed5685097b7e4b55c3c1307b70869ef" compoundref="shell_8h" startline="23">s_minishell_data::std_in</references>
         <references refid="pipe_8h_1a816f42487cd607fbdb7df660a0d913fc" compoundref="pipe_8h" startline="19">WAIT_NEXT_COMMAND</references>
-        <referencedby refid="execute_8h_1ace4c3a2246919797e40140123d79596a" compoundref="execute_8c" startline="41" endline="82">execute_ast</referencedby>
+        <referencedby refid="pipe__test_8c_1a4e02daca82e791c68ff9bf7c0ad25030" compoundref="pipe__test_8c" startline="32" endline="37">builtin_pipe_test</referencedby>
+        <referencedby refid="execute_8h_1ace4c3a2246919797e40140123d79596a" compoundref="execute_8c" startline="37" endline="59">execute_ast</referencedby>
       </memberdef>
       <memberdef kind="function" id="pipe_8c_1a3a1c19716357baba879b799300b3c077" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>pid_t</type>
@@ -274,9 +275,9 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/dimadem/Documents/GitHub/minishell/src/pipe/pipe.c" line="71" column="6" bodyfile="/Users/dimadem/Documents/GitHub/minishell/src/pipe/pipe.c" bodystart="71" bodyend="90" declfile="/Users/dimadem/Documents/GitHub/minishell/src/pipe/pipe.c" declline="22" declcolumn="6"/>
-        <references refid="execute_8h_1ab9bcddf9275f12cc49348081000beb62" compoundref="utils__0_8c" startline="93" endline="97">close_fds</references>
-        <references refid="execute_8h_1ace4c3a2246919797e40140123d79596a" compoundref="execute_8c" startline="41" endline="82">execute_ast</references>
-        <references refid="execute_8h_1aedc550f2251badad69cf4b6dfda183ef" compoundref="utils__0_8c" startline="81" endline="85">ft_perror</references>
+        <references refid="execute_8h_1ab9bcddf9275f12cc49348081000beb62" compoundref="utils__0_8c" startline="58" endline="62">close_fds</references>
+        <references refid="execute_8h_1ace4c3a2246919797e40140123d79596a" compoundref="execute_8c" startline="37" endline="59">execute_ast</references>
+        <references refid="execute_8h_1aedc550f2251badad69cf4b6dfda183ef" compoundref="utils__0_8c" startline="46" endline="50">ft_perror</references>
         <referencedby refid="pipe_8h_1a7947b63271b47934f419fe6d217bf8df" compoundref="pipe_8c" startline="35" endline="60">builtin_pipe</referencedby>
       </memberdef>
     </sectiondef>

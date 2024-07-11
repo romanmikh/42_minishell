@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['next_0',['next',['../structs__env.html#a3caf3df6eb72714ffcd4e22f9c94ecf2',1,'s_env::next'],['../structs__token.html#a5dae434205818bfc83a61809d4a34a29',1,'s_token::next']]]
+  ['prev_0',['prev',['../structs__token.html#a5937fde6f83a598dbe93df2b06d95c7b',1,'s_token']]],
+  ['prompt_1',['prompt',['../structs__loop__data.html#a55b11635c9e942224b6fd0e2b149b250',1,'s_loop_data']]]
 ];

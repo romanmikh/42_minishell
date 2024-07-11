@@ -33,19 +33,19 @@
 .SS "int arg_len (\fBt_token\fP * current)"
 
 .PP
-Definition at line \fB42\fP of file \fBparser_helpers\&.c\fP\&.
+Definition at line \fB48\fP of file \fBparser_helpers\&.c\fP\&.
 .nf
-43 {
-44     int arg_count;
-45 
-46     arg_count = 0;
-47     while (current && current\->type == PHRASE)
-48     {
-49         arg_count++;
-50         current = current\->next;
-51     }
-52     return (arg_count);
-53 }
+49 {
+50     int arg_count;
+51 
+52     arg_count = 0;
+53     while (current && current\->type == PHRASE)
+54     {
+55         arg_count++;
+56         current = current\->next;
+57     }
+58     return (arg_count);
+59 }
 .PP
 .fi
 
@@ -56,19 +56,19 @@ Referenced by \fBmanage_commands()\fP\&.
 .SS "\fBt_ast\fP * create_redir (\fBt_token\fP ** tokens, \fBt_token\fP * tmp)"
 
 .PP
-Definition at line \fB29\fP of file \fBparser_helpers\&.c\fP\&.
+Definition at line \fB35\fP of file \fBparser_helpers\&.c\fP\&.
 .nf
-30 {
-31     t_ast   *redirect_node;
-32 
-33     redirect_node = new_ast_node((*tokens)\->type);
-34     *tokens = (*tokens)\->next\->next;
-35     redirect_node\->left = manage_redirs(tokens);
-36     redirect_node\->right = create_redir_node(tmp\->next);
-37     free(tmp\->data);
-38     free(tmp);
-39     return (redirect_node);
-40 }
+36 {
+37     t_ast   *redirect_node;
+38 
+39     redirect_node = new_ast_node((*tokens)\->type);
+40     *tokens = (*tokens)\->next\->next;
+41     redirect_node\->left = manage_redirs(tokens);
+42     redirect_node\->right = create_redir_node(tmp\->next);
+43     free(tmp\->data);
+44     free(tmp);
+45     return (redirect_node);
+46 }
 .PP
 .fi
 
@@ -79,20 +79,20 @@ Referenced by \fBmanage_redirs()\fP\&.
 .SS "\fBt_ast\fP * manage_commands (\fBt_token\fP ** tokens)"
 
 .PP
-Definition at line \fB74\fP of file \fBparser_helpers\&.c\fP\&.
+Definition at line \fB80\fP of file \fBparser_helpers\&.c\fP\&.
 .nf
-75 {
-76     t_ast       *command_node;
-77     int         arg_count;
-78 
-79     command_node = new_ast_node(PHRASE);
-80     arg_count = arg_len(*tokens);
-81     command_node\->args = malloc(sizeof(char *) * (arg_count + 1));
-82     if (!command_node\->args)
-83         return (NULL);
-84     set_command_args(command_node, tokens, arg_count);
-85     return (command_node);
-86 }
+81 {
+82     t_ast       *command_node;
+83     int         arg_count;
+84 
+85     command_node = new_ast_node(PHRASE);
+86     arg_count = arg_len(*tokens);
+87     command_node\->args = malloc(sizeof(char *) * (arg_count + 1));
+88     if (!command_node\->args)
+89         return (NULL);
+90     set_command_args(command_node, tokens, arg_count);
+91     return (command_node);
+92 }
 .PP
 .fi
 
@@ -103,20 +103,20 @@ Referenced by \fBmanage_redirs()\fP\&.
 .SS "\fBt_ast\fP * new_ast_node (\fBt_token_type\fP type)"
 
 .PP
-Definition at line \fB15\fP of file \fBparser_helpers\&.c\fP\&.
+Definition at line \fB21\fP of file \fBparser_helpers\&.c\fP\&.
 .nf
-16 {
-17     t_ast       *node;
-18 
-19     node = malloc(sizeof(t_ast));
-20     if (!node)
-21         return (NULL);
-22     node\->type = type;
-23     node\->args = NULL;
-24     node\->left = NULL;
-25     node\->right = NULL;
-26     return (node);
-27 }
+22 {
+23     t_ast       *node;
+24 
+25     node = malloc(sizeof(t_ast));
+26     if (!node)
+27         return (NULL);
+28     node\->type = type;
+29     node\->args = NULL;
+30     node\->left = NULL;
+31     node\->right = NULL;
+32     return (node);
+33 }
 .PP
 .fi
 
@@ -127,24 +127,24 @@ Referenced by \fBcreate_redir()\fP, \fBmanage_commands()\fP, \fBmanage_pipe()\fP
 .SS "void set_command_args (\fBt_ast\fP * command_node, \fBt_token\fP ** tokens, int arg_count)"
 
 .PP
-Definition at line \fB55\fP of file \fBparser_helpers\&.c\fP\&.
+Definition at line \fB61\fP of file \fBparser_helpers\&.c\fP\&.
 .nf
-57 {
-58     int     i;
-59     t_token *tmp;
-60 
-61     i = 0;
-62     while (i < arg_count)
-63     {
-64         command_node\->args[i] = ft_strdup((*tokens)\->data);
-65         tmp = *tokens;
-66         *tokens = (*tokens)\->next;
-67         free(tmp\->data);
-68         free(tmp);
-69         i++;
-70     }
-71     command_node\->args[arg_count] = NULL;
-72 }
+63 {
+64     int     i;
+65     t_token *tmp;
+66 
+67     i = 0;
+68     while (i < arg_count)
+69     {
+70         command_node\->args[i] = ft_strdup((*tokens)\->data);
+71         tmp = *tokens;
+72         *tokens = (*tokens)\->next;
+73         free(tmp\->data);
+74         free(tmp);
+75         i++;
+76     }
+77     command_node\->args[arg_count] = NULL;
+78 }
 .PP
 .fi
 

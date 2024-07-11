@@ -187,22 +187,24 @@
 </parameteritem>
 </parameterlist>
 </para>
-</listitem><listitem><para><simplesect kind="return"><para>status: 0: success 1: error </para>
+</listitem><listitem><para><simplesect kind="return"><para>status:</para>
 </simplesect>
 </para>
+</listitem><listitem><para>0: success</para>
+</listitem><listitem><para>1: error </para>
 </listitem></itemizedlist>
 </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/dimadem/Documents/GitHub/minishell/inc/redirection.h" line="8" column="4" bodyfile="/Users/dimadem/Documents/GitHub/minishell/src/redirection/redirect_in.c" bodystart="23" bodyend="40" declfile="/Users/dimadem/Documents/GitHub/minishell/inc/redirection.h" declline="8" declcolumn="4"/>
-        <references refid="execute_8h_1ace4c3a2246919797e40140123d79596a" compoundref="execute_8c" startline="41" endline="82">execute_ast</references>
-        <references refid="structs__minishell__data_1a978016fddb1d9faa4fbda6859a9a199e" compoundref="shell_8h" startline="28">s_minishell_data::exit_status</references>
+        <location file="/Users/dimadem/Documents/GitHub/minishell/inc/redirection.h" line="20" column="4" bodyfile="/Users/dimadem/Documents/GitHub/minishell/src/redirection/redirect_in.c" bodystart="38" bodyend="55" declfile="/Users/dimadem/Documents/GitHub/minishell/inc/redirection.h" declline="20" declcolumn="4"/>
+        <references refid="execute_8h_1ace4c3a2246919797e40140123d79596a" compoundref="execute_8c" startline="37" endline="59">execute_ast</references>
+        <references refid="structs__minishell__data_1a978016fddb1d9faa4fbda6859a9a199e" compoundref="shell_8h" startline="27">s_minishell_data::exit_status</references>
         <references refid="structs__ast_1ac3be51aa6a7ae13bd16b6ad0c7ac843c" compoundref="tokens_8h" startline="52">s_ast::left</references>
-        <references refid="redirection_8h_1a2fe566529f8c7046fe274f2b3a35b39b" compoundref="redirection_2utils_8c" startline="24" endline="39">open_file</references>
+        <references refid="redirection_8h_1a2fe566529f8c7046fe274f2b3a35b39b" compoundref="redirection_2utils_8c" startline="32" endline="48">open_file</references>
         <references refid="structs__ast_1ac2c9513b20e9351e45d9bc6361095f7b" compoundref="tokens_8h" startline="53">s_ast::right</references>
         <references refid="structs__minishell__data_1a9ed5685097b7e4b55c3c1307b70869ef" compoundref="shell_8h" startline="23">s_minishell_data::std_in</references>
-        <referencedby refid="execute_8h_1ace4c3a2246919797e40140123d79596a" compoundref="execute_8c" startline="41" endline="82">execute_ast</referencedby>
+        <referencedby refid="execute_8h_1ace4c3a2246919797e40140123d79596a" compoundref="execute_8c" startline="37" endline="59">execute_ast</referencedby>
       </memberdef>
       <memberdef kind="function" id="redirection_8h_1a13afb8e911eca2b32bd9e843eda752a5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
@@ -242,21 +244,23 @@
 </parameteritem>
 </parameterlist>
 </para>
-</listitem><listitem><para><simplesect kind="return"><para>status: 0: success 1: error </para>
+</listitem><listitem><para><simplesect kind="return"><para>status:</para>
 </simplesect>
 </para>
+</listitem><listitem><para>0: success</para>
+</listitem><listitem><para>1: error </para>
 </listitem></itemizedlist>
 </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/dimadem/Documents/GitHub/minishell/inc/redirection.h" line="9" column="5" bodyfile="/Users/dimadem/Documents/GitHub/minishell/src/redirection/redirect_out.c" bodystart="23" bodyend="41" declfile="/Users/dimadem/Documents/GitHub/minishell/inc/redirection.h" declline="9" declcolumn="5"/>
-        <references refid="execute_8h_1ace4c3a2246919797e40140123d79596a" compoundref="execute_8c" startline="41" endline="82">execute_ast</references>
+        <location file="/Users/dimadem/Documents/GitHub/minishell/inc/redirection.h" line="21" column="4" bodyfile="/Users/dimadem/Documents/GitHub/minishell/src/redirection/redirect_out.c" bodystart="32" bodyend="50" declfile="/Users/dimadem/Documents/GitHub/minishell/inc/redirection.h" declline="21" declcolumn="4"/>
+        <references refid="execute_8h_1ace4c3a2246919797e40140123d79596a" compoundref="execute_8c" startline="37" endline="59">execute_ast</references>
         <references refid="structs__ast_1ac3be51aa6a7ae13bd16b6ad0c7ac843c" compoundref="tokens_8h" startline="52">s_ast::left</references>
-        <references refid="redirection_8h_1a2fe566529f8c7046fe274f2b3a35b39b" compoundref="redirection_2utils_8c" startline="24" endline="39">open_file</references>
+        <references refid="redirection_8h_1a2fe566529f8c7046fe274f2b3a35b39b" compoundref="redirection_2utils_8c" startline="32" endline="48">open_file</references>
         <references refid="structs__ast_1ac2c9513b20e9351e45d9bc6361095f7b" compoundref="tokens_8h" startline="53">s_ast::right</references>
         <references refid="structs__minishell__data_1ac90001aa8bc9a89b165ee6bca5f05ef3" compoundref="shell_8h" startline="24">s_minishell_data::std_out</references>
-        <referencedby refid="execute_8h_1ace4c3a2246919797e40140123d79596a" compoundref="execute_8c" startline="41" endline="82">execute_ast</referencedby>
+        <referencedby refid="execute_8h_1ace4c3a2246919797e40140123d79596a" compoundref="execute_8c" startline="37" endline="59">execute_ast</referencedby>
       </memberdef>
       <memberdef kind="function" id="redirection_8h_1a780ae5fe0eba6dcc6cab3a347507d636" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
@@ -296,21 +300,23 @@
 </parameteritem>
 </parameterlist>
 </para>
-</listitem><listitem><para><simplesect kind="return"><para>status: 0: success 1: error </para>
+</listitem><listitem><para><simplesect kind="return"><para>status:</para>
 </simplesect>
 </para>
+</listitem><listitem><para>0: success</para>
+</listitem><listitem><para>1: error </para>
 </listitem></itemizedlist>
 </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/dimadem/Documents/GitHub/minishell/inc/redirection.h" line="10" column="5" bodyfile="/Users/dimadem/Documents/GitHub/minishell/src/redirection/redirect_append.c" bodystart="16" bodyend="34" declfile="/Users/dimadem/Documents/GitHub/minishell/inc/redirection.h" declline="10" declcolumn="5"/>
-        <references refid="execute_8h_1ace4c3a2246919797e40140123d79596a" compoundref="execute_8c" startline="41" endline="82">execute_ast</references>
+        <location file="/Users/dimadem/Documents/GitHub/minishell/inc/redirection.h" line="22" column="4" bodyfile="/Users/dimadem/Documents/GitHub/minishell/src/redirection/redirect_append.c" bodystart="31" bodyend="49" declfile="/Users/dimadem/Documents/GitHub/minishell/inc/redirection.h" declline="22" declcolumn="4"/>
+        <references refid="execute_8h_1ace4c3a2246919797e40140123d79596a" compoundref="execute_8c" startline="37" endline="59">execute_ast</references>
         <references refid="structs__ast_1ac3be51aa6a7ae13bd16b6ad0c7ac843c" compoundref="tokens_8h" startline="52">s_ast::left</references>
-        <references refid="redirection_8h_1a2fe566529f8c7046fe274f2b3a35b39b" compoundref="redirection_2utils_8c" startline="24" endline="39">open_file</references>
+        <references refid="redirection_8h_1a2fe566529f8c7046fe274f2b3a35b39b" compoundref="redirection_2utils_8c" startline="32" endline="48">open_file</references>
         <references refid="structs__ast_1ac2c9513b20e9351e45d9bc6361095f7b" compoundref="tokens_8h" startline="53">s_ast::right</references>
         <references refid="structs__minishell__data_1ac90001aa8bc9a89b165ee6bca5f05ef3" compoundref="shell_8h" startline="24">s_minishell_data::std_out</references>
-        <referencedby refid="execute_8h_1ace4c3a2246919797e40140123d79596a" compoundref="execute_8c" startline="41" endline="82">execute_ast</referencedby>
+        <referencedby refid="execute_8h_1ace4c3a2246919797e40140123d79596a" compoundref="execute_8c" startline="37" endline="59">execute_ast</referencedby>
       </memberdef>
       <memberdef kind="function" id="redirection_8h_1a0dc55a5a9752d658c1b8b6e3760f5813" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
@@ -350,25 +356,26 @@
 </parameteritem>
 </parameterlist>
 </para>
-</listitem><listitem><para><simplesect kind="return"><para>status: 0: success 1: error </para>
+</listitem><listitem><para><simplesect kind="return"><para>status:</para>
 </simplesect>
 </para>
+</listitem><listitem><para>0: success</para>
+</listitem><listitem><para>1: error </para>
 </listitem></itemizedlist>
 </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/dimadem/Documents/GitHub/minishell/inc/redirection.h" line="11" column="5" bodyfile="/Users/dimadem/Documents/GitHub/minishell/src/redirection/redirect_heredoc.c" bodystart="17" bodyend="63" declfile="/Users/dimadem/Documents/GitHub/minishell/inc/redirection.h" declline="11" declcolumn="5"/>
+        <location file="/Users/dimadem/Documents/GitHub/minishell/inc/redirection.h" line="23" column="4" bodyfile="/Users/dimadem/Documents/GitHub/minishell/src/redirection/redirect_heredoc.c" bodystart="34" bodyend="60" declfile="/Users/dimadem/Documents/GitHub/minishell/inc/redirection.h" declline="23" declcolumn="4"/>
         <references refid="structs__ast_1ab62d177d86a1908cf5bbdb5cf6e978f8" compoundref="tokens_8h" startline="51">s_ast::args</references>
-        <references refid="execute_8h_1ace4c3a2246919797e40140123d79596a" compoundref="execute_8c" startline="41" endline="82">execute_ast</references>
-        <references refid="execute_8h_1aedc550f2251badad69cf4b6dfda183ef" compoundref="utils__0_8c" startline="81" endline="85">ft_perror</references>
+        <references refid="redirect__heredoc_8c_1a0a43624bb8557b365fdd6406f70e97ed" compoundref="redirect__heredoc_8c" startline="76" endline="91">execute_child</references>
         <references refid="libft_8h_1a1f2ff2312e5994560c9537cd9173be94" compoundref="ft__strcmp_8c" startline="24" endline="34">ft_strcmp</references>
         <references refid="libft_8h_1aebe73f27c70c56ac5053f860ef5436c9" compoundref="ft__strdup_8c" startline="23" endline="36">ft_strdup</references>
         <references refid="libft_8h_1abbb8c6c4ed85d892e7f1509f65f5768a" compoundref="ft__strlen_8c" startline="15" endline="23">ft_strlen</references>
         <references refid="structs__ast_1ac3be51aa6a7ae13bd16b6ad0c7ac843c" compoundref="tokens_8h" startline="52">s_ast::left</references>
+        <references refid="redirect__heredoc_8c_1a15cf53350eb2877438bf504bd85fc36a" compoundref="redirect__heredoc_8c" startline="62" endline="74">open_tmp_file</references>
         <references refid="structs__ast_1ac2c9513b20e9351e45d9bc6361095f7b" compoundref="tokens_8h" startline="53">s_ast::right</references>
-        <references refid="structs__minishell__data_1a9ed5685097b7e4b55c3c1307b70869ef" compoundref="shell_8h" startline="23">s_minishell_data::std_in</references>
-        <referencedby refid="execute_8h_1ace4c3a2246919797e40140123d79596a" compoundref="execute_8c" startline="41" endline="82">execute_ast</referencedby>
+        <referencedby refid="execute_8h_1ace4c3a2246919797e40140123d79596a" compoundref="execute_8c" startline="37" endline="59">execute_ast</referencedby>
       </memberdef>
       <memberdef kind="function" id="redirection_8h_1a2fe566529f8c7046fe274f2b3a35b39b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
@@ -419,32 +426,12 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/dimadem/Documents/GitHub/minishell/inc/redirection.h" line="14" column="13" bodyfile="/Users/dimadem/Documents/GitHub/minishell/src/redirection/utils.c" bodystart="24" bodyend="39" declfile="/Users/dimadem/Documents/GitHub/minishell/inc/redirection.h" declline="14" declcolumn="13"/>
+        <location file="/Users/dimadem/Documents/GitHub/minishell/inc/redirection.h" line="26" column="4" bodyfile="/Users/dimadem/Documents/GitHub/minishell/src/redirection/utils.c" bodystart="32" bodyend="48" declfile="/Users/dimadem/Documents/GitHub/minishell/inc/redirection.h" declline="26" declcolumn="4"/>
         <references refid="structs__ast_1ab62d177d86a1908cf5bbdb5cf6e978f8" compoundref="tokens_8h" startline="51">s_ast::args</references>
         <references refid="libft_8h_1a1f2ff2312e5994560c9537cd9173be94" compoundref="ft__strcmp_8c" startline="24" endline="34">ft_strcmp</references>
-        <referencedby refid="redirection_8h_1a780ae5fe0eba6dcc6cab3a347507d636" compoundref="redirect__append_8c" startline="16" endline="34">redirect_append</referencedby>
-        <referencedby refid="redirection_8h_1a2635bab3d0023f67288d2832903bdbd9" compoundref="redirect__in_8c" startline="23" endline="40">redirect_in</referencedby>
-        <referencedby refid="redirection_8h_1a13afb8e911eca2b32bd9e843eda752a5" compoundref="redirect__out_8c" startline="23" endline="41">redirect_out</referencedby>
-      </memberdef>
-      <memberdef kind="function" id="redirection_8h_1a5feb28b63e00d9f45e4887ee15da4ab8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>char *</type>
-        <definition>char * ft_get_next_line</definition>
-        <argsstring>(int fd)</argsstring>
-        <name>ft_get_next_line</name>
-        <param>
-          <type>int</type>
-          <declname>fd</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/Users/dimadem/Documents/GitHub/minishell/inc/redirection.h" line="15" column="13" bodyfile="/Users/dimadem/Documents/GitHub/minishell/src/redirection/utils.c" bodystart="41" bodyend="66" declfile="/Users/dimadem/Documents/GitHub/minishell/inc/redirection.h" declline="15" declcolumn="13"/>
-        <references refid="libft_8h_1a6b20d41d6252e9871430c242cb1a56e7" compoundref="libft_8h" startline="25">BUFFER_SIZE</references>
-        <references refid="redirection_2utils_8c_1a33d78aafe6a0e75e4fdfe3606cbd9348" compoundref="redirection_2utils_8c" startline="118" endline="141">extract_line</references>
-        <references refid="redirection_2utils_8c_1aa5a7db94bcb5970b93bff4df02b52108" compoundref="redirection_2utils_8c" startline="92" endline="116">read_from_fd</references>
+        <referencedby refid="redirection_8h_1a780ae5fe0eba6dcc6cab3a347507d636" compoundref="redirect__append_8c" startline="31" endline="49">redirect_append</referencedby>
+        <referencedby refid="redirection_8h_1a2635bab3d0023f67288d2832903bdbd9" compoundref="redirect__in_8c" startline="38" endline="55">redirect_in</referencedby>
+        <referencedby refid="redirection_8h_1a13afb8e911eca2b32bd9e843eda752a5" compoundref="redirect__out_8c" startline="32" endline="50">redirect_out</referencedby>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -452,24 +439,34 @@
     <detaileddescription>
     </detaileddescription>
     <programlisting>
-<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>REDIRECTION_H</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/>define<sp/>REDIRECTION_H</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="3"><highlight class="normal"></highlight></codeline>
-<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="shell_8h" kindref="compound">shell.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="tokens_8h" kindref="compound">tokens.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="6"><highlight class="normal"></highlight></codeline>
-<codeline lineno="7"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/>redirect_in<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="8"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="redirection_8h_1a2635bab3d0023f67288d2832903bdbd9" kindref="member">redirect_in</ref>(<ref refid="structs__ast" kindref="compound">t_ast</ref><sp/>*node,<sp/><ref refid="structs__minishell__data" kindref="compound">t_minishell_data</ref><sp/>*data);</highlight></codeline>
-<codeline lineno="9"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="redirection_8h_1a13afb8e911eca2b32bd9e843eda752a5" kindref="member">redirect_out</ref>(<ref refid="structs__ast" kindref="compound">t_ast</ref><sp/>*node,<sp/><ref refid="structs__minishell__data" kindref="compound">t_minishell_data</ref><sp/>*data);</highlight></codeline>
-<codeline lineno="10"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="redirection_8h_1a780ae5fe0eba6dcc6cab3a347507d636" kindref="member">redirect_append</ref>(<ref refid="structs__ast" kindref="compound">t_ast</ref><sp/>*node,<sp/><ref refid="structs__minishell__data" kindref="compound">t_minishell_data</ref><sp/>*data);</highlight></codeline>
-<codeline lineno="11"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="redirection_8h_1a0dc55a5a9752d658c1b8b6e3760f5813" kindref="member">redirect_here_doc</ref>(<ref refid="structs__ast" kindref="compound">t_ast</ref><sp/>*node,<sp/><ref refid="structs__minishell__data" kindref="compound">t_minishell_data</ref><sp/>*data);</highlight></codeline>
+<codeline lineno="1"><highlight class="comment">/*<sp/>**************************************************************************<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:::<sp/><sp/><sp/><sp/><sp/><sp/>::::::::<sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/>redirection.h<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:+:<sp/><sp/><sp/><sp/><sp/><sp/>:+:<sp/><sp/><sp/><sp/>:+:<sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>+:+<sp/>+:+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>+:+<sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/>By:<sp/>dmdemirk<sp/>&lt;dmdemirk@student.42london.c<sp/><sp/><sp/><sp/><sp/><sp/>+#+<sp/><sp/>+:+<sp/><sp/><sp/><sp/><sp/><sp/><sp/>+#+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>+#+#+#+#+#+<sp/><sp/><sp/>+#+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/>Created:<sp/>2024/07/11<sp/>14:59:47<sp/>by<sp/>dmdemirk<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>#+#<sp/><sp/><sp/><sp/>#+#<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/>Updated:<sp/>2024/07/11<sp/>15:00:25<sp/>by<sp/>dmdemirk<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>###<sp/><sp/><sp/>########.fr<sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>**************************************************************************<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="12"><highlight class="normal"></highlight></codeline>
-<codeline lineno="13"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/>utils<sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="14"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="redirection_8h_1a2fe566529f8c7046fe274f2b3a35b39b" kindref="member">open_file</ref>(<ref refid="structs__ast" kindref="compound">t_ast</ref><sp/>*node,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*direction);</highlight></codeline>
-<codeline lineno="15"><highlight class="normal"></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<ref refid="redirection_8h_1a5feb28b63e00d9f45e4887ee15da4ab8" kindref="member">ft_get_next_line</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>fd);</highlight></codeline>
-<codeline lineno="16"><highlight class="normal"></highlight></codeline>
-<codeline lineno="17"><highlight class="normal"></highlight></codeline>
-<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>REDIRECTION_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/>define<sp/>REDIRECTION_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/>include<sp/>&quot;<ref refid="shell_8h" kindref="compound">shell.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/>include<sp/>&quot;<ref refid="tokens_8h" kindref="compound">tokens.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/>redirect_in<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="redirection_8h_1a2635bab3d0023f67288d2832903bdbd9" kindref="member">redirect_in</ref>(<ref refid="structs__ast" kindref="compound">t_ast</ref><sp/>*node,<sp/><ref refid="structs__minishell__data" kindref="compound">t_minishell_data</ref><sp/>*data);</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="redirection_8h_1a13afb8e911eca2b32bd9e843eda752a5" kindref="member">redirect_out</ref>(<ref refid="structs__ast" kindref="compound">t_ast</ref><sp/>*node,<sp/><ref refid="structs__minishell__data" kindref="compound">t_minishell_data</ref><sp/>*data);</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="redirection_8h_1a780ae5fe0eba6dcc6cab3a347507d636" kindref="member">redirect_append</ref>(<ref refid="structs__ast" kindref="compound">t_ast</ref><sp/>*node,<sp/><ref refid="structs__minishell__data" kindref="compound">t_minishell_data</ref><sp/>*data);</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="redirection_8h_1a0dc55a5a9752d658c1b8b6e3760f5813" kindref="member">redirect_here_doc</ref>(<ref refid="structs__ast" kindref="compound">t_ast</ref><sp/>*node,<sp/><ref refid="structs__minishell__data" kindref="compound">t_minishell_data</ref><sp/>*data);</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/>utils<sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="redirection_8h_1a2fe566529f8c7046fe274f2b3a35b39b" kindref="member">open_file</ref>(<ref refid="structs__ast" kindref="compound">t_ast</ref><sp/>*node,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*direction);</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
     </programlisting>
     <location file="/Users/dimadem/Documents/GitHub/minishell/inc/redirection.h"/>
   </compounddef>

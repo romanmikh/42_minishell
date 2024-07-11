@@ -14,6 +14,8 @@
 .br
 \fR#include 'execute\&.h'\fP
 .br
+\fR#include <sys/wait\&.h>\fP
+.br
 
 .SS "Functions"
 
@@ -46,33 +48,37 @@ redirect append '>>' to the end of the file output --
 .IP "\(bu" 2
 \fBReturns\fP
 .RS 4
-status: 0: success 1: error 
+status:
 .RE
 .PP
 
+.IP "\(bu" 2
+0: success
+.IP "\(bu" 2
+1: error 
 .PP
 
 .PP
-Definition at line \fB16\fP of file \fBredirect_append\&.c\fP\&.
+Definition at line \fB31\fP of file \fBredirect_append\&.c\fP\&.
 .nf
-17 {
-18     pid_t pid;
-19     int status;
-20 
-21     pid = fork();
-22     if (pid == \-1)
-23         return (1);
-24     if (pid == 0)
-25     {
-26         data\->std_out = open_file(node\->right, ">>");
-27         if (data\->std_out == \-1)
-28             return (1);
-29         execute_ast(node\->left, data);
-30         exit(0);
-31     }
-32     waitpid(pid, &status, 0);
-33     return (WEXITSTATUS(status));
-34 }
+32 {
+33     pid_t   pid;
+34     int     status;
+35 
+36     pid = fork();
+37     if (pid == \-1)
+38         return (1);
+39     if (pid == 0)
+40     {
+41         data\->std_out = open_file(node\->right, ">>");
+42         if (data\->std_out == \-1)
+43             return (1);
+44         execute_ast(node\->left, data);
+45         exit(0);
+46     }
+47     waitpid(pid, &status, 0);
+48     return (WEXITSTATUS(status));
+49 }
 .PP
 .fi
 

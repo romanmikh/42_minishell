@@ -81,7 +81,7 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_strcpy.c" line="25" column="5" bodyfile="/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_strcpy.c" bodystart="25" bodyend="37"/>
-        <referencedby refid="tokens_8h_1a4c523064ece03ba20eb609b52253b88e" compoundref="prompt_8c" startline="31" endline="69">generate_prompt</referencedby>
+        <referencedby refid="tokens_8h_1a4c523064ece03ba20eb609b52253b88e" compoundref="prompt_8c" startline="31" endline="48">generate_prompt</referencedby>
       </memberdef>
     </sectiondef>
     <briefdescription>

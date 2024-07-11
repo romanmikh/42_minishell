@@ -36,14 +36,14 @@ Definition at line \fB32\fP of file \fBpipe_test\&.c\fP\&.
 .nf
 33 {
 34     data\->args = ft_split("ls \-l | wc \-l", ' ');
-35     // builtin_pipe(node, data);
+35     builtin_pipe(node, data);
 36     assert(data\->args != NULL);
 37 }
 .PP
 .fi
 
 .PP
-References \fBs_minishell_data::args\fP, and \fBft_split()\fP\&.
+References \fBs_minishell_data::args\fP, \fBbuiltin_pipe()\fP, and \fBft_split()\fP\&.
 .PP
 Referenced by \fBpipe_tests()\fP\&.
 .SS "void pipe_tests (\fBt_minishell_data\fP * data)"

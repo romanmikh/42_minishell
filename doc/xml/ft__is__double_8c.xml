@@ -77,9 +77,9 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_is_double.c" line="15" column="4" bodyfile="/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_is_double.c" bodystart="15" bodyend="40"/>
-        <references refid="libft_8h_1aa93f0eb578d23995850d61f7d61c55c1" compoundref="libft_8h" startline="96">FALSE</references>
+        <references refid="libft_8h_1aa93f0eb578d23995850d61f7d61c55c1" compoundref="libft_8h" startline="97">FALSE</references>
         <references refid="libft_8h_1a2cf15b8a1a277d1e2ce3654101a2003d" compoundref="ft__isdigit_8c" startline="13" endline="16">ft_isdigit</references>
-        <references refid="libft_8h_1aa8cecfc5c5c054d2875c03e77b7be15d" compoundref="libft_8h" startline="95">TRUE</references>
+        <references refid="libft_8h_1aa8cecfc5c5c054d2875c03e77b7be15d" compoundref="libft_8h" startline="96">TRUE</references>
       </memberdef>
     </sectiondef>
     <briefdescription>

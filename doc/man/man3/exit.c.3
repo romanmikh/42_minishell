@@ -37,9 +37,8 @@ Definition at line \fB26\fP of file \fBexit\&.c\fP\&.
 30     printf("\\nbuiltin_exit\\n");
 31     message = "exit\\n";
 32     write(STDOUT_FILENO, message, ft_strlen(message));
-33     // free_env(data\->envp);
-34     exit(data\->exit_status);
-35 }
+33     exit(data\->exit_status);
+34 }
 .PP
 .fi
 

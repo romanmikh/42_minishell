@@ -178,13 +178,14 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/dimadem/Documents/GitHub/minishell/src/main.c" line="29" column="5" bodyfile="/Users/dimadem/Documents/GitHub/minishell/src/main.c" bodystart="29" bodyend="51"/>
-        <references refid="execute_8h_1ace4c3a2246919797e40140123d79596a" compoundref="execute_8c" startline="41" endline="82">execute_ast</references>
-        <references refid="tokens_8h_1a4c523064ece03ba20eb609b52253b88e" compoundref="prompt_8c" startline="31" endline="69">generate_prompt</references>
-        <references refid="execute_8h_1a6f45c6b2374dd1d4eea803d3ba8879b2" compoundref="utils__0_8c" startline="104" endline="113">handle_io_fd</references>
+        <references refid="execute_8h_1ace4c3a2246919797e40140123d79596a" compoundref="execute_8c" startline="37" endline="59">execute_ast</references>
+        <references refid="tokens_8h_1a4c523064ece03ba20eb609b52253b88e" compoundref="prompt_8c" startline="31" endline="48">generate_prompt</references>
+        <references refid="execute_8h_1a6f45c6b2374dd1d4eea803d3ba8879b2" compoundref="utils__0_8c" startline="69" endline="78">handle_io_fd</references>
         <references refid="structs__loop__data_1aa4db2151823e8c8b49c2251837a7e367" compoundref="tokens_8h" startline="59">s_loop_data::input</references>
         <references refid="tokens_8h_1a8ba7929cbd2a023ebba26c83879e553c" compoundref="input__checker_8c" startline="99" endline="110">input_error_checks</references>
         <references refid="tokens_8h_1a3f6fbbc61bc797c26b4ece51216fbb67" compoundref="clean__general_8c" startline="55" endline="61">loop_cleanup</references>
-        <references refid="tokens_8h_1a171ed3b5a6467eddcde6183a461caf02" compoundref="parser_8c" startline="113" endline="118">parse_tokens</references>
+        <references refid="tokens_8h_1a94ee21f550bbf6448142ec3102526dde" compoundref="aux_8c" startline="15" endline="21">make_history</references>
+        <references refid="tokens_8h_1a171ed3b5a6467eddcde6183a461caf02" compoundref="parser__utils_8c" startline="17" endline="22">parse_tokens</references>
         <references refid="tokens_8h_1a16c146658d86ab8fa44a3af94804c5a9" compoundref="visualiser_8c" startline="103" endline="106">print_ast_root</references>
         <references refid="structs__loop__data_1a55b11635c9e942224b6fd0e2b149b250" compoundref="tokens_8h" startline="58">s_loop_data::prompt</references>
         <references refid="main_8c_1aa58ce868c4a816bbe301da3bd43f1157" compoundref="main_8c" startline="18" endline="27">status_handler</references>
@@ -193,7 +194,7 @@
         <references refid="structs__loop__data_1ac27fcff1e53a529b5f6a27dd21a28a91" compoundref="tokens_8h" startline="62">s_loop_data::tree</references>
         <references refid="tokens_8h_1ad85feb33dfe75120540e2bc4dc28209a" compoundref="input__checker__helpers_8c" startline="15" endline="23">trim_input</references>
         <references refid="structs__loop__data_1a5f49d9840e1d54bc67a8cfe91aa9123d" compoundref="tokens_8h" startline="60">s_loop_data::trimmed_input</references>
-        <referencedby refid="main_8c_1a647f21a28344e1d9c643f4115516d7c9" compoundref="main_8c" startline="54" endline="66">main</referencedby>
+        <referencedby refid="main_8c_1a647f21a28344e1d9c643f4115516d7c9" compoundref="main_8c" startline="53" endline="65">main</referencedby>
       </memberdef>
       <memberdef kind="function" id="main_8c_1a647f21a28344e1d9c643f4115516d7c9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
@@ -218,14 +219,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/dimadem/Documents/GitHub/minishell/src/main.c" line="54" column="4" bodyfile="/Users/dimadem/Documents/GitHub/minishell/src/main.c" bodystart="54" bodyend="66"/>
+        <location file="/Users/dimadem/Documents/GitHub/minishell/src/main.c" line="53" column="4" bodyfile="/Users/dimadem/Documents/GitHub/minishell/src/main.c" bodystart="53" bodyend="65"/>
         <references refid="structs__minishell__data_1a8a0b3f50c8893e061062e93115f3d723" compoundref="shell_8h" startline="21">s_minishell_data::envp</references>
         <references refid="env_8h_1a2c192ab32512a4454973d916c1bff54e" compoundref="env_2utils_8c" startline="72" endline="86">free_env</references>
         <references refid="tokens_8h_1a16d324fdb41b45b7e59af5eaab2e56bd" compoundref="clean__general_8c" startline="43" endline="53">free_minishell_data</references>
         <references refid="tokens_8h_1ab7986766cca35553aa796f6a732d856a" compoundref="initialise_8c" startline="16" endline="27">init_minishell_data</references>
         <references refid="tokens_8h_1a41e7a8e4355566996a5984b4a31fb8fe" compoundref="initialise_8c" startline="29" endline="37">initialise</references>
         <references refid="main_8c_1abaf800210325f066cb9289aaae9e2c86" compoundref="main_8c" startline="29" endline="51">main_loop</references>
-        <references refid="tokens_8h_1a4e673b7c7d3f45e10377ab9f537b8bf9" compoundref="prompt_8c" startline="90" endline="111">print_maxishell</references>
+        <references refid="tokens_8h_1a4e673b7c7d3f45e10377ab9f537b8bf9" compoundref="prompt_8c" startline="69" endline="90">print_maxishell</references>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -241,7 +242,7 @@
 <codeline lineno="6"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/>By:<sp/>rmikhayl<sp/>&lt;marvin@42.fr&gt;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>+#+<sp/><sp/>+:+<sp/><sp/><sp/><sp/><sp/><sp/><sp/>+#+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="7"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>+#+#+#+#+#+<sp/><sp/><sp/>+#+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="8"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/>Created:<sp/>2024/06/05<sp/>13:23:26<sp/>by<sp/>rmikhayl<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>#+#<sp/><sp/><sp/><sp/>#+#<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="9"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/>Updated:<sp/>2024/06/26<sp/>15:33:21<sp/>by<sp/>dmdemirk<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>###<sp/><sp/><sp/>########.fr<sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/>Updated:<sp/>2024/07/11<sp/>18:02:20<sp/>by<sp/>dmdemirk<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>###<sp/><sp/><sp/>########.fr<sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="10"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="11"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>**************************************************************************<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="12"><highlight class="normal"></highlight></codeline>
@@ -253,12 +254,12 @@
 <codeline lineno="18" refid="main_8c_1aa58ce868c4a816bbe301da3bd43f1157" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="main_8c_1aa58ce868c4a816bbe301da3bd43f1157" kindref="member">status_handler</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>status,<sp/><ref refid="structs__loop__data" kindref="compound">t_loop_data</ref><sp/>*loop_data)</highlight></codeline>
 <codeline lineno="19"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(status<sp/>==<sp/><ref refid="pipe_8h_1a816f42487cd607fbdb7df660a0d913fc" kindref="member">WAIT_NEXT_COMMAND</ref>)</highlight></codeline>
-<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="tokens_8h_1a3f6fbbc61bc797c26b4ece51216fbb67" kindref="member">loop_cleanup</ref>(loop_data-&gt;<ref refid="structs__loop__data_1a5f49d9840e1d54bc67a8cfe91aa9123d" kindref="member">trimmed_input</ref>,<sp/>loop_data-&gt;<ref refid="structs__loop__data_1a9b704dd9ec48db6a19721c14de0cb40b" kindref="member">tokens</ref>,<sp/>\</highlight></codeline>
-<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>loop_data-&gt;<ref refid="structs__loop__data_1a55b11635c9e942224b6fd0e2b149b250" kindref="member">prompt</ref>,<sp/>loop_data-&gt;<ref refid="structs__loop__data_1ac27fcff1e53a529b5f6a27dd21a28a91" kindref="member">tree</ref>);</highlight></codeline>
-<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(0);</highlight></codeline>
-<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(1);</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="tokens_8h_1a3f6fbbc61bc797c26b4ece51216fbb67" kindref="member">loop_cleanup</ref>(loop_data-&gt;<ref refid="structs__loop__data_1a5f49d9840e1d54bc67a8cfe91aa9123d" kindref="member">trimmed_input</ref>,<sp/>loop_data-&gt;<ref refid="structs__loop__data_1a9b704dd9ec48db6a19721c14de0cb40b" kindref="member">tokens</ref>,<sp/>\</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>loop_data-&gt;<ref refid="structs__loop__data_1a55b11635c9e942224b6fd0e2b149b250" kindref="member">prompt</ref>,<sp/>loop_data-&gt;<ref refid="structs__loop__data_1ac27fcff1e53a529b5f6a27dd21a28a91" kindref="member">tree</ref>);</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(0);</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(1);</highlight></codeline>
 <codeline lineno="27"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="28"><highlight class="normal"></highlight></codeline>
 <codeline lineno="29" refid="main_8c_1abaf800210325f066cb9289aaae9e2c86" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="main_8c_1abaf800210325f066cb9289aaae9e2c86" kindref="member">main_loop</ref>(<ref refid="structs__minishell__data" kindref="compound">t_minishell_data</ref><sp/>*data,<sp/><ref refid="structs__loop__data" kindref="compound">t_loop_data</ref><sp/>*loop_data)</highlight></codeline>
@@ -269,7 +270,7 @@
 <codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>loop_data-&gt;<ref refid="structs__loop__data_1a55b11635c9e942224b6fd0e2b149b250" kindref="member">prompt</ref><sp/>=<sp/><ref refid="tokens_8h_1a4c523064ece03ba20eb609b52253b88e" kindref="member">generate_prompt</ref>(data);</highlight></codeline>
 <codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>loop_data-&gt;<ref refid="structs__loop__data_1aa4db2151823e8c8b49c2251837a7e367" kindref="member">input</ref><sp/>=<sp/>readline(loop_data-&gt;<ref refid="structs__loop__data_1a55b11635c9e942224b6fd0e2b149b250" kindref="member">prompt</ref>);</highlight></codeline>
-<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>make_history(loop_data-&gt;input);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="tokens_8h_1a94ee21f550bbf6448142ec3102526dde" kindref="member">make_history</ref>(loop_data-&gt;<ref refid="structs__loop__data_1aa4db2151823e8c8b49c2251837a7e367" kindref="member">input</ref>);</highlight></codeline>
 <codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>loop_data-&gt;<ref refid="structs__loop__data_1a5f49d9840e1d54bc67a8cfe91aa9123d" kindref="member">trimmed_input</ref><sp/>=<sp/><ref refid="tokens_8h_1ad85feb33dfe75120540e2bc4dc28209a" kindref="member">trim_input</ref>(loop_data-&gt;<ref refid="structs__loop__data_1aa4db2151823e8c8b49c2251837a7e367" kindref="member">input</ref>);</highlight></codeline>
 <codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="tokens_8h_1a8ba7929cbd2a023ebba26c83879e553c" kindref="member">input_error_checks</ref>(loop_data-&gt;<ref refid="structs__loop__data_1a5f49d9840e1d54bc67a8cfe91aa9123d" kindref="member">trimmed_input</ref>);</highlight></codeline>
 <codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>loop_data-&gt;<ref refid="structs__loop__data_1a9b704dd9ec48db6a19721c14de0cb40b" kindref="member">tokens</ref><sp/>=<sp/><ref refid="tokens_8h_1a5482db056a3edf1a61079f863ba7dc99" kindref="member">tokenise</ref>(loop_data-&gt;<ref refid="structs__loop__data_1a5f49d9840e1d54bc67a8cfe91aa9123d" kindref="member">trimmed_input</ref>);</highlight></codeline>
@@ -280,25 +281,24 @@
 <codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="execute_8h_1a6f45c6b2374dd1d4eea803d3ba8879b2" kindref="member">handle_io_fd</ref>(data);</highlight></codeline>
 <codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="tokens_8h_1a3f6fbbc61bc797c26b4ece51216fbb67" kindref="member">loop_cleanup</ref>(loop_data-&gt;<ref refid="structs__loop__data_1a5f49d9840e1d54bc67a8cfe91aa9123d" kindref="member">trimmed_input</ref>,<sp/>loop_data-&gt;<ref refid="structs__loop__data_1a9b704dd9ec48db6a19721c14de0cb40b" kindref="member">tokens</ref>,<sp/>\</highlight></codeline>
-<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>loop_data-&gt;<ref refid="structs__loop__data_1a55b11635c9e942224b6fd0e2b149b250" kindref="member">prompt</ref>,<sp/>loop_data-&gt;<ref refid="structs__loop__data_1ac27fcff1e53a529b5f6a27dd21a28a91" kindref="member">tree</ref>);</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>loop_data-&gt;<ref refid="structs__loop__data_1a55b11635c9e942224b6fd0e2b149b250" kindref="member">prompt</ref>,<sp/>loop_data-&gt;<ref refid="structs__loop__data_1ac27fcff1e53a529b5f6a27dd21a28a91" kindref="member">tree</ref>);</highlight></codeline>
 <codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="51"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="52"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>test<sp/>some<sp/>thing<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="53"><highlight class="normal"></highlight></codeline>
-<codeline lineno="54" refid="main_8c_1a647f21a28344e1d9c643f4115516d7c9" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="main_8c_1a647f21a28344e1d9c643f4115516d7c9" kindref="member">main</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>argc,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>**argv,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>**envp)</highlight></codeline>
-<codeline lineno="55"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structs__minishell__data" kindref="compound">t_minishell_data</ref><sp/><sp/><sp/><sp/>data;</highlight></codeline>
-<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structs__loop__data" kindref="compound">t_loop_data</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>loop_data;</highlight></codeline>
-<codeline lineno="58"><highlight class="normal"></highlight></codeline>
-<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="tokens_8h_1a4e673b7c7d3f45e10377ab9f537b8bf9" kindref="member">print_maxishell</ref>();</highlight></codeline>
-<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="tokens_8h_1ab7986766cca35553aa796f6a732d856a" kindref="member">init_minishell_data</ref>(&amp;data,<sp/>envp);</highlight></codeline>
-<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="tokens_8h_1a41e7a8e4355566996a5984b4a31fb8fe" kindref="member">initialise</ref>(argc,<sp/>argv);</highlight></codeline>
-<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="main_8c_1abaf800210325f066cb9289aaae9e2c86" kindref="member">main_loop</ref>(&amp;data,<sp/>&amp;loop_data);</highlight></codeline>
-<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="tokens_8h_1a16d324fdb41b45b7e59af5eaab2e56bd" kindref="member">free_minishell_data</ref>(&amp;data);</highlight></codeline>
-<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="env_8h_1a2c192ab32512a4454973d916c1bff54e" kindref="member">free_env</ref>(data.<ref refid="structs__minishell__data_1a8a0b3f50c8893e061062e93115f3d723" kindref="member">envp</ref>);</highlight></codeline>
-<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(0);</highlight></codeline>
-<codeline lineno="66"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53" refid="main_8c_1a647f21a28344e1d9c643f4115516d7c9" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="main_8c_1a647f21a28344e1d9c643f4115516d7c9" kindref="member">main</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>argc,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>**argv,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>**envp)</highlight></codeline>
+<codeline lineno="54"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structs__minishell__data" kindref="compound">t_minishell_data</ref><sp/><sp/><sp/><sp/>data;</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structs__loop__data" kindref="compound">t_loop_data</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>loop_data;</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="tokens_8h_1a4e673b7c7d3f45e10377ab9f537b8bf9" kindref="member">print_maxishell</ref>();</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="tokens_8h_1ab7986766cca35553aa796f6a732d856a" kindref="member">init_minishell_data</ref>(&amp;data,<sp/>envp);</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="tokens_8h_1a41e7a8e4355566996a5984b4a31fb8fe" kindref="member">initialise</ref>(argc,<sp/>argv);</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="main_8c_1abaf800210325f066cb9289aaae9e2c86" kindref="member">main_loop</ref>(&amp;data,<sp/>&amp;loop_data);</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="tokens_8h_1a16d324fdb41b45b7e59af5eaab2e56bd" kindref="member">free_minishell_data</ref>(&amp;data);</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="env_8h_1a2c192ab32512a4454973d916c1bff54e" kindref="member">free_env</ref>(data.<ref refid="structs__minishell__data_1a8a0b3f50c8893e061062e93115f3d723" kindref="member">envp</ref>);</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(0);</highlight></codeline>
+<codeline lineno="65"><highlight class="normal">}</highlight></codeline>
     </programlisting>
     <location file="/Users/dimadem/Documents/GitHub/minishell/src/main.c"/>
   </compounddef>

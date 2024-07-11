@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['left_0',['left',['../structs__ast.html#ac3be51aa6a7ae13bd16b6ad0c7ac843c',1,'s_ast']]],
-  ['local_5fenv_1',['local_env',['../structs__minishell__data.html#a46b92ee58356d0f35174a79ed568253b',1,'s_minishell_data']]]
+  ['next_0',['next',['../structs__env.html#a3caf3df6eb72714ffcd4e22f9c94ecf2',1,'s_env::next'],['../structs__token.html#a5dae434205818bfc83a61809d4a34a29',1,'s_token::next']]]
 ];

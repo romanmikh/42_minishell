@@ -84,10 +84,8 @@
         <referencedby refid="export_8c_1a9572a06bde314d79d284738ffef37d8d" compoundref="export_8c" startline="46" endline="66">add_env</referencedby>
         <referencedby refid="env_8h_1aa2e361e75c8c044d588ec5c07b560659" compoundref="env_2env_8c" startline="33" endline="58">add_env_node</referencedby>
         <referencedby refid="input__checker_8c_1a8bd1dd00648c512046de42538bd97b8e" compoundref="input__checker_8c" startline="15" endline="32">check_operators_loop</referencedby>
-        <referencedby refid="redirection_2utils_8c_1a33d78aafe6a0e75e4fdfe3606cbd9348" compoundref="redirection_2utils_8c" startline="118" endline="141">extract_line</referencedby>
         <referencedby refid="libft_8h_1a1678f2722c7a602695a99e3edd948d35" compoundref="ft__exclude__delimiters_8c" startline="15" endline="20">ft_exclude_delimiters</referencedby>
         <referencedby refid="tokeniser_8c_1a35855ff1421748c284cbaa495e26ef92" compoundref="tokeniser_8c" startline="66" endline="89">handle_phrase</referencedby>
-        <referencedby refid="redirection_2utils_8c_1aa5a7db94bcb5970b93bff4df02b52108" compoundref="redirection_2utils_8c" startline="92" endline="116">read_from_fd</referencedby>
         <referencedby refid="tokens_8h_1a5482db056a3edf1a61079f863ba7dc99" compoundref="tokeniser_8c" startline="106" endline="121">tokenise</referencedby>
       </memberdef>
     </sectiondef>

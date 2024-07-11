@@ -17,10 +17,10 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/dimadem/Documents/GitHub/minishell/inc/tokens.h" line="50" column="13" bodyfile="/Users/dimadem/Documents/GitHub/minishell/inc/tokens.h" bodystart="50" bodyend="-1"/>
-        <referencedby refid="tokens_8h_1a665af377c02015d59f668e4b2b2434bf" compoundref="parser_8c" startline="19" endline="39">create_redir_node</referencedby>
-        <referencedby refid="execute_8h_1ace4c3a2246919797e40140123d79596a" compoundref="execute_8c" startline="41" endline="82">execute_ast</referencedby>
+        <referencedby refid="tokens_8h_1a665af377c02015d59f668e4b2b2434bf" compoundref="parser_8c" startline="21" endline="41">create_redir_node</referencedby>
+        <referencedby refid="execute_8h_1ace4c3a2246919797e40140123d79596a" compoundref="execute_8c" startline="37" endline="59">execute_ast</referencedby>
         <referencedby refid="tokens_8h_1a0a4196019426e41a9f5ec36835396e81" compoundref="clean__tree_8c" startline="37" endline="56">free_ast</referencedby>
-        <referencedby refid="tokens_8h_1a57973a9791a885be52c3b8b13cdf327e" compoundref="parser__helpers_8c" startline="15" endline="27">new_ast_node</referencedby>
+        <referencedby refid="tokens_8h_1a57973a9791a885be52c3b8b13cdf327e" compoundref="parser__helpers_8c" startline="21" endline="33">new_ast_node</referencedby>
         <referencedby refid="visualiser_8c_1a13ff81f002e065c8be81f93b1e3bfecf" compoundref="visualiser_8c" startline="35" endline="61">print_ast_node</referencedby>
       </memberdef>
       <memberdef kind="variable" id="structs__ast_1ab62d177d86a1908cf5bbdb5cf6e978f8" prot="public" static="no" mutable="no">
@@ -36,15 +36,15 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/dimadem/Documents/GitHub/minishell/inc/tokens.h" line="51" column="5" bodyfile="/Users/dimadem/Documents/GitHub/minishell/inc/tokens.h" bodystart="51" bodyend="-1"/>
-        <referencedby refid="tokens_8h_1a665af377c02015d59f668e4b2b2434bf" compoundref="parser_8c" startline="19" endline="39">create_redir_node</referencedby>
-        <referencedby refid="execute_8h_1ace4c3a2246919797e40140123d79596a" compoundref="execute_8c" startline="41" endline="82">execute_ast</referencedby>
+        <referencedby refid="tokens_8h_1a665af377c02015d59f668e4b2b2434bf" compoundref="parser_8c" startline="21" endline="41">create_redir_node</referencedby>
+        <referencedby refid="execute_8h_1ace4c3a2246919797e40140123d79596a" compoundref="execute_8c" startline="37" endline="59">execute_ast</referencedby>
         <referencedby refid="tokens_8h_1a0a4196019426e41a9f5ec36835396e81" compoundref="clean__tree_8c" startline="37" endline="56">free_ast</referencedby>
-        <referencedby refid="tokens_8h_1a89cb417ed5bc7db489f0249b3d3e3ec6" compoundref="parser__helpers_8c" startline="74" endline="86">manage_commands</referencedby>
-        <referencedby refid="tokens_8h_1a57973a9791a885be52c3b8b13cdf327e" compoundref="parser__helpers_8c" startline="15" endline="27">new_ast_node</referencedby>
-        <referencedby refid="redirection_8h_1a2fe566529f8c7046fe274f2b3a35b39b" compoundref="redirection_2utils_8c" startline="24" endline="39">open_file</referencedby>
+        <referencedby refid="tokens_8h_1a89cb417ed5bc7db489f0249b3d3e3ec6" compoundref="parser__helpers_8c" startline="80" endline="92">manage_commands</referencedby>
+        <referencedby refid="tokens_8h_1a57973a9791a885be52c3b8b13cdf327e" compoundref="parser__helpers_8c" startline="21" endline="33">new_ast_node</referencedby>
+        <referencedby refid="redirection_8h_1a2fe566529f8c7046fe274f2b3a35b39b" compoundref="redirection_2utils_8c" startline="32" endline="48">open_file</referencedby>
         <referencedby refid="visualiser_8c_1a13ff81f002e065c8be81f93b1e3bfecf" compoundref="visualiser_8c" startline="35" endline="61">print_ast_node</referencedby>
-        <referencedby refid="redirection_8h_1a0dc55a5a9752d658c1b8b6e3760f5813" compoundref="redirect__heredoc_8c" startline="17" endline="63">redirect_here_doc</referencedby>
-        <referencedby refid="tokens_8h_1ab5f23ff7ab59a241fa7476e6fca458cf" compoundref="parser__helpers_8c" startline="55" endline="72">set_command_args</referencedby>
+        <referencedby refid="redirection_8h_1a0dc55a5a9752d658c1b8b6e3760f5813" compoundref="redirect__heredoc_8c" startline="34" endline="60">redirect_here_doc</referencedby>
+        <referencedby refid="tokens_8h_1ab5f23ff7ab59a241fa7476e6fca458cf" compoundref="parser__helpers_8c" startline="61" endline="78">set_command_args</referencedby>
       </memberdef>
       <memberdef kind="variable" id="structs__ast_1ac3be51aa6a7ae13bd16b6ad0c7ac843c" prot="public" static="no" mutable="no">
         <type>struct <ref refid="structs__ast" kindref="compound">s_ast</ref> *</type>
@@ -60,17 +60,17 @@
         </inbodydescription>
         <location file="/Users/dimadem/Documents/GitHub/minishell/inc/tokens.h" line="52" column="12" bodyfile="/Users/dimadem/Documents/GitHub/minishell/inc/tokens.h" bodystart="52" bodyend="-1"/>
         <referencedby refid="pipe_8h_1a7947b63271b47934f419fe6d217bf8df" compoundref="pipe_8c" startline="35" endline="60">builtin_pipe</referencedby>
-        <referencedby refid="parser_8c_1a2a00e61e381f3754b1bb8cc4d9906b9f" compoundref="parser_8c" startline="51" endline="59">clr_node</referencedby>
-        <referencedby refid="tokens_8h_1a66cf17aa7377cfb20adcaccdc1f38b1c" compoundref="parser__helpers_8c" startline="29" endline="40">create_redir</referencedby>
-        <referencedby refid="tokens_8h_1a665af377c02015d59f668e4b2b2434bf" compoundref="parser_8c" startline="19" endline="39">create_redir_node</referencedby>
+        <referencedby refid="parser_8c_1a2a00e61e381f3754b1bb8cc4d9906b9f" compoundref="parser_8c" startline="53" endline="61">clr_node</referencedby>
+        <referencedby refid="tokens_8h_1a66cf17aa7377cfb20adcaccdc1f38b1c" compoundref="parser__helpers_8c" startline="35" endline="46">create_redir</referencedby>
+        <referencedby refid="tokens_8h_1a665af377c02015d59f668e4b2b2434bf" compoundref="parser_8c" startline="21" endline="41">create_redir_node</referencedby>
         <referencedby refid="tokens_8h_1a0a4196019426e41a9f5ec36835396e81" compoundref="clean__tree_8c" startline="37" endline="56">free_ast</referencedby>
-        <referencedby refid="tokens_8h_1a42a514028763c0c9c9f12226556407fe" compoundref="parser_8c" startline="85" endline="111">manage_pipe</referencedby>
-        <referencedby refid="tokens_8h_1a57973a9791a885be52c3b8b13cdf327e" compoundref="parser__helpers_8c" startline="15" endline="27">new_ast_node</referencedby>
+        <referencedby refid="tokens_8h_1a42a514028763c0c9c9f12226556407fe" compoundref="parser_8c" startline="87" endline="113">manage_pipe</referencedby>
+        <referencedby refid="tokens_8h_1a57973a9791a885be52c3b8b13cdf327e" compoundref="parser__helpers_8c" startline="21" endline="33">new_ast_node</referencedby>
         <referencedby refid="visualiser_8c_1ac38cad433d858a530a7d7479f134f81c" compoundref="visualiser_8c" startline="91" endline="101">print_ast_graphical</referencedby>
-        <referencedby refid="redirection_8h_1a780ae5fe0eba6dcc6cab3a347507d636" compoundref="redirect__append_8c" startline="16" endline="34">redirect_append</referencedby>
-        <referencedby refid="redirection_8h_1a0dc55a5a9752d658c1b8b6e3760f5813" compoundref="redirect__heredoc_8c" startline="17" endline="63">redirect_here_doc</referencedby>
-        <referencedby refid="redirection_8h_1a2635bab3d0023f67288d2832903bdbd9" compoundref="redirect__in_8c" startline="23" endline="40">redirect_in</referencedby>
-        <referencedby refid="redirection_8h_1a13afb8e911eca2b32bd9e843eda752a5" compoundref="redirect__out_8c" startline="23" endline="41">redirect_out</referencedby>
+        <referencedby refid="redirection_8h_1a780ae5fe0eba6dcc6cab3a347507d636" compoundref="redirect__append_8c" startline="31" endline="49">redirect_append</referencedby>
+        <referencedby refid="redirection_8h_1a0dc55a5a9752d658c1b8b6e3760f5813" compoundref="redirect__heredoc_8c" startline="34" endline="60">redirect_here_doc</referencedby>
+        <referencedby refid="redirection_8h_1a2635bab3d0023f67288d2832903bdbd9" compoundref="redirect__in_8c" startline="38" endline="55">redirect_in</referencedby>
+        <referencedby refid="redirection_8h_1a13afb8e911eca2b32bd9e843eda752a5" compoundref="redirect__out_8c" startline="32" endline="50">redirect_out</referencedby>
       </memberdef>
       <memberdef kind="variable" id="structs__ast_1ac2c9513b20e9351e45d9bc6361095f7b" prot="public" static="no" mutable="no">
         <type>struct <ref refid="structs__ast" kindref="compound">s_ast</ref> *</type>
@@ -86,17 +86,17 @@
         </inbodydescription>
         <location file="/Users/dimadem/Documents/GitHub/minishell/inc/tokens.h" line="53" column="12" bodyfile="/Users/dimadem/Documents/GitHub/minishell/inc/tokens.h" bodystart="53" bodyend="-1"/>
         <referencedby refid="pipe_8h_1a7947b63271b47934f419fe6d217bf8df" compoundref="pipe_8c" startline="35" endline="60">builtin_pipe</referencedby>
-        <referencedby refid="parser_8c_1a2a00e61e381f3754b1bb8cc4d9906b9f" compoundref="parser_8c" startline="51" endline="59">clr_node</referencedby>
-        <referencedby refid="tokens_8h_1a66cf17aa7377cfb20adcaccdc1f38b1c" compoundref="parser__helpers_8c" startline="29" endline="40">create_redir</referencedby>
-        <referencedby refid="tokens_8h_1a665af377c02015d59f668e4b2b2434bf" compoundref="parser_8c" startline="19" endline="39">create_redir_node</referencedby>
+        <referencedby refid="parser_8c_1a2a00e61e381f3754b1bb8cc4d9906b9f" compoundref="parser_8c" startline="53" endline="61">clr_node</referencedby>
+        <referencedby refid="tokens_8h_1a66cf17aa7377cfb20adcaccdc1f38b1c" compoundref="parser__helpers_8c" startline="35" endline="46">create_redir</referencedby>
+        <referencedby refid="tokens_8h_1a665af377c02015d59f668e4b2b2434bf" compoundref="parser_8c" startline="21" endline="41">create_redir_node</referencedby>
         <referencedby refid="tokens_8h_1a0a4196019426e41a9f5ec36835396e81" compoundref="clean__tree_8c" startline="37" endline="56">free_ast</referencedby>
-        <referencedby refid="tokens_8h_1a42a514028763c0c9c9f12226556407fe" compoundref="parser_8c" startline="85" endline="111">manage_pipe</referencedby>
-        <referencedby refid="tokens_8h_1a57973a9791a885be52c3b8b13cdf327e" compoundref="parser__helpers_8c" startline="15" endline="27">new_ast_node</referencedby>
+        <referencedby refid="tokens_8h_1a42a514028763c0c9c9f12226556407fe" compoundref="parser_8c" startline="87" endline="113">manage_pipe</referencedby>
+        <referencedby refid="tokens_8h_1a57973a9791a885be52c3b8b13cdf327e" compoundref="parser__helpers_8c" startline="21" endline="33">new_ast_node</referencedby>
         <referencedby refid="visualiser_8c_1ac38cad433d858a530a7d7479f134f81c" compoundref="visualiser_8c" startline="91" endline="101">print_ast_graphical</referencedby>
-        <referencedby refid="redirection_8h_1a780ae5fe0eba6dcc6cab3a347507d636" compoundref="redirect__append_8c" startline="16" endline="34">redirect_append</referencedby>
-        <referencedby refid="redirection_8h_1a0dc55a5a9752d658c1b8b6e3760f5813" compoundref="redirect__heredoc_8c" startline="17" endline="63">redirect_here_doc</referencedby>
-        <referencedby refid="redirection_8h_1a2635bab3d0023f67288d2832903bdbd9" compoundref="redirect__in_8c" startline="23" endline="40">redirect_in</referencedby>
-        <referencedby refid="redirection_8h_1a13afb8e911eca2b32bd9e843eda752a5" compoundref="redirect__out_8c" startline="23" endline="41">redirect_out</referencedby>
+        <referencedby refid="redirection_8h_1a780ae5fe0eba6dcc6cab3a347507d636" compoundref="redirect__append_8c" startline="31" endline="49">redirect_append</referencedby>
+        <referencedby refid="redirection_8h_1a0dc55a5a9752d658c1b8b6e3760f5813" compoundref="redirect__heredoc_8c" startline="34" endline="60">redirect_here_doc</referencedby>
+        <referencedby refid="redirection_8h_1a2635bab3d0023f67288d2832903bdbd9" compoundref="redirect__in_8c" startline="38" endline="55">redirect_in</referencedby>
+        <referencedby refid="redirection_8h_1a13afb8e911eca2b32bd9e843eda752a5" compoundref="redirect__out_8c" startline="32" endline="50">redirect_out</referencedby>
       </memberdef>
     </sectiondef>
     <briefdescription>

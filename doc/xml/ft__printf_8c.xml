@@ -113,7 +113,7 @@
         <references refid="libft_8h_1a8d58f57c578f3dbcf2615448216bd43b" compoundref="ft__print__char_8c" startline="15" endline="19">ft_print_char</references>
         <referencedby refid="tokeniser_8c_1a596263e54e7fc7ea1bde318a1da5cdc6" compoundref="tokeniser_8c" startline="49" endline="64">append_phrase_if_valid</referencedby>
         <referencedby refid="tokens_8h_1a8ba7929cbd2a023ebba26c83879e553c" compoundref="input__checker_8c" startline="99" endline="110">input_error_checks</referencedby>
-        <referencedby refid="tokens_8h_1a4e673b7c7d3f45e10377ab9f537b8bf9" compoundref="prompt_8c" startline="90" endline="111">print_maxishell</referencedby>
+        <referencedby refid="tokens_8h_1a4e673b7c7d3f45e10377ab9f537b8bf9" compoundref="prompt_8c" startline="69" endline="90">print_maxishell</referencedby>
         <referencedby refid="tokens_8h_1af90eff9f4a4a22eec7f50142c9e1b591" compoundref="stack__control_8c" startline="36" endline="49">print_stack</referencedby>
       </memberdef>
     </sectiondef>

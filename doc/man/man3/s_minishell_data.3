@@ -30,9 +30,6 @@ s_minishell_data
 .RI "int \fBstd_err\fP"
 .br
 .ti -1c
-.RI "const char * \fBheredoc_delimiter\fP"
-.br
-.ti -1c
 .RI "char * \fBcurrent_dir\fP"
 .br
 .ti -1c
@@ -53,7 +50,7 @@ Referenced by \fBadd_env()\fP, \fBbuiltin_cd()\fP, \fBbuiltin_echo()\fP, \fBbuil
 .SS "char* s_minishell_data::current_dir"
 
 .PP
-Definition at line \fB27\fP of file \fBshell\&.h\fP\&.
+Definition at line \fB26\fP of file \fBshell\&.h\fP\&.
 .PP
 Referenced by \fBfree_minishell_data()\fP, and \fBinit_minishell_data()\fP\&.
 .SS "\fBt_env\fP* s_minishell_data::envp"
@@ -65,13 +62,9 @@ Referenced by \fBadd_env()\fP, \fBbuiltin_cd()\fP, \fBbuiltin_env()\fP, \fBbuilt
 .SS "int s_minishell_data::exit_status"
 
 .PP
-Definition at line \fB28\fP of file \fBshell\&.h\fP\&.
+Definition at line \fB27\fP of file \fBshell\&.h\fP\&.
 .PP
-Referenced by \fBbuiltin_exit()\fP, \fBbuiltin_unset()\fP, \fBinit_minishell_data()\fP, \fBnew_process()\fP, and \fBredirect_in()\fP\&.
-.SS "const char* s_minishell_data::heredoc_delimiter"
-
-.PP
-Definition at line \fB26\fP of file \fBshell\&.h\fP\&.
+Referenced by \fBbuiltin_exit()\fP, \fBbuiltin_unset()\fP, \fBexecute_child()\fP, \fBinit_minishell_data()\fP, \fBnew_process()\fP, and \fBredirect_in()\fP\&.
 .SS "\fBt_env\fP* s_minishell_data::local_env"
 
 .PP
@@ -89,7 +82,7 @@ Referenced by \fBinit_minishell_data()\fP\&.
 .PP
 Definition at line \fB23\fP of file \fBshell\&.h\fP\&.
 .PP
-Referenced by \fBbuiltin_pipe()\fP, \fBgenerate_prompt()\fP, \fBhandle_io_fd()\fP, \fBinit_minishell_data()\fP, \fBnew_process()\fP, \fBredirect_here_doc()\fP, and \fBredirect_in()\fP\&.
+Referenced by \fBbuiltin_pipe()\fP, \fBexecute_child()\fP, \fBgenerate_prompt()\fP, \fBhandle_io_fd()\fP, \fBinit_minishell_data()\fP, \fBnew_process()\fP, and \fBredirect_in()\fP\&.
 .SS "int s_minishell_data::std_out"
 
 .PP

@@ -8,6 +8,5 @@ var searchData=
   ['handle_5ftemp_5ffd_5',['handle_temp_fd',['../utils__0_8c.html#a8f9d65fb9405c61cf1e58b429f4f5728',1,'utils_0.c']]],
   ['heredoc_6',['heredoc',['../tokens_8h.html#a132ce43db3d4fba988a166e932845375',1,'heredoc(char *eof):&#160;heredoc.c'],['../heredoc_8c.html#a132ce43db3d4fba988a166e932845375',1,'heredoc(char *eof):&#160;heredoc.c']]],
   ['heredoc_2ec_7',['heredoc.c',['../heredoc_8c.html',1,'']]],
-  ['heredoc_5fdelimiter_8',['heredoc_delimiter',['../structs__minishell__data.html#ab5977108384c093aac9e05ce4d13c566',1,'s_minishell_data']]],
-  ['history_5fpath_9',['HISTORY_PATH',['../tokens_8h.html#a32f7389f2a161bbbb128130ca37ef8e1',1,'tokens.h']]]
+  ['history_5fpath_8',['HISTORY_PATH',['../tokens_8h.html#a32f7389f2a161bbbb128130ca37ef8e1',1,'tokens.h']]]
 ];

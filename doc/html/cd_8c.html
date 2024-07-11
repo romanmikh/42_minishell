@@ -195,7 +195,7 @@ Functions</h2></td></tr>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="shell_8h_source.html#l00020">s_minishell_data::args</a>, <a class="el" href="shell_8h_source.html#l00021">s_minishell_data::envp</a>, <a class="el" href="ft__putstr__fd_8c_source.html#l00020">ft_putstr_fd()</a>, <a class="el" href="env_2env_8c_source.html#l00060">get_env()</a>, and <a class="el" href="env_2env_8c_source.html#l00079">set_env()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="execute_8c_source.html#l00093">execute()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="execute_8c_source.html#l00070">execute()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -225,32 +225,40 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="cd_8c_a90c33b349e024075c96efdc320f7138f_icgraph.png" border="0" usemap="#acd_8c_a90c33b349e024075c96efdc320f7138f_icgraph" alt=""/></div>
 <map name="acd_8c_a90c33b349e024075c96efdc320f7138f_icgraph" id="acd_8c_a90c33b349e024075c96efdc320f7138f_icgraph">
-<area shape="rect" title=" " alt="" coords="568,153,644,179"/>
-<area shape="rect" href="execute_8c.html#a825187f25304f9bd1a3e7a5e97327801" title="execute distribution function checks if the command is a builtin or a new process" alt="" coords="452,153,520,179"/>
-<area shape="poly" title=" " alt="" coords="552,169,520,169,520,164,552,164"/>
-<area shape="rect" href="execute_8c.html#ace4c3a2246919797e40140123d79596a" title="execute Abstract Syntax Tree" alt="" coords="312,153,404,179"/>
-<area shape="poly" title=" " alt="" coords="437,169,405,169,405,164,437,164"/>
-<area shape="rect" href="pipe_8c.html#a3a1c19716357baba879b799300b3c077" title="execute child process in the pipe context" alt="" coords="151,55,253,80"/>
-<area shape="poly" title=" " alt="" coords="331,145,299,119,263,94,241,83,243,78,265,89,302,115,334,141"/>
-<area shape="rect" href="main_8c.html#abaf800210325f066cb9289aaae9e2c86" title=" " alt="" coords="162,5,242,31"/>
-<area shape="poly" title=" " alt="" coords="341,141,309,92,287,67,262,44,241,32,244,28,266,40,291,63,313,89,345,138"/>
-<area shape="rect" href="redirect__append_8c.html#a780ae5fe0eba6dcc6cab3a347507d636" title="redirect append &quot;&gt;&gt;&quot; to the end of the file output" alt="" coords="145,104,259,130"/>
-<area shape="poly" title=" " alt="" coords="296,158,224,133,226,128,298,153"/>
-<area shape="rect" href="redirect__heredoc_8c.html#a0dc55a5a9752d658c1b8b6e3760f5813" title="This function handle &quot;&lt;&lt;&quot; heredoc functionality." alt="" coords="140,153,264,179"/>
-<area shape="poly" title=" " alt="" coords="296,178,265,178,265,172,296,172"/>
-<area shape="rect" href="redirect__in_8c.html#a2635bab3d0023f67288d2832903bdbd9" title="redirection input in context of executing AST" alt="" coords="161,203,243,228"/>
-<area shape="poly" title=" " alt="" coords="322,188,244,213,242,208,321,183"/>
-<area shape="rect" href="redirect__out_8c.html#a13afb8e911eca2b32bd9e843eda752a5" title="redirect out &quot;&gt;&quot; to the file output" alt="" coords="157,252,247,278"/>
-<area shape="poly" title=" " alt="" coords="342,193,308,225,265,255,248,264,246,259,263,251,305,221,339,189"/>
-<area shape="rect" href="pipe_8c.html#a7947b63271b47934f419fe6d217bf8df" title="execute pipe when | is found in the command" alt="" coords="5,179,92,204"/>
-<area shape="poly" title=" " alt="" coords="148,90,141,94,116,114,94,138,61,180,57,176,89,134,112,110,138,89,145,85"/>
-<area shape="poly" title=" " alt="" coords="67,216,98,256,118,274,141,288,174,300,202,305,230,301,263,288,294,265,319,235,338,204,349,178,354,181,342,206,324,238,298,269,265,292,232,306,202,310,173,306,139,293,115,278,94,259,63,220"/>
-<area shape="rect" href="main_8c.html#a647f21a28344e1d9c643f4115516d7c9" title=" " alt="" coords="24,5,73,31"/>
-<area shape="poly" title=" " alt="" coords="146,21,74,21,74,16,146,16"/>
-<area shape="poly" title=" " alt="" coords="275,128,336,150,335,155,273,133"/>
-<area shape="poly" title=" " alt="" coords="280,155,312,155,311,161,280,160"/>
-<area shape="poly" title=" " alt="" coords="238,194,311,170,312,175,239,199"/>
-<area shape="poly" title=" " alt="" coords="229,243,263,227,299,202,330,177,334,182,302,206,265,231,231,247"/>
+<area shape="rect" title=" " alt="" coords="985,205,1061,231"/>
+<area shape="rect" href="execute_8c.html#ae9738c8104774062bc2934b701fe96d9" title="execute distribution function" alt="" coords="869,205,937,231"/>
+<area shape="poly" title=" " alt="" coords="969,221,937,221,937,216,969,216"/>
+<area shape="rect" href="execute_8c.html#ace4c3a2246919797e40140123d79596a" title="execute Abstract Syntax Tree" alt="" coords="729,205,821,231"/>
+<area shape="poly" title=" " alt="" coords="854,221,822,221,822,216,854,216"/>
+<area shape="rect" href="redirect__heredoc_8c.html#a0a43624bb8557b365fdd6406f70e97ed" title=" " alt="" coords="574,55,675,80"/>
+<area shape="poly" title=" " alt="" coords="755,194,723,148,679,102,652,83,655,79,683,97,727,145,760,190"/>
+<area shape="rect" href="pipe_8c.html#a3a1c19716357baba879b799300b3c077" title="execute child process in the pipe context" alt="" coords="574,356,675,382"/>
+<area shape="poly" title=" " alt="" coords="760,246,727,292,683,339,655,358,652,353,679,335,723,288,755,243"/>
+<area shape="rect" href="main_8c.html#abaf800210325f066cb9289aaae9e2c86" title=" " alt="" coords="584,5,665,31"/>
+<area shape="poly" title=" " alt="" coords="763,192,733,119,709,79,679,44,663,33,666,29,683,40,714,76,738,116,768,189"/>
+<area shape="rect" href="redirect__append_8c.html#a780ae5fe0eba6dcc6cab3a347507d636" title="redirect append &quot;&gt;&gt;&quot; to the end of the file output" alt="" coords="568,156,681,182"/>
+<area shape="poly" title=" " alt="" coords="713,210,645,185,647,180,715,205"/>
+<area shape="rect" href="redirect__in_8c.html#a2635bab3d0023f67288d2832903bdbd9" title="redirection input in context of executing AST" alt="" coords="584,205,665,231"/>
+<area shape="poly" title=" " alt="" coords="713,230,666,229,666,224,714,224"/>
+<area shape="rect" href="redirect__out_8c.html#a13afb8e911eca2b32bd9e843eda752a5" title="redirect out &quot;&gt;&quot; to the file output" alt="" coords="580,255,669,280"/>
+<area shape="poly" title=" " alt="" coords="740,240,670,264,668,259,738,235"/>
+<area shape="rect" href="redirect__heredoc_8c.html#a0dc55a5a9752d658c1b8b6e3760f5813" title="This function handle &quot;&lt;&lt;&quot; heredoc functionality." alt="" coords="395,80,520,106"/>
+<area shape="poly" title=" " alt="" coords="559,80,520,86,520,81,558,75"/>
+<area shape="poly" title=" " alt="" coords="536,99,608,114,682,141,729,172,763,203,760,207,725,176,680,146,607,119,535,104"/>
+<area shape="rect" href="pipe_8c.html#a7947b63271b47934f419fe6d217bf8df" title="execute pipe when | is found in the command" alt="" coords="414,331,501,356"/>
+<area shape="poly" title=" " alt="" coords="558,361,501,353,502,347,559,356"/>
+<area shape="poly" title=" " alt="" coords="516,335,596,320,639,307,680,290,725,260,760,229,763,233,729,265,682,295,640,312,597,325,517,340"/>
+<area shape="rect" href="pipe__test_8c.html#a4e02daca82e791c68ff9bf7c0ad25030" title=" " alt="" coords="232,331,347,356"/>
+<area shape="poly" title=" " alt="" coords="399,346,348,346,348,341,399,341"/>
+<area shape="rect" href="pipe__test_8c.html#a86787b58c336d2fef7bad648f36a0d81" title=" " alt="" coords="103,331,184,356"/>
+<area shape="poly" title=" " alt="" coords="216,346,185,346,185,341,216,341"/>
+<area shape="rect" href="test_2main_8c.html#a647f21a28344e1d9c643f4115516d7c9" title=" " alt="" coords="5,331,55,356"/>
+<area shape="poly" title=" " alt="" coords="87,346,55,346,55,341,87,341"/>
+<area shape="rect" href="main_8c.html#a647f21a28344e1d9c643f4115516d7c9" title=" " alt="" coords="433,5,482,31"/>
+<area shape="poly" title=" " alt="" coords="569,21,483,21,483,16,569,16"/>
+<area shape="poly" title=" " alt="" coords="697,181,754,202,752,207,695,186"/>
+<area shape="poly" title=" " alt="" coords="681,207,729,207,729,212,681,212"/>
+<area shape="poly" title=" " alt="" coords="659,246,728,222,729,227,661,251"/>
 </map>
 </div>
 

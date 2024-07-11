@@ -122,6 +122,7 @@
         </inbodydescription>
         <location file="/Users/dimadem/Documents/GitHub/minishell/src/utils/aux.c" line="15" column="5" bodyfile="/Users/dimadem/Documents/GitHub/minishell/src/utils/aux.c" bodystart="15" bodyend="21"/>
         <references refid="tokens_8h_1a32f7389f2a161bbbb128130ca37ef8e1" compoundref="tokens_8h" startline="27">HISTORY_PATH</references>
+        <referencedby refid="main_8c_1abaf800210325f066cb9289aaae9e2c86" compoundref="main_8c" startline="29" endline="51">main_loop</referencedby>
       </memberdef>
     </sectiondef>
     <briefdescription>

@@ -1,0 +1,40 @@
+.TH "/Users/dimadem/Documents/GitHub/minishell/src/parser/parser_utils.c" 3 "Version 1" "maxishell" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/Users/dimadem/Documents/GitHub/minishell/src/parser/parser_utils.c
+.SH SYNOPSIS
+.br
+.PP
+\fR#include 'tokens\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBt_ast\fP * \fBparse_tokens\fP (\fBt_token\fP **tokens)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "\fBt_ast\fP * parse_tokens (\fBt_token\fP ** tokens)"
+
+.PP
+Definition at line \fB17\fP of file \fBparser_utils\&.c\fP\&.
+.nf
+18 {
+19     if (!tokens || !*tokens)
+20         return (NULL);
+21     return (manage_pipe(tokens));
+22 }
+.PP
+.fi
+
+.PP
+References \fBmanage_pipe()\fP\&.
+.PP
+Referenced by \fBmain_loop()\fP\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for maxishell from the source code\&.

@@ -79,7 +79,7 @@ Definition at line \fB21\fP of file \fBecho\&.c\fP\&.
 24     int i;
 25 
 26     newline = 1;
-27     if (ft_strcmp(data\->args[1], "\-n") == 0)
+27     if (data\->args[1] && (ft_strcmp(data\->args[1], "\-n") == 0))
 28     {
 29         newline = 0;
 30         data\->args++;
@@ -131,9 +131,8 @@ Definition at line \fB26\fP of file \fBexit\&.c\fP\&.
 30     printf("\\nbuiltin_exit\\n");
 31     message = "exit\\n";
 32     write(STDOUT_FILENO, message, ft_strlen(message));
-33     // free_env(data\->envp);
-34     exit(data\->exit_status);
-35 }
+33     exit(data\->exit_status);
+34 }
 .PP
 .fi
 

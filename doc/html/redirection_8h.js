@@ -1,6 +1,5 @@
 var redirection_8h =
 [
-    [ "ft_get_next_line", "redirection_8h.html#a5feb28b63e00d9f45e4887ee15da4ab8", null ],
     [ "open_file", "redirection_8h.html#a2fe566529f8c7046fe274f2b3a35b39b", null ],
     [ "redirect_append", "redirection_8h.html#a780ae5fe0eba6dcc6cab3a347507d636", null ],
     [ "redirect_here_doc", "redirection_8h.html#a0dc55a5a9752d658c1b8b6e3760f5813", null ],

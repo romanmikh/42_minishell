@@ -86,7 +86,6 @@
         </inbodydescription>
         <location file="/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_memcpy.c" line="22" column="5" bodyfile="/Users/dimadem/Documents/GitHub/minishell/lib/libft/src/ft_memcpy.c" bodystart="22" bodyend="34"/>
         <referencedby refid="libft_8h_1a69673d42c601e17a8e682b592167c775" compoundref="ft__memmove_8c" startline="24" endline="43">ft_memmove</referencedby>
-        <referencedby refid="redirection_2utils_8c_1accf11845776c5585dc691f37a0f60b8f" compoundref="redirection_2utils_8c" startline="68" endline="90">ft_strjoin_gnl</referencedby>
         <referencedby refid="ft__split_8c_1a9ebd163b43c9f200b020184cbfe2d308" compoundref="ft__split_8c" startline="56" endline="66">strndup</referencedby>
       </memberdef>
     </sectiondef>

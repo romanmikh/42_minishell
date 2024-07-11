@@ -124,7 +124,7 @@
         <references refid="structs__minishell__data_1a8a0b3f50c8893e061062e93115f3d723" compoundref="shell_8h" startline="21">s_minishell_data::envp</references>
         <references refid="libft_8h_1a1f2ff2312e5994560c9537cd9173be94" compoundref="ft__strcmp_8c" startline="24" endline="34">ft_strcmp</references>
         <references refid="builtins_2env_8c_1a5b5d29d406a0fad6272b33c03b7793b4" compoundref="builtins_2env_8c" startline="26" endline="36">print_env_stack</references>
-        <referencedby refid="execute_8h_1a825187f25304f9bd1a3e7a5e97327801" compoundref="execute_8c" startline="93" endline="120">execute</referencedby>
+        <referencedby refid="execute_8c_1ae9738c8104774062bc2934b701fe96d9" compoundref="execute_8c" startline="70" endline="97">execute</referencedby>
       </memberdef>
     </sectiondef>
     <briefdescription>

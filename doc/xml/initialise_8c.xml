@@ -129,15 +129,15 @@
         </inbodydescription>
         <location file="/Users/dimadem/Documents/GitHub/minishell/src/utils/initialise.c" line="16" column="5" bodyfile="/Users/dimadem/Documents/GitHub/minishell/src/utils/initialise.c" bodystart="16" bodyend="27"/>
         <references refid="structs__minishell__data_1aeb4af268850af7d0f6d0c64f2bfefdea" compoundref="shell_8h" startline="20">s_minishell_data::args</references>
-        <references refid="structs__minishell__data_1a147731c1cf1a04c1fc1b85e6343cc7cc" compoundref="shell_8h" startline="27">s_minishell_data::current_dir</references>
+        <references refid="structs__minishell__data_1a147731c1cf1a04c1fc1b85e6343cc7cc" compoundref="shell_8h" startline="26">s_minishell_data::current_dir</references>
         <references refid="structs__minishell__data_1a8a0b3f50c8893e061062e93115f3d723" compoundref="shell_8h" startline="21">s_minishell_data::envp</references>
-        <references refid="structs__minishell__data_1a978016fddb1d9faa4fbda6859a9a199e" compoundref="shell_8h" startline="28">s_minishell_data::exit_status</references>
+        <references refid="structs__minishell__data_1a978016fddb1d9faa4fbda6859a9a199e" compoundref="shell_8h" startline="27">s_minishell_data::exit_status</references>
         <references refid="env_8h_1a2344221e4d3b1327b956157b837a727b" compoundref="env_2env_8c" startline="24" endline="31">init_env</references>
         <references refid="structs__minishell__data_1a46b92ee58356d0f35174a79ed568253b" compoundref="shell_8h" startline="22">s_minishell_data::local_env</references>
         <references refid="structs__minishell__data_1a5122e3a902d8f28e8b69576175f28c2b" compoundref="shell_8h" startline="25">s_minishell_data::std_err</references>
         <references refid="structs__minishell__data_1a9ed5685097b7e4b55c3c1307b70869ef" compoundref="shell_8h" startline="23">s_minishell_data::std_in</references>
         <references refid="structs__minishell__data_1ac90001aa8bc9a89b165ee6bca5f05ef3" compoundref="shell_8h" startline="24">s_minishell_data::std_out</references>
-        <referencedby refid="main_8c_1a647f21a28344e1d9c643f4115516d7c9" compoundref="main_8c" startline="54" endline="66">main</referencedby>
+        <referencedby refid="main_8c_1a647f21a28344e1d9c643f4115516d7c9" compoundref="main_8c" startline="53" endline="65">main</referencedby>
       </memberdef>
       <memberdef kind="function" id="initialise_8c_1a41e7a8e4355566996a5984b4a31fb8fe" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -160,7 +160,7 @@
         </inbodydescription>
         <location file="/Users/dimadem/Documents/GitHub/minishell/src/utils/initialise.c" line="29" column="5" bodyfile="/Users/dimadem/Documents/GitHub/minishell/src/utils/initialise.c" bodystart="29" bodyend="37"/>
         <references refid="tokens_8h_1a32f7389f2a161bbbb128130ca37ef8e1" compoundref="tokens_8h" startline="27">HISTORY_PATH</references>
-        <referencedby refid="main_8c_1a647f21a28344e1d9c643f4115516d7c9" compoundref="main_8c" startline="54" endline="66">main</referencedby>
+        <referencedby refid="main_8c_1a647f21a28344e1d9c643f4115516d7c9" compoundref="main_8c" startline="53" endline="65">main</referencedby>
       </memberdef>
     </sectiondef>
     <briefdescription>

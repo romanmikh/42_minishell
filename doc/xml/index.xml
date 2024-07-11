@@ -25,7 +25,6 @@
     <member refid="structs__minishell__data_1a9ed5685097b7e4b55c3c1307b70869ef" kind="variable"><name>std_in</name></member>
     <member refid="structs__minishell__data_1ac90001aa8bc9a89b165ee6bca5f05ef3" kind="variable"><name>std_out</name></member>
     <member refid="structs__minishell__data_1a5122e3a902d8f28e8b69576175f28c2b" kind="variable"><name>std_err</name></member>
-    <member refid="structs__minishell__data_1ab5977108384c093aac9e05ce4d13c566" kind="variable"><name>heredoc_delimiter</name></member>
     <member refid="structs__minishell__data_1a147731c1cf1a04c1fc1b85e6343cc7cc" kind="variable"><name>current_dir</name></member>
     <member refid="structs__minishell__data_1a978016fddb1d9faa4fbda6859a9a199e" kind="variable"><name>exit_status</name></member>
   </compound>
@@ -56,9 +55,7 @@
     <member refid="env_8h_1a2c192ab32512a4454973d916c1bff54e" kind="function"><name>free_env</name></member>
   </compound>
   <compound refid="execute_8h" kind="file"><name>execute.h</name>
-    <member refid="execute_8h_1a825187f25304f9bd1a3e7a5e97327801" kind="function"><name>execute</name></member>
     <member refid="execute_8h_1ace4c3a2246919797e40140123d79596a" kind="function"><name>execute_ast</name></member>
-    <member refid="execute_8h_1a82e1e73d725f74b5fdad62dd3a99bab5" kind="function"><name>new_process</name></member>
     <member refid="execute_8h_1a3de2eb0e796441d7b827cf213bd8d789" kind="function"><name>ft_find_path</name></member>
     <member refid="execute_8h_1a5d9d8b46bb6c3dbbc91e99b69bb63e9d" kind="function"><name>ft_free_2d_arr</name></member>
     <member refid="execute_8h_1aedc550f2251badad69cf4b6dfda183ef" kind="function"><name>ft_perror</name></member>
@@ -75,7 +72,6 @@
     <member refid="redirection_8h_1a780ae5fe0eba6dcc6cab3a347507d636" kind="function"><name>redirect_append</name></member>
     <member refid="redirection_8h_1a0dc55a5a9752d658c1b8b6e3760f5813" kind="function"><name>redirect_here_doc</name></member>
     <member refid="redirection_8h_1a2fe566529f8c7046fe274f2b3a35b39b" kind="function"><name>open_file</name></member>
-    <member refid="redirection_8h_1a5feb28b63e00d9f45e4887ee15da4ab8" kind="function"><name>ft_get_next_line</name></member>
   </compound>
   <compound refid="shell_8h" kind="file"><name>shell.h</name>
     <member refid="shell_8h_1a163dfbd200eaf940e5a56fd45345ff72" kind="typedef"><name>t_minishell_data</name></member>
@@ -454,11 +450,10 @@
   </compound>
   <compound refid="execute_8c" kind="file"><name>execute.c</name>
     <member refid="execute_8c_1ace4c3a2246919797e40140123d79596a" kind="function"><name>execute_ast</name></member>
-    <member refid="execute_8c_1a825187f25304f9bd1a3e7a5e97327801" kind="function"><name>execute</name></member>
-    <member refid="execute_8c_1a82e1e73d725f74b5fdad62dd3a99bab5" kind="function"><name>new_process</name></member>
+    <member refid="execute_8c_1ae9738c8104774062bc2934b701fe96d9" kind="function"><name>execute</name></member>
+    <member refid="execute_8c_1a3cfa5b6ea734d8db61dd8be0e0aa9ca8" kind="function"><name>new_process</name></member>
   </compound>
   <compound refid="utils__0_8c" kind="file"><name>utils_0.c</name>
-    <member refid="utils__0_8c_1a3de2eb0e796441d7b827cf213bd8d789" kind="function"><name>ft_find_path</name></member>
     <member refid="utils__0_8c_1a5d9d8b46bb6c3dbbc91e99b69bb63e9d" kind="function"><name>ft_free_2d_arr</name></member>
     <member refid="utils__0_8c_1aedc550f2251badad69cf4b6dfda183ef" kind="function"><name>ft_perror</name></member>
     <member refid="utils__0_8c_1ab9bcddf9275f12cc49348081000beb62" kind="function"><name>close_fds</name></member>
@@ -466,6 +461,8 @@
     <member refid="utils__0_8c_1a6f45c6b2374dd1d4eea803d3ba8879b2" kind="function"><name>handle_io_fd</name></member>
   </compound>
   <compound refid="utils__1_8c" kind="file"><name>utils_1.c</name>
+    <member refid="utils__1_8c_1a3de2eb0e796441d7b827cf213bd8d789" kind="function"><name>ft_find_path</name></member>
+    <member refid="utils__1_8c_1ac48357d68e0cbc48befd5e157c67c0d6" kind="function"><name>relative_path_handle</name></member>
   </compound>
   <compound refid="heredoc_8c" kind="file"><name>heredoc.c</name>
     <member refid="heredoc_8c_1a4e1b3e73a18dd66697cd7eac990b0363" kind="function"><name>check_heredoc</name></member>
@@ -483,12 +480,11 @@
     <member refid="input__checker__helpers_8c_1a04ef790ab9a9ed430a25b0a6d6cc95b5" kind="function"><name>valid_operator</name></member>
   </compound>
   <compound refid="parser_8c" kind="file"><name>parser.c</name>
-    <member refid="parser_8c_1a2a00e61e381f3754b1bb8cc4d9906b9f" kind="function"><name>clr_node</name></member>
-    <member refid="parser_8c_1ac5e108e945caf03bd60f26514c270963" kind="function"><name>manage_redirs</name></member>
     <member refid="parser_8c_1a665af377c02015d59f668e4b2b2434bf" kind="function"><name>create_redir_node</name></member>
     <member refid="parser_8c_1a963f3ae14f7e2f5334b13c7a67deabbd" kind="function"><name>is_redir_node</name></member>
+    <member refid="parser_8c_1a2a00e61e381f3754b1bb8cc4d9906b9f" kind="function"><name>clr_node</name></member>
+    <member refid="parser_8c_1ac5e108e945caf03bd60f26514c270963" kind="function"><name>manage_redirs</name></member>
     <member refid="parser_8c_1a42a514028763c0c9c9f12226556407fe" kind="function"><name>manage_pipe</name></member>
-    <member refid="parser_8c_1a171ed3b5a6467eddcde6183a461caf02" kind="function"><name>parse_tokens</name></member>
   </compound>
   <compound refid="parser__helpers_8c" kind="file"><name>parser_helpers.c</name>
     <member refid="parser__helpers_8c_1a57973a9791a885be52c3b8b13cdf327e" kind="function"><name>new_ast_node</name></member>
@@ -496,6 +492,9 @@
     <member refid="parser__helpers_8c_1a4f595528e4e305887fda33e53258d602" kind="function"><name>arg_len</name></member>
     <member refid="parser__helpers_8c_1ab5f23ff7ab59a241fa7476e6fca458cf" kind="function"><name>set_command_args</name></member>
     <member refid="parser__helpers_8c_1a89cb417ed5bc7db489f0249b3d3e3ec6" kind="function"><name>manage_commands</name></member>
+  </compound>
+  <compound refid="parser__utils_8c" kind="file"><name>parser_utils.c</name>
+    <member refid="parser__utils_8c_1a171ed3b5a6467eddcde6183a461caf02" kind="function"><name>parse_tokens</name></member>
   </compound>
   <compound refid="tokeniser_8c" kind="file"><name>tokeniser.c</name>
     <member refid="tokeniser_8c_1a0e22b8f037ef12eb28986615da9b79a6" kind="function"><name>handle_special_chars</name></member>
@@ -517,6 +516,8 @@
   </compound>
   <compound refid="redirect__heredoc_8c" kind="file"><name>redirect_heredoc.c</name>
     <member refid="redirect__heredoc_8c_1a0dc55a5a9752d658c1b8b6e3760f5813" kind="function"><name>redirect_here_doc</name></member>
+    <member refid="redirect__heredoc_8c_1a15cf53350eb2877438bf504bd85fc36a" kind="function"><name>open_tmp_file</name></member>
+    <member refid="redirect__heredoc_8c_1a0a43624bb8557b365fdd6406f70e97ed" kind="function"><name>execute_child</name></member>
   </compound>
   <compound refid="redirect__in_8c" kind="file"><name>redirect_in.c</name>
     <member refid="redirect__in_8c_1a2635bab3d0023f67288d2832903bdbd9" kind="function"><name>redirect_in</name></member>
@@ -531,10 +532,6 @@
   </compound>
   <compound refid="redirection_2utils_8c" kind="file"><name>utils.c</name>
     <member refid="redirection_2utils_8c_1a2fe566529f8c7046fe274f2b3a35b39b" kind="function"><name>open_file</name></member>
-    <member refid="redirection_2utils_8c_1a5feb28b63e00d9f45e4887ee15da4ab8" kind="function"><name>ft_get_next_line</name></member>
-    <member refid="redirection_2utils_8c_1a33d78aafe6a0e75e4fdfe3606cbd9348" kind="function"><name>extract_line</name></member>
-    <member refid="redirection_2utils_8c_1aa5a7db94bcb5970b93bff4df02b52108" kind="function"><name>read_from_fd</name></member>
-    <member refid="redirection_2utils_8c_1accf11845776c5585dc691f37a0f60b8f" kind="function"><name>ft_strjoin_gnl</name></member>
   </compound>
   <compound refid="env__test_8c" kind="file"><name>env_test.c</name>
     <member refid="env__test_8c_1ac2c82e11f71bdaefecc5df644f06d7c9" kind="function"><name>env_tests</name></member>

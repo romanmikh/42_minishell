@@ -101,7 +101,7 @@
         <location file="/Users/dimadem/Documents/GitHub/minishell/src/builtins/pwd.c" line="23" column="4" bodyfile="/Users/dimadem/Documents/GitHub/minishell/src/builtins/pwd.c" bodystart="23" bodyend="37"/>
         <references refid="libft_8h_1aeb112152acfc553d58d61a5df38afcde" compoundref="ft__putendl__fd_8c" startline="21" endline="28">ft_putendl_fd</references>
         <references refid="libft_8h_1acefce9ac519f8f8b7d3fde33dbafe469" compoundref="ft__putstr__fd_8c" startline="20" endline="24">ft_putstr_fd</references>
-        <referencedby refid="execute_8h_1a825187f25304f9bd1a3e7a5e97327801" compoundref="execute_8c" startline="93" endline="120">execute</referencedby>
+        <referencedby refid="execute_8c_1ae9738c8104774062bc2934b701fe96d9" compoundref="execute_8c" startline="70" endline="97">execute</referencedby>
       </memberdef>
     </sectiondef>
     <briefdescription>
