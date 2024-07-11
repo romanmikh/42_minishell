@@ -6,7 +6,7 @@
 /*   By: dmdemirk <dmdemirk@student.42london.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/31 11:02:00 by dmdemirk          #+#    #+#             */
-/*   Updated: 2024/07/11 17:33:43 by dmdemirk         ###   ########.fr       */
+/*   Updated: 2024/07/11 18:42:17 by dmdemirk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,37 +39,19 @@ int	execute_ast(t_ast *node, t_minishell_data *data)
 	if (!node)
 		return (1);
 	if (node->type == PIPE)
-	{
-		printf(RED"PIPE\n"RESET);
 		return (builtin_pipe(node, data));
-	}
 	else if (node->type == ENV_VAR)
-	{
 		printf(BLU"ENV_VAR\n"RESET);
-	}
 	else if (node->type == REDIR_IN)
-	{
-		printf(GRN"REDIR_IN\n"RESET);
 		return (redirect_in(node, data));
-	}
 	else if (node->type == REDIR_OUT)
-	{
-		printf(CYA"REDIR_OUT\n"RESET);
 		return (redirect_out(node, data));
-	}
 	else if (node->type == REDIR_APPEND)
-	{
-		printf(CYA"REDIR_APPEND\n"RESET);
 		return (redirect_append(node, data));
-	}
 	else if (node->type == REDIR_HEREDOC)
-	{
-		printf(MAG"REDIR_HEREDOC\n"RESET);
 		return (redirect_here_doc(node, data));
-	}
 	else if (node->type == PHRASE)
 	{
-		printf(YEL"PHRASE\n"RESET);
 		data->args = node->args;
 		return (execute(data));
 	}

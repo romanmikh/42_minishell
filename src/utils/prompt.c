@@ -6,7 +6,7 @@
 /*   By: rmikhayl <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 13:58:23 by rmikhayl          #+#    #+#             */
-/*   Updated: 2024/06/26 14:54:11 by dmdemirk         ###   ########.fr       */
+/*   Updated: 2024/07/11 18:45:32 by dmdemirk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,24 +33,10 @@ char	*generate_prompt(t_minishell_data *data)
 	char	*prompt;
 	size_t	prompt_len;
 
-/*
-	 char	*pwd;
-	 char	*home_dir;
-
-	 home_dir = NULL;
-	 pwd = NULL;
-	 pwd = generate_prompt_string(data, pwd, home_dir);
-*/
 	if (data->std_in == -1)
 		prompt_len = ft_strlen("minishell:~> ") + 1;
 	else
 		prompt_len = ft_strlen("> ") + 1;
-/*
-	 prompt_len = ft_strlen("🌴\e[1m @maxishell:~> \e[m") + \
-	 		ft_strlen(get_env(data->envp, "LOGNAME")) + \
-	 		ft_strlen(pwd) + \
-	 		1;
-*/
 	prompt = (char *)malloc(prompt_len);
 	if (!prompt)
 		exit(EXIT_FAILURE);
@@ -58,13 +44,6 @@ char	*generate_prompt(t_minishell_data *data)
 		ft_strcpy(prompt, "minishell:~> ");
 	else
 		ft_strcpy(prompt, "> ");
-/*
-	ft_strcpy(prompt, "🌴\e[1m ");
-	ft_strcat(prompt, get_env(data->envp, "LOGNAME"));
-	ft_strcat(prompt, "@maxishell:");
-	ft_strcat(prompt, pwd);
-	ft_strcat(prompt, "> \e[m");
-*/
 	return (prompt);
 }
 

@@ -6,7 +6,7 @@
 /*   By: rmikhayl <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 13:23:26 by rmikhayl          #+#    #+#             */
-/*   Updated: 2024/07/11 16:03:10 by dmdemirk         ###   ########.fr       */
+/*   Updated: 2024/07/11 18:02:20 by dmdemirk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,12 @@
 int	status_handler(int status, t_loop_data *loop_data)
 {
 	if (status == WAIT_NEXT_COMMAND)
-		{
-			loop_cleanup(loop_data->trimmed_input, loop_data->tokens, \
-					loop_data->prompt, loop_data->tree);
-			return (0);
-		}
-		return (1);
+	{
+		loop_cleanup(loop_data->trimmed_input, loop_data->tokens, \
+				loop_data->prompt, loop_data->tree);
+		return (0);
+	}
+	return (1);
 }
 
 void	main_loop(t_minishell_data *data, t_loop_data *loop_data)
@@ -34,18 +34,18 @@ void	main_loop(t_minishell_data *data, t_loop_data *loop_data)
 	{
 		loop_data->prompt = generate_prompt(data);
 		loop_data->input = readline(loop_data->prompt);
-		// make_history(loop_data->input);
+		make_history(loop_data->input);
 		loop_data->trimmed_input = trim_input(loop_data->input);
 		input_error_checks(loop_data->trimmed_input);
 		loop_data->tokens = tokenise(loop_data->trimmed_input);
 		loop_data->tree = parse_tokens(&loop_data->tokens);
-        print_ast_root(loop_data->tree);
+		print_ast_root(loop_data->tree);
 		status = execute_ast(loop_data->tree, data);
-        if (status_handler(status, loop_data))
+		if (status_handler(status, loop_data))
 		{
 			handle_io_fd(data);
 			loop_cleanup(loop_data->trimmed_input, loop_data->tokens, \
-				loop_data->prompt, loop_data->tree);
+					loop_data->prompt, loop_data->tree);
 		}
 	}
 }

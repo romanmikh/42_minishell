@@ -6,7 +6,7 @@
 /*   By: dmdemirk <dmdemirk@student.42london.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 11:03:20 by dmdemirk          #+#    #+#             */
-/*   Updated: 2024/06/17 11:03:37 by dmdemirk         ###   ########.fr       */
+/*   Updated: 2024/07/11 18:44:58 by dmdemirk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,6 @@ void	pipe_tests(t_minishell_data *data)
 void	builtin_pipe_test(t_minishell_data *data)
 {
 	data->args = ft_split("ls -l | wc -l", ' ');
-	// builtin_pipe(node, data);
+	builtin_pipe(node, data);
 	assert(data->args != NULL);
 }

@@ -1,25 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stack_control_2.c                                  :+:      :+:    :+:   */
+/*   parser_utils.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rmikhayl <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: dmdemirk <dmdemirk@student.42london.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/05 13:32:45 by rmikhayl          #+#    #+#             */
-/*   Updated: 2024/07/11 18:45:52 by dmdemirk         ###   ########.fr       */
+/*   Created: 2024/07/11 18:52:00 by dmdemirk          #+#    #+#             */
+/*   Updated: 2024/07/11 18:52:07 by dmdemirk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "tokens.h"
 
-void	build_linked_list(t_token **tokens, char **argv)
-{
-	int	i;
+t_ast	*parse_tokens(t_token **tokens);
 
-	i = 0;
-	while (argv[i])
-	{
-		add_node(tokens, argv[i]);
-		i++;
-	}
+t_ast	*parse_tokens(t_token **tokens)
+{
+	if (!tokens || !*tokens)
+		return (NULL);
+	return (manage_pipe(tokens));
 }
