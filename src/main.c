@@ -14,6 +14,7 @@
 #include "execute.h"
 #include "shell.h"
 #include "pipe.h"
+#include "signals.h"
 
 int	status_handler(int status, t_loop_data *loop_data)
 {
@@ -57,6 +58,7 @@ int	main(int argc, char **argv, char **envp)
 
 	print_maxishell();
 	init_minishell_data(&data, envp);
+	init_signals();
 	initialise(argc, argv);
 	main_loop(&data, &loop_data);
 	free_minishell_data(&data);

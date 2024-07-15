@@ -48,6 +48,7 @@ REDIRECTION_DIR			=	$(SRC_DIR)/redirection
 BUILTINS_DIR			=	$(SRC_DIR)/builtins
 EXECUTE_DIR				=	$(SRC_DIR)/execute
 TEST_DIR				=	$(SRC_DIR)/test
+SIGNALS_DIR				=	$(SRC_DIR)/signals
 
 INCLUDES				=	-I./inc \
 							-I $(LIB_DIR)/libft/inc \
@@ -66,6 +67,7 @@ PIPE_SOURCES				=	$(wildcard $(PIPE_DIR)/*.c)
 REDIRECTION_SOURCES			=	$(wildcard $(REDIRECTION_DIR)/*.c)
 BUILTINS_SOURCES			=	$(wildcard $(BUILTINS_DIR)/*.c)
 EXECUTE_SOURCES				=	$(wildcard $(EXECUTE_DIR)/*.c)
+SIGNALS_SOURCES				=	$(wildcard $(SIGNALS_DIR)/*.c)
 
 MAIN_TEST_SOURCE			=	$(wildcard $(TEST_DIR)/*.c)
 ENV_TEST_SOURCES			=	$(wildcard $(TEST_DIR)/env/*.c)
@@ -83,7 +85,8 @@ SOURCES					=	$(MAIN_SOURCE) \
 							$(MAIN_TEST_SOURCE) \
 							$(ENV_TEST_SOURCES) \
 							$(PIPE_TEST_SOURCES) \
-							$(REDIRECTION_SOURCES)
+							$(REDIRECTION_SOURCES) \
+							$(SIGNALS_SOURCES)
 # Building
 BUILD_DIR				=	./build
 MAIN_OBJECT				=	$(patsubst $(SRC_DIR)/%.c, $(BUILD_DIR)/src/%.o, $(MAIN_SOURCE))
@@ -96,6 +99,8 @@ PIPE_OBJECTS				=	$(patsubst $(PIPE_DIR)/%.c, $(BUILD_DIR)/src/pipe/%.o, $(PIPE_
 REDIRECTION_OBJECTS			=	$(patsubst $(REDIRECTION_DIR)/%.c, $(BUILD_DIR)/src/redirection/%.o, $(REDIRECTION_SOURCES))
 BUILTINS_OBJECTS			=	$(patsubst $(BUILTINS_DIR)/%.c, $(BUILD_DIR)/src/builtins/%.o, $(BUILTINS_SOURCES))
 EXECUTE_OBJECTS				=	$(patsubst $(EXECUTE_DIR)/%.c, $(BUILD_DIR)/src/execute/%.o, $(EXECUTE_SOURCES))
+SIGNALS_OBJECTS				=	$(patsubst $(SIGNALS_DIR)/%.c, $(BUILD_DIR)/src/signals/%.o, $(SIGNALS_SOURCES))
+
 MAIN_TEST_OBJECT			=	$(patsubst $(TEST_DIR)/%.c, $(BUILD_DIR)/src/test/%.o, $(MAIN_TEST_SOURCE))
 ENV_TEST_OBJECTS			=	$(patsubst $(TEST_DIR)/env/%.c, $(BUILD_DIR)/src/test/env/%.o, $(ENV_TEST_SOURCES))
 PIPE_TEST_OBJECTS			=	$(patsubst $(TEST_DIR)/pipe/%.c, $(BUILD_DIR)/src/test/pipe/%.o, $(PIPE_TEST_SOURCES))
@@ -109,7 +114,8 @@ OBJECTS					=	$(MAIN_OBJECT) \
 							$(UTILS_OBJECTS) \
 							$(PARSER_OBJECTS) \
 							$(PIPE_OBJECTS)	\
-							$(REDIRECTION_OBJECTS)
+							$(REDIRECTION_OBJECTS) \
+							$(SIGNALS_OBJECTS)
 						
 TEST_OBJECTS			=	$(APP_OBJECTS) \
 							$(ENV_OBJECTS) \
@@ -159,6 +165,10 @@ $(BUILD_DIR)/src/pipe/%.o: $(PIPE_DIR)/%.c
 	@$(COMPILER) $(CFLAGS) $(INCLUDES) -c $< -o $@
 
 $(BUILD_DIR)/src/redirection/%.o: $(REDIRECTION_DIR)/%.c
+	@mkdir -p $(@D)
+	@$(COMPILER) $(CFLAGS) $(INCLUDES) -c $< -o $@
+
+$(BUILD_DIR)/src/signals/%.o: $(SIGNALS_DIR)/%.c
 	@mkdir -p $(@D)
 	@$(COMPILER) $(CFLAGS) $(INCLUDES) -c $< -o $@
 
