@@ -28,7 +28,11 @@
         "redirection.h": "c",
         "cdefs.h": "c",
         "wait.h": "c",
-        "stdlib.h": "c"
+        "stdlib.h": "c",
+        "signals.h": "c",
+        "array": "c",
+        "string": "c",
+        "string_view": "c"
     },
     "docwriter.style": "Doxygen",
     "docwriter.progress.trackFunctions": true,

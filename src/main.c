@@ -32,9 +32,20 @@ void	main_loop(t_minishell_data *data, t_loop_data *loop_data)
 	int	status;
 
 	while (1)
-	{
+	{	
+		if(g_signo == SIGINT || g_signo == SIGQUIT)
+		{
+			signals_handler(g_signo, data);
+			g_signo = 0;
+			continue ;
+		}
 		loop_data->prompt = generate_prompt(data);
 		loop_data->input = readline(loop_data->prompt);
+		if (loop_data->input == NULL)
+		{
+			write(STDOUT_FILENO, "exit\n", 5);
+			break ;
+		}
 		make_history(loop_data->input);
 		loop_data->trimmed_input = trim_input(loop_data->input);
 		input_error_checks(loop_data->trimmed_input);
