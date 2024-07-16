@@ -14,17 +14,18 @@
 # define SHELL_H
 
 # include "env.h"
+# include <signal.h>
 
 typedef struct s_minishell_data
 {
-	char	**args;
-	t_env	*envp;
-	t_env	*local_env;
-	int		std_in;
-	int		std_out;
-	int		std_err;
-	char	*current_dir;
-	int		exit_status;
+	char					**args;
+	t_env					*envp;
+	t_env					*local_env;
+	int						std_in;
+	int						std_out;
+	int						std_err;
+	char					*current_dir;
+	int						exit_status;
 }				t_minishell_data;
 
 #endif
