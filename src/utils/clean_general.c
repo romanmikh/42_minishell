@@ -6,7 +6,7 @@
 /*   By: rocky <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 14:56:25 by rocky             #+#    #+#             */
-/*   Updated: 2024/07/16 11:41:03 by dmdemirk         ###   ########.fr       */
+/*   Updated: 2024/07/17 14:45:30 by dmdemirk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,8 @@ void	free_minishell_data(t_minishell_data *data)
 {
 	if (data)
 	{
+		free_env_list(data->envp);
+		free_env_list(data->local_env);
 		free(data->current_dir);
 		if (data->std_in != STDIN_FILENO)
 			close(data->std_in);
@@ -51,7 +53,6 @@ void	free_minishell_data(t_minishell_data *data)
 			close(data->std_out);
 		if (data->std_err != STDERR_FILENO)
 			close(data->std_err);
-		free(data);
 	}
 }
 
