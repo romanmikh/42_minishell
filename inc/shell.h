@@ -6,7 +6,7 @@
 /*   By: dmdemirk <dmdemirk@student.42london.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 11:19:58 by dmdemirk          #+#    #+#             */
-/*   Updated: 2024/07/11 15:00:48 by dmdemirk         ###   ########.fr       */
+/*   Updated: 2024/07/17 17:02:13 by dmdemirk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,11 @@
 
 # include "env.h"
 # include <signal.h>
+# include <termios.h>
 
 typedef struct s_minishell_data
 {
+	struct termios			terminal;
 	char					**args;
 	t_env					*envp;
 	t_env					*local_env;
