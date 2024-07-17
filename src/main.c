@@ -6,7 +6,7 @@
 /*   By: rmikhayl <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 13:23:26 by rmikhayl          #+#    #+#             */
-/*   Updated: 2024/07/17 14:30:12 by dmdemirk         ###   ########.fr       */
+/*   Updated: 2024/07/17 14:53:05 by dmdemirk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,7 @@ void	main_loop(t_minishell_data *data, t_loop_data *loop_data)
 					loop_data->prompt, loop_data->tree);
 		}
 	}
+	free(loop_data->prompt);
 }
 
 int	main(int argc, char **argv, char **envp)
