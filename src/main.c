@@ -6,7 +6,7 @@
 /*   By: rmikhayl <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 13:23:26 by rmikhayl          #+#    #+#             */
-/*   Updated: 2024/07/11 18:02:20 by dmdemirk         ###   ########.fr       */
+/*   Updated: 2024/07/17 14:30:12 by dmdemirk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,13 +32,7 @@ void	main_loop(t_minishell_data *data, t_loop_data *loop_data)
 	int	status;
 
 	while (1)
-	{	
-		if(g_signo == SIGINT || g_signo == SIGQUIT)
-		{
-			signals_handler(g_signo, data);
-			g_signo = 0;
-			continue ;
-		}
+	{
 		loop_data->prompt = generate_prompt(data);
 		loop_data->input = readline(loop_data->prompt);
 		if (loop_data->input == NULL)
@@ -73,6 +67,5 @@ int	main(int argc, char **argv, char **envp)
 	initialise(argc, argv);
 	main_loop(&data, &loop_data);
 	free_minishell_data(&data);
-	free_env(data.envp);
 	return (0);
 }

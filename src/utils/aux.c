@@ -6,7 +6,7 @@
 /*   By: rocky <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/19 16:18:49 by rocky             #+#    #+#             */
-/*   Updated: 2024/06/19 16:19:03 by rocky            ###   ########.fr       */
+/*   Updated: 2024/07/17 14:29:19 by dmdemirk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 void	make_history(char *line)
 {
-	printf("line: %s\n", line);
 	if (*line)
 		add_history(line);
 	write_history(HISTORY_PATH);
