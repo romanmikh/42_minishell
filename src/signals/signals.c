@@ -6,7 +6,7 @@
 /*   By: dmdemirk <dmdemirk@student.42london.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/17 13:59:59 by dmdemirk          #+#    #+#             */
-/*   Updated: 2024/07/18 16:09:34 by dmdemirk         ###   ########.fr       */
+/*   Updated: 2024/07/18 16:42:07 by dmdemirk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void	set_signals_interactive(void)
 	struct sigaction	a;
 
 	sigquit_ignore();
-	ft_memset(&a, 0, sizeof(a));
+	sigemptyset(&a.sa_mask);
 	a.sa_handler = *signal_reset_prompt;
 	sigaction(SIGINT, &a, NULL);
 }
@@ -51,7 +51,7 @@ void	sigquit_ignore(void)
 {
 	struct sigaction	a;
 
-	ft_memset(&a, 0, sizeof(a));
+	sigemptyset(&a.sa_mask);
 	a.sa_handler = SIG_IGN;
 	sigaction(SIGQUIT, &a, NULL);
 }
@@ -60,7 +60,7 @@ void	set_signals_noninteractive(void)
 {
 	struct sigaction	a;
 
-	ft_memset(&a, 0, sizeof(a));
+	sigemptyset(&a.sa_mask);
 	a.sa_handler = &signal_print_newline;
 	sigaction(SIGINT, &a, NULL);
 	sigaction(SIGQUIT, &a, NULL);
