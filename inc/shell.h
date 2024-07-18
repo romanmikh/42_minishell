@@ -19,7 +19,7 @@
 
 typedef struct s_minishell_data
 {
-	struct termios			terminal;
+	struct termios			*terminal;
 	char					**args;
 	t_env					*envp;
 	t_env					*local_env;

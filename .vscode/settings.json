@@ -35,7 +35,12 @@
         "string_view": "c",
         "signal-defs.h": "c",
         "sigaction.h": "c",
-        "signal.h": "c"
+        "signal.h": "c",
+        "signum-generic.h": "c",
+        "features.h": "c",
+        "ioctl.h": "c",
+        "termios.h": "c",
+        "errno.h": "c"
     },
     "docwriter.style": "Doxygen",
     "docwriter.progress.trackFunctions": true,

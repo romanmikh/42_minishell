@@ -6,34 +6,63 @@
 /*   By: dmdemirk <dmdemirk@student.42london.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/17 13:59:59 by dmdemirk          #+#    #+#             */
-/*   Updated: 2024/07/17 17:04:12 by dmdemirk         ###   ########.fr       */
+/*   Updated: 2024/07/18 15:58:11 by dmdemirk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <unistd.h>
-#include <signal.h>
-#include <errno.h>
-#include <termios.h>
-#include <sys/ioctl.h>
 #include "signals.h"
+#include <readline/readline.h>
+#include <readline/history.h>
+#include <unistd.h>
+#include "libft.h"
 
-volatile sig_atomic_t	g_signo = 0;
+void	signal_reset_prompt(int	signo);
+void	set_signals_interactive(void);
+void	signal_print_newline(int signal);
+void	sigquit_ignore(void);
+void	set_signals_noninteractive(void);
 
-void	init_signals(void)
+void	signal_reset_prompt(int	signo)
 {
-	struct sigaction	signal_action;
-
-	signal_action.sa_handler = signal_handler;
-	sigemptyset(&signal_action.sa_mask);
-	signal_action.sa_flags = SA_RESTART;
-	sigaction(SIGINT, &signal_action, NULL);
-	sigaction(SIGQUIT, &signal_action, NULL);
+	(void)signo;
+	write(1, "\n", 1);
+	rl_on_new_line();
+	rl_replace_line("", 0);
+	rl_redisplay();
 }
 
-void	init_terminal(struct termios *terminal)
+void	set_signals_interactive(void)
 {
-	tcgetattr(STDIN_FILENO, terminal);
-	terminal->c_iflag &= ~ECHOCTL;
-	tcsetattr(STDIN_FILENO, TCSANOW, terminal);
+	struct sigaction	a;
+
+	sigquit_ignore();
+	ft_memset(&a, 0, sizeof(a));
+	a.sa_handler = *signal_reset_prompt;
+	sigaction(SIGINT, &a, NULL);
 }
+
+void	signal_print_newline(int signal)
+{
+	(void)signal;
+	rl_on_new_line();
+}
+
+void	sigquit_ignore(void)
+{
+	struct sigaction a;
+	
+	ft_memset(&a, 0, sizeof(a));
+	a.sa_handler = SIG_IGN;
+	sigaction(SIGQUIT, &a, NULL);
+}
+
+void	set_signals_noninteractive(void)
+{
+	struct sigaction a;
+	
+	ft_memset(&a, 0, sizeof(a));
+	a.sa_handler = &signal_print_newline;
+	sigaction(SIGINT, &a, NULL);
+	sigaction(SIGQUIT, &a, NULL);
+}
+
