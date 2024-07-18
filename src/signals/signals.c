@@ -6,7 +6,7 @@
 /*   By: dmdemirk <dmdemirk@student.42london.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/17 13:59:59 by dmdemirk          #+#    #+#             */
-/*   Updated: 2024/07/18 15:58:11 by dmdemirk         ###   ########.fr       */
+/*   Updated: 2024/07/18 16:09:34 by dmdemirk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,13 @@
 #include <unistd.h>
 #include "libft.h"
 
-void	signal_reset_prompt(int	signo);
+void	signal_reset_prompt(int signo);
 void	set_signals_interactive(void);
 void	signal_print_newline(int signal);
 void	sigquit_ignore(void);
 void	set_signals_noninteractive(void);
 
-void	signal_reset_prompt(int	signo)
+void	signal_reset_prompt(int signo)
 {
 	(void)signo;
 	write(1, "\n", 1);
@@ -49,8 +49,8 @@ void	signal_print_newline(int signal)
 
 void	sigquit_ignore(void)
 {
-	struct sigaction a;
-	
+	struct sigaction	a;
+
 	ft_memset(&a, 0, sizeof(a));
 	a.sa_handler = SIG_IGN;
 	sigaction(SIGQUIT, &a, NULL);
@@ -58,11 +58,10 @@ void	sigquit_ignore(void)
 
 void	set_signals_noninteractive(void)
 {
-	struct sigaction a;
-	
+	struct sigaction	a;
+
 	ft_memset(&a, 0, sizeof(a));
 	a.sa_handler = &signal_print_newline;
 	sigaction(SIGINT, &a, NULL);
 	sigaction(SIGQUIT, &a, NULL);
 }
-
