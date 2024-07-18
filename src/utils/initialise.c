@@ -6,12 +6,13 @@
 /*   By: rmikhayl <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/06 18:16:59 by rmikhayl          #+#    #+#             */
-/*   Updated: 2024/06/06 18:17:39 by rmikhayl         ###   ########.fr       */
+/*   Updated: 2024/07/18 15:58:43 by dmdemirk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "tokens.h"
 #include "env.h"
+#include "signals.h"
 
 void	init_minishell_data(t_minishell_data *data, char **envp)
 {

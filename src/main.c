@@ -6,7 +6,7 @@
 /*   By: rmikhayl <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 13:23:26 by rmikhayl          #+#    #+#             */
-/*   Updated: 2024/07/17 14:53:05 by dmdemirk         ###   ########.fr       */
+/*   Updated: 2024/07/18 16:02:15 by dmdemirk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,9 @@ void	main_loop(t_minishell_data *data, t_loop_data *loop_data)
 	while (1)
 	{
 		loop_data->prompt = generate_prompt(data);
+		set_signals_interactive();
 		loop_data->input = readline(loop_data->prompt);
+		set_signals_noninteractive();
 		if (loop_data->input == NULL)
 		{
 			write(STDOUT_FILENO, "exit\n", 5);
@@ -64,7 +66,6 @@ int	main(int argc, char **argv, char **envp)
 
 	print_maxishell();
 	init_minishell_data(&data, envp);
-	init_signals();
 	initialise(argc, argv);
 	main_loop(&data, &loop_data);
 	free_minishell_data(&data);
