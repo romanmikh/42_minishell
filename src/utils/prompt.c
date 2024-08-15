@@ -28,22 +28,25 @@ char	*generate_prompt(t_minishell_data *data);
 char	*generate_prompt_string(t_minishell_data *data, char *pwd, \
 				char *home_dir);
 
+
 char	*generate_prompt(t_minishell_data *data)
 {
 	char	*prompt;
 	size_t	prompt_len;
 
-	if (data->std_in == -1)
-		prompt_len = ft_strlen("minishell:~> ") + 1;
-	else
-		prompt_len = ft_strlen("> ") + 1;
+	prompt_len = strlen("🌴\e[1m @maxishell:~> \e[m") + \
+			strlen(getenv("LOGNAME")) + \
+			ft_strlen(getenv("PWD")) + \
+			1;
 	prompt = (char *)malloc(prompt_len);
 	if (!prompt)
 		exit(EXIT_FAILURE);
-	if (data->std_in == -1)
-		ft_strcpy(prompt, "minishell:~> ");
-	else
-		ft_strcpy(prompt, "> ");
+	ft_strcpy(prompt, "🌴\e[1m ");
+	ft_strcat(prompt, getenv("LOGNAME"));
+	ft_strcat(prompt, "@maxishell:~");
+	ft_strcat(prompt, getenv("PWD"));
+	ft_strcat(prompt, "> \e[m");
+	(void)data;
 	return (prompt);
 }
 
