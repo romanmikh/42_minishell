@@ -62,26 +62,29 @@ t_ast	*clr_node(t_token **tokens, t_token *next_token, t_ast *redirect_node)
 
 t_ast	*manage_redirs(t_token **tokens)
 {
-	t_token		*tmp;
+	t_token		*head;
 	t_ast		*redirect_node;
 	t_token		*next_token;
 
 	if (!*tokens)
 		return (NULL);
-	tmp = *tokens;
+	head = *tokens;
 	if (is_redir_node(*tokens))
-		return (create_redir(tokens, tmp));
+		return (create_redir(tokens, head));
 	while (*tokens && (*tokens)->next)
 	{
 		next_token = (*tokens)->next;
-		if (is_redir_node((*tokens)->next))
+		if (is_redir_node(next_token))
 		{
 			redirect_node = new_ast_node((*tokens)->next->type);
-			return (clr_node(tokens, next_token, redirect_node));
+			redirect_node->left = manage_commands(&head);
+			*tokens = next_token->next;
+			redirect_node->right = create_redir_node(next_token->next);
+			return (redirect_node);
 		}
 		*tokens = next_token;
 	}
-	return (manage_commands(&tmp));
+	return (manage_commands(&head));
 }
 
 t_ast	*manage_pipe(t_token **tokens)
