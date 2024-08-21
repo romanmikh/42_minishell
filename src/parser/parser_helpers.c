@@ -77,6 +77,56 @@ void	set_command_args(t_ast *command_node, t_token **tokens, \
 	command_node->args[arg_count] = NULL;
 }
 
+// expand environment variables or $? in a given argument
+char *expand_env_var(char *arg) {
+    if (strcmp(arg, "$?") == 0) {
+        return ft_strdup("Add return status logic here");
+    } else if (arg[0] == '$') {
+        char *env_value = getenv(arg + 1);
+        if (env_value) {
+            return ft_strdup(env_value);
+        }
+    }
+    return ft_strdup(arg);
+}
+
+// double & single quote expansion within PHRASE lists
+void post_process_command_args(t_ast *command_node, int arg_count) {
+    size_t len;
+    
+    for (int i = 0; i < arg_count; i++) {
+        char *arg = command_node->args[i];
+        char *processed_arg = NULL;
+        if (arg[0] == '$' || (arg[0] == '"' && arg[1] == '$')) {
+            if (arg[0] == '"') {
+                processed_arg = expand_env_var(arg + 1);
+                if (processed_arg[strlen(processed_arg) - 1] == '"') {
+                    processed_arg[strlen(processed_arg) - 1] = '\0';
+                }
+            } else {
+                processed_arg = expand_env_var(arg);
+            }
+            printf(GRN"Expanded argument: %s\n"RESET, processed_arg);
+        } else if (arg[0] == '\'') {
+            processed_arg = ft_strdup(arg);
+            printf(GRN"Unmodified argument: %s\n"RESET, processed_arg);
+        } else {
+            processed_arg = ft_strdup(arg);
+        }
+        free(command_node->args[i]);
+        command_node->args[i] = processed_arg;
+    }
+    for (int i = 0; i < arg_count; i++) {
+        char *arg = command_node->args[i];
+        len = strlen(arg);
+        if ((arg[0] == '"' && arg[len - 1] == '"') || (arg[0] == '\'' && arg[len - 1] == '\'')) {
+            char *trimmed_arg = ft_strndup(arg + 1, len - 2);
+            free(command_node->args[i]);
+            command_node->args[i] = trimmed_arg;
+        }
+    }
+}
+
 t_ast	*manage_commands(t_token **tokens)
 {
 	t_ast		*command_node;
@@ -88,5 +138,6 @@ t_ast	*manage_commands(t_token **tokens)
 	if (!command_node->args)
 		return (NULL);
 	set_command_args(command_node, tokens, arg_count);
+	post_process_command_args(command_node, arg_count);
 	return (command_node);
 }
