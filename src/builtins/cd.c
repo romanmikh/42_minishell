@@ -23,7 +23,7 @@
    - If the target directory does not exist, print an error message
  */
 
-int	builtin_cd(t_minishell_data *data)
+int	builtin_cd(t_ms_data *data)
 {
 	char	*target_dir;
 	char	*home_dir;

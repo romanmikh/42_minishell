@@ -18,7 +18,7 @@
 		- Print the argument
 */
 
-int	builtin_echo(t_minishell_data *data)
+int	builtin_echo(t_ms_data *data)
 {
 	int	newline;
 	int	i;

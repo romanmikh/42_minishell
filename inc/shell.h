@@ -17,7 +17,7 @@
 # include <signal.h>
 # include <termios.h>
 
-typedef struct s_minishell_data
+typedef struct s_ms_data
 {
 	struct termios			*terminal;
 	char					**args;
@@ -28,6 +28,6 @@ typedef struct s_minishell_data
 	int						std_err;
 	char					*current_dir;
 	int						exit_status;
-}				t_minishell_data;
+}				t_ms_data;
 
 #endif

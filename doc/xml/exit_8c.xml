@@ -89,10 +89,10 @@
       <memberdef kind="function" id="exit_8c_1a6a7d93447961b415c9c16ebdfcd3d5fa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
         <definition>int builtin_exit</definition>
-        <argsstring>(t_minishell_data *data)</argsstring>
+        <argsstring>(t_ms_data *data)</argsstring>
         <name>builtin_exit</name>
         <param>
-          <type><ref refid="shell_8h_1a163dfbd200eaf940e5a56fd45345ff72" kindref="member">t_minishell_data</ref> *</type>
+          <type><ref refid="shell_8h_1a163dfbd200eaf940e5a56fd45345ff72" kindref="member">t_ms_data</ref> *</type>
           <declname>data</declname>
         </param>
         <briefdescription>
@@ -102,7 +102,7 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/dimadem/Documents/GitHub/minishell/src/builtins/exit.c" line="26" column="4" bodyfile="/Users/dimadem/Documents/GitHub/minishell/src/builtins/exit.c" bodystart="26" bodyend="34"/>
-        <references refid="structs__minishell__data_1a978016fddb1d9faa4fbda6859a9a199e" compoundref="shell_8h" startline="27">s_minishell_data::exit_status</references>
+        <references refid="structs__minishell__data_1a978016fddb1d9faa4fbda6859a9a199e" compoundref="shell_8h" startline="27">s_ms_data::exit_status</references>
         <references refid="libft_8h_1abbb8c6c4ed85d892e7f1509f65f5768a" compoundref="ft__strlen_8c" startline="15" endline="23">ft_strlen</references>
         <referencedby refid="execute_8c_1ae9738c8104774062bc2934b701fe96d9" compoundref="execute_8c" startline="70" endline="97">execute</referencedby>
       </memberdef>
@@ -137,7 +137,7 @@
 <codeline lineno="23"><highlight class="comment">-<sp/>Exit<sp/>with<sp/>the<sp/>exit<sp/>status</highlight></codeline>
 <codeline lineno="24"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="25"><highlight class="normal"></highlight></codeline>
-<codeline lineno="26" refid="builtins_8h_1a6a7d93447961b415c9c16ebdfcd3d5fa" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="exit_8c_1a6a7d93447961b415c9c16ebdfcd3d5fa" kindref="member">builtin_exit</ref>(<ref refid="structs__minishell__data" kindref="compound">t_minishell_data</ref><sp/>*data)</highlight></codeline>
+<codeline lineno="26" refid="builtins_8h_1a6a7d93447961b415c9c16ebdfcd3d5fa" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="exit_8c_1a6a7d93447961b415c9c16ebdfcd3d5fa" kindref="member">builtin_exit</ref>(<ref refid="structs__minishell__data" kindref="compound">t_ms_data</ref><sp/>*data)</highlight></codeline>
 <codeline lineno="27"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/>*message;</highlight></codeline>
 <codeline lineno="29"><highlight class="normal"></highlight></codeline>

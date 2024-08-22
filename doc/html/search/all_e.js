@@ -11,7 +11,7 @@ var searchData=
   ['pipe_2ec_8',['pipe.c',['../pipe_8c.html',1,'']]],
   ['pipe_2eh_9',['pipe.h',['../pipe_8h.html',1,'']]],
   ['pipe_5ftest_2ec_10',['pipe_test.c',['../pipe__test_8c.html',1,'']]],
-  ['pipe_5ftests_11',['pipe_tests',['../pipe__test_8c.html#a86787b58c336d2fef7bad648f36a0d81',1,'pipe_tests(t_minishell_data *data):&#160;pipe_test.c'],['../test_8h.html#a86787b58c336d2fef7bad648f36a0d81',1,'pipe_tests(t_minishell_data *data):&#160;pipe_test.c']]],
+  ['pipe_5ftests_11',['pipe_tests',['../pipe__test_8c.html#a86787b58c336d2fef7bad648f36a0d81',1,'pipe_tests(t_ms_data *data):&#160;pipe_test.c'],['../test_8h.html#a86787b58c336d2fef7bad648f36a0d81',1,'pipe_tests(t_ms_data *data):&#160;pipe_test.c']]],
   ['prev_12',['prev',['../structs__token.html#a5937fde6f83a598dbe93df2b06d95c7b',1,'s_token']]],
   ['print_5fast_5fgraphical_13',['print_ast_graphical',['../visualiser_8c.html#ac38cad433d858a530a7d7479f134f81c',1,'visualiser.c']]],
   ['print_5fast_5fnode_14',['print_ast_node',['../visualiser_8c.html#a13ff81f002e065c8be81f93b1e3bfecf',1,'visualiser.c']]],

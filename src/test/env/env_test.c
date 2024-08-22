@@ -16,13 +16,13 @@
 #include "shell.h"
 #include <stdio.h>
 
-void	env_tests(t_minishell_data *data, char **envp);
-void	test_init_env(t_minishell_data *data, char **envp);
-void	test_get_env(t_minishell_data *data, char **envp);
-void	test_set_env(t_minishell_data *data, char **envp);
-void	test_unset_env(t_minishell_data *data);
+void	env_tests(t_ms_data *data, char **envp);
+void	test_init_env(t_ms_data *data, char **envp);
+void	test_get_env(t_ms_data *data, char **envp);
+void	test_set_env(t_ms_data *data, char **envp);
+void	test_unset_env(t_ms_data *data);
 
-void	env_tests(t_minishell_data *data, char **envp)
+void	env_tests(t_ms_data *data, char **envp)
 {
 	printf("\nENV TESTS\n");
 	test_init_env(data, envp);
@@ -32,7 +32,7 @@ void	env_tests(t_minishell_data *data, char **envp)
 	free_env(data->envp);
 }
 
-void	test_init_env(t_minishell_data *data, char **envp)
+void	test_init_env(t_ms_data *data, char **envp)
 {
 	char	**test_envp;
 	int		envp_count;
@@ -54,7 +54,7 @@ void	test_init_env(t_minishell_data *data, char **envp)
 	printf("\033[0m");
 }
 
-void	test_get_env(t_minishell_data *data, char **envp)
+void	test_get_env(t_ms_data *data, char **envp)
 {
 	char	*value;
 
@@ -69,7 +69,7 @@ void	test_get_env(t_minishell_data *data, char **envp)
 	printf("\033[0m");
 }
 
-void	test_set_env(t_minishell_data *data, char **envp)
+void	test_set_env(t_ms_data *data, char **envp)
 {
 	char	*value;
 
@@ -85,7 +85,7 @@ void	test_set_env(t_minishell_data *data, char **envp)
 	printf("\033[0m");
 }
 
-void	test_unset_env(t_minishell_data *data)
+void	test_unset_env(t_ms_data *data)
 {
 	char	*value;
 

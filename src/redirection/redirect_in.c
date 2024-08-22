@@ -17,7 +17,7 @@
 #include <string.h>
 #include <sys/wait.h>
 
-int	redirect_in(t_ast *node, t_minishell_data *data);
+int	redirect_in(t_ast *node, t_ms_data *data);
 
 /*
    ! FIX
@@ -35,7 +35,7 @@ int	redirect_in(t_ast *node, t_minishell_data *data);
   - 1: error
  */
 
-int	redirect_in(t_ast *node, t_minishell_data *data)
+int	redirect_in(t_ast *node, t_ms_data *data)
 {
 	pid_t	pid;
 

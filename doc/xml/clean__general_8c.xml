@@ -124,7 +124,7 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/dimadem/Documents/GitHub/minishell/src/utils/clean_general.c" line="16" column="5" bodyfile="/Users/dimadem/Documents/GitHub/minishell/src/utils/clean_general.c" bodystart="16" bodyend="27"/>
-        <referencedby refid="tokens_8h_1a16d324fdb41b45b7e59af5eaab2e56bd" compoundref="clean__general_8c" startline="43" endline="53">free_minishell_data</referencedby>
+        <referencedby refid="tokens_8h_1a16d324fdb41b45b7e59af5eaab2e56bd" compoundref="clean__general_8c" startline="43" endline="53">free_ms_data</referencedby>
       </memberdef>
       <memberdef kind="function" id="clean__general_8c_1a9062b9b7e34cb35cb4b78c5251b020b0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -145,15 +145,15 @@
         <references refid="structs__env_1aac496ab31822220b5bf37affd2554f08" compoundref="env_8h" startline="18">s_env::key</references>
         <references refid="structs__env_1a3caf3df6eb72714ffcd4e22f9c94ecf2" compoundref="env_8h" startline="20">s_env::next</references>
         <references refid="structs__env_1aeed22f6fb6689d3a190d64d3e11d989f" compoundref="env_8h" startline="19">s_env::value</references>
-        <referencedby refid="tokens_8h_1a16d324fdb41b45b7e59af5eaab2e56bd" compoundref="clean__general_8c" startline="43" endline="53">free_minishell_data</referencedby>
+        <referencedby refid="tokens_8h_1a16d324fdb41b45b7e59af5eaab2e56bd" compoundref="clean__general_8c" startline="43" endline="53">free_ms_data</referencedby>
       </memberdef>
       <memberdef kind="function" id="clean__general_8c_1a16d324fdb41b45b7e59af5eaab2e56bd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
-        <definition>void free_minishell_data</definition>
-        <argsstring>(t_minishell_data *data)</argsstring>
-        <name>free_minishell_data</name>
+        <definition>void free_ms_data</definition>
+        <argsstring>(t_ms_data *data)</argsstring>
+        <name>free_ms_data</name>
         <param>
-          <type><ref refid="shell_8h_1a163dfbd200eaf940e5a56fd45345ff72" kindref="member">t_minishell_data</ref> *</type>
+          <type><ref refid="shell_8h_1a163dfbd200eaf940e5a56fd45345ff72" kindref="member">t_ms_data</ref> *</type>
           <declname>data</declname>
         </param>
         <briefdescription>
@@ -163,12 +163,12 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/dimadem/Documents/GitHub/minishell/src/utils/clean_general.c" line="43" column="5" bodyfile="/Users/dimadem/Documents/GitHub/minishell/src/utils/clean_general.c" bodystart="43" bodyend="53"/>
-        <references refid="structs__minishell__data_1aeb4af268850af7d0f6d0c64f2bfefdea" compoundref="shell_8h" startline="20">s_minishell_data::args</references>
-        <references refid="structs__minishell__data_1a147731c1cf1a04c1fc1b85e6343cc7cc" compoundref="shell_8h" startline="26">s_minishell_data::current_dir</references>
-        <references refid="structs__minishell__data_1a8a0b3f50c8893e061062e93115f3d723" compoundref="shell_8h" startline="21">s_minishell_data::envp</references>
+        <references refid="structs__minishell__data_1aeb4af268850af7d0f6d0c64f2bfefdea" compoundref="shell_8h" startline="20">s_ms_data::args</references>
+        <references refid="structs__minishell__data_1a147731c1cf1a04c1fc1b85e6343cc7cc" compoundref="shell_8h" startline="26">s_ms_data::current_dir</references>
+        <references refid="structs__minishell__data_1a8a0b3f50c8893e061062e93115f3d723" compoundref="shell_8h" startline="21">s_ms_data::envp</references>
         <references refid="clean__general_8c_1ae6e1002c1a56f5bfa4ea13de63d3deae" compoundref="clean__general_8c" startline="16" endline="27">free_args</references>
         <references refid="clean__general_8c_1a9062b9b7e34cb35cb4b78c5251b020b0" compoundref="clean__general_8c" startline="29" endline="41">free_env_list</references>
-        <references refid="structs__minishell__data_1a46b92ee58356d0f35174a79ed568253b" compoundref="shell_8h" startline="22">s_minishell_data::local_env</references>
+        <references refid="structs__minishell__data_1a46b92ee58356d0f35174a79ed568253b" compoundref="shell_8h" startline="22">s_ms_data::local_env</references>
         <referencedby refid="main_8c_1a647f21a28344e1d9c643f4115516d7c9" compoundref="main_8c" startline="53" endline="65">main</referencedby>
       </memberdef>
       <memberdef kind="function" id="clean__general_8c_1a3f6fbbc61bc797c26b4ece51216fbb67" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
@@ -251,7 +251,7 @@
 <codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="41"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="42"><highlight class="normal"></highlight></codeline>
-<codeline lineno="43" refid="tokens_8h_1a16d324fdb41b45b7e59af5eaab2e56bd" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="clean__general_8c_1a16d324fdb41b45b7e59af5eaab2e56bd" kindref="member">free_minishell_data</ref>(<ref refid="structs__minishell__data" kindref="compound">t_minishell_data</ref><sp/>*data)</highlight></codeline>
+<codeline lineno="43" refid="tokens_8h_1a16d324fdb41b45b7e59af5eaab2e56bd" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="clean__general_8c_1a16d324fdb41b45b7e59af5eaab2e56bd" kindref="member">free_ms_data</ref>(<ref refid="structs__minishell__data" kindref="compound">t_ms_data</ref><sp/>*data)</highlight></codeline>
 <codeline lineno="44"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(data)</highlight></codeline>
 <codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>

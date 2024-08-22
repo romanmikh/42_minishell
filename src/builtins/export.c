@@ -22,10 +22,10 @@ Functionalities:
 - If arguments are passed, set the environment variables
  */
 
-int		builtin_export(t_minishell_data *data);
-void	add_env(char *key, t_minishell_data *data);
+int		builtin_export(t_ms_data *data);
+void	add_env(char *key, t_ms_data *data);
 
-int	builtin_export(t_minishell_data *data)
+int	builtin_export(t_ms_data *data)
 {
 	t_env	*curr_node;
 	char	*key;
@@ -43,7 +43,7 @@ int	builtin_export(t_minishell_data *data)
 	return (0);
 }
 
-void	add_env(char *key, t_minishell_data *data)
+void	add_env(char *key, t_ms_data *data)
 {
 	int	i;
 

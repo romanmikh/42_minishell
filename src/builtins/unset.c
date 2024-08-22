@@ -23,7 +23,7 @@ Functionality:
 - Return 1 if the variable is not a valid identifier    
  */
 
-int	builtin_unset(t_minishell_data *data)
+int	builtin_unset(t_ms_data *data)
 {
 	int	i;
 	int	ret;

@@ -17,9 +17,9 @@
 #include <fcntl.h>
 #include <sys/wait.h>
 
-int			redirect_here_doc(t_ast *node, t_minishell_data *data);
+int			redirect_here_doc(t_ast *node, t_ms_data *data);
 static int	open_tmp_file(const char *type);
-static void	execute_child(t_ast *node, t_minishell_data *data, int *file_fd);
+static void	execute_child(t_ast *node, t_ms_data *data, int *file_fd);
 
 /**
   - @brief This function handle "<<" heredoc functionality
@@ -31,7 +31,7 @@ static void	execute_child(t_ast *node, t_minishell_data *data, int *file_fd);
   - 1: error
  */
 
-int	redirect_here_doc(t_ast *node, t_minishell_data *data)
+int	redirect_here_doc(t_ast *node, t_ms_data *data)
 {
 	char	*line;
 	char	*eof;
@@ -73,7 +73,7 @@ static int	open_tmp_file(const char *type)
 	return (file_fd);
 }
 
-static void	execute_child(t_ast *node, t_minishell_data *data, int *file_fd)
+static void	execute_child(t_ast *node, t_ms_data *data, int *file_fd)
 {
 	pid_t	pid;
 

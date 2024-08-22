@@ -86,10 +86,10 @@
       <memberdef kind="function" id="cd_8c_1a90c33b349e024075c96efdc320f7138f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
         <definition>int builtin_cd</definition>
-        <argsstring>(t_minishell_data *data)</argsstring>
+        <argsstring>(t_ms_data *data)</argsstring>
         <name>builtin_cd</name>
         <param>
-          <type><ref refid="shell_8h_1a163dfbd200eaf940e5a56fd45345ff72" kindref="member">t_minishell_data</ref> *</type>
+          <type><ref refid="shell_8h_1a163dfbd200eaf940e5a56fd45345ff72" kindref="member">t_ms_data</ref> *</type>
           <declname>data</declname>
         </param>
         <briefdescription>
@@ -99,8 +99,8 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/dimadem/Documents/GitHub/minishell/src/builtins/cd.c" line="26" column="4" bodyfile="/Users/dimadem/Documents/GitHub/minishell/src/builtins/cd.c" bodystart="26" bodyend="47"/>
-        <references refid="structs__minishell__data_1aeb4af268850af7d0f6d0c64f2bfefdea" compoundref="shell_8h" startline="20">s_minishell_data::args</references>
-        <references refid="structs__minishell__data_1a8a0b3f50c8893e061062e93115f3d723" compoundref="shell_8h" startline="21">s_minishell_data::envp</references>
+        <references refid="structs__minishell__data_1aeb4af268850af7d0f6d0c64f2bfefdea" compoundref="shell_8h" startline="20">s_ms_data::args</references>
+        <references refid="structs__minishell__data_1a8a0b3f50c8893e061062e93115f3d723" compoundref="shell_8h" startline="21">s_ms_data::envp</references>
         <references refid="libft_8h_1acefce9ac519f8f8b7d3fde33dbafe469" compoundref="ft__putstr__fd_8c" startline="20" endline="24">ft_putstr_fd</references>
         <references refid="env_8h_1a41133e0ba7230727a51eedce713a225c" compoundref="env_2env_8c" startline="60" endline="72">get_env</references>
         <references refid="env_8h_1a194b2552273340441e8b481b4ce5202c" compoundref="env_2env_8c" startline="79" endline="99">set_env</references>
@@ -137,7 +137,7 @@
 <codeline lineno="23"><highlight class="comment"><sp/><sp/><sp/>-<sp/>If<sp/>the<sp/>target<sp/>directory<sp/>does<sp/>not<sp/>exist,<sp/>print<sp/>an<sp/>error<sp/>message</highlight></codeline>
 <codeline lineno="24"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="25"><highlight class="normal"></highlight></codeline>
-<codeline lineno="26" refid="builtins_8h_1a90c33b349e024075c96efdc320f7138f" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="cd_8c_1a90c33b349e024075c96efdc320f7138f" kindref="member">builtin_cd</ref>(<ref refid="structs__minishell__data" kindref="compound">t_minishell_data</ref><sp/>*data)</highlight></codeline>
+<codeline lineno="26" refid="builtins_8h_1a90c33b349e024075c96efdc320f7138f" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="cd_8c_1a90c33b349e024075c96efdc320f7138f" kindref="member">builtin_cd</ref>(<ref refid="structs__minishell__data" kindref="compound">t_ms_data</ref><sp/>*data)</highlight></codeline>
 <codeline lineno="27"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/><sp/><sp/>*target_dir;</highlight></codeline>
 <codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/><sp/><sp/>*home_dir;</highlight></codeline>

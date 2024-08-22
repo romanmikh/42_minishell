@@ -16,9 +16,9 @@
 # include "shell.h"
 
 /*  env     */
-void	env_tests(t_minishell_data *data, char **envp);
+void	env_tests(t_ms_data *data, char **envp);
 
 /*  pipe    */
-void	pipe_tests(t_minishell_data *data);
+void	pipe_tests(t_ms_data *data);
 
 #endif

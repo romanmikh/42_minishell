@@ -21,15 +21,15 @@
 
 .in +1c
 .ti -1c
-.RI "int \fBbuiltin_export\fP (\fBt_minishell_data\fP *data)"
+.RI "int \fBbuiltin_export\fP (\fBt_ms_data\fP *data)"
 .br
 .ti -1c
-.RI "void \fBadd_env\fP (char *key, \fBt_minishell_data\fP *data)"
+.RI "void \fBadd_env\fP (char *key, \fBt_ms_data\fP *data)"
 .br
 .in -1c
 .SH "Function Documentation"
 .PP 
-.SS "void add_env (char * key, \fBt_minishell_data\fP * data)"
+.SS "void add_env (char * key, \fBt_ms_data\fP * data)"
 
 .PP
 Definition at line \fB46\fP of file \fBexport\&.c\fP\&.
@@ -58,10 +58,10 @@ Definition at line \fB46\fP of file \fBexport\&.c\fP\&.
 .fi
 
 .PP
-References \fBs_minishell_data::args\fP, \fBs_minishell_data::envp\fP, \fBft_strcdup()\fP, \fBft_strchr()\fP, \fBget_env()\fP, and \fBset_env()\fP\&.
+References \fBs_ms_data::args\fP, \fBs_ms_data::envp\fP, \fBft_strcdup()\fP, \fBft_strchr()\fP, \fBget_env()\fP, and \fBset_env()\fP\&.
 .PP
 Referenced by \fBbuiltin_export()\fP\&.
-.SS "int builtin_export (\fBt_minishell_data\fP * data)"
+.SS "int builtin_export (\fBt_ms_data\fP * data)"
 
 .PP
 Definition at line \fB28\fP of file \fBexport\&.c\fP\&.
@@ -86,7 +86,7 @@ Definition at line \fB28\fP of file \fBexport\&.c\fP\&.
 .fi
 
 .PP
-References \fBadd_env()\fP, \fBs_minishell_data::args\fP, \fBs_minishell_data::envp\fP, \fBft_strncmp()\fP, and \fBs_env::next\fP\&.
+References \fBadd_env()\fP, \fBs_ms_data::args\fP, \fBs_ms_data::envp\fP, \fBft_strncmp()\fP, and \fBs_env::next\fP\&.
 .PP
 Referenced by \fBexecute()\fP\&.
 .SH "Author"

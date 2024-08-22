@@ -21,24 +21,24 @@
 
 .in +1c
 .ti -1c
-.RI "void \fBenv_tests\fP (\fBt_minishell_data\fP *data, char **envp)"
+.RI "void \fBenv_tests\fP (\fBt_ms_data\fP *data, char **envp)"
 .br
 .ti -1c
-.RI "void \fBtest_init_env\fP (\fBt_minishell_data\fP *data, char **envp)"
+.RI "void \fBtest_init_env\fP (\fBt_ms_data\fP *data, char **envp)"
 .br
 .ti -1c
-.RI "void \fBtest_get_env\fP (\fBt_minishell_data\fP *data, char **envp)"
+.RI "void \fBtest_get_env\fP (\fBt_ms_data\fP *data, char **envp)"
 .br
 .ti -1c
-.RI "void \fBtest_set_env\fP (\fBt_minishell_data\fP *data, char **envp)"
+.RI "void \fBtest_set_env\fP (\fBt_ms_data\fP *data, char **envp)"
 .br
 .ti -1c
-.RI "void \fBtest_unset_env\fP (\fBt_minishell_data\fP *data)"
+.RI "void \fBtest_unset_env\fP (\fBt_ms_data\fP *data)"
 .br
 .in -1c
 .SH "Function Documentation"
 .PP 
-.SS "void env_tests (\fBt_minishell_data\fP * data, char ** envp)"
+.SS "void env_tests (\fBt_ms_data\fP * data, char ** envp)"
 
 .PP
 Definition at line \fB25\fP of file \fBenv_test\&.c\fP\&.
@@ -55,10 +55,10 @@ Definition at line \fB25\fP of file \fBenv_test\&.c\fP\&.
 .fi
 
 .PP
-References \fBs_minishell_data::envp\fP, \fBfree_env()\fP, \fBtest_get_env()\fP, \fBtest_init_env()\fP, \fBtest_set_env()\fP, and \fBtest_unset_env()\fP\&.
+References \fBs_ms_data::envp\fP, \fBfree_env()\fP, \fBtest_get_env()\fP, \fBtest_init_env()\fP, \fBtest_set_env()\fP, and \fBtest_unset_env()\fP\&.
 .PP
 Referenced by \fBmain()\fP\&.
-.SS "void test_get_env (\fBt_minishell_data\fP * data, char ** envp)"
+.SS "void test_get_env (\fBt_ms_data\fP * data, char ** envp)"
 
 .PP
 Definition at line \fB57\fP of file \fBenv_test\&.c\fP\&.
@@ -80,10 +80,10 @@ Definition at line \fB57\fP of file \fBenv_test\&.c\fP\&.
 .fi
 
 .PP
-References \fBs_minishell_data::envp\fP, \fBft_strcmp()\fP, \fBget_env()\fP, and \fBinit_env()\fP\&.
+References \fBs_ms_data::envp\fP, \fBft_strcmp()\fP, \fBget_env()\fP, and \fBinit_env()\fP\&.
 .PP
 Referenced by \fBenv_tests()\fP\&.
-.SS "void test_init_env (\fBt_minishell_data\fP * data, char ** envp)"
+.SS "void test_init_env (\fBt_ms_data\fP * data, char ** envp)"
 
 .PP
 Definition at line \fB35\fP of file \fBenv_test\&.c\fP\&.
@@ -112,10 +112,10 @@ Definition at line \fB35\fP of file \fBenv_test\&.c\fP\&.
 .fi
 
 .PP
-References \fBenv_to_array()\fP, \fBs_minishell_data::envp\fP, and \fBinit_env()\fP\&.
+References \fBenv_to_array()\fP, \fBs_ms_data::envp\fP, and \fBinit_env()\fP\&.
 .PP
 Referenced by \fBenv_tests()\fP\&.
-.SS "void test_set_env (\fBt_minishell_data\fP * data, char ** envp)"
+.SS "void test_set_env (\fBt_ms_data\fP * data, char ** envp)"
 
 .PP
 Definition at line \fB72\fP of file \fBenv_test\&.c\fP\&.
@@ -138,10 +138,10 @@ Definition at line \fB72\fP of file \fBenv_test\&.c\fP\&.
 .fi
 
 .PP
-References \fBs_minishell_data::envp\fP, \fBft_strcmp()\fP, \fBget_env()\fP, \fBinit_env()\fP, and \fBset_env()\fP\&.
+References \fBs_ms_data::envp\fP, \fBft_strcmp()\fP, \fBget_env()\fP, \fBinit_env()\fP, and \fBset_env()\fP\&.
 .PP
 Referenced by \fBenv_tests()\fP\&.
-.SS "void test_unset_env (\fBt_minishell_data\fP * data)"
+.SS "void test_unset_env (\fBt_ms_data\fP * data)"
 
 .PP
 Definition at line \fB88\fP of file \fBenv_test\&.c\fP\&.
@@ -165,7 +165,7 @@ Definition at line \fB88\fP of file \fBenv_test\&.c\fP\&.
 .fi
 
 .PP
-References \fBs_minishell_data::envp\fP, \fBft_strcmp()\fP, \fBget_env()\fP, \fBset_env()\fP, and \fBunset_env()\fP\&.
+References \fBs_ms_data::envp\fP, \fBft_strcmp()\fP, \fBget_env()\fP, \fBset_env()\fP, and \fBunset_env()\fP\&.
 .PP
 Referenced by \fBenv_tests()\fP\&.
 .SH "Author"

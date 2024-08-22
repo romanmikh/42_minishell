@@ -77,10 +77,10 @@
       <memberdef kind="function" id="echo_8c_1a9c4bf413cef22ef46427c4026734a97d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
         <definition>int builtin_echo</definition>
-        <argsstring>(t_minishell_data *data)</argsstring>
+        <argsstring>(t_ms_data *data)</argsstring>
         <name>builtin_echo</name>
         <param>
-          <type><ref refid="shell_8h_1a163dfbd200eaf940e5a56fd45345ff72" kindref="member">t_minishell_data</ref> *</type>
+          <type><ref refid="shell_8h_1a163dfbd200eaf940e5a56fd45345ff72" kindref="member">t_ms_data</ref> *</type>
           <declname>data</declname>
         </param>
         <briefdescription>
@@ -90,7 +90,7 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/dimadem/Documents/GitHub/minishell/src/builtins/echo.c" line="21" column="4" bodyfile="/Users/dimadem/Documents/GitHub/minishell/src/builtins/echo.c" bodystart="21" bodyend="42"/>
-        <references refid="structs__minishell__data_1aeb4af268850af7d0f6d0c64f2bfefdea" compoundref="shell_8h" startline="20">s_minishell_data::args</references>
+        <references refid="structs__minishell__data_1aeb4af268850af7d0f6d0c64f2bfefdea" compoundref="shell_8h" startline="20">s_ms_data::args</references>
         <references refid="libft_8h_1a1f2ff2312e5994560c9537cd9173be94" compoundref="ft__strcmp_8c" startline="24" endline="34">ft_strcmp</references>
         <references refid="libft_8h_1abbb8c6c4ed85d892e7f1509f65f5768a" compoundref="ft__strlen_8c" startline="15" endline="23">ft_strlen</references>
         <referencedby refid="execute_8c_1ae9738c8104774062bc2934b701fe96d9" compoundref="execute_8c" startline="70" endline="97">execute</referencedby>
@@ -121,7 +121,7 @@
 <codeline lineno="18"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>Print<sp/>the<sp/>argument</highlight></codeline>
 <codeline lineno="19"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="20"><highlight class="normal"></highlight></codeline>
-<codeline lineno="21" refid="builtins_8h_1a9c4bf413cef22ef46427c4026734a97d" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="echo_8c_1a9c4bf413cef22ef46427c4026734a97d" kindref="member">builtin_echo</ref>(<ref refid="structs__minishell__data" kindref="compound">t_minishell_data</ref><sp/>*data)</highlight></codeline>
+<codeline lineno="21" refid="builtins_8h_1a9c4bf413cef22ef46427c4026734a97d" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="echo_8c_1a9c4bf413cef22ef46427c4026734a97d" kindref="member">builtin_echo</ref>(<ref refid="structs__minishell__data" kindref="compound">t_ms_data</ref><sp/>*data)</highlight></codeline>
 <codeline lineno="22"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>newline;</highlight></codeline>
 <codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i;</highlight></codeline>

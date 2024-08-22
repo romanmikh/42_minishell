@@ -18,7 +18,7 @@
     <member refid="structs__loop__data_1a9b704dd9ec48db6a19721c14de0cb40b" kind="variable"><name>tokens</name></member>
     <member refid="structs__loop__data_1ac27fcff1e53a529b5f6a27dd21a28a91" kind="variable"><name>tree</name></member>
   </compound>
-  <compound refid="structs__minishell__data" kind="struct"><name>s_minishell_data</name>
+  <compound refid="structs__minishell__data" kind="struct"><name>s_ms_data</name>
     <member refid="structs__minishell__data_1aeb4af268850af7d0f6d0c64f2bfefdea" kind="variable"><name>args</name></member>
     <member refid="structs__minishell__data_1a8a0b3f50c8893e061062e93115f3d723" kind="variable"><name>envp</name></member>
     <member refid="structs__minishell__data_1a46b92ee58356d0f35174a79ed568253b" kind="variable"><name>local_env</name></member>
@@ -74,7 +74,7 @@
     <member refid="redirection_8h_1a2fe566529f8c7046fe274f2b3a35b39b" kind="function"><name>open_file</name></member>
   </compound>
   <compound refid="shell_8h" kind="file"><name>shell.h</name>
-    <member refid="shell_8h_1a163dfbd200eaf940e5a56fd45345ff72" kind="typedef"><name>t_minishell_data</name></member>
+    <member refid="shell_8h_1a163dfbd200eaf940e5a56fd45345ff72" kind="typedef"><name>t_ms_data</name></member>
   </compound>
   <compound refid="tokens_8h" kind="file"><name>tokens.h</name>
     <member refid="tokens_8h_1a32f7389f2a161bbbb128130ca37ef8e1" kind="define"><name>HISTORY_PATH</name></member>
@@ -106,10 +106,10 @@
     <member refid="tokens_8h_1a4c523064ece03ba20eb609b52253b88e" kind="function"><name>generate_prompt</name></member>
     <member refid="tokens_8h_1a94ee21f550bbf6448142ec3102526dde" kind="function"><name>make_history</name></member>
     <member refid="tokens_8h_1a3f6fbbc61bc797c26b4ece51216fbb67" kind="function"><name>loop_cleanup</name></member>
-    <member refid="tokens_8h_1a16d324fdb41b45b7e59af5eaab2e56bd" kind="function"><name>free_minishell_data</name></member>
+    <member refid="tokens_8h_1a16d324fdb41b45b7e59af5eaab2e56bd" kind="function"><name>free_ms_data</name></member>
     <member refid="tokens_8h_1a4e1b3e73a18dd66697cd7eac990b0363" kind="function"><name>check_heredoc</name></member>
     <member refid="tokens_8h_1a132ce43db3d4fba988a166e932845375" kind="function"><name>heredoc</name></member>
-    <member refid="tokens_8h_1ab7986766cca35553aa796f6a732d856a" kind="function"><name>init_minishell_data</name></member>
+    <member refid="tokens_8h_1ab7986766cca35553aa796f6a732d856a" kind="function"><name>init_ms_data</name></member>
     <member refid="tokens_8h_1a41e7a8e4355566996a5984b4a31fb8fe" kind="function"><name>initialise</name></member>
     <member refid="tokens_8h_1a458295f97c8b5b5f590b1d0e2ec8dad0" kind="function"><name>execute_command</name></member>
     <member refid="tokens_8h_1a4e673b7c7d3f45e10377ab9f537b8bf9" kind="function"><name>print_maxishell</name></member>
@@ -562,7 +562,7 @@
   <compound refid="clean__general_8c" kind="file"><name>clean_general.c</name>
     <member refid="clean__general_8c_1ae6e1002c1a56f5bfa4ea13de63d3deae" kind="function"><name>free_args</name></member>
     <member refid="clean__general_8c_1a9062b9b7e34cb35cb4b78c5251b020b0" kind="function"><name>free_env_list</name></member>
-    <member refid="clean__general_8c_1a16d324fdb41b45b7e59af5eaab2e56bd" kind="function"><name>free_minishell_data</name></member>
+    <member refid="clean__general_8c_1a16d324fdb41b45b7e59af5eaab2e56bd" kind="function"><name>free_ms_data</name></member>
     <member refid="clean__general_8c_1a3f6fbbc61bc797c26b4ece51216fbb67" kind="function"><name>loop_cleanup</name></member>
   </compound>
   <compound refid="clean__tree_8c" kind="file"><name>clean_tree.c</name>
@@ -570,7 +570,7 @@
     <member refid="clean__tree_8c_1a0a4196019426e41a9f5ec36835396e81" kind="function"><name>free_ast</name></member>
   </compound>
   <compound refid="initialise_8c" kind="file"><name>initialise.c</name>
-    <member refid="initialise_8c_1ab7986766cca35553aa796f6a732d856a" kind="function"><name>init_minishell_data</name></member>
+    <member refid="initialise_8c_1ab7986766cca35553aa796f6a732d856a" kind="function"><name>init_ms_data</name></member>
     <member refid="initialise_8c_1a41e7a8e4355566996a5984b4a31fb8fe" kind="function"><name>initialise</name></member>
   </compound>
   <compound refid="prompt_8c" kind="file"><name>prompt.c</name>

@@ -131,10 +131,10 @@
       <memberdef kind="function" id="pipe__test_8c_1a4e02daca82e791c68ff9bf7c0ad25030" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void builtin_pipe_test</definition>
-        <argsstring>(t_minishell_data *data)</argsstring>
+        <argsstring>(t_ms_data *data)</argsstring>
         <name>builtin_pipe_test</name>
         <param>
-          <type><ref refid="shell_8h_1a163dfbd200eaf940e5a56fd45345ff72" kindref="member">t_minishell_data</ref> *</type>
+          <type><ref refid="shell_8h_1a163dfbd200eaf940e5a56fd45345ff72" kindref="member">t_ms_data</ref> *</type>
           <declname>data</declname>
         </param>
         <briefdescription>
@@ -144,7 +144,7 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/dimadem/Documents/GitHub/minishell/src/test/pipe/pipe_test.c" line="32" column="5" bodyfile="/Users/dimadem/Documents/GitHub/minishell/src/test/pipe/pipe_test.c" bodystart="32" bodyend="37" declfile="/Users/dimadem/Documents/GitHub/minishell/src/test/pipe/pipe_test.c" declline="19" declcolumn="5"/>
-        <references refid="structs__minishell__data_1aeb4af268850af7d0f6d0c64f2bfefdea" compoundref="shell_8h" startline="20">s_minishell_data::args</references>
+        <references refid="structs__minishell__data_1aeb4af268850af7d0f6d0c64f2bfefdea" compoundref="shell_8h" startline="20">s_ms_data::args</references>
         <references refid="pipe_8h_1a7947b63271b47934f419fe6d217bf8df" compoundref="pipe_8c" startline="35" endline="60">builtin_pipe</references>
         <references refid="libft_8h_1aa65c9de65051c8c589286cf133c4a1f4" compoundref="ft__split_8c" startline="95" endline="108">ft_split</references>
         <referencedby refid="pipe__test_8c_1a86787b58c336d2fef7bad648f36a0d81" compoundref="pipe__test_8c" startline="22" endline="30">pipe_tests</referencedby>
@@ -152,10 +152,10 @@
       <memberdef kind="function" id="pipe__test_8c_1a86787b58c336d2fef7bad648f36a0d81" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void pipe_tests</definition>
-        <argsstring>(t_minishell_data *data)</argsstring>
+        <argsstring>(t_ms_data *data)</argsstring>
         <name>pipe_tests</name>
         <param>
-          <type><ref refid="shell_8h_1a163dfbd200eaf940e5a56fd45345ff72" kindref="member">t_minishell_data</ref> *</type>
+          <type><ref refid="shell_8h_1a163dfbd200eaf940e5a56fd45345ff72" kindref="member">t_ms_data</ref> *</type>
           <declname>data</declname>
         </param>
         <briefdescription>
@@ -192,10 +192,10 @@
 <codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="pipe_8h" kindref="compound">pipe.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="libft_8h" kindref="compound">libft.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="18"><highlight class="normal"></highlight></codeline>
-<codeline lineno="19"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="pipe__test_8c_1a4e02daca82e791c68ff9bf7c0ad25030" kindref="member">builtin_pipe_test</ref>(<ref refid="structs__minishell__data" kindref="compound">t_minishell_data</ref><sp/>*data);</highlight></codeline>
-<codeline lineno="20"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="pipe__test_8c_1a86787b58c336d2fef7bad648f36a0d81" kindref="member">pipe_tests</ref>(<ref refid="structs__minishell__data" kindref="compound">t_minishell_data</ref><sp/>*data);</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="pipe__test_8c_1a4e02daca82e791c68ff9bf7c0ad25030" kindref="member">builtin_pipe_test</ref>(<ref refid="structs__minishell__data" kindref="compound">t_ms_data</ref><sp/>*data);</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="pipe__test_8c_1a86787b58c336d2fef7bad648f36a0d81" kindref="member">pipe_tests</ref>(<ref refid="structs__minishell__data" kindref="compound">t_ms_data</ref><sp/>*data);</highlight></codeline>
 <codeline lineno="21"><highlight class="normal"></highlight></codeline>
-<codeline lineno="22" refid="pipe__test_8c_1a86787b58c336d2fef7bad648f36a0d81" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="pipe__test_8c_1a86787b58c336d2fef7bad648f36a0d81" kindref="member">pipe_tests</ref>(<ref refid="structs__minishell__data" kindref="compound">t_minishell_data</ref><sp/>*data)</highlight></codeline>
+<codeline lineno="22" refid="pipe__test_8c_1a86787b58c336d2fef7bad648f36a0d81" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="pipe__test_8c_1a86787b58c336d2fef7bad648f36a0d81" kindref="member">pipe_tests</ref>(<ref refid="structs__minishell__data" kindref="compound">t_ms_data</ref><sp/>*data)</highlight></codeline>
 <codeline lineno="23"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\nPIPE<sp/>TESTS\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="pipe__test_8c_1a4e02daca82e791c68ff9bf7c0ad25030" kindref="member">builtin_pipe_test</ref>(data);</highlight></codeline>
@@ -205,7 +205,7 @@
 <codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\033[0m&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="30"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="31"><highlight class="normal"></highlight></codeline>
-<codeline lineno="32" refid="pipe__test_8c_1a4e02daca82e791c68ff9bf7c0ad25030" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="pipe__test_8c_1a4e02daca82e791c68ff9bf7c0ad25030" kindref="member">builtin_pipe_test</ref>(<ref refid="structs__minishell__data" kindref="compound">t_minishell_data</ref><sp/>*data)</highlight></codeline>
+<codeline lineno="32" refid="pipe__test_8c_1a4e02daca82e791c68ff9bf7c0ad25030" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="pipe__test_8c_1a4e02daca82e791c68ff9bf7c0ad25030" kindref="member">builtin_pipe_test</ref>(<ref refid="structs__minishell__data" kindref="compound">t_ms_data</ref><sp/>*data)</highlight></codeline>
 <codeline lineno="33"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/>data-&gt;<ref refid="structs__minishell__data_1aeb4af268850af7d0f6d0c64f2bfefdea" kindref="member">args</ref><sp/>=<sp/><ref refid="libft_8h_1aa65c9de65051c8c589286cf133c4a1f4" kindref="member">ft_split</ref>(</highlight><highlight class="stringliteral">&quot;ls<sp/>-l<sp/>|<sp/>wc<sp/>-l&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="charliteral">&apos;<sp/>&apos;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="pipe_8h_1a7947b63271b47934f419fe6d217bf8df" kindref="member">builtin_pipe</ref>(node,<sp/>data);</highlight></codeline>

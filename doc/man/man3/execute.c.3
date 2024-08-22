@@ -29,21 +29,21 @@
 
 .in +1c
 .ti -1c
-.RI "int \fBexecute_ast\fP (\fBt_ast\fP *node, \fBt_minishell_data\fP *data)"
+.RI "int \fBexecute_ast\fP (\fBt_ast\fP *node, \fBt_ms_data\fP *data)"
 .br
 .RI "execute Abstract Syntax Tree "
 .ti -1c
-.RI "static int \fBexecute\fP (\fBt_minishell_data\fP *data)"
+.RI "static int \fBexecute\fP (\fBt_ms_data\fP *data)"
 .br
 .RI "execute distribution function "
 .ti -1c
-.RI "static int \fBnew_process\fP (\fBt_minishell_data\fP *data)"
+.RI "static int \fBnew_process\fP (\fBt_ms_data\fP *data)"
 .br
 .RI "executes a new process "
 .in -1c
 .SH "Function Documentation"
 .PP 
-.SS "static int execute (\fBt_minishell_data\fP * data)\fR [static]\fP"
+.SS "static int execute (\fBt_ms_data\fP * data)\fR [static]\fP"
 
 .PP
 execute distribution function --
@@ -75,7 +75,7 @@ Definition at line \fB70\fP of file \fBexecute\&.c\fP\&.
 71 {
 72     size_t  i;
 73     char    *builtin_commands[7];
-74     int     (*builtin_functions[7])(t_minishell_data *);
+74     int     (*builtin_functions[7])(t_ms_data *);
 75 
 76     builtin_commands[0] = "cd";
 77     builtin_commands[1] = "echo";
@@ -103,10 +103,10 @@ Definition at line \fB70\fP of file \fBexecute\&.c\fP\&.
 .fi
 
 .PP
-References \fBs_minishell_data::args\fP, \fBbuiltin_cd()\fP, \fBbuiltin_echo()\fP, \fBbuiltin_env()\fP, \fBbuiltin_exit()\fP, \fBbuiltin_export()\fP, \fBbuiltin_pwd()\fP, \fBbuiltin_unset()\fP, \fBft_perror()\fP, \fBft_strcmp()\fP, and \fBnew_process()\fP\&.
+References \fBs_ms_data::args\fP, \fBbuiltin_cd()\fP, \fBbuiltin_echo()\fP, \fBbuiltin_env()\fP, \fBbuiltin_exit()\fP, \fBbuiltin_export()\fP, \fBbuiltin_pwd()\fP, \fBbuiltin_unset()\fP, \fBft_perror()\fP, \fBft_strcmp()\fP, and \fBnew_process()\fP\&.
 .PP
 Referenced by \fBexecute_ast()\fP\&.
-.SS "int execute_ast (\fBt_ast\fP * node, \fBt_minishell_data\fP * data)"
+.SS "int execute_ast (\fBt_ast\fP * node, \fBt_ms_data\fP * data)"
 
 .PP
 execute Abstract Syntax Tree --
@@ -168,10 +168,10 @@ Definition at line \fB37\fP of file \fBexecute\&.c\fP\&.
 .fi
 
 .PP
-References \fBs_ast::args\fP, \fBs_minishell_data::args\fP, \fBBLU\fP, \fBbuiltin_pipe()\fP, \fBENV_VAR\fP, \fBexecute()\fP, \fBPHRASE\fP, \fBPIPE\fP, \fBREDIR_APPEND\fP, \fBREDIR_HEREDOC\fP, \fBREDIR_IN\fP, \fBREDIR_OUT\fP, \fBredirect_append()\fP, \fBredirect_here_doc()\fP, \fBredirect_in()\fP, \fBredirect_out()\fP, \fBRESET\fP, and \fBs_ast::type\fP\&.
+References \fBs_ast::args\fP, \fBs_ms_data::args\fP, \fBBLU\fP, \fBbuiltin_pipe()\fP, \fBENV_VAR\fP, \fBexecute()\fP, \fBPHRASE\fP, \fBPIPE\fP, \fBREDIR_APPEND\fP, \fBREDIR_HEREDOC\fP, \fBREDIR_IN\fP, \fBREDIR_OUT\fP, \fBredirect_append()\fP, \fBredirect_here_doc()\fP, \fBredirect_in()\fP, \fBredirect_out()\fP, \fBRESET\fP, and \fBs_ast::type\fP\&.
 .PP
 Referenced by \fBexecute_child()\fP, \fBexecute_child()\fP, \fBmain_loop()\fP, \fBredirect_append()\fP, \fBredirect_in()\fP, and \fBredirect_out()\fP\&.
-.SS "static int new_process (\fBt_minishell_data\fP * data)\fR [static]\fP"
+.SS "static int new_process (\fBt_ms_data\fP * data)\fR [static]\fP"
 
 .PP
 executes a new process --
@@ -229,7 +229,7 @@ Definition at line \fB108\fP of file \fBexecute\&.c\fP\&.
 .fi
 
 .PP
-References \fBs_minishell_data::args\fP, \fBclose_fds()\fP, \fBenv_to_array()\fP, \fBs_minishell_data::envp\fP, \fBs_minishell_data::exit_status\fP, \fBft_find_path()\fP, \fBft_perror()\fP, \fBs_minishell_data::std_in\fP, and \fBs_minishell_data::std_out\fP\&.
+References \fBs_ms_data::args\fP, \fBclose_fds()\fP, \fBenv_to_array()\fP, \fBs_ms_data::envp\fP, \fBs_ms_data::exit_status\fP, \fBft_find_path()\fP, \fBft_perror()\fP, \fBs_ms_data::std_in\fP, and \fBs_ms_data::std_out\fP\&.
 .PP
 Referenced by \fBexecute()\fP\&.
 .SH "Author"

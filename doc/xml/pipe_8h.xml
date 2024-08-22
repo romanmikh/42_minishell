@@ -167,14 +167,14 @@
       <memberdef kind="function" id="pipe_8h_1a7947b63271b47934f419fe6d217bf8df" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
         <definition>int builtin_pipe</definition>
-        <argsstring>(t_ast *node, t_minishell_data *data)</argsstring>
+        <argsstring>(t_ast *node, t_ms_data *data)</argsstring>
         <name>builtin_pipe</name>
         <param>
           <type><ref refid="tokens_8h_1a5fd329b243c6cd036f7b9ecbc86a9344" kindref="member">t_ast</ref> *</type>
           <declname>node</declname>
         </param>
         <param>
-          <type><ref refid="shell_8h_1a163dfbd200eaf940e5a56fd45345ff72" kindref="member">t_minishell_data</ref> *</type>
+          <type><ref refid="shell_8h_1a163dfbd200eaf940e5a56fd45345ff72" kindref="member">t_ms_data</ref> *</type>
           <declname>data</declname>
         </param>
         <briefdescription>
@@ -218,7 +218,7 @@
         <references refid="execute_8h_1aedc550f2251badad69cf4b6dfda183ef" compoundref="utils__0_8c" startline="46" endline="50">ft_perror</references>
         <references refid="structs__ast_1ac3be51aa6a7ae13bd16b6ad0c7ac843c" compoundref="tokens_8h" startline="52">s_ast::left</references>
         <references refid="structs__ast_1ac2c9513b20e9351e45d9bc6361095f7b" compoundref="tokens_8h" startline="53">s_ast::right</references>
-        <references refid="structs__minishell__data_1a9ed5685097b7e4b55c3c1307b70869ef" compoundref="shell_8h" startline="23">s_minishell_data::std_in</references>
+        <references refid="structs__minishell__data_1a9ed5685097b7e4b55c3c1307b70869ef" compoundref="shell_8h" startline="23">s_ms_data::std_in</references>
         <references refid="pipe_8h_1a816f42487cd607fbdb7df660a0d913fc" compoundref="pipe_8h" startline="19">WAIT_NEXT_COMMAND</references>
         <referencedby refid="pipe__test_8c_1a4e02daca82e791c68ff9bf7c0ad25030" compoundref="pipe__test_8c" startline="32" endline="37">builtin_pipe_test</referencedby>
         <referencedby refid="execute_8h_1ace4c3a2246919797e40140123d79596a" compoundref="execute_8c" startline="37" endline="59">execute_ast</referencedby>
@@ -250,7 +250,7 @@
 <codeline lineno="19" refid="pipe_8h_1a816f42487cd607fbdb7df660a0d913fc" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/>define<sp/>WAIT_NEXT_COMMAND<sp/>1</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="20"><highlight class="normal"></highlight></codeline>
 <codeline lineno="21"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/>pipe<sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="22"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="pipe_8h_1a7947b63271b47934f419fe6d217bf8df" kindref="member">builtin_pipe</ref>(<ref refid="structs__ast" kindref="compound">t_ast</ref><sp/>*node,<sp/><ref refid="structs__minishell__data" kindref="compound">t_minishell_data</ref><sp/>*data);</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="pipe_8h_1a7947b63271b47934f419fe6d217bf8df" kindref="member">builtin_pipe</ref>(<ref refid="structs__ast" kindref="compound">t_ast</ref><sp/>*node,<sp/><ref refid="structs__minishell__data" kindref="compound">t_ms_data</ref><sp/>*data);</highlight></codeline>
 <codeline lineno="23"><highlight class="normal"></highlight></codeline>
 <codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
     </programlisting>

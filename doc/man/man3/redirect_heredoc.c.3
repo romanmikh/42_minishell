@@ -23,19 +23,19 @@
 
 .in +1c
 .ti -1c
-.RI "int \fBredirect_here_doc\fP (\fBt_ast\fP *node, \fBt_minishell_data\fP *data)"
+.RI "int \fBredirect_here_doc\fP (\fBt_ast\fP *node, \fBt_ms_data\fP *data)"
 .br
 .RI "This function handle '<<' heredoc functionality\&. "
 .ti -1c
 .RI "static int \fBopen_tmp_file\fP (const char *type)"
 .br
 .ti -1c
-.RI "static void \fBexecute_child\fP (\fBt_ast\fP *node, \fBt_minishell_data\fP *data, int *file_fd)"
+.RI "static void \fBexecute_child\fP (\fBt_ast\fP *node, \fBt_ms_data\fP *data, int *file_fd)"
 .br
 .in -1c
 .SH "Function Documentation"
 .PP 
-.SS "static void execute_child (\fBt_ast\fP * node, \fBt_minishell_data\fP * data, int * file_fd)\fR [static]\fP"
+.SS "static void execute_child (\fBt_ast\fP * node, \fBt_ms_data\fP * data, int * file_fd)\fR [static]\fP"
 
 .PP
 Definition at line \fB76\fP of file \fBredirect_heredoc\&.c\fP\&.
@@ -59,7 +59,7 @@ Definition at line \fB76\fP of file \fBredirect_heredoc\&.c\fP\&.
 .fi
 
 .PP
-References \fBexecute_ast()\fP, \fBs_minishell_data::exit_status\fP, \fBft_perror()\fP, and \fBs_minishell_data::std_in\fP\&.
+References \fBexecute_ast()\fP, \fBs_ms_data::exit_status\fP, \fBft_perror()\fP, and \fBs_ms_data::std_in\fP\&.
 .PP
 Referenced by \fBredirect_here_doc()\fP\&.
 .SS "static int open_tmp_file (const char * type)\fR [static]\fP"
@@ -86,7 +86,7 @@ Definition at line \fB62\fP of file \fBredirect_heredoc\&.c\fP\&.
 References \fBft_perror()\fP, and \fBft_strcmp()\fP\&.
 .PP
 Referenced by \fBredirect_here_doc()\fP\&.
-.SS "int redirect_here_doc (\fBt_ast\fP * node, \fBt_minishell_data\fP * data)"
+.SS "int redirect_here_doc (\fBt_ast\fP * node, \fBt_ms_data\fP * data)"
 
 .PP
 This function handle '<<' heredoc functionality\&. --

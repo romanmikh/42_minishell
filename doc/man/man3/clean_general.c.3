@@ -21,7 +21,7 @@
 .RI "void \fBfree_env_list\fP (\fBt_env\fP *env)"
 .br
 .ti -1c
-.RI "void \fBfree_minishell_data\fP (\fBt_minishell_data\fP *data)"
+.RI "void \fBfree_ms_data\fP (\fBt_ms_data\fP *data)"
 .br
 .ti -1c
 .RI "void \fBloop_cleanup\fP (char *line, \fBt_token\fP *tokens, char *prompt, \fBt_ast\fP *tree)"
@@ -49,7 +49,7 @@ Definition at line \fB16\fP of file \fBclean_general\&.c\fP\&.
 .fi
 
 .PP
-Referenced by \fBfree_minishell_data()\fP\&.
+Referenced by \fBfree_ms_data()\fP\&.
 .SS "void free_env_list (\fBt_env\fP * env)"
 
 .PP
@@ -73,8 +73,8 @@ Definition at line \fB29\fP of file \fBclean_general\&.c\fP\&.
 .PP
 References \fBs_env::key\fP, \fBs_env::next\fP, and \fBs_env::value\fP\&.
 .PP
-Referenced by \fBfree_minishell_data()\fP\&.
-.SS "void free_minishell_data (\fBt_minishell_data\fP * data)"
+Referenced by \fBfree_ms_data()\fP\&.
+.SS "void free_ms_data (\fBt_ms_data\fP * data)"
 
 .PP
 Definition at line \fB43\fP of file \fBclean_general\&.c\fP\&.
@@ -93,7 +93,7 @@ Definition at line \fB43\fP of file \fBclean_general\&.c\fP\&.
 .fi
 
 .PP
-References \fBs_minishell_data::args\fP, \fBs_minishell_data::current_dir\fP, \fBs_minishell_data::envp\fP, \fBfree_args()\fP, \fBfree_env_list()\fP, and \fBs_minishell_data::local_env\fP\&.
+References \fBs_ms_data::args\fP, \fBs_ms_data::current_dir\fP, \fBs_ms_data::envp\fP, \fBfree_args()\fP, \fBfree_env_list()\fP, and \fBs_ms_data::local_env\fP\&.
 .PP
 Referenced by \fBmain()\fP\&.
 .SS "void loop_cleanup (char * line, \fBt_token\fP * tokens, char * prompt, \fBt_ast\fP * tree)"

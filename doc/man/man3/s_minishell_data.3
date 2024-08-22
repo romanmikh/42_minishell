@@ -1,8 +1,8 @@
-.TH "s_minishell_data" 3 "Version 1" "maxishell" \" -*- nroff -*-
+.TH "s_ms_data" 3 "Version 1" "maxishell" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
-s_minishell_data
+s_ms_data
 .SH SYNOPSIS
 .br
 .PP
@@ -41,54 +41,54 @@ s_minishell_data
 Definition at line \fB18\fP of file \fBshell\&.h\fP\&.
 .SH "Member Data Documentation"
 .PP 
-.SS "char** s_minishell_data::args"
+.SS "char** s_ms_data::args"
 
 .PP
 Definition at line \fB20\fP of file \fBshell\&.h\fP\&.
 .PP
-Referenced by \fBadd_env()\fP, \fBbuiltin_cd()\fP, \fBbuiltin_echo()\fP, \fBbuiltin_env()\fP, \fBbuiltin_export()\fP, \fBbuiltin_pipe_test()\fP, \fBbuiltin_unset()\fP, \fBexecute()\fP, \fBexecute_ast()\fP, \fBfree_minishell_data()\fP, \fBinit_minishell_data()\fP, and \fBnew_process()\fP\&.
-.SS "char* s_minishell_data::current_dir"
+Referenced by \fBadd_env()\fP, \fBbuiltin_cd()\fP, \fBbuiltin_echo()\fP, \fBbuiltin_env()\fP, \fBbuiltin_export()\fP, \fBbuiltin_pipe_test()\fP, \fBbuiltin_unset()\fP, \fBexecute()\fP, \fBexecute_ast()\fP, \fBfree_ms_data()\fP, \fBinit_ms_data()\fP, and \fBnew_process()\fP\&.
+.SS "char* s_ms_data::current_dir"
 
 .PP
 Definition at line \fB26\fP of file \fBshell\&.h\fP\&.
 .PP
-Referenced by \fBfree_minishell_data()\fP, and \fBinit_minishell_data()\fP\&.
-.SS "\fBt_env\fP* s_minishell_data::envp"
+Referenced by \fBfree_ms_data()\fP, and \fBinit_ms_data()\fP\&.
+.SS "\fBt_env\fP* s_ms_data::envp"
 
 .PP
 Definition at line \fB21\fP of file \fBshell\&.h\fP\&.
 .PP
-Referenced by \fBadd_env()\fP, \fBbuiltin_cd()\fP, \fBbuiltin_env()\fP, \fBbuiltin_export()\fP, \fBbuiltin_unset()\fP, \fBenv_tests()\fP, \fBfree_minishell_data()\fP, \fBgenerate_prompt_string()\fP, \fBinit_minishell_data()\fP, \fBmain()\fP, \fBnew_process()\fP, \fBtest_get_env()\fP, \fBtest_init_env()\fP, \fBtest_set_env()\fP, and \fBtest_unset_env()\fP\&.
-.SS "int s_minishell_data::exit_status"
+Referenced by \fBadd_env()\fP, \fBbuiltin_cd()\fP, \fBbuiltin_env()\fP, \fBbuiltin_export()\fP, \fBbuiltin_unset()\fP, \fBenv_tests()\fP, \fBfree_ms_data()\fP, \fBgenerate_prompt_string()\fP, \fBinit_ms_data()\fP, \fBmain()\fP, \fBnew_process()\fP, \fBtest_get_env()\fP, \fBtest_init_env()\fP, \fBtest_set_env()\fP, and \fBtest_unset_env()\fP\&.
+.SS "int s_ms_data::exit_status"
 
 .PP
 Definition at line \fB27\fP of file \fBshell\&.h\fP\&.
 .PP
-Referenced by \fBbuiltin_exit()\fP, \fBbuiltin_unset()\fP, \fBexecute_child()\fP, \fBinit_minishell_data()\fP, \fBnew_process()\fP, and \fBredirect_in()\fP\&.
-.SS "\fBt_env\fP* s_minishell_data::local_env"
+Referenced by \fBbuiltin_exit()\fP, \fBbuiltin_unset()\fP, \fBexecute_child()\fP, \fBinit_ms_data()\fP, \fBnew_process()\fP, and \fBredirect_in()\fP\&.
+.SS "\fBt_env\fP* s_ms_data::local_env"
 
 .PP
 Definition at line \fB22\fP of file \fBshell\&.h\fP\&.
 .PP
-Referenced by \fBfree_minishell_data()\fP, and \fBinit_minishell_data()\fP\&.
-.SS "int s_minishell_data::std_err"
+Referenced by \fBfree_ms_data()\fP, and \fBinit_ms_data()\fP\&.
+.SS "int s_ms_data::std_err"
 
 .PP
 Definition at line \fB25\fP of file \fBshell\&.h\fP\&.
 .PP
-Referenced by \fBinit_minishell_data()\fP\&.
-.SS "int s_minishell_data::std_in"
+Referenced by \fBinit_ms_data()\fP\&.
+.SS "int s_ms_data::std_in"
 
 .PP
 Definition at line \fB23\fP of file \fBshell\&.h\fP\&.
 .PP
-Referenced by \fBbuiltin_pipe()\fP, \fBexecute_child()\fP, \fBgenerate_prompt()\fP, \fBhandle_io_fd()\fP, \fBinit_minishell_data()\fP, \fBnew_process()\fP, and \fBredirect_in()\fP\&.
-.SS "int s_minishell_data::std_out"
+Referenced by \fBbuiltin_pipe()\fP, \fBexecute_child()\fP, \fBgenerate_prompt()\fP, \fBhandle_io_fd()\fP, \fBinit_ms_data()\fP, \fBnew_process()\fP, and \fBredirect_in()\fP\&.
+.SS "int s_ms_data::std_out"
 
 .PP
 Definition at line \fB24\fP of file \fBshell\&.h\fP\&.
 .PP
-Referenced by \fBhandle_io_fd()\fP, \fBinit_minishell_data()\fP, \fBnew_process()\fP, \fBredirect_append()\fP, and \fBredirect_out()\fP\&.
+Referenced by \fBhandle_io_fd()\fP, \fBinit_ms_data()\fP, \fBnew_process()\fP, \fBredirect_append()\fP, and \fBredirect_out()\fP\&.
 
 .SH "Author"
 .PP 

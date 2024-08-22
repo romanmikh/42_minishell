@@ -111,7 +111,7 @@
 .RI "char ** \fBparse_input\fP (char *input)"
 .br
 .ti -1c
-.RI "char * \fBgenerate_prompt\fP (\fBt_minishell_data\fP *data)"
+.RI "char * \fBgenerate_prompt\fP (\fBt_ms_data\fP *data)"
 .br
 .ti -1c
 .RI "void \fBmake_history\fP (char *line)"
@@ -120,7 +120,7 @@
 .RI "void \fBloop_cleanup\fP (char *line, \fBt_token\fP *tokens, char *prompt, \fBt_ast\fP *tree)"
 .br
 .ti -1c
-.RI "void \fBfree_minishell_data\fP (\fBt_minishell_data\fP *data)"
+.RI "void \fBfree_ms_data\fP (\fBt_ms_data\fP *data)"
 .br
 .ti -1c
 .RI "char * \fBcheck_heredoc\fP (char *line)"
@@ -129,7 +129,7 @@
 .RI "char * \fBheredoc\fP (char *eof)"
 .br
 .ti -1c
-.RI "void \fBinit_minishell_data\fP (\fBt_minishell_data\fP *data, char **envp)"
+.RI "void \fBinit_ms_data\fP (\fBt_ms_data\fP *data, char **envp)"
 .br
 .ti -1c
 .RI "void \fBinitialise\fP (int argc, char **argv)"
@@ -204,7 +204,7 @@
 .RI "void \fBprint_ast_root\fP (\fBt_ast\fP *root)"
 .br
 .ti -1c
-.RI "void \fBexecute_tree\fP (\fBt_ast\fP *node, \fBt_minishell_data\fP *data)"
+.RI "void \fBexecute_tree\fP (\fBt_ast\fP *node, \fBt_ms_data\fP *data)"
 .br
 .in -1c
 .SH "Macro Definition Documentation"
@@ -463,7 +463,7 @@ References \fBs_ast::args\fP, \fBs_token::data\fP, \fBs_ast::left\fP, \fBs_ast::
 Referenced by \fBclr_node()\fP, and \fBcreate_redir()\fP\&.
 .SS "void execute_command (char ** parsed_text, \fBt_token\fP ** tokens)"
 
-.SS "void execute_tree (\fBt_ast\fP * node, \fBt_minishell_data\fP * data)"
+.SS "void execute_tree (\fBt_ast\fP * node, \fBt_ms_data\fP * data)"
 
 .SS "void free_all_tokens (\fBt_token\fP * tokens)"
 
@@ -525,7 +525,7 @@ Definition at line \fB37\fP of file \fBclean_tree\&.c\fP\&.
 References \fBs_ast::args\fP, \fBfree_ast()\fP, \fBs_ast::left\fP, \fBPHRASE\fP, \fBs_ast::right\fP, and \fBs_ast::type\fP\&.
 .PP
 Referenced by \fBfree_ast()\fP, and \fBloop_cleanup()\fP\&.
-.SS "void free_minishell_data (\fBt_minishell_data\fP * data)"
+.SS "void free_ms_data (\fBt_ms_data\fP * data)"
 
 .PP
 Definition at line \fB43\fP of file \fBclean_general\&.c\fP\&.
@@ -544,7 +544,7 @@ Definition at line \fB43\fP of file \fBclean_general\&.c\fP\&.
 .fi
 
 .PP
-References \fBs_minishell_data::args\fP, \fBs_minishell_data::current_dir\fP, \fBs_minishell_data::envp\fP, \fBfree_args()\fP, \fBfree_env_list()\fP, and \fBs_minishell_data::local_env\fP\&.
+References \fBs_ms_data::args\fP, \fBs_ms_data::current_dir\fP, \fBs_ms_data::envp\fP, \fBfree_args()\fP, \fBfree_env_list()\fP, and \fBs_ms_data::local_env\fP\&.
 .PP
 Referenced by \fBmain()\fP\&.
 .SS "void free_stack (\fBt_token\fP ** stack)"
@@ -569,7 +569,7 @@ Definition at line \fB51\fP of file \fBstack_control\&.c\fP\&.
 
 .PP
 References \fBs_token::next\fP\&.
-.SS "char * generate_prompt (\fBt_minishell_data\fP * data)"
+.SS "char * generate_prompt (\fBt_ms_data\fP * data)"
 
 .PP
 Definition at line \fB31\fP of file \fBprompt\&.c\fP\&.
@@ -595,7 +595,7 @@ Definition at line \fB31\fP of file \fBprompt\&.c\fP\&.
 .fi
 
 .PP
-References \fBft_strcpy()\fP, \fBft_strlen()\fP, and \fBs_minishell_data::std_in\fP\&.
+References \fBft_strcpy()\fP, \fBft_strlen()\fP, and \fBs_ms_data::std_in\fP\&.
 .PP
 Referenced by \fBmain_loop()\fP\&.
 .SS "void handle_quotes (char ** tokens, int * pos, char ** input)"
@@ -665,7 +665,7 @@ Definition at line \fB26\fP of file \fBheredoc\&.c\fP\&.
 References \fBft_strcmp()\fP, and \fBft_strjoin()\fP\&.
 .PP
 Referenced by \fBcheck_heredoc()\fP\&.
-.SS "void init_minishell_data (\fBt_minishell_data\fP * data, char ** envp)"
+.SS "void init_ms_data (\fBt_ms_data\fP * data, char ** envp)"
 
 .PP
 Definition at line \fB16\fP of file \fBinitialise\&.c\fP\&.
@@ -685,7 +685,7 @@ Definition at line \fB16\fP of file \fBinitialise\&.c\fP\&.
 .fi
 
 .PP
-References \fBs_minishell_data::args\fP, \fBs_minishell_data::current_dir\fP, \fBs_minishell_data::envp\fP, \fBs_minishell_data::exit_status\fP, \fBinit_env()\fP, \fBs_minishell_data::local_env\fP, \fBs_minishell_data::std_err\fP, \fBs_minishell_data::std_in\fP, and \fBs_minishell_data::std_out\fP\&.
+References \fBs_ms_data::args\fP, \fBs_ms_data::current_dir\fP, \fBs_ms_data::envp\fP, \fBs_ms_data::exit_status\fP, \fBinit_env()\fP, \fBs_ms_data::local_env\fP, \fBs_ms_data::std_err\fP, \fBs_ms_data::std_in\fP, and \fBs_ms_data::std_out\fP\&.
 .PP
 Referenced by \fBmain()\fP\&.
 .SS "void initialise (int argc, char ** argv)"

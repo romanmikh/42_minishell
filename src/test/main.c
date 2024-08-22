@@ -17,7 +17,7 @@
 
 int	main(int argc, char **argv, char **envp)
 {
-	t_minishell_data	data;
+	t_ms_data	data;
 
 	if (argc > 1)
 	{

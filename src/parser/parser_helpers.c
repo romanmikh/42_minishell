@@ -13,10 +13,10 @@
 #include "tokens.h"
 
 t_ast	*new_ast_node(t_token_type type);
-t_ast	*create_redir(t_token **tokens, t_token *tmp, t_minishell_data *data);
+t_ast	*create_redir(t_token **tokens, t_token *tmp, t_ms_data *data);
 int		arg_len(t_token *current);
 void	set_command_args(t_ast *command_node, t_token **tokens, int arg_count);
-t_ast	*manage_commands(t_token **tokens, t_minishell_data *data);
+t_ast	*manage_commands(t_token **tokens, t_ms_data *data);
 
 t_ast	*new_ast_node(t_token_type type)
 {
@@ -32,7 +32,7 @@ t_ast	*new_ast_node(t_token_type type)
 	return (node);
 }
 
-t_ast	*create_redir(t_token **tokens, t_token *tmp, t_minishell_data *data)
+t_ast	*create_redir(t_token **tokens, t_token *tmp, t_ms_data *data)
 {
 	t_ast	*redirect_node;
 
@@ -77,7 +77,7 @@ void	set_command_args(t_ast *command_node, t_token **tokens, \
 	command_node->args[arg_count] = NULL;
 }
 
-char *expand_env_var(char *arg, t_minishell_data *data) {
+char *expand_env_var(char *arg, t_ms_data *data) {
     if (strcmp(arg, "$?") == 0) {
         return ft_itoa(data->exit_status);
     } else if (arg[0] == '$') {
@@ -89,7 +89,7 @@ char *expand_env_var(char *arg, t_minishell_data *data) {
     return ft_strdup(arg);
 }
 
-void post_process_command_args(t_ast *command_node, int arg_count, t_minishell_data *data) {
+void post_process_command_args(t_ast *command_node, int arg_count, t_ms_data *data) {
     size_t len;
     
     for (int i = 0; i < arg_count; i++) {
@@ -125,7 +125,7 @@ void post_process_command_args(t_ast *command_node, int arg_count, t_minishell_d
     }
 }
 
-t_ast	*manage_commands(t_token **tokens, t_minishell_data *data)
+t_ast	*manage_commands(t_token **tokens, t_ms_data *data)
 {
 	t_ast		*command_node;
 	int			arg_count;

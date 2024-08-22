@@ -19,12 +19,12 @@
 
 .in +1c
 .ti -1c
-.RI "int \fBbuiltin_cd\fP (\fBt_minishell_data\fP *data)"
+.RI "int \fBbuiltin_cd\fP (\fBt_ms_data\fP *data)"
 .br
 .in -1c
 .SH "Function Documentation"
 .PP 
-.SS "int builtin_cd (\fBt_minishell_data\fP * data)"
+.SS "int builtin_cd (\fBt_ms_data\fP * data)"
 
 .PP
 Definition at line \fB26\fP of file \fBcd\&.c\fP\&.
@@ -54,7 +54,7 @@ Definition at line \fB26\fP of file \fBcd\&.c\fP\&.
 .fi
 
 .PP
-References \fBs_minishell_data::args\fP, \fBs_minishell_data::envp\fP, \fBft_putstr_fd()\fP, \fBget_env()\fP, and \fBset_env()\fP\&.
+References \fBs_ms_data::args\fP, \fBs_ms_data::envp\fP, \fBft_putstr_fd()\fP, \fBget_env()\fP, and \fBset_env()\fP\&.
 .PP
 Referenced by \fBexecute()\fP\&.
 .SH "Author"

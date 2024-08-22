@@ -13,30 +13,30 @@
 
 .in +1c
 .ti -1c
-.RI "int \fBbuiltin_cd\fP (\fBt_minishell_data\fP *data)"
+.RI "int \fBbuiltin_cd\fP (\fBt_ms_data\fP *data)"
 .br
 .ti -1c
-.RI "int \fBbuiltin_echo\fP (\fBt_minishell_data\fP *data)"
+.RI "int \fBbuiltin_echo\fP (\fBt_ms_data\fP *data)"
 .br
 .ti -1c
-.RI "int \fBbuiltin_env\fP (\fBt_minishell_data\fP *data)"
+.RI "int \fBbuiltin_env\fP (\fBt_ms_data\fP *data)"
 .br
 .ti -1c
-.RI "int \fBbuiltin_exit\fP (\fBt_minishell_data\fP *data)"
+.RI "int \fBbuiltin_exit\fP (\fBt_ms_data\fP *data)"
 .br
 .ti -1c
-.RI "int \fBbuiltin_export\fP (\fBt_minishell_data\fP *data)"
+.RI "int \fBbuiltin_export\fP (\fBt_ms_data\fP *data)"
 .br
 .ti -1c
-.RI "int \fBbuiltin_pwd\fP (\fBt_minishell_data\fP *data)"
+.RI "int \fBbuiltin_pwd\fP (\fBt_ms_data\fP *data)"
 .br
 .ti -1c
-.RI "int \fBbuiltin_unset\fP (\fBt_minishell_data\fP *data)"
+.RI "int \fBbuiltin_unset\fP (\fBt_ms_data\fP *data)"
 .br
 .in -1c
 .SH "Function Documentation"
 .PP 
-.SS "int builtin_cd (\fBt_minishell_data\fP * data)"
+.SS "int builtin_cd (\fBt_ms_data\fP * data)"
 
 .PP
 Definition at line \fB26\fP of file \fBcd\&.c\fP\&.
@@ -66,10 +66,10 @@ Definition at line \fB26\fP of file \fBcd\&.c\fP\&.
 .fi
 
 .PP
-References \fBs_minishell_data::args\fP, \fBs_minishell_data::envp\fP, \fBft_putstr_fd()\fP, \fBget_env()\fP, and \fBset_env()\fP\&.
+References \fBs_ms_data::args\fP, \fBs_ms_data::envp\fP, \fBft_putstr_fd()\fP, \fBget_env()\fP, and \fBset_env()\fP\&.
 .PP
 Referenced by \fBexecute()\fP\&.
-.SS "int builtin_echo (\fBt_minishell_data\fP * data)"
+.SS "int builtin_echo (\fBt_ms_data\fP * data)"
 
 .PP
 Definition at line \fB21\fP of file \fBecho\&.c\fP\&.
@@ -99,10 +99,10 @@ Definition at line \fB21\fP of file \fBecho\&.c\fP\&.
 .fi
 
 .PP
-References \fBs_minishell_data::args\fP, \fBft_strcmp()\fP, and \fBft_strlen()\fP\&.
+References \fBs_ms_data::args\fP, \fBft_strcmp()\fP, and \fBft_strlen()\fP\&.
 .PP
 Referenced by \fBexecute()\fP\&.
-.SS "int builtin_env (\fBt_minishell_data\fP * data)"
+.SS "int builtin_env (\fBt_ms_data\fP * data)"
 
 .PP
 Definition at line \fB38\fP of file \fBenv\&.c\fP\&.
@@ -117,10 +117,10 @@ Definition at line \fB38\fP of file \fBenv\&.c\fP\&.
 .fi
 
 .PP
-References \fBs_minishell_data::args\fP, \fBs_minishell_data::envp\fP, \fBft_strcmp()\fP, and \fBprint_env_stack()\fP\&.
+References \fBs_ms_data::args\fP, \fBs_ms_data::envp\fP, \fBft_strcmp()\fP, and \fBprint_env_stack()\fP\&.
 .PP
 Referenced by \fBexecute()\fP\&.
-.SS "int builtin_exit (\fBt_minishell_data\fP * data)"
+.SS "int builtin_exit (\fBt_ms_data\fP * data)"
 
 .PP
 Definition at line \fB26\fP of file \fBexit\&.c\fP\&.
@@ -137,10 +137,10 @@ Definition at line \fB26\fP of file \fBexit\&.c\fP\&.
 .fi
 
 .PP
-References \fBs_minishell_data::exit_status\fP, and \fBft_strlen()\fP\&.
+References \fBs_ms_data::exit_status\fP, and \fBft_strlen()\fP\&.
 .PP
 Referenced by \fBexecute()\fP\&.
-.SS "int builtin_export (\fBt_minishell_data\fP * data)"
+.SS "int builtin_export (\fBt_ms_data\fP * data)"
 
 .PP
 Definition at line \fB28\fP of file \fBexport\&.c\fP\&.
@@ -165,10 +165,10 @@ Definition at line \fB28\fP of file \fBexport\&.c\fP\&.
 .fi
 
 .PP
-References \fBadd_env()\fP, \fBs_minishell_data::args\fP, \fBs_minishell_data::envp\fP, \fBft_strncmp()\fP, and \fBs_env::next\fP\&.
+References \fBadd_env()\fP, \fBs_ms_data::args\fP, \fBs_ms_data::envp\fP, \fBft_strncmp()\fP, and \fBs_env::next\fP\&.
 .PP
 Referenced by \fBexecute()\fP\&.
-.SS "int builtin_pwd (\fBt_minishell_data\fP * data)"
+.SS "int builtin_pwd (\fBt_ms_data\fP * data)"
 
 .PP
 Definition at line \fB23\fP of file \fBpwd\&.c\fP\&.
@@ -194,7 +194,7 @@ Definition at line \fB23\fP of file \fBpwd\&.c\fP\&.
 References \fBft_putendl_fd()\fP, and \fBft_putstr_fd()\fP\&.
 .PP
 Referenced by \fBexecute()\fP\&.
-.SS "int builtin_unset (\fBt_minishell_data\fP * data)"
+.SS "int builtin_unset (\fBt_ms_data\fP * data)"
 
 .PP
 Definition at line \fB26\fP of file \fBunset\&.c\fP\&.
@@ -222,7 +222,7 @@ Definition at line \fB26\fP of file \fBunset\&.c\fP\&.
 .fi
 
 .PP
-References \fBs_minishell_data::args\fP, \fBs_minishell_data::envp\fP, \fBs_minishell_data::exit_status\fP, \fBft_putendl_fd()\fP, \fBft_putstr_fd()\fP, and \fBunset_env()\fP\&.
+References \fBs_ms_data::args\fP, \fBs_ms_data::envp\fP, \fBs_ms_data::exit_status\fP, \fBft_putendl_fd()\fP, \fBft_putstr_fd()\fP, and \fBunset_env()\fP\&.
 .PP
 Referenced by \fBexecute()\fP\&.
 .SH "Author"

@@ -15,7 +15,7 @@
 
 .in +1c
 .ti -1c
-.RI "void \fBinit_minishell_data\fP (\fBt_minishell_data\fP *data, char **envp)"
+.RI "void \fBinit_ms_data\fP (\fBt_ms_data\fP *data, char **envp)"
 .br
 .ti -1c
 .RI "void \fBinitialise\fP (int argc, char **argv)"
@@ -23,7 +23,7 @@
 .in -1c
 .SH "Function Documentation"
 .PP 
-.SS "void init_minishell_data (\fBt_minishell_data\fP * data, char ** envp)"
+.SS "void init_ms_data (\fBt_ms_data\fP * data, char ** envp)"
 
 .PP
 Definition at line \fB16\fP of file \fBinitialise\&.c\fP\&.
@@ -43,7 +43,7 @@ Definition at line \fB16\fP of file \fBinitialise\&.c\fP\&.
 .fi
 
 .PP
-References \fBs_minishell_data::args\fP, \fBs_minishell_data::current_dir\fP, \fBs_minishell_data::envp\fP, \fBs_minishell_data::exit_status\fP, \fBinit_env()\fP, \fBs_minishell_data::local_env\fP, \fBs_minishell_data::std_err\fP, \fBs_minishell_data::std_in\fP, and \fBs_minishell_data::std_out\fP\&.
+References \fBs_ms_data::args\fP, \fBs_ms_data::current_dir\fP, \fBs_ms_data::envp\fP, \fBs_ms_data::exit_status\fP, \fBinit_env()\fP, \fBs_ms_data::local_env\fP, \fBs_ms_data::std_err\fP, \fBs_ms_data::std_in\fP, and \fBs_ms_data::std_out\fP\&.
 .PP
 Referenced by \fBmain()\fP\&.
 .SS "void initialise (int argc, char ** argv)"

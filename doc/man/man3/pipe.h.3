@@ -22,7 +22,7 @@
 
 .in +1c
 .ti -1c
-.RI "int \fBbuiltin_pipe\fP (\fBt_ast\fP *node, \fBt_minishell_data\fP *data)"
+.RI "int \fBbuiltin_pipe\fP (\fBt_ast\fP *node, \fBt_ms_data\fP *data)"
 .br
 .RI "execute pipe when | is found in the command "
 .in -1c
@@ -36,7 +36,7 @@ Definition at line \fB19\fP of file \fBpipe\&.h\fP\&.
 Referenced by \fBbuiltin_pipe()\fP, and \fBstatus_handler()\fP\&.
 .SH "Function Documentation"
 .PP 
-.SS "int builtin_pipe (\fBt_ast\fP * node, \fBt_minishell_data\fP * data)"
+.SS "int builtin_pipe (\fBt_ast\fP * node, \fBt_ms_data\fP * data)"
 
 .PP
 execute pipe when | is found in the command --
@@ -99,7 +99,7 @@ Definition at line \fB35\fP of file \fBpipe\&.c\fP\&.
 .fi
 
 .PP
-References \fBclose_fds()\fP, \fBexecute_child()\fP, \fBft_perror()\fP, \fBs_ast::left\fP, \fBs_ast::right\fP, \fBs_minishell_data::std_in\fP, and \fBWAIT_NEXT_COMMAND\fP\&.
+References \fBclose_fds()\fP, \fBexecute_child()\fP, \fBft_perror()\fP, \fBs_ast::left\fP, \fBs_ast::right\fP, \fBs_ms_data::std_in\fP, and \fBWAIT_NEXT_COMMAND\fP\&.
 .PP
 Referenced by \fBbuiltin_pipe_test()\fP, and \fBexecute_ast()\fP\&.
 .SH "Author"

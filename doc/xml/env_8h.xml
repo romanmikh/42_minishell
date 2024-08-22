@@ -412,7 +412,7 @@
         </inbodydescription>
         <location file="/Users/dimadem/Documents/GitHub/minishell/inc/env.h" line="24" column="5" bodyfile="/Users/dimadem/Documents/GitHub/minishell/src/env/env.c" bodystart="24" bodyend="31" declfile="/Users/dimadem/Documents/GitHub/minishell/inc/env.h" declline="24" declcolumn="5"/>
         <references refid="env_2env_8c_1aa2e361e75c8c044d588ec5c07b560659" compoundref="env_2env_8c" startline="33" endline="58">add_env_node</references>
-        <referencedby refid="tokens_8h_1ab7986766cca35553aa796f6a732d856a" compoundref="initialise_8c" startline="16" endline="27">init_minishell_data</referencedby>
+        <referencedby refid="tokens_8h_1ab7986766cca35553aa796f6a732d856a" compoundref="initialise_8c" startline="16" endline="27">init_ms_data</referencedby>
         <referencedby refid="env__test_8c_1a4adfeb719435c39cc19b4c8f4e7e67a0" compoundref="env__test_8c" startline="57" endline="70">test_get_env</referencedby>
         <referencedby refid="env__test_8c_1acac11373a53e4554ff03dd0e197c767b" compoundref="env__test_8c" startline="35" endline="55">test_init_env</referencedby>
         <referencedby refid="env__test_8c_1a791d22f0a8695ef368626b927cb18caf" compoundref="env__test_8c" startline="72" endline="86">test_set_env</referencedby>

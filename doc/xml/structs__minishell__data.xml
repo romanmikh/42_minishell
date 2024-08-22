@@ -1,15 +1,15 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.11.0" xml:lang="en-US">
   <compounddef id="structs__minishell__data" kind="struct" language="C++" prot="public">
-    <compoundname>s_minishell_data</compoundname>
+    <compoundname>s_ms_data</compoundname>
     <includes refid="shell_8h" local="no">shell.h</includes>
     <sectiondef kind="public-attrib">
       <memberdef kind="variable" id="structs__minishell__data_1aeb4af268850af7d0f6d0c64f2bfefdea" prot="public" static="no" mutable="no">
         <type>char **</type>
-        <definition>char** s_minishell_data::args</definition>
+        <definition>char** s_ms_data::args</definition>
         <argsstring></argsstring>
         <name>args</name>
-        <qualifiedname>s_minishell_data::args</qualifiedname>
+        <qualifiedname>s_ms_data::args</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -26,16 +26,16 @@
         <referencedby refid="builtins_8h_1aa04be64406f96e5ae8f361421bf72cec" compoundref="unset_8c" startline="26" endline="45">builtin_unset</referencedby>
         <referencedby refid="execute_8c_1ae9738c8104774062bc2934b701fe96d9" compoundref="execute_8c" startline="70" endline="97">execute</referencedby>
         <referencedby refid="execute_8h_1ace4c3a2246919797e40140123d79596a" compoundref="execute_8c" startline="37" endline="59">execute_ast</referencedby>
-        <referencedby refid="tokens_8h_1a16d324fdb41b45b7e59af5eaab2e56bd" compoundref="clean__general_8c" startline="43" endline="53">free_minishell_data</referencedby>
-        <referencedby refid="tokens_8h_1ab7986766cca35553aa796f6a732d856a" compoundref="initialise_8c" startline="16" endline="27">init_minishell_data</referencedby>
+        <referencedby refid="tokens_8h_1a16d324fdb41b45b7e59af5eaab2e56bd" compoundref="clean__general_8c" startline="43" endline="53">free_ms_data</referencedby>
+        <referencedby refid="tokens_8h_1ab7986766cca35553aa796f6a732d856a" compoundref="initialise_8c" startline="16" endline="27">init_ms_data</referencedby>
         <referencedby refid="execute_8c_1a3cfa5b6ea734d8db61dd8be0e0aa9ca8" compoundref="execute_8c" startline="108" endline="133">new_process</referencedby>
       </memberdef>
       <memberdef kind="variable" id="structs__minishell__data_1a8a0b3f50c8893e061062e93115f3d723" prot="public" static="no" mutable="no">
         <type><ref refid="env_8h_1aa3d21e1567b21e23ec928b1eb405fe4b" kindref="member">t_env</ref> *</type>
-        <definition>t_env* s_minishell_data::envp</definition>
+        <definition>t_env* s_ms_data::envp</definition>
         <argsstring></argsstring>
         <name>envp</name>
-        <qualifiedname>s_minishell_data::envp</qualifiedname>
+        <qualifiedname>s_ms_data::envp</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -49,9 +49,9 @@
         <referencedby refid="builtins_8h_1a9e6f1e14f0125cd68c70e8e31ef606aa" compoundref="export_8c" startline="28" endline="44">builtin_export</referencedby>
         <referencedby refid="builtins_8h_1aa04be64406f96e5ae8f361421bf72cec" compoundref="unset_8c" startline="26" endline="45">builtin_unset</referencedby>
         <referencedby refid="env__test_8c_1ac2c82e11f71bdaefecc5df644f06d7c9" compoundref="env__test_8c" startline="25" endline="33">env_tests</referencedby>
-        <referencedby refid="tokens_8h_1a16d324fdb41b45b7e59af5eaab2e56bd" compoundref="clean__general_8c" startline="43" endline="53">free_minishell_data</referencedby>
+        <referencedby refid="tokens_8h_1a16d324fdb41b45b7e59af5eaab2e56bd" compoundref="clean__general_8c" startline="43" endline="53">free_ms_data</referencedby>
         <referencedby refid="prompt_8c_1a5663e22274d85c42c9c7f51e22afc301" compoundref="prompt_8c" startline="50" endline="67">generate_prompt_string</referencedby>
-        <referencedby refid="tokens_8h_1ab7986766cca35553aa796f6a732d856a" compoundref="initialise_8c" startline="16" endline="27">init_minishell_data</referencedby>
+        <referencedby refid="tokens_8h_1ab7986766cca35553aa796f6a732d856a" compoundref="initialise_8c" startline="16" endline="27">init_ms_data</referencedby>
         <referencedby refid="main_8c_1a647f21a28344e1d9c643f4115516d7c9" compoundref="main_8c" startline="53" endline="65">main</referencedby>
         <referencedby refid="execute_8c_1a3cfa5b6ea734d8db61dd8be0e0aa9ca8" compoundref="execute_8c" startline="108" endline="133">new_process</referencedby>
         <referencedby refid="env__test_8c_1a4adfeb719435c39cc19b4c8f4e7e67a0" compoundref="env__test_8c" startline="57" endline="70">test_get_env</referencedby>
@@ -61,10 +61,10 @@
       </memberdef>
       <memberdef kind="variable" id="structs__minishell__data_1a46b92ee58356d0f35174a79ed568253b" prot="public" static="no" mutable="no">
         <type><ref refid="env_8h_1aa3d21e1567b21e23ec928b1eb405fe4b" kindref="member">t_env</ref> *</type>
-        <definition>t_env* s_minishell_data::local_env</definition>
+        <definition>t_env* s_ms_data::local_env</definition>
         <argsstring></argsstring>
         <name>local_env</name>
-        <qualifiedname>s_minishell_data::local_env</qualifiedname>
+        <qualifiedname>s_ms_data::local_env</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -72,15 +72,15 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/dimadem/Documents/GitHub/minishell/inc/shell.h" line="22" column="6" bodyfile="/Users/dimadem/Documents/GitHub/minishell/inc/shell.h" bodystart="22" bodyend="-1"/>
-        <referencedby refid="tokens_8h_1a16d324fdb41b45b7e59af5eaab2e56bd" compoundref="clean__general_8c" startline="43" endline="53">free_minishell_data</referencedby>
-        <referencedby refid="tokens_8h_1ab7986766cca35553aa796f6a732d856a" compoundref="initialise_8c" startline="16" endline="27">init_minishell_data</referencedby>
+        <referencedby refid="tokens_8h_1a16d324fdb41b45b7e59af5eaab2e56bd" compoundref="clean__general_8c" startline="43" endline="53">free_ms_data</referencedby>
+        <referencedby refid="tokens_8h_1ab7986766cca35553aa796f6a732d856a" compoundref="initialise_8c" startline="16" endline="27">init_ms_data</referencedby>
       </memberdef>
       <memberdef kind="variable" id="structs__minishell__data_1a9ed5685097b7e4b55c3c1307b70869ef" prot="public" static="no" mutable="no">
         <type>int</type>
-        <definition>int s_minishell_data::std_in</definition>
+        <definition>int s_ms_data::std_in</definition>
         <argsstring></argsstring>
         <name>std_in</name>
-        <qualifiedname>s_minishell_data::std_in</qualifiedname>
+        <qualifiedname>s_ms_data::std_in</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -92,16 +92,16 @@
         <referencedby refid="redirect__heredoc_8c_1a0a43624bb8557b365fdd6406f70e97ed" compoundref="redirect__heredoc_8c" startline="76" endline="91">execute_child</referencedby>
         <referencedby refid="tokens_8h_1a4c523064ece03ba20eb609b52253b88e" compoundref="prompt_8c" startline="31" endline="48">generate_prompt</referencedby>
         <referencedby refid="execute_8h_1a6f45c6b2374dd1d4eea803d3ba8879b2" compoundref="utils__0_8c" startline="69" endline="78">handle_io_fd</referencedby>
-        <referencedby refid="tokens_8h_1ab7986766cca35553aa796f6a732d856a" compoundref="initialise_8c" startline="16" endline="27">init_minishell_data</referencedby>
+        <referencedby refid="tokens_8h_1ab7986766cca35553aa796f6a732d856a" compoundref="initialise_8c" startline="16" endline="27">init_ms_data</referencedby>
         <referencedby refid="execute_8c_1a3cfa5b6ea734d8db61dd8be0e0aa9ca8" compoundref="execute_8c" startline="108" endline="133">new_process</referencedby>
         <referencedby refid="redirection_8h_1a2635bab3d0023f67288d2832903bdbd9" compoundref="redirect__in_8c" startline="38" endline="55">redirect_in</referencedby>
       </memberdef>
       <memberdef kind="variable" id="structs__minishell__data_1ac90001aa8bc9a89b165ee6bca5f05ef3" prot="public" static="no" mutable="no">
         <type>int</type>
-        <definition>int s_minishell_data::std_out</definition>
+        <definition>int s_ms_data::std_out</definition>
         <argsstring></argsstring>
         <name>std_out</name>
-        <qualifiedname>s_minishell_data::std_out</qualifiedname>
+        <qualifiedname>s_ms_data::std_out</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -110,17 +110,17 @@
         </inbodydescription>
         <location file="/Users/dimadem/Documents/GitHub/minishell/inc/shell.h" line="24" column="4" bodyfile="/Users/dimadem/Documents/GitHub/minishell/inc/shell.h" bodystart="24" bodyend="-1"/>
         <referencedby refid="execute_8h_1a6f45c6b2374dd1d4eea803d3ba8879b2" compoundref="utils__0_8c" startline="69" endline="78">handle_io_fd</referencedby>
-        <referencedby refid="tokens_8h_1ab7986766cca35553aa796f6a732d856a" compoundref="initialise_8c" startline="16" endline="27">init_minishell_data</referencedby>
+        <referencedby refid="tokens_8h_1ab7986766cca35553aa796f6a732d856a" compoundref="initialise_8c" startline="16" endline="27">init_ms_data</referencedby>
         <referencedby refid="execute_8c_1a3cfa5b6ea734d8db61dd8be0e0aa9ca8" compoundref="execute_8c" startline="108" endline="133">new_process</referencedby>
         <referencedby refid="redirection_8h_1a780ae5fe0eba6dcc6cab3a347507d636" compoundref="redirect__append_8c" startline="31" endline="49">redirect_append</referencedby>
         <referencedby refid="redirection_8h_1a13afb8e911eca2b32bd9e843eda752a5" compoundref="redirect__out_8c" startline="32" endline="50">redirect_out</referencedby>
       </memberdef>
       <memberdef kind="variable" id="structs__minishell__data_1a5122e3a902d8f28e8b69576175f28c2b" prot="public" static="no" mutable="no">
         <type>int</type>
-        <definition>int s_minishell_data::std_err</definition>
+        <definition>int s_ms_data::std_err</definition>
         <argsstring></argsstring>
         <name>std_err</name>
-        <qualifiedname>s_minishell_data::std_err</qualifiedname>
+        <qualifiedname>s_ms_data::std_err</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -128,14 +128,14 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/dimadem/Documents/GitHub/minishell/inc/shell.h" line="25" column="4" bodyfile="/Users/dimadem/Documents/GitHub/minishell/inc/shell.h" bodystart="25" bodyend="-1"/>
-        <referencedby refid="tokens_8h_1ab7986766cca35553aa796f6a732d856a" compoundref="initialise_8c" startline="16" endline="27">init_minishell_data</referencedby>
+        <referencedby refid="tokens_8h_1ab7986766cca35553aa796f6a732d856a" compoundref="initialise_8c" startline="16" endline="27">init_ms_data</referencedby>
       </memberdef>
       <memberdef kind="variable" id="structs__minishell__data_1a147731c1cf1a04c1fc1b85e6343cc7cc" prot="public" static="no" mutable="no">
         <type>char *</type>
-        <definition>char* s_minishell_data::current_dir</definition>
+        <definition>char* s_ms_data::current_dir</definition>
         <argsstring></argsstring>
         <name>current_dir</name>
-        <qualifiedname>s_minishell_data::current_dir</qualifiedname>
+        <qualifiedname>s_ms_data::current_dir</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -143,15 +143,15 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/dimadem/Documents/GitHub/minishell/inc/shell.h" line="26" column="5" bodyfile="/Users/dimadem/Documents/GitHub/minishell/inc/shell.h" bodystart="26" bodyend="-1"/>
-        <referencedby refid="tokens_8h_1a16d324fdb41b45b7e59af5eaab2e56bd" compoundref="clean__general_8c" startline="43" endline="53">free_minishell_data</referencedby>
-        <referencedby refid="tokens_8h_1ab7986766cca35553aa796f6a732d856a" compoundref="initialise_8c" startline="16" endline="27">init_minishell_data</referencedby>
+        <referencedby refid="tokens_8h_1a16d324fdb41b45b7e59af5eaab2e56bd" compoundref="clean__general_8c" startline="43" endline="53">free_ms_data</referencedby>
+        <referencedby refid="tokens_8h_1ab7986766cca35553aa796f6a732d856a" compoundref="initialise_8c" startline="16" endline="27">init_ms_data</referencedby>
       </memberdef>
       <memberdef kind="variable" id="structs__minishell__data_1a978016fddb1d9faa4fbda6859a9a199e" prot="public" static="no" mutable="no">
         <type>int</type>
-        <definition>int s_minishell_data::exit_status</definition>
+        <definition>int s_ms_data::exit_status</definition>
         <argsstring></argsstring>
         <name>exit_status</name>
-        <qualifiedname>s_minishell_data::exit_status</qualifiedname>
+        <qualifiedname>s_ms_data::exit_status</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -162,7 +162,7 @@
         <referencedby refid="builtins_8h_1a6a7d93447961b415c9c16ebdfcd3d5fa" compoundref="exit_8c" startline="26" endline="34">builtin_exit</referencedby>
         <referencedby refid="builtins_8h_1aa04be64406f96e5ae8f361421bf72cec" compoundref="unset_8c" startline="26" endline="45">builtin_unset</referencedby>
         <referencedby refid="redirect__heredoc_8c_1a0a43624bb8557b365fdd6406f70e97ed" compoundref="redirect__heredoc_8c" startline="76" endline="91">execute_child</referencedby>
-        <referencedby refid="tokens_8h_1ab7986766cca35553aa796f6a732d856a" compoundref="initialise_8c" startline="16" endline="27">init_minishell_data</referencedby>
+        <referencedby refid="tokens_8h_1ab7986766cca35553aa796f6a732d856a" compoundref="initialise_8c" startline="16" endline="27">init_ms_data</referencedby>
         <referencedby refid="execute_8c_1a3cfa5b6ea734d8db61dd8be0e0aa9ca8" compoundref="execute_8c" startline="108" endline="133">new_process</referencedby>
         <referencedby refid="redirection_8h_1a2635bab3d0023f67288d2832903bdbd9" compoundref="redirect__in_8c" startline="38" endline="55">redirect_in</referencedby>
       </memberdef>
@@ -180,7 +180,7 @@
         </childnode>
       </node>
       <node id="1">
-        <label>s_minishell_data</label>
+        <label>s_ms_data</label>
         <link refid="structs__minishell__data"/>
         <childnode refid="2" relation="usage">
           <edgelabel>envp</edgelabel>
@@ -190,14 +190,14 @@
     </collaborationgraph>
     <location file="/Users/dimadem/Documents/GitHub/minishell/inc/shell.h" line="18" column="1" bodyfile="/Users/dimadem/Documents/GitHub/minishell/inc/shell.h" bodystart="19" bodyend="28"/>
     <listofallmembers>
-      <member refid="structs__minishell__data_1aeb4af268850af7d0f6d0c64f2bfefdea" prot="public" virt="non-virtual"><scope>s_minishell_data</scope><name>args</name></member>
-      <member refid="structs__minishell__data_1a147731c1cf1a04c1fc1b85e6343cc7cc" prot="public" virt="non-virtual"><scope>s_minishell_data</scope><name>current_dir</name></member>
-      <member refid="structs__minishell__data_1a8a0b3f50c8893e061062e93115f3d723" prot="public" virt="non-virtual"><scope>s_minishell_data</scope><name>envp</name></member>
-      <member refid="structs__minishell__data_1a978016fddb1d9faa4fbda6859a9a199e" prot="public" virt="non-virtual"><scope>s_minishell_data</scope><name>exit_status</name></member>
-      <member refid="structs__minishell__data_1a46b92ee58356d0f35174a79ed568253b" prot="public" virt="non-virtual"><scope>s_minishell_data</scope><name>local_env</name></member>
-      <member refid="structs__minishell__data_1a5122e3a902d8f28e8b69576175f28c2b" prot="public" virt="non-virtual"><scope>s_minishell_data</scope><name>std_err</name></member>
-      <member refid="structs__minishell__data_1a9ed5685097b7e4b55c3c1307b70869ef" prot="public" virt="non-virtual"><scope>s_minishell_data</scope><name>std_in</name></member>
-      <member refid="structs__minishell__data_1ac90001aa8bc9a89b165ee6bca5f05ef3" prot="public" virt="non-virtual"><scope>s_minishell_data</scope><name>std_out</name></member>
+      <member refid="structs__minishell__data_1aeb4af268850af7d0f6d0c64f2bfefdea" prot="public" virt="non-virtual"><scope>s_ms_data</scope><name>args</name></member>
+      <member refid="structs__minishell__data_1a147731c1cf1a04c1fc1b85e6343cc7cc" prot="public" virt="non-virtual"><scope>s_ms_data</scope><name>current_dir</name></member>
+      <member refid="structs__minishell__data_1a8a0b3f50c8893e061062e93115f3d723" prot="public" virt="non-virtual"><scope>s_ms_data</scope><name>envp</name></member>
+      <member refid="structs__minishell__data_1a978016fddb1d9faa4fbda6859a9a199e" prot="public" virt="non-virtual"><scope>s_ms_data</scope><name>exit_status</name></member>
+      <member refid="structs__minishell__data_1a46b92ee58356d0f35174a79ed568253b" prot="public" virt="non-virtual"><scope>s_ms_data</scope><name>local_env</name></member>
+      <member refid="structs__minishell__data_1a5122e3a902d8f28e8b69576175f28c2b" prot="public" virt="non-virtual"><scope>s_ms_data</scope><name>std_err</name></member>
+      <member refid="structs__minishell__data_1a9ed5685097b7e4b55c3c1307b70869ef" prot="public" virt="non-virtual"><scope>s_ms_data</scope><name>std_in</name></member>
+      <member refid="structs__minishell__data_1ac90001aa8bc9a89b165ee6bca5f05ef3" prot="public" virt="non-virtual"><scope>s_ms_data</scope><name>std_out</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>

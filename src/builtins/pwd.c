@@ -20,7 +20,7 @@ Functionality:
 - Print the current working directory
  */
 
-int	builtin_pwd(t_minishell_data *data)
+int	builtin_pwd(t_ms_data *data)
 {
 	char	cwd[4096];
 

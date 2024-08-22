@@ -27,7 +27,7 @@ int	status_handler(int status, t_loop_data *loop_data)
 	return (1);
 }
 
-void	main_loop(t_minishell_data *data, t_loop_data *loop_data)
+void	main_loop(t_ms_data *data, t_loop_data *loop_data)
 {
 	int	status;
 
@@ -61,13 +61,13 @@ void	main_loop(t_minishell_data *data, t_loop_data *loop_data)
 
 int	main(int argc, char **argv, char **envp)
 {
-	t_minishell_data	data;
+	t_ms_data	data;
 	t_loop_data			loop_data;
 
 	print_maxishell();
-	init_minishell_data(&data, envp);
+	init_ms_data(&data, envp);
 	initialise(argc, argv);
 	main_loop(&data, &loop_data);
-	free_minishell_data(&data);
+	free_ms_data(&data);
 	return (0);
 }

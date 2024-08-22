@@ -16,10 +16,10 @@
 #include "pipe.h"
 #include "libft.h"
 
-void	builtin_pipe_test(t_minishell_data *data);
-void	pipe_tests(t_minishell_data *data);
+void	builtin_pipe_test(t_ms_data *data);
+void	pipe_tests(t_ms_data *data);
 
-void	pipe_tests(t_minishell_data *data)
+void	pipe_tests(t_ms_data *data)
 {
 	printf("\nPIPE TESTS\n");
 	builtin_pipe_test(data);
@@ -29,7 +29,7 @@ void	pipe_tests(t_minishell_data *data)
 	printf("\033[0m");
 }
 
-void	builtin_pipe_test(t_minishell_data *data)
+void	builtin_pipe_test(t_ms_data *data)
 {
 	data->args = ft_split("ls -l | wc -l", ' ');
 	builtin_pipe(node, data);

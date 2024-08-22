@@ -19,6 +19,6 @@
 # define WAIT_NEXT_COMMAND 1
 
 /*  pipe    */
-int	builtin_pipe(t_ast *node, t_minishell_data *data);
+int	builtin_pipe(t_ast *node, t_ms_data *data);
 
 #endif

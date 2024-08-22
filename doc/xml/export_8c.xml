@@ -89,10 +89,10 @@
       <memberdef kind="function" id="export_8c_1a9e6f1e14f0125cd68c70e8e31ef606aa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
         <definition>int builtin_export</definition>
-        <argsstring>(t_minishell_data *data)</argsstring>
+        <argsstring>(t_ms_data *data)</argsstring>
         <name>builtin_export</name>
         <param>
-          <type><ref refid="shell_8h_1a163dfbd200eaf940e5a56fd45345ff72" kindref="member">t_minishell_data</ref> *</type>
+          <type><ref refid="shell_8h_1a163dfbd200eaf940e5a56fd45345ff72" kindref="member">t_ms_data</ref> *</type>
           <declname>data</declname>
         </param>
         <briefdescription>
@@ -103,8 +103,8 @@
         </inbodydescription>
         <location file="/Users/dimadem/Documents/GitHub/minishell/src/builtins/export.c" line="28" column="4" bodyfile="/Users/dimadem/Documents/GitHub/minishell/src/builtins/export.c" bodystart="28" bodyend="44" declfile="/Users/dimadem/Documents/GitHub/minishell/src/builtins/export.c" declline="25" declcolumn="4"/>
         <references refid="export_8c_1a9572a06bde314d79d284738ffef37d8d" compoundref="export_8c" startline="46" endline="66">add_env</references>
-        <references refid="structs__minishell__data_1aeb4af268850af7d0f6d0c64f2bfefdea" compoundref="shell_8h" startline="20">s_minishell_data::args</references>
-        <references refid="structs__minishell__data_1a8a0b3f50c8893e061062e93115f3d723" compoundref="shell_8h" startline="21">s_minishell_data::envp</references>
+        <references refid="structs__minishell__data_1aeb4af268850af7d0f6d0c64f2bfefdea" compoundref="shell_8h" startline="20">s_ms_data::args</references>
+        <references refid="structs__minishell__data_1a8a0b3f50c8893e061062e93115f3d723" compoundref="shell_8h" startline="21">s_ms_data::envp</references>
         <references refid="libft_8h_1a9d2fe792187aa4ed08e5864fb2c4d6dc" compoundref="ft__strncmp_8c" startline="24" endline="35">ft_strncmp</references>
         <references refid="structs__env_1a3caf3df6eb72714ffcd4e22f9c94ecf2" compoundref="env_8h" startline="20">s_env::next</references>
         <referencedby refid="execute_8c_1ae9738c8104774062bc2934b701fe96d9" compoundref="execute_8c" startline="70" endline="97">execute</referencedby>
@@ -112,14 +112,14 @@
       <memberdef kind="function" id="export_8c_1a9572a06bde314d79d284738ffef37d8d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void add_env</definition>
-        <argsstring>(char *key, t_minishell_data *data)</argsstring>
+        <argsstring>(char *key, t_ms_data *data)</argsstring>
         <name>add_env</name>
         <param>
           <type>char *</type>
           <declname>key</declname>
         </param>
         <param>
-          <type><ref refid="shell_8h_1a163dfbd200eaf940e5a56fd45345ff72" kindref="member">t_minishell_data</ref> *</type>
+          <type><ref refid="shell_8h_1a163dfbd200eaf940e5a56fd45345ff72" kindref="member">t_ms_data</ref> *</type>
           <declname>data</declname>
         </param>
         <briefdescription>
@@ -129,8 +129,8 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/dimadem/Documents/GitHub/minishell/src/builtins/export.c" line="46" column="5" bodyfile="/Users/dimadem/Documents/GitHub/minishell/src/builtins/export.c" bodystart="46" bodyend="66" declfile="/Users/dimadem/Documents/GitHub/minishell/src/builtins/export.c" declline="26" declcolumn="5"/>
-        <references refid="structs__minishell__data_1aeb4af268850af7d0f6d0c64f2bfefdea" compoundref="shell_8h" startline="20">s_minishell_data::args</references>
-        <references refid="structs__minishell__data_1a8a0b3f50c8893e061062e93115f3d723" compoundref="shell_8h" startline="21">s_minishell_data::envp</references>
+        <references refid="structs__minishell__data_1aeb4af268850af7d0f6d0c64f2bfefdea" compoundref="shell_8h" startline="20">s_ms_data::args</references>
+        <references refid="structs__minishell__data_1a8a0b3f50c8893e061062e93115f3d723" compoundref="shell_8h" startline="21">s_ms_data::envp</references>
         <references refid="env_8h_1a67c3dca975ac3373851ded9534701bf5" compoundref="env_2utils_8c" startline="51" endline="70">ft_strcdup</references>
         <references refid="libft_8h_1aa6d0c2d180f32ee585485e1a1ce3d55d" compoundref="ft__strchr_8c" startline="25" endline="35">ft_strchr</references>
         <references refid="env_8h_1a41133e0ba7230727a51eedce713a225c" compoundref="env_2env_8c" startline="60" endline="72">get_env</references>
@@ -167,10 +167,10 @@
 <codeline lineno="22"><highlight class="comment">-<sp/>If<sp/>arguments<sp/>are<sp/>passed,<sp/>set<sp/>the<sp/>environment<sp/>variables</highlight></codeline>
 <codeline lineno="23"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="24"><highlight class="normal"></highlight></codeline>
-<codeline lineno="25"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><ref refid="export_8c_1a9e6f1e14f0125cd68c70e8e31ef606aa" kindref="member">builtin_export</ref>(<ref refid="structs__minishell__data" kindref="compound">t_minishell_data</ref><sp/>*data);</highlight></codeline>
-<codeline lineno="26"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="export_8c_1a9572a06bde314d79d284738ffef37d8d" kindref="member">add_env</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*key,<sp/><ref refid="structs__minishell__data" kindref="compound">t_minishell_data</ref><sp/>*data);</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><ref refid="export_8c_1a9e6f1e14f0125cd68c70e8e31ef606aa" kindref="member">builtin_export</ref>(<ref refid="structs__minishell__data" kindref="compound">t_ms_data</ref><sp/>*data);</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="export_8c_1a9572a06bde314d79d284738ffef37d8d" kindref="member">add_env</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*key,<sp/><ref refid="structs__minishell__data" kindref="compound">t_ms_data</ref><sp/>*data);</highlight></codeline>
 <codeline lineno="27"><highlight class="normal"></highlight></codeline>
-<codeline lineno="28" refid="builtins_8h_1a9e6f1e14f0125cd68c70e8e31ef606aa" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="export_8c_1a9e6f1e14f0125cd68c70e8e31ef606aa" kindref="member">builtin_export</ref>(<ref refid="structs__minishell__data" kindref="compound">t_minishell_data</ref><sp/>*data)</highlight></codeline>
+<codeline lineno="28" refid="builtins_8h_1a9e6f1e14f0125cd68c70e8e31ef606aa" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="export_8c_1a9e6f1e14f0125cd68c70e8e31ef606aa" kindref="member">builtin_export</ref>(<ref refid="structs__minishell__data" kindref="compound">t_ms_data</ref><sp/>*data)</highlight></codeline>
 <codeline lineno="29"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structs__env" kindref="compound">t_env</ref><sp/><sp/><sp/>*curr_node;</highlight></codeline>
 <codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/><sp/><sp/>*key;</highlight></codeline>
@@ -188,7 +188,7 @@
 <codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(0);</highlight></codeline>
 <codeline lineno="44"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="45"><highlight class="normal"></highlight></codeline>
-<codeline lineno="46" refid="export_8c_1a9572a06bde314d79d284738ffef37d8d" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="export_8c_1a9572a06bde314d79d284738ffef37d8d" kindref="member">add_env</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*key,<sp/><ref refid="structs__minishell__data" kindref="compound">t_minishell_data</ref><sp/>*data)</highlight></codeline>
+<codeline lineno="46" refid="export_8c_1a9572a06bde314d79d284738ffef37d8d" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="export_8c_1a9572a06bde314d79d284738ffef37d8d" kindref="member">add_env</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*key,<sp/><ref refid="structs__minishell__data" kindref="compound">t_ms_data</ref><sp/>*data)</highlight></codeline>
 <codeline lineno="47"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i;</highlight></codeline>
 <codeline lineno="49"><highlight class="normal"></highlight></codeline>

@@ -92,10 +92,10 @@
       <memberdef kind="function" id="env__test_8c_1ac2c82e11f71bdaefecc5df644f06d7c9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void env_tests</definition>
-        <argsstring>(t_minishell_data *data, char **envp)</argsstring>
+        <argsstring>(t_ms_data *data, char **envp)</argsstring>
         <name>env_tests</name>
         <param>
-          <type><ref refid="shell_8h_1a163dfbd200eaf940e5a56fd45345ff72" kindref="member">t_minishell_data</ref> *</type>
+          <type><ref refid="shell_8h_1a163dfbd200eaf940e5a56fd45345ff72" kindref="member">t_ms_data</ref> *</type>
           <declname>data</declname>
         </param>
         <param>
@@ -109,7 +109,7 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/dimadem/Documents/GitHub/minishell/src/test/env/env_test.c" line="25" column="5" bodyfile="/Users/dimadem/Documents/GitHub/minishell/src/test/env/env_test.c" bodystart="25" bodyend="33" declfile="/Users/dimadem/Documents/GitHub/minishell/src/test/env/env_test.c" declline="19" declcolumn="5"/>
-        <references refid="structs__minishell__data_1a8a0b3f50c8893e061062e93115f3d723" compoundref="shell_8h" startline="21">s_minishell_data::envp</references>
+        <references refid="structs__minishell__data_1a8a0b3f50c8893e061062e93115f3d723" compoundref="shell_8h" startline="21">s_ms_data::envp</references>
         <references refid="env_8h_1a2c192ab32512a4454973d916c1bff54e" compoundref="env_2utils_8c" startline="72" endline="86">free_env</references>
         <references refid="env__test_8c_1a4adfeb719435c39cc19b4c8f4e7e67a0" compoundref="env__test_8c" startline="57" endline="70">test_get_env</references>
         <references refid="env__test_8c_1acac11373a53e4554ff03dd0e197c767b" compoundref="env__test_8c" startline="35" endline="55">test_init_env</references>
@@ -120,10 +120,10 @@
       <memberdef kind="function" id="env__test_8c_1acac11373a53e4554ff03dd0e197c767b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void test_init_env</definition>
-        <argsstring>(t_minishell_data *data, char **envp)</argsstring>
+        <argsstring>(t_ms_data *data, char **envp)</argsstring>
         <name>test_init_env</name>
         <param>
-          <type><ref refid="shell_8h_1a163dfbd200eaf940e5a56fd45345ff72" kindref="member">t_minishell_data</ref> *</type>
+          <type><ref refid="shell_8h_1a163dfbd200eaf940e5a56fd45345ff72" kindref="member">t_ms_data</ref> *</type>
           <declname>data</declname>
         </param>
         <param>
@@ -138,17 +138,17 @@
         </inbodydescription>
         <location file="/Users/dimadem/Documents/GitHub/minishell/src/test/env/env_test.c" line="35" column="5" bodyfile="/Users/dimadem/Documents/GitHub/minishell/src/test/env/env_test.c" bodystart="35" bodyend="55" declfile="/Users/dimadem/Documents/GitHub/minishell/src/test/env/env_test.c" declline="20" declcolumn="5"/>
         <references refid="env_8h_1a19f3a9e73371c1cfb3db076f94d33830" compoundref="env_2utils_8c" startline="22" endline="49">env_to_array</references>
-        <references refid="structs__minishell__data_1a8a0b3f50c8893e061062e93115f3d723" compoundref="shell_8h" startline="21">s_minishell_data::envp</references>
+        <references refid="structs__minishell__data_1a8a0b3f50c8893e061062e93115f3d723" compoundref="shell_8h" startline="21">s_ms_data::envp</references>
         <references refid="env_8h_1a2344221e4d3b1327b956157b837a727b" compoundref="env_2env_8c" startline="24" endline="31">init_env</references>
         <referencedby refid="env__test_8c_1ac2c82e11f71bdaefecc5df644f06d7c9" compoundref="env__test_8c" startline="25" endline="33">env_tests</referencedby>
       </memberdef>
       <memberdef kind="function" id="env__test_8c_1a4adfeb719435c39cc19b4c8f4e7e67a0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void test_get_env</definition>
-        <argsstring>(t_minishell_data *data, char **envp)</argsstring>
+        <argsstring>(t_ms_data *data, char **envp)</argsstring>
         <name>test_get_env</name>
         <param>
-          <type><ref refid="shell_8h_1a163dfbd200eaf940e5a56fd45345ff72" kindref="member">t_minishell_data</ref> *</type>
+          <type><ref refid="shell_8h_1a163dfbd200eaf940e5a56fd45345ff72" kindref="member">t_ms_data</ref> *</type>
           <declname>data</declname>
         </param>
         <param>
@@ -162,7 +162,7 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/dimadem/Documents/GitHub/minishell/src/test/env/env_test.c" line="57" column="5" bodyfile="/Users/dimadem/Documents/GitHub/minishell/src/test/env/env_test.c" bodystart="57" bodyend="70" declfile="/Users/dimadem/Documents/GitHub/minishell/src/test/env/env_test.c" declline="21" declcolumn="5"/>
-        <references refid="structs__minishell__data_1a8a0b3f50c8893e061062e93115f3d723" compoundref="shell_8h" startline="21">s_minishell_data::envp</references>
+        <references refid="structs__minishell__data_1a8a0b3f50c8893e061062e93115f3d723" compoundref="shell_8h" startline="21">s_ms_data::envp</references>
         <references refid="libft_8h_1a1f2ff2312e5994560c9537cd9173be94" compoundref="ft__strcmp_8c" startline="24" endline="34">ft_strcmp</references>
         <references refid="env_8h_1a41133e0ba7230727a51eedce713a225c" compoundref="env_2env_8c" startline="60" endline="72">get_env</references>
         <references refid="env_8h_1a2344221e4d3b1327b956157b837a727b" compoundref="env_2env_8c" startline="24" endline="31">init_env</references>
@@ -171,10 +171,10 @@
       <memberdef kind="function" id="env__test_8c_1a791d22f0a8695ef368626b927cb18caf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void test_set_env</definition>
-        <argsstring>(t_minishell_data *data, char **envp)</argsstring>
+        <argsstring>(t_ms_data *data, char **envp)</argsstring>
         <name>test_set_env</name>
         <param>
-          <type><ref refid="shell_8h_1a163dfbd200eaf940e5a56fd45345ff72" kindref="member">t_minishell_data</ref> *</type>
+          <type><ref refid="shell_8h_1a163dfbd200eaf940e5a56fd45345ff72" kindref="member">t_ms_data</ref> *</type>
           <declname>data</declname>
         </param>
         <param>
@@ -188,7 +188,7 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/dimadem/Documents/GitHub/minishell/src/test/env/env_test.c" line="72" column="5" bodyfile="/Users/dimadem/Documents/GitHub/minishell/src/test/env/env_test.c" bodystart="72" bodyend="86" declfile="/Users/dimadem/Documents/GitHub/minishell/src/test/env/env_test.c" declline="22" declcolumn="5"/>
-        <references refid="structs__minishell__data_1a8a0b3f50c8893e061062e93115f3d723" compoundref="shell_8h" startline="21">s_minishell_data::envp</references>
+        <references refid="structs__minishell__data_1a8a0b3f50c8893e061062e93115f3d723" compoundref="shell_8h" startline="21">s_ms_data::envp</references>
         <references refid="libft_8h_1a1f2ff2312e5994560c9537cd9173be94" compoundref="ft__strcmp_8c" startline="24" endline="34">ft_strcmp</references>
         <references refid="env_8h_1a41133e0ba7230727a51eedce713a225c" compoundref="env_2env_8c" startline="60" endline="72">get_env</references>
         <references refid="env_8h_1a2344221e4d3b1327b956157b837a727b" compoundref="env_2env_8c" startline="24" endline="31">init_env</references>
@@ -198,10 +198,10 @@
       <memberdef kind="function" id="env__test_8c_1a42689ea8be8292c12da563c4d8cfbc5f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void test_unset_env</definition>
-        <argsstring>(t_minishell_data *data)</argsstring>
+        <argsstring>(t_ms_data *data)</argsstring>
         <name>test_unset_env</name>
         <param>
-          <type><ref refid="shell_8h_1a163dfbd200eaf940e5a56fd45345ff72" kindref="member">t_minishell_data</ref> *</type>
+          <type><ref refid="shell_8h_1a163dfbd200eaf940e5a56fd45345ff72" kindref="member">t_ms_data</ref> *</type>
           <declname>data</declname>
         </param>
         <briefdescription>
@@ -211,7 +211,7 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/dimadem/Documents/GitHub/minishell/src/test/env/env_test.c" line="88" column="5" bodyfile="/Users/dimadem/Documents/GitHub/minishell/src/test/env/env_test.c" bodystart="88" bodyend="103" declfile="/Users/dimadem/Documents/GitHub/minishell/src/test/env/env_test.c" declline="23" declcolumn="5"/>
-        <references refid="structs__minishell__data_1a8a0b3f50c8893e061062e93115f3d723" compoundref="shell_8h" startline="21">s_minishell_data::envp</references>
+        <references refid="structs__minishell__data_1a8a0b3f50c8893e061062e93115f3d723" compoundref="shell_8h" startline="21">s_ms_data::envp</references>
         <references refid="libft_8h_1a1f2ff2312e5994560c9537cd9173be94" compoundref="ft__strcmp_8c" startline="24" endline="34">ft_strcmp</references>
         <references refid="env_8h_1a41133e0ba7230727a51eedce713a225c" compoundref="env_2env_8c" startline="60" endline="72">get_env</references>
         <references refid="env_8h_1a194b2552273340441e8b481b4ce5202c" compoundref="env_2env_8c" startline="79" endline="99">set_env</references>
@@ -242,13 +242,13 @@
 <codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="shell_8h" kindref="compound">shell.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdio.h&gt;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="18"><highlight class="normal"></highlight></codeline>
-<codeline lineno="19"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="env__test_8c_1ac2c82e11f71bdaefecc5df644f06d7c9" kindref="member">env_tests</ref>(<ref refid="structs__minishell__data" kindref="compound">t_minishell_data</ref><sp/>*data,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>**envp);</highlight></codeline>
-<codeline lineno="20"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="env__test_8c_1acac11373a53e4554ff03dd0e197c767b" kindref="member">test_init_env</ref>(<ref refid="structs__minishell__data" kindref="compound">t_minishell_data</ref><sp/>*data,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>**envp);</highlight></codeline>
-<codeline lineno="21"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="env__test_8c_1a4adfeb719435c39cc19b4c8f4e7e67a0" kindref="member">test_get_env</ref>(<ref refid="structs__minishell__data" kindref="compound">t_minishell_data</ref><sp/>*data,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>**envp);</highlight></codeline>
-<codeline lineno="22"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="env__test_8c_1a791d22f0a8695ef368626b927cb18caf" kindref="member">test_set_env</ref>(<ref refid="structs__minishell__data" kindref="compound">t_minishell_data</ref><sp/>*data,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>**envp);</highlight></codeline>
-<codeline lineno="23"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="env__test_8c_1a42689ea8be8292c12da563c4d8cfbc5f" kindref="member">test_unset_env</ref>(<ref refid="structs__minishell__data" kindref="compound">t_minishell_data</ref><sp/>*data);</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="env__test_8c_1ac2c82e11f71bdaefecc5df644f06d7c9" kindref="member">env_tests</ref>(<ref refid="structs__minishell__data" kindref="compound">t_ms_data</ref><sp/>*data,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>**envp);</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="env__test_8c_1acac11373a53e4554ff03dd0e197c767b" kindref="member">test_init_env</ref>(<ref refid="structs__minishell__data" kindref="compound">t_ms_data</ref><sp/>*data,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>**envp);</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="env__test_8c_1a4adfeb719435c39cc19b4c8f4e7e67a0" kindref="member">test_get_env</ref>(<ref refid="structs__minishell__data" kindref="compound">t_ms_data</ref><sp/>*data,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>**envp);</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="env__test_8c_1a791d22f0a8695ef368626b927cb18caf" kindref="member">test_set_env</ref>(<ref refid="structs__minishell__data" kindref="compound">t_ms_data</ref><sp/>*data,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>**envp);</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="env__test_8c_1a42689ea8be8292c12da563c4d8cfbc5f" kindref="member">test_unset_env</ref>(<ref refid="structs__minishell__data" kindref="compound">t_ms_data</ref><sp/>*data);</highlight></codeline>
 <codeline lineno="24"><highlight class="normal"></highlight></codeline>
-<codeline lineno="25" refid="env__test_8c_1ac2c82e11f71bdaefecc5df644f06d7c9" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="env__test_8c_1ac2c82e11f71bdaefecc5df644f06d7c9" kindref="member">env_tests</ref>(<ref refid="structs__minishell__data" kindref="compound">t_minishell_data</ref><sp/>*data,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>**envp)</highlight></codeline>
+<codeline lineno="25" refid="env__test_8c_1ac2c82e11f71bdaefecc5df644f06d7c9" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="env__test_8c_1ac2c82e11f71bdaefecc5df644f06d7c9" kindref="member">env_tests</ref>(<ref refid="structs__minishell__data" kindref="compound">t_ms_data</ref><sp/>*data,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>**envp)</highlight></codeline>
 <codeline lineno="26"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\nENV<sp/>TESTS\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="env__test_8c_1acac11373a53e4554ff03dd0e197c767b" kindref="member">test_init_env</ref>(data,<sp/>envp);</highlight></codeline>
@@ -258,7 +258,7 @@
 <codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="env_8h_1a2c192ab32512a4454973d916c1bff54e" kindref="member">free_env</ref>(data-&gt;<ref refid="structs__minishell__data_1a8a0b3f50c8893e061062e93115f3d723" kindref="member">envp</ref>);</highlight></codeline>
 <codeline lineno="33"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="34"><highlight class="normal"></highlight></codeline>
-<codeline lineno="35" refid="env__test_8c_1acac11373a53e4554ff03dd0e197c767b" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="env__test_8c_1acac11373a53e4554ff03dd0e197c767b" kindref="member">test_init_env</ref>(<ref refid="structs__minishell__data" kindref="compound">t_minishell_data</ref><sp/>*data,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>**envp)</highlight></codeline>
+<codeline lineno="35" refid="env__test_8c_1acac11373a53e4554ff03dd0e197c767b" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="env__test_8c_1acac11373a53e4554ff03dd0e197c767b" kindref="member">test_init_env</ref>(<ref refid="structs__minishell__data" kindref="compound">t_ms_data</ref><sp/>*data,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>**envp)</highlight></codeline>
 <codeline lineno="36"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/><sp/><sp/>**test_envp;</highlight></codeline>
 <codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>envp_count;</highlight></codeline>
@@ -280,7 +280,7 @@
 <codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\033[0m&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="55"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="56"><highlight class="normal"></highlight></codeline>
-<codeline lineno="57" refid="env__test_8c_1a4adfeb719435c39cc19b4c8f4e7e67a0" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="env__test_8c_1a4adfeb719435c39cc19b4c8f4e7e67a0" kindref="member">test_get_env</ref>(<ref refid="structs__minishell__data" kindref="compound">t_minishell_data</ref><sp/>*data,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>**envp)</highlight></codeline>
+<codeline lineno="57" refid="env__test_8c_1a4adfeb719435c39cc19b4c8f4e7e67a0" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="env__test_8c_1a4adfeb719435c39cc19b4c8f4e7e67a0" kindref="member">test_get_env</ref>(<ref refid="structs__minishell__data" kindref="compound">t_ms_data</ref><sp/>*data,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>**envp)</highlight></codeline>
 <codeline lineno="58"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/><sp/><sp/>*value;</highlight></codeline>
 <codeline lineno="60"><highlight class="normal"></highlight></codeline>
@@ -295,7 +295,7 @@
 <codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\033[0m&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="70"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="71"><highlight class="normal"></highlight></codeline>
-<codeline lineno="72" refid="env__test_8c_1a791d22f0a8695ef368626b927cb18caf" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="env__test_8c_1a791d22f0a8695ef368626b927cb18caf" kindref="member">test_set_env</ref>(<ref refid="structs__minishell__data" kindref="compound">t_minishell_data</ref><sp/>*data,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>**envp)</highlight></codeline>
+<codeline lineno="72" refid="env__test_8c_1a791d22f0a8695ef368626b927cb18caf" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="env__test_8c_1a791d22f0a8695ef368626b927cb18caf" kindref="member">test_set_env</ref>(<ref refid="structs__minishell__data" kindref="compound">t_ms_data</ref><sp/>*data,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>**envp)</highlight></codeline>
 <codeline lineno="73"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/><sp/><sp/>*value;</highlight></codeline>
 <codeline lineno="75"><highlight class="normal"></highlight></codeline>
@@ -311,7 +311,7 @@
 <codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\033[0m&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="86"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="87"><highlight class="normal"></highlight></codeline>
-<codeline lineno="88" refid="env__test_8c_1a42689ea8be8292c12da563c4d8cfbc5f" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="env__test_8c_1a42689ea8be8292c12da563c4d8cfbc5f" kindref="member">test_unset_env</ref>(<ref refid="structs__minishell__data" kindref="compound">t_minishell_data</ref><sp/>*data)</highlight></codeline>
+<codeline lineno="88" refid="env__test_8c_1a42689ea8be8292c12da563c4d8cfbc5f" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="env__test_8c_1a42689ea8be8292c12da563c4d8cfbc5f" kindref="member">test_unset_env</ref>(<ref refid="structs__minishell__data" kindref="compound">t_ms_data</ref><sp/>*data)</highlight></codeline>
 <codeline lineno="89"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/><sp/><sp/>*value;</highlight></codeline>
 <codeline lineno="91"><highlight class="normal"></highlight></codeline>

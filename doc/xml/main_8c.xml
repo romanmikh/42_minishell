@@ -161,10 +161,10 @@
       <memberdef kind="function" id="main_8c_1abaf800210325f066cb9289aaae9e2c86" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void main_loop</definition>
-        <argsstring>(t_minishell_data *data, t_loop_data *loop_data)</argsstring>
+        <argsstring>(t_ms_data *data, t_loop_data *loop_data)</argsstring>
         <name>main_loop</name>
         <param>
-          <type><ref refid="shell_8h_1a163dfbd200eaf940e5a56fd45345ff72" kindref="member">t_minishell_data</ref> *</type>
+          <type><ref refid="shell_8h_1a163dfbd200eaf940e5a56fd45345ff72" kindref="member">t_ms_data</ref> *</type>
           <declname>data</declname>
         </param>
         <param>
@@ -220,10 +220,10 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/dimadem/Documents/GitHub/minishell/src/main.c" line="53" column="4" bodyfile="/Users/dimadem/Documents/GitHub/minishell/src/main.c" bodystart="53" bodyend="65"/>
-        <references refid="structs__minishell__data_1a8a0b3f50c8893e061062e93115f3d723" compoundref="shell_8h" startline="21">s_minishell_data::envp</references>
+        <references refid="structs__minishell__data_1a8a0b3f50c8893e061062e93115f3d723" compoundref="shell_8h" startline="21">s_ms_data::envp</references>
         <references refid="env_8h_1a2c192ab32512a4454973d916c1bff54e" compoundref="env_2utils_8c" startline="72" endline="86">free_env</references>
-        <references refid="tokens_8h_1a16d324fdb41b45b7e59af5eaab2e56bd" compoundref="clean__general_8c" startline="43" endline="53">free_minishell_data</references>
-        <references refid="tokens_8h_1ab7986766cca35553aa796f6a732d856a" compoundref="initialise_8c" startline="16" endline="27">init_minishell_data</references>
+        <references refid="tokens_8h_1a16d324fdb41b45b7e59af5eaab2e56bd" compoundref="clean__general_8c" startline="43" endline="53">free_ms_data</references>
+        <references refid="tokens_8h_1ab7986766cca35553aa796f6a732d856a" compoundref="initialise_8c" startline="16" endline="27">init_ms_data</references>
         <references refid="tokens_8h_1a41e7a8e4355566996a5984b4a31fb8fe" compoundref="initialise_8c" startline="29" endline="37">initialise</references>
         <references refid="main_8c_1abaf800210325f066cb9289aaae9e2c86" compoundref="main_8c" startline="29" endline="51">main_loop</references>
         <references refid="tokens_8h_1a4e673b7c7d3f45e10377ab9f537b8bf9" compoundref="prompt_8c" startline="69" endline="90">print_maxishell</references>
@@ -262,7 +262,7 @@
 <codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(1);</highlight></codeline>
 <codeline lineno="27"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="28"><highlight class="normal"></highlight></codeline>
-<codeline lineno="29" refid="main_8c_1abaf800210325f066cb9289aaae9e2c86" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="main_8c_1abaf800210325f066cb9289aaae9e2c86" kindref="member">main_loop</ref>(<ref refid="structs__minishell__data" kindref="compound">t_minishell_data</ref><sp/>*data,<sp/><ref refid="structs__loop__data" kindref="compound">t_loop_data</ref><sp/>*loop_data)</highlight></codeline>
+<codeline lineno="29" refid="main_8c_1abaf800210325f066cb9289aaae9e2c86" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="main_8c_1abaf800210325f066cb9289aaae9e2c86" kindref="member">main_loop</ref>(<ref refid="structs__minishell__data" kindref="compound">t_ms_data</ref><sp/>*data,<sp/><ref refid="structs__loop__data" kindref="compound">t_loop_data</ref><sp/>*loop_data)</highlight></codeline>
 <codeline lineno="30"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>status;</highlight></codeline>
 <codeline lineno="32"><highlight class="normal"></highlight></codeline>
@@ -288,14 +288,14 @@
 <codeline lineno="52"><highlight class="normal"></highlight></codeline>
 <codeline lineno="53" refid="main_8c_1a647f21a28344e1d9c643f4115516d7c9" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="main_8c_1a647f21a28344e1d9c643f4115516d7c9" kindref="member">main</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>argc,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>**argv,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>**envp)</highlight></codeline>
 <codeline lineno="54"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structs__minishell__data" kindref="compound">t_minishell_data</ref><sp/><sp/><sp/><sp/>data;</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structs__minishell__data" kindref="compound">t_ms_data</ref><sp/><sp/><sp/><sp/>data;</highlight></codeline>
 <codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structs__loop__data" kindref="compound">t_loop_data</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>loop_data;</highlight></codeline>
 <codeline lineno="57"><highlight class="normal"></highlight></codeline>
 <codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="tokens_8h_1a4e673b7c7d3f45e10377ab9f537b8bf9" kindref="member">print_maxishell</ref>();</highlight></codeline>
-<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="tokens_8h_1ab7986766cca35553aa796f6a732d856a" kindref="member">init_minishell_data</ref>(&amp;data,<sp/>envp);</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="tokens_8h_1ab7986766cca35553aa796f6a732d856a" kindref="member">init_ms_data</ref>(&amp;data,<sp/>envp);</highlight></codeline>
 <codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="tokens_8h_1a41e7a8e4355566996a5984b4a31fb8fe" kindref="member">initialise</ref>(argc,<sp/>argv);</highlight></codeline>
 <codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="main_8c_1abaf800210325f066cb9289aaae9e2c86" kindref="member">main_loop</ref>(&amp;data,<sp/>&amp;loop_data);</highlight></codeline>
-<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="tokens_8h_1a16d324fdb41b45b7e59af5eaab2e56bd" kindref="member">free_minishell_data</ref>(&amp;data);</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="tokens_8h_1a16d324fdb41b45b7e59af5eaab2e56bd" kindref="member">free_ms_data</ref>(&amp;data);</highlight></codeline>
 <codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="env_8h_1a2c192ab32512a4454973d916c1bff54e" kindref="member">free_env</ref>(data.<ref refid="structs__minishell__data_1a8a0b3f50c8893e061062e93115f3d723" kindref="member">envp</ref>);</highlight></codeline>
 <codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(0);</highlight></codeline>
 <codeline lineno="65"><highlight class="normal">}</highlight></codeline>

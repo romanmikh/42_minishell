@@ -40,7 +40,7 @@ void	free_env_list(t_env *env)
 	}
 }
 
-void	free_minishell_data(t_minishell_data *data)
+void	free_ms_data(t_ms_data *data)
 {
 	if (data)
 	{

@@ -363,13 +363,13 @@
         <link refid="visualiser_8c"/>
       </node>
     </invincdepgraph>
-    <innerclass refid="structs__minishell__data" prot="public">s_minishell_data</innerclass>
+    <innerclass refid="structs__minishell__data" prot="public">s_ms_data</innerclass>
     <sectiondef kind="typedef">
       <memberdef kind="typedef" id="shell_8h_1a163dfbd200eaf940e5a56fd45345ff72" prot="public" static="no">
-        <type>struct <ref refid="structs__minishell__data" kindref="compound">s_minishell_data</ref></type>
-        <definition>typedef struct s_minishell_data t_minishell_data</definition>
+        <type>struct <ref refid="structs__minishell__data" kindref="compound">s_ms_data</ref></type>
+        <definition>typedef struct s_ms_data t_ms_data</definition>
         <argsstring></argsstring>
-        <name>t_minishell_data</name>
+        <name>t_ms_data</name>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -401,7 +401,7 @@
 <codeline lineno="15"><highlight class="normal"></highlight></codeline>
 <codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/>include<sp/>&quot;<ref refid="env_8h" kindref="compound">env.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="17"><highlight class="normal"></highlight></codeline>
-<codeline lineno="18" refid="structs__minishell__data" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structs__minishell__data" kindref="compound">s_minishell_data</ref></highlight></codeline>
+<codeline lineno="18" refid="structs__minishell__data" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structs__minishell__data" kindref="compound">s_ms_data</ref></highlight></codeline>
 <codeline lineno="19"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="20" refid="structs__minishell__data_1aeb4af268850af7d0f6d0c64f2bfefdea" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/><sp/><sp/>**<ref refid="structs__minishell__data_1aeb4af268850af7d0f6d0c64f2bfefdea" kindref="member">args</ref>;</highlight></codeline>
 <codeline lineno="21" refid="structs__minishell__data_1a8a0b3f50c8893e061062e93115f3d723" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structs__env" kindref="compound">t_env</ref><sp/><sp/><sp/>*<ref refid="structs__minishell__data_1a8a0b3f50c8893e061062e93115f3d723" kindref="member">envp</ref>;</highlight></codeline>
@@ -411,7 +411,7 @@
 <codeline lineno="25" refid="structs__minishell__data_1a5122e3a902d8f28e8b69576175f28c2b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><ref refid="structs__minishell__data_1a5122e3a902d8f28e8b69576175f28c2b" kindref="member">std_err</ref>;</highlight></codeline>
 <codeline lineno="26" refid="structs__minishell__data_1a147731c1cf1a04c1fc1b85e6343cc7cc" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/><sp/><sp/>*<ref refid="structs__minishell__data_1a147731c1cf1a04c1fc1b85e6343cc7cc" kindref="member">current_dir</ref>;</highlight></codeline>
 <codeline lineno="27" refid="structs__minishell__data_1a978016fddb1d9faa4fbda6859a9a199e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><ref refid="structs__minishell__data_1a978016fddb1d9faa4fbda6859a9a199e" kindref="member">exit_status</ref>;</highlight></codeline>
-<codeline lineno="28" refid="shell_8h_1a163dfbd200eaf940e5a56fd45345ff72" refkind="member"><highlight class="normal">}<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="shell_8h_1a163dfbd200eaf940e5a56fd45345ff72" kindref="member">t_minishell_data</ref>;</highlight></codeline>
+<codeline lineno="28" refid="shell_8h_1a163dfbd200eaf940e5a56fd45345ff72" refkind="member"><highlight class="normal">}<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="shell_8h_1a163dfbd200eaf940e5a56fd45345ff72" kindref="member">t_ms_data</ref>;</highlight></codeline>
 <codeline lineno="29"><highlight class="normal"></highlight></codeline>
 <codeline lineno="30"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
     </programlisting>

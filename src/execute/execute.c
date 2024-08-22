@@ -20,9 +20,9 @@
 #include "pipe.h"
 #include "redirection.h"
 
-int			execute_ast(t_ast *node, t_minishell_data *data);
-static int	execute(t_minishell_data *data);
-static int	new_process(t_minishell_data *data);
+int			execute_ast(t_ast *node, t_ms_data *data);
+static int	execute(t_ms_data *data);
+static int	new_process(t_ms_data *data);
 
 /**
   - @brief execute Abstract Syntax Tree
@@ -34,7 +34,7 @@ static int	new_process(t_minishell_data *data);
   - 				- 1: error
  */
 
-int	execute_ast(t_ast *node, t_minishell_data *data)
+int	execute_ast(t_ast *node, t_ms_data *data)
 {
 	if (!node)
 		return (1);
@@ -67,11 +67,11 @@ int	execute_ast(t_ast *node, t_minishell_data *data)
   - 				- 1: error
  */
 
-static int	execute(t_minishell_data *data)
+static int	execute(t_ms_data *data)
 {
 	size_t	i;
 	char	*builtin_commands[7];
-	int		(*builtin_functions[7])(t_minishell_data *);
+	int		(*builtin_functions[7])(t_ms_data *);
 
 	builtin_commands[0] = "cd";
 	builtin_commands[1] = "echo";
@@ -105,7 +105,7 @@ static int	execute(t_minishell_data *data)
   - 				- 1: error
  */
 
-static int	new_process(t_minishell_data *data)
+static int	new_process(t_ms_data *data)
 {
 	pid_t	pid;
 

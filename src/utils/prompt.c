@@ -24,12 +24,12 @@ correct example:
 🌴 dmdemirk@maxishell:~/Documents/minishell>
  */
 
-char	*generate_prompt(t_minishell_data *data);
-char	*generate_prompt_string(t_minishell_data *data, char *pwd, \
+char	*generate_prompt(t_ms_data *data);
+char	*generate_prompt_string(t_ms_data *data, char *pwd, \
 				char *home_dir);
 
 
-char	*generate_prompt(t_minishell_data *data)
+char	*generate_prompt(t_ms_data *data)
 {
 	char	*prompt;
 	size_t	prompt_len;
@@ -50,7 +50,7 @@ char	*generate_prompt(t_minishell_data *data)
 	return (prompt);
 }
 
-char	*generate_prompt_string(t_minishell_data *data, char *pwd, \
+char	*generate_prompt_string(t_ms_data *data, char *pwd, \
 				char *home_dir)
 {
 	char	*temp_pwd;

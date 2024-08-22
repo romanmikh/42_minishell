@@ -14,7 +14,7 @@
 #include "env.h"
 #include "signals.h"
 
-void	init_minishell_data(t_minishell_data *data, char **envp)
+void	init_ms_data(t_ms_data *data, char **envp)
 {
 	data->args = NULL;
 	data->envp = NULL;

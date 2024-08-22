@@ -171,12 +171,12 @@ Include dependency graph for redirect_heredoc.c:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a0dc55a5a9752d658c1b8b6e3760f5813" id="r_a0dc55a5a9752d658c1b8b6e3760f5813"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0dc55a5a9752d658c1b8b6e3760f5813">redirect_here_doc</a> (<a class="el" href="tokens_8h.html#a5fd329b243c6cd036f7b9ecbc86a9344">t_ast</a> *node, <a class="el" href="shell_8h.html#a163dfbd200eaf940e5a56fd45345ff72">t_minishell_data</a> *data)</td></tr>
+<tr class="memitem:a0dc55a5a9752d658c1b8b6e3760f5813" id="r_a0dc55a5a9752d658c1b8b6e3760f5813"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0dc55a5a9752d658c1b8b6e3760f5813">redirect_here_doc</a> (<a class="el" href="tokens_8h.html#a5fd329b243c6cd036f7b9ecbc86a9344">t_ast</a> *node, <a class="el" href="shell_8h.html#a163dfbd200eaf940e5a56fd45345ff72">t_ms_data</a> *data)</td></tr>
 <tr class="memdesc:a0dc55a5a9752d658c1b8b6e3760f5813"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function handle "&lt;&lt;" heredoc functionality.  <br /></td></tr>
 <tr class="separator:a0dc55a5a9752d658c1b8b6e3760f5813"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a15cf53350eb2877438bf504bd85fc36a" id="r_a15cf53350eb2877438bf504bd85fc36a"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a15cf53350eb2877438bf504bd85fc36a">open_tmp_file</a> (const char *type)</td></tr>
 <tr class="separator:a15cf53350eb2877438bf504bd85fc36a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0a43624bb8557b365fdd6406f70e97ed" id="r_a0a43624bb8557b365fdd6406f70e97ed"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0a43624bb8557b365fdd6406f70e97ed">execute_child</a> (<a class="el" href="tokens_8h.html#a5fd329b243c6cd036f7b9ecbc86a9344">t_ast</a> *node, <a class="el" href="shell_8h.html#a163dfbd200eaf940e5a56fd45345ff72">t_minishell_data</a> *data, int *file_fd)</td></tr>
+<tr class="memitem:a0a43624bb8557b365fdd6406f70e97ed" id="r_a0a43624bb8557b365fdd6406f70e97ed"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0a43624bb8557b365fdd6406f70e97ed">execute_child</a> (<a class="el" href="tokens_8h.html#a5fd329b243c6cd036f7b9ecbc86a9344">t_ast</a> *node, <a class="el" href="shell_8h.html#a163dfbd200eaf940e5a56fd45345ff72">t_ms_data</a> *data, int *file_fd)</td></tr>
 <tr class="separator:a0a43624bb8557b365fdd6406f70e97ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
@@ -197,7 +197,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="shell_8h.html#a163dfbd200eaf940e5a56fd45345ff72">t_minishell_data</a> *</td>          <td class="paramname"><span class="paramname"><em>data</em></span>, </td>
+          <td class="paramtype"><a class="el" href="shell_8h.html#a163dfbd200eaf940e5a56fd45345ff72">t_ms_data</a> *</td>          <td class="paramname"><span class="paramname"><em>data</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -228,12 +228,12 @@ Functions</h2></td></tr>
 <div class="line"><span class="lineno">   89</span>    close(*file_fd);</div>
 <div class="line"><span class="lineno">   90</span>    waitpid(pid, &amp;data-&gt;<a class="code hl_variable" href="structs__minishell__data.html#a978016fddb1d9faa4fbda6859a9a199e">exit_status</a>, 0);</div>
 <div class="line"><span class="lineno">   91</span>}</div>
-<div class="ttc" id="aexecute_8h_html_ace4c3a2246919797e40140123d79596a"><div class="ttname"><a href="execute_8h.html#ace4c3a2246919797e40140123d79596a">execute_ast</a></div><div class="ttdeci">int execute_ast(t_ast *node, t_minishell_data *data)</div><div class="ttdoc">execute Abstract Syntax Tree</div><div class="ttdef"><b>Definition</b> <a href="execute_8c_source.html#l00037">execute.c:37</a></div></div>
+<div class="ttc" id="aexecute_8h_html_ace4c3a2246919797e40140123d79596a"><div class="ttname"><a href="execute_8h.html#ace4c3a2246919797e40140123d79596a">execute_ast</a></div><div class="ttdeci">int execute_ast(t_ast *node, t_ms_data *data)</div><div class="ttdoc">execute Abstract Syntax Tree</div><div class="ttdef"><b>Definition</b> <a href="execute_8c_source.html#l00037">execute.c:37</a></div></div>
 <div class="ttc" id="aexecute_8h_html_aedc550f2251badad69cf4b6dfda183ef"><div class="ttname"><a href="execute_8h.html#aedc550f2251badad69cf4b6dfda183ef">ft_perror</a></div><div class="ttdeci">int ft_perror(char *str)</div><div class="ttdoc">return error message and exit</div><div class="ttdef"><b>Definition</b> <a href="utils__0_8c_source.html#l00046">utils_0.c:46</a></div></div>
-<div class="ttc" id="astructs__minishell__data_html_a978016fddb1d9faa4fbda6859a9a199e"><div class="ttname"><a href="structs__minishell__data.html#a978016fddb1d9faa4fbda6859a9a199e">s_minishell_data::exit_status</a></div><div class="ttdeci">int exit_status</div><div class="ttdef"><b>Definition</b> <a href="shell_8h_source.html#l00027">shell.h:27</a></div></div>
-<div class="ttc" id="astructs__minishell__data_html_a9ed5685097b7e4b55c3c1307b70869ef"><div class="ttname"><a href="structs__minishell__data.html#a9ed5685097b7e4b55c3c1307b70869ef">s_minishell_data::std_in</a></div><div class="ttdeci">int std_in</div><div class="ttdef"><b>Definition</b> <a href="shell_8h_source.html#l00023">shell.h:23</a></div></div>
+<div class="ttc" id="astructs__minishell__data_html_a978016fddb1d9faa4fbda6859a9a199e"><div class="ttname"><a href="structs__minishell__data.html#a978016fddb1d9faa4fbda6859a9a199e">s_ms_data::exit_status</a></div><div class="ttdeci">int exit_status</div><div class="ttdef"><b>Definition</b> <a href="shell_8h_source.html#l00027">shell.h:27</a></div></div>
+<div class="ttc" id="astructs__minishell__data_html_a9ed5685097b7e4b55c3c1307b70869ef"><div class="ttname"><a href="structs__minishell__data.html#a9ed5685097b7e4b55c3c1307b70869ef">s_ms_data::std_in</a></div><div class="ttdeci">int std_in</div><div class="ttdef"><b>Definition</b> <a href="shell_8h_source.html#l00023">shell.h:23</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="execute_8c_source.html#l00037">execute_ast()</a>, <a class="el" href="shell_8h_source.html#l00027">s_minishell_data::exit_status</a>, <a class="el" href="utils__0_8c_source.html#l00046">ft_perror()</a>, and <a class="el" href="shell_8h_source.html#l00023">s_minishell_data::std_in</a>.</p>
+<p class="reference">References <a class="el" href="execute_8c_source.html#l00037">execute_ast()</a>, <a class="el" href="shell_8h_source.html#l00027">s_ms_data::exit_status</a>, <a class="el" href="utils__0_8c_source.html#l00046">ft_perror()</a>, and <a class="el" href="shell_8h_source.html#l00023">s_ms_data::std_in</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="redirect__heredoc_8c_source.html#l00034">redirect_here_doc()</a>.</p>
 <div class="dynheader">
@@ -521,7 +521,7 @@ Here is the caller graph for this function:</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="shell_8h.html#a163dfbd200eaf940e5a56fd45345ff72">t_minishell_data</a> *</td>          <td class="paramname"><span class="paramname"><em>data</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="shell_8h.html#a163dfbd200eaf940e5a56fd45345ff72">t_ms_data</a> *</td>          <td class="paramname"><span class="paramname"><em>data</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -577,7 +577,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">   60</span>}</div>
 <div class="ttc" id="alibft_8h_html_abbb8c6c4ed85d892e7f1509f65f5768a"><div class="ttname"><a href="libft_8h.html#abbb8c6c4ed85d892e7f1509f65f5768a">ft_strlen</a></div><div class="ttdeci">size_t ft_strlen(const char *s)</div><div class="ttdef"><b>Definition</b> <a href="ft__strlen_8c_source.html#l00015">ft_strlen.c:15</a></div></div>
 <div class="ttc" id="alibft_8h_html_aebe73f27c70c56ac5053f860ef5436c9"><div class="ttname"><a href="libft_8h.html#aebe73f27c70c56ac5053f860ef5436c9">ft_strdup</a></div><div class="ttdeci">char * ft_strdup(const char *s)</div><div class="ttdef"><b>Definition</b> <a href="ft__strdup_8c_source.html#l00023">ft_strdup.c:23</a></div></div>
-<div class="ttc" id="aredirect__heredoc_8c_html_a0a43624bb8557b365fdd6406f70e97ed"><div class="ttname"><a href="#a0a43624bb8557b365fdd6406f70e97ed">execute_child</a></div><div class="ttdeci">static void execute_child(t_ast *node, t_minishell_data *data, int *file_fd)</div><div class="ttdef"><b>Definition</b> <a href="redirect__heredoc_8c_source.html#l00076">redirect_heredoc.c:76</a></div></div>
+<div class="ttc" id="aredirect__heredoc_8c_html_a0a43624bb8557b365fdd6406f70e97ed"><div class="ttname"><a href="#a0a43624bb8557b365fdd6406f70e97ed">execute_child</a></div><div class="ttdeci">static void execute_child(t_ast *node, t_ms_data *data, int *file_fd)</div><div class="ttdef"><b>Definition</b> <a href="redirect__heredoc_8c_source.html#l00076">redirect_heredoc.c:76</a></div></div>
 <div class="ttc" id="aredirect__heredoc_8c_html_a15cf53350eb2877438bf504bd85fc36a"><div class="ttname"><a href="#a15cf53350eb2877438bf504bd85fc36a">open_tmp_file</a></div><div class="ttdeci">static int open_tmp_file(const char *type)</div><div class="ttdef"><b>Definition</b> <a href="redirect__heredoc_8c_source.html#l00062">redirect_heredoc.c:62</a></div></div>
 <div class="ttc" id="astructs__ast_html_ab62d177d86a1908cf5bbdb5cf6e978f8"><div class="ttname"><a href="structs__ast.html#ab62d177d86a1908cf5bbdb5cf6e978f8">s_ast::args</a></div><div class="ttdeci">char ** args</div><div class="ttdef"><b>Definition</b> <a href="tokens_8h_source.html#l00051">tokens.h:51</a></div></div>
 <div class="ttc" id="astructs__ast_html_ac2c9513b20e9351e45d9bc6361095f7b"><div class="ttname"><a href="structs__ast.html#ac2c9513b20e9351e45d9bc6361095f7b">s_ast::right</a></div><div class="ttdeci">struct s_ast * right</div><div class="ttdef"><b>Definition</b> <a href="tokens_8h_source.html#l00053">tokens.h:53</a></div></div>

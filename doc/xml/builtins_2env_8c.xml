@@ -107,10 +107,10 @@
       <memberdef kind="function" id="builtins_2env_8c_1adfc1db1f94cf16d71aea54b09370c032" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
         <definition>int builtin_env</definition>
-        <argsstring>(t_minishell_data *data)</argsstring>
+        <argsstring>(t_ms_data *data)</argsstring>
         <name>builtin_env</name>
         <param>
-          <type><ref refid="shell_8h_1a163dfbd200eaf940e5a56fd45345ff72" kindref="member">t_minishell_data</ref> *</type>
+          <type><ref refid="shell_8h_1a163dfbd200eaf940e5a56fd45345ff72" kindref="member">t_ms_data</ref> *</type>
           <declname>data</declname>
         </param>
         <briefdescription>
@@ -120,8 +120,8 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/dimadem/Documents/GitHub/minishell/src/builtins/env.c" line="38" column="4" bodyfile="/Users/dimadem/Documents/GitHub/minishell/src/builtins/env.c" bodystart="38" bodyend="44" declfile="/Users/dimadem/Documents/GitHub/minishell/src/builtins/env.c" declline="24" declcolumn="4"/>
-        <references refid="structs__minishell__data_1aeb4af268850af7d0f6d0c64f2bfefdea" compoundref="shell_8h" startline="20">s_minishell_data::args</references>
-        <references refid="structs__minishell__data_1a8a0b3f50c8893e061062e93115f3d723" compoundref="shell_8h" startline="21">s_minishell_data::envp</references>
+        <references refid="structs__minishell__data_1aeb4af268850af7d0f6d0c64f2bfefdea" compoundref="shell_8h" startline="20">s_ms_data::args</references>
+        <references refid="structs__minishell__data_1a8a0b3f50c8893e061062e93115f3d723" compoundref="shell_8h" startline="21">s_ms_data::envp</references>
         <references refid="libft_8h_1a1f2ff2312e5994560c9537cd9173be94" compoundref="ft__strcmp_8c" startline="24" endline="34">ft_strcmp</references>
         <references refid="builtins_2env_8c_1a5b5d29d406a0fad6272b33c03b7793b4" compoundref="builtins_2env_8c" startline="26" endline="36">print_env_stack</references>
         <referencedby refid="execute_8c_1ae9738c8104774062bc2934b701fe96d9" compoundref="execute_8c" startline="70" endline="97">execute</referencedby>
@@ -155,7 +155,7 @@
 <codeline lineno="21"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="22"><highlight class="normal"></highlight></codeline>
 <codeline lineno="23"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="builtins_2env_8c_1a5b5d29d406a0fad6272b33c03b7793b4" kindref="member">print_env_stack</ref>(<ref refid="structs__env" kindref="compound">t_env</ref><sp/>*envp);</highlight></codeline>
-<codeline lineno="24"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><ref refid="builtins_2env_8c_1adfc1db1f94cf16d71aea54b09370c032" kindref="member">builtin_env</ref>(<ref refid="structs__minishell__data" kindref="compound">t_minishell_data</ref><sp/>*data);</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><ref refid="builtins_2env_8c_1adfc1db1f94cf16d71aea54b09370c032" kindref="member">builtin_env</ref>(<ref refid="structs__minishell__data" kindref="compound">t_ms_data</ref><sp/>*data);</highlight></codeline>
 <codeline lineno="25"><highlight class="normal"></highlight></codeline>
 <codeline lineno="26" refid="builtins_2env_8c_1a5b5d29d406a0fad6272b33c03b7793b4" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="builtins_2env_8c_1a5b5d29d406a0fad6272b33c03b7793b4" kindref="member">print_env_stack</ref>(<ref refid="structs__env" kindref="compound">t_env</ref><sp/>*envp)</highlight></codeline>
 <codeline lineno="27"><highlight class="normal">{</highlight></codeline>
@@ -169,7 +169,7 @@
 <codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="36"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="37"><highlight class="normal"></highlight></codeline>
-<codeline lineno="38" refid="builtins_8h_1adfc1db1f94cf16d71aea54b09370c032" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="builtins_2env_8c_1adfc1db1f94cf16d71aea54b09370c032" kindref="member">builtin_env</ref>(<ref refid="structs__minishell__data" kindref="compound">t_minishell_data</ref><sp/>*data)</highlight></codeline>
+<codeline lineno="38" refid="builtins_8h_1adfc1db1f94cf16d71aea54b09370c032" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="builtins_2env_8c_1adfc1db1f94cf16d71aea54b09370c032" kindref="member">builtin_env</ref>(<ref refid="structs__minishell__data" kindref="compound">t_ms_data</ref><sp/>*data)</highlight></codeline>
 <codeline lineno="39"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\nbuiltin_env\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="libft_8h_1a1f2ff2312e5994560c9537cd9173be94" kindref="member">ft_strcmp</ref>(data-&gt;<ref refid="structs__minishell__data_1aeb4af268850af7d0f6d0c64f2bfefdea" kindref="member">args</ref>[0],<sp/></highlight><highlight class="stringliteral">&quot;env&quot;</highlight><highlight class="normal">)<sp/>==<sp/>0<sp/>&amp;&amp;<sp/>data-&gt;<ref refid="structs__minishell__data_1aeb4af268850af7d0f6d0c64f2bfefdea" kindref="member">args</ref>[1]<sp/>==<sp/>NULL)</highlight></codeline>

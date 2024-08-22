@@ -23,13 +23,13 @@
 
 .in +1c
 .ti -1c
-.RI "int \fBredirect_out\fP (\fBt_ast\fP *node, \fBt_minishell_data\fP *data)"
+.RI "int \fBredirect_out\fP (\fBt_ast\fP *node, \fBt_ms_data\fP *data)"
 .br
 .RI "redirect out '>' to the file output "
 .in -1c
 .SH "Function Documentation"
 .PP 
-.SS "int redirect_out (\fBt_ast\fP * node, \fBt_minishell_data\fP * data)"
+.SS "int redirect_out (\fBt_ast\fP * node, \fBt_ms_data\fP * data)"
 
 .PP
 redirect out '>' to the file output --
@@ -85,7 +85,7 @@ Definition at line \fB32\fP of file \fBredirect_out\&.c\fP\&.
 .fi
 
 .PP
-References \fBexecute_ast()\fP, \fBs_ast::left\fP, \fBopen_file()\fP, \fBs_ast::right\fP, and \fBs_minishell_data::std_out\fP\&.
+References \fBexecute_ast()\fP, \fBs_ast::left\fP, \fBopen_file()\fP, \fBs_ast::right\fP, and \fBs_ms_data::std_out\fP\&.
 .PP
 Referenced by \fBexecute_ast()\fP\&.
 .SH "Author"

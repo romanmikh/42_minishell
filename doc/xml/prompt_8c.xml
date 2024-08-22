@@ -111,10 +111,10 @@
       <memberdef kind="function" id="prompt_8c_1a4c523064ece03ba20eb609b52253b88e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>char *</type>
         <definition>char * generate_prompt</definition>
-        <argsstring>(t_minishell_data *data)</argsstring>
+        <argsstring>(t_ms_data *data)</argsstring>
         <name>generate_prompt</name>
         <param>
-          <type><ref refid="shell_8h_1a163dfbd200eaf940e5a56fd45345ff72" kindref="member">t_minishell_data</ref> *</type>
+          <type><ref refid="shell_8h_1a163dfbd200eaf940e5a56fd45345ff72" kindref="member">t_ms_data</ref> *</type>
           <declname>data</declname>
         </param>
         <briefdescription>
@@ -126,16 +126,16 @@
         <location file="/Users/dimadem/Documents/GitHub/minishell/src/utils/prompt.c" line="31" column="5" bodyfile="/Users/dimadem/Documents/GitHub/minishell/src/utils/prompt.c" bodystart="31" bodyend="48" declfile="/Users/dimadem/Documents/GitHub/minishell/src/utils/prompt.c" declline="27" declcolumn="5"/>
         <references refid="libft_8h_1a916ac44ff3e67ef20834dd45e3837ac4" compoundref="ft__strcpy_8c" startline="25" endline="37">ft_strcpy</references>
         <references refid="libft_8h_1abbb8c6c4ed85d892e7f1509f65f5768a" compoundref="ft__strlen_8c" startline="15" endline="23">ft_strlen</references>
-        <references refid="structs__minishell__data_1a9ed5685097b7e4b55c3c1307b70869ef" compoundref="shell_8h" startline="23">s_minishell_data::std_in</references>
+        <references refid="structs__minishell__data_1a9ed5685097b7e4b55c3c1307b70869ef" compoundref="shell_8h" startline="23">s_ms_data::std_in</references>
         <referencedby refid="main_8c_1abaf800210325f066cb9289aaae9e2c86" compoundref="main_8c" startline="29" endline="51">main_loop</referencedby>
       </memberdef>
       <memberdef kind="function" id="prompt_8c_1a5663e22274d85c42c9c7f51e22afc301" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>char *</type>
         <definition>char * generate_prompt_string</definition>
-        <argsstring>(t_minishell_data *data, char *pwd, char *home_dir)</argsstring>
+        <argsstring>(t_ms_data *data, char *pwd, char *home_dir)</argsstring>
         <name>generate_prompt_string</name>
         <param>
-          <type><ref refid="shell_8h_1a163dfbd200eaf940e5a56fd45345ff72" kindref="member">t_minishell_data</ref> *</type>
+          <type><ref refid="shell_8h_1a163dfbd200eaf940e5a56fd45345ff72" kindref="member">t_ms_data</ref> *</type>
           <declname>data</declname>
         </param>
         <param>
@@ -153,7 +153,7 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/dimadem/Documents/GitHub/minishell/src/utils/prompt.c" line="50" column="5" bodyfile="/Users/dimadem/Documents/GitHub/minishell/src/utils/prompt.c" bodystart="50" bodyend="67" declfile="/Users/dimadem/Documents/GitHub/minishell/src/utils/prompt.c" declline="28" declcolumn="5"/>
-        <references refid="structs__minishell__data_1a8a0b3f50c8893e061062e93115f3d723" compoundref="shell_8h" startline="21">s_minishell_data::envp</references>
+        <references refid="structs__minishell__data_1a8a0b3f50c8893e061062e93115f3d723" compoundref="shell_8h" startline="21">s_ms_data::envp</references>
         <references refid="libft_8h_1a91e6e3e428bcc9f2291b700e1829b82b" compoundref="ft__strjoin_8c" startline="23" endline="44">ft_strjoin</references>
         <references refid="libft_8h_1abbb8c6c4ed85d892e7f1509f65f5768a" compoundref="ft__strlen_8c" startline="15" endline="23">ft_strlen</references>
         <references refid="libft_8h_1a9d2fe792187aa4ed08e5864fb2c4d6dc" compoundref="ft__strncmp_8c" startline="24" endline="35">ft_strncmp</references>
@@ -209,11 +209,11 @@
 <codeline lineno="24"><highlight class="comment">🌴<sp/>dmdemirk@maxishell:~/Documents/minishell&gt;</highlight></codeline>
 <codeline lineno="25"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="26"><highlight class="normal"></highlight></codeline>
-<codeline lineno="27"><highlight class="normal"></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/><sp/><sp/>*<ref refid="prompt_8c_1a4c523064ece03ba20eb609b52253b88e" kindref="member">generate_prompt</ref>(<ref refid="structs__minishell__data" kindref="compound">t_minishell_data</ref><sp/>*data);</highlight></codeline>
-<codeline lineno="28"><highlight class="normal"></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/><sp/><sp/>*<ref refid="prompt_8c_1a5663e22274d85c42c9c7f51e22afc301" kindref="member">generate_prompt_string</ref>(<ref refid="structs__minishell__data" kindref="compound">t_minishell_data</ref><sp/>*data,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*pwd,<sp/>\</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/><sp/><sp/>*<ref refid="prompt_8c_1a4c523064ece03ba20eb609b52253b88e" kindref="member">generate_prompt</ref>(<ref refid="structs__minishell__data" kindref="compound">t_ms_data</ref><sp/>*data);</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/><sp/><sp/>*<ref refid="prompt_8c_1a5663e22274d85c42c9c7f51e22afc301" kindref="member">generate_prompt_string</ref>(<ref refid="structs__minishell__data" kindref="compound">t_ms_data</ref><sp/>*data,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*pwd,<sp/>\</highlight></codeline>
 <codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*home_dir);</highlight></codeline>
 <codeline lineno="30"><highlight class="normal"></highlight></codeline>
-<codeline lineno="31" refid="tokens_8h_1a4c523064ece03ba20eb609b52253b88e" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/><sp/><sp/>*<ref refid="prompt_8c_1a4c523064ece03ba20eb609b52253b88e" kindref="member">generate_prompt</ref>(<ref refid="structs__minishell__data" kindref="compound">t_minishell_data</ref><sp/>*data)</highlight></codeline>
+<codeline lineno="31" refid="tokens_8h_1a4c523064ece03ba20eb609b52253b88e" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/><sp/><sp/>*<ref refid="prompt_8c_1a4c523064ece03ba20eb609b52253b88e" kindref="member">generate_prompt</ref>(<ref refid="structs__minishell__data" kindref="compound">t_ms_data</ref><sp/>*data)</highlight></codeline>
 <codeline lineno="32"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/><sp/><sp/>*prompt;</highlight></codeline>
 <codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><sp/>prompt_len;</highlight></codeline>
@@ -232,7 +232,7 @@
 <codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(prompt);</highlight></codeline>
 <codeline lineno="48"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="49"><highlight class="normal"></highlight></codeline>
-<codeline lineno="50" refid="prompt_8c_1a5663e22274d85c42c9c7f51e22afc301" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/><sp/><sp/>*<ref refid="prompt_8c_1a5663e22274d85c42c9c7f51e22afc301" kindref="member">generate_prompt_string</ref>(<ref refid="structs__minishell__data" kindref="compound">t_minishell_data</ref><sp/>*data,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*pwd,<sp/>\</highlight></codeline>
+<codeline lineno="50" refid="prompt_8c_1a5663e22274d85c42c9c7f51e22afc301" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/><sp/><sp/>*<ref refid="prompt_8c_1a5663e22274d85c42c9c7f51e22afc301" kindref="member">generate_prompt_string</ref>(<ref refid="structs__minishell__data" kindref="compound">t_ms_data</ref><sp/>*data,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*pwd,<sp/>\</highlight></codeline>
 <codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*home_dir)</highlight></codeline>
 <codeline lineno="52"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/><sp/><sp/>*temp_pwd;</highlight></codeline>

@@ -148,9 +148,9 @@ Include dependency graph for export.c:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a9e6f1e14f0125cd68c70e8e31ef606aa" id="r_a9e6f1e14f0125cd68c70e8e31ef606aa"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9e6f1e14f0125cd68c70e8e31ef606aa">builtin_export</a> (<a class="el" href="shell_8h.html#a163dfbd200eaf940e5a56fd45345ff72">t_minishell_data</a> *data)</td></tr>
+<tr class="memitem:a9e6f1e14f0125cd68c70e8e31ef606aa" id="r_a9e6f1e14f0125cd68c70e8e31ef606aa"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9e6f1e14f0125cd68c70e8e31ef606aa">builtin_export</a> (<a class="el" href="shell_8h.html#a163dfbd200eaf940e5a56fd45345ff72">t_ms_data</a> *data)</td></tr>
 <tr class="separator:a9e6f1e14f0125cd68c70e8e31ef606aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9572a06bde314d79d284738ffef37d8d" id="r_a9572a06bde314d79d284738ffef37d8d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9572a06bde314d79d284738ffef37d8d">add_env</a> (char *key, <a class="el" href="shell_8h.html#a163dfbd200eaf940e5a56fd45345ff72">t_minishell_data</a> *data)</td></tr>
+<tr class="memitem:a9572a06bde314d79d284738ffef37d8d" id="r_a9572a06bde314d79d284738ffef37d8d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9572a06bde314d79d284738ffef37d8d">add_env</a> (char *key, <a class="el" href="shell_8h.html#a163dfbd200eaf940e5a56fd45345ff72">t_ms_data</a> *data)</td></tr>
 <tr class="separator:a9572a06bde314d79d284738ffef37d8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
@@ -168,7 +168,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="shell_8h.html#a163dfbd200eaf940e5a56fd45345ff72">t_minishell_data</a> *</td>          <td class="paramname"><span class="paramname"><em>data</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="shell_8h.html#a163dfbd200eaf940e5a56fd45345ff72">t_ms_data</a> *</td>          <td class="paramname"><span class="paramname"><em>data</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -198,10 +198,10 @@ Functions</h2></td></tr>
 <div class="ttc" id="aenv_8h_html_a41133e0ba7230727a51eedce713a225c"><div class="ttname"><a href="env_8h.html#a41133e0ba7230727a51eedce713a225c">get_env</a></div><div class="ttdeci">char * get_env(t_env *envp, const char *key)</div><div class="ttdef"><b>Definition</b> <a href="env_2env_8c_source.html#l00060">env.c:60</a></div></div>
 <div class="ttc" id="aenv_8h_html_a67c3dca975ac3373851ded9534701bf5"><div class="ttname"><a href="env_8h.html#a67c3dca975ac3373851ded9534701bf5">ft_strcdup</a></div><div class="ttdeci">char * ft_strcdup(const char *s, int c)</div><div class="ttdef"><b>Definition</b> <a href="env_2utils_8c_source.html#l00051">utils.c:51</a></div></div>
 <div class="ttc" id="alibft_8h_html_aa6d0c2d180f32ee585485e1a1ce3d55d"><div class="ttname"><a href="libft_8h.html#aa6d0c2d180f32ee585485e1a1ce3d55d">ft_strchr</a></div><div class="ttdeci">char * ft_strchr(const char *s, int c)</div><div class="ttdef"><b>Definition</b> <a href="ft__strchr_8c_source.html#l00025">ft_strchr.c:25</a></div></div>
-<div class="ttc" id="astructs__minishell__data_html_a8a0b3f50c8893e061062e93115f3d723"><div class="ttname"><a href="structs__minishell__data.html#a8a0b3f50c8893e061062e93115f3d723">s_minishell_data::envp</a></div><div class="ttdeci">t_env * envp</div><div class="ttdef"><b>Definition</b> <a href="shell_8h_source.html#l00021">shell.h:21</a></div></div>
-<div class="ttc" id="astructs__minishell__data_html_aeb4af268850af7d0f6d0c64f2bfefdea"><div class="ttname"><a href="structs__minishell__data.html#aeb4af268850af7d0f6d0c64f2bfefdea">s_minishell_data::args</a></div><div class="ttdeci">char ** args</div><div class="ttdef"><b>Definition</b> <a href="shell_8h_source.html#l00020">shell.h:20</a></div></div>
+<div class="ttc" id="astructs__minishell__data_html_a8a0b3f50c8893e061062e93115f3d723"><div class="ttname"><a href="structs__minishell__data.html#a8a0b3f50c8893e061062e93115f3d723">s_ms_data::envp</a></div><div class="ttdeci">t_env * envp</div><div class="ttdef"><b>Definition</b> <a href="shell_8h_source.html#l00021">shell.h:21</a></div></div>
+<div class="ttc" id="astructs__minishell__data_html_aeb4af268850af7d0f6d0c64f2bfefdea"><div class="ttname"><a href="structs__minishell__data.html#aeb4af268850af7d0f6d0c64f2bfefdea">s_ms_data::args</a></div><div class="ttdeci">char ** args</div><div class="ttdef"><b>Definition</b> <a href="shell_8h_source.html#l00020">shell.h:20</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="shell_8h_source.html#l00020">s_minishell_data::args</a>, <a class="el" href="shell_8h_source.html#l00021">s_minishell_data::envp</a>, <a class="el" href="env_2utils_8c_source.html#l00051">ft_strcdup()</a>, <a class="el" href="ft__strchr_8c_source.html#l00025">ft_strchr()</a>, <a class="el" href="env_2env_8c_source.html#l00060">get_env()</a>, and <a class="el" href="env_2env_8c_source.html#l00079">set_env()</a>.</p>
+<p class="reference">References <a class="el" href="shell_8h_source.html#l00020">s_ms_data::args</a>, <a class="el" href="shell_8h_source.html#l00021">s_ms_data::envp</a>, <a class="el" href="env_2utils_8c_source.html#l00051">ft_strcdup()</a>, <a class="el" href="ft__strchr_8c_source.html#l00025">ft_strchr()</a>, <a class="el" href="env_2env_8c_source.html#l00060">get_env()</a>, and <a class="el" href="env_2env_8c_source.html#l00079">set_env()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="export_8c_source.html#l00028">builtin_export()</a>.</p>
 <div class="dynheader">
@@ -284,7 +284,7 @@ Here is the caller graph for this function:</div>
         <tr>
           <td class="memname">int builtin_export </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="shell_8h.html#a163dfbd200eaf940e5a56fd45345ff72">t_minishell_data</a> *</td>          <td class="paramname"><span class="paramname"><em>data</em></span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="shell_8h.html#a163dfbd200eaf940e5a56fd45345ff72">t_ms_data</a> *</td>          <td class="paramname"><span class="paramname"><em>data</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -307,12 +307,12 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">   42</span>        <a class="code hl_function" href="#a9572a06bde314d79d284738ffef37d8d">add_env</a>(key, data);</div>
 <div class="line"><span class="lineno">   43</span>    <span class="keywordflow">return</span> (0);</div>
 <div class="line"><span class="lineno">   44</span>}</div>
-<div class="ttc" id="aexport_8c_html_a9572a06bde314d79d284738ffef37d8d"><div class="ttname"><a href="#a9572a06bde314d79d284738ffef37d8d">add_env</a></div><div class="ttdeci">void add_env(char *key, t_minishell_data *data)</div><div class="ttdef"><b>Definition</b> <a href="export_8c_source.html#l00046">export.c:46</a></div></div>
+<div class="ttc" id="aexport_8c_html_a9572a06bde314d79d284738ffef37d8d"><div class="ttname"><a href="#a9572a06bde314d79d284738ffef37d8d">add_env</a></div><div class="ttdeci">void add_env(char *key, t_ms_data *data)</div><div class="ttdef"><b>Definition</b> <a href="export_8c_source.html#l00046">export.c:46</a></div></div>
 <div class="ttc" id="alibft_8h_html_a9d2fe792187aa4ed08e5864fb2c4d6dc"><div class="ttname"><a href="libft_8h.html#a9d2fe792187aa4ed08e5864fb2c4d6dc">ft_strncmp</a></div><div class="ttdeci">int ft_strncmp(const char *s1, const char *s2, size_t n)</div><div class="ttdef"><b>Definition</b> <a href="ft__strncmp_8c_source.html#l00024">ft_strncmp.c:24</a></div></div>
 <div class="ttc" id="astructs__env_html"><div class="ttname"><a href="structs__env.html">s_env</a></div><div class="ttdef"><b>Definition</b> <a href="env_8h_source.html#l00016">env.h:17</a></div></div>
 <div class="ttc" id="astructs__env_html_a3caf3df6eb72714ffcd4e22f9c94ecf2"><div class="ttname"><a href="structs__env.html#a3caf3df6eb72714ffcd4e22f9c94ecf2">s_env::next</a></div><div class="ttdeci">struct s_env * next</div><div class="ttdef"><b>Definition</b> <a href="env_8h_source.html#l00020">env.h:20</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="export_8c_source.html#l00046">add_env()</a>, <a class="el" href="shell_8h_source.html#l00020">s_minishell_data::args</a>, <a class="el" href="shell_8h_source.html#l00021">s_minishell_data::envp</a>, <a class="el" href="ft__strncmp_8c_source.html#l00024">ft_strncmp()</a>, and <a class="el" href="env_8h_source.html#l00020">s_env::next</a>.</p>
+<p class="reference">References <a class="el" href="export_8c_source.html#l00046">add_env()</a>, <a class="el" href="shell_8h_source.html#l00020">s_ms_data::args</a>, <a class="el" href="shell_8h_source.html#l00021">s_ms_data::envp</a>, <a class="el" href="ft__strncmp_8c_source.html#l00024">ft_strncmp()</a>, and <a class="el" href="env_8h_source.html#l00020">s_env::next</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="execute_8c_source.html#l00070">execute()</a>.</p>
 <div class="dynheader">

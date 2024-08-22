@@ -6,6 +6,6 @@ var searchData=
   ['append_5fphrase_5fif_5fvalid_3',['append_phrase_if_valid',['../tokeniser_8c.html#a596263e54e7fc7ea1bde318a1da5cdc6',1,'tokeniser.c']]],
   ['append_5ftoken_4',['append_token',['../tokens_8h.html#a6c482f0c73f7263b3253aaa8e1bd4fb6',1,'append_token(t_token **tokens, t_token *new_token):&#160;tokeniser_helpers.c'],['../tokeniser__helpers_8c.html#a6c482f0c73f7263b3253aaa8e1bd4fb6',1,'append_token(t_token **tokens, t_token *new_token):&#160;tokeniser_helpers.c']]],
   ['arg_5flen_5',['arg_len',['../tokens_8h.html#a4f595528e4e305887fda33e53258d602',1,'arg_len(t_token *current):&#160;parser_helpers.c'],['../parser__helpers_8c.html#a4f595528e4e305887fda33e53258d602',1,'arg_len(t_token *current):&#160;parser_helpers.c']]],
-  ['args_6',['args',['../structs__minishell__data.html#aeb4af268850af7d0f6d0c64f2bfefdea',1,'s_minishell_data::args'],['../structs__ast.html#ab62d177d86a1908cf5bbdb5cf6e978f8',1,'s_ast::args']]],
+  ['args_6',['args',['../structs__minishell__data.html#aeb4af268850af7d0f6d0c64f2bfefdea',1,'s_ms_data::args'],['../structs__ast.html#ab62d177d86a1908cf5bbdb5cf6e978f8',1,'s_ast::args']]],
   ['aux_2ec_7',['aux.c',['../aux_8c.html',1,'']]]
 ];

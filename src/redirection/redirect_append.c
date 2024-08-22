@@ -16,7 +16,7 @@
 #include "execute.h"
 #include <sys/wait.h>
 
-int	redirect_append(t_ast *node, t_minishell_data *data);
+int	redirect_append(t_ast *node, t_ms_data *data);
 
 /**
   - @brief redirect append ">>" to the end of the file output
@@ -28,7 +28,7 @@ int	redirect_append(t_ast *node, t_minishell_data *data);
   - 1: error
  */
 
-int	redirect_append(t_ast *node, t_minishell_data *data)
+int	redirect_append(t_ast *node, t_ms_data *data)
 {
 	pid_t	pid;
 	int		status;

@@ -14,9 +14,9 @@
 
 t_ast	*create_redir_node(t_token *token);
 int		is_redir_node(t_token *tokens);
-t_ast	*clr_node(t_token **tokens, t_token *next_token, t_ast *redirect_node, t_minishell_data *data);
-t_ast	*manage_redirs(t_token **tokens, t_minishell_data *data);
-t_ast	*manage_pipe(t_token **tokens, t_minishell_data *data);
+t_ast	*clr_node(t_token **tokens, t_token *next_token, t_ast *redirect_node, t_ms_data *data);
+t_ast	*manage_redirs(t_token **tokens, t_ms_data *data);
+t_ast	*manage_pipe(t_token **tokens, t_ms_data *data);
 
 t_ast	*create_redir_node(t_token *token)
 {
@@ -50,7 +50,7 @@ int	is_redir_node(t_token *tokens)
 	return (0);
 }
 
-t_ast	*clr_node(t_token **tokens, t_token *next_token, t_ast *redirect_node, t_minishell_data *data)
+t_ast	*clr_node(t_token **tokens, t_token *next_token, t_ast *redirect_node, t_ms_data *data)
 {
 	(*tokens)->next = next_token->next->next;
 	redirect_node->left = manage_redirs(tokens, data);
@@ -60,7 +60,7 @@ t_ast	*clr_node(t_token **tokens, t_token *next_token, t_ast *redirect_node, t_m
 	return (redirect_node);
 }
 
-t_ast	*manage_redirs(t_token **tokens, t_minishell_data *data)
+t_ast	*manage_redirs(t_token **tokens, t_ms_data *data)
 {
 	t_token		*head;
 	t_ast		*redirect_node;
@@ -87,7 +87,7 @@ t_ast	*manage_redirs(t_token **tokens, t_minishell_data *data)
 	return (manage_commands(&head, data));
 }
 
-t_ast	*manage_pipe(t_token **tokens, t_minishell_data *data)
+t_ast	*manage_pipe(t_token **tokens, t_ms_data *data)
 {
 	t_token		*tmp;
 	t_token		*next_token;

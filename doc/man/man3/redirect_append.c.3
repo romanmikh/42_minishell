@@ -21,13 +21,13 @@
 
 .in +1c
 .ti -1c
-.RI "int \fBredirect_append\fP (\fBt_ast\fP *node, \fBt_minishell_data\fP *data)"
+.RI "int \fBredirect_append\fP (\fBt_ast\fP *node, \fBt_ms_data\fP *data)"
 .br
 .RI "redirect append '>>' to the end of the file output "
 .in -1c
 .SH "Function Documentation"
 .PP 
-.SS "int redirect_append (\fBt_ast\fP * node, \fBt_minishell_data\fP * data)"
+.SS "int redirect_append (\fBt_ast\fP * node, \fBt_ms_data\fP * data)"
 
 .PP
 redirect append '>>' to the end of the file output --
@@ -83,7 +83,7 @@ Definition at line \fB31\fP of file \fBredirect_append\&.c\fP\&.
 .fi
 
 .PP
-References \fBexecute_ast()\fP, \fBs_ast::left\fP, \fBopen_file()\fP, \fBs_ast::right\fP, and \fBs_minishell_data::std_out\fP\&.
+References \fBexecute_ast()\fP, \fBs_ast::left\fP, \fBopen_file()\fP, \fBs_ast::right\fP, and \fBs_ms_data::std_out\fP\&.
 .PP
 Referenced by \fBexecute_ast()\fP\&.
 .SH "Author"

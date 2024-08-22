@@ -18,8 +18,8 @@
 #include <sys/wait.h>
 #include "pipe.h"
 
-int		builtin_pipe(t_ast *node, t_minishell_data *data);
-pid_t	execute_child(t_ast *node, t_minishell_data *data, \
+int		builtin_pipe(t_ast *node, t_ms_data *data);
+pid_t	execute_child(t_ast *node, t_ms_data *data, \
 			int fd[2], int direction);
 
 /**
@@ -32,7 +32,7 @@ pid_t	execute_child(t_ast *node, t_minishell_data *data, \
 - 				- 1: error
  */
 
-int	builtin_pipe(t_ast *node, t_minishell_data *data)
+int	builtin_pipe(t_ast *node, t_ms_data *data)
 {
 	int		fd[2];
 	pid_t	pid_1;
@@ -68,7 +68,7 @@ int	builtin_pipe(t_ast *node, t_minishell_data *data)
 - @return pid_t return the process id
  */
 
-pid_t	execute_child(t_ast *node, t_minishell_data *data, \
+pid_t	execute_child(t_ast *node, t_ms_data *data, \
 			int fd[2], int direction)
 {
 	pid_t	pid;

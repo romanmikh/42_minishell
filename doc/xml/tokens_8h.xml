@@ -775,10 +775,10 @@
       <memberdef kind="function" id="tokens_8h_1a4c523064ece03ba20eb609b52253b88e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>char *</type>
         <definition>char * generate_prompt</definition>
-        <argsstring>(t_minishell_data *data)</argsstring>
+        <argsstring>(t_ms_data *data)</argsstring>
         <name>generate_prompt</name>
         <param>
-          <type><ref refid="shell_8h_1a163dfbd200eaf940e5a56fd45345ff72" kindref="member">t_minishell_data</ref> *</type>
+          <type><ref refid="shell_8h_1a163dfbd200eaf940e5a56fd45345ff72" kindref="member">t_ms_data</ref> *</type>
           <declname>data</declname>
         </param>
         <briefdescription>
@@ -790,7 +790,7 @@
         <location file="/Users/dimadem/Documents/GitHub/minishell/inc/tokens.h" line="80" column="5" bodyfile="/Users/dimadem/Documents/GitHub/minishell/src/utils/prompt.c" bodystart="31" bodyend="48" declfile="/Users/dimadem/Documents/GitHub/minishell/inc/tokens.h" declline="80" declcolumn="5"/>
         <references refid="libft_8h_1a916ac44ff3e67ef20834dd45e3837ac4" compoundref="ft__strcpy_8c" startline="25" endline="37">ft_strcpy</references>
         <references refid="libft_8h_1abbb8c6c4ed85d892e7f1509f65f5768a" compoundref="ft__strlen_8c" startline="15" endline="23">ft_strlen</references>
-        <references refid="structs__minishell__data_1a9ed5685097b7e4b55c3c1307b70869ef" compoundref="shell_8h" startline="23">s_minishell_data::std_in</references>
+        <references refid="structs__minishell__data_1a9ed5685097b7e4b55c3c1307b70869ef" compoundref="shell_8h" startline="23">s_ms_data::std_in</references>
         <referencedby refid="main_8c_1abaf800210325f066cb9289aaae9e2c86" compoundref="main_8c" startline="29" endline="51">main_loop</referencedby>
       </memberdef>
       <memberdef kind="function" id="tokens_8h_1a94ee21f550bbf6448142ec3102526dde" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
@@ -846,11 +846,11 @@
       </memberdef>
       <memberdef kind="function" id="tokens_8h_1a16d324fdb41b45b7e59af5eaab2e56bd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
-        <definition>void free_minishell_data</definition>
-        <argsstring>(t_minishell_data *data)</argsstring>
-        <name>free_minishell_data</name>
+        <definition>void free_ms_data</definition>
+        <argsstring>(t_ms_data *data)</argsstring>
+        <name>free_ms_data</name>
         <param>
-          <type><ref refid="shell_8h_1a163dfbd200eaf940e5a56fd45345ff72" kindref="member">t_minishell_data</ref> *</type>
+          <type><ref refid="shell_8h_1a163dfbd200eaf940e5a56fd45345ff72" kindref="member">t_ms_data</ref> *</type>
           <declname>data</declname>
         </param>
         <briefdescription>
@@ -860,12 +860,12 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/dimadem/Documents/GitHub/minishell/inc/tokens.h" line="84" column="5" bodyfile="/Users/dimadem/Documents/GitHub/minishell/src/utils/clean_general.c" bodystart="43" bodyend="53" declfile="/Users/dimadem/Documents/GitHub/minishell/inc/tokens.h" declline="84" declcolumn="5"/>
-        <references refid="structs__minishell__data_1aeb4af268850af7d0f6d0c64f2bfefdea" compoundref="shell_8h" startline="20">s_minishell_data::args</references>
-        <references refid="structs__minishell__data_1a147731c1cf1a04c1fc1b85e6343cc7cc" compoundref="shell_8h" startline="26">s_minishell_data::current_dir</references>
-        <references refid="structs__minishell__data_1a8a0b3f50c8893e061062e93115f3d723" compoundref="shell_8h" startline="21">s_minishell_data::envp</references>
+        <references refid="structs__minishell__data_1aeb4af268850af7d0f6d0c64f2bfefdea" compoundref="shell_8h" startline="20">s_ms_data::args</references>
+        <references refid="structs__minishell__data_1a147731c1cf1a04c1fc1b85e6343cc7cc" compoundref="shell_8h" startline="26">s_ms_data::current_dir</references>
+        <references refid="structs__minishell__data_1a8a0b3f50c8893e061062e93115f3d723" compoundref="shell_8h" startline="21">s_ms_data::envp</references>
         <references refid="clean__general_8c_1ae6e1002c1a56f5bfa4ea13de63d3deae" compoundref="clean__general_8c" startline="16" endline="27">free_args</references>
         <references refid="clean__general_8c_1a9062b9b7e34cb35cb4b78c5251b020b0" compoundref="clean__general_8c" startline="29" endline="41">free_env_list</references>
-        <references refid="structs__minishell__data_1a46b92ee58356d0f35174a79ed568253b" compoundref="shell_8h" startline="22">s_minishell_data::local_env</references>
+        <references refid="structs__minishell__data_1a46b92ee58356d0f35174a79ed568253b" compoundref="shell_8h" startline="22">s_ms_data::local_env</references>
         <referencedby refid="main_8c_1a647f21a28344e1d9c643f4115516d7c9" compoundref="main_8c" startline="53" endline="65">main</referencedby>
       </memberdef>
       <memberdef kind="function" id="tokens_8h_1a4e1b3e73a18dd66697cd7eac990b0363" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
@@ -910,11 +910,11 @@
       </memberdef>
       <memberdef kind="function" id="tokens_8h_1ab7986766cca35553aa796f6a732d856a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
-        <definition>void init_minishell_data</definition>
-        <argsstring>(t_minishell_data *data, char **envp)</argsstring>
-        <name>init_minishell_data</name>
+        <definition>void init_ms_data</definition>
+        <argsstring>(t_ms_data *data, char **envp)</argsstring>
+        <name>init_ms_data</name>
         <param>
-          <type><ref refid="shell_8h_1a163dfbd200eaf940e5a56fd45345ff72" kindref="member">t_minishell_data</ref> *</type>
+          <type><ref refid="shell_8h_1a163dfbd200eaf940e5a56fd45345ff72" kindref="member">t_ms_data</ref> *</type>
           <declname>data</declname>
         </param>
         <param>
@@ -928,15 +928,15 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/dimadem/Documents/GitHub/minishell/inc/tokens.h" line="87" column="5" bodyfile="/Users/dimadem/Documents/GitHub/minishell/src/utils/initialise.c" bodystart="16" bodyend="27" declfile="/Users/dimadem/Documents/GitHub/minishell/inc/tokens.h" declline="87" declcolumn="5"/>
-        <references refid="structs__minishell__data_1aeb4af268850af7d0f6d0c64f2bfefdea" compoundref="shell_8h" startline="20">s_minishell_data::args</references>
-        <references refid="structs__minishell__data_1a147731c1cf1a04c1fc1b85e6343cc7cc" compoundref="shell_8h" startline="26">s_minishell_data::current_dir</references>
-        <references refid="structs__minishell__data_1a8a0b3f50c8893e061062e93115f3d723" compoundref="shell_8h" startline="21">s_minishell_data::envp</references>
-        <references refid="structs__minishell__data_1a978016fddb1d9faa4fbda6859a9a199e" compoundref="shell_8h" startline="27">s_minishell_data::exit_status</references>
+        <references refid="structs__minishell__data_1aeb4af268850af7d0f6d0c64f2bfefdea" compoundref="shell_8h" startline="20">s_ms_data::args</references>
+        <references refid="structs__minishell__data_1a147731c1cf1a04c1fc1b85e6343cc7cc" compoundref="shell_8h" startline="26">s_ms_data::current_dir</references>
+        <references refid="structs__minishell__data_1a8a0b3f50c8893e061062e93115f3d723" compoundref="shell_8h" startline="21">s_ms_data::envp</references>
+        <references refid="structs__minishell__data_1a978016fddb1d9faa4fbda6859a9a199e" compoundref="shell_8h" startline="27">s_ms_data::exit_status</references>
         <references refid="env_8h_1a2344221e4d3b1327b956157b837a727b" compoundref="env_2env_8c" startline="24" endline="31">init_env</references>
-        <references refid="structs__minishell__data_1a46b92ee58356d0f35174a79ed568253b" compoundref="shell_8h" startline="22">s_minishell_data::local_env</references>
-        <references refid="structs__minishell__data_1a5122e3a902d8f28e8b69576175f28c2b" compoundref="shell_8h" startline="25">s_minishell_data::std_err</references>
-        <references refid="structs__minishell__data_1a9ed5685097b7e4b55c3c1307b70869ef" compoundref="shell_8h" startline="23">s_minishell_data::std_in</references>
-        <references refid="structs__minishell__data_1ac90001aa8bc9a89b165ee6bca5f05ef3" compoundref="shell_8h" startline="24">s_minishell_data::std_out</references>
+        <references refid="structs__minishell__data_1a46b92ee58356d0f35174a79ed568253b" compoundref="shell_8h" startline="22">s_ms_data::local_env</references>
+        <references refid="structs__minishell__data_1a5122e3a902d8f28e8b69576175f28c2b" compoundref="shell_8h" startline="25">s_ms_data::std_err</references>
+        <references refid="structs__minishell__data_1a9ed5685097b7e4b55c3c1307b70869ef" compoundref="shell_8h" startline="23">s_ms_data::std_in</references>
+        <references refid="structs__minishell__data_1ac90001aa8bc9a89b165ee6bca5f05ef3" compoundref="shell_8h" startline="24">s_ms_data::std_out</references>
         <referencedby refid="main_8c_1a647f21a28344e1d9c643f4115516d7c9" compoundref="main_8c" startline="53" endline="65">main</referencedby>
       </memberdef>
       <memberdef kind="function" id="tokens_8h_1a41e7a8e4355566996a5984b4a31fb8fe" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
@@ -1485,14 +1485,14 @@
       <memberdef kind="function" id="tokens_8h_1a394ad19d95bb23401e65ced6a300ebf4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void execute_tree</definition>
-        <argsstring>(t_ast *node, t_minishell_data *data)</argsstring>
+        <argsstring>(t_ast *node, t_ms_data *data)</argsstring>
         <name>execute_tree</name>
         <param>
           <type><ref refid="tokens_8h_1a5fd329b243c6cd036f7b9ecbc86a9344" kindref="member">t_ast</ref> *</type>
           <declname>node</declname>
         </param>
         <param>
-          <type><ref refid="shell_8h_1a163dfbd200eaf940e5a56fd45345ff72" kindref="member">t_minishell_data</ref> *</type>
+          <type><ref refid="shell_8h_1a163dfbd200eaf940e5a56fd45345ff72" kindref="member">t_ms_data</ref> *</type>
           <declname>data</declname>
         </param>
         <briefdescription>
@@ -1588,14 +1588,14 @@
 <codeline lineno="77" refid="tokens_8h_1a9f431057dad735498050a54f17ede8c1" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="tokens_8h_1a9f431057dad735498050a54f17ede8c1" kindref="member">parse_loop</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>**input,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>**tokens,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>*pos,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>*bufsize);</highlight></codeline>
 <codeline lineno="78" refid="tokens_8h_1ab9faa1e87d098c17ca377f97dd85c01e" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>**<ref refid="tokens_8h_1ab9faa1e87d098c17ca377f97dd85c01e" kindref="member">parse_input</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*input);</highlight></codeline>
 <codeline lineno="79"><highlight class="normal"></highlight><highlight class="comment">//<sp/>char<sp/>*generate_prompt(void);</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="80"><highlight class="normal"></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<ref refid="tokens_8h_1a4c523064ece03ba20eb609b52253b88e" kindref="member">generate_prompt</ref>(<ref refid="structs__minishell__data" kindref="compound">t_minishell_data</ref><sp/>*data);</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<ref refid="tokens_8h_1a4c523064ece03ba20eb609b52253b88e" kindref="member">generate_prompt</ref>(<ref refid="structs__minishell__data" kindref="compound">t_ms_data</ref><sp/>*data);</highlight></codeline>
 <codeline lineno="81"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="tokens_8h_1a94ee21f550bbf6448142ec3102526dde" kindref="member">make_history</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*line);</highlight></codeline>
 <codeline lineno="82"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="tokens_8h_1a3f6fbbc61bc797c26b4ece51216fbb67" kindref="member">loop_cleanup</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*line,<sp/><ref refid="structs__token" kindref="compound">t_token</ref><sp/>*tokens,<sp/>\</highlight></codeline>
 <codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*prompt,<sp/><ref refid="structs__ast" kindref="compound">t_ast</ref><sp/>*tree);</highlight></codeline>
-<codeline lineno="84"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="tokens_8h_1a16d324fdb41b45b7e59af5eaab2e56bd" kindref="member">free_minishell_data</ref>(<ref refid="structs__minishell__data" kindref="compound">t_minishell_data</ref><sp/>*data);</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="tokens_8h_1a16d324fdb41b45b7e59af5eaab2e56bd" kindref="member">free_ms_data</ref>(<ref refid="structs__minishell__data" kindref="compound">t_ms_data</ref><sp/>*data);</highlight></codeline>
 <codeline lineno="85"><highlight class="normal"></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<ref refid="tokens_8h_1a4e1b3e73a18dd66697cd7eac990b0363" kindref="member">check_heredoc</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*line);</highlight></codeline>
 <codeline lineno="86"><highlight class="normal"></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<ref refid="tokens_8h_1a132ce43db3d4fba988a166e932845375" kindref="member">heredoc</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*eof);</highlight></codeline>
-<codeline lineno="87"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="tokens_8h_1ab7986766cca35553aa796f6a732d856a" kindref="member">init_minishell_data</ref>(<ref refid="structs__minishell__data" kindref="compound">t_minishell_data</ref><sp/>*data,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>**envp);</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="tokens_8h_1ab7986766cca35553aa796f6a732d856a" kindref="member">init_ms_data</ref>(<ref refid="structs__minishell__data" kindref="compound">t_ms_data</ref><sp/>*data,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>**envp);</highlight></codeline>
 <codeline lineno="88"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="tokens_8h_1a41e7a8e4355566996a5984b4a31fb8fe" kindref="member">initialise</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>argc,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>**argv);</highlight></codeline>
 <codeline lineno="89" refid="tokens_8h_1a458295f97c8b5b5f590b1d0e2ec8dad0" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="tokens_8h_1a458295f97c8b5b5f590b1d0e2ec8dad0" kindref="member">execute_command</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>**parsed_text,<sp/><ref refid="structs__token" kindref="compound">t_token</ref><sp/>**tokens);</highlight></codeline>
 <codeline lineno="90"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="tokens_8h_1a4e673b7c7d3f45e10377ab9f537b8bf9" kindref="member">print_maxishell</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
@@ -1622,7 +1622,7 @@
 <codeline lineno="111"><highlight class="normal"><ref refid="structs__ast" kindref="compound">t_ast</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<ref refid="tokens_8h_1a42a514028763c0c9c9f12226556407fe" kindref="member">manage_pipe</ref>(<ref refid="structs__token" kindref="compound">t_token</ref><sp/>**tokens);</highlight></codeline>
 <codeline lineno="112"><highlight class="normal"></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<ref refid="tokens_8h_1ad85feb33dfe75120540e2bc4dc28209a" kindref="member">trim_input</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*str);</highlight></codeline>
 <codeline lineno="113"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="tokens_8h_1a16c146658d86ab8fa44a3af94804c5a9" kindref="member">print_ast_root</ref>(<ref refid="structs__ast" kindref="compound">t_ast</ref><sp/>*root);</highlight></codeline>
-<codeline lineno="114" refid="tokens_8h_1a394ad19d95bb23401e65ced6a300ebf4" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="tokens_8h_1a394ad19d95bb23401e65ced6a300ebf4" kindref="member">execute_tree</ref>(<ref refid="structs__ast" kindref="compound">t_ast</ref><sp/>*node,<sp/><ref refid="structs__minishell__data" kindref="compound">t_minishell_data</ref><sp/>*data);</highlight></codeline>
+<codeline lineno="114" refid="tokens_8h_1a394ad19d95bb23401e65ced6a300ebf4" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="tokens_8h_1a394ad19d95bb23401e65ced6a300ebf4" kindref="member">execute_tree</ref>(<ref refid="structs__ast" kindref="compound">t_ast</ref><sp/>*node,<sp/><ref refid="structs__minishell__data" kindref="compound">t_ms_data</ref><sp/>*data);</highlight></codeline>
 <codeline lineno="115"><highlight class="normal"></highlight></codeline>
 <codeline lineno="116"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
     </programlisting>

@@ -23,7 +23,7 @@ Functionality:
 - Exit with the exit status
  */
 
-int	builtin_exit(t_minishell_data *data)
+int	builtin_exit(t_ms_data *data)
 {
 	const char	*message;
 

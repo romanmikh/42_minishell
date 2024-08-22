@@ -173,14 +173,14 @@
       <memberdef kind="function" id="execute_8h_1ace4c3a2246919797e40140123d79596a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
         <definition>int execute_ast</definition>
-        <argsstring>(t_ast *node, t_minishell_data *data)</argsstring>
+        <argsstring>(t_ast *node, t_ms_data *data)</argsstring>
         <name>execute_ast</name>
         <param>
           <type><ref refid="tokens_8h_1a5fd329b243c6cd036f7b9ecbc86a9344" kindref="member">t_ast</ref> *</type>
           <declname>node</declname>
         </param>
         <param>
-          <type><ref refid="shell_8h_1a163dfbd200eaf940e5a56fd45345ff72" kindref="member">t_minishell_data</ref> *</type>
+          <type><ref refid="shell_8h_1a163dfbd200eaf940e5a56fd45345ff72" kindref="member">t_ms_data</ref> *</type>
           <declname>data</declname>
         </param>
         <briefdescription>
@@ -221,7 +221,7 @@
         </inbodydescription>
         <location file="/Users/dimadem/Documents/GitHub/minishell/inc/execute.h" line="20" column="4" bodyfile="/Users/dimadem/Documents/GitHub/minishell/src/execute/execute.c" bodystart="37" bodyend="59" declfile="/Users/dimadem/Documents/GitHub/minishell/inc/execute.h" declline="20" declcolumn="4"/>
         <references refid="structs__ast_1ab62d177d86a1908cf5bbdb5cf6e978f8" compoundref="tokens_8h" startline="51">s_ast::args</references>
-        <references refid="structs__minishell__data_1aeb4af268850af7d0f6d0c64f2bfefdea" compoundref="shell_8h" startline="20">s_minishell_data::args</references>
+        <references refid="structs__minishell__data_1aeb4af268850af7d0f6d0c64f2bfefdea" compoundref="shell_8h" startline="20">s_ms_data::args</references>
         <references refid="libft_8h_1add9307de87f38e77d336751e305886f6" compoundref="libft_8h" startline="109">BLU</references>
         <references refid="pipe_8h_1a7947b63271b47934f419fe6d217bf8df" compoundref="pipe_8c" startline="35" endline="60">builtin_pipe</references>
         <references refid="tokens_8h_1a76a354e93d720f05344590ec8aa222deaf62fcc8d292e490f19a6cea724a10c00" compoundref="tokens_8h" startline="33">ENV_VAR</references>
@@ -414,10 +414,10 @@
       <memberdef kind="function" id="execute_8h_1a6f45c6b2374dd1d4eea803d3ba8879b2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void handle_io_fd</definition>
-        <argsstring>(t_minishell_data *data)</argsstring>
+        <argsstring>(t_ms_data *data)</argsstring>
         <name>handle_io_fd</name>
         <param>
-          <type><ref refid="shell_8h_1a163dfbd200eaf940e5a56fd45345ff72" kindref="member">t_minishell_data</ref> *</type>
+          <type><ref refid="shell_8h_1a163dfbd200eaf940e5a56fd45345ff72" kindref="member">t_ms_data</ref> *</type>
           <declname>data</declname>
         </param>
         <briefdescription>
@@ -438,8 +438,8 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/dimadem/Documents/GitHub/minishell/inc/execute.h" line="27" column="5" bodyfile="/Users/dimadem/Documents/GitHub/minishell/src/execute/utils_0.c" bodystart="69" bodyend="78" declfile="/Users/dimadem/Documents/GitHub/minishell/inc/execute.h" declline="27" declcolumn="5"/>
-        <references refid="structs__minishell__data_1a9ed5685097b7e4b55c3c1307b70869ef" compoundref="shell_8h" startline="23">s_minishell_data::std_in</references>
-        <references refid="structs__minishell__data_1ac90001aa8bc9a89b165ee6bca5f05ef3" compoundref="shell_8h" startline="24">s_minishell_data::std_out</references>
+        <references refid="structs__minishell__data_1a9ed5685097b7e4b55c3c1307b70869ef" compoundref="shell_8h" startline="23">s_ms_data::std_in</references>
+        <references refid="structs__minishell__data_1ac90001aa8bc9a89b165ee6bca5f05ef3" compoundref="shell_8h" startline="24">s_ms_data::std_out</references>
         <referencedby refid="main_8c_1abaf800210325f066cb9289aaae9e2c86" compoundref="main_8c" startline="29" endline="51">main_loop</referencedby>
       </memberdef>
     </sectiondef>
@@ -467,14 +467,14 @@
 <codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/>include<sp/>&quot;<ref refid="tokens_8h" kindref="compound">tokens.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="18"><highlight class="normal"></highlight></codeline>
 <codeline lineno="19"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/>execute<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="20"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><ref refid="execute_8h_1ace4c3a2246919797e40140123d79596a" kindref="member">execute_ast</ref>(<ref refid="structs__ast" kindref="compound">t_ast</ref><sp/>*node,<sp/><ref refid="structs__minishell__data" kindref="compound">t_minishell_data</ref><sp/>*data);</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><ref refid="execute_8h_1ace4c3a2246919797e40140123d79596a" kindref="member">execute_ast</ref>(<ref refid="structs__ast" kindref="compound">t_ast</ref><sp/>*node,<sp/><ref refid="structs__minishell__data" kindref="compound">t_ms_data</ref><sp/>*data);</highlight></codeline>
 <codeline lineno="21"><highlight class="normal"></highlight></codeline>
 <codeline lineno="22"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/>utils<sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="23"><highlight class="normal"></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/><sp/><sp/>*<ref refid="execute_8h_1a3de2eb0e796441d7b827cf213bd8d789" kindref="member">ft_find_path</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*cmd,<sp/><ref refid="structs__env" kindref="compound">t_env</ref><sp/>*envp);</highlight></codeline>
 <codeline lineno="24"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="execute_8h_1a5d9d8b46bb6c3dbbc91e99b69bb63e9d" kindref="member">ft_free_2d_arr</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>**arr);</highlight></codeline>
 <codeline lineno="25"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><ref refid="execute_8h_1aedc550f2251badad69cf4b6dfda183ef" kindref="member">ft_perror</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*str);</highlight></codeline>
 <codeline lineno="26"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="execute_8h_1ab9bcddf9275f12cc49348081000beb62" kindref="member">close_fds</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>in,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>out);</highlight></codeline>
-<codeline lineno="27"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="execute_8h_1a6f45c6b2374dd1d4eea803d3ba8879b2" kindref="member">handle_io_fd</ref>(<ref refid="structs__minishell__data" kindref="compound">t_minishell_data</ref><sp/>*data);</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="execute_8h_1a6f45c6b2374dd1d4eea803d3ba8879b2" kindref="member">handle_io_fd</ref>(<ref refid="structs__minishell__data" kindref="compound">t_ms_data</ref><sp/>*data);</highlight></codeline>
 <codeline lineno="28"><highlight class="normal"></highlight></codeline>
 <codeline lineno="29"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
     </programlisting>

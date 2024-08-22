@@ -29,10 +29,10 @@
 .br
 .RI "close two file descriptors "
 .ti -1c
-.RI "void \fBhandle_temp_fd\fP (\fBt_minishell_data\fP *data)"
+.RI "void \fBhandle_temp_fd\fP (\fBt_ms_data\fP *data)"
 .br
 .ti -1c
-.RI "void \fBhandle_io_fd\fP (\fBt_minishell_data\fP *data)"
+.RI "void \fBhandle_io_fd\fP (\fBt_ms_data\fP *data)"
 .br
 .RI "close temporary input/output file descriptors and reset them to -1 "
 .in -1c
@@ -126,7 +126,7 @@ Definition at line \fB46\fP of file \fButils_0\&.c\fP\&.
 
 .PP
 Referenced by \fBbuiltin_pipe()\fP, \fBexecute()\fP, \fBexecute_child()\fP, \fBexecute_child()\fP, \fBnew_process()\fP, and \fBopen_tmp_file()\fP\&.
-.SS "void handle_io_fd (\fBt_minishell_data\fP * data)"
+.SS "void handle_io_fd (\fBt_ms_data\fP * data)"
 
 .PP
 close temporary input/output file descriptors and reset them to -1 -- 
@@ -153,10 +153,10 @@ Definition at line \fB69\fP of file \fButils_0\&.c\fP\&.
 .fi
 
 .PP
-References \fBs_minishell_data::std_in\fP, and \fBs_minishell_data::std_out\fP\&.
+References \fBs_ms_data::std_in\fP, and \fBs_ms_data::std_out\fP\&.
 .PP
 Referenced by \fBmain_loop()\fP\&.
-.SS "void handle_temp_fd (\fBt_minishell_data\fP * data)"
+.SS "void handle_temp_fd (\fBt_ms_data\fP * data)"
 
 .SH "Author"
 .PP 

@@ -110,11 +110,11 @@
     <sectiondef kind="func">
       <memberdef kind="function" id="initialise_8c_1ab7986766cca35553aa796f6a732d856a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
-        <definition>void init_minishell_data</definition>
-        <argsstring>(t_minishell_data *data, char **envp)</argsstring>
-        <name>init_minishell_data</name>
+        <definition>void init_ms_data</definition>
+        <argsstring>(t_ms_data *data, char **envp)</argsstring>
+        <name>init_ms_data</name>
         <param>
-          <type><ref refid="shell_8h_1a163dfbd200eaf940e5a56fd45345ff72" kindref="member">t_minishell_data</ref> *</type>
+          <type><ref refid="shell_8h_1a163dfbd200eaf940e5a56fd45345ff72" kindref="member">t_ms_data</ref> *</type>
           <declname>data</declname>
         </param>
         <param>
@@ -128,15 +128,15 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/dimadem/Documents/GitHub/minishell/src/utils/initialise.c" line="16" column="5" bodyfile="/Users/dimadem/Documents/GitHub/minishell/src/utils/initialise.c" bodystart="16" bodyend="27"/>
-        <references refid="structs__minishell__data_1aeb4af268850af7d0f6d0c64f2bfefdea" compoundref="shell_8h" startline="20">s_minishell_data::args</references>
-        <references refid="structs__minishell__data_1a147731c1cf1a04c1fc1b85e6343cc7cc" compoundref="shell_8h" startline="26">s_minishell_data::current_dir</references>
-        <references refid="structs__minishell__data_1a8a0b3f50c8893e061062e93115f3d723" compoundref="shell_8h" startline="21">s_minishell_data::envp</references>
-        <references refid="structs__minishell__data_1a978016fddb1d9faa4fbda6859a9a199e" compoundref="shell_8h" startline="27">s_minishell_data::exit_status</references>
+        <references refid="structs__minishell__data_1aeb4af268850af7d0f6d0c64f2bfefdea" compoundref="shell_8h" startline="20">s_ms_data::args</references>
+        <references refid="structs__minishell__data_1a147731c1cf1a04c1fc1b85e6343cc7cc" compoundref="shell_8h" startline="26">s_ms_data::current_dir</references>
+        <references refid="structs__minishell__data_1a8a0b3f50c8893e061062e93115f3d723" compoundref="shell_8h" startline="21">s_ms_data::envp</references>
+        <references refid="structs__minishell__data_1a978016fddb1d9faa4fbda6859a9a199e" compoundref="shell_8h" startline="27">s_ms_data::exit_status</references>
         <references refid="env_8h_1a2344221e4d3b1327b956157b837a727b" compoundref="env_2env_8c" startline="24" endline="31">init_env</references>
-        <references refid="structs__minishell__data_1a46b92ee58356d0f35174a79ed568253b" compoundref="shell_8h" startline="22">s_minishell_data::local_env</references>
-        <references refid="structs__minishell__data_1a5122e3a902d8f28e8b69576175f28c2b" compoundref="shell_8h" startline="25">s_minishell_data::std_err</references>
-        <references refid="structs__minishell__data_1a9ed5685097b7e4b55c3c1307b70869ef" compoundref="shell_8h" startline="23">s_minishell_data::std_in</references>
-        <references refid="structs__minishell__data_1ac90001aa8bc9a89b165ee6bca5f05ef3" compoundref="shell_8h" startline="24">s_minishell_data::std_out</references>
+        <references refid="structs__minishell__data_1a46b92ee58356d0f35174a79ed568253b" compoundref="shell_8h" startline="22">s_ms_data::local_env</references>
+        <references refid="structs__minishell__data_1a5122e3a902d8f28e8b69576175f28c2b" compoundref="shell_8h" startline="25">s_ms_data::std_err</references>
+        <references refid="structs__minishell__data_1a9ed5685097b7e4b55c3c1307b70869ef" compoundref="shell_8h" startline="23">s_ms_data::std_in</references>
+        <references refid="structs__minishell__data_1ac90001aa8bc9a89b165ee6bca5f05ef3" compoundref="shell_8h" startline="24">s_ms_data::std_out</references>
         <referencedby refid="main_8c_1a647f21a28344e1d9c643f4115516d7c9" compoundref="main_8c" startline="53" endline="65">main</referencedby>
       </memberdef>
       <memberdef kind="function" id="initialise_8c_1a41e7a8e4355566996a5984b4a31fb8fe" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
@@ -183,7 +183,7 @@
 <codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="tokens_8h" kindref="compound">tokens.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="env_8h" kindref="compound">env.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="15"><highlight class="normal"></highlight></codeline>
-<codeline lineno="16" refid="tokens_8h_1ab7986766cca35553aa796f6a732d856a" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="initialise_8c_1ab7986766cca35553aa796f6a732d856a" kindref="member">init_minishell_data</ref>(<ref refid="structs__minishell__data" kindref="compound">t_minishell_data</ref><sp/>*data,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>**envp)</highlight></codeline>
+<codeline lineno="16" refid="tokens_8h_1ab7986766cca35553aa796f6a732d856a" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="initialise_8c_1ab7986766cca35553aa796f6a732d856a" kindref="member">init_ms_data</ref>(<ref refid="structs__minishell__data" kindref="compound">t_ms_data</ref><sp/>*data,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>**envp)</highlight></codeline>
 <codeline lineno="17"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/>data-&gt;<ref refid="structs__minishell__data_1aeb4af268850af7d0f6d0c64f2bfefdea" kindref="member">args</ref><sp/>=<sp/>NULL;</highlight></codeline>
 <codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/>data-&gt;<ref refid="structs__minishell__data_1a8a0b3f50c8893e061062e93115f3d723" kindref="member">envp</ref><sp/>=<sp/>NULL;</highlight></codeline>

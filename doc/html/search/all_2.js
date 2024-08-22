@@ -15,6 +15,6 @@ var searchData=
   ['count_5fwords_12',['count_words',['../ft__split_8c.html#ad8019fb71c0c8134127025b3c37dd126',1,'ft_split.c']]],
   ['create_5fredir_13',['create_redir',['../tokens_8h.html#a66cf17aa7377cfb20adcaccdc1f38b1c',1,'create_redir(t_token **tokens, t_token *tmp):&#160;parser_helpers.c'],['../parser__helpers_8c.html#a66cf17aa7377cfb20adcaccdc1f38b1c',1,'create_redir(t_token **tokens, t_token *tmp):&#160;parser_helpers.c']]],
   ['create_5fredir_5fnode_14',['create_redir_node',['../tokens_8h.html#a665af377c02015d59f668e4b2b2434bf',1,'create_redir_node(t_token *token):&#160;parser.c'],['../parser_8c.html#a665af377c02015d59f668e4b2b2434bf',1,'create_redir_node(t_token *token):&#160;parser.c']]],
-  ['current_5fdir_15',['current_dir',['../structs__minishell__data.html#a147731c1cf1a04c1fc1b85e6343cc7cc',1,'s_minishell_data']]],
+  ['current_5fdir_15',['current_dir',['../structs__minishell__data.html#a147731c1cf1a04c1fc1b85e6343cc7cc',1,'s_ms_data']]],
   ['cya_16',['CYA',['../libft_8h.html#a25f4cb00b763d4c7c8e627e4c0350383',1,'libft.h']]]
 ];

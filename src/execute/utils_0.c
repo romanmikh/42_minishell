@@ -17,7 +17,7 @@
 void	ft_free_2d_arr(char **arr);
 int		ft_perror(char *str);
 void	close_fds(int in, int out);
-void	handle_temp_fd(t_minishell_data *data);
+void	handle_temp_fd(t_ms_data *data);
 
 /**
 - @brief clean up 2d array
@@ -66,7 +66,7 @@ void	close_fds(int in, int out)
 - @param data minishell structure
  */
 
-void	handle_io_fd(t_minishell_data *data)
+void	handle_io_fd(t_ms_data *data)
 {
 	if (data->std_in != -1 && data->std_out != -1)
 	{

@@ -83,10 +83,10 @@
       <memberdef kind="function" id="unset_8c_1aa04be64406f96e5ae8f361421bf72cec" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
         <definition>int builtin_unset</definition>
-        <argsstring>(t_minishell_data *data)</argsstring>
+        <argsstring>(t_ms_data *data)</argsstring>
         <name>builtin_unset</name>
         <param>
-          <type><ref refid="shell_8h_1a163dfbd200eaf940e5a56fd45345ff72" kindref="member">t_minishell_data</ref> *</type>
+          <type><ref refid="shell_8h_1a163dfbd200eaf940e5a56fd45345ff72" kindref="member">t_ms_data</ref> *</type>
           <declname>data</declname>
         </param>
         <briefdescription>
@@ -96,9 +96,9 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/dimadem/Documents/GitHub/minishell/src/builtins/unset.c" line="26" column="4" bodyfile="/Users/dimadem/Documents/GitHub/minishell/src/builtins/unset.c" bodystart="26" bodyend="45"/>
-        <references refid="structs__minishell__data_1aeb4af268850af7d0f6d0c64f2bfefdea" compoundref="shell_8h" startline="20">s_minishell_data::args</references>
-        <references refid="structs__minishell__data_1a8a0b3f50c8893e061062e93115f3d723" compoundref="shell_8h" startline="21">s_minishell_data::envp</references>
-        <references refid="structs__minishell__data_1a978016fddb1d9faa4fbda6859a9a199e" compoundref="shell_8h" startline="27">s_minishell_data::exit_status</references>
+        <references refid="structs__minishell__data_1aeb4af268850af7d0f6d0c64f2bfefdea" compoundref="shell_8h" startline="20">s_ms_data::args</references>
+        <references refid="structs__minishell__data_1a8a0b3f50c8893e061062e93115f3d723" compoundref="shell_8h" startline="21">s_ms_data::envp</references>
+        <references refid="structs__minishell__data_1a978016fddb1d9faa4fbda6859a9a199e" compoundref="shell_8h" startline="27">s_ms_data::exit_status</references>
         <references refid="libft_8h_1aeb112152acfc553d58d61a5df38afcde" compoundref="ft__putendl__fd_8c" startline="21" endline="28">ft_putendl_fd</references>
         <references refid="libft_8h_1acefce9ac519f8f8b7d3fde33dbafe469" compoundref="ft__putstr__fd_8c" startline="20" endline="24">ft_putstr_fd</references>
         <references refid="env_8h_1a0854396366b7055e0df29e25f8e520d3" compoundref="env_2env_8c" startline="101" endline="125">unset_env</references>
@@ -135,7 +135,7 @@
 <codeline lineno="23"><highlight class="comment">-<sp/>Return<sp/>1<sp/>if<sp/>the<sp/>variable<sp/>is<sp/>not<sp/>a<sp/>valid<sp/>identifier<sp/><sp/><sp/><sp/></highlight></codeline>
 <codeline lineno="24"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="25"><highlight class="normal"></highlight></codeline>
-<codeline lineno="26" refid="builtins_8h_1aa04be64406f96e5ae8f361421bf72cec" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="unset_8c_1aa04be64406f96e5ae8f361421bf72cec" kindref="member">builtin_unset</ref>(<ref refid="structs__minishell__data" kindref="compound">t_minishell_data</ref><sp/>*data)</highlight></codeline>
+<codeline lineno="26" refid="builtins_8h_1aa04be64406f96e5ae8f361421bf72cec" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="unset_8c_1aa04be64406f96e5ae8f361421bf72cec" kindref="member">builtin_unset</ref>(<ref refid="structs__minishell__data" kindref="compound">t_ms_data</ref><sp/>*data)</highlight></codeline>
 <codeline lineno="27"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i;</highlight></codeline>
 <codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ret;</highlight></codeline>

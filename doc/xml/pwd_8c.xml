@@ -86,10 +86,10 @@
       <memberdef kind="function" id="pwd_8c_1aa9f1acae4ed9a914564af529571db30a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
         <definition>int builtin_pwd</definition>
-        <argsstring>(t_minishell_data *data)</argsstring>
+        <argsstring>(t_ms_data *data)</argsstring>
         <name>builtin_pwd</name>
         <param>
-          <type><ref refid="shell_8h_1a163dfbd200eaf940e5a56fd45345ff72" kindref="member">t_minishell_data</ref> *</type>
+          <type><ref refid="shell_8h_1a163dfbd200eaf940e5a56fd45345ff72" kindref="member">t_ms_data</ref> *</type>
           <declname>data</declname>
         </param>
         <briefdescription>
@@ -131,7 +131,7 @@
 <codeline lineno="20"><highlight class="comment">-<sp/>Print<sp/>the<sp/>current<sp/>working<sp/>directory</highlight></codeline>
 <codeline lineno="21"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="22"><highlight class="normal"></highlight></codeline>
-<codeline lineno="23" refid="builtins_8h_1aa9f1acae4ed9a914564af529571db30a" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="pwd_8c_1aa9f1acae4ed9a914564af529571db30a" kindref="member">builtin_pwd</ref>(<ref refid="structs__minishell__data" kindref="compound">t_minishell_data</ref><sp/>*data)</highlight></codeline>
+<codeline lineno="23" refid="builtins_8h_1aa9f1acae4ed9a914564af529571db30a" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="pwd_8c_1aa9f1acae4ed9a914564af529571db30a" kindref="member">builtin_pwd</ref>(<ref refid="structs__minishell__data" kindref="compound">t_ms_data</ref><sp/>*data)</highlight></codeline>
 <codeline lineno="24"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/><sp/><sp/>cwd[4096];</highlight></codeline>
 <codeline lineno="26"><highlight class="normal"></highlight></codeline>

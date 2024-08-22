@@ -38,10 +38,10 @@
       <memberdef kind="function" id="builtins_8h_1a90c33b349e024075c96efdc320f7138f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
         <definition>int builtin_cd</definition>
-        <argsstring>(t_minishell_data *data)</argsstring>
+        <argsstring>(t_ms_data *data)</argsstring>
         <name>builtin_cd</name>
         <param>
-          <type><ref refid="shell_8h_1a163dfbd200eaf940e5a56fd45345ff72" kindref="member">t_minishell_data</ref> *</type>
+          <type><ref refid="shell_8h_1a163dfbd200eaf940e5a56fd45345ff72" kindref="member">t_ms_data</ref> *</type>
           <declname>data</declname>
         </param>
         <briefdescription>
@@ -51,8 +51,8 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/dimadem/Documents/GitHub/minishell/inc/builtins.h" line="19" column="4" bodyfile="/Users/dimadem/Documents/GitHub/minishell/src/builtins/cd.c" bodystart="26" bodyend="47" declfile="/Users/dimadem/Documents/GitHub/minishell/inc/builtins.h" declline="19" declcolumn="4"/>
-        <references refid="structs__minishell__data_1aeb4af268850af7d0f6d0c64f2bfefdea" compoundref="shell_8h" startline="20">s_minishell_data::args</references>
-        <references refid="structs__minishell__data_1a8a0b3f50c8893e061062e93115f3d723" compoundref="shell_8h" startline="21">s_minishell_data::envp</references>
+        <references refid="structs__minishell__data_1aeb4af268850af7d0f6d0c64f2bfefdea" compoundref="shell_8h" startline="20">s_ms_data::args</references>
+        <references refid="structs__minishell__data_1a8a0b3f50c8893e061062e93115f3d723" compoundref="shell_8h" startline="21">s_ms_data::envp</references>
         <references refid="libft_8h_1acefce9ac519f8f8b7d3fde33dbafe469" compoundref="ft__putstr__fd_8c" startline="20" endline="24">ft_putstr_fd</references>
         <references refid="env_8h_1a41133e0ba7230727a51eedce713a225c" compoundref="env_2env_8c" startline="60" endline="72">get_env</references>
         <references refid="env_8h_1a194b2552273340441e8b481b4ce5202c" compoundref="env_2env_8c" startline="79" endline="99">set_env</references>
@@ -61,10 +61,10 @@
       <memberdef kind="function" id="builtins_8h_1a9c4bf413cef22ef46427c4026734a97d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
         <definition>int builtin_echo</definition>
-        <argsstring>(t_minishell_data *data)</argsstring>
+        <argsstring>(t_ms_data *data)</argsstring>
         <name>builtin_echo</name>
         <param>
-          <type><ref refid="shell_8h_1a163dfbd200eaf940e5a56fd45345ff72" kindref="member">t_minishell_data</ref> *</type>
+          <type><ref refid="shell_8h_1a163dfbd200eaf940e5a56fd45345ff72" kindref="member">t_ms_data</ref> *</type>
           <declname>data</declname>
         </param>
         <briefdescription>
@@ -74,7 +74,7 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/dimadem/Documents/GitHub/minishell/inc/builtins.h" line="20" column="4" bodyfile="/Users/dimadem/Documents/GitHub/minishell/src/builtins/echo.c" bodystart="21" bodyend="42" declfile="/Users/dimadem/Documents/GitHub/minishell/inc/builtins.h" declline="20" declcolumn="4"/>
-        <references refid="structs__minishell__data_1aeb4af268850af7d0f6d0c64f2bfefdea" compoundref="shell_8h" startline="20">s_minishell_data::args</references>
+        <references refid="structs__minishell__data_1aeb4af268850af7d0f6d0c64f2bfefdea" compoundref="shell_8h" startline="20">s_ms_data::args</references>
         <references refid="libft_8h_1a1f2ff2312e5994560c9537cd9173be94" compoundref="ft__strcmp_8c" startline="24" endline="34">ft_strcmp</references>
         <references refid="libft_8h_1abbb8c6c4ed85d892e7f1509f65f5768a" compoundref="ft__strlen_8c" startline="15" endline="23">ft_strlen</references>
         <referencedby refid="execute_8c_1ae9738c8104774062bc2934b701fe96d9" compoundref="execute_8c" startline="70" endline="97">execute</referencedby>
@@ -82,10 +82,10 @@
       <memberdef kind="function" id="builtins_8h_1adfc1db1f94cf16d71aea54b09370c032" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
         <definition>int builtin_env</definition>
-        <argsstring>(t_minishell_data *data)</argsstring>
+        <argsstring>(t_ms_data *data)</argsstring>
         <name>builtin_env</name>
         <param>
-          <type><ref refid="shell_8h_1a163dfbd200eaf940e5a56fd45345ff72" kindref="member">t_minishell_data</ref> *</type>
+          <type><ref refid="shell_8h_1a163dfbd200eaf940e5a56fd45345ff72" kindref="member">t_ms_data</ref> *</type>
           <declname>data</declname>
         </param>
         <briefdescription>
@@ -95,8 +95,8 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/dimadem/Documents/GitHub/minishell/inc/builtins.h" line="21" column="4" bodyfile="/Users/dimadem/Documents/GitHub/minishell/src/builtins/env.c" bodystart="38" bodyend="44" declfile="/Users/dimadem/Documents/GitHub/minishell/inc/builtins.h" declline="21" declcolumn="4"/>
-        <references refid="structs__minishell__data_1aeb4af268850af7d0f6d0c64f2bfefdea" compoundref="shell_8h" startline="20">s_minishell_data::args</references>
-        <references refid="structs__minishell__data_1a8a0b3f50c8893e061062e93115f3d723" compoundref="shell_8h" startline="21">s_minishell_data::envp</references>
+        <references refid="structs__minishell__data_1aeb4af268850af7d0f6d0c64f2bfefdea" compoundref="shell_8h" startline="20">s_ms_data::args</references>
+        <references refid="structs__minishell__data_1a8a0b3f50c8893e061062e93115f3d723" compoundref="shell_8h" startline="21">s_ms_data::envp</references>
         <references refid="libft_8h_1a1f2ff2312e5994560c9537cd9173be94" compoundref="ft__strcmp_8c" startline="24" endline="34">ft_strcmp</references>
         <references refid="builtins_2env_8c_1a5b5d29d406a0fad6272b33c03b7793b4" compoundref="builtins_2env_8c" startline="26" endline="36">print_env_stack</references>
         <referencedby refid="execute_8c_1ae9738c8104774062bc2934b701fe96d9" compoundref="execute_8c" startline="70" endline="97">execute</referencedby>
@@ -104,10 +104,10 @@
       <memberdef kind="function" id="builtins_8h_1a6a7d93447961b415c9c16ebdfcd3d5fa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
         <definition>int builtin_exit</definition>
-        <argsstring>(t_minishell_data *data)</argsstring>
+        <argsstring>(t_ms_data *data)</argsstring>
         <name>builtin_exit</name>
         <param>
-          <type><ref refid="shell_8h_1a163dfbd200eaf940e5a56fd45345ff72" kindref="member">t_minishell_data</ref> *</type>
+          <type><ref refid="shell_8h_1a163dfbd200eaf940e5a56fd45345ff72" kindref="member">t_ms_data</ref> *</type>
           <declname>data</declname>
         </param>
         <briefdescription>
@@ -117,17 +117,17 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/dimadem/Documents/GitHub/minishell/inc/builtins.h" line="22" column="4" bodyfile="/Users/dimadem/Documents/GitHub/minishell/src/builtins/exit.c" bodystart="26" bodyend="34" declfile="/Users/dimadem/Documents/GitHub/minishell/inc/builtins.h" declline="22" declcolumn="4"/>
-        <references refid="structs__minishell__data_1a978016fddb1d9faa4fbda6859a9a199e" compoundref="shell_8h" startline="27">s_minishell_data::exit_status</references>
+        <references refid="structs__minishell__data_1a978016fddb1d9faa4fbda6859a9a199e" compoundref="shell_8h" startline="27">s_ms_data::exit_status</references>
         <references refid="libft_8h_1abbb8c6c4ed85d892e7f1509f65f5768a" compoundref="ft__strlen_8c" startline="15" endline="23">ft_strlen</references>
         <referencedby refid="execute_8c_1ae9738c8104774062bc2934b701fe96d9" compoundref="execute_8c" startline="70" endline="97">execute</referencedby>
       </memberdef>
       <memberdef kind="function" id="builtins_8h_1a9e6f1e14f0125cd68c70e8e31ef606aa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
         <definition>int builtin_export</definition>
-        <argsstring>(t_minishell_data *data)</argsstring>
+        <argsstring>(t_ms_data *data)</argsstring>
         <name>builtin_export</name>
         <param>
-          <type><ref refid="shell_8h_1a163dfbd200eaf940e5a56fd45345ff72" kindref="member">t_minishell_data</ref> *</type>
+          <type><ref refid="shell_8h_1a163dfbd200eaf940e5a56fd45345ff72" kindref="member">t_ms_data</ref> *</type>
           <declname>data</declname>
         </param>
         <briefdescription>
@@ -138,8 +138,8 @@
         </inbodydescription>
         <location file="/Users/dimadem/Documents/GitHub/minishell/inc/builtins.h" line="23" column="4" bodyfile="/Users/dimadem/Documents/GitHub/minishell/src/builtins/export.c" bodystart="28" bodyend="44" declfile="/Users/dimadem/Documents/GitHub/minishell/inc/builtins.h" declline="23" declcolumn="4"/>
         <references refid="export_8c_1a9572a06bde314d79d284738ffef37d8d" compoundref="export_8c" startline="46" endline="66">add_env</references>
-        <references refid="structs__minishell__data_1aeb4af268850af7d0f6d0c64f2bfefdea" compoundref="shell_8h" startline="20">s_minishell_data::args</references>
-        <references refid="structs__minishell__data_1a8a0b3f50c8893e061062e93115f3d723" compoundref="shell_8h" startline="21">s_minishell_data::envp</references>
+        <references refid="structs__minishell__data_1aeb4af268850af7d0f6d0c64f2bfefdea" compoundref="shell_8h" startline="20">s_ms_data::args</references>
+        <references refid="structs__minishell__data_1a8a0b3f50c8893e061062e93115f3d723" compoundref="shell_8h" startline="21">s_ms_data::envp</references>
         <references refid="libft_8h_1a9d2fe792187aa4ed08e5864fb2c4d6dc" compoundref="ft__strncmp_8c" startline="24" endline="35">ft_strncmp</references>
         <references refid="structs__env_1a3caf3df6eb72714ffcd4e22f9c94ecf2" compoundref="env_8h" startline="20">s_env::next</references>
         <referencedby refid="execute_8c_1ae9738c8104774062bc2934b701fe96d9" compoundref="execute_8c" startline="70" endline="97">execute</referencedby>
@@ -147,10 +147,10 @@
       <memberdef kind="function" id="builtins_8h_1aa9f1acae4ed9a914564af529571db30a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
         <definition>int builtin_pwd</definition>
-        <argsstring>(t_minishell_data *data)</argsstring>
+        <argsstring>(t_ms_data *data)</argsstring>
         <name>builtin_pwd</name>
         <param>
-          <type><ref refid="shell_8h_1a163dfbd200eaf940e5a56fd45345ff72" kindref="member">t_minishell_data</ref> *</type>
+          <type><ref refid="shell_8h_1a163dfbd200eaf940e5a56fd45345ff72" kindref="member">t_ms_data</ref> *</type>
           <declname>data</declname>
         </param>
         <briefdescription>
@@ -167,10 +167,10 @@
       <memberdef kind="function" id="builtins_8h_1aa04be64406f96e5ae8f361421bf72cec" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
         <definition>int builtin_unset</definition>
-        <argsstring>(t_minishell_data *data)</argsstring>
+        <argsstring>(t_ms_data *data)</argsstring>
         <name>builtin_unset</name>
         <param>
-          <type><ref refid="shell_8h_1a163dfbd200eaf940e5a56fd45345ff72" kindref="member">t_minishell_data</ref> *</type>
+          <type><ref refid="shell_8h_1a163dfbd200eaf940e5a56fd45345ff72" kindref="member">t_ms_data</ref> *</type>
           <declname>data</declname>
         </param>
         <briefdescription>
@@ -180,9 +180,9 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/dimadem/Documents/GitHub/minishell/inc/builtins.h" line="25" column="4" bodyfile="/Users/dimadem/Documents/GitHub/minishell/src/builtins/unset.c" bodystart="26" bodyend="45" declfile="/Users/dimadem/Documents/GitHub/minishell/inc/builtins.h" declline="25" declcolumn="4"/>
-        <references refid="structs__minishell__data_1aeb4af268850af7d0f6d0c64f2bfefdea" compoundref="shell_8h" startline="20">s_minishell_data::args</references>
-        <references refid="structs__minishell__data_1a8a0b3f50c8893e061062e93115f3d723" compoundref="shell_8h" startline="21">s_minishell_data::envp</references>
-        <references refid="structs__minishell__data_1a978016fddb1d9faa4fbda6859a9a199e" compoundref="shell_8h" startline="27">s_minishell_data::exit_status</references>
+        <references refid="structs__minishell__data_1aeb4af268850af7d0f6d0c64f2bfefdea" compoundref="shell_8h" startline="20">s_ms_data::args</references>
+        <references refid="structs__minishell__data_1a8a0b3f50c8893e061062e93115f3d723" compoundref="shell_8h" startline="21">s_ms_data::envp</references>
+        <references refid="structs__minishell__data_1a978016fddb1d9faa4fbda6859a9a199e" compoundref="shell_8h" startline="27">s_ms_data::exit_status</references>
         <references refid="libft_8h_1aeb112152acfc553d58d61a5df38afcde" compoundref="ft__putendl__fd_8c" startline="21" endline="28">ft_putendl_fd</references>
         <references refid="libft_8h_1acefce9ac519f8f8b7d3fde33dbafe469" compoundref="ft__putstr__fd_8c" startline="20" endline="24">ft_putstr_fd</references>
         <references refid="env_8h_1a0854396366b7055e0df29e25f8e520d3" compoundref="env_2env_8c" startline="101" endline="125">unset_env</references>
@@ -212,13 +212,13 @@
 <codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/>include<sp/>&quot;<ref refid="shell_8h" kindref="compound">shell.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="17"><highlight class="normal"></highlight></codeline>
 <codeline lineno="18"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/>builtin<sp/>functions<sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="19"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="builtins_8h_1a90c33b349e024075c96efdc320f7138f" kindref="member">builtin_cd</ref>(<ref refid="structs__minishell__data" kindref="compound">t_minishell_data</ref><sp/>*data);</highlight></codeline>
-<codeline lineno="20"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="builtins_8h_1a9c4bf413cef22ef46427c4026734a97d" kindref="member">builtin_echo</ref>(<ref refid="structs__minishell__data" kindref="compound">t_minishell_data</ref><sp/>*data);</highlight></codeline>
-<codeline lineno="21"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="builtins_8h_1adfc1db1f94cf16d71aea54b09370c032" kindref="member">builtin_env</ref>(<ref refid="structs__minishell__data" kindref="compound">t_minishell_data</ref><sp/>*data);</highlight></codeline>
-<codeline lineno="22"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="builtins_8h_1a6a7d93447961b415c9c16ebdfcd3d5fa" kindref="member">builtin_exit</ref>(<ref refid="structs__minishell__data" kindref="compound">t_minishell_data</ref><sp/>*data);</highlight></codeline>
-<codeline lineno="23"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="builtins_8h_1a9e6f1e14f0125cd68c70e8e31ef606aa" kindref="member">builtin_export</ref>(<ref refid="structs__minishell__data" kindref="compound">t_minishell_data</ref><sp/>*data);</highlight></codeline>
-<codeline lineno="24"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="builtins_8h_1aa9f1acae4ed9a914564af529571db30a" kindref="member">builtin_pwd</ref>(<ref refid="structs__minishell__data" kindref="compound">t_minishell_data</ref><sp/>*data);</highlight></codeline>
-<codeline lineno="25"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="builtins_8h_1aa04be64406f96e5ae8f361421bf72cec" kindref="member">builtin_unset</ref>(<ref refid="structs__minishell__data" kindref="compound">t_minishell_data</ref><sp/>*data);</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="builtins_8h_1a90c33b349e024075c96efdc320f7138f" kindref="member">builtin_cd</ref>(<ref refid="structs__minishell__data" kindref="compound">t_ms_data</ref><sp/>*data);</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="builtins_8h_1a9c4bf413cef22ef46427c4026734a97d" kindref="member">builtin_echo</ref>(<ref refid="structs__minishell__data" kindref="compound">t_ms_data</ref><sp/>*data);</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="builtins_8h_1adfc1db1f94cf16d71aea54b09370c032" kindref="member">builtin_env</ref>(<ref refid="structs__minishell__data" kindref="compound">t_ms_data</ref><sp/>*data);</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="builtins_8h_1a6a7d93447961b415c9c16ebdfcd3d5fa" kindref="member">builtin_exit</ref>(<ref refid="structs__minishell__data" kindref="compound">t_ms_data</ref><sp/>*data);</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="builtins_8h_1a9e6f1e14f0125cd68c70e8e31ef606aa" kindref="member">builtin_export</ref>(<ref refid="structs__minishell__data" kindref="compound">t_ms_data</ref><sp/>*data);</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="builtins_8h_1aa9f1acae4ed9a914564af529571db30a" kindref="member">builtin_pwd</ref>(<ref refid="structs__minishell__data" kindref="compound">t_ms_data</ref><sp/>*data);</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="builtins_8h_1aa04be64406f96e5ae8f361421bf72cec" kindref="member">builtin_unset</ref>(<ref refid="structs__minishell__data" kindref="compound">t_ms_data</ref><sp/>*data);</highlight></codeline>
 <codeline lineno="26"><highlight class="normal"></highlight></codeline>
 <codeline lineno="27"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
     </programlisting>

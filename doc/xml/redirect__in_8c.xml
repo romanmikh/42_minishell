@@ -145,14 +145,14 @@
       <memberdef kind="function" id="redirect__in_8c_1a2635bab3d0023f67288d2832903bdbd9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
         <definition>int redirect_in</definition>
-        <argsstring>(t_ast *node, t_minishell_data *data)</argsstring>
+        <argsstring>(t_ast *node, t_ms_data *data)</argsstring>
         <name>redirect_in</name>
         <param>
           <type><ref refid="tokens_8h_1a5fd329b243c6cd036f7b9ecbc86a9344" kindref="member">t_ast</ref> *</type>
           <declname>node</declname>
         </param>
         <param>
-          <type><ref refid="shell_8h_1a163dfbd200eaf940e5a56fd45345ff72" kindref="member">t_minishell_data</ref> *</type>
+          <type><ref refid="shell_8h_1a163dfbd200eaf940e5a56fd45345ff72" kindref="member">t_ms_data</ref> *</type>
           <declname>data</declname>
         </param>
         <briefdescription>
@@ -192,11 +192,11 @@
         </inbodydescription>
         <location file="/Users/dimadem/Documents/GitHub/minishell/src/redirection/redirect_in.c" line="38" column="4" bodyfile="/Users/dimadem/Documents/GitHub/minishell/src/redirection/redirect_in.c" bodystart="38" bodyend="55" declfile="/Users/dimadem/Documents/GitHub/minishell/src/redirection/redirect_in.c" declline="20" declcolumn="4"/>
         <references refid="execute_8h_1ace4c3a2246919797e40140123d79596a" compoundref="execute_8c" startline="37" endline="59">execute_ast</references>
-        <references refid="structs__minishell__data_1a978016fddb1d9faa4fbda6859a9a199e" compoundref="shell_8h" startline="27">s_minishell_data::exit_status</references>
+        <references refid="structs__minishell__data_1a978016fddb1d9faa4fbda6859a9a199e" compoundref="shell_8h" startline="27">s_ms_data::exit_status</references>
         <references refid="structs__ast_1ac3be51aa6a7ae13bd16b6ad0c7ac843c" compoundref="tokens_8h" startline="52">s_ast::left</references>
         <references refid="redirection_8h_1a2fe566529f8c7046fe274f2b3a35b39b" compoundref="redirection_2utils_8c" startline="32" endline="48">open_file</references>
         <references refid="structs__ast_1ac2c9513b20e9351e45d9bc6361095f7b" compoundref="tokens_8h" startline="53">s_ast::right</references>
-        <references refid="structs__minishell__data_1a9ed5685097b7e4b55c3c1307b70869ef" compoundref="shell_8h" startline="23">s_minishell_data::std_in</references>
+        <references refid="structs__minishell__data_1a9ed5685097b7e4b55c3c1307b70869ef" compoundref="shell_8h" startline="23">s_ms_data::std_in</references>
         <referencedby refid="execute_8h_1ace4c3a2246919797e40140123d79596a" compoundref="execute_8c" startline="37" endline="59">execute_ast</referencedby>
       </memberdef>
     </sectiondef>
@@ -224,7 +224,7 @@
 <codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string.h&gt;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;sys/wait.h&gt;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="19"><highlight class="normal"></highlight></codeline>
-<codeline lineno="20"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="redirect__in_8c_1a2635bab3d0023f67288d2832903bdbd9" kindref="member">redirect_in</ref>(<ref refid="structs__ast" kindref="compound">t_ast</ref><sp/>*node,<sp/><ref refid="structs__minishell__data" kindref="compound">t_minishell_data</ref><sp/>*data);</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="redirect__in_8c_1a2635bab3d0023f67288d2832903bdbd9" kindref="member">redirect_in</ref>(<ref refid="structs__ast" kindref="compound">t_ast</ref><sp/>*node,<sp/><ref refid="structs__minishell__data" kindref="compound">t_ms_data</ref><sp/>*data);</highlight></codeline>
 <codeline lineno="21"><highlight class="normal"></highlight></codeline>
 <codeline lineno="22"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
 <codeline lineno="23"><highlight class="comment"><sp/><sp/><sp/>!<sp/>FIX</highlight></codeline>
@@ -232,7 +232,7 @@
 <codeline lineno="25"><highlight class="comment"><sp/><sp/><sp/>wc<sp/>-l<sp/>&lt;<sp/>input.txt<sp/>-<sp/>not<sp/>work<sp/>(:bad<sp/>address<sp/>error)</highlight></codeline>
 <codeline lineno="26"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="27"><highlight class="normal"></highlight></codeline>
-<codeline lineno="38" refid="redirection_8h_1a2635bab3d0023f67288d2832903bdbd9" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="redirect__in_8c_1a2635bab3d0023f67288d2832903bdbd9" kindref="member">redirect_in</ref>(<ref refid="structs__ast" kindref="compound">t_ast</ref><sp/>*node,<sp/><ref refid="structs__minishell__data" kindref="compound">t_minishell_data</ref><sp/>*data)</highlight></codeline>
+<codeline lineno="38" refid="redirection_8h_1a2635bab3d0023f67288d2832903bdbd9" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="redirect__in_8c_1a2635bab3d0023f67288d2832903bdbd9" kindref="member">redirect_in</ref>(<ref refid="structs__ast" kindref="compound">t_ast</ref><sp/>*node,<sp/><ref refid="structs__minishell__data" kindref="compound">t_ms_data</ref><sp/>*data)</highlight></codeline>
 <codeline lineno="39"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/>pid_t<sp/><sp/><sp/>pid;</highlight></codeline>
 <codeline lineno="41"><highlight class="normal"></highlight></codeline>

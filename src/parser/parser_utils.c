@@ -12,9 +12,9 @@
 
 #include "tokens.h"
 
-t_ast	*parse_tokens(t_token **tokens, t_minishell_data *data);
+t_ast	*parse_tokens(t_token **tokens, t_ms_data *data);
 
-t_ast	*parse_tokens(t_token **tokens, t_minishell_data *data)
+t_ast	*parse_tokens(t_token **tokens, t_ms_data *data)
 {
 	if (!tokens || !*tokens)
 		return (NULL);

@@ -15,10 +15,10 @@
 
 .in +1c
 .ti -1c
-.RI "char * \fBgenerate_prompt\fP (\fBt_minishell_data\fP *data)"
+.RI "char * \fBgenerate_prompt\fP (\fBt_ms_data\fP *data)"
 .br
 .ti -1c
-.RI "char * \fBgenerate_prompt_string\fP (\fBt_minishell_data\fP *data, char *pwd, char *home_dir)"
+.RI "char * \fBgenerate_prompt_string\fP (\fBt_ms_data\fP *data, char *pwd, char *home_dir)"
 .br
 .ti -1c
 .RI "void \fBprint_maxishell\fP (void)"
@@ -26,7 +26,7 @@
 .in -1c
 .SH "Function Documentation"
 .PP 
-.SS "char * generate_prompt (\fBt_minishell_data\fP * data)"
+.SS "char * generate_prompt (\fBt_ms_data\fP * data)"
 
 .PP
 Definition at line \fB31\fP of file \fBprompt\&.c\fP\&.
@@ -52,10 +52,10 @@ Definition at line \fB31\fP of file \fBprompt\&.c\fP\&.
 .fi
 
 .PP
-References \fBft_strcpy()\fP, \fBft_strlen()\fP, and \fBs_minishell_data::std_in\fP\&.
+References \fBft_strcpy()\fP, \fBft_strlen()\fP, and \fBs_ms_data::std_in\fP\&.
 .PP
 Referenced by \fBmain_loop()\fP\&.
-.SS "char * generate_prompt_string (\fBt_minishell_data\fP * data, char * pwd, char * home_dir)"
+.SS "char * generate_prompt_string (\fBt_ms_data\fP * data, char * pwd, char * home_dir)"
 
 .PP
 Definition at line \fB50\fP of file \fBprompt\&.c\fP\&.
@@ -80,7 +80,7 @@ Definition at line \fB50\fP of file \fBprompt\&.c\fP\&.
 .fi
 
 .PP
-References \fBs_minishell_data::envp\fP, \fBft_strjoin()\fP, \fBft_strlen()\fP, \fBft_strncmp()\fP, and \fBget_env()\fP\&.
+References \fBs_ms_data::envp\fP, \fBft_strjoin()\fP, \fBft_strlen()\fP, \fBft_strncmp()\fP, and \fBget_env()\fP\&.
 .SS "void print_maxishell (void )"
 
 .PP

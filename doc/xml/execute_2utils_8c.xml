@@ -244,10 +244,10 @@
       <memberdef kind="function" id="execute_2utils_8c_1a8f9d65fb9405c61cf1e58b429f4f5728" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void handle_temp_fd</definition>
-        <argsstring>(t_minishell_data *data)</argsstring>
+        <argsstring>(t_ms_data *data)</argsstring>
         <name>handle_temp_fd</name>
         <param>
-          <type><ref refid="shell_8h_1a163dfbd200eaf940e5a56fd45345ff72" kindref="member">t_minishell_data</ref> *</type>
+          <type><ref refid="shell_8h_1a163dfbd200eaf940e5a56fd45345ff72" kindref="member">t_ms_data</ref> *</type>
           <declname>data</declname>
         </param>
         <briefdescription>
@@ -261,10 +261,10 @@
       <memberdef kind="function" id="execute_2utils_8c_1a6f45c6b2374dd1d4eea803d3ba8879b2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void handle_io_fd</definition>
-        <argsstring>(t_minishell_data *data)</argsstring>
+        <argsstring>(t_ms_data *data)</argsstring>
         <name>handle_io_fd</name>
         <param>
-          <type><ref refid="shell_8h_1a163dfbd200eaf940e5a56fd45345ff72" kindref="member">t_minishell_data</ref> *</type>
+          <type><ref refid="shell_8h_1a163dfbd200eaf940e5a56fd45345ff72" kindref="member">t_ms_data</ref> *</type>
           <declname>data</declname>
         </param>
         <briefdescription>
@@ -285,8 +285,8 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/dimadem/Documents/GitHub/minishell/src/execute/utils.c" line="104" column="5" bodyfile="/Users/dimadem/Documents/GitHub/minishell/src/execute/utils.c" bodystart="104" bodyend="113"/>
-        <references refid="structs__minishell__data_1a6b31b787cd4c26a7aad46b47b058b9af" compoundref="shell_8h" startline="23">s_minishell_data::input_fd</references>
-        <references refid="structs__minishell__data_1ae463df4b4fa02049054a0573017f4237" compoundref="shell_8h" startline="24">s_minishell_data::output_fd</references>
+        <references refid="structs__minishell__data_1a6b31b787cd4c26a7aad46b47b058b9af" compoundref="shell_8h" startline="23">s_ms_data::input_fd</references>
+        <references refid="structs__minishell__data_1ae463df4b4fa02049054a0573017f4237" compoundref="shell_8h" startline="24">s_ms_data::output_fd</references>
         <referencedby refid="main_8c_1abaf800210325f066cb9289aaae9e2c86" compoundref="main_8c" startline="29" endline="51">main_loop</referencedby>
       </memberdef>
     </sectiondef>
@@ -316,7 +316,7 @@
 <codeline lineno="19"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="execute_2utils_8c_1a5d9d8b46bb6c3dbbc91e99b69bb63e9d" kindref="member">ft_free_2d_arr</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>**arr);</highlight></codeline>
 <codeline lineno="20"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><ref refid="execute_2utils_8c_1aedc550f2251badad69cf4b6dfda183ef" kindref="member">ft_perror</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*str);</highlight></codeline>
 <codeline lineno="21"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="execute_2utils_8c_1a3efc1daab192679556df183345e1c83d" kindref="member">close_fds</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>fds[2]);</highlight></codeline>
-<codeline lineno="22" refid="execute_2utils_8c_1a8f9d65fb9405c61cf1e58b429f4f5728" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="execute_2utils_8c_1a8f9d65fb9405c61cf1e58b429f4f5728" kindref="member">handle_temp_fd</ref>(<ref refid="structs__minishell__data" kindref="compound">t_minishell_data</ref><sp/>*data);</highlight></codeline>
+<codeline lineno="22" refid="execute_2utils_8c_1a8f9d65fb9405c61cf1e58b429f4f5728" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="execute_2utils_8c_1a8f9d65fb9405c61cf1e58b429f4f5728" kindref="member">handle_temp_fd</ref>(<ref refid="structs__minishell__data" kindref="compound">t_ms_data</ref><sp/>*data);</highlight></codeline>
 <codeline lineno="23"><highlight class="normal"></highlight></codeline>
 <codeline lineno="32" refid="execute_8h_1a3de2eb0e796441d7b827cf213bd8d789" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/><sp/><sp/>*<ref refid="execute_2utils_8c_1a3de2eb0e796441d7b827cf213bd8d789" kindref="member">ft_find_path</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*cmd,<sp/><ref refid="structs__env" kindref="compound">t_env</ref><sp/>*envp)</highlight></codeline>
 <codeline lineno="33"><highlight class="normal">{</highlight></codeline>
@@ -365,7 +365,7 @@
 <codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/>close(fds[1]);</highlight></codeline>
 <codeline lineno="97"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="98"><highlight class="normal"></highlight></codeline>
-<codeline lineno="104" refid="execute_8h_1a6f45c6b2374dd1d4eea803d3ba8879b2" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="execute_2utils_8c_1a6f45c6b2374dd1d4eea803d3ba8879b2" kindref="member">handle_io_fd</ref>(<ref refid="structs__minishell__data" kindref="compound">t_minishell_data</ref><sp/>*data)</highlight></codeline>
+<codeline lineno="104" refid="execute_8h_1a6f45c6b2374dd1d4eea803d3ba8879b2" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="execute_2utils_8c_1a6f45c6b2374dd1d4eea803d3ba8879b2" kindref="member">handle_io_fd</ref>(<ref refid="structs__minishell__data" kindref="compound">t_ms_data</ref><sp/>*data)</highlight></codeline>
 <codeline lineno="105"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(data-&gt;<ref refid="structs__minishell__data_1a6b31b787cd4c26a7aad46b47b058b9af" kindref="member">input_fd</ref><sp/>!=<sp/>-1<sp/>&amp;&amp;<sp/>data-&gt;<ref refid="structs__minishell__data_1ae463df4b4fa02049054a0573017f4237" kindref="member">output_fd</ref><sp/>!=<sp/>-1)</highlight></codeline>
 <codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>

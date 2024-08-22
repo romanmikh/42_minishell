@@ -77,21 +77,21 @@ void		reallocate_tokens(char ***tokens, int *bufsize);
 void		parse_loop(char **input, char **tokens, int *pos, int *bufsize);
 char		**parse_input(char *input);
 // char *generate_prompt(void);
-char		*generate_prompt(t_minishell_data *data);
+char		*generate_prompt(t_ms_data *data);
 void		make_history(char *line);
 void		loop_cleanup(char *line, t_token *tokens, \
 		char *prompt, t_ast *tree);
-void		free_minishell_data(t_minishell_data *data);
+void		free_ms_data(t_ms_data *data);
 char		*check_heredoc(char *line);
 char		*heredoc(char *eof);
-void		init_minishell_data(t_minishell_data *data, char **envp);
+void		init_ms_data(t_ms_data *data, char **envp);
 void		initialise(int argc, char **argv);
 void		execute_command(char **parsed_text, t_token **tokens);
 void		print_maxishell(void);
 int			input_error_checks(const char *str);
 t_token		*tokenise(char *str);
 void		print_tokens(t_token *tokens);
-t_ast		*parse_tokens(t_token **tokens, t_minishell_data *data);
+t_ast		*parse_tokens(t_token **tokens, t_ms_data *data);
 void		print_tokens(t_token *tokens);
 void		visualize_ast(t_ast *root);
 void		free_ast(t_ast *node);
@@ -100,17 +100,17 @@ t_token		*new_token(char *value, t_token_type type);
 void		append_token(t_token **tokens, t_token *new_token);
 int			valid_operator(const char **str);
 t_ast		*new_ast_node(t_token_type type);
-t_ast		*create_redir(t_token **tokens, t_token *tmp, t_minishell_data *data);
+t_ast		*create_redir(t_token **tokens, t_token *tmp, t_ms_data *data);
 int			arg_len(t_token *current);
 void		set_command_args(t_ast *command_node, t_token **tokens, \
 			int arg_count);
-t_ast		*manage_commands(t_token **tokens, t_minishell_data *data);
+t_ast		*manage_commands(t_token **tokens, t_ms_data *data);
 t_ast		*create_redir_node(t_token *token);
 int			is_redir_node(t_token *tokens);
-t_ast		*manage_redirs(t_token **tokens, t_minishell_data *data);
-t_ast		*manage_pipe(t_token **tokens, t_minishell_data *data);
+t_ast		*manage_redirs(t_token **tokens, t_ms_data *data);
+t_ast		*manage_pipe(t_token **tokens, t_ms_data *data);
 char		*trim_input(char *str);
 void		print_ast_root(t_ast *root);
-void		execute_tree(t_ast *node, t_minishell_data *data);
+void		execute_tree(t_ast *node, t_ms_data *data);
 
 #endif

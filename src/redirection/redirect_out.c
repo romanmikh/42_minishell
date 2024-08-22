@@ -17,7 +17,7 @@
 #include "pipe.h"
 #include <sys/wait.h>
 
-int	redirect_out(t_ast *node, t_minishell_data *data);
+int	redirect_out(t_ast *node, t_ms_data *data);
 
 /**
   - @brief redirect out ">" to the file output
@@ -29,7 +29,7 @@ int	redirect_out(t_ast *node, t_minishell_data *data);
   - 1: error
  */
 
-int	redirect_out(t_ast *node, t_minishell_data *data)
+int	redirect_out(t_ast *node, t_ms_data *data)
 {
 	pid_t	pid;
 	int		status;
