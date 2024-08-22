@@ -12,11 +12,11 @@
 
 #include "tokens.h"
 
-t_ast	*parse_tokens(t_token **tokens);
+t_ast	*parse_tokens(t_token **tokens, t_minishell_data *data);
 
-t_ast	*parse_tokens(t_token **tokens)
+t_ast	*parse_tokens(t_token **tokens, t_minishell_data *data)
 {
 	if (!tokens || !*tokens)
 		return (NULL);
-	return (manage_pipe(tokens));
+	return (manage_pipe(tokens, data));
 }

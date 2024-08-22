@@ -13,10 +13,10 @@
 #include "tokens.h"
 
 t_ast	*new_ast_node(t_token_type type);
-t_ast	*create_redir(t_token **tokens, t_token *tmp);
+t_ast	*create_redir(t_token **tokens, t_token *tmp, t_minishell_data *data);
 int		arg_len(t_token *current);
 void	set_command_args(t_ast *command_node, t_token **tokens, int arg_count);
-t_ast	*manage_commands(t_token **tokens);
+t_ast	*manage_commands(t_token **tokens, t_minishell_data *data);
 
 t_ast	*new_ast_node(t_token_type type)
 {
@@ -32,13 +32,13 @@ t_ast	*new_ast_node(t_token_type type)
 	return (node);
 }
 
-t_ast	*create_redir(t_token **tokens, t_token *tmp)
+t_ast	*create_redir(t_token **tokens, t_token *tmp, t_minishell_data *data)
 {
 	t_ast	*redirect_node;
 
 	redirect_node = new_ast_node((*tokens)->type);
 	*tokens = (*tokens)->next->next;
-	redirect_node->left = manage_redirs(tokens);
+	redirect_node->left = manage_redirs(tokens, data);
 	redirect_node->right = create_redir_node(tmp->next);
 	free(tmp->data);
 	free(tmp);
@@ -77,10 +77,9 @@ void	set_command_args(t_ast *command_node, t_token **tokens, \
 	command_node->args[arg_count] = NULL;
 }
 
-// expand environment variables or $? in a given argument
-char *expand_env_var(char *arg) {
+char *expand_env_var(char *arg, t_minishell_data *data) {
     if (strcmp(arg, "$?") == 0) {
-        return ft_strdup("Add return status logic here");
+        return ft_itoa(data->exit_status);
     } else if (arg[0] == '$') {
         char *env_value = getenv(arg + 1);
         if (env_value) {
@@ -90,8 +89,7 @@ char *expand_env_var(char *arg) {
     return ft_strdup(arg);
 }
 
-// double & single quote expansion within PHRASE lists
-void post_process_command_args(t_ast *command_node, int arg_count) {
+void post_process_command_args(t_ast *command_node, int arg_count, t_minishell_data *data) {
     size_t len;
     
     for (int i = 0; i < arg_count; i++) {
@@ -99,12 +97,12 @@ void post_process_command_args(t_ast *command_node, int arg_count) {
         char *processed_arg = NULL;
         if (arg[0] == '$' || (arg[0] == '"' && arg[1] == '$')) {
             if (arg[0] == '"') {
-                processed_arg = expand_env_var(arg + 1);
+                processed_arg = expand_env_var(arg + 1, data);
                 if (processed_arg[strlen(processed_arg) - 1] == '"') {
                     processed_arg[strlen(processed_arg) - 1] = '\0';
                 }
             } else {
-                processed_arg = expand_env_var(arg);
+                processed_arg = expand_env_var(arg, data);
             }
             printf(GRN"Expanded argument: %s\n"RESET, processed_arg);
         } else if (arg[0] == '\'') {
@@ -127,7 +125,7 @@ void post_process_command_args(t_ast *command_node, int arg_count) {
     }
 }
 
-t_ast	*manage_commands(t_token **tokens)
+t_ast	*manage_commands(t_token **tokens, t_minishell_data *data)
 {
 	t_ast		*command_node;
 	int			arg_count;
@@ -138,6 +136,6 @@ t_ast	*manage_commands(t_token **tokens)
 	if (!command_node->args)
 		return (NULL);
 	set_command_args(command_node, tokens, arg_count);
-	post_process_command_args(command_node, arg_count);
+	post_process_command_args(command_node, arg_count, data);
 	return (command_node);
 }
