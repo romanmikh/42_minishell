@@ -91,6 +91,7 @@ char *expand_env_var(char *arg, t_ms_data *data) {
 
 void post_process_command_args(t_ast *command_node, int arg_count, t_ms_data *data) {
     size_t len;
+	char *result = NULL;
     
     for (int i = 0; i < arg_count; i++) {
         char *arg = command_node->args[i];
@@ -104,7 +105,8 @@ void post_process_command_args(t_ast *command_node, int arg_count, t_ms_data *da
             } else {
                 processed_arg = expand_env_var(arg, data);
             }
-            printf(GRN"Expanded argument: %s\n"RESET, processed_arg);
+			result = get_env(data->envp, processed_arg + 1);
+            printf(GRN"Expanded argument: %s\n"RESET, result);
         } else if (arg[0] == '\'') {
             processed_arg = ft_strdup(arg);
             printf(GRN"Unmodified argument: %s\n"RESET, processed_arg);
