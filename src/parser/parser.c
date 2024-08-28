@@ -119,7 +119,7 @@ t_ast	*manage_pipe(t_token **tokens, t_ms_data *data)
 
 //void print_spaces(int count) {
 //    for (int i = 0; i < count; i++) {
-//        printf("  ");
+//        ft_printf("  ");
 //    }
 //}
 //
@@ -130,29 +130,29 @@ t_ast	*manage_pipe(t_token **tokens, t_ms_data *data)
 //    print_spaces(depth);
 //    switch (node->type) {
 //        case PHRASE:
-//            printf("COMMAND: ");
+//            ft_printf("COMMAND: ");
 //            for (int i = 0; node->args && node->args[i]; i++) {
-//                printf("%s ", node->args[i]);
+//                ft_printf("%s ", node->args[i]);
 //            }
-//            printf("\n");
+//            ft_printf("\n");
 //            break;
 //        case REDIR_IN:
-//            printf("REDIRECTION IN: %s\n", node->args[0]);
+//            ft_printf("REDIRECTION IN: %s\n", node->args[0]);
 //            break;
 //        case REDIR_OUT:
-//            printf("REDIRECTION OUT: %s\n", node->args[0]);
+//            ft_printf("REDIRECTION OUT: %s\n", node->args[0]);
 //            break;
 //        case REDIR_APPEND:
-//            printf("REDIRECTION APPEND: %s\n", node->args[0]);
+//            ft_printf("REDIRECTION APPEND: %s\n", node->args[0]);
 //            break;
 //        case REDIR_HEREDOC:
-//            printf("REDIRECTION HEREDOC: %s\n", node->args[0]);
+//            ft_printf("REDIRECTION HEREDOC: %s\n", node->args[0]);
 //            break;
 //        case PIPE:
-//            printf("PIPE\n");
+//            ft_printf("PIPE\n");
 //            break;
 //        default:
-//            printf("UNKNOWN NODE TYPE\n");
+//            ft_printf("UNKNOWN NODE TYPE\n");
 //            break;
 //    }
 //    if (node->left) {

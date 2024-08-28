@@ -38,23 +38,23 @@ void	print_ast_node(t_ast *node, int depth, char *prefix, int is_left)
 
 	if (!node)
 		return ;
-	printf("%s", prefix);
+	ft_printf("%s", prefix);
 	if (depth == 0)
-		printf("Root-> ");
+		ft_printf("Root-> ");
 	else
 	{
 		if (is_left)
-			printf("L-> ");
+			ft_printf("L-> ");
 		else
-			printf("R-> ");
+			ft_printf("R-> ");
 	}
-	printf("Type: %s\n", get_token_type_name(node->type));
+	ft_printf("Type: %s\n", get_token_type_name(node->type));
 	if (node->args)
 	{
 		i = 0;
 		while (node->args[i])
 		{
-			printf("%s     Arg: %s\n", prefix, node->args[i]);
+			ft_printf("%s     Arg: %s\n", prefix, node->args[i]);
 			i++;
 		}
 	}

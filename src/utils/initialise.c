@@ -31,7 +31,7 @@ void	initialise(int argc, char **argv)
 {
 	if (argc > 1)
 	{
-		printf("Usage: %s\n", argv[0]);
+		ft_printf("Usage: %s\n", argv[0]);
 		exit(EXIT_FAILURE);
 	}
 	read_history(HISTORY_PATH);

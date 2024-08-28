@@ -22,8 +22,8 @@ char	*generate_prompt(t_ms_data *data)
 	char	*prompt;
 	size_t	prompt_len;
 
-	prompt_len = strlen("🌴\e[1m @maxishell$ \e[m") + \
-			strlen(getenv("LOGNAME"));
+	prompt_len = ft_strlen("🌴\e[1m @maxishell$ \e[m") + \
+			ft_strlen(getenv("LOGNAME"));
 	prompt = (char *)malloc(prompt_len);
 	if (!prompt)
 		exit(EXIT_FAILURE);

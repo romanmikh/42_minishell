@@ -21,7 +21,7 @@ int	main(int argc, char **argv, char **envp)
 
 	if (argc > 1)
 	{
-		printf("Usage: %s\n", argv[0]);
+		ft_printf("Usage: %s\n", argv[0]);
 		exit(EXIT_FAILURE);
 	}
 	pipe_tests(&data);

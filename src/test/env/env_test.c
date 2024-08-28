@@ -24,7 +24,7 @@ void	test_unset_env(t_ms_data *data);
 
 void	env_tests(t_ms_data *data, char **envp)
 {
-	printf("\nENV TESTS\n");
+	ft_printf("\nENV TESTS\n");
 	test_init_env(data, envp);
 	test_get_env(data, envp);
 	test_set_env(data, envp);
@@ -48,10 +48,10 @@ void	test_init_env(t_ms_data *data, char **envp)
 	while (test_envp[test_envp_count])
 		test_envp_count++;
 	assert(envp_count == test_envp_count);
-	printf("\033[0m");
-	printf("\033[0;32m");
-	printf("init_env    -> OK\n");
-	printf("\033[0m");
+	ft_printf("\033[0m");
+	ft_printf("\033[0;32m");
+	ft_printf("init_env    -> OK\n");
+	ft_printf("\033[0m");
 }
 
 void	test_get_env(t_ms_data *data, char **envp)
@@ -63,10 +63,10 @@ void	test_get_env(t_ms_data *data, char **envp)
 	value = get_env(data->envp, "LOGNAME");
 	assert(value != NULL);
 	assert(ft_strcmp(value, getenv("LOGNAME")) == 0);
-	printf("\033[0m");
-	printf("\033[0;32m");
-	printf("get_env     -> OK\n");
-	printf("\033[0m");
+	ft_printf("\033[0m");
+	ft_printf("\033[0;32m");
+	ft_printf("get_env     -> OK\n");
+	ft_printf("\033[0m");
 }
 
 void	test_set_env(t_ms_data *data, char **envp)
@@ -79,10 +79,10 @@ void	test_set_env(t_ms_data *data, char **envp)
 	value = get_env(data->envp, "TEST");
 	assert(value != NULL);
 	assert(ft_strcmp(value, "test") == 0);
-	printf("\033[0m");
-	printf("\033[0;32m");
-	printf("set_env     -> OK\n");
-	printf("\033[0m");
+	ft_printf("\033[0m");
+	ft_printf("\033[0;32m");
+	ft_printf("set_env     -> OK\n");
+	ft_printf("\033[0m");
 }
 
 void	test_unset_env(t_ms_data *data)
@@ -96,8 +96,8 @@ void	test_unset_env(t_ms_data *data)
 	unset_env(&data->envp, "TEST");
 	value = get_env(data->envp, "TEST");
 	assert(value == NULL);
-	printf("\033[0m");
-	printf("\033[0;32m");
-	printf("unset_env   -> OK\n");
-	printf("\033[0m");
+	ft_printf("\033[0m");
+	ft_printf("\033[0;32m");
+	ft_printf("unset_env   -> OK\n");
+	ft_printf("\033[0m");
 }

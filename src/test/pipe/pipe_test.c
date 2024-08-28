@@ -21,12 +21,12 @@ void	pipe_tests(t_ms_data *data);
 
 void	pipe_tests(t_ms_data *data)
 {
-	printf("\nPIPE TESTS\n");
+	ft_printf("\nPIPE TESTS\n");
 	builtin_pipe_test(data);
-	printf("\033[0m");
-	printf("\033[0;32m");
-	printf("pipe_test    -> OK\n");
-	printf("\033[0m");
+	ft_printf("\033[0m");
+	ft_printf("\033[0;32m");
+	ft_printf("pipe_test    -> OK\n");
+	ft_printf("\033[0m");
 }
 
 void	builtin_pipe_test(t_ms_data *data)

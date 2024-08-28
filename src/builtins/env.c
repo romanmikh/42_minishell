@@ -30,14 +30,14 @@ void	print_env_stack(t_env *envp)
 	curr_node = envp;
 	while (curr_node)
 	{
-		printf("%s=%s\n", curr_node->key, curr_node->value);
+		ft_printf("%s=%s\n", curr_node->key, curr_node->value);
 		curr_node = curr_node->next;
 	}
 }
 
 int	builtin_env(t_ms_data *data)
 {
-	printf("\nbuiltin_env\n");
+	ft_printf("\nbuiltin_env\n");
 	if (ft_strcmp(data->args[0], "env") == 0 && data->args[1] == NULL)
 		print_env_stack(data->envp);
 	return (0);

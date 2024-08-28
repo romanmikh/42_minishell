@@ -97,7 +97,7 @@ void	print_tokens(t_token *tokens)
 	token = tokens;
 	while (token != NULL)
 	{
-		printf("input[%d] ->  %s \n", i, token->data);
+		ft_printf("input[%d] ->  %s \n", i, token->data);
 		token = token->next;
 		i++;
 	}

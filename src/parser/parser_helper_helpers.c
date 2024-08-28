@@ -39,12 +39,12 @@ char	*expand_env_var(char *arg, t_ms_data *data)
 {
 	char	*env_value;
 
-	if (strcmp(arg, "$?") == 0)
+	if (ft_strcmp(arg, "$?") == 0)
 		return (ft_itoa(data->exit_status));
 	else if (arg[0] == '$')
 	{
-		if (arg[strlen(arg) - 1] == '"')
-			arg[strlen(arg) - 1] = '\0';
+		if (arg[ft_strlen(arg) - 1] == '"')
+			arg[ft_strlen(arg) - 1] = '\0';
 		env_value = get_env(data->envp, arg + 1);
 		if (env_value)
 			return (ft_strdup(env_value));
