@@ -6,7 +6,7 @@
 /*   By: rmikhayl <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 13:58:23 by rmikhayl          #+#    #+#             */
-/*   Updated: 2024/08/28 19:31:06 by rocky            ###   ########.fr       */
+/*   Updated: 2024/08/28 20:10:27 by rocky            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 char	*generate_prompt(t_ms_data *data);
 char	*generate_prompt_string(t_ms_data *data, char *pwd, \
 				char *home_dir);
-
 
 char	*generate_prompt(t_ms_data *data)
 {

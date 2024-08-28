@@ -20,7 +20,7 @@
 # include "shell.h"
 
 /*      signals     */
-void	signal_reset_prompt(int	signo);
+void	signal_reset_prompt(int signo);
 void	set_signals_interactive(void);
 void	signal_print_newline(int signal);
 void	sigquit_ignore(void);

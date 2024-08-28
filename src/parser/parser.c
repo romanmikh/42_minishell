@@ -6,7 +6,7 @@
 /*   By: rocky <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/12 19:35:45 by rocky             #+#    #+#             */
-/*   Updated: 2024/07/11 18:44:23 by dmdemirk         ###   ########.fr       */
+/*   Updated: 2024/08/28 20:11:50 by rocky            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 
 t_ast	*create_redir_node(t_token *token);
 int		is_redir_node(t_token *tokens);
-t_ast	*clr_node(t_token **tokens, t_token *next_token, t_ast *redirect_node, t_ms_data *data);
+t_ast	*clr_node(t_token **tokens, t_token *next_token, t_ast *redirect_node, \
+		t_ms_data *data);
 t_ast	*manage_redirs(t_token **tokens, t_ms_data *data);
 t_ast	*manage_pipe(t_token **tokens, t_ms_data *data);
 
@@ -50,7 +51,8 @@ int	is_redir_node(t_token *tokens)
 	return (0);
 }
 
-t_ast	*clr_node(t_token **tokens, t_token *next_token, t_ast *redirect_node, t_ms_data *data)
+t_ast	*clr_node(t_token **tokens, t_token *next_token, t_ast *redirect_node, \
+		t_ms_data *data)
 {
 	(*tokens)->next = next_token->next->next;
 	redirect_node->left = manage_redirs(tokens, data);

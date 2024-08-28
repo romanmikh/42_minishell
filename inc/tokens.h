@@ -62,6 +62,10 @@ typedef struct s_loop_data
 	t_ast	*tree;
 }	t_loop_data;
 
+void		final_quote_removal(int arg_count, t_ast *command_node);
+char		*expand_env_var(char *arg, t_ms_data *data);
+void		post_process_command_args(t_ast *command_node, int arg_count, \
+		t_ms_data *data);
 void		add_node(t_token **head, char *str);
 void		print_stack(t_token **stack);
 void		free_stack(t_token **stack);

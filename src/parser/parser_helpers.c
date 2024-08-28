@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: rocky <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/14 10:45:48 by rocky             #+#    #+#             */
-/*   Updated: 2024/06/17 11:06:25 by rocky            ###   ########.fr       */
+/*   Created: 2024/08/28 20:13:42 by rocky             #+#    #+#             */
+/*   Updated: 2024/08/28 20:14:33 by rocky            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,56 +75,6 @@ void	set_command_args(t_ast *command_node, t_token **tokens, \
 		i++;
 	}
 	command_node->args[arg_count] = NULL;
-}
-
-char *expand_env_var(char *arg, t_ms_data *data) {
-    if (strcmp(arg, "$?") == 0) {
-        return ft_itoa(data->exit_status);
-    } else if (arg[0] == '$') {
-		if (arg[strlen(arg) - 1] == '"') 
-		{
-            arg[strlen(arg) - 1] = '\0';
-        }
-        char *env_value = get_env(data->envp, arg + 1);
-        if (env_value) {
-            return ft_strdup(env_value);
-        }
-    }
-    return ft_strdup(arg);
-}
-
-void post_process_command_args(t_ast *command_node, int arg_count, t_ms_data *data) {
-    size_t len;
-    
-    for (int i = 0; i < arg_count; i++) {
-        char *arg = command_node->args[i];
-        char *processed_arg = NULL;
-        if (arg[0] == '$' || (arg[0] == '"' && arg[1] == '$')) {
-            if (arg[0] == '"') {
-                processed_arg = expand_env_var(arg + 1, data);
-            } else {
-                processed_arg = expand_env_var(arg, data);
-            }
-            printf(GRN"Expanded argument: %s\n"RESET, processed_arg);
-        } else if (arg[0] == '\'') {
-            processed_arg = ft_strdup(arg);
-            printf(GRN"Unmodified argument: %s\n"RESET, processed_arg);
-        } else {
-            processed_arg = ft_strdup(arg);
-        }
-        free(command_node->args[i]);
-        command_node->args[i] = processed_arg;
-    }
-    for (int i = 0; i < arg_count; i++) {
-        char *arg = command_node->args[i];
-		printf("current arg -> %s\n", arg);
-        len = ft_strlen(arg);
-        if ((arg[0] == '"' && arg[len - 1] == '"') || (arg[0] == '\'' && arg[len - 1] == '\'')) {
-            char *trimmed_arg = ft_strndup(arg + 1, len - 2);
-            free(command_node->args[i]);
-            command_node->args[i] = trimmed_arg;
-        }
-    }
 }
 
 t_ast	*manage_commands(t_token **tokens, t_ms_data *data)
