@@ -10,6 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "shell.h"
 #include "env.h"
 #include "libft.h"
 #include <stdlib.h>
