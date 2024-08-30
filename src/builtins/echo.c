@@ -6,7 +6,7 @@
 /*   By: dmdemirk <dmdemirk@student.42london.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/03 16:31:33 by dmdemirk          #+#    #+#             */
-/*   Updated: 2024/07/11 17:57:16 by dmdemirk         ###   ########.fr       */
+/*   Updated: 2024/08/28 14:20:26 by dmdemirk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,11 +32,11 @@ int	builtin_echo(t_ms_data *data)
 	i = 0;
 	while (data->args[++i])
 	{
-		write(1, data->args[i], ft_strlen(data->args[i]));
+		write(data->std_out, data->args[i], ft_strlen(data->args[i]));
 		if (data->args[i + 1])
-			write(1, " ", 1);
+			write(data->std_out, " ", 1);
 	}
 	if (newline)
-		write(1, "\n", 1);
+		write(data->std_out, "\n", 1);
 	return (0);
 }

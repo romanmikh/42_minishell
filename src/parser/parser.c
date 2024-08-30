@@ -14,8 +14,6 @@
 
 t_ast	*create_redir_node(t_token *token);
 int		is_redir_node(t_token *tokens);
-t_ast	*clr_node(t_token **tokens, t_token *next_token, t_ast *redirect_node, \
-		t_ms_data *data);
 t_ast	*manage_redirs(t_token **tokens, t_ms_data *data);
 t_ast	*manage_pipe(t_token **tokens, t_ms_data *data);
 
@@ -51,42 +49,32 @@ int	is_redir_node(t_token *tokens)
 	return (0);
 }
 
-t_ast	*clr_node(t_token **tokens, t_token *next_token, t_ast *redirect_node, \
-		t_ms_data *data)
-{
-	(*tokens)->next = next_token->next->next;
-	redirect_node->left = manage_redirs(tokens, data);
-	redirect_node->right = create_redir_node((next_token->next));
-	free(next_token->data);
-	free(next_token);
-	return (redirect_node);
-}
-
 t_ast	*manage_redirs(t_token **tokens, t_ms_data *data)
 {
-	t_token		*head;
+	t_ast		*command_node;
 	t_ast		*redirect_node;
-	t_token		*next_token;
+	t_token		*current_token;
 
-	if (!*tokens)
+	if (!tokens || !*tokens)
 		return (NULL);
-	head = *tokens;
-	if (is_redir_node(*tokens))
-		return (create_redir(tokens, head, data));
-	while (*tokens && (*tokens)->next)
+	command_node = manage_commands(tokens, data);
+	current_token = *tokens;
+	while (current_token && is_redir_node(current_token))
 	{
-		next_token = (*tokens)->next;
-		if (is_redir_node(next_token))
+		redirect_node = create_redir_node(current_token);
+		redirect_node->left = command_node;
+		*tokens = current_token->next;
+		if (*tokens)
 		{
-			redirect_node = new_ast_node((*tokens)->next->type);
-			redirect_node->left = manage_commands(&head, data);
-			*tokens = next_token->next;
-			redirect_node->right = create_redir_node(next_token->next);
-			return (redirect_node);
+			redirect_node->right = create_redir_node(*tokens);
+			*tokens = (*tokens)->next;
 		}
-		*tokens = next_token;
+		else
+			redirect_node->right = NULL;
+		command_node = redirect_node;
+		current_token = *tokens;
 	}
-	return (manage_commands(&head, data));
+	return (command_node);
 }
 
 t_ast	*manage_pipe(t_token **tokens, t_ms_data *data)
@@ -116,52 +104,3 @@ t_ast	*manage_pipe(t_token **tokens, t_ms_data *data)
 	}
 	return (manage_redirs(&tmp, data));
 }
-
-//void print_spaces(int count) {
-//    for (int i = 0; i < count; i++) {
-//        ft_printf("  ");
-//    }
-//}
-//
-//void print_ast_node(t_ast *node, int depth) {
-//    if (node == NULL) {
-//        return;
-//    }
-//    print_spaces(depth);
-//    switch (node->type) {
-//        case PHRASE:
-//            ft_printf("COMMAND: ");
-//            for (int i = 0; node->args && node->args[i]; i++) {
-//                ft_printf("%s ", node->args[i]);
-//            }
-//            ft_printf("\n");
-//            break;
-//        case REDIR_IN:
-//            ft_printf("REDIRECTION IN: %s\n", node->args[0]);
-//            break;
-//        case REDIR_OUT:
-//            ft_printf("REDIRECTION OUT: %s\n", node->args[0]);
-//            break;
-//        case REDIR_APPEND:
-//            ft_printf("REDIRECTION APPEND: %s\n", node->args[0]);
-//            break;
-//        case REDIR_HEREDOC:
-//            ft_printf("REDIRECTION HEREDOC: %s\n", node->args[0]);
-//            break;
-//        case PIPE:
-//            ft_printf("PIPE\n");
-//            break;
-//        default:
-//            ft_printf("UNKNOWN NODE TYPE\n");
-//            break;
-//    }
-//    if (node->left) {
-//        print_ast_node(node->left, depth + 1);
-//    }
-//    if (node->right) {
-//        print_ast_node(node->right, depth + 1);
-//    }
-//}
-//void visualize_ast(t_ast *root) {
-//   print_ast_node(root, 0);
-//}

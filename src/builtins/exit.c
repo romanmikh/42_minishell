@@ -27,7 +27,6 @@ int	builtin_exit(t_ms_data *data)
 {
 	const char	*message;
 
-	ft_printf("\nbuiltin_exit\n");
 	message = "exit\n";
 	write(STDOUT_FILENO, message, ft_strlen(message));
 	exit(data->exit_status);

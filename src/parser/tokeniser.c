@@ -13,12 +13,6 @@
 #include "tokens.h"
 #include <string.h>
 
-/*
-	TODO:
-	fix ft_printf in print_tokens(t_token *tokens)
-	add limiter to heredoc
-*/
-
 void	handle_special_chars(char **str, t_token **tokens)
 {
 	if (**str == '<')

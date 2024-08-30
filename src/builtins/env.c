@@ -5,20 +5,15 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: dmdemirk <dmdemirk@student.42london.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/03 16:32:34 by dmdemirk          #+#    #+#             */
-/*   Updated: 2024/06/11 16:44:41 by dmdemirk         ###   ########.fr       */
+/*   Created: 2024/06/07 17:20:11 by dmdemirk          #+#    #+#             */
+/*   Updated: 2024/06/26 14:48:35 by dmdemirk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include "shell.h"
 #include "env.h"
 #include "libft.h"
-
-/*
-	Functionality:
-		- Print the environment
-*/
+#include <stdlib.h>
+#include <stdio.h>
 
 void	print_env_stack(t_env *envp);
 int		builtin_env(t_ms_data *data);

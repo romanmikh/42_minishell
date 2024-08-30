@@ -25,21 +25,23 @@ Functionality:
 
 int	builtin_unset(t_ms_data *data)
 {
-	int	i;
-	int	ret;
+	int		i;
+	int		exit_status;
+	char	*key;
 
 	i = 0;
-	ret = 0;
+	exit_status = 0;
 	while (data->args[++i])
 	{
-		if (unset_env(&data->envp, data->args[i]) == -1)
+		key =  data->args[i];
+		if (unset_env(&data->envp, key) == -1)
 		{
 			ft_putstr_fd("bash: unset: `", STDERR_FILENO);
-			ft_putstr_fd(data->args[i], STDERR_FILENO);
+			ft_putstr_fd(key, STDERR_FILENO);
 			ft_putendl_fd("': not a valid identifier", STDERR_FILENO);
-			ret = 1;
+			exit_status = 1;
 		}
 	}
-	data->exit_status = ret;
-	return (ret);
+	data->exit_status = exit_status;
+	return (exit_status);
 }

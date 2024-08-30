@@ -22,45 +22,55 @@ Functionalities:
 - If arguments are passed, set the environment variables
  */
 
-int		builtin_export(t_ms_data *data);
-void	add_env(char *key, t_ms_data *data);
+int			      builtin_export(t_ms_data *data);
+static  void	add_env(t_ms_data *data);
 
 int	builtin_export(t_ms_data *data)
 {
 	t_env	*curr_node;
-	char	*key;
 
-	key = NULL;
-	if ((data->args[1] == NULL && data->args[2] == NULL) \
-			|| ft_strncmp(data->args[1], "-p", 2) == 0)
+	if ((data->args[1] == NULL) \
+			|| ft_strncmp(data->args[1], "-p", 1) == 0)
 	{
 		curr_node = data->envp;
 		while (curr_node)
+		{
+			if (!ft_strcmp(curr_node->value, ""))
+				printf("declare -x %s\n", curr_node->key);
+			else
+				printf("declare -x %s=\"%s\"\n", curr_node->key, curr_node->value);
 			curr_node = curr_node->next;
+		}
 	}
-	else
-		add_env(key, data);
+	else 
+		add_env(data);
 	return (0);
 }
 
-void	add_env(char *key, t_ms_data *data)
+
+static void	add_env(t_ms_data *data)
 {
-	int	i;
+	int		i;
+	char*	key;
+	char*	curr_arg;
 
 	i = 0;
+	key = NULL;
+	curr_arg = NULL;
 	while (data->args[++i])
 	{
 		if (ft_strchr(data->args[i], '='))
-			set_env(&data->envp, data->args[i], \
-					ft_strchr(data->args[i], '=') + 1);
+		{
+			curr_arg = data->args[i];
+			key = ft_strcdup(curr_arg, '=');
+			set_env(&data->envp, key, \
+					ft_strchr(curr_arg, '=') + 1);
+		}
 		else
 		{
-			key = ft_strcdup(data->args[i], '=');
-			if (get_env(data->envp, key))
-				set_env(&data->envp, key, "");
-			else
-				set_env(&data->envp, key, NULL);
-			free(key);
+			curr_arg = data->args[i];
+			key = curr_arg;
+			set_env(&data->envp, key, "");
 		}
 	}
 }
