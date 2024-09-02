@@ -52,6 +52,28 @@ char	*expand_env_var(char *arg, t_ms_data *data)
 	return (ft_strdup(arg));
 }
 
+void	handle_local_vars(char *arg)
+{
+	char	*p;
+	int		valid_var;
+
+	p = arg;
+	valid_var = 1;
+	if (arg[0] != '=' && strchr(arg, '='))
+	{
+		while (p < strchr(arg, '='))
+		{
+			if (!ft_isalnum(*p++))
+			{
+				valid_var = 0;
+				break ;
+			}
+		}
+		if (valid_var)
+			ft_printf(GRN"LOC_VAR detected\n"RESET);  // add LOC_VAR logic here
+	}
+}
+
 void	post_process_command_args(t_ast *command_node, int arg_count, \
 			t_ms_data *data)
 {
@@ -63,6 +85,7 @@ void	post_process_command_args(t_ast *command_node, int arg_count, \
 	while (i < arg_count)
 	{
 		arg = command_node->args[i];
+		handle_local_vars(arg);
 		processed_arg = NULL;
 		if (arg[0] == '$' || (arg[0] == '"' && arg[1] == '$'))
 		{
