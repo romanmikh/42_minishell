@@ -24,7 +24,7 @@
 # include "shell.h"
 # include "env.h"
 
-# define HISTORY_PATH "./utils/.maxishell_history"
+# define HISTORY_PATH "./src/utils/.maxishell_history"
 
 typedef enum e_token_type
 {
