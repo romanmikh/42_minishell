@@ -88,7 +88,7 @@ void		loop_cleanup(char *line, t_token *tokens, \
 void		free_ms_data(t_ms_data *data);
 char		*check_heredoc(char *line);
 char		*heredoc(char *eof);
-void		init_ms_data(t_ms_data *data, char **envp);
+void		init_ms_data(t_ms_data *data,char **argv, char **envp);
 void		initialise(int argc, char **argv);
 void		execute_command(char **parsed_text, t_token **tokens);
 void		print_maxishell(void);

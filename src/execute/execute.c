@@ -40,8 +40,8 @@ int	execute_ast(t_ast *node, t_ms_data *data)
 		return (1);
 	if (node->type == PIPE)
 		return (builtin_pipe(node, data));
-	else if (node->type == ENV_VAR)
-		ft_printf(BLU"ENV_VAR\n"RESET);
+	// else if (node->type == ENV_VAR)
+		// return (handle_shell_variable(node, data));
 	else if (node->type == REDIR_IN)
 		return (redirect_in(node, data));
 	else if (node->type == REDIR_OUT)

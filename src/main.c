@@ -71,7 +71,7 @@ int	main(int argc, char **argv, char **envp)
 	t_loop_data		loop_data;
 
 	print_maxishell();
-	init_ms_data(&data, envp);
+	init_ms_data(&data, argv, envp);
 	initialise(argc, argv);
 	main_loop(&data, &loop_data);
 	free_ms_data(&data);

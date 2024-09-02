@@ -32,4 +32,13 @@ char	**env_to_array(t_env *envp);
 char	*ft_strcdup(const char *s, int c);
 void	free_env(t_env *envp);
 
+/*	shell variables	*/
+int handle_add_set_shell_variable(t_env *shell_var, char *line);
+int handle_get_shell_variable(t_env *shell_var, const char *key);
+
+/*	shell variables utils	*/
+void	set_shell_var(t_env **shell_var, const char *key, const char *value);
+void    add_shell_var_node(t_env **shell_var, const char *line);
+char	*get_shell_variable(t_env *shell_var, const char *key);
+
 #endif

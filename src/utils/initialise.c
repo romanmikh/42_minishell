@@ -14,12 +14,17 @@
 #include "env.h"
 #include "signals.h"
 
-void	init_ms_data(t_ms_data *data, char **envp)
+void	init_ms_data(t_ms_data *data,char **argv, char **envp);
+void	initialise(int argc, char **argv);
+
+void	init_ms_data(t_ms_data *data,char **argv, char **envp)
 {
+	(void)argv;
 	data->args = NULL;
 	data->envp = NULL;
 	init_env(&data->envp, envp);
-	data->local_env = NULL;
+	data->shell_variables = NULL;
+	handle_add_set_shell_variable(data->shell_variables, "_=/usr/bin/env");
 	data->current_dir = getcwd(NULL, 0);
 	data->exit_status = 0;
 	data->std_in = -1;

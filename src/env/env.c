@@ -76,30 +76,12 @@ minishell`set_env(env=0x000000016fdfed50, key="PWD",
 value="/Users/dimadem/Documents/GitHub/minishell/inc") at env.c:84:4
  */
 
-int is_valid_env_var_name(const char *name)
-{
-	const char *p;
-
-	p = name;
-    if (!name || !*name || *name == '=')
-        return 0;
-    while(*p)
-	{
-		if (*p == '=')
-			return (0);
-		p++;
-	}
-    return 1;
-}
-
 void	set_env(t_env **env, const char *key, const char *value)
 {
 	t_env	*current;
 	t_env	*new_env;
 
 	printf("KEY -> %s\nVALUE -> %s\n", key, value);
-	// if (!is_valid_env_var_name(key))
-	// 	return ;
 	current = *env;
 	while (current)
 	{

@@ -22,7 +22,7 @@ typedef struct s_ms_data
 	struct termios			*terminal;
 	char					**args;
 	t_env					*envp;
-	t_env					*local_env;
+	t_env					*shell_variables;
 	int						std_in;
 	int						std_out;
 	int						std_err;

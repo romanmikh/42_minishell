@@ -38,12 +38,13 @@ LIBFT					=	$(LIB_DIR)/libft/libft.a
 READLINE 				= -lreadline
 
 SRC_DIR					=	./src
-UTILS_DIR				 = $(SRC_DIR)/utils
+UTILS_DIR				= 	$(SRC_DIR)/utils
 ENV_DIR					=	$(SRC_DIR)/env
+SHELL_VAR_DIR			=	$(SRC_DIR)/shell_variables
 APP_DIR					=	$(SRC_DIR)/app
 COMMON_DIR				=	$(SRC_DIR)/common
-PARSER_DIR				= $(SRC_DIR)/parser
-PIPE_DIR				= $(SRC_DIR)/pipe
+PARSER_DIR				= 	$(SRC_DIR)/parser
+PIPE_DIR				= 	$(SRC_DIR)/pipe
 REDIRECTION_DIR			=	$(SRC_DIR)/redirection
 BUILTINS_DIR			=	$(SRC_DIR)/builtins
 EXECUTE_DIR				=	$(SRC_DIR)/execute
@@ -57,9 +58,10 @@ TEST_INCLUDES			=	-I./inc \
 							-I $(LIB_DIR)/libft/inc \
 							-I $(TEST_DIR)
 
-MAIN_SOURCE				=	$(wildcard $(SRC_DIR)/*.c)
-APP_SOURCES				=	$(wildcard $(APP_DIR)/*.c)
-ENV_SOURCES				=	$(wildcard $(ENV_DIR)/*.c)
+MAIN_SOURCE					=	$(wildcard $(SRC_DIR)/*.c)
+APP_SOURCES					=	$(wildcard $(APP_DIR)/*.c)
+ENV_SOURCES					=	$(wildcard $(ENV_DIR)/*.c)
+SHELL_VAR_SOURCES			=	$(wildcard $(SHELL_VAR_DIR)/*.c)
 COMMON_SOURCES				=	$(wildcard $(COMMON_DIR)/*.c)
 UTILS_SOURCES				= 	$(wildcard $(UTILS_DIR)/*.c)
 PARSER_SOURCES 				= 	$(wildcard $(PARSER_DIR)/*.c)
@@ -76,6 +78,7 @@ PIPE_TEST_SOURCES			=	$(wildcard $(TEST_DIR)/pipe/*.c)
 SOURCES					=	$(MAIN_SOURCE) \
 							$(APP_SOURCES) \
 							$(ENV_SOURCES) \
+							$(SHELL_VAR_SOURCES) \
 							$(COMMON_SOURCES) \
 							$(UTILS_SOURCES) \
 							$(PARSER_SOURCES) \
@@ -88,13 +91,14 @@ SOURCES					=	$(MAIN_SOURCE) \
 							$(REDIRECTION_SOURCES) \
 							$(SIGNALS_SOURCES)
 # Building
-BUILD_DIR				=	./build
-MAIN_OBJECT				=	$(patsubst $(SRC_DIR)/%.c, $(BUILD_DIR)/src/%.o, $(MAIN_SOURCE))
-APP_OBJECTS				=	$(patsubst $(APP_DIR)/%.c, $(BUILD_DIR)/src/app/%.o, $(APP_SOURCES))
-ENV_OBJECTS				=	$(patsubst $(ENV_DIR)/env/%.c, $(BUILD_DIR)/src/app/env/%.o, $(ENV_SOURCES))
+BUILD_DIR					=	./build
+MAIN_OBJECT					=	$(patsubst $(SRC_DIR)/%.c, $(BUILD_DIR)/src/%.o, $(MAIN_SOURCE))
+APP_OBJECTS					=	$(patsubst $(APP_DIR)/%.c, $(BUILD_DIR)/src/app/%.o, $(APP_SOURCES))
+ENV_OBJECTS					=	$(patsubst $(ENV_DIR)/env/%.c, $(BUILD_DIR)/src/app/env/%.o, $(ENV_SOURCES))
+SHELL_VAR_OBJECTS			=	$(patsubst $(SHELL_VAR_DIR)/%.c, $(BUILD_DIR)/src/shell_variables/%.o, $(SHELL_VAR_SOURCES))
 COMMON_OBJECTS				=	$(patsubst $(COMMON_DIR)/%.c, $(BUILD_DIR)/common/app/%.o, $(COMMON_SOURCES))
 UTILS_OBJECTS				=	$(patsubst $(UTILS_DIR)/%.c, $(BUILD_DIR)/utils/%.o, $(UTILS_SOURCES))
-PARSER_OBJECTS				=	 $(patsubst $(PARSER_DIR)/%.c, $(BUILD_DIR)/src/parser/%.o, $(PARSER_SOURCES))
+PARSER_OBJECTS				=	$(patsubst $(PARSER_DIR)/%.c, $(BUILD_DIR)/src/parser/%.o, $(PARSER_SOURCES))
 PIPE_OBJECTS				=	$(patsubst $(PIPE_DIR)/%.c, $(BUILD_DIR)/src/pipe/%.o, $(PIPE_SOURCES))
 REDIRECTION_OBJECTS			=	$(patsubst $(REDIRECTION_DIR)/%.c, $(BUILD_DIR)/src/redirection/%.o, $(REDIRECTION_SOURCES))
 BUILTINS_OBJECTS			=	$(patsubst $(BUILTINS_DIR)/%.c, $(BUILD_DIR)/src/builtins/%.o, $(BUILTINS_SOURCES))
@@ -108,6 +112,7 @@ PIPE_TEST_OBJECTS			=	$(patsubst $(TEST_DIR)/pipe/%.c, $(BUILD_DIR)/src/test/pip
 OBJECTS					=	$(MAIN_OBJECT) \
 							$(APP_OBJECTS) \
 							$(ENV_OBJECTS) \
+							$(SHELL_VAR_OBJECTS) \
 							$(EXECUTE_OBJECTS) \
 							$(COMMON_OBJECTS) \
 							$(BUILTINS_OBJECTS) \
@@ -141,6 +146,10 @@ $(BUILD_DIR)/src/%.o: $(SRC_DIR)/%.c
 	@$(COMPILER) $(CFLAGS) $(INCLUDES) -c $< -o $@
 
 $(BUILD_DIR)/src/env/%.o: $(ENV_DIR)/%.c
+	@mkdir -p $(@D)
+	@$(COMPILER) $(CFLAGS) $(INCLUDES) -c $< -o $@
+
+$(BUILD_DIR)/src/shell_variables/%.o: $(SHELL_VAR_DIR)/%.c
 	@mkdir -p $(@D)
 	@$(COMPILER) $(CFLAGS) $(INCLUDES) -c $< -o $@
 

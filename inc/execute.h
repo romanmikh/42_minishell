@@ -15,6 +15,7 @@
 
 # include "shell.h"
 # include "tokens.h"
+# include "env.h"
 
 /*	execute	*/
 int		execute_ast(t_ast *node, t_ms_data *data);
@@ -25,5 +26,8 @@ void	ft_free_2d_arr(char **arr);
 int		ft_perror(char *str);
 void	close_fds(int in, int out);
 void	handle_io_fd(t_ms_data *data);
+
+/*  shell variable execution */
+int handle_shell_variable(t_ast *node, t_ms_data *data);
 
 #endif

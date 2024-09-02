@@ -45,7 +45,7 @@ void	free_ms_data(t_ms_data *data)
 	if (data)
 	{
 		free_env_list(data->envp);
-		free_env_list(data->local_env);
+		free_env_list(data->shell_variables);
 		free(data->current_dir);
 		if (data->std_in != STDIN_FILENO)
 			close(data->std_in);
