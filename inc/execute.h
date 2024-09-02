@@ -29,5 +29,7 @@ void	handle_io_fd(t_ms_data *data);
 
 /*  shell variable execution */
 int handle_shell_variable(t_ast *node, t_ms_data *data);
+int handle_get_shell_variable(t_ms_data *data, const char *key);
+
 
 #endif

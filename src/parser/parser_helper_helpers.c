@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "tokens.h"
+#include "execute.h"
 
 void	final_quote_removal(int arg_count, t_ast *command_node)
 {
@@ -52,7 +53,7 @@ char	*expand_env_var(char *arg, t_ms_data *data)
 	return (ft_strdup(arg));
 }
 
-void	handle_local_vars(char *arg)
+void	handle_local_vars(t_ms_data *data, char *arg)
 {
 	char	*p;
 	int		valid_var;
@@ -70,7 +71,12 @@ void	handle_local_vars(char *arg)
 			}
 		}
 		if (valid_var)
+		{
 			ft_printf(GRN"LOC_VAR detected\n"RESET);  // add LOC_VAR logic here
+			handle_add_set_shell_variable(data->shell_variables, arg);
+			printf("the input arg is: %s\n", arg);
+			printf("arg: %s\n", get_shell_variable(data->shell_variables, "a"));
+		}	
 	}
 }
 
@@ -85,7 +91,7 @@ void	post_process_command_args(t_ast *command_node, int arg_count, \
 	while (i < arg_count)
 	{
 		arg = command_node->args[i];
-		handle_local_vars(arg);
+		handle_local_vars(data, arg);
 		processed_arg = NULL;
 		if (arg[0] == '$' || (arg[0] == '"' && arg[1] == '$'))
 		{
