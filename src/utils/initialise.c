@@ -28,7 +28,7 @@ void	init_ms_data(t_ms_data *data,char **argv, char **envp)
 	data->current_dir = getcwd(NULL, 0);
 	data->exit_status = 0;
 	data->std_in = -1;
-	data->std_out = -1;
+	data->std_out = 1;
 	data->std_err = 2;
 }
 
