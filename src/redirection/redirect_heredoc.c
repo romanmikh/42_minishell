@@ -31,17 +31,29 @@ static void	execute_child(t_ast *node, t_ms_data *data, int *file_fd);
   - 1: error
  */
 
+int	is_in_quotes(char *arg)
+{
+	if (arg[0] == '\"' && arg[ft_strlen(arg) - 1] == '\"' )
+	{
+		printf("quoted eof\n");
+		return (1);
+	}
+	return (0);
+}
+
 int	redirect_here_doc(t_ast *node, t_ms_data *data)
 {
 	char	*line;
 	char	*eof;
 	int		file_fd;
+	int		in_quotes;
 
 	line = NULL;
 	if (node->right->args[0] == NULL)
 		return (1);
 	file_fd = open_tmp_file("w");
 	eof = ft_strdup(node->right->args[0]);
+	in_quotes = is_in_quotes(eof);
 	line = readline("> ");
 	while (line && (ft_strcmp(line, eof) != 0))
 	{
