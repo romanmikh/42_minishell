@@ -17,23 +17,20 @@ void add_shell_var_node(t_env **shell_var, const char *line)
 	char	*key;
 	char	*value;
 
-	new_node = (t_env *)malloc(sizeof(t_env) + 1);
+	new_node = (t_env *)malloc(sizeof(t_env));
 	if (!new_node)
 		return ;
 	key = ft_strcdup(line, '=');
 	value = ft_strchr(line, '=') + 1;
 	new_node->key = ft_strdup(key);
 	new_node->value = ft_strdup(value);
-	printf(YEL"#1 new key: %s and new value: %s\n"RESET, new_node->key, new_node->value);
 	free(key);
 	new_node->next = NULL;
 	if (*shell_var == NULL)
 	{
 		*shell_var = new_node;
-		printf(RED"#2 new_node->key: %s\nnew_node->value %s\n"RESET, (*shell_var)->key, (*shell_var)->value);
 		return ;
 	}
-	printf(CYA"#3 new_node->key: %s\nnew_node->value %s\n"RESET, new_node->key, new_node->value);
 	curr_node = *shell_var;
 	while (curr_node->next != NULL)
 		curr_node = curr_node->next;
@@ -46,7 +43,6 @@ void	set_shell_var(t_env **shell_var, const char *key, const char *value)
 	t_env	*current;
 	t_env	*new_env;
 
-	printf("KEY -> %s\nVALUE -> %s\n", key, value);
     current = *shell_var;
 	while (current)
 	{
@@ -70,16 +66,10 @@ char	*get_shell_variable(t_env *shell_var, const char *key)
 	t_env	*curr_node;
 
 	curr_node = shell_var;
-	printf("get_shell_variable searching for key: %s\n", key);
-	//printf("get_shell_variable found key: %s\n", shell_var->key);
 	while (curr_node)
 	{
-		printf("curr_node->key: %s\n", curr_node->key);
 		if (ft_strcmp(curr_node->key, key) == 0)
-		{
-			printf("curr_node->value: %s\n", curr_node->value);
 			return (curr_node->value);
-		}
 		curr_node = curr_node->next;
 	}
 	return (NULL);

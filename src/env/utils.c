@@ -18,6 +18,7 @@
 char	**env_to_array(t_env *envp);
 char	*ft_strcdup(const char *s, int c);
 void	free_env(t_env *envp);
+void	print_t_env(t_env *tokens);
 
 char	**env_to_array(t_env *envp)
 {
@@ -97,5 +98,21 @@ void	free_env(t_env *envp)
 		free(curr_node->value);
 		free(curr_node);
 		curr_node = next_node;
+	}
+}
+
+void	print_t_env(t_env *tokens)
+{
+	t_env	*token;
+	int		i;				
+
+	i = 0;
+	token = tokens;
+	while (token != NULL)
+	{
+		ft_printf("key[%d] 		->  %s \n", i, token->key);
+		ft_printf("value[%d] 	->  %s \n", i, token->value);
+		token = token->next;
+		i++;
 	}
 }

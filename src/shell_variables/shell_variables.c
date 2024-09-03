@@ -4,27 +4,24 @@
 #include "tokens.h"
 #include <stddef.h>
 
-int handle_add_set_shell_variable(t_env *shell_var, char *line);
+int handle_add_set_shell_variable(t_env **shell_var, char *line);
 int handle_get_shell_variable(t_ms_data *data, const char *key);
 int handle_shell_variable(t_ast *node, t_ms_data *data);
 
-int handle_add_set_shell_variable(t_env *shell_var, char *line)
+int handle_add_set_shell_variable(t_env **shell_var, char *line)
 {
     char *key;
     char *value;
 
     key = NULL;
     value = NULL;
-    if (shell_var == NULL)
-    {
-        add_shell_var_node(&shell_var, line);
-    }
+    if (*shell_var == NULL)
+        add_shell_var_node(shell_var, line);
     else
     {
-        printf(GRN"we're in else of handle_add_set_shell_variable"RESET);
         key = ft_strcdup(line, '=');
         value = ft_strchr(line, '=') + 1;
-        set_shell_var(&shell_var, key, value);
+        set_shell_var(shell_var, key, value);
         free(key);
     }
     return (0);

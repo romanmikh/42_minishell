@@ -71,12 +71,7 @@ void	handle_local_vars(t_ms_data *data, char *arg)
 			}
 		}
 		if (valid_var)
-		{
-			ft_printf(GRN"LOC_VAR detected\n"RESET);  // add LOC_VAR logic here
-			handle_add_set_shell_variable(data->shell_variables, arg);
-			printf("the input arg is: %s\n", arg);
-			printf("arg: %s\n", get_shell_variable(data->shell_variables, "a"));
-		}	
+			handle_add_set_shell_variable(&data->shell_variables, arg);
 	}
 }
 
