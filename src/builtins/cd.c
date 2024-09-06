@@ -6,7 +6,7 @@
 /*   By: dmdemirk <dmdemirk@student.42london.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/03 16:31:07 by dmdemirk          #+#    #+#             */
-/*   Updated: 2024/07/11 16:06:37 by dmdemirk         ###   ########.fr       */
+/*   Updated: 2024/09/06 12:28:43 by dmdemirk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 #include "libft.h"
 #include "shell.h"
 #include "env.h"
+#include "execute.h"
+#include "exit_status.h"
 
 /*
    - Functionality:
@@ -34,14 +36,18 @@ int	builtin_cd(t_ms_data *data)
 	target_dir = (char *)data->args[1];
 	if (!target_dir)
 		target_dir = home_dir;
-	if (chdir(target_dir) != 0)
+	if (chdir(target_dir) == -1)
 	{
-		ft_putstr_fd("bash: cd: ", 2);
-		perror(target_dir);
-		return (1);
+		if (errno == EACCES)
+			exit_status_handler(data, PERMISSION_DENIED, \
+				ft_strjoin("cd: ", target_dir));
+		if (errno == ENOENT)
+			exit_status_handler(data, IS_DIRECTORY, \
+				ft_strjoin("cd: ", target_dir));
+		return (EXIT_FAILURE);
 	}
 	set_env(&data->envp, "OLDPWD", get_env(data->envp, "PWD"));
 	if (getcwd(cwd, sizeof(cwd)) != NULL)
 		set_env(&data->envp, "PWD", cwd);
-	return (0);
+	return (EXIT_SUCCESS);
 }

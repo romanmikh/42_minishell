@@ -6,7 +6,7 @@
 /*   By: dmdemirk <dmdemirk@student.42london.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 11:10:03 by dmdemirk          #+#    #+#             */
-/*   Updated: 2024/06/17 11:10:25 by dmdemirk         ###   ########.fr       */
+/*   Updated: 2024/09/06 12:01:39 by dmdemirk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,34 +14,31 @@
 #include "env.h"
 #include "libft.h"
 #include <unistd.h>
+#include "exit_status.h"
+
+#include <stdio.h>
 
 /*
    todo
-   set the exit status to 1 if the variable is not a valid identifier
+   set the exit status to ERROR if the variable is not a valid identifier
 Functionality:
 - Unset the environment variable
-- Return 1 if the variable is not a valid identifier    
+- Return ERROR if the variable is not a valid identifier    
  */
 
 int	builtin_unset(t_ms_data *data)
 {
 	int		i;
-	int		exit_status;
 	char	*key;
 
 	i = 0;
-	exit_status = 0;
 	while (data->args[++i])
 	{
-		key =  data->args[i];
+		key = data->args[i];
 		if (unset_env(&data->envp, key) == -1)
 		{
-			ft_putstr_fd("bash: unset: `", STDERR_FILENO);
-			ft_putstr_fd(key, STDERR_FILENO);
-			ft_putendl_fd("': not a valid identifier", STDERR_FILENO);
-			exit_status = 1;
+			return (EXIT_SUCCESS);
 		}
 	}
-	data->exit_status = exit_status;
-	return (exit_status);
+	return (EXIT_SUCCESS);
 }

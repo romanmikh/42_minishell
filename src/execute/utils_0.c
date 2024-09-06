@@ -13,6 +13,7 @@
 #include "libft.h"
 #include <stdio.h>
 #include "shell.h"
+#include "execute.h"
 
 void	ft_free_2d_arr(char **arr);
 int		ft_perror(char *str);
@@ -33,20 +34,6 @@ void	ft_free_2d_arr(char **arr)
 	while (arr[++i] != NULL)
 		free(arr[i]);
 	free(arr);
-}
-
-/**
-- @brief return error message and exit
-- 
-- @param str paste the error message
-- @return int return status:
-- 				- 1: EXIT_FAILURE
- */
-
-int	ft_perror(char *str)
-{
-	perror (str);
-	exit(EXIT_FAILURE);
 }
 
 /**

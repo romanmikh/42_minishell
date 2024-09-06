@@ -6,7 +6,7 @@
 /*   By: dmdemirk <dmdemirk@student.42london.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/03 16:34:42 by dmdemirk          #+#    #+#             */
-/*   Updated: 2024/07/11 16:01:50 by dmdemirk         ###   ########.fr       */
+/*   Updated: 2024/09/06 12:31:40 by dmdemirk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,8 @@ void	close_fds(int in, int out);
 void	handle_io_fd(t_ms_data *data);
 
 /*  shell variable execution */
-int handle_shell_variable(t_ast *node, t_ms_data *data);
-int handle_get_shell_variable(t_ms_data *data, const char *key);
-
+int		handle_shell_variable(t_ast *node, t_ms_data *data);
+int		handle_get_shell_variable(t_ms_data *data, const char *key);
+void	shell_variable_update(t_ms_data *data, int status);
 
 #endif

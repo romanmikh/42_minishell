@@ -31,14 +31,48 @@ static void	execute_child(t_ast *node, t_ms_data *data, int *file_fd);
   - 1: error
  */
 
-int	is_in_quotes(char *arg)
+static char	*assemble_result(char **tokens, size_t result_len)
 {
-	if (arg[0] == '\"' && arg[ft_strlen(arg) - 1] == '\"' )
+	char	*result;
+	int		i;
+
+	result = malloc(result_len + 1);
+	if (!result)
+		return (NULL);
+	*result = '\0';
+	i = 0;
+	while (tokens[i])
 	{
-		printf("quoted eof\n");
-		return (1);
+		ft_strcat(result, tokens[i]);
+		if (tokens[i + 1])
+			ft_strcat(result, " ");
+		i++;
 	}
-	return (0);
+	free(tokens);
+	return (result);
+}
+
+char	*process_and_reassemble(char *line, t_ms_data *data)
+{
+	char	**tokens;
+	size_t	result_len;
+	int		i;
+	char	*processed_token;
+
+	tokens = ft_split(line, ' ');
+	if (!tokens)
+		return (NULL);
+	result_len = 0;
+	i = 0;
+	while (tokens[i])
+	{
+		processed_token = expand_env_and_loc_var(tokens[i], data);
+		free(tokens[i]);
+		tokens[i] = processed_token;
+		result_len += ft_strlen(tokens[i]) + 1;
+		i++;
+	}
+	return (assemble_result(tokens, result_len));
 }
 
 int	redirect_here_doc(t_ast *node, t_ms_data *data)
@@ -46,21 +80,19 @@ int	redirect_here_doc(t_ast *node, t_ms_data *data)
 	char	*line;
 	char	*eof;
 	int		file_fd;
-	int		in_quotes;
 
 	line = NULL;
 	if (node->right->args[0] == NULL)
 		return (1);
 	file_fd = open_tmp_file("w");
 	eof = ft_strdup(node->right->args[0]);
-	in_quotes = is_in_quotes(eof);
-	line = readline("> ");
+	line = process_and_reassemble(readline("> "), data);
 	while (line && (ft_strcmp(line, eof) != 0))
 	{
 		write(file_fd, line, ft_strlen(line));
 		write(file_fd, "\n", 1);
 		free(line);
-		line = readline("> ");
+		line = process_and_reassemble(readline("> "), data);
 	}
 	free(line);
 	free(eof);

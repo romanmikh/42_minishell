@@ -19,6 +19,7 @@
 #include "tokens.h"
 #include "pipe.h"
 #include "redirection.h"
+#include "exit_status.h"
 
 int			execute_ast(t_ast *node, t_ms_data *data);
 static int	execute(t_ms_data *data);
@@ -37,11 +38,9 @@ static int	new_process(t_ms_data *data);
 int	execute_ast(t_ast *node, t_ms_data *data)
 {
 	if (!node)
-		return (1);
+		return (EXIT_FAILURE);
 	if (node->type == PIPE)
 		return (builtin_pipe(node, data));
-	// else if (node->type == ENV_VAR)
-		// return (handle_shell_variable(node, data));
 	else if (node->type == REDIR_IN)
 		return (redirect_in(node, data));
 	else if (node->type == REDIR_OUT)
@@ -55,7 +54,7 @@ int	execute_ast(t_ast *node, t_ms_data *data)
 		data->args = node->args;
 		return (execute(data));
 	}
-	return (0);
+	return (EXIT_SUCCESS);
 }
 
 /**
@@ -101,8 +100,8 @@ static int	execute(t_ms_data *data)
   - 
   - @param data minishell data structure
   - @return int return status:
-  - 				- 0: success	
-  - 				- 1: error
+  - 				- 0: SUCCESS	
+  - 				- 1: ERROR
  */
 
 static int	new_process(t_ms_data *data)
@@ -129,5 +128,5 @@ static int	new_process(t_ms_data *data)
 	}
 	close_fds(data->std_in, data->std_out);
 	waitpid(pid, &data->exit_status, 0);
-	return (0);
+	return (EXIT_SUCCESS);
 }

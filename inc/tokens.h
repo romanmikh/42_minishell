@@ -6,7 +6,7 @@
 /*   By: rmikhayl <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/31 20:53:51 by rmikhayl          #+#    #+#             */
-/*   Updated: 2024/06/26 14:39:34 by dmdemirk         ###   ########.fr       */
+/*   Updated: 2024/09/06 12:29:14 by dmdemirk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,7 +88,7 @@ void		loop_cleanup(char *line, t_token *tokens, \
 void		free_ms_data(t_ms_data *data);
 char		*check_heredoc(char *line);
 char		*heredoc(char *eof);
-void		init_ms_data(t_ms_data *data,char **argv, char **envp);
+void		init_ms_data(t_ms_data *data, char **argv, char **envp);
 void		initialise(int argc, char **argv);
 void		execute_command(char **parsed_text, t_token **tokens);
 void		print_maxishell(void);
@@ -107,7 +107,7 @@ t_ast		*new_ast_node(t_token_type type);
 t_ast		*create_redir(t_token **tokens, t_token *tmp, t_ms_data *data);
 int			arg_len(t_token *current);
 void		set_command_args(t_ast *command_node, t_token **tokens, \
-			int arg_count);
+		int arg_count);
 t_ast		*manage_commands(t_token **tokens, t_ms_data *data);
 t_ast		*create_redir_node(t_token *token);
 int			is_redir_node(t_token *tokens);
@@ -116,5 +116,8 @@ t_ast		*manage_pipe(t_token **tokens, t_ms_data *data);
 char		*trim_input(char *str);
 void		print_ast_root(t_ast *root);
 void		execute_tree(t_ast *node, t_ms_data *data);
+char		*expand_env_and_loc_var(char *arg, t_ms_data *data);
+char		*append_literal(char **start, char *processed_arg);
+char		*process_argument(char *arg, t_ms_data *data);
 
 #endif

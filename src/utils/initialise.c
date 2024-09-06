@@ -6,7 +6,7 @@
 /*   By: rmikhayl <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/06 18:16:59 by rmikhayl          #+#    #+#             */
-/*   Updated: 2024/07/18 15:58:43 by dmdemirk         ###   ########.fr       */
+/*   Updated: 2024/09/06 12:00:14 by dmdemirk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 #include "env.h"
 #include "signals.h"
 
-void	init_ms_data(t_ms_data *data,char **argv, char **envp);
+void	init_ms_data(t_ms_data *data, char **argv, char **envp);
 void	initialise(int argc, char **argv);
 
-void	init_ms_data(t_ms_data *data,char **argv, char **envp)
+void	init_ms_data(t_ms_data *data, char **argv, char **envp)
 {
 	(void)argv;
 	data->args = NULL;

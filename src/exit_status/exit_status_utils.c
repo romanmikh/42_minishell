@@ -1,43 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   echo.c                                             :+:      :+:    :+:   */
+/*   exit_status_utils.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dmdemirk <dmdemirk@student.42london.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/03 16:31:33 by dmdemirk          #+#    #+#             */
-/*   Updated: 2024/08/28 14:20:26 by dmdemirk         ###   ########.fr       */
+/*   Created: 2024/09/06 11:33:18 by dmdemirk          #+#    #+#             */
+/*   Updated: 2024/09/06 11:34:28 by dmdemirk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-#include "shell.h"
 #include "exit_status.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include "libft.h"
 
-/*
-	Functionality:
-		- Print the argument
-*/
+int	ft_perror(char *str);
+int	ft_isnumber(char *str);
 
-int	builtin_echo(t_ms_data *data)
+/**
+  - @brief return error message and exit
+  - 
+  - @param str paste the error message
+  - @return int return status:
+  - 				- 1: ERROR
+ */
+
+int	ft_perror(char *str)
 {
-	int	newline;
+	perror (str);
+	exit(EXIT_FAILURE);
+}
+
+int	ft_isnumber(char *str)
+{
 	int	i;
 
-	newline = 1;
-	if (data->args[1] && (ft_strcmp(data->args[1], "-n") == 0))
-	{
-		newline = 0;
-		data->args++;
-	}
 	i = 0;
-	while (data->args[++i])
+	while (str[i])
 	{
-		ft_putstr_fd(data->args[i], STDOUT_FILENO);
-		if (data->args[i + 1])
-			ft_putstr_fd(" ", STDOUT_FILENO);
+		if (!ft_isdigit(str[i]))
+			return (0);
+		i++;
 	}
-	if (newline)
-		write(STDOUT_FILENO, "\n", 1);
-	return (EXIT_SUCCESS);
+	return (1);
 }

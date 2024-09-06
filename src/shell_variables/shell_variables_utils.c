@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   shell_variables_utils.c                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dmdemirk <dmdemirk@student.42london.c      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/09/06 11:52:02 by dmdemirk          #+#    #+#             */
+/*   Updated: 2024/09/06 11:57:56 by dmdemirk         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "shell.h"
 #include "env.h"
 #include "libft.h"
@@ -7,12 +19,12 @@
 #include <stdio.h>
 
 void	set_shell_var(t_env **shell_var, const char *key, const char *value);
-void    add_shell_var_node(t_env **shell_var, const char *line);
+void	add_shell_var_node(t_env **shell_var, const char *line);
 char	*get_shell_variable(t_env *shell_var, const char *key);
 
-void add_shell_var_node(t_env **shell_var, const char *line)
+void	add_shell_var_node(t_env **shell_var, const char *line)
 {
-    t_env	*new_node;
+	t_env	*new_node;
 	t_env	*curr_node;
 	char	*key;
 	char	*value;
@@ -37,13 +49,12 @@ void add_shell_var_node(t_env **shell_var, const char *line)
 	curr_node->next = new_node;
 }
 
-
 void	set_shell_var(t_env **shell_var, const char *key, const char *value)
 {
 	t_env	*current;
 	t_env	*new_env;
 
-    current = *shell_var;
+	current = *shell_var;
 	while (current)
 	{
 		if (ft_strcmp(current->key, key) == 0)

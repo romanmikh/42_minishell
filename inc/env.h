@@ -6,7 +6,7 @@
 /*   By: dmdemirk <dmdemirk@student.42london.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/07 17:20:26 by dmdemirk          #+#    #+#             */
-/*   Updated: 2024/06/10 16:45:25 by dmdemirk         ###   ########.fr       */
+/*   Updated: 2024/09/06 12:32:33 by dmdemirk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,11 +34,11 @@ void	free_env(t_env *envp);
 void	print_t_env(t_env *tokens);
 
 /*	shell variables	*/
-int handle_add_set_shell_variable(t_env **shell_var, char *line);
+int		handle_add_set_shell_variable(t_env **shell_var, char *line);
 
 /*	shell variables utils	*/
 void	set_shell_var(t_env **shell_var, const char *key, const char *value);
-void    add_shell_var_node(t_env **shell_var, const char *line);
+void	add_shell_var_node(t_env **shell_var, const char *line);
 char	*get_shell_variable(t_env *shell_var, const char *key);
 
 #endif

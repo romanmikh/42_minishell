@@ -33,6 +33,7 @@ void	process_ast_and_io(t_ms_data *data, t_loop_data *loop_data)
 
 	print_ast_root(loop_data->tree);
 	status = execute_ast(loop_data->tree, data);
+	shell_variable_update(data, status);
 	if (status_handler(status, loop_data))
 	{
 		handle_io_fd(data);

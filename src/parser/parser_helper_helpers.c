@@ -36,7 +36,7 @@ void	final_quote_removal(int arg_count, t_ast *command_node)
 	}
 }
 
-char	*expand_env_var(char *arg, t_ms_data *data)
+char	*expand_env_and_loc_var(char *arg, t_ms_data *data)
 {
 	char	*env_value;
 
@@ -47,10 +47,12 @@ char	*expand_env_var(char *arg, t_ms_data *data)
 		if (arg[ft_strlen(arg) - 1] == '"')
 			arg[ft_strlen(arg) - 1] = '\0';
 		env_value = get_env(data->envp, arg + 1);
+		if (!env_value)
+			env_value = get_env(data->shell_variables, arg + 1);
 		if (env_value)
 			return (ft_strdup(env_value));
 	}
-	return (ft_strdup(arg));
+	return (ft_strdup(""));
 }
 
 void	handle_local_vars(t_ms_data *data, char *arg)
@@ -75,30 +77,17 @@ void	handle_local_vars(t_ms_data *data, char *arg)
 	}
 }
 
-void	post_process_command_args(t_ast *command_node, int arg_count, \
-			t_ms_data *data)
+void	post_process_command_args(t_ast *command_node, int arg_count \
+			, t_ms_data *data)
 {
 	int		i;
-	char	*arg;
 	char	*processed_arg;
 
 	i = 0;
 	while (i < arg_count)
 	{
-		arg = command_node->args[i];
-		handle_local_vars(data, arg);
-		processed_arg = NULL;
-		if (arg[0] == '$' || (arg[0] == '"' && arg[1] == '$'))
-		{
-			if (arg[0] == '"')
-				processed_arg = expand_env_var(arg + 1, data);
-			else
-				processed_arg = expand_env_var(arg, data);
-		}
-		else if (arg[0] == '\'')
-			processed_arg = ft_strdup(arg);
-		else
-			processed_arg = ft_strdup(arg);
+		handle_local_vars(data, command_node->args[i]);
+		processed_arg = process_argument(command_node->args[i], data);
 		free(command_node->args[i]);
 		command_node->args[i] = processed_arg;
 		i++;

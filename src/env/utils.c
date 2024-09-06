@@ -6,7 +6,7 @@
 /*   By: dmdemirk <dmdemirk@student.42london.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/07 17:38:25 by dmdemirk          #+#    #+#             */
-/*   Updated: 2024/06/10 19:03:12 by dmdemirk         ###   ########.fr       */
+/*   Updated: 2024/09/06 12:00:46 by dmdemirk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,21 +49,6 @@ char	**env_to_array(t_env *envp)
 	return (env_array);
 }
 
-/**
- * The function `ft_strcdup` duplicates a string `s` until the character `c` is encountered or the end
- * of the string is reached.
- * 
- * @param s The `s` parameter in the `ft_strcdup` function is a pointer to a constant character array
- * (string) from which a new string will be duplicated up to the specified character `c`.
- * @param c The parameter `c` in the `ft_strcdup` function represents the character that will be used
- * as a delimiter. The function will copy the characters from the input string `s` until it encounters
- * this delimiter character `c`, or until the end of the string if the delimiter is not found
- * 
- * @return The function `ft_strcdup` returns a newly allocated string that is a duplicate of the input
- * string `s` up to the first occurrence of the character `c`. If memory allocation fails, it returns
- * `NULL`.
- */
- 
 char	*ft_strcdup(const char *s, int c)
 {
 	char	*str;
