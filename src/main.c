@@ -40,7 +40,6 @@ static void	process_ast_and_io(t_ms_data *data, \
 	int	status;
 
 	status = execute_ast(loop_data->tree, data);
-	shell_variable_update(data, status);
 	if (status_handler(status, loop_data, tokens_head))
 	{
 		handle_io_fd(data);

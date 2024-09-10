@@ -33,6 +33,7 @@
 /*  exit status  */
 void	exit_status_handler(t_ms_data *data, int status_code, char *err_arg);
 void	set_exit_status(int *exit_status, int status_code);
+void	set_shell_var_handler(t_ms_data *data);
 
 /*  exit_status_utils    */
 int		ft_perror(char *str);

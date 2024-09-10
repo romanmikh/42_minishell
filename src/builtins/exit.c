@@ -32,7 +32,10 @@ void	clear_history_file(void)
 
 void	handle_numeric_error(t_ms_data *data, const char *arg)
 {
-	exit_status_handler(data, NUMERIC_REQUIRED, ft_strjoin("exit: ", arg));
+	char	*temp_str;
+
+	temp_str = ft_strjoin("exit: ", arg);
+	exit_status_handler(data, NUMERIC_REQUIRED, temp_str);
 	exit(NUMERIC_REQUIRED);
 }
 
