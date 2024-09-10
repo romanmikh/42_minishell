@@ -6,7 +6,7 @@
 /*   By: dmdemirk <dmdemirk@student.42london.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 11:10:52 by dmdemirk          #+#    #+#             */
-/*   Updated: 2024/09/09 13:12:35 by dmdemirk         ###   ########.fr       */
+/*   Updated: 2024/09/10 11:10:18 by dmdemirk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,8 @@ static void	print_env(t_env *env)
 		if (!ft_strcmp(curr_node->value, ""))
 			ft_printf("declare -x %s\n", curr_node->key);
 		else
-			ft_printf("declare -x %s=\"%s\"\n", curr_node->key, curr_node->value);
+			ft_printf("declare -x %s=\"%s\"\n", \
+				curr_node->key, curr_node->value);
 		curr_node = curr_node->next;
 	}
 }
