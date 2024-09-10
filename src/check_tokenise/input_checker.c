@@ -12,42 +12,39 @@
 
 #include "tokens.h"
 
-int	check_operators_loop(const char **str, int *single_quotes, \
-			int *double_quotes, int *cmd_flag)
+void	free_op_strings(t_loop_data *data, char *tail, char *new)
 {
-	if (**str == '\'')
-		(*single_quotes)++;
-	if (**str == '\"')
-		(*double_quotes)++;
-	if (**str == '|' && !(*single_quotes % 2) && !(*double_quotes % 2))
-	{
-		if (*cmd_flag)
-			return (1);
-		*cmd_flag = 1;
-	}
-	else if (ft_strchr(" \t\n\r\v\f", **str) != NULL)
-		*cmd_flag = 0;
-	(*str)++;
-	return (0);
+	free(data->trimmed_input);
+	free(new);
+	free(tail);
 }
 
-int	check_operators(const char *str)
+int	check_operators(t_loop_data *loop_data)
 {
-	int	single_quotes;
-	int	double_quotes;
-	int	cmd_flag;
+	char	*input;
+	char	*tail;
+	char	*new_input;
+	char	*final_input;
 
-	single_quotes = 0;
-	double_quotes = 0;
-	cmd_flag = 0;
-	if (*str == '&' || *str == '|')
+	input = loop_data->trimmed_input;
+	if (*input == '&' || *input == '|')
 		return (1);
-	while (*str)
-		if (check_operators_loop(&str, &single_quotes, \
-			&double_quotes, &cmd_flag) == 1)
-			return (1);
-	if (cmd_flag)
-		return (1);
+	while (*input)
+	{
+		if (*input == '|' && *(input + 1) == '\0')
+		{
+			tail = readline("> ");
+			if (tail == NULL)
+				break ;
+			new_input = ft_strcat_const(loop_data->trimmed_input, " ");
+			final_input = ft_strcat_const(new_input, tail);
+			free_op_strings(loop_data, tail, new_input);
+			loop_data->trimmed_input = final_input;
+			free(final_input);
+			break ;
+		}
+		input++;
+	}
 	return (0);
 }
 
@@ -96,11 +93,13 @@ int	check_open_quotes(const char *str)
 	return (single_quote_open || double_quote_open);
 }
 
-int	input_error_checks(const char *str)
+int	input_error_checks(t_loop_data *loop_data)
 {
+	const char	*str = loop_data->trimmed_input;
+
 	if (check_redirections(str))
 		ft_printf("Input error: invalid redirection.\n");
-	else if (check_operators(str))
+	else if (check_operators(loop_data))
 		ft_printf("Input error: invalid operator.\n");
 	else if (check_open_quotes(str))
 		ft_printf("Input error: open quote.\n");

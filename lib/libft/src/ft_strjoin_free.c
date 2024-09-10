@@ -1,36 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   exit_status_utils.c                                :+:      :+:    :+:   */
+/*   ft_strjoin_free.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dmdemirk <dmdemirk@student.42london.c      +#+  +:+       +#+        */
+/*   By: rocky <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/06 11:33:18 by dmdemirk          #+#    #+#             */
-/*   Updated: 2024/09/06 11:34:28 by dmdemirk         ###   ########.fr       */
+/*   Created: 2024/09/06 23:07:53 by rocky             #+#    #+#             */
+/*   Updated: 2024/09/06 23:07:55 by rocky            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "exit_status.h"
-#include <stdio.h>
-#include <stdlib.h>
 #include "libft.h"
 
-int	ft_perror(char *str)
+char	*ft_strjoin_free(char *s1, char *s2)
 {
-	perror (str);
-	exit(EXIT_FAILURE);
-}
+	char	*result;
 
-int	ft_isnumber(char *str)
-{
-	int	i;
-
-	i = 0;
-	while (str[i])
-	{
-		if (!ft_isdigit(str[i]))
-			return (0);
-		i++;
-	}
-	return (1);
+	if (!s1 || !s2)
+		return (NULL);
+	result = ft_strjoin(s1, s2);
+	free(s1);
+	return (result);
 }

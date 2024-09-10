@@ -6,7 +6,7 @@
 /*   By: dmdemirk <dmdemirk@student.42london.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/17 13:59:59 by dmdemirk          #+#    #+#             */
-/*   Updated: 2024/07/18 16:42:07 by dmdemirk         ###   ########.fr       */
+/*   Updated: 2024/09/09 12:32:04 by dmdemirk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,19 +31,10 @@ void	signal_reset_prompt(int signo)
 	rl_redisplay();
 }
 
-void	set_signals_interactive(void)
-{
-	struct sigaction	a;
-
-	sigquit_ignore();
-	sigemptyset(&a.sa_mask);
-	a.sa_handler = *signal_reset_prompt;
-	sigaction(SIGINT, &a, NULL);
-}
-
 void	signal_print_newline(int signal)
 {
 	(void)signal;
+	write(STDOUT_FILENO, "\n", 1);
 	rl_on_new_line();
 }
 
@@ -52,8 +43,21 @@ void	sigquit_ignore(void)
 	struct sigaction	a;
 
 	sigemptyset(&a.sa_mask);
+	a.sa_flags = 0;
 	a.sa_handler = SIG_IGN;
 	sigaction(SIGQUIT, &a, NULL);
+}
+
+void	set_signals_interactive(void)
+{
+	struct sigaction	a;
+
+	sigquit_ignore();
+	sigemptyset(&a.sa_mask);
+	a.sa_flags = 0;
+	a.sa_handler = *signal_reset_prompt;
+	a.sa_flags |= SA_RESTART;
+	sigaction(SIGINT, &a, NULL);
 }
 
 void	set_signals_noninteractive(void)
@@ -61,7 +65,9 @@ void	set_signals_noninteractive(void)
 	struct sigaction	a;
 
 	sigemptyset(&a.sa_mask);
+	a.sa_flags = 0;
 	a.sa_handler = &signal_print_newline;
 	sigaction(SIGINT, &a, NULL);
+	a.sa_handler = SIG_IGN;
 	sigaction(SIGQUIT, &a, NULL);
 }

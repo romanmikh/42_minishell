@@ -1,18 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   clean_tree.c                                       :+:      :+:    :+:   */
+/*   clean_utils.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rocky <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: dmdemirk <dmdemirk@student.42london.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/14 13:21:30 by rocky             #+#    #+#             */
-/*   Updated: 2024/06/14 13:21:49 by rocky            ###   ########.fr       */
+/*   Created: 2024/09/09 15:40:48 by dmdemirk          #+#    #+#             */
+/*   Updated: 2024/09/09 15:41:11 by dmdemirk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "tokens.h"
 
-// unused since tree freed on the fly
+void	free_all_tokes(t_token *tokens);
+
 void	free_all_tokens(t_token *tokens)
 {
 	t_token	*temp;
@@ -32,25 +33,4 @@ void	free_all_tokens(t_token *tokens)
 		free(temp);
 		temp = NULL;
 	}
-}
-
-void	free_ast(t_ast *node)
-{
-	int				i;
-
-	i = 0;
-	if (!node)
-		return ;
-	if (node->type == PHRASE && node->args)
-	{
-		while (node->args && node->args[i])
-		{
-			free(node->args[i]);
-			i++;
-		}
-		free(node->args);
-	}
-	free_ast(node->left);
-	free_ast(node->right);
-	free(node);
 }

@@ -1,53 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parser.c                                           :+:      :+:    :+:   */
+/*   AST.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rocky <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/12 19:35:45 by rocky             #+#    #+#             */
-/*   Updated: 2024/08/28 20:11:50 by rocky            ###   ########.fr       */
+/*   Updated: 2024/09/09 16:18:58 by dmdemirk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "tokens.h"
 
+t_ast	*manage_redirs(t_token **tokens, t_ms_data *data);
 t_ast	*create_redir_node(t_token *token);
 int		is_redir_node(t_token *tokens);
-t_ast	*manage_redirs(t_token **tokens, t_ms_data *data);
-t_ast	*manage_pipe(t_token **tokens, t_ms_data *data);
-
-t_ast	*create_redir_node(t_token *token)
-{
-	t_ast			*node;
-
-	node = malloc(sizeof(t_ast));
-	if (!node)
-		return (NULL);
-	node->type = token->type;
-	node->args = malloc(sizeof(char *) * 2);
-	if (!node->args)
-	{
-		free(node);
-		return (NULL);
-	}
-	node->args[0] = token->data;
-	node->args[1] = NULL;
-	node->left = NULL;
-	node->right = NULL;
-	free(token);
-	return (node);
-}
-
-int	is_redir_node(t_token *tokens)
-{
-	if (tokens->type == REDIR_IN
-		|| tokens->type == REDIR_OUT
-		|| tokens->type == REDIR_APPEND
-		|| tokens->type == REDIR_HEREDOC)
-		return (1);
-	return (0);
-}
+t_ast	*new_ast_node(void);
 
 t_ast	*manage_redirs(t_token **tokens, t_ms_data *data)
 {
@@ -77,30 +45,57 @@ t_ast	*manage_redirs(t_token **tokens, t_ms_data *data)
 	return (command_node);
 }
 
-t_ast	*manage_pipe(t_token **tokens, t_ms_data *data)
+void	set_command_args(t_ast *command_node, t_token **tokens, int arg_count)
 {
-	t_token		*tmp;
-	t_token		*next_token;
-	t_ast		*pipe_node;
+	int	i;
 
-	tmp = *tokens;
-	while (*tokens && (*tokens)->next)
+	i = 0;
+	while (i < arg_count)
 	{
-		next_token = (*tokens)->next;
-		if ((*tokens)->next->type == PIPE)
-		{
-			pipe_node = new_ast_node((*tokens)->next->type);
-			(*tokens)->next = NULL;
-			pipe_node->left = manage_redirs(&tmp, data);
-			if (next_token->next == NULL)
-				pipe_node->right = NULL;
-			else
-				pipe_node->right = manage_pipe(&(next_token->next), data);
-			free(next_token->data);
-			free(next_token);
-			return (pipe_node);
-		}
-		*tokens = next_token;
+		command_node->args[i] = ft_strdup((*tokens)->data);
+		*tokens = (*tokens)->next;
+		i++;
 	}
-	return (manage_redirs(&tmp, data));
+	command_node->args[arg_count] = NULL;
+}
+
+t_ast	*create_redir_node(t_token *token)
+{
+	t_ast			*node;
+
+	node = new_ast_node();
+	node->type = token->type;
+	node->args = malloc(sizeof(char *) * 2);
+	if (!node->args)
+	{
+		free(node);
+		return (NULL);
+	}
+	node->args[0] = ft_strdup(token->data);
+	node->args[1] = NULL;
+	return (node);
+}
+
+int	is_redir_node(t_token *tokens)
+{
+	if (tokens->type == REDIR_IN
+		|| tokens->type == REDIR_OUT
+		|| tokens->type == REDIR_APPEND
+		|| tokens->type == REDIR_HEREDOC)
+		return (1);
+	return (0);
+}
+
+t_ast	*new_ast_node(void)
+{
+	t_ast		*node;
+
+	node = malloc(sizeof(t_ast));
+	if (!node)
+		return (NULL);
+	node->type = NONE;
+	node->args = NULL;
+	node->left = NULL;
+	node->right = NULL;
+	return (node);
 }

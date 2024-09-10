@@ -34,7 +34,6 @@ void	print_env_stack(t_env *envp)
 
 int	builtin_env(t_ms_data *data)
 {
-	ft_printf("\nbuiltin_env\n");
 	if (ft_strcmp(data->args[0], "env") == 0 && data->args[1] == NULL)
 		print_env_stack(data->envp);
 	else

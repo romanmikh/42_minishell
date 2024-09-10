@@ -24,7 +24,7 @@ char	*generate_prompt(t_ms_data *data)
 
 	prompt_len = ft_strlen("🌴 @maxishell$ ") + \
 			ft_strlen(getenv("LOGNAME"));
-	prompt = (char *)malloc(prompt_len);
+	prompt = (char *)malloc(prompt_len + 1);
 	if (!prompt)
 		exit(EXIT_FAILURE);
 	ft_strcpy(prompt, "🌴 ");

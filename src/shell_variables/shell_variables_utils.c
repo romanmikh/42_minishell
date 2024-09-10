@@ -6,7 +6,7 @@
 /*   By: dmdemirk <dmdemirk@student.42london.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/06 11:52:02 by dmdemirk          #+#    #+#             */
-/*   Updated: 2024/09/06 11:57:56 by dmdemirk         ###   ########.fr       */
+/*   Updated: 2024/09/09 12:51:11 by dmdemirk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,32 +21,33 @@
 void	set_shell_var(t_env **shell_var, const char *key, const char *value);
 void	add_shell_var_node(t_env **shell_var, const char *line);
 char	*get_shell_variable(t_env *shell_var, const char *key);
+void	free_shell_var_list(t_env *shell_var);
 
 void	add_shell_var_node(t_env **shell_var, const char *line)
 {
-	t_env	*new_node;
-	t_env	*curr_node;
 	char	*key;
 	char	*value;
+	t_env	*new_node;
+	t_env	*curr_node;
 
-	new_node = (t_env *)malloc(sizeof(t_env));
-	if (!new_node)
+	if (!shell_var || !line)
 		return ;
 	key = ft_strcdup(line, '=');
 	value = ft_strchr(line, '=') + 1;
+	new_node = (t_env *)malloc(sizeof(t_env));
 	new_node->key = ft_strdup(key);
-	new_node->value = ft_strdup(value);
 	free(key);
+	new_node->value = ft_strdup(value);
 	new_node->next = NULL;
 	if (*shell_var == NULL)
-	{
 		*shell_var = new_node;
-		return ;
+	else
+	{
+		curr_node = *shell_var;
+		while (curr_node->next != NULL)
+			curr_node = curr_node->next;
+		curr_node->next = new_node;
 	}
-	curr_node = *shell_var;
-	while (curr_node->next != NULL)
-		curr_node = curr_node->next;
-	curr_node->next = new_node;
 }
 
 void	set_shell_var(t_env **shell_var, const char *key, const char *value)
@@ -84,4 +85,20 @@ char	*get_shell_variable(t_env *shell_var, const char *key)
 		curr_node = curr_node->next;
 	}
 	return (NULL);
+}
+
+void	free_shell_var_list(t_env *shell_var)
+{
+	t_env	*curr_node;
+	t_env	*next_node;
+
+	curr_node = shell_var;
+	while (curr_node)
+	{
+		next_node = curr_node->next;
+		free(curr_node->key);
+		free(curr_node->value);
+		free(curr_node);
+		curr_node = next_node;
+	}
 }

@@ -25,6 +25,7 @@ void	init_ms_data(t_ms_data *data, char **argv, char **envp)
 	init_env(&data->envp, envp);
 	data->shell_variables = NULL;
 	handle_add_set_shell_variable(&data->shell_variables, "_=/usr/bin/env");
+	set_shell_var(&data->shell_variables, "?", "0");
 	data->current_dir = getcwd(NULL, 0);
 	data->exit_status = 0;
 	data->std_in = -1;

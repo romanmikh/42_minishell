@@ -6,7 +6,7 @@
 /*   By: dmdemirk <dmdemirk@student.42london.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/03 16:34:42 by dmdemirk          #+#    #+#             */
-/*   Updated: 2024/09/06 12:31:40 by dmdemirk         ###   ########.fr       */
+/*   Updated: 2024/09/09 13:19:58 by dmdemirk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ void	ft_free_2d_arr(char **arr);
 int		ft_perror(char *str);
 void	close_fds(int in, int out);
 void	handle_io_fd(t_ms_data *data);
+void	handle_std_io(int *std_io, int std_fileno);
 
 /*  shell variable execution */
 int		handle_shell_variable(t_ast *node, t_ms_data *data);

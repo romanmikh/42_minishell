@@ -1,0 +1,55 @@
+illegal input:
+hello"
+a < < b
+cat Makefile >
+| file.c
+
+loc_vars:
+a=cho b=456
+e$a $b
+e$a$b
+echo a$ab$bb
+
+operators:
+ls -la > output.txt
+sort < output.txt
+echo "New entry" >> output.txt
+ls -la > output.txt > new.txt
+cat << a | cat << b | cat << c
+ls -la | grep ".txt"
+cat < output.txt | sort > sorted_output.txt
+
+heredoc:
+cat << eof
+This is line 1
+This is line 2
+This is line 3
+eof
+
+cat << eof
+> $USER '$USER' "$USER" USER $? "$?" '$?'
+> eof
+rmikhayl
+echo & quote mark management
+echo '$USER' prints $USER
+
+exit status
+echo $?
+echo $? + '$'
+
+env_vars:
+echo $USER '$USER' "$USER" USER $? "$?" '$?'
+export MY_VAR="Hello, World!"
+env (see it there)
+export MY_VAR="new value" (creates another copy, should overwrite)
+unset MY_VAR
+
+difficult input:
+ls -la |
+cat out.txt | grep Makefile | wc -l
+
+signals:
+grep"rubbish" exit with ctrl+C
+ctrl+D
+heredoc exit with ctrl+D with warning
+ctrl+\

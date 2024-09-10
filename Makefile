@@ -27,7 +27,7 @@ NAME			=	minishell
 # Comands
 COMPILER		=	cc
 DFLAGS			=	-g3 -gdwarf-2
-CFLAGS			=	-Wall -Wextra -Werror $(DFLAGS)
+CFLAGS			=	-Wall -Wextra -Werror $(DFLAGS) -g -O0
 AR			=	ar rcs
 RM			=	rm -rf
 MAKEFLAGS 		+= --silent
@@ -51,6 +51,7 @@ EXECUTE_DIR				=	$(SRC_DIR)/execute
 EXIT_STATUS_DIR			=	$(SRC_DIR)/exit_status
 TEST_DIR				=	$(SRC_DIR)/test
 SIGNALS_DIR				=	$(SRC_DIR)/signals
+CHECK_TOKENISE_DIR				=	$(SRC_DIR)/check_tokenise
 
 INCLUDES				=	-I./inc \
 							-I $(LIB_DIR)/libft/inc \
@@ -73,6 +74,8 @@ BUILTINS_SOURCES			=	$(wildcard $(BUILTINS_DIR)/*.c)
 EXECUTE_SOURCES				=	$(wildcard $(EXECUTE_DIR)/*.c)
 EXIT_STATUS_SOURCES			=	$(wildcard $(EXIT_STATUS_DIR)/*.c)
 SIGNALS_SOURCES				=	$(wildcard $(SIGNALS_DIR)/*.c)
+CHECK_TOKENISE_SOURCES		=	$(wildcard $(CHECK_TOKENISE_DIR)/*.c)
+
 
 MAIN_TEST_SOURCE			=	$(wildcard $(TEST_DIR)/*.c)
 ENV_TEST_SOURCES			=	$(wildcard $(TEST_DIR)/env/*.c)
@@ -94,7 +97,8 @@ SOURCES					=	$(MAIN_SOURCE) \
 							$(ENV_TEST_SOURCES) \
 							$(PIPE_TEST_SOURCES) \
 							$(REDIRECTION_SOURCES) \
-							$(SIGNALS_SOURCES)
+							$(SIGNALS_SOURCES) \
+							$(CHECK_TOKENISE)
 # Building
 BUILD_DIR					=	./build
 MAIN_OBJECT					=	$(patsubst $(SRC_DIR)/%.c, $(BUILD_DIR)/src/%.o, $(MAIN_SOURCE))
@@ -113,6 +117,7 @@ SIGNALS_OBJECTS				=	$(patsubst $(SIGNALS_DIR)/%.c, $(BUILD_DIR)/src/signals/%.o
 MAIN_TEST_OBJECT			=	$(patsubst $(TEST_DIR)/%.c, $(BUILD_DIR)/src/test/%.o, $(MAIN_TEST_SOURCE))
 ENV_TEST_OBJECTS			=	$(patsubst $(TEST_DIR)/env/%.c, $(BUILD_DIR)/src/test/env/%.o, $(ENV_TEST_SOURCES))
 PIPE_TEST_OBJECTS			=	$(patsubst $(TEST_DIR)/pipe/%.c, $(BUILD_DIR)/src/test/pipe/%.o, $(PIPE_TEST_SOURCES))
+CHECK_TOKENISE_OBJECTS		=	$(patsubst $(CHECK_TOKENISE_DIR)/check_tokenise/%.c, $(BUILD_DIR)/src/check_tokenise/%.o, $(CHECK_TOKENISE_SOURCES))
 
 OBJECTS					=	$(MAIN_OBJECT) \
 							$(APP_OBJECTS) \
@@ -127,7 +132,8 @@ OBJECTS					=	$(MAIN_OBJECT) \
 							$(PARSER_OBJECTS) \
 							$(PIPE_OBJECTS)	\
 							$(REDIRECTION_OBJECTS) \
-							$(SIGNALS_OBJECTS)
+							$(SIGNALS_OBJECTS) \
+							$(CHECK_TOKENISE_OBJECTS)
 						
 TEST_OBJECTS			=	$(APP_OBJECTS) \
 							$(ENV_OBJECTS) \
@@ -139,7 +145,8 @@ TEST_OBJECTS			=	$(APP_OBJECTS) \
 							$(PIPE_OBJECTS) \
 							$(MAIN_TEST_OBJECT) \
 							$(ENV_TEST_OBJECTS)	\
-							$(PIPE_TEST_OBJECTS)
+							$(PIPE_TEST_OBJECTS) \
+							$(CHECK_TOKENISE_OBJECTS)
 
 # Processing
 all: $(NAME)
@@ -234,6 +241,6 @@ test: $(TEST_OBJECTS) $(LIBFT)
 	@./test
 
 valgrind: $(NAME)
-	@valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes --verbose --suppressions=readline.supp --log-file=valgrind-out.txt ./minishell
+	@valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes --track-fds=yes --trace-children=yes --suppressions=readline.supp --num-callers=20 --log-file=valgrind-out.txt ./minishell
 
 .PHONY: all bonus clean fclean re test

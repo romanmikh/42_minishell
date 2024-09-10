@@ -6,7 +6,7 @@
 /*   By: dmdemirk <dmdemirk@student.42london.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/06 12:29:24 by dmdemirk          #+#    #+#             */
-/*   Updated: 2024/09/06 12:31:02 by dmdemirk         ###   ########.fr       */
+/*   Updated: 2024/09/09 13:20:14 by dmdemirk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,5 +37,6 @@ void	set_exit_status(int *exit_status, int status_code);
 /*  exit_status_utils    */
 int		ft_perror(char *str);
 int		ft_isnumber(char *str);
+void	free_shell_var_list(t_env *shell_var);
 
 #endif

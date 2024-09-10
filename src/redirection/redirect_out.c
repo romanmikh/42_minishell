@@ -6,7 +6,7 @@
 /*   By: dmdemirk <dmdemirk@student.42london.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/11 14:32:59 by dmdemirk          #+#    #+#             */
-/*   Updated: 2024/07/11 14:52:28 by dmdemirk         ###   ########.fr       */
+/*   Updated: 2024/09/09 13:39:13 by dmdemirk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,8 @@
 #include "pipe.h"
 #include <sys/wait.h>
 
-int	redirect_out(t_ast *node, t_ms_data *data);
+static int	open_and_redirect(t_ast *node, t_ms_data *data);
+int			redirect_out(t_ast *node, t_ms_data *data);
 
 /**
   - @brief redirect out ">" to the file output
@@ -29,6 +30,61 @@ int	redirect_out(t_ast *node, t_ms_data *data);
   - 1: error
  */
 
+/*
+   int	redirect_out(t_ast *node, t_ms_data *data)
+   {
+   pid_t	pid;
+   int		status;
+   int		fd;
+
+   pid = fork();
+   if (pid == -1)
+   return (1);
+   if (pid == 0)
+   {
+   if (data->std_out == -1)
+   {
+   data->std_out = open_file(node->right, ">");
+   if (data->std_out == -1)
+   return (1);
+   }
+   else
+   {
+   fd = open_file(node->right, ">");
+   if (fd == -1)
+   return (1);
+   dup2(fd, STDOUT_FILENO);
+   close(fd);
+   }
+   execute_ast(node->left, data);
+   exit(0);
+   }
+   waitpid(pid, &status, 0);
+   return (WEXITSTATUS(status));
+   }
+ */
+
+static int	open_and_redirect(t_ast *node, t_ms_data *data)
+{
+	int	fd;
+
+	if (data->std_out == -1)
+	{
+		data->std_out = open_file(node->right, ">");
+		if (data->std_out == -1)
+			return (1);
+	}
+	else
+	{
+		fd = open_file(node->right, ">");
+		if (fd == -1)
+			return (1);
+		dup2(fd, STDOUT_FILENO);
+		close(fd);
+	}
+	return (0);
+}
+
 int	redirect_out(t_ast *node, t_ms_data *data)
 {
 	pid_t	pid;
@@ -39,9 +95,8 @@ int	redirect_out(t_ast *node, t_ms_data *data)
 		return (1);
 	if (pid == 0)
 	{
-		data->std_out = open_file(node->right, ">");
-		if (data->std_out == -1)
-			return (1);
+		if (open_and_redirect(node, data) != 0)
+			exit(1);
 		execute_ast(node->left, data);
 		exit(0);
 	}

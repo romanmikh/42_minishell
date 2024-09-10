@@ -1,22 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parser_utils.c                                     :+:      :+:    :+:   */
+/*   ft_print_2d_arr.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dmdemirk <dmdemirk@student.42london.c      +#+  +:+       +#+        */
+/*   By: rmikhayl <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/11 18:52:00 by dmdemirk          #+#    #+#             */
-/*   Updated: 2024/07/11 18:52:07 by dmdemirk         ###   ########.fr       */
+/*   Created: 2024/09/09 19:37:13 by rmikhayl          #+#    #+#             */
+/*   Updated: 2024/09/09 19:37:16 by rmikhayl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "tokens.h"
+#include "libft.h"
 
-t_ast	*parse_tokens(t_token **tokens, t_ms_data *data);
-
-t_ast	*parse_tokens(t_token **tokens, t_ms_data *data)
+void	ft_print_2d_arr(char **arr)
 {
-	if (!tokens || !*tokens)
-		return (NULL);
-	return (manage_pipe(tokens, data));
+	int	i;
+
+	i = -1;
+	while (arr[++i] != NULL)
+		ft_printf("arr[%d]:	%s		at add:	%p	\n", i, arr[i], arr[i]);
 }

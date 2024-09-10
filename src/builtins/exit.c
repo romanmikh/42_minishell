@@ -6,7 +6,7 @@
 /*   By: dmdemirk <dmdemirk@student.42london.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/03 16:32:42 by dmdemirk          #+#    #+#             */
-/*   Updated: 2024/09/06 12:28:10 by dmdemirk         ###   ########.fr       */
+/*   Updated: 2024/09/09 13:10:47 by dmdemirk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include <stdio.h>
 #include "env.h"
 #include "exit_status.h"
+#include "tokens.h"
 
 /*
 Functionality:
@@ -23,6 +24,11 @@ Functionality:
 - Free the environment
 - Exit with the exit status
  */
+
+void	clear_history_file(void)
+{
+	remove(HISTORY_PATH);
+}
 
 void	handle_numeric_error(t_ms_data *data, const char *arg)
 {
@@ -38,9 +44,15 @@ void	handle_too_many_args_error(t_ms_data *data)
 
 void	handle_exit(t_ms_data *data, int status)
 {
+	char	*exit_status_str;
+
 	ft_putendl_fd("exit", STDOUT_FILENO);
 	data->exit_status = status;
-	set_shell_var(&data->shell_variables, "?", ft_itoa(data->exit_status));
+	exit_status_str = ft_itoa(data->exit_status);
+	set_shell_var(&data->shell_variables, "?", exit_status_str);
+	free(exit_status_str);
+	clear_history_file();
+	free_ms_data(data);
 	exit(status);
 }
 
