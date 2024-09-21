@@ -21,7 +21,7 @@
 #include "redirection.h"
 #include "exit_status.h"
 #include "signals.h"
-#import "exit_status.h"
+#include "exit_status.h"
 
 int			execute_ast(t_ast *node, t_ms_data *data);
 

@@ -25,6 +25,11 @@ static void	relative_path_handle(char *cmd, char *path, char **tmp_full_path);
   - @return char* returns the full path of the command
  */
 
+
+/** TODO:
+ * rewrite ft_find_path for working full path when $PATH deleted
+ */
+
 char	*ft_find_path(char *cmd, t_env *envp)
 {
 	char	**path;

@@ -10,7 +10,7 @@
 #include "redirection.h"
 #include "exit_status.h"
 #include "signals.h"
-#import "exit_status.h"
+#include "exit_status.h"
 
 int	execute(t_ms_data *data);
 static int	new_process(t_ms_data *data);
@@ -72,7 +72,10 @@ static void	child_process(t_ms_data *data)
 	handle_std_io(&data->std_out, STDOUT_FILENO);
 	close_fds(data->std_in, data->std_out);
 	signal_handler();
-	exec_path = ft_find_path(data->args[0], data->envp);
+	if (ft_strncmp(data->args[0], "/", 1) == 0)
+		exec_path = ft_strdup(data->args[0]);
+	else
+		exec_path = ft_find_path(data->args[0], data->envp);
 	handle_exec_errors(exec_path, data);
 }
 
