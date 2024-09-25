@@ -68,7 +68,7 @@ void	loop_cleanup(t_loop_data *loop_data, t_token *tokens_head)
 {
 	free(loop_data->trimmed_input);
 	free_all_tokens(tokens_head);
-	free(loop_data->prompt);
+	// free(loop_data->prompt);
 	free_ast(loop_data->tree);
 }
 

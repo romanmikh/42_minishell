@@ -72,7 +72,7 @@ static void	main_loop(t_ms_data *data, t_loop_data *loop_data)
 		process_ast_and_io(data, loop_data, tokens_start);
 	}
 	clear_history_file();
-	free(loop_data->prompt);
+	// free(loop_data->prompt);
 }
 
 int	main(int argc, char **argv, char **envp)
