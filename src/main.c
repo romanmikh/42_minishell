@@ -53,9 +53,9 @@ static void	main_loop(t_ms_data *data, t_loop_data *loop_data)
 
 	while (1)
 	{
-		loop_data->prompt = generate_prompt(data);
+		//loop_data->prompt = generate_prompt(data);
 		set_signals_interactive();
-		loop_data->input = readline(loop_data->prompt);
+		loop_data->input = readline("> ");
 		set_signals_noninteractive();
 		if (loop_data->input == NULL)
 		{
