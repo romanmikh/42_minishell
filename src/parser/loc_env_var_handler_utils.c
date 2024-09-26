@@ -65,3 +65,25 @@ char	*expand_variable(char **start, t_ms_data *data)
 	}
 	return (expanded_str);
 }
+
+void	handle_local_vars(t_ms_data *data, char *arg)
+{
+	char	*p;
+	int		valid_var;
+
+	p = arg;
+	valid_var = 1;
+	if (arg[0] != '=' && ft_strchr(arg, '='))
+	{
+		while (p < ft_strchr(arg, '='))
+		{
+			if (!ft_isalnum(*p++))
+			{
+				valid_var = 0;
+				break ;
+			}
+		}
+		if (valid_var)
+			handle_add_set_shell_variable(&data->shell_variables, arg);
+	}
+}

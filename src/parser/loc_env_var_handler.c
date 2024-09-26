@@ -15,24 +15,31 @@
 void	handle_local_vars(t_ms_data *data, char *arg);
 char	*process_argument(char *arg, t_ms_data *data);
 
-void	split_loc_vars(t_ast *command_node, char *processed_arg, int *current_size, int *i)
+void	handle_split_allocation(t_ast *command_node, int *current_size, \
+									int required_size)
 {
-	char **split_arg;
-	int split_count;
-	int required_size;
-	int	j;
+	if (required_size > *current_size)
+	{
+		command_node->args = ft_realloc_array(command_node->args, \
+												*current_size, required_size);
+		*current_size = required_size;
+	}
+}
 
-	split_arg = NULL;
+void	split_loc_vars(t_ast *command_node, char *processed_arg, \
+						int *current_size, int *i)
+{
+	char	**split_arg;
+	int		split_count;
+	int		required_size;
+	int		j;
+
 	split_arg = ft_split(processed_arg, ' ');
 	split_count = ft_len_2d_arr(split_arg);
 	if (split_count > 1)
 	{
 		required_size = *i + split_count;
-		if (required_size > *current_size)
-		{
-			command_node->args = ft_realloc_array(command_node->args, *current_size, required_size);
-			*current_size = required_size;
-		}
+		handle_split_allocation(command_node, current_size, required_size);
 		j = 0;
 		while (j < split_count)
 		{
@@ -74,28 +81,6 @@ void	post_process_command_args(t_ast *command_node, int arg_count, \
 	}
 	command_node->args[current_size] = NULL;
 	final_quote_removal(current_size, command_node);
-}
-
-void	handle_local_vars(t_ms_data *data, char *arg)
-{
-	char	*p;
-	int		valid_var;
-
-	p = arg;
-	valid_var = 1;
-	if (arg[0] != '=' && ft_strchr(arg, '='))
-	{
-		while (p < ft_strchr(arg, '='))
-		{
-			if (!ft_isalnum(*p++))
-			{
-				valid_var = 0;
-				break ;
-			}
-		}
-		if (valid_var)
-			handle_add_set_shell_variable(&data->shell_variables, arg);
-	}
 }
 
 char	*append_expanded_var(char *processed_arg, char *tmp_ad, \

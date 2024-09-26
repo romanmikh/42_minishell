@@ -106,6 +106,7 @@ int			arg_len(t_token *current);
 void		set_command_args(t_ast *command_node, t_token **tokens, \
 				int arg_count);
 t_ast		*manage_commands(t_token **tokens, t_ms_data *data);
+void		handle_local_vars(t_ms_data *data, char *arg);
 t_ast		*create_redir_node(t_token *token);
 int			is_redir_node(t_token *tokens);
 t_ast		*manage_redirs(t_token **tokens, t_ms_data *data);
