@@ -18,20 +18,20 @@
 # include "env.h"
 
 /*	execute	*/
-int	execute_ast(t_ast *node, t_ms_data *data);
-int	execute(t_ms_data *data);
+int		execute_ast(t_ast *node, t_ms_data *data);
+int		execute(t_ms_data *data);
 
 /*	utils	*/
 char	*ft_find_path(char *cmd, t_env *envp);
 void	ft_free_2d_arr(char **arr);
-int	ft_perror(char *str);
+int		ft_perror(char *str);
 void	close_fds(int in, int out);
 void	handle_io_fd(t_ms_data *data);
 void	handle_std_io(int *std_io, int std_fileno);
 
 /*  shell variable execution */
-int	handle_shell_variable(t_ast *node, t_ms_data *data);
-int	handle_get_shell_variable(t_ms_data *data, const char *key);
+int		handle_shell_variable(t_ast *node, t_ms_data *data);
+int		handle_get_shell_variable(t_ms_data *data, const char *key);
 void	shell_variable_update(t_ms_data *data, int status);
 
 #endif

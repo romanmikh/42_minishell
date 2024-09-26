@@ -27,7 +27,7 @@ NAME			=	minishell
 # Comands
 COMPILER		=	cc
 DFLAGS			=	-g3 -gdwarf-2
-CFLAGS			=	-Wall -Wextra -Werror $(DFLAGS) -g -O0
+CFLAGS			=	-Wall -Wextra -Werror $(DFLAGS) -g -O0 
 AR			=	ar rcs
 RM			=	rm -rf
 MAKEFLAGS 		+= --silent

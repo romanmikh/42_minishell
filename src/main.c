@@ -53,11 +53,10 @@ static void	main_loop(t_ms_data *data, t_loop_data *loop_data)
 
 	while (1)
 	{
-		//loop_data->prompt = generate_prompt(data);
 		set_signals_interactive();
-		loop_data->input = readline("> ");
+		loop_data->input = readline("🌴 maxishell> ");
 		set_signals_noninteractive();
-		if (loop_data->input == NULL)
+		if (!loop_data->input || !ft_strncmp(loop_data->input, "exit", 4))
 		{
 			write(STDOUT_FILENO, "exit\n", 5);
 			break ;
@@ -72,7 +71,6 @@ static void	main_loop(t_ms_data *data, t_loop_data *loop_data)
 		process_ast_and_io(data, loop_data, tokens_start);
 	}
 	clear_history_file();
-	// free(loop_data->prompt);
 }
 
 int	main(int argc, char **argv, char **envp)
