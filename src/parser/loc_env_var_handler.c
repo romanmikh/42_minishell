@@ -15,58 +15,65 @@
 void	handle_local_vars(t_ms_data *data, char *arg);
 char	*process_argument(char *arg, t_ms_data *data);
 
-void post_process_command_args(t_ast *command_node, int arg_count, t_ms_data *data) {
-    int i = 0;
-    char *processed_arg;
-    char **split_arg = NULL;
-    int current_size = arg_count;  // Start with the initially allocated size.
+void	split_loc_vars(t_ast *command_node, char *processed_arg, int *current_size, int *i)
+{
+	char **split_arg;
+	int split_count;
+	int required_size;
+	int	j;
 
-    while (i < current_size) {
-        if (!is_in_single_quotes(command_node->args[i])) {
-            handle_local_vars(data, command_node->args[i]);
-            processed_arg = process_argument(command_node->args[i], data);
-        } else {
-            processed_arg = ft_substr(command_node->args[i], 1, ft_strlen(command_node->args[i]) - 2);
-        }
-        free(command_node->args[i]);
+	split_arg = NULL;
+	split_arg = ft_split(processed_arg, ' ');
+	split_count = ft_len_2d_arr(split_arg);
+	if (split_count > 1)
+	{
+		required_size = *i + split_count;
+		if (required_size > *current_size)
+		{
+			command_node->args = ft_realloc_array(command_node->args, *current_size, required_size);
+			*current_size = required_size;
+		}
+		j = 0;
+		while (j < split_count)
+		{
+			command_node->args[*i + j] = ft_strdup(split_arg[j]);
+			j++;
+		}
+		*i += split_count;
+	}
+	else
+	{
+		command_node->args[*i] = ft_strdup(processed_arg);
+		(*i)++;
+	}
+	ft_free_2d_arr(split_arg);
+}
 
-        // Split the processed argument
-        split_arg = ft_split(processed_arg, ' ');
-        int split_count = ft_len_2d_arr(split_arg);  // Get the number of split elements
+void	post_process_command_args(t_ast *command_node, int arg_count, \
+									t_ms_data *data)
+{
+	int		i;
+	char	*processed_arg;
+	int		current_size;
 
-        // Reallocate if necessary to accommodate the new arguments
-        if (split_count > 1) {
-            int required_size = i + split_count;  // Calculate how much space we need
-            if (required_size > current_size) {
-                current_size = required_size;
-                command_node->args = realloc(command_node->args, sizeof(char *) * (current_size + 1));
-                if (!command_node->args) {
-                    // Handle allocation failure
-                    perror("Realloc failed");
-                    exit(1);
-                }
-            }
-            
-            // Add split arguments to command_node->args
-            for (int j = 0; j < split_count; j++) {
-                command_node->args[i + j] = ft_strdup(split_arg[j]);
-            }
-            i += split_count;  // Move index by the number of new arguments added
-        } else {
-            command_node->args[i] = ft_strdup(processed_arg);
-            i++;
-        }
-
-        // Free split_arg array and processed_arg
-        for (int j = 0; split_arg[j]; j++) {
-            free(split_arg[j]);
-        }
-        free(split_arg);
-        free(processed_arg);
-    }
-
-    command_node->args[current_size] = NULL;  // Null-terminate the args array
-    final_quote_removal(current_size, command_node);
+	i = 0;
+	current_size = arg_count;
+	while (i < current_size)
+	{
+		if (!is_in_single_quotes(command_node->args[i]))
+		{
+			handle_local_vars(data, command_node->args[i]);
+			processed_arg = process_argument(command_node->args[i], data);
+		}
+		else
+			processed_arg = ft_substr(command_node->args[i], 1, \
+										ft_strlen(command_node->args[i]) - 2);
+		free(command_node->args[i]);
+		split_loc_vars(command_node, processed_arg, &current_size, &i);
+		free(processed_arg);
+	}
+	command_node->args[current_size] = NULL;
+	final_quote_removal(current_size, command_node);
 }
 
 void	handle_local_vars(t_ms_data *data, char *arg)

@@ -25,10 +25,11 @@ int	handle_add_set_shell_variable(t_env **shell_var, char *line)
 {
 	char	*key;
 	char	*value;
-	char	*nq_value= NULL;
+	char	*nq_value;
 
 	key = NULL;
 	value = NULL;
+	nq_value= NULL;
 	if (*shell_var == NULL)
 		add_shell_var_node(shell_var, line);
 	else

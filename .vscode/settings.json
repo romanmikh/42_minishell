@@ -40,7 +40,8 @@
         "features.h": "c",
         "ioctl.h": "c",
         "termios.h": "c",
-        "errno.h": "c"
+        "errno.h": "c",
+        "stddef.h": "c"
     },
     "docwriter.style": "Doxygen",
     "docwriter.progress.trackFunctions": true,

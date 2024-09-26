@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rmikhayl <rmikhayl@student.42london.c      +#+  +:+       +#+        */
+/*   By: rocky <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/17 17:25:48 by rmikhayl          #+#    #+#             */
-/*   Updated: 2024/07/11 15:02:22 by dmdemirk         ###   ########.fr       */
+/*   Updated: 2024/09/26 18:31:00 by rocky            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,6 +73,7 @@ char		*ft_strstr(const char *big, const char *little);
 char		*ft_strcat_const(const char *dest, const char *src);
 char		*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 char		*ft_substr(char const *s, unsigned int start, size_t len);
+char		**ft_realloc_array(char **array, int old_size, int new_size);
 char		*ft_strnstr(const char *haystack, const char *needle, size_t len);
 
 void		ft_put_ptr(uintptr_t num);
@@ -95,6 +96,7 @@ size_t		ft_strlcpy(char *dest, const char *src, size_t size);
 size_t		ft_strlcat(char *dest, const char *src, size_t size);
 
 double		ft_atof(const char *str);
+
 long		ft_atol(const char *nptr);
 
 const char	*ft_exclude_delimiters(const char *str, char *delims);
