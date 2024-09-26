@@ -21,10 +21,32 @@ int		handle_get_shell_variable(t_ms_data *data, const char *key);
 int		handle_shell_variable(t_ast *node, t_ms_data *data);
 void	shell_variable_update(t_ms_data *data, int status);
 
+
+
+
+#include <stdlib.h>
+#include <string.h>
+
+char *ft_remove_quotes(char *str) {
+    int len = strlen(str);
+	char *new_str = NULL;
+
+    // Check if the string has at least 2 characters and starts and ends with the same quote
+    if (len > 1 && ((str[0] == '\'' && str[len - 1] == '\'') || (str[0] == '"' && str[len - 1] == '"'))) {
+        // Create a new string without the quotes
+        new_str = strndup(str + 1, len - 2);
+        return new_str;
+    }
+    // Return the original string if no quotes to remove
+    return strdup(str);
+}
+
+
 int	handle_add_set_shell_variable(t_env **shell_var, char *line)
 {
 	char	*key;
 	char	*value;
+	char	*nq_value= NULL;
 
 	key = NULL;
 	value = NULL;
@@ -34,7 +56,10 @@ int	handle_add_set_shell_variable(t_env **shell_var, char *line)
 	{
 		key = ft_strcdup(line, '=');
 		value = ft_strchr(line, '=') + 1;
-		set_shell_var(shell_var, key, value);
+		nq_value = ft_remove_quotes(value);
+		// free(value);
+		set_shell_var(shell_var, key, nq_value);
+		// free(nq_value);
 		free(key);
 	}
 	return (0);

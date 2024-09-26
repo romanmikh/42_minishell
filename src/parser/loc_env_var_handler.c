@@ -20,6 +20,7 @@ void	post_process_command_args(t_ast *command_node, int arg_count, \
 {
 	int		i;
 	char	*processed_arg;
+	char	**split_arg = NULL;
 
 	i = 0;
 	while (i < arg_count)
@@ -35,10 +36,28 @@ void	post_process_command_args(t_ast *command_node, int arg_count, \
 					ft_strlen(command_node->args[i]) - 2);
 		}
 		free(command_node->args[i]);
-		command_node->args[i] = ft_strdup(processed_arg);
+		// ft_printf(RED"processed_arg: '%s'\n"RESET, processed_arg);
+		// here we split it by ' ' and add 2 args
+		split_arg = ft_split(processed_arg, ' ');
+		if (split_arg[1])
+		{
+			command_node->args[i] = ft_strdup(split_arg[0]);
+			command_node->args[i+1] = ft_strdup(split_arg[1]);
+			i += 2;
+			// free(split_arg[0]);
+			// free(split_arg[1]);
+			// free(split_arg);
+		}
+		else
+			command_node->args[i] = ft_strdup(processed_arg);
+		
+		// command_node->args[i] = ft_strdup(processed_arg);
+		// ft_printf(RED"cmd->args[i]: '%s'\n"RESET, command_node->args[i]);
+		// ft_printf(RED"cmd->args[i+1]: '%s'\n"RESET, command_node->args[i+1]);
 		free(processed_arg);
 		i++;
 	}
+	
 	final_quote_removal(arg_count, command_node);
 }
 
@@ -103,5 +122,6 @@ char	*process_argument(char *arg, t_ms_data *data)
 		else
 			processed_arg = append_literal(&start, processed_arg);
 	}
+	// ft_printf(GRN"ev: '%s'\n"RESET, processed_arg);
 	return (processed_arg);
 }
