@@ -15,14 +15,6 @@
 void	handle_local_vars(t_ms_data *data, char *arg);
 char	*process_argument(char *arg, t_ms_data *data);
 
-int count_elements(char **array) {
-    int count = 0;
-    while (array && array[count]) {
-        count++;
-    }
-    return count;
-}
-
 void post_process_command_args(t_ast *command_node, int arg_count, t_ms_data *data) {
     int i = 0;
     char *processed_arg;
@@ -40,7 +32,7 @@ void post_process_command_args(t_ast *command_node, int arg_count, t_ms_data *da
 
         // Split the processed argument
         split_arg = ft_split(processed_arg, ' ');
-        int split_count = count_elements(split_arg);  // Get the number of split elements
+        int split_count = ft_len_2d_arr(split_arg);  // Get the number of split elements
 
         // Reallocate if necessary to accommodate the new arguments
         if (split_count > 1) {
@@ -138,7 +130,5 @@ char	*process_argument(char *arg, t_ms_data *data)
 		else
 			processed_arg = append_literal(&start, processed_arg);
 	}
-	ft_printf(YEL"processed_arg: '%s'\n"RESET, processed_arg);
-	fflush(stdout);
 	return (processed_arg);
 }

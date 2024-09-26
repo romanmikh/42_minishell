@@ -77,13 +77,11 @@ t_ast	*manage_commands(t_token **tokens, t_ms_data *data)
 	command_node = new_ast_node();
 	command_node->type = PHRASE;
 	cmd_arg_count = cmd_arg_len(*tokens);
-	command_node->args = malloc(sizeof(char *) * (cmd_arg_count + 1)); // issue is that this is fixed but increased inside ppca
+	command_node->args = malloc(sizeof(char *) * (cmd_arg_count + 1));
 	if (!command_node->args)
 		return (NULL);
 	set_command_args(command_node, tokens, cmd_arg_count);
 	post_process_command_args(command_node, cmd_arg_count, data);
-// PROBLEM IS INSIDE post_process_command_args()!!!!!!!!!!!!!!
-	ft_print_2d_arr(command_node->args, "after ppca");
 	return (command_node);
 }
 

@@ -1,28 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_2d_arr.c                                  :+:      :+:    :+:   */
+/*   ft_len_2d_arr.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rmikhayl <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: rocky <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/09 19:37:13 by rmikhayl          #+#    #+#             */
-/*   Updated: 2024/09/09 19:37:16 by rmikhayl         ###   ########.fr       */
+/*   Created: 2024/09/26 18:25:59 by rocky             #+#    #+#             */
+/*   Updated: 2024/09/26 18:26:01 by rocky            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_print_2d_arr(char **arr, char *name)
+int	ft_len_2d_arr(char **array)
 {
-	int	i;
+	int	count;
 
-	i = 0;
-	if (ft_strlen(name) > 0)
-		ft_printf(GRN"----- 		%s[]		-----\n"RESET, name);
-	while (arr && arr[i])
-	{
-		ft_printf(GRN"arr[%d]:	%s		at add:	%p	\n"RESET, \
-			i, arr[i], arr[i]);
-		i++;
-	}
+	count = 0;
+	while (array && array[count])
+		count++;
+	return (count);
 }
