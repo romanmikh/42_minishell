@@ -64,7 +64,7 @@ char		*ft_substr(char const *s, unsigned int start, size_t len);
 char		*ft_strnstr(const char *haystack, const char *needle, size_t len);
 
 void		ft_free_2d_arr(char **arr);
-void		ft_print_2d_arr(char **arr);
+void		ft_print_2d_arr(char **arr, char *name);
 void		ft_bzero(void *s, size_t n);
 void		ft_putnbr_fd(int n, int fd);
 void		ft_putchar_fd(char c, int fd);

@@ -12,11 +12,16 @@
 
 #include "libft.h"
 
-void	ft_print_2d_arr(char **arr)
+void	ft_print_2d_arr(char **arr, char *name)
 {
 	int	i;
 
-	i = -1;
-	while (arr[++i] != NULL)
-		ft_printf("arr[%d]:	%s		at add:	%p	\n", i, arr[i], arr[i]);
+	i = 0;
+	if (ft_strlen(name) > 0)
+		ft_printf(GRN"----- 		%s[]		-----\n"RESET, name);
+	while (arr && arr[i])
+	{
+		ft_printf(GRN"arr[%d]:	%s		at add:	%p	\n"RESET, i, arr[i], arr[i]);
+		i++;
+	}
 }

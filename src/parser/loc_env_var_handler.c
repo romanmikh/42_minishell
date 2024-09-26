@@ -15,6 +15,14 @@
 void	handle_local_vars(t_ms_data *data, char *arg);
 char	*process_argument(char *arg, t_ms_data *data);
 
+int count_elements(char **array) {
+    int count = 0;
+    while (array && array[count]) {
+        count++;
+    }
+    return count;
+}
+
 void	post_process_command_args(t_ast *command_node, int arg_count, \
 			t_ms_data *data)
 {
@@ -36,26 +44,29 @@ void	post_process_command_args(t_ast *command_node, int arg_count, \
 					ft_strlen(command_node->args[i]) - 2);
 		}
 		free(command_node->args[i]);
-		// ft_printf(RED"processed_arg: '%s'\n"RESET, processed_arg);
 		// here we split it by ' ' and add 2 args
 		split_arg = ft_split(processed_arg, ' ');
-		if (split_arg[1])
+		ft_print_2d_arr(split_arg, "split_arg");
+		if (count_elements(split_arg) > 1)
 		{
-			command_node->args[i] = ft_strdup(split_arg[0]);
-			command_node->args[i+1] = ft_strdup(split_arg[1]);
-			i += 2;
-			// free(split_arg[0]);
-			// free(split_arg[1]);
-			// free(split_arg);
+			int j = 0;
+			while (j < count_elements(split_arg))
+			{
+				command_node->args[i+j] = ft_strdup(split_arg[j]);
+				j++;
+			}
+			i += j;
+			command_node->args[i] = NULL;
 		}
 		else
+		{
 			command_node->args[i] = ft_strdup(processed_arg);
-		
-		// command_node->args[i] = ft_strdup(processed_arg);
-		// ft_printf(RED"cmd->args[i]: '%s'\n"RESET, command_node->args[i]);
-		// ft_printf(RED"cmd->args[i+1]: '%s'\n"RESET, command_node->args[i+1]);
+			i++;
+		}
+		ft_print_2d_arr(command_node->args, "cmd->args");
+
 		free(processed_arg);
-		i++;
+		
 	}
 	
 	final_quote_removal(arg_count, command_node);
@@ -122,6 +133,7 @@ char	*process_argument(char *arg, t_ms_data *data)
 		else
 			processed_arg = append_literal(&start, processed_arg);
 	}
-	// ft_printf(GRN"ev: '%s'\n"RESET, processed_arg);
+	ft_printf(YEL"processed_arg: '%s'\n"RESET, processed_arg);
+	fflush(stdout);
 	return (processed_arg);
 }
