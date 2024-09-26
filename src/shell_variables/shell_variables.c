@@ -57,9 +57,8 @@ int	handle_add_set_shell_variable(t_env **shell_var, char *line)
 		key = ft_strcdup(line, '=');
 		value = ft_strchr(line, '=') + 1;
 		nq_value = ft_remove_quotes(value);
-		// free(value);
 		set_shell_var(shell_var, key, nq_value);
-		// free(nq_value);
+		free(nq_value);
 		free(key);
 	}
 	return (0);
