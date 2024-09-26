@@ -82,7 +82,6 @@ t_ast	*manage_commands(t_token **tokens, t_ms_data *data)
 		return (NULL);
 	set_command_args(command_node, tokens, cmd_arg_count);
 	post_process_command_args(command_node, cmd_arg_count, data);
-	// ft_print_2d_arr(command_node->args, "manage_commands, after ppca");
 	return (command_node);
 }
 
