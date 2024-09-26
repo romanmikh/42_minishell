@@ -12,20 +12,22 @@
 
 #include "tokens.h"
 
-void	print_tokens(t_token *tokens);
+void	print_tokens(t_token *tokens, char *name);
 void	print_ast_args(t_ast *node);
 void	append_word_if_valid(char *start, char *str, t_token **tokens);
 
-void	print_tokens(t_token *tokens)
+void	print_tokens(t_token *tokens, char *name)
 {
 	t_token	*token;
 	int		i;				
 
 	i = 0;
 	token = tokens;
+	if (ft_strlen(name) > 0)
+		ft_printf(GRN"----- 		%s[]		-----\n"RESET, name);
 	while (token != NULL)
 	{
-		ft_printf("input[%d] ->  	%s			at add:			%p\n", \
+		ft_printf(GRN"input[%d] ->  	%s		at add:			%p\n"RESET, \
 			i, token->data, &token->data);
 		token = token->next;
 		i++;

@@ -76,11 +76,20 @@ void	post_process_command_args(t_ast *command_node, int arg_count, \
 			processed_arg = ft_substr(command_node->args[i], 1, \
 										ft_strlen(command_node->args[i]) - 2);
 		free(command_node->args[i]);
+		ft_printf("processed_arg: %s\n", processed_arg);
+		processed_arg = ft_remove_quotes(processed_arg, '\"');
+		ft_printf("processed_arg: %s\n", processed_arg);
 		split_loc_vars(command_node, processed_arg, &current_size, &i);
 		free(processed_arg);
 	}
 	command_node->args[current_size] = NULL;
-	final_quote_removal(current_size, command_node);
+	for (i=0; i < current_size; i++)
+	{
+		command_node->args[i] = ft_remove_quotes(command_node->args[i], '\"');
+	}
+	
+	//final_quote_removal(current_size, command_node);
+	ft_print_2d_arr(command_node->args, "ppca after final-quote_removal");
 }
 
 char	*append_expanded_var(char *processed_arg, char *tmp_ad, \

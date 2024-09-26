@@ -26,6 +26,7 @@ void	final_quote_removal(int arg_count, t_ast *command_node)
 	char	*trimmed_arg;
 
 	i = 0;
+	ft_print_2d_arr(command_node->args, "final-quote_removal");
 	while (i < arg_count)
 	{
 		arg = command_node->args[i];
