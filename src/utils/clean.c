@@ -66,9 +66,11 @@ void	free_ms_data(t_ms_data *data)
 
 void	loop_cleanup(t_loop_data *loop_data, t_token *tokens_head)
 {
+	ft_printf("we're in clean loop\n");
 	free(loop_data->trimmed_input);
 	free_all_tokens(tokens_head);
 	free_ast(loop_data->tree);
+	ft_printf("we're out of clean loop\n");
 }
 
 void	free_ast(t_ast *node)

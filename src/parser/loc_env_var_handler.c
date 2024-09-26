@@ -64,11 +64,9 @@ void	post_process_command_args(t_ast *command_node, int arg_count, \
 			i++;
 		}
 		ft_print_2d_arr(command_node->args, "cmd->args");
-
 		free(processed_arg);
 		
 	}
-	
 	final_quote_removal(arg_count, command_node);
 }
 
