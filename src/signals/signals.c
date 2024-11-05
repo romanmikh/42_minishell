@@ -15,21 +15,13 @@
 #include <readline/history.h>
 #include <unistd.h>
 #include "libft.h"
+#include "exit_status.h"
 
 void	signal_reset_prompt(int signo);
-void	set_signals_interactive(void);
+void 	set_signals_interactive(t_ms_data *data);
 void	signal_print_newline(int signal);
 void	sigquit_ignore(void);
 void	set_signals_noninteractive(void);
-
-void	signal_reset_prompt(int signo)
-{
-	(void)signo;
-	write(1, "\n", 1);
-	rl_on_new_line();
-	rl_replace_line("", 0);
-	rl_redisplay();
-}
 
 void	signal_print_newline(int signal)
 {
@@ -48,26 +40,37 @@ void	sigquit_ignore(void)
 	sigaction(SIGQUIT, &a, NULL);
 }
 
-void	set_signals_interactive(void)
-{
-	struct sigaction	a;
+static t_ms_data *data_ptr = NULL;
 
-	sigquit_ignore();
-	sigemptyset(&a.sa_mask);
-	a.sa_flags = 0;
-	a.sa_handler = *signal_reset_prompt;
-	a.sa_flags |= SA_RESTART;
-	sigaction(SIGINT, &a, NULL);
+void signal_reset_prompt(int signo) {
+    (void)signo;
+	if (!rl_line_buffer || rl_line_buffer[0] == '\0')
+    {
+        if (data_ptr)
+		{
+			printf("\n");
+			handle_exit(data_ptr, 0);
+    	}
+    }
+    write(1, "\n", 1);
+    rl_on_new_line();
+    rl_replace_line("", 0);
+    rl_redisplay();
 }
 
-void	set_signals_noninteractive(void)
-{
-	struct sigaction	a;
+void set_signals_interactive(t_ms_data *data) {
+    data_ptr = data;
+    struct sigaction sa;
+    sa.sa_handler = signal_reset_prompt;
+    sa.sa_flags = SA_RESTART;
+    sigemptyset(&sa.sa_mask);
+    sigaction(SIGINT, &sa, NULL);
+}
 
-	sigemptyset(&a.sa_mask);
-	a.sa_flags = 0;
-	a.sa_handler = &signal_print_newline;
-	sigaction(SIGINT, &a, NULL);
-	a.sa_handler = SIG_IGN;
-	sigaction(SIGQUIT, &a, NULL);
+void set_signals_noninteractive(void) {
+    struct sigaction sa;
+    sa.sa_handler = SIG_IGN;
+    sigemptyset(&sa.sa_mask);
+    sa.sa_flags = 0;
+    sigaction(SIGQUIT, &sa, NULL);
 }
