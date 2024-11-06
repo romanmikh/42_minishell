@@ -63,6 +63,7 @@ void	handle_exit(t_ms_data *data, int status)
 	free(exit_status_str);
 	clear_history_file();
 	free_ms_data(data);
+	// printf("we're about to free signal context!\n");
 	free_signal_context(NULL);
 	exit(status);
 }

@@ -15,6 +15,7 @@
 #include "shell.h"
 #include "pipe.h"
 #include "signals.h"
+#include "exit_status.h"
 
 static int	status_handler(int status, \
 				t_loop_data *loop_data, t_token *token_head);
@@ -57,10 +58,7 @@ static void	main_loop(t_ms_data *data, t_loop_data *loop_data)
 		loop_data->input = readline("🌴 maxishell> ");
 		set_signals_noninteractive();
 		if (!loop_data->input || !ft_strncmp(loop_data->input, "exit", 4))
-		{
-			write(STDOUT_FILENO, "exit\n", 5);
-			break ;
-		}
+			handle_exit(data, 0);
 		make_history(loop_data->input);
 		loop_data->trimmed_input = trim_input(loop_data->input);
 		if (input_error_checks(loop_data))
