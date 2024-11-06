@@ -57,8 +57,6 @@ int	execute(t_ms_data *data)
 	builtin_functions[4] = &builtin_export;
 	builtin_functions[5] = &builtin_pwd;
 	builtin_functions[6] = &builtin_unset;
-	if (data->args[0] == NULL)
-		ft_perror("minishel");
 	i = -1;
 	while (++i < sizeof(builtin_commands) / sizeof(char *))
 		if (ft_strcmp(data->args[0], builtin_commands[i]) == 0)
