@@ -42,7 +42,8 @@
         "termios.h": "c",
         "errno.h": "c",
         "stddef.h": "c",
-        "exit_status.h": "c"
+        "exit_status.h": "c",
+        "filesystem": "c"
     },
     "docwriter.style": "Doxygen",
     "docwriter.progress.trackFunctions": true,

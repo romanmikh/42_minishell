@@ -61,12 +61,12 @@ void	handle_numeric_error(t_ms_data *data, const char *arg)
 void	handle_too_many_args_error(t_ms_data *data)
 {
     exit_status_handler(data, TOO_MANY_ARGS, "exit");
-    handle_exit(data, 0);
+    handle_exit(data, TOO_MANY_ARGS);
 }
 
 void	handle_exit(t_ms_data *data, int status)
 {
-    if (status != NUMERIC_REQUIRED && status != TOO_MANY_ARGS)
+    if (status != 0 && status != TOO_MANY_ARGS)
         ft_putendl_fd("exit", STDOUT_FILENO);
     cleanup_exit_resources(data);
     exit(status);
@@ -94,6 +94,7 @@ int	builtin_exit(t_ms_data *data)
 	{
 		ft_free_2d_arr(data->args);
 		data->args = NULL;
+		ft_putendl_fd("exit", STDOUT_FILENO);
 		handle_exit(data, 0);
 	}
 	return (0);

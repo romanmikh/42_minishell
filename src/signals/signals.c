@@ -17,9 +17,8 @@
 #include "libft.h"
 #include "exit_status.h"
 
-// void signal_reset_prompt(int signo, siginfo_t *info, void *ucontext);
-void signal_reset_prompt(int signo, siginfo_t *info, void *ucontext);
-void 	set_signals_interactive(t_ms_data *data);
+void	signal_reset_prompt(int signo, siginfo_t *info, void *ucontext);
+void	set_signals_interactive(t_ms_data *data);
 void	signal_print_newline(int signal);
 void	sigquit_ignore(void);
 void	set_signals_noninteractive(void);
@@ -47,7 +46,6 @@ t_signal_context *get_context(t_ms_data *data) {
     static t_signal_context *context = NULL;
 
     if (data != NULL) {
-        // Allocate context if it hasn't been initialized
         if (!context) {
             context = malloc(sizeof(t_signal_context));
             if (!context)
@@ -73,14 +71,14 @@ void set_signals_interactive(t_ms_data *data)
     sigaction(SIGINT, &sa, NULL);
 }
 
-// Signal handler function with correct signature
 void signal_reset_prompt(int signo, siginfo_t *info, void *ucontext)
 {
+    t_signal_context *context;
+    
     (void)signo;
     (void)info;
     (void)ucontext;
-
-    t_signal_context *context = get_context(NULL); // Retrieve the context
+    context = get_context(NULL);
     if (!rl_line_buffer || rl_line_buffer[0] == '\0')
     {
         if (context && context->data_cxt)
@@ -94,7 +92,6 @@ void signal_reset_prompt(int signo, siginfo_t *info, void *ucontext)
     rl_replace_line("", 0);
     rl_redisplay();
 }
-
 
 void set_signals_noninteractive(void) {
     struct sigaction sa;
