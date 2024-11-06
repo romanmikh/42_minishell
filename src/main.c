@@ -58,7 +58,6 @@ static void	main_loop(t_ms_data *data, t_loop_data *loop_data)
 		set_signals_interactive(data);
 		loop_data->input = readline("🌴 maxishell> ");
 		set_signals_noninteractive();
-		
 		if (!loop_data->input || !ft_strncmp(loop_data->input, "exit", 4))
 		{
 			data->args = ft_split(loop_data->input, ' ');
