@@ -18,6 +18,7 @@
 #include "exit_status.h"
 
 // void signal_reset_prompt(int signo, siginfo_t *info, void *ucontext);
+void signal_reset_prompt(int signo, siginfo_t *info, void *ucontext);
 void 	set_signals_interactive(t_ms_data *data);
 void	signal_print_newline(int signal);
 void	sigquit_ignore(void);
@@ -41,8 +42,6 @@ void	sigquit_ignore(void)
 	a.sa_handler = SIG_IGN;
 	sigaction(SIGQUIT, &a, NULL);
 }
-
-void signal_reset_prompt(int signo, siginfo_t *info, void *ucontext);
 
 t_signal_context *get_context(t_ms_data *data) {
     static t_signal_context *context = NULL;
