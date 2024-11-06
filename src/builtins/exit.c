@@ -26,10 +26,12 @@ Functionality:
 - Exit with the exit status
  */
 
-void free_signal_context()
+void	free_signal_context(void)
 {
-    t_signal_context *context = get_context(NULL);
-    free(context);
+	t_signal_context	*context;
+
+	context = get_context(NULL);
+	free(context);
 }
 
 void	clear_history_file(void)
@@ -37,45 +39,47 @@ void	clear_history_file(void)
 	remove(HISTORY_PATH);
 }
 
-void cleanup_exit_resources(t_ms_data *data)
+void	cleanup_exit_resources(t_ms_data *data)
 {
-    if (data->args)
+	if (data->args)
 	{
-        ft_free_2d_arr(data->args);
-        data->args = NULL;
-    }
-    clear_history_file();
-    free_ms_data(data);
-    free_signal_context(NULL);
+		ft_free_2d_arr(data->args);
+		data->args = NULL;
+	}
+	clear_history_file();
+	free_ms_data(data);
+	free_signal_context();
 }
 
 void	handle_numeric_error(t_ms_data *data, const char *arg)
 {
-    char *temp_str = ft_strjoin("exit: ", arg);
+	char	*temp_str;
 
-    exit_status_handler(data, NUMERIC_REQUIRED, temp_str);
-    free(temp_str);
-    handle_exit(data, 0);
+	temp_str = ft_strjoin("exit: ", arg);
+	exit_status_handler(data, NUMERIC_REQUIRED, temp_str);
+	free(temp_str);
+	handle_exit(data, 0);
 }
 
 void	handle_too_many_args_error(t_ms_data *data)
 {
-    exit_status_handler(data, TOO_MANY_ARGS, "exit");
-    handle_exit(data, TOO_MANY_ARGS);
+	exit_status_handler(data, TOO_MANY_ARGS, "exit");
+	handle_exit(data, TOO_MANY_ARGS);
 }
 
 void	handle_exit(t_ms_data *data, int status)
 {
-    if (status != 0 && status != TOO_MANY_ARGS)
-        ft_putendl_fd("exit", STDOUT_FILENO);
-    cleanup_exit_resources(data);
-    exit(status);
+	if (status != 0 && status != TOO_MANY_ARGS)
+		ft_putendl_fd("exit", STDOUT_FILENO);
+	cleanup_exit_resources(data);
+	exit(status);
 }
 
 int	builtin_exit(t_ms_data *data)
 {
-	int	number = 0;
+	int	number;
 
+	number = 0;
 	if (data->args[1])
 	{
 		if (ft_isnumber(data->args[1]) == 0)

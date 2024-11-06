@@ -86,32 +86,29 @@ void	write_heredoc_lines(char **line, int file_fd, char *eof, \
 	}
 }
 
-int redirect_here_doc(t_ast *node, t_ms_data *data)
+int	redirect_here_doc(t_ast *node, t_ms_data *data)
 {
-    char                *line;
-    char                *eof;
-    int                 file_fd;
-    struct sigaction    sa_old;
+	char				*line;
+	char				*eof;
+	int					file_fd;
+	struct sigaction	sa_old;
 
-    line = NULL;
-    if (node->right->args[0] == NULL)
-        return (1);
-    setup_sigint_handler(&sa_old);
-    file_fd = open_tmp_file("w");
-    eof = ft_strdup(node->right->args[0]);
-    line = process_and_reassemble(readline("🌞 > "), data);
-    write_heredoc_lines(&line, file_fd, eof, data);
-    if (g_heredoc_interrupted) {
-        // Clean up and exit heredoc
-        handle_heredoc_interruption(line, eof, file_fd, &sa_old);
-        return 1;
-    }
-    free(line);
-    free(eof);
-    close(file_fd);
-    sigaction(SIGINT, &sa_old, NULL);
-    file_fd = open_tmp_file("r");
-    execute_child(node->left, data, &file_fd);
-    unlink("/tmp/heredoc");
-    return (0);
+	line = NULL;
+	if (node->right->args[0] == NULL)
+		return (1);
+	setup_sigint_handler(&sa_old);
+	file_fd = open_tmp_file("w");
+	eof = ft_strdup(node->right->args[0]);
+	line = process_and_reassemble(readline("🌞 > "), data);
+	write_heredoc_lines(&line, file_fd, eof, data);
+	if (g_heredoc_interrupted)
+		return (handle_heredoc_interruption(line, eof, file_fd, &sa_old));
+	free(line);
+	free(eof);
+	close(file_fd);
+	sigaction(SIGINT, &sa_old, NULL);
+	file_fd = open_tmp_file("r");
+	execute_child(node->left, data, &file_fd);
+	unlink("/tmp/heredoc");
+	return (0);
 }
