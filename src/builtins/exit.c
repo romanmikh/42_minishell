@@ -18,6 +18,7 @@
 #include "exit_status.h"
 #include "tokens.h"
 #include "signals.h"
+#include "builtins.h"
 
 /*
 Functionality:
@@ -25,19 +26,6 @@ Functionality:
 - Free the environment
 - Exit with the exit status
  */
-
-void	free_signal_context(void)
-{
-	t_signal_context	*context;
-
-	context = get_context(NULL);
-	free(context);
-}
-
-void	clear_history_file(void)
-{
-	remove(HISTORY_PATH);
-}
 
 void	cleanup_exit_resources(t_ms_data *data)
 {

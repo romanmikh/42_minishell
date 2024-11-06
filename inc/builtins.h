@@ -16,12 +16,14 @@
 # include "shell.h"
 
 /*  builtin functions   */
-int	builtin_cd(t_ms_data *data);
-int	builtin_echo(t_ms_data *data);
-int	builtin_env(t_ms_data *data);
-int	builtin_exit(t_ms_data *data);
-int	builtin_export(t_ms_data *data);
-int	builtin_pwd(t_ms_data *data);
-int	builtin_unset(t_ms_data *data);
+int		builtin_cd(t_ms_data *data);
+int		builtin_echo(t_ms_data *data);
+int		builtin_env(t_ms_data *data);
+int		builtin_exit(t_ms_data *data);
+int		builtin_export(t_ms_data *data);
+int		builtin_pwd(t_ms_data *data);
+int		builtin_unset(t_ms_data *data);
+
+void	free_signal_context(void);
 
 #endif
