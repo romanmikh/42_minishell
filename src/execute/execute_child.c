@@ -1,3 +1,14 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   execute_child.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rocky <marvin@42.fr>                       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/11/06 16:28:49 by rocky             #+#    #+#             */
+/*   Updated: 2024/11/06 16:28:51 by rocky            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "builtins.h"
 #include "libft.h"
@@ -12,7 +23,7 @@
 #include "signals.h"
 #include "exit_status.h"
 
-int	execute(t_ms_data *data);
+int			execute(t_ms_data *data);
 static int	new_process(t_ms_data *data);
 static void	signal_handler(void);
 static void	handle_exec_errors(char *exec_path, t_ms_data *data);
@@ -91,7 +102,7 @@ static int	new_process(t_ms_data *data)
 	if (pid == -1)
 		ft_perror("fork");
 	if (pid == 0)
-		child_process(data);  // Call the separated child process function
+		child_process(data);
 	close_fds(data->std_in, data->std_out);
 	waitpid(pid, &exit, 0);
 	data->exit_status = WEXITSTATUS(exit);
