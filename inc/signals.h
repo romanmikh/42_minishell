@@ -36,4 +36,6 @@ void	handle_sigint_heredoc(int signo);
 
 int		ft_perror(char *str);
 
+t_signal_context *get_context(t_ms_data *data);
+
 #endif

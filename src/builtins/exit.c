@@ -17,6 +17,7 @@
 #include "env.h"
 #include "exit_status.h"
 #include "tokens.h"
+#include "signals.h"
 
 /*
 Functionality:
@@ -45,6 +46,12 @@ void	handle_too_many_args_error(t_ms_data *data)
 	exit(TOO_MANY_ARGS);
 }
 
+void free_signal_context()
+{
+    t_signal_context *context = get_context(NULL);
+    free(context);
+}
+
 void	handle_exit(t_ms_data *data, int status)
 {
 	char	*exit_status_str;
@@ -56,6 +63,7 @@ void	handle_exit(t_ms_data *data, int status)
 	free(exit_status_str);
 	clear_history_file();
 	free_ms_data(data);
+	free_signal_context(NULL);
 	exit(status);
 }
 
