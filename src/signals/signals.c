@@ -17,11 +17,13 @@
 #include "libft.h"
 #include "exit_status.h"
 
-void	signal_reset_prompt(int signo);
+// void signal_reset_prompt(int signo, siginfo_t *info, void *ucontext);
 void 	set_signals_interactive(t_ms_data *data);
 void	signal_print_newline(int signal);
 void	sigquit_ignore(void);
 void	set_signals_noninteractive(void);
+
+
 
 void	signal_print_newline(int signal)
 {
@@ -40,17 +42,53 @@ void	sigquit_ignore(void)
 	sigaction(SIGQUIT, &a, NULL);
 }
 
-static t_ms_data *data_ptr = NULL;
+void signal_reset_prompt(int signo, siginfo_t *info, void *ucontext);
 
-void signal_reset_prompt(int signo) {
+t_signal_context *get_context(t_ms_data *data) {
+    static t_signal_context *context = NULL;
+
+    if (data != NULL) {
+        // Allocate context if it hasn't been initialized
+        if (!context) {
+            context = malloc(sizeof(t_signal_context));
+            if (!context)
+                return NULL;
+        }
+        context->data_cxt = data;
+    }
+
+    return context;
+}
+
+void set_signals_interactive(t_ms_data *data)
+{
+    t_signal_context *context = get_context(data);
+    if (!context)
+        return;
+
+    struct sigaction sa;
+    sa.sa_sigaction = signal_reset_prompt;
+    sa.sa_flags = SA_RESTART | SA_SIGINFO;
+    sigemptyset(&sa.sa_mask);
+
+    sigaction(SIGINT, &sa, NULL);
+}
+
+// Signal handler function with correct signature
+void signal_reset_prompt(int signo, siginfo_t *info, void *ucontext)
+{
     (void)signo;
-	if (!rl_line_buffer || rl_line_buffer[0] == '\0')
+    (void)info;
+    (void)ucontext;
+
+    t_signal_context *context = get_context(NULL); // Retrieve the context
+    if (!rl_line_buffer || rl_line_buffer[0] == '\0')
     {
-        if (data_ptr)
-		{
-			printf("\n");
-			handle_exit(data_ptr, 0);
-    	}
+        if (context && context->data_cxt)
+        {
+            printf("\n");
+            handle_exit(context->data_cxt, 0);
+        }
     }
     write(1, "\n", 1);
     rl_on_new_line();
@@ -58,14 +96,6 @@ void signal_reset_prompt(int signo) {
     rl_redisplay();
 }
 
-void set_signals_interactive(t_ms_data *data) {
-    data_ptr = data;
-    struct sigaction sa;
-    sa.sa_handler = signal_reset_prompt;
-    sa.sa_flags = SA_RESTART;
-    sigemptyset(&sa.sa_mask);
-    sigaction(SIGINT, &sa, NULL);
-}
 
 void set_signals_noninteractive(void) {
     struct sigaction sa;

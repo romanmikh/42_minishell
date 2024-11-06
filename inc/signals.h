@@ -19,15 +19,15 @@
 # include <signal.h>
 # include "shell.h"
 
-typedef struct {
-    t_ms_data *data;  // Holds pointer to data from main
-} signal_context;
+typedef struct s_signal_context {
+    t_ms_data *data_cxt;
+} t_signal_context;
 
 // GLOBAL VAR
 extern volatile sig_atomic_t	g_heredoc_interrupted;
 
 /*      signals     */
-void	signal_reset_prompt(int signo);
+void signal_reset_prompt(int signo, siginfo_t *info, void *ucontext);
 void	set_signals_interactive(t_ms_data *data);
 void	signal_print_newline(int signal);
 void	sigquit_ignore(void);
