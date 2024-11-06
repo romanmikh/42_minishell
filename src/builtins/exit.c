@@ -63,16 +63,15 @@ void	handle_exit(t_ms_data *data, int status)
 	free(exit_status_str);
 	clear_history_file();
 	free_ms_data(data);
-	// printf("we're about to free signal context!\n");
+	printf("we're about to free signal context!\n");
 	free_signal_context(NULL);
 	exit(status);
 }
 
 int	builtin_exit(t_ms_data *data)
 {
-	int	number;
+	int	number = 0;
 
-	number = 0;
 	if (data->args[1])
 	{
 		if (ft_isnumber(data->args[1]) == 0)
@@ -82,10 +81,39 @@ int	builtin_exit(t_ms_data *data)
 		else
 		{
 			number = ft_atoi(data->args[1]);
+			ft_free_2d_arr(data->args); // Free args before exiting
+			data->args = NULL;
 			handle_exit(data, number);
 		}
 	}
 	else
+	{
+		ft_free_2d_arr(data->args); // Free args before exiting
+		data->args = NULL;
 		handle_exit(data, 0);
-	return (0);
+	}
+	return (0); // This line is redundant but kept for function signature consistency.
 }
+
+// int	builtin_exit(t_ms_data *data)
+// {
+// 	int	number;
+
+// 	number = 0;
+// 	if (data->args[1])
+// 	{
+// 		if (ft_isnumber(data->args[1]) == 0)
+// 			handle_numeric_error(data, data->args[1]);
+// 		else if (data->args[2])
+// 			handle_too_many_args_error(data);
+// 		else
+// 		{
+// 			printf("we're in builtin_exit!\n");
+// 			number = ft_atoi(data->args[1]);
+// 			handle_exit(data, number);
+// 		}
+// 	}
+// 	else
+// 		handle_exit(data, 0);
+// 	return (0);
+// }
