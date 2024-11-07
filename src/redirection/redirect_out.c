@@ -6,7 +6,7 @@
 /*   By: dmdemirk <dmdemirk@student.42london.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/11 14:32:59 by dmdemirk          #+#    #+#             */
-/*   Updated: 2024/09/09 13:39:13 by dmdemirk         ###   ########.fr       */
+/*   Updated: 2024/11/07 19:41:36 by dmdemirk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,40 +28,6 @@ int			redirect_out(t_ast *node, t_ms_data *data);
   - @return status:
   - 0: success
   - 1: error
- */
-
-/*
-   int	redirect_out(t_ast *node, t_ms_data *data)
-   {
-   pid_t	pid;
-   int		status;
-   int		fd;
-
-   pid = fork();
-   if (pid == -1)
-   return (1);
-   if (pid == 0)
-   {
-   if (data->std_out == -1)
-   {
-   data->std_out = open_file(node->right, ">");
-   if (data->std_out == -1)
-   return (1);
-   }
-   else
-   {
-   fd = open_file(node->right, ">");
-   if (fd == -1)
-   return (1);
-   dup2(fd, STDOUT_FILENO);
-   close(fd);
-   }
-   execute_ast(node->left, data);
-   exit(0);
-   }
-   waitpid(pid, &status, 0);
-   return (WEXITSTATUS(status));
-   }
  */
 
 static int	open_and_redirect(t_ast *node, t_ms_data *data)
@@ -89,7 +55,7 @@ int	redirect_out(t_ast *node, t_ms_data *data)
 {
 	pid_t	pid;
 	int		exec_status;
-  int   status;
+	int		status;
 
 	pid = fork();
 	if (pid == -1)
@@ -102,8 +68,8 @@ int	redirect_out(t_ast *node, t_ms_data *data)
 		exit(exec_status);
 	}
 	if (waitpid(pid, &status, 0) == -1)
-    return (EXIT_FAILURE);
-  if (WIFSIGNALED(status))
-    return (128 + WTERMSIG(status));
+		return (EXIT_FAILURE);
+	if (WIFSIGNALED(status))
+		return (128 + WTERMSIG(status));
 	return (WEXITSTATUS(status));
 }

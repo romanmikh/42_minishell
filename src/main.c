@@ -6,7 +6,7 @@
 /*   By: rmikhayl <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 13:23:26 by rmikhayl          #+#    #+#             */
-/*   Updated: 2024/09/09 13:27:44 by dmdemirk         ###   ########.fr       */
+/*   Updated: 2024/11/07 19:48:38 by dmdemirk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,12 @@
 #include "exit_status.h"
 #include "builtins.h"
 
-int	status_handler(int status, \
+int		status_handler(int status, \
 				t_loop_data *loop_data, t_token *token_head);
 void	process_ast_and_io(t_ms_data *data, \
 				t_loop_data *loop_data, t_token *tokens_head);
 void	main_loop(t_ms_data *data, t_loop_data *loop_data);
-int			main(int argc, char **argv, char **envp);
+int		main(int argc, char **argv, char **envp);
 
 int	status_handler(int status, \
 				t_loop_data *loop_data, t_token *tokens_head)
@@ -42,7 +42,6 @@ void	process_ast_and_io(t_ms_data *data, \
 	int	status;
 
 	status = execute_ast(loop_data->tree, data);
-	printf("execute ast exit status -> %d\n", status);
 	data->exit_status = status;
 	set_shell_var_handler(data);
 	if (status_handler(status, loop_data, tokens_head))
