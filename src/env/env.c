@@ -21,6 +21,32 @@ char	*get_env(t_env *envp, const char *key);
 void	set_env(t_env **env, const char *key, const char *value);
 int		unset_env(t_env **env, const char *name);
 
+
+char	*ft_remove_all_edge_quotes(char *str, char quote_type)
+{
+	int		start_quotes;
+	int		end_quotes;
+	int		len;
+	char	*new_str;
+
+	len = ft_strlen(str);
+	start_quotes = 0;
+	while (str[start_quotes] == quote_type)
+		start_quotes++;
+	end_quotes = 0;
+	while (len - end_quotes - 1 >= 0 && str[len - end_quotes - 1] == quote_type)
+		end_quotes++;
+	if (start_quotes > 0 && start_quotes == end_quotes)
+	{
+		new_str = ft_strndup(str + start_quotes, len - 2 * start_quotes);
+		return (new_str);
+	}
+	return (ft_strdup(str));
+}
+
+
+
+
 void	init_env(t_env **data_envp, char **envp)
 {
 	int	i;
@@ -74,24 +100,41 @@ void	set_env(t_env **env, const char *key, const char *value)
 {
 	t_env	*current;
 	t_env	*new_env;
+	char	*modified_value;
+	char	*temp;
 
 	current = *env;
+	modified_value = NULL;
+	if (value[0] != '\0')
+	{
+		modified_value = ft_remove_all_edge_quotes((char *)value, '\"');
+		temp = modified_value;
+		modified_value = ft_remove_all_edge_quotes(modified_value, '\'');
+		free(temp);
+	}
+	else
+	{
+		modified_value = ft_strdup(value);
+	}
+	printf("modified_value: %s\n", modified_value);
 	while (current)
 	{
 		if (ft_strcmp(current->key, key) == 0)
 		{
 			free(current->value);
-			current->value = ft_strdup(value);
+			current->value = modified_value;
 			return ;
 		}
 		current = current->next;
 	}
 	new_env = malloc(sizeof(t_env));
 	new_env->key = ft_strdup(key);
-	new_env->value = ft_strdup(value);
+	new_env->value = modified_value;
 	new_env->next = *env;
 	*env = new_env;
 }
+
+
 
 int	unset_env(t_env **env, const char *key)
 {
