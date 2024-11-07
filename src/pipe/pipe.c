@@ -92,7 +92,7 @@ pid_t	execute_child(t_ast *node, t_ms_data *data, \
 			dup2(fd[0], STDIN_FILENO);
 		close_fds(fd[0], fd[1]);
 		status = execute_ast(node, data);
-\		exit(status);
+		exit(status);
 	}
 	return (pid);
 }
