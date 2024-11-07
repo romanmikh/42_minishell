@@ -87,3 +87,39 @@ void	handle_local_vars(t_ms_data *data, char *arg)
 			handle_add_set_shell_variable(&data->shell_variables, arg);
 	}
 }
+
+char	**ft_add_segment(char **result, char *start, size_t length, int *count)
+{
+	result = realloc(result, (*count + 1) * sizeof(char *));
+	result[*count] = ft_strndup(start, length);
+	(*count)++;
+	return (result);
+}
+
+char	**ft_split_preserve_quotes(char *str, char delimiter)
+{
+	char	**result;
+	int		count;
+	int		in_quotes;
+	char	*start;
+
+	result = NULL;
+	count = 0;
+	in_quotes = 0;
+	start = str;
+	while (*str)
+	{
+		if (*str == '"' || *str == '\'')
+			in_quotes = !in_quotes;
+		else if (*str == delimiter && !in_quotes)
+		{
+			result = ft_add_segment(result, start, str - start, &count);
+			start = str + 1;
+		}
+		str++;
+	}
+	if (str != start)
+		result = ft_add_segment(result, start, str - start, &count);
+	result[count] = NULL;
+	return (result);
+}

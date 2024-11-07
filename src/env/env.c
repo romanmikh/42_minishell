@@ -21,7 +21,6 @@ char	*get_env(t_env *envp, const char *key);
 void	set_env(t_env **env, const char *key, const char *value);
 int		unset_env(t_env **env, const char *name);
 
-
 char	*ft_remove_all_edge_quotes(char *str, char quote_type)
 {
 	int		start_quotes;
@@ -43,9 +42,6 @@ char	*ft_remove_all_edge_quotes(char *str, char quote_type)
 	}
 	return (ft_strdup(str));
 }
-
-
-
 
 void	init_env(t_env **data_envp, char **envp)
 {
@@ -130,8 +126,6 @@ void	set_env(t_env **env, const char *key, const char *value)
 	new_env->next = *env;
 	*env = new_env;
 }
-
-
 
 int	unset_env(t_env **env, const char *key)
 {

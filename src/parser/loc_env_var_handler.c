@@ -15,37 +15,6 @@
 void	handle_local_vars(t_ms_data *data, char *arg);
 char	*process_argument(char *arg, t_ms_data *data);
 
-// Helper function to add segments
-char **ft_add_segment(char **result, char *start, size_t length, int *count) {
-    result = realloc(result, (*count + 1) * sizeof(char *));
-    result[*count] = ft_strndup(start, length);
-    (*count)++;
-    return result;
-}
-
-char **ft_split_preserve_quotes(char *str, char delimiter) {
-    char **result = NULL;
-    int count = 0;
-    int in_quotes = 0;
-    char *start = str;
-
-    while (*str) {
-        if (*str == '"' || *str == '\'') {
-            in_quotes = !in_quotes;
-        } else if (*str == delimiter && !in_quotes) {
-            result = ft_add_segment(result, start, str - start, &count);
-            start = str + 1;
-        }
-        str++;
-    }
-    if (str != start) {
-        result = ft_add_segment(result, start, str - start, &count);
-    }
-    result[count] = NULL;
-    return result;
-}
-
-
 void	handle_split_allocation(t_ast *command_node, int *current_size, \
 									int required_size)
 {
@@ -65,9 +34,7 @@ void	split_loc_vars(t_ast *command_node, char *processed_arg, \
 	int		required_size;
 	int		j;
 
-	// split_arg = ft_split(processed_arg, ' ');
 	split_arg = ft_split_preserve_quotes(processed_arg, ' ');
-
 	split_count = ft_len_2d_arr(split_arg);
 	if (split_count > 1)
 	{

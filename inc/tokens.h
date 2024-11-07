@@ -133,5 +133,8 @@ char		*append_literal(char **start, char *processed_arg);
 char		*expand_variable(char **start, t_ms_data *data);
 char		*expand_env_and_loc_var(char *arg, t_ms_data *data);
 void		final_quote_removal(int arg_count, t_ast *command_node);
+char		**ft_split_preserve_quotes(char *str, char delimiter);
+char		**ft_add_segment(char **result, char *start, size_t length, \
+				int *count);
 
 #endif
