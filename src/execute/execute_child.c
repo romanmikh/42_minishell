@@ -103,11 +103,9 @@ static int	new_process(t_ms_data *data)
 		child_process(data);
 	close_fds(data->std_in, data->std_out);
 	waitpid(pid, &exit, 0);
-	data->exit_status = WEXITSTATUS(exit);
 	if (WIFSIGNALED(exit) && WTERMSIG(exit) == SIGQUIT)
 		ft_printf("\n");
-	set_shell_var_handler(data);
-	return (EXIT_SUCCESS);
+	return (WEXITSTATUS(exit));
 }
 
 static void	handle_exec_errors(char *exec_path, t_ms_data *data)

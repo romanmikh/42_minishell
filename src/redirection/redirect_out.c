@@ -72,34 +72,38 @@ static int	open_and_redirect(t_ast *node, t_ms_data *data)
 	{
 		data->std_out = open_file(node->right, ">");
 		if (data->std_out == -1)
-			return (1);
+			return (EXIT_FAILURE);
 	}
 	else
 	{
 		fd = open_file(node->right, ">");
 		if (fd == -1)
-			return (1);
+			return (EXIT_FAILURE);
 		dup2(fd, STDOUT_FILENO);
 		close(fd);
 	}
-	return (0);
+	return (EXIT_SUCCESS);
 }
 
 int	redirect_out(t_ast *node, t_ms_data *data)
 {
 	pid_t	pid;
-	int		status;
+	int		exec_status;
+  int   status;
 
 	pid = fork();
 	if (pid == -1)
-		return (1);
+		return (EXIT_FAILURE);
 	if (pid == 0)
 	{
 		if (open_and_redirect(node, data) != 0)
-			exit(1);
-		execute_ast(node->left, data);
-		exit(0);
+			exit(EXIT_FAILURE);
+		exec_status = execute_ast(node->left, data);
+		exit(exec_status);
 	}
-	waitpid(pid, &status, 0);
+	if (waitpid(pid, &status, 0) == -1)
+    return (EXIT_FAILURE);
+  if (WIFSIGNALED(status))
+    return (128 + WTERMSIG(status));
 	return (WEXITSTATUS(status));
 }

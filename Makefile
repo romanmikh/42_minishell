@@ -26,7 +26,7 @@ NAME			=	minishell
 
 # Comands
 COMPILER		=	cc
-DFLAGS			=	-g3 -gdwarf-2
+DFLAGS			=	-g3 -gdwarf-2 -fsanitize=address -fsanitize=undefined
 CFLAGS			=	-Wall -Wextra -Werror $(DFLAGS) -g -O0 
 AR			=	ar rcs
 RM			=	rm -rf

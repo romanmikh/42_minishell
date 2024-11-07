@@ -53,7 +53,7 @@ static int	handle_heredoc_interruption(char *line, char *eof, int file_fd, \
 	unlink("/tmp/heredoc");
 	g_heredoc_interrupted = 0;
 	sigaction(SIGINT, sa_old, NULL);
-	return (1);
+	return (EXIT_FAILURE);
 }
 
 static void	execute_child(t_ast *node, t_ms_data *data, int *file_fd)
@@ -110,5 +110,5 @@ int	redirect_here_doc(t_ast *node, t_ms_data *data)
 	file_fd = open_tmp_file("r");
 	execute_child(node->left, data, &file_fd);
 	unlink("/tmp/heredoc");
-	return (0);
+	return (EXIT_SUCCESS);
 }

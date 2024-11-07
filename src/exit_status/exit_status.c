@@ -54,6 +54,7 @@ void	set_shell_var_handler(t_ms_data *data)
 {
 	char	*tmp_var;
 
+	tmp_var = NULL;
 	tmp_var = ft_itoa(data->exit_status);
 	set_shell_var(&data->shell_variables, "?", tmp_var);
 	free(tmp_var);

@@ -89,5 +89,5 @@ int	builtin_exit(t_ms_data *data)
 		ft_putendl_fd("exit", STDOUT_FILENO);
 		handle_exit(data, 0);
 	}
-	return (0);
+	return (EXIT_SUCCESS);
 }
