@@ -29,11 +29,6 @@ Functionality:
 
 void	cleanup_exit_resources(t_ms_data *data)
 {
-	if (data->args)
-	{
-		ft_free_2d_arr(data->args);
-		data->args = NULL;
-	}
 	clear_history_file();
 	free_ms_data(data);
 	free_signal_context();
@@ -68,26 +63,24 @@ int	builtin_exit(t_ms_data *data)
 	int	number;
 
 	number = 0;
-	if (data->args[1])
-	{
-		if (ft_isnumber(data->args[1]) == 0)
-			handle_numeric_error(data, data->args[1]);
-		else if (data->args[2])
-			handle_too_many_args_error(data);
-		else
-		{
-			number = ft_atoi(data->args[1]);
-			ft_free_2d_arr(data->args);
-			data->args = NULL;
-			handle_exit(data, number);
-		}
-	}
-	else
+	if (!data->args || !data->args[1])
 	{
 		ft_free_2d_arr(data->args);
 		data->args = NULL;
 		ft_putendl_fd("exit", STDOUT_FILENO);
 		handle_exit(data, 0);
+		return (0);
+	}
+	if (ft_isnumber(data->args[1]) == 0)
+		handle_numeric_error(data, data->args[1]);
+	else if (data->args[2])
+		handle_too_many_args_error(data);
+	else
+	{
+		number = ft_atoi(data->args[1]);
+		ft_free_2d_arr(data->args);
+		data->args = NULL;
+		handle_exit(data, number);
 	}
 	return (0);
 }

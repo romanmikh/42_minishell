@@ -113,10 +113,7 @@ void	set_env(t_env **env, const char *key, const char *value)
 		free(temp);
 	}
 	else
-	{
 		modified_value = ft_strdup(value);
-	}
-	printf("modified_value: %s\n", modified_value);
 	while (current)
 	{
 		if (ft_strcmp(current->key, key) == 0)
