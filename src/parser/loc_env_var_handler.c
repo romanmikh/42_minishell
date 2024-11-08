@@ -54,8 +54,7 @@ void	split_loc_vars(t_ast *command_node, char *processed_arg, \
 		command_node->args[*i] = ft_strdup(processed_arg);
 		(*i)++;
 	}
-	if (split_arg != NULL)
-		ft_free_2d_arr(split_arg);
+	ft_free_2d_arr(split_arg);
 }
 
 void	post_process_command_args(t_ast *command_node, int arg_count, \
