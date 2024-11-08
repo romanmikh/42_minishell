@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include <tokens.h>
+#include "libft.h"
 
 void	handle_local_vars(t_ms_data *data, char *arg);
 char	*process_argument(char *arg, t_ms_data *data);
@@ -53,7 +54,14 @@ void	split_loc_vars(t_ast *command_node, char *processed_arg, \
 		command_node->args[*i] = ft_strdup(processed_arg);
 		(*i)++;
 	}
-	ft_free_2d_arr(split_arg);
+	ft_print_2d_arr(split_arg, "split_arg");
+	if (split_arg != NULL)
+	{
+		printf("here!\n");
+		ft_free_2d_arr(split_arg);
+		printf("here after free!\n");
+		
+	}
 }
 
 void	post_process_command_args(t_ast *command_node, int arg_count, \

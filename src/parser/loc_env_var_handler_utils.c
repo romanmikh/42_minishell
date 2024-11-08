@@ -103,10 +103,14 @@ char	**ft_split_preserve_quotes(char *str, char delimiter)
 	int		in_quotes;
 	char	*start;
 
-	result = NULL;
 	count = 0;
 	in_quotes = 0;
 	start = str;
+
+	result = malloc(sizeof(char *));
+	if (!result)
+		return (NULL);
+
 	while (*str)
 	{
 		if (*str == '"' || *str == '\'')
@@ -120,6 +124,15 @@ char	**ft_split_preserve_quotes(char *str, char delimiter)
 	}
 	if (str != start)
 		result = ft_add_segment(result, start, str - start, &count);
+
+	char **temp = realloc(result, sizeof(char *) * (count + 1));
+	if (!temp)
+	{
+		free(result);
+		return (NULL);
+	}
+	result = temp;
 	result[count] = NULL;
+
 	return (result);
 }
