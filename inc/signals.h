@@ -39,5 +39,6 @@ void				set_signals_noninteractive(void);
 void				handle_sigint_heredoc(int signo);
 
 int					ft_perror(char *str);
+int					is_external_command_running(void);
 
 #endif

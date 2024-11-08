@@ -15,6 +15,7 @@
 #include <readline/history.h>
 #include <unistd.h>
 #include "libft.h"
+#include <sys/wait.h>
 
 // Pulls ms_data into sigint handler, bypassing need of second global variable
 t_signal_context	*get_context(t_ms_data *data)
@@ -38,4 +39,15 @@ void	handle_sigint_heredoc(int signo)
 {
 	(void)signo;
 	g_heredoc_interrupted = 1;
+}
+
+int	is_external_command_running(void)
+{
+	pid_t	child_pid;
+
+	child_pid = waitpid(-1, NULL, WNOHANG);
+	if (child_pid == 0)
+		return (1);
+	else
+		return (0);
 }

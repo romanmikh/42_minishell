@@ -59,7 +59,8 @@ void	signal_reset_prompt(int signo, siginfo_t *info, void *ucontext)
 	write(STDOUT_FILENO, "\n", 1);
 	rl_on_new_line();
 	rl_replace_line("", 0);
-	rl_redisplay();
+	if (!is_external_command_running())
+		rl_redisplay();
 }
 
 void	set_signals_noninteractive(void)
