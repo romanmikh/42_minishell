@@ -22,25 +22,22 @@ void	main_loop(t_ms_data *data, t_loop_data *loop_data);
 int		main(int argc, char **argv, char **envp);
 
 void	process_command(t_ms_data *data, \
-                t_loop_data *loop_data, t_token *tokens_head)
+				t_loop_data *loop_data, t_token *tokens_head)
 {
-    int	status;
+	int	status;
 
-    if (!data || !loop_data || !tokens_head || !loop_data->tree)
-        return;
-
-    status = execute_ast(loop_data->tree, data);
-    data->exit_status = status;
-    set_shell_var_handler(data);
-
-    if (status == WAIT_NEXT_COMMAND)
-    {
-        loop_cleanup(loop_data, tokens_head);
-        return;
-    }
-
-    handle_io_fd(data);
-    loop_cleanup(loop_data, tokens_head);
+	if (!data || !loop_data || !tokens_head || !loop_data->tree)
+		return ;
+	status = execute_ast(loop_data->tree, data);
+	data->exit_status = status;
+	set_shell_var_handler(data);
+	if (status == WAIT_NEXT_COMMAND)
+	{
+		loop_cleanup(loop_data, tokens_head);
+		return ;
+	}
+	handle_io_fd(data);
+	loop_cleanup(loop_data, tokens_head);
 }
 
 void	main_loop(t_ms_data *data, t_loop_data *loop_data)
@@ -64,7 +61,6 @@ void	main_loop(t_ms_data *data, t_loop_data *loop_data)
 		loop_data->tokens = tokenise(loop_data->trimmed_input);
 		tokens_start = loop_data->tokens;
 		loop_data->tree = parse_tokens(&loop_data->tokens, data);
-		print_ast_root(loop_data->tree);
 		process_command(data, loop_data, tokens_start);
 	}
 	clear_history_file();
