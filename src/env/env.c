@@ -92,41 +92,6 @@ char	*get_env(t_env *envp, const char *key)
 	return (NULL);
 }
 
-void	set_env(t_env **env, const char *key, const char *value)
-{
-	t_env	*current;
-	t_env	*new_env;
-	char	*modified_value;
-	char	*temp;
-
-	current = *env;
-	modified_value = NULL;
-	if (value[0] != '\0')
-	{
-		modified_value = ft_remove_all_edge_quotes((char *)value, '\"');
-		temp = modified_value;
-		modified_value = ft_remove_all_edge_quotes(modified_value, '\'');
-		free(temp);
-	}
-	else
-		modified_value = ft_strdup(value);
-	while (current)
-	{
-		if (ft_strcmp(current->key, key) == 0)
-		{
-			free(current->value);
-			current->value = modified_value;
-			return ;
-		}
-		current = current->next;
-	}
-	new_env = malloc(sizeof(t_env));
-	new_env->key = ft_strdup(key);
-	new_env->value = modified_value;
-	new_env->next = *env;
-	*env = new_env;
-}
-
 int	unset_env(t_env **env, const char *key)
 {
 	t_env	*current;

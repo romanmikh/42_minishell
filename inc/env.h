@@ -32,6 +32,7 @@ char	**env_to_array(t_env *envp);
 char	*ft_strcdup(const char *s, int c);
 void	free_env(t_env *envp);
 void	print_t_env(t_env *tokens);
+char	*get_env(t_env *envp, const char *key);
 
 /*	shell variables	*/
 int		handle_add_set_shell_variable(t_env **shell_var, char *line);
@@ -40,5 +41,6 @@ int		handle_add_set_shell_variable(t_env **shell_var, char *line);
 void	set_shell_var(t_env **shell_var, const char *key, const char *value);
 void	add_shell_var_node(t_env **shell_var, const char *line);
 char	*get_shell_variable(t_env *shell_var, const char *key);
+void	set_env(t_env **env, const char *key, const char *value);
 
 #endif
