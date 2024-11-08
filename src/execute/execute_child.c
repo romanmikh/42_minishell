@@ -57,8 +57,6 @@ int	execute(t_ms_data *data)
 	builtin_functions[4] = &builtin_export;
 	builtin_functions[5] = &builtin_pwd;
 	builtin_functions[6] = &builtin_unset;
-	if (data->args[0] == NULL)
-		ft_perror("minishel");
 	i = -1;
 	while (++i < sizeof(builtin_commands) / sizeof(char *))
 		if (ft_strcmp(data->args[0], builtin_commands[i]) == 0)
@@ -105,11 +103,9 @@ static int	new_process(t_ms_data *data)
 		child_process(data);
 	close_fds(data->std_in, data->std_out);
 	waitpid(pid, &exit, 0);
-	data->exit_status = WEXITSTATUS(exit);
 	if (WIFSIGNALED(exit) && WTERMSIG(exit) == SIGQUIT)
 		ft_printf("\n");
-	set_shell_var_handler(data);
-	return (EXIT_SUCCESS);
+	return (WEXITSTATUS(exit));
 }
 
 static void	handle_exec_errors(char *exec_path, t_ms_data *data)

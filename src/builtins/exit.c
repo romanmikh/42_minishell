@@ -82,5 +82,5 @@ int	builtin_exit(t_ms_data *data)
 		data->args = NULL;
 		handle_exit(data, number);
 	}
-	return (0);
+	return (EXIT_SUCCESS);
 }
