@@ -18,37 +18,29 @@
 #include "exit_status.h"
 #include "builtins.h"
 
-int		status_handler(int status, \
-				t_loop_data *loop_data, t_token *token_head);
-void	process_ast_and_io(t_ms_data *data, \
-				t_loop_data *loop_data, t_token *tokens_head);
 void	main_loop(t_ms_data *data, t_loop_data *loop_data);
 int		main(int argc, char **argv, char **envp);
 
-int	status_handler(int status, \
-				t_loop_data *loop_data, t_token *tokens_head)
+void	process_command(t_ms_data *data, \
+                t_loop_data *loop_data, t_token *tokens_head)
 {
-	if (status == WAIT_NEXT_COMMAND)
-	{
-		loop_cleanup(loop_data, tokens_head);
-		return (0);
-	}
-	return (1);
-}
+    int	status;
 
-void	process_ast_and_io(t_ms_data *data, \
-				t_loop_data *loop_data, t_token *tokens_head)
-{
-	int	status;
+    if (!data || !loop_data || !tokens_head || !loop_data->tree)
+        return;
 
-	status = execute_ast(loop_data->tree, data);
-	data->exit_status = status;
-	set_shell_var_handler(data);
-	if (status_handler(status, loop_data, tokens_head) == 0)
-	{
-		handle_io_fd(data);
-		loop_cleanup(loop_data, tokens_head);
-	}
+    status = execute_ast(loop_data->tree, data);
+    data->exit_status = status;
+    set_shell_var_handler(data);
+
+    if (status == WAIT_NEXT_COMMAND)
+    {
+        loop_cleanup(loop_data, tokens_head);
+        return;
+    }
+
+    handle_io_fd(data);
+    loop_cleanup(loop_data, tokens_head);
 }
 
 void	main_loop(t_ms_data *data, t_loop_data *loop_data)
@@ -73,7 +65,7 @@ void	main_loop(t_ms_data *data, t_loop_data *loop_data)
 		tokens_start = loop_data->tokens;
 		loop_data->tree = parse_tokens(&loop_data->tokens, data);
 		print_ast_root(loop_data->tree);
-		process_ast_and_io(data, loop_data, tokens_start);
+		process_command(data, loop_data, tokens_start);
 	}
 	clear_history_file();
 }
