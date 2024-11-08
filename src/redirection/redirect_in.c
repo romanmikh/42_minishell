@@ -6,7 +6,7 @@
 /*   By: dmdemirk <dmdemirk@student.42london.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/11 14:32:40 by dmdemirk          #+#    #+#             */
-/*   Updated: 2024/11/07 19:40:50 by dmdemirk         ###   ########.fr       */
+/*   Updated: 2024/11/08 13:14:21 by dmdemirk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,44 +19,42 @@
 
 int	redirect_in(t_ast *node, t_ms_data *data);
 
-static int	handle_child_process(t_ast *node, t_ms_data *data)
+static int	setup_redirection(t_ast *node, int *original_stdin)
 {
-	int	local_fd;
-	int	status;
+	int	fd;
 
-	if (data->std_in == -1)
+	*original_stdin = dup(STDIN_FILENO);
+	if (*original_stdin == -1)
+		return (-1);
+	fd = open_file(node->right, "<");
+	if (fd == -1)
 	{
-		data->std_in = open_file(node->right, "<");
-		if (data->std_in == -1)
-			return (EXIT_FAILURE);
+		close(*original_stdin);
+		return (-1);
 	}
-	else
+	if (dup2(fd, STDIN_FILENO) == -1)
 	{
-		local_fd = open_file(node->right, "<");
-		if (local_fd == -1)
-			return (EXIT_FAILURE);
-		dup2(local_fd, STDIN_FILENO);
-		close(local_fd);
+		close(fd);
+		close(*original_stdin);
+		return (-1);
 	}
-	if (!node->left->args[0])
-	{
-		close(data->std_in);
-		exit(EXIT_SUCCESS);
-	}
-	status = execute_ast(node->left, data);
-	exit(status);
+	close(fd);
+	return (EXIT_SUCCESS);
 }
 
 int	redirect_in(t_ast *node, t_ms_data *data)
 {
-	pid_t	pid;
-	int		status;
+	int	status;
+	int	original_stdin;
 
-	pid = fork();
-	if (pid == -1)
+	if (setup_redirection(node, &original_stdin) == -1)
 		return (EXIT_FAILURE);
-	if (pid == 0)
-		handle_child_process(node, data);
-	waitpid(pid, &status, 0);
-	return (WEXITSTATUS(status));
+	if (!node->left->args[0])
+		status = EXIT_SUCCESS;
+	else
+		status = execute_ast(node->left, data);
+	if (dup2(original_stdin, STDIN_FILENO) == -1)
+		status = EXIT_FAILURE;
+	close(original_stdin);
+	return (status);
 }
