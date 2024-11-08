@@ -42,12 +42,9 @@ void	sigquit_ignore(void)
 
 void	set_signals_interactive(t_ms_data *data)
 {
-	t_signal_context	*context;
 	struct sigaction	sa;
 
-	context = get_context(data);
-	if (!context)
-		return ;
+	(void)data;
 	sa.sa_sigaction = signal_reset_prompt;
 	sa.sa_flags = SA_RESTART | SA_SIGINFO;
 	sigemptyset(&sa.sa_mask);
@@ -56,21 +53,10 @@ void	set_signals_interactive(t_ms_data *data)
 
 void	signal_reset_prompt(int signo, siginfo_t *info, void *ucontext)
 {
-	t_signal_context	*context;
-
 	(void)signo;
 	(void)info;
 	(void)ucontext;
-	context = get_context(NULL);
-	if (!rl_line_buffer || rl_line_buffer[0] == '\0')
-	{
-		if (context && context->data_cxt)
-		{
-			ft_printf("\nexit\n");
-			handle_exit(context->data_cxt, 0);
-		}
-	}
-	write(1, "\n", 1);
+	write(STDOUT_FILENO, "\n", 1);
 	rl_on_new_line();
 	rl_replace_line("", 0);
 	rl_redisplay();
