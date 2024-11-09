@@ -123,7 +123,7 @@ static void	handle_exec_errors(char *exec_path, t_ms_data *data)
 	}
 	if (execve(exec_path, data->args, env_to_array(data->envp)) == -1)
 	{
-		ft_putstr_fd("minishell: fuck it\n", STDERR_FILENO);
+		ft_putstr_fd("maxishell: command not found\n", STDERR_FILENO);
 		exit(IS_DIRECTORY);
 	}
 }
