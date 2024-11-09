@@ -49,7 +49,7 @@ void	main_loop(t_ms_data *data, t_loop_data *loop_data)
 		set_signals_interactive(data);
 		set_signals_noninteractive();
 		loop_data->input = readline("🌴 maxishell> ");
-		if (loop_data->input[0] == '\0')
+		if (loop_data->input && loop_data->input[0] == '\0')
 			continue ;
 		if (!loop_data->input || !ft_strncmp(loop_data->input, "exit", 4))
 		{
