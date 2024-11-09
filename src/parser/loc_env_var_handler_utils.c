@@ -98,38 +98,24 @@ char	**ft_add_segment(char **result, char *start, size_t length, int *count)
 
 char	**ft_split_preserve_quotes(char *str, char delimiter)
 {
-	char	**result;
 	int		count;
 	int		in_quotes;
 	char	*start;
-	char	**temp;
+	char	**result;
 
-	count = 0;
 	in_quotes = 0;
 	start = str;
-	result = malloc(sizeof(char *));
+	result = initialize_result_array(&count);
 	if (!result)
 		return (NULL);
 	while (*str)
 	{
-		if (*str == '"' || *str == '\'')
-			in_quotes = !in_quotes;
-		else if (*str == delimiter && !in_quotes)
-		{
-			result = ft_add_segment(result, start, str - start, &count);
-			start = str + 1;
-		}
+		in_quotes = toggle_quotes(in_quotes, *str);
+		if (*str == delimiter && !in_quotes)
+			result = add_segment_on_delimiter(result, &start, str, &count);
 		str++;
 	}
 	if (str != start)
 		result = ft_add_segment(result, start, str - start, &count);
-	temp = realloc(result, sizeof(char *) * (count + 1));
-	if (!temp)
-	{
-		free(result);
-		return (NULL);
-	}
-	result = temp;
-	result[count] = NULL;
-	return (result);
+	return (finalize_result_array(result, count));
 }

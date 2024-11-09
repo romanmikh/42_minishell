@@ -136,5 +136,11 @@ void		final_quote_removal(int arg_count, t_ast *command_node);
 char		**ft_split_preserve_quotes(char *str, char delimiter);
 char		**ft_add_segment(char **result, char *start, size_t length, \
 				int *count);
+char		**initialize_result_array(int *count);
+int			toggle_quotes(int in_quotes, char current_char);
+char		**add_segment_on_delimiter(char **result, char **start, char \
+				*str, int *count);
+char		**finalize_result_array(char **result, int count);
+char		**ft_split_preserve_quotes(char *str, char delimiter);
 
 #endif
