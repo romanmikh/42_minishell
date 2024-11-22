@@ -1,4 +1,4 @@
-![image](https://github.com/dimadem/minishell/assets/50800563/01e0c354-b0f2-49de-a4ef-8194baca2a33)
+![image](https://github.com/user-attachments/assets/4e173ce6-fd1d-49a4-8515-9a918f0f8a9d)
 
 
 ![Norminette workflow](https://github.com/dimadem/minishell/actions/workflows/norminette.yml/badge.svg)
