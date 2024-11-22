@@ -60,26 +60,67 @@ TEST_INCLUDES			=	-I./inc \
 							-I $(LIB_DIR)/libft/inc \
 							-I $(TEST_DIR)
 
-MAIN_SOURCE					=	$(wildcard $(SRC_DIR)/*.c)
-APP_SOURCES					=	$(wildcard $(APP_DIR)/*.c)
-ENV_SOURCES					=	$(wildcard $(ENV_DIR)/*.c)
-ERRORS_SOURCES				=	$(wildcard $(ERRORS_DIR)/*.c)
-SHELL_VAR_SOURCES			=	$(wildcard $(SHELL_VAR_DIR)/*.c)
-COMMON_SOURCES				=	$(wildcard $(COMMON_DIR)/*.c)
-UTILS_SOURCES				= 	$(wildcard $(UTILS_DIR)/*.c)
-PARSER_SOURCES 				= 	$(wildcard $(PARSER_DIR)/*.c)
-PIPE_SOURCES				=	$(wildcard $(PIPE_DIR)/*.c)
-REDIRECTION_SOURCES			=	$(wildcard $(REDIRECTION_DIR)/*.c)
-BUILTINS_SOURCES			=	$(wildcard $(BUILTINS_DIR)/*.c)
-EXECUTE_SOURCES				=	$(wildcard $(EXECUTE_DIR)/*.c)
-EXIT_STATUS_SOURCES			=	$(wildcard $(EXIT_STATUS_DIR)/*.c)
-SIGNALS_SOURCES				=	$(wildcard $(SIGNALS_DIR)/*.c)
-CHECK_TOKENISE_SOURCES		=	$(wildcard $(CHECK_TOKENISE_DIR)/*.c)
+MAIN_SOURCE				 	=	$(SRC_DIR)/main.c
 
+ENV_SOURCES					=	$(ENV_DIR)/env.c	\
+								$(ENV_DIR)/utils.c	\
+								$(ENV_DIR)/utils_utils.c
 
-MAIN_TEST_SOURCE			=	$(wildcard $(TEST_DIR)/*.c)
-ENV_TEST_SOURCES			=	$(wildcard $(TEST_DIR)/env/*.c)
-PIPE_TEST_SOURCES			=	$(wildcard $(TEST_DIR)/pipe/*.c)
+SHELL_VAR_SOURCES			=	$(SHELL_VAR_DIR)/shell_variables.c \
+								$(SHELL_VAR_DIR)/shell_variables_utils.c 
+
+UTILS_SOURCES				= 	$(UTILS_DIR)/aux.c	\
+								$(UTILS_DIR)/clean.c \
+								$(UTILS_DIR)/clean_utils.c	\
+								$(UTILS_DIR)/initialise.c	\
+								$(UTILS_DIR)/prompt.c	\
+								$(UTILS_DIR)/stack_control_2.c	\
+								$(UTILS_DIR)/stack_control.c	\
+								$(UTILS_DIR)/visualiser.c	
+
+PARSER_SOURCES 				= 	$(PARSER_DIR)/AST.c	\
+								$(PARSER_DIR)/AST_utils.c	\
+								$(PARSER_DIR)/loc_env_var_handler.c	\
+								$(PARSER_DIR)/loc_env_var_handler_heredoc.c	\
+								$(PARSER_DIR)/loc_env_var_handler_heredoc_utils.c	\
+								$(PARSER_DIR)/loc_env_var_handler_utils.c	\
+								$(PARSER_DIR)/loc_env_var_handler_utils_utils.c	\
+								$(PARSER_DIR)/loc_env_var_handler_utils_utils_utils.c	\
+								$(PARSER_DIR)/loc_env_var_handler_utils_utils_utils_utils.c
+
+PIPE_SOURCES				=	$(PIPE_DIR)/pipe.c	
+
+REDIRECTION_SOURCES			=	$(REDIRECTION_DIR)/redirect_append.c	\
+								$(REDIRECTION_DIR)/redirect_heredoc.c	\
+								$(REDIRECTION_DIR)/redirect_in.c	\
+								$(REDIRECTION_DIR)/redirect_out.c	\
+								$(REDIRECTION_DIR)/utils.c
+				
+BUILTINS_SOURCES			=	$(BUILTINS_DIR)/cd.c	\
+								$(BUILTINS_DIR)/echo.c	\
+								$(BUILTINS_DIR)/env.c	\
+								$(BUILTINS_DIR)/exit.c	\
+								$(BUILTINS_DIR)/export.c	\
+								$(BUILTINS_DIR)/pwd.c	\
+								$(BUILTINS_DIR)/unset.c	\
+								$(BUILTINS_DIR)/utils.c \
+								$(BUILTINS_DIR)/builtins_utils.c
+
+EXECUTE_SOURCES				=	$(EXECUTE_DIR)/execute.c	\
+								$(EXECUTE_DIR)/execute_child.c	\
+								$(EXECUTE_DIR)/utils_0.c	\
+								$(EXECUTE_DIR)/utils_1.c
+
+EXIT_STATUS_SOURCES			=	$(EXIT_STATUS_DIR)/exit_status.c	\
+								$(EXIT_STATUS_DIR)/exit_status_utils.c
+
+SIGNALS_SOURCES				=	$(SIGNALS_DIR)/signals.c	\
+								$(SIGNALS_DIR)/signals_utils.c
+
+CHECK_TOKENISE_SOURCES		=	$(CHECK_TOKENISE_DIR)/input_checker.c	\
+								$(CHECK_TOKENISE_DIR)/input_checker_helpers.c	\
+								$(CHECK_TOKENISE_DIR)/tokeniser.c	\
+								$(CHECK_TOKENISE_DIR)/tokeniser_helpers.c
 
 SOURCES					=	$(MAIN_SOURCE) \
 							$(APP_SOURCES) \
