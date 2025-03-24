@@ -17,7 +17,7 @@
 
 - **Command execution, redirections, and pipes (`|`)**: 
 - **Environment & Local Variables**
-- **cd`, `echo`, `env`, `export`, `pwd`, `unset`, and `exit`**
+- **`cd`, `echo`, `env`, `export`, `pwd`, `unset`, and `exit`**
 - **Gradeful Signal Handling**: `Ctrl+C`, `Ctrl+\`, and `Ctrl+D`.
 - **Error Handling**
 - **Robust Memory Management**
@@ -46,4 +46,6 @@
 
 Full code map (almost):
 
-![Full Code Map](./html/main_8c_a3c04138a5bfe5d72780bb7e82a18e627_cgraph.png)
+<p align="center">
+  <img src="https://dimadem.github.io/minishell/main_8c_a58ec4cbe311c0444bad2ee2b780c2068_cgraph.png" alt="function_map">
+</p>
