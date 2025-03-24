@@ -28,13 +28,15 @@
    ```
    git clone git@github.com:dimadem/minishell.git minishell
    cd minishell
+   sudo apt update
+   sudo apt install libreadline-dev
    make
    ./minishell
    ```
 
 2. Valgrind output saved in valgrind_out.txt after:
    ```sh
-   ulimit -n 2014 # necessary once only, to address 'file descriptor too high' error
+   ulimit -n 1024 # necessary once only, to address 'file descriptor too high' error
    make valgrind
    ```
 
