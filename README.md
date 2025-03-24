@@ -15,7 +15,7 @@
 </p>
 
 
-- **Command execution, redirections (> >> << <), and pipes (`|`)**: 
+- **Command execution, redirections (`> >> << <`), and pipes (`|`)**
 - **Environment & Local Variables**
 - **`cd`, `echo`, `env`, `export`, `pwd`, `unset`, and `exit`**
 - **Gradeful Signal Handling**: `Ctrl+C`, `Ctrl+\`, and `Ctrl+D`.
