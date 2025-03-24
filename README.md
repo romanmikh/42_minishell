@@ -18,7 +18,7 @@
 - **Command execution, redirections (`> >> << <`), and pipes (`|`)**
 - **Environment & Local Variables**
 - **`cd`, `echo`, `env`, `export`, `pwd`, `unset`, and `exit`**
-- **Gradeful Signal Handling**: `Ctrl+C`, `Ctrl+\`, and `Ctrl+D`
+- **Graceful Signal Handling**: `Ctrl+C`, `Ctrl+\`, and `Ctrl+D`
 - **Error Handling**
 - **Robust Memory Management**
 
