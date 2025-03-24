@@ -18,7 +18,7 @@
 - **Command execution, redirections (`> >> << <`), and pipes (`|`)**
 - **Environment & Local Variables**
 - **`cd`, `echo`, `env`, `export`, `pwd`, `unset`, and `exit`**
-- **Gradeful Signal Handling**: `Ctrl+C`, `Ctrl+\`, and `Ctrl+D`.
+- **Gradeful Signal Handling**: `Ctrl+C`, `Ctrl+\`, and `Ctrl+D`
 - **Error Handling**
 - **Robust Memory Management**
 
@@ -44,7 +44,7 @@
 
 ## Documentation
 
-Full code map (almost):
+Full code map (functions boxed in red bifurcate beyond what is showin this map):
 
 <p align="center">
   <img src="https://dimadem.github.io/minishell/main_8c_a647f21a28344e1d9c643f4115516d7c9_cgraph.png" alt="function_map">
