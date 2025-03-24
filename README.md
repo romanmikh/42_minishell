@@ -47,5 +47,5 @@
 Full code map (almost):
 
 <p align="center">
-  <img src="https://dimadem.github.io/minishell/main_8c_a58ec4cbe311c0444bad2ee2b780c2068_cgraph.png" alt="function_map">
+  <img src="https://dimadem.github.io/minishell/main_8c_a647f21a28344e1d9c643f4115516d7c9_cgraph.png" alt="function_map">
 </p>
