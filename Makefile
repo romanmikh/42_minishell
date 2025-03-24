@@ -282,6 +282,6 @@ test: $(TEST_OBJECTS) $(LIBFT)
 	@./test
 
 valgrind: $(NAME)
-	@valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes --track-fds=yes --trace-children=yes --suppressions=readline.supp --num-callers=20 --log-file=valgrind-out.txt ./minishell
+	@valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes --track-fds=yes --trace-children=yes --num-callers=20 --log-file=valgrind-out.txt ./minishell
 
 .PHONY: all bonus clean fclean re test
